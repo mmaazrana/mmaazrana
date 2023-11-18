@@ -48,7 +48,7 @@ const Nav = () => {
                 </div>
                 <div className={"bg-primary-accent rounded-2xl absolute right-4 top-14 z-50 items-end justify-end text-left  md:rounded-none md:pl-4 md:relative md:flex md:right-0 md:top-0 md:z-0 " }>
                     <div
-                        className={` flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4 md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
+                        className={`rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4 md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
                             navbar ? ' block opacity-100' : 'opacity-0 pointer-events-none'
                         }`}
                     >
