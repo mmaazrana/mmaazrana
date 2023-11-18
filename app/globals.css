@@ -1,31 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 /* styles/fonts.module.css */
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary: #22365e;
+  --primary-accent: #ffffff;
+  --secondary:#B4C4E4;
+  --error: #D93E51;
+  --primary-hover: #335599;
+  --secondary-hover: #F5F8FF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary: #CEDDFA;
+    --primary-accent: #000714;
+    --secondary:#4264A8;
+    --error: #FF4A60;
+    --primary-hover: #B4C9F3;
+    --secondary-hover: #0E1930;
+
   }
 }
 
 body {
   font-family: 'Abril Fatface', cursive !important;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--primary);
+  background: var(--primary-accent);;
+
+}
+
+body * {
+  transition-duration: 250ms !important;
+  transition-timing-function: ease-in-out ;
+}
+
+p{
+  font-family: Poppins, sans-serif;
 }

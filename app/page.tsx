@@ -1,15 +1,11 @@
 import Image from 'next/image'
 import Head from "next/head";
+import Nav from "@/components/nav";
 
 export default function Home() {
   return (
-
-    <main className="flex flex-col items-center justify-between">
-      <div className="min-h-screen relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <h1 className={"text-9xl"}>
-            Let Me Cook
-        </h1>
-      </div>
+    <main className="xl:max-w-7xl xl:mx-auto 2xl:p-12 2xl:gap-12 xl:p-11 xl:gap-11 lg:p-10 lg:gap-10 md:p-9 md:gap:9 sm:p-8 sm:gap-8 p-4 gap-4 flex flex-col items-center justify-between ">
+      <Nav/>
     </main>
   )
 }
