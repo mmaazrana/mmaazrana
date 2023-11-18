@@ -8,7 +8,7 @@ interface PrimaryButtonProps {
 
 const PrimaryButton: FC<PrimaryButtonProps> = (props) => {
     return (<Link
-            className={"flex justify-end py-2 px-10  md:px-4 md:ml-1 rounded-lg bg-primary text-primary-accent font-semibold hover:bg-primary-hover "}
+            className={"text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl flex justify-end  py-2 px-10 xl:py-3 xl:px-6  md:px-4 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover "}
             href={props.href}>
             <p>{props.text}</p>
         </Link>

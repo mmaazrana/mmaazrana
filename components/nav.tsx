@@ -6,7 +6,7 @@ import {motion} from "framer-motion"
 import PrimaryButton from "@/components/buttons/primaryButton";
 import SecondaryButton from "@/components/buttons/secondaryButton";
 
-function Nav() {
+const Nav = () => {
     const [navbar, setNavbar] = useState(false);
 
     return (
@@ -14,9 +14,9 @@ function Nav() {
             <div className="justify-between items-center mx-auto md:items-center md:flex">
 
                 <div>
-                    <div className="flex items-center justify-between md:block  ">
-                        <a href="#">
-                            <svg width="275" height="41" viewBox="0 0 275 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div className=" flex items-center justify-between md:block  ">
+                        <a href="#"  >
+                            <svg className="h-6 sm:h-7 md:h-8 lg:h-10" height="40" viewBox="0 0 275 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_56_5)">
                                     <path d="M37.9168 11.7766C38.119 12.2045 38.119 12.703 37.9168 13.1309L31.747 26.3592L26.7153 37.1516C26.1416 38.3837 24.3875 38.3837 23.8138 37.1516L20.2304 29.4723C19.6567 28.2402 17.9027 28.2402 17.329 29.4723L12.7252 39.3383C12.4618 39.9026 11.8975 40.2647 11.2721 40.2647H1.83872C0.667785 40.2647 -0.108138 39.0467 0.385631 37.9887L5.80769 26.3592L12.2925 12.4537L17.329 1.66136C17.9027 0.429287 19.6567 0.429287 20.2304 1.66136L23.8138 9.34064C24.3875 10.5727 26.1416 10.5727 26.7153 9.34064L30.2986 1.66136C30.8723 0.429287 32.6264 0.429287 33.2001 1.66136L37.9168 11.7766Z" fill="var(--primary)"/>
                                     <path d="M48.6904 40.2648H40.7477C39.5768 40.2648 38.8009 39.0468 39.2946 37.9887L43.2636 29.4724C43.8373 28.2403 45.5914 28.2403 46.1651 29.4724L50.134 37.9887C50.6278 39.0515 49.8519 40.2648 48.6809 40.2648H48.6904Z" fill="var(--secondary)"/>
@@ -36,25 +36,25 @@ function Nav() {
                             <button onClick={() => setNavbar(!navbar)}
                                     className=" flex flex-col justify-center items-end outline-0 p-2 ${navbar ? 'items-start' : 'items-end'}`}">
                                 <span
-                                    className={`block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${navbar ? 'bg-error rotate-45 translate-y-1 w-4   ' : 'bg-primary -translate-y-0.5 w-6'}`}></span>
+                                    className={`block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${navbar ? 'bg-error rotate-45 translate-y-1 w-3   ' : 'bg-primary -translate-y-0.5 w-5'}`}></span>
                                 <span
-                                    className={`bg-primary transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${navbar ? 'opacity-0' : 'opacity-100'}`}></span>
+                                    className={`bg-primary transition-all duration-300 ease-out h-0.5 w-5 rounded-sm my-0.5 ${navbar ? 'opacity-0' : 'opacity-100'}`}></span>
                                 <span
-                                    className={` block transition-all duration-300 ease-out h-0.5 w-4 rounded-sm ${navbar ? 'bg-error -rotate-45 -translate-y-1 w-6  ' : 'bg-primary translate-y-0.5 w-4'}`}></span>
+                                    className={` block transition-all duration-300 ease-out h-0.5 w-3 rounded-sm ${navbar ? 'bg-error -rotate-45 -translate-y-1 w-5  ' : 'bg-primary translate-y-0.5 w-3'}`}></span>
                             </button>
 
                         </div>
                     </div>
                 </div>
-                <div className={"flex items-end justify-end text-left md:pl-4"}>
+                <div className={"bg-primary-accent rounded-2xl absolute right-4 top-14 z-50 items-end justify-end text-left  md:rounded-none md:pl-4 md:relative md:flex md:right-0 md:top-0 md:z-0 " }>
                     <motion.div
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
-                        className={`rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4  md:bg-background-color md:rounded-none md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
-                            navbar ? ' block ' : 'hidden '
+                        className={` flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4 md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
+                            navbar ? ' block' : 'hidden  '
                         }`}
                     >
-                        <ul className="items-end justify-end space-y-3  md:flex md:space-x-2 md:space-y-0">
+                        <ul className="items-end justify-end space-y-3 xl:space-x-3 md:flex md:space-x-2 md:space-y-0">
                             <li>
                                 <SecondaryButton href={""} text={"Work"}/>
                             </li>
@@ -67,11 +67,8 @@ function Nav() {
                             <li>
                                 <SecondaryButton href={""} text={"Resume"}/>
                             </li>
-                            <li>
+                            <li >
                                 <PrimaryButton href={""} text={"Contact"}/>
-                                {/*<Link className={"flex justify-end py-2 px-10  md:px-4 md:ml-1 rounded-lg bg-foreground-color text-background-color font-extrabold "} href="/contact">*/}
-                                {/*    <p>Contact</p>*/}
-                                {/*</Link>*/}
                             </li>
                         </ul>
                     </motion.div>

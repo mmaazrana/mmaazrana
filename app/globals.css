@@ -11,7 +11,7 @@
   --secondary:#B4C4E4;
   --error: #D93E51;
   --primary-hover: #335599;
-  --secondary-hover: #F5F8FF;
+  --secondary-hover: #EEF3FE;
 }
 
 @media (prefers-color-scheme: dark) {

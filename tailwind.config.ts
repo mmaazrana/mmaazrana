@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '365px',
+      },
+      width:{
+        '8xl': '10rem',
+      },
+      maxWidth:{
+        '8xl': '100rem',
+      },
       colors: {
         'primary': 'var(--primary)',
         'primary-accent': 'var(--primary-accent)',
