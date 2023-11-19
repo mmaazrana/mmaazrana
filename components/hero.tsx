@@ -13,7 +13,8 @@ const Hero = () => {
         'Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.',
         'Sculpting immersive worlds and captivating visuals, I leverage three-dimensional design to bring ideas to life with depth and realism.'
     ];
-    const durations: number[] = [5000, 5000, 5000, 5000, 5000];
+    // const durations: number[] = [5100, 4850, 5550, 4350, 4450];
+    const durations: number[] = [5110, 4900, 5530, 4300, 4300];
 
     const [index, setIndex] = React.useState(0);
 
@@ -33,15 +34,15 @@ const Hero = () => {
                 sequence={[
                     // Same substring at the start will only be typed once, initially
                     'Product Designer',
-                    4000,
+                    3500,
                     'Web Developer',
-                    4000,
+                    3500,
                     'Mobile App Developer',
-                    4000,
+                    3500,
                     'Animator',
-                    4000,
+                    3500,
                     '3D Artist',
-                    4000,
+                    3500,
                 ]}
                 speed={50}
                 className={"text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"}
@@ -49,7 +50,8 @@ const Hero = () => {
             />
 
                 <TextTransition springConfig={
-                    {duration:400, mass:1, velocity:5, friction:10, tension:10,}
+                    // {duration:250, mass:10, friction:200, tension:550,}
+                    presets.stiff
                 }>
                     <p className={"font-body text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl max-w-lg sm:max-w-lg md:max-w-2xl lg:max-w-2xl xl:max-w-4xl"} >
                         {TEXTS[index % TEXTS.length]}

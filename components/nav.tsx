@@ -32,7 +32,7 @@ const Nav = () => {
                             {/*<Image priority height={40} src={logo} alt={"M MAAZ RANA"}/>*/}
                         </a>
 
-                        <div className="md:hidden">
+                        <div className=" md:hidden ">
                             <button onClick={() => setNavbar(!navbar)}
                                     className=" flex flex-col justify-center items-end outline-0 p-2 ${navbar ? 'items-start' : 'items-end'}`}">
                                 <span
@@ -48,9 +48,9 @@ const Nav = () => {
                 </div>
                 <div className={"absolute right-4 top-14 z-50 items-end justify-end text-left  md:rounded-none md:pl-4 md:relative md:flex md:right-0 md:top-0 md:z-0 " }>
                     <div
-                        className={`rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4 md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
+                        className={`md:opacity-100 rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg py-4 px-4 mt-4 md:block md:p-0 md:mt-0 md:w-auto md:shadow-none  ${
                             navbar ? 'bg-primary-accent block opacity-100' : 'opacity-0 pointer-events-none'
-                        }`}
+                        } `}
                     >
                         <ul className="items-end justify-end space-y-3 xl:space-x-3 md:flex md:space-x-2 md:space-y-0">
                             <li>
