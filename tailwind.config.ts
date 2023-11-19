@@ -7,6 +7,13 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Poppins'],
+      'serif': ['Abril Fatface'],
+      'mono': ['ui-monospace'],
+      'display': ['Abril Fatface'],
+      'body': ['"Poppins"'],
+    },
     extend: {
       screens: {
         'xs': '365px',
