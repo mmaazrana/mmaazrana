@@ -15,7 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
             <h4 className={"font-sans text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold"}>{props.title}</h4>
             <p className={"text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal"}>{props.description}</p>
         </div>
-        <Image width={200} height={100} className={`  border-secondary bg-secondary  overflow-hidden shadow-2xl ${props.alt? "border-2 w-full rounded-3xl sm:rounded-xl lg:rounded-2xl xl:rounded-3xl" : "border-[1.3px] rounded-lg sm:rounded-xl lg:rounded-2xl xl:rounded-3xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 origin-top-left"}`} src={props.imagePath} alt={"Project Banner"}/>
+        <Image width={200} height={100} className={`  border-secondary bg-secondary  overflow-hidden shadow-2xl ${props.alt? "border-2 w-full rounded-3xl sm:rounded-xl lg:rounded-2xl xl:rounded-3xl" : "border-[1.3px] rounded-xl sm:rounded-xl lg:rounded-2xl xl:rounded-3xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 origin-top-left"}`} src={props.imagePath} alt={"Project Banner"}/>
     </div>);
 };
 
