@@ -29,6 +29,7 @@ const config: Config = {
         'primary-accent': 'var(--primary-accent)',
         'error':'var(--error)',
         'primary-hover':'var(--primary-hover)',
+        'secondary': 'var(--secondary)',
         'secondary-hover':'var(--secondary-hover)',
       },
     },

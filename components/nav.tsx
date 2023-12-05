@@ -34,7 +34,7 @@ const Nav = () => {
 
                         <div className=" md:hidden ">
                             <button onClick={() => setNavbar(!navbar)}
-                                    className=" flex flex-col justify-center items-end outline-0 p-2 ${navbar ? 'items-start' : 'items-end'}`}">
+                                    className=" flex grid justify-center items-end outline-0 p-2 ${navbar ? 'items-start' : 'items-end'}`}">
                                 <span
                                     className={`block transition-all duration-300 ease-out h-0.5 w-5 rounded-sm ${navbar ? 'bg-error rotate-45 translate-y-1 w-3   ' : 'bg-primary -translate-y-0.5 w-5'}`}></span>
                                 <span
@@ -52,7 +52,7 @@ const Nav = () => {
                             navbar ? 'bg-primary-accent pointer-events-auto block opacity-100' : 'opacity-0 pointer-events-none'
                         } `}
                     >
-                        <ul className="items-end justify-end space-y-3 xl:space-x-3 md:flex md:space-x-2 md:space-y-0">
+                        <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2 md:gap-0">
                             <li>
                                 <SecondaryButton href={""} text={"Work"}/>
                             </li>

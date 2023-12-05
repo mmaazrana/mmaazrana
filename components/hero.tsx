@@ -28,7 +28,7 @@ const Hero = () => {
     }, [durations]);
 
     return (
-        <div className={"w-full m-20 sm:m-28 md:m-36 xl:m-40 space-y-3  md:space-y-4 xl:space-y-5"}>
+        <div className={"w-full grid my-20 sm:my-28 md:my-36 xl:my-40 gap-3 md:gap-4 xl:gap-5"}>
             <TypeAnimation
                 wrapper={"h1"}
                 sequence={[
@@ -53,7 +53,7 @@ const Hero = () => {
                     // {duration:250, mass:10, friction:200, tension:550,}
                     presets.stiff
                 }>
-                    <p className={"font-body text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl max-w-lg sm:max-w-lg md:max-w-2xl lg:max-w-2xl xl:max-w-4xl"} >
+                    <p className={"font-body text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-2xl xl:max-w-4xl"} >
                         {TEXTS[index % TEXTS.length]}
                     </p>
                 </TextTransition>
