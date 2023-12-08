@@ -1,8 +1,5 @@
 "use client";
 import React, {useState} from 'react';
-import Image from "next/image";
-import logo from "../public/logo.svg"
-import {motion} from "framer-motion"
 import PrimaryButton from "@/components/buttons/primaryButton";
 import SecondaryButton from "@/components/buttons/secondaryButton";
 

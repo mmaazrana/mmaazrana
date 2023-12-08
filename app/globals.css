@@ -12,6 +12,7 @@
   --error: #D93E51;
   --primary-hover: #335599;
   --secondary-hover: #EEF3FE;
+  --nav-gradient: linear-gradient(0deg, #FFF 25.52%, rgba(255, 255, 255, 0.69) 60.94%, rgba(255, 255, 255, 0.00) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +23,7 @@
     --error: #FF4A60;
     --primary-hover: #B4C9F3;
     --secondary-hover: #0E1930;
-
+    --nav-gradient: linear-gradient(0deg, #000714 25.52%, rgba(0, 7, 20, 0.69) 60.94%, rgba(0, 7, 20, 0.00) 100%);
   }
 }
 
@@ -30,8 +31,9 @@ body {
   font-family: 'Abril Fatface', cursive !important;
   color: var(--primary);
   background: var(--primary-accent);;
-
 }
+
+
 
 body * {
   transition-duration: 250ms !important;
@@ -40,4 +42,9 @@ body * {
 
 p{
   font-family: Poppins, sans-serif;
+}
+
+.nav-bg {
+  background: var(--nav-gradient);
+  background-size: cover;
 }
