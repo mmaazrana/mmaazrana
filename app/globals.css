@@ -47,4 +47,9 @@ p{
 .nav-bg {
   background: var(--nav-gradient);
   background-size: cover;
+  will-change: transform !important;
+}
+
+.nav-bg > *{
+  will-change: transform !important;
 }

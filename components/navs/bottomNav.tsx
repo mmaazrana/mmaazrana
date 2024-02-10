@@ -113,9 +113,9 @@ const BottomNav: FC<BottomNavProps> = (props) => {
         <div
             className={` ${props.inView ? "translate-y-32" : "translate-y-0 "} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full`}>
             <div
-                className={`absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl ${isEndOfPage ? "h-[324px]" : "h-[68px]"} -z-10`}></div>
+                className={`absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl  ${isEndOfPage ? "h-[324px]" : "h-[68px]"} -z-10`}></div>
             <motion.div
-                className={`${isEndOfPage ? "h-[388px]" : "h-[160px]"} px-0 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex justify-center sm:justify-between items-end  z-30`}>
+                className={`${isEndOfPage ? "h-[388px]" : "h-[160px]"}  px-0 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex justify-center sm:justify-between items-end  z-30`}>
                 {/*<svg className={"hidden sm:block hover:scale-90 hover:translate-x-1 hover:translate-y-0.5"} width="62"*/}
                 {/*     height="48" viewBox="0 0 62 48" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
                 {/*    <mask id="mask0_479_34518" maskUnits="userSpaceOnUse" x="0" y="0" width="62" height="48">*/}
@@ -134,9 +134,9 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 {/*    </g>*/}
                 {/*</svg>*/}
                 <motion.div
-                    className={`${isEndOfPage ? "w-[268px] min-h-[178px]" : "w-[62px] min-h-[48px]"} overflow-hidden h-fit gap-8`}>
+                    className={`${isEndOfPage ? "" : ""} w-[268px] min-h-[178px] overflow-hidden mt-auto h-fit gap-8`}>
                     <svg
-                        className={`hidden sm:block ${isEndOfPage ? "h-[40px] mb-6" : "h-[48px]"} object-cover hover:scale-90 hover:translate-x-1 hover:translate-y-0.5`}
+                        className={`hidden sm:block ${isEndOfPage ? "h-[40px] mb-6" : "h-[48px]"}  object-cover hover:scale-90 hover:translate-x-1 hover:translate-y-0.5`}
                         viewBox="0 0 275 41" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_56_5)"
@@ -169,7 +169,7 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                                     animate="visible"
                                     exit="exit"
                                     variants={container}
-                                    className={`${isPresent ? "animate-fadeIn" : "animate-fadeOut"} overflow-hidden min-h-fit grid grid-cols-7 w-full gap-4`}
+                                    className={`${isPresent ? "animate-fadeIn" : "animate-fadeOut"}  overflow-hidden min-h-fit grid grid-cols-7 w-full gap-4`}
                                 >
                                     {iconComponents.map((Icon, index) => (
                                         <motion.div key={index} variants={item}
@@ -230,61 +230,60 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 {/*        Resume*/}
                 {/*    </Link>*/}
                 {/*</div>*/}
-                <div className={"relative w-[543px] whitespace-nowrap"}>
+                {/*<div className={"relative w-[543px] whitespace-nowrap"}>*/}
+                <div
+                    className={`${isEndOfPage ? "left-1/2 -translate-x-1/2" : "left-1/2 -translate-x-1/2"} my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
                     <div
-                        className={`${isEndOfPage ? "min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[100px] opacity-100 left-0" : "min-h-[16px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] opacity-100 left-1/2 -translate-x-1/2"} absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
-                        <div
-                            className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>Overview
-                        </div>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold   ${isEndOfPage ? "left-0 bottom-3/4 font-normal opacity-25" : "left-0 bottom-0"}`}
-                            href={""}>
-                            Work
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2" : "left-1/4 bottom-0"}`}
-                            href={""}>
-                            Services
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4" : "left-1/2 bottom-0"}`}
-                            href={""}>
-                            Process
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-0" : "left-3/4 bottom-0"}`}
-                            href={""}>
-                            Testimonials
-                        </Link>
+                        className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>Overview
                     </div>
-                    <div
-                        className={`${isEndOfPage ? "min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[100px] opacity-100 left-1/2" : "min-h-[16px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] opacity-0 left-1/2 -translate-x-1/2"} absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
-                        <div
-                            className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>More
-                            Work
-                        </div>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold   ${isEndOfPage ? "left-0 bottom-3/4 font-normal opacity-25" : "left-0 bottom-0"}`}
-                            href={""}>
-                            Case Studies
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2" : "left-1/4 bottom-0"}`}
-                            href={""}>
-                            Mobile Apps
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4" : "left-1/2 bottom-0"}`}
-                            href={""}>
-                            Web Apps
-                        </Link>
-                        <Link
-                            className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-0" : "left-3/4 bottom-0"}`}
-                            href={""}>
-                            Resume
-                        </Link>
-                    </div>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold   ${isEndOfPage ? "left-0 bottom-3/4 font-normal opacity-25" : "left-0 bottom-0"}`}
+                        href={""}>
+                        Work
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2" : "left-1/4 bottom-0"}`}
+                        href={""}>
+                        Services
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4" : "left-1/2 bottom-0"}`}
+                        href={""}>
+                        Process
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-0" : "left-3/4 bottom-0"}`}
+                        href={""}>
+                        Testimonials
+                    </Link>
                 </div>
+                <div
+                    className={`${isEndOfPage ? "opacity-100 left-1/2" : "opacity-0 left-1/2"} my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
+                    <div
+                        className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>More Work
+                    </div>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold   ${isEndOfPage ? "left-0 bottom-3/4 font-normal opacity-25" : "left-0 bottom-0"}`}
+                        href={""}>
+                        Case Studies
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2" : "left-1/4 bottom-0"}`}
+                        href={""}>
+                        Mobile Apps
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4" : "left-1/2 bottom-0"}`}
+                        href={""}>
+                        Web Apps
+                    </Link>
+                    <Link
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-0" : "left-3/4 bottom-0"}`}
+                        href={""}>
+                        Resume
+                    </Link>
+                </div>
+                {/*</div>*/}
                 {/*<div className={`font-sans flex flex-col gap-8 sm:9 md:10 lg:11 xl:12`}>*/}
                 {/*    <Link*/}
                 {/*        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold  `}*/}
@@ -307,24 +306,27 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 {/*        Resume*/}
                 {/*    </Link>*/}
                 {/*</div>*/}
-                <motion.div className={`${isEndOfPage? "w-[271px]" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"} relative delay-100 duration-500 flex flex-col justify-end items-end flex-wrap gap-6`}>
+                <motion.div
+                    className={`${isEndOfPage ? "w-[271px]" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"}  relative delay-100 duration-500 flex flex-col justify-end items-end flex-wrap gap-6`}>
                     <p className={`${isEndOfPage ? "opacity-100 w-fit -top-1/2" : "opacity-0 top-1/2 w-0"}  absolute overflow-hidden font-sans whitespace-nowrap text-2xl`}>Ready
                         to create<br/>something <b>Awesome?</b></p>
-                    <motion.div className={`${isEndOfPage ? "w-fit" : "w-0"} overflow-hidden duration-1000 grid-cols-2 grid gap-3`}>
+                    <motion.div
+                        className={`${isEndOfPage ? "w-fit" : "w-0"}  overflow-hidden duration-1000 grid-cols-2 grid gap-3`}>
                         <SecondaryButton href={""} text={"Linkedin"}
-                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"} delay-[125ms] !transition-all  w-full items-start !justify-start`}/>
+                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[125ms] !transition-all  w-full items-start !justify-start`}/>
                         <SecondaryButton href={""} text={"Behance"}
-                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"} delay-[175ms] !transition-all  w-full items-start !justify-start`}/>
+                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[175ms] !transition-all  w-full items-start !justify-start`}/>
                         <SecondaryButton href={""} text={"Github"}
-                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"} delay-[225ms] !transition-all  w-full items-start !justify-start`}/>
+                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[225ms] !transition-all  w-full items-start !justify-start`}/>
                         <SecondaryButton href={""} text={"Dribbble"}
-                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"} delay-[275ms] !transition-all  w-full items-start !justify-start`}/>
+                                         className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[275ms] !transition-all  w-full items-start !justify-start`}/>
                     </motion.div>
                     <Link
-                        className={`${isEndOfPage ? " w-full  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"} duration-1000 transition-[width]  sm:block text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl !flex justify-center items-center p-2 sm:p-[9px] md:p-[10px] lg:p-[11px] xl:p-3 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover `}
+                        className={`${isEndOfPage ? " w-full  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"}  duration-1000 transition-[width]  sm:block text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl !flex justify-center items-center p-2 sm:p-[9px] md:p-[10px] lg:p-[11px] xl:p-3 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover `}
                         href={""}
                     >
-                        <Mail strokeWidth={2.5} className={"min-w-[20px] sm:min-w-[21px] md:min-w-[22px] lg:min-w-[23px] xl:min-w-[24px]"}/>
+                        <Mail strokeWidth={2.5}
+                              className={"min-w-[20px] sm:min-w-[21px] md:min-w-[22px] lg:min-w-[23px] xl:min-w-[24px] "}/>
                         <p className={`${isEndOfPage ? "opacity-100 w-fit ml-2 sm:ml-3" : "w-0 opacity-0"}  overflow-hidden whitespace-nowrap font-sans text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl`}>
                             Get in Touch
                         </p>

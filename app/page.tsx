@@ -14,7 +14,7 @@ export default function Home() {
 
     return (
         <main
-            className="overflow-x-scroll scrollbar-hide xl:max-w-8xl xl:mx-auto xl:p-12 xl:gap-12 lg:p-11 mb-80 lg:gap-11 md:p-10 md:gap:10 sm:p-9 sm:gap-9 p-8 gap-8 grid ">
+            className=" overflow-x-scroll scrollbar-hide xl:max-w-8xl xl:mx-auto xl:p-12 xl:gap-12 lg:p-11 mb-80 lg:gap-11 md:p-10 md:gap:10 sm:p-9 sm:gap-9 p-8 gap-8 grid ">
             <AnimatedCursor innerSize={12}
                             outerSize={8}
                             color='66, 100, 168'
