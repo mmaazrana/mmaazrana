@@ -1,13 +1,52 @@
 "use client";
-import React, {useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import PrimaryButton from "@/components/buttons/primaryButton";
 import SecondaryButton from "@/components/buttons/secondaryButton";
+import {useInView} from "react-intersection-observer";
+interface NavProps {
+    setInView: Function
+}
 
-const Nav = () => {
+const Nav: FC<NavProps> = (props) => {
     const [navbar, setNavbar] = useState(false);
+    const [ref, inView] = useInView({
+        triggerOnce: false, // Allow triggering multiple times
+    });
+
+    // Function to be called when the component is in view
+    const handleInView = () => {
+        console.log('Component is in view!');
+        props.setInView(true);
+        // Call your function here
+    };
+
+    // Function to be called when the component goes out of view
+    const handleOutOfView = () => {
+        console.log('Component is out of view!');
+        props.setInView(false);
+        // Additional logic when out of view
+    };
+
+    // Effect to run on component mount
+    useEffect(() => {
+        if (inView) {
+            handleInView();
+        } else {
+            handleOutOfView();
+        }
+    }, []); // Only runs on mount
+
+    // Effect to run on inView change
+    useEffect(() => {
+        if (inView) {
+            handleInView();
+        } else {
+            handleOutOfView();
+        }
+    }, [inView]);
 
     return (
-        <nav className="w-full">
+        <nav ref={ref} className="w-full">
             <div className="justify-between items-center mx-auto md:items-center md:flex">
 
                 <div>
