@@ -1,8 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins, Abril_Fatface } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+const abrilFatface = Abril_Fatface({weight: ['400'], subsets: ['latin'],});
 
 export const metadata: Metadata = {
   manifest : "/manifest.json",
@@ -17,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en  ">
-      <body className={inter.className}>{children}</body>
+      <body className={`${poppins.className} ${abrilFatface.className}`}>{children}</body>
     </html>
   )
 }

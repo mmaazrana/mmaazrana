@@ -10,6 +10,18 @@
     "description": "Maaz is a passionate designer and a creative developer, offering services of Product Designing, Web & Mobile Application Development,  Animation and 3D Design. ",
     "icons": [
         {
+            "src": "assets/icons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/icons/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
             "src": "/icon-144x144.svg",
             "sizes": "144x144",
             "type": "image/svg",
@@ -18,22 +30,56 @@
         {
             "src": "/icon-192x192.svg",
             "sizes": "192x192",
-            "type": "image/svg"
+            "type": "image/svg",
+            "purpose": "any"
         },
         {
             "src": "/icon-256x256.svg",
             "sizes": "256x256",
-            "type": "image/svg"
+            "type": "image/svg",
+            "purpose": "any"
         },
         {
             "src": "/icon-384x384.svg",
             "sizes": "384x384",
-            "type": "image/svg"
+            "type": "image/svg",
+            "purpose": "any"
         },
         {
             "src": "/icon-512x512.svg",
             "sizes": "512x512",
-            "type": "image/svg"
+            "type": "image/svg",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "maskable.png",
