@@ -113,9 +113,9 @@ const BottomNav: FC<BottomNavProps> = (props) => {
         <div
             className={` ${props.inView ? "translate-y-32" : "translate-y-0 "} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full`}>
             <div
-                className={`absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl  ${isEndOfPage ? "h-[324px]" : "h-[68px]"} -z-10`}></div>
+                className={`absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl ${isEndOfPage ? "h-[324px]" : "h-[68px]"} -z-10`}></div>
             <motion.div
-                className={`${isEndOfPage ? "h-[388px]" : "h-[160px]"}  px-0 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex justify-center sm:justify-between items-end  z-30`}>
+                className={`${isEndOfPage ? "h-[388px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-row justify-between items-end  z-30`}>
                 {/*<svg className={"hidden sm:block hover:scale-90 hover:translate-x-1 hover:translate-y-0.5"} width="62"*/}
                 {/*     height="48" viewBox="0 0 62 48" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
                 {/*    <mask id="mask0_479_34518" maskUnits="userSpaceOnUse" x="0" y="0" width="62" height="48">*/}
@@ -136,7 +136,7 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 <motion.div
                     className={`${isEndOfPage ? "" : ""} w-[268px] min-h-[178px] overflow-hidden mt-auto h-fit gap-8`}>
                     <svg
-                        className={`hidden sm:block ${isEndOfPage ? "h-[40px] mb-6" : "h-[48px]"}  object-cover hover:scale-90 hover:translate-x-1 hover:translate-y-0.5`}
+                        className={`hidden sm:block ${isEndOfPage ? "h-[36px] md:h-[40px] lg:h-[28px] xl:h-[40px] mb-6" : "h-[40px] lg:h-[44px] xl:h-[48px]"} object-cover`}
                         viewBox="0 0 275 41" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_56_5)"
@@ -150,7 +150,7 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                         </g>
 
                         <path
-                            className={`${isEndOfPage ? "opacity-100" : "opacity-0"}`}
+                            className={`${isEndOfPage ? "opacity-0 lg:opacity-100" : "opacity-0"}`}
                             d="M93.0479 13.21V28.5H90.5399V18.028L85.8759 28.5H84.1379L79.4519 18.028V28.5H76.9439V13.21H79.6499L85.0179 25.2L90.3639 13.21H93.0479ZM114.362 25.376H107.96L106.86 28.5H104.242L109.72 13.188H112.624L118.102 28.5H115.462L114.362 25.376ZM113.658 23.33L111.172 16.224L108.664 23.33H113.658ZM138.502 25.376H132.1L131 28.5H128.382L133.86 13.188H136.764L142.242 28.5H139.602L138.502 25.376ZM137.798 23.33L135.312 16.224L132.804 23.33H137.798ZM155.844 26.322H162.95V28.5H152.874V26.542L159.958 15.388H152.874V13.21H162.95V15.168L155.844 26.322ZM196.948 28.5L193.428 22.384H191.514V28.5H189.006V13.21H194.286C195.46 13.21 196.45 13.4153 197.256 13.826C198.078 14.2367 198.686 14.7867 199.082 15.476C199.493 16.1653 199.698 16.9353 199.698 17.786C199.698 18.7833 199.405 19.6927 198.818 20.514C198.246 21.3207 197.359 21.8707 196.156 22.164L199.94 28.5H196.948ZM191.514 20.382H194.286C195.225 20.382 195.929 20.1473 196.398 19.678C196.882 19.2087 197.124 18.578 197.124 17.786C197.124 16.994 196.89 16.378 196.42 15.938C195.951 15.4833 195.24 15.256 194.286 15.256H191.514V20.382ZM220.925 25.376H214.523L213.423 28.5H210.805L216.283 13.188H219.187L224.665 28.5H222.025L220.925 25.376ZM220.221 23.33L217.735 16.224L215.227 23.33H220.221ZM248.409 28.5H245.901L238.355 17.082V28.5H235.847V13.188H238.355L245.901 24.584V13.188H248.409V28.5ZM269.72 25.376H263.318L262.218 28.5H259.6L265.078 13.188H267.982L273.46 28.5H270.82L269.72 25.376ZM269.016 23.33L266.53 16.224L264.022 23.33H269.016Z"
                             fill={"var(--primary)"}/>
                         <defs>
@@ -159,31 +159,31 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                             </clipPath>
                         </defs>
                     </svg>
-                    <AnimatePresence mode="wait" initial={false}>
-                        {
-                            isEndOfPage ?
-                                <motion.div
+                    {/*<AnimatePresence mode="wait" initial={false}>*/}
+                    {/*    {*/}
+                    {/*        isEndOfPage ?*/}
+                    {/*            <motion.div*/}
 
-                                    key="icons"
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    variants={container}
-                                    className={`${isPresent ? "animate-fadeIn" : "animate-fadeOut"}  overflow-hidden min-h-fit grid grid-cols-7 w-full gap-4`}
-                                >
-                                    {iconComponents.map((Icon, index) => (
-                                        <motion.div key={index} variants={item}
+                    {/*                key="icons"*/}
+                    {/*                initial="hidden"*/}
+                    {/*                animate="visible"*/}
+                    {/*                exit="exit"*/}
+                    {/*                variants={container}*/}
+                    {/*                className={`${isPresent ? "animate-fadeIn" : "animate-fadeOut"}  overflow-hidden min-h-fit grid grid-cols-7 w-full gap-4`}*/}
+                    {/*            >*/}
+                    {/*                {iconComponents.map((Icon, index) => (*/}
+                    {/*                    <motion.div key={index} variants={item}*/}
 
-                                        >
-                                            {
-                                                isEndOfPage ?
-                                                    <Icon size={24}/>
-                                                    : null}
-                                        </motion.div>
-                                    ))}
-                                </motion.div> : null
-                        }
-                    </AnimatePresence>
+                    {/*                    >*/}
+                    {/*                        {*/}
+                    {/*                            isEndOfPage ?*/}
+                    {/*                                <Icon size={24}/>*/}
+                    {/*                                : null}*/}
+                    {/*                    </motion.div>*/}
+                    {/*                ))}*/}
+                    {/*            </motion.div> : null*/}
+                    {/*    }*/}
+                    {/*</AnimatePresence>*/}
                 </motion.div>
                 {/*<div*/}
                 {/*    className={`font-sans flex flex-row gap-8 sm:9 md:10 lg:11 xl:12`}>*/}
@@ -232,7 +232,30 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 {/*</div>*/}
                 {/*<div className={"relative w-[543px] whitespace-nowrap"}>*/}
                 <div
-                    className={`${isEndOfPage ? "left-1/2 -translate-x-1/2" : "left-1/2 -translate-x-1/2"} my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
+                    className={`left-1/2 -translate-x-1/2 my-8 min-w-[367px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute flex justify-between bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
+                    <Link
+                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage && "opacity-0"}`}
+                        href={""}>
+                        Work
+                    </Link>
+                    <Link
+                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 ${isEndOfPage && "opacity-0"}`}
+                        href={""}>
+                        Services
+                    </Link>
+                    <Link
+                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 ${isEndOfPage && "opacity-0"}`}
+                        href={""}>
+                        Process
+                    </Link>
+                    <Link
+                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 ${isEndOfPage && "opacity-0"}`}
+                        href={""}>
+                        Testimonials
+                    </Link>
+                </div>
+                <div
+                    className={`${isEndOfPage ? "opacity-100" : "opacity-0"} left-1/2 -translate-x-1/2 my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
                     <div
                         className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>Overview
                     </div>
@@ -242,12 +265,12 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                         Work
                     </Link>
                     <Link
-                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2" : "left-1/4 bottom-0"}`}
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/2 " : "left-1/4 bottom-0"}`}
                         href={""}>
                         Services
                     </Link>
                     <Link
-                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4" : "left-1/2 bottom-0"}`}
+                        className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 opacity-25  ${isEndOfPage ? "left-0 bottom-1/4 " : "left-1/2 bottom-0"}`}
                         href={""}>
                         Process
                     </Link>
@@ -258,9 +281,10 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                     </Link>
                 </div>
                 <div
-                    className={`${isEndOfPage ? "opacity-100 left-1/2" : "opacity-0 left-1/2"} my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
+                    className={`${isEndOfPage ? "opacity-100" : "opacity-0"} -translate-x-[10%] xl:translate-x-0 left-1/2 my-8 min-h-[124px] sm:min-h-[136px] lg:min-h-[148px] xl:min-h-[160px] min-w-[367px] sm:min-w-[454px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}>
                     <div
-                        className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>More Work
+                        className={`absolute text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold ${isEndOfPage ? "-top-1/3 opacity-100" : "top-0 opacity-0"}`}>More
+                        Work
                     </div>
                     <Link
                         className={`absolute text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  px-0 sm:px-1 md:px-2 lg:px-3 xl:px-4 font-bold   ${isEndOfPage ? "left-0 bottom-3/4 font-normal opacity-25" : "left-0 bottom-0"}`}
@@ -307,8 +331,8 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                 {/*    </Link>*/}
                 {/*</div>*/}
                 <motion.div
-                    className={`${isEndOfPage ? "w-[271px]" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"}  relative delay-100 duration-500 flex flex-col justify-end items-end flex-wrap gap-6`}>
-                    <p className={`${isEndOfPage ? "opacity-100 w-fit -top-1/2" : "opacity-0 top-1/2 w-0"}  absolute overflow-hidden font-sans whitespace-nowrap text-2xl`}>Ready
+                    className={`${isEndOfPage ? "sm:w-[180px] md:w-[202px] lg:w-[225px] xl:w-[271px]" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"}  relative delay-100 duration-500 flex flex-col justify-end items-end flex-wrap gap-6`}>
+                    <p className={`${isEndOfPage ? "opacity-100 w-fit -top-1/2" : "opacity-0 top-1/2 w-0"}  absolute overflow-hidden font-sans whitespace-nowrap text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl`}>Ready
                         to create<br/>something <b>Awesome?</b></p>
                     <motion.div
                         className={`${isEndOfPage ? "w-fit" : "w-0"}  overflow-hidden duration-1000 grid-cols-2 grid gap-3`}>
@@ -322,11 +346,11 @@ const BottomNav: FC<BottomNavProps> = (props) => {
                                          className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[275ms] !transition-all  w-full items-start !justify-start`}/>
                     </motion.div>
                     <Link
-                        className={`${isEndOfPage ? " w-full  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"}  duration-1000 transition-[width]  sm:block text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl !flex justify-center items-center p-2 sm:p-[9px] md:p-[10px] lg:p-[11px] xl:p-3 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover `}
+                        className={`${isEndOfPage ? " w-full  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 p-2" : "w-0 sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px] p-0"} overflow-hidden duration-1000 transition-[width]  sm:block text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl !flex justify-center items-center  sm:p-[9px] md:p-[10px] lg:p-[11px] xl:p-3 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover `}
                         href={""}
                     >
                         <Mail strokeWidth={2.5}
-                              className={"min-w-[20px] sm:min-w-[21px] md:min-w-[22px] lg:min-w-[23px] xl:min-w-[24px] "}/>
+                              className={"sm:min-w-[21px] md:min-w-[22px] lg:min-w-[23px] xl:min-w-[24px] "}/>
                         <p className={`${isEndOfPage ? "opacity-100 w-fit ml-2 sm:ml-3" : "w-0 opacity-0"}  overflow-hidden whitespace-nowrap font-sans text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl`}>
                             Get in Touch
                         </p>
