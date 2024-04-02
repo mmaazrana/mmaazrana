@@ -268,8 +268,9 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
         <div
           className={`left-1/2 -translate-x-1/2 my-8 min-w-[367px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] absolute flex justify-between bottom-0 font-sans gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
         >
-          {bottomNavButtons.map((button, i) => (
+          {bottomNavButtons.map((button, index) => (
             <Link
+              key={index}
               className={`${isEndOfPage && "opacity-0"}`}
               href={button.href}
             >

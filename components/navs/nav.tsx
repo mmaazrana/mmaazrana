@@ -99,7 +99,7 @@ const Nav: FC<NavProps> = ({ setInView }) => {
           >
             <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2 md:gap-0">
               {navButtons.map((button, index) => (
-                <li>
+                <li key={index}>
                   <Link href={button.href}>
                     <Button type={button.type} text={button.text} />
                   </Link>
