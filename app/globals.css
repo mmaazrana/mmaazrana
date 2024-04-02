@@ -4,50 +4,46 @@
 /* styles/fonts.module.css */
 
 :root {
-  --primary: #22365e;
-  --primary-accent: #ffffff;
-  --secondary:#B4C4E4;
-  --error: #D93E51;
-  --primary-hover: #335599;
-  --secondary-hover: #EEF3FE;
-  --nav-gradient: linear-gradient(0deg, #FFF 25.52%, rgba(255, 255, 255, 0.69) 60.94%, rgba(255, 255, 255, 0.00) 100%);
+    --primary: #22365e;
+    --primary-accent: #ffffff;
+    --secondary: #B4C4E4;
+    --error: #D93E51;
+    --primary-hover: #335599;
+    --secondary-hover: #EEF3FE;
+    --nav-gradient: linear-gradient(0deg, #FFF 25.52%, rgba(255, 255, 255, 0.69) 60.94%, rgba(255, 255, 255, 0.00) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #CEDDFA;
-    --primary-accent: #000714;
-    --secondary:#4264A8;
-    --error: #FF4A60;
-    --primary-hover: #B4C9F3;
-    --secondary-hover: #0E1930;
-    --nav-gradient: linear-gradient(0deg, #000714 25.52%, rgba(0, 7, 20, 0.69) 60.94%, rgba(0, 7, 20, 0.00) 100%);
-  }
+    :root {
+        --primary: #CEDDFA;
+        --primary-accent: #000714;
+        --secondary: #4264A8;
+        --error: #FF4A60;
+        --primary-hover: #B4C9F3;
+        --secondary-hover: #0E1930;
+        --nav-gradient: linear-gradient(0deg, #000714 25.52%, rgba(0, 7, 20, 0.69) 60.94%, rgba(0, 7, 20, 0.00) 100%);
+    }
 }
+
 
 body {
-  font-family: 'Abril Fatface', cursive !important;
-  color: var(--primary);
-  background: var(--primary-accent);;
+    color: var(--primary);
+    background: var(--primary-accent);;
 }
-
 
 
 body * {
-  transition-duration: 250ms !important;
-  transition-timing-function: ease-in-out ;
+    transition-duration: 250ms !important;
+    transition-timing-function: ease-in-out;
 }
 
-p{
-  font-family: Poppins, sans-serif;
-}
 
 .nav-bg {
-  background: var(--nav-gradient);
-  background-size: cover;
-  will-change: transform !important;
+    background: var(--nav-gradient);
+    background-size: cover;
+    will-change: transform !important;
 }
 
-.nav-bg > *{
-  will-change: transform !important;
+.nav-bg > * {
+    will-change: transform !important;
 }
