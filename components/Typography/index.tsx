@@ -65,6 +65,7 @@ const Typography: FC<TypographyProps> = ({
     weightClasses[weight],
     underline ? "underline" : "",
     onClick ? "cursor-pointer" : "",
+    "z-[1]",
     className,
   ]
     .filter(Boolean)

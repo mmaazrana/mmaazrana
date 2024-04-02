@@ -8,6 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { usePreferredColorScheme } from "@/helpers";
 
 interface ServiceCardProps {
   title: string;
@@ -22,13 +23,14 @@ const ServiceCard: FC<ServiceCardProps> = ({
   className,
   onClick,
 }) => {
-  const cardX = useSpring(useMotionValue(0), { stiffness: 700, damping: 30 });
-  const cardY = useSpring(useMotionValue(0), { stiffness: 700, damping: 30 });
+  const cardX = useSpring(useMotionValue(0), { stiffness: 2000, damping: 50 });
+  const cardY = useSpring(useMotionValue(0), { stiffness: 2000, damping: 50 });
   const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
   const rotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Reversed values
   const cardRotateX = useTransform(cardY, [-300, 300], [10, -10]); // Adjusted rotation values
   const cardRotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Adjusted rotation values
   const cardRef = useRef<HTMLDivElement>(null);
+  const preferredScheme = usePreferredColorScheme();
 
   const handleMouseMove = (event: { clientX: number; clientY: number }) => {
     if (cardRef.current) {
@@ -80,9 +82,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
   const reverseDiagonalMovement = useTransform<number, number>(
     [rotateX, rotateY],
     ([newRotateX, newRotateY]) => {
-      console.log(newRotateX + newRotateY);
-      console.log(newRotateX);
-      console.log(newRotateY);
       return 1 - newRotateX + newRotateY;
     },
   );
@@ -90,9 +89,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
   const diagonalInvertMovement = useTransform<number, number>(
     [rotateX, rotateY],
     ([newRotateX, newRotateY]) => {
-      console.log(newRotateX + newRotateY);
-      console.log(newRotateX);
-      console.log(newRotateY);
       return 1 - newRotateX - newRotateY;
     },
   );
@@ -100,9 +96,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
   const reverseDiagonalInvertMovement = useTransform<number, number>(
     [rotateX, rotateY],
     ([newRotateX, newRotateY]) => {
-      console.log(newRotateX + newRotateY);
-      console.log(newRotateX);
-      console.log(newRotateY);
       return newRotateX - newRotateY;
     },
   );
@@ -138,25 +131,26 @@ const ServiceCard: FC<ServiceCardProps> = ({
   const sheenOpacity = useTransform(
     sheenPosition,
     [-100, 0, 25, 50, 150, 175, 200],
-    [0, 0.1, 0.2, 0.25, 0.2, 0.1, 0],
+    [0.1, 0.2, 0.3, 0.3, 0.3, 0.2, 0.1],
   );
   const sheenGradient = useMotionTemplate`linear-gradient(
     ${angleClasses[index]},
-    #0C1427,
-    #070D1D,
+    ${preferredScheme === "dark" ? "#0C1427" : "#F4F6FE"},
+    ${preferredScheme === "dark" ? "#070D1D" : "#F9FAFF"},
     ${sheenPosition}%,
-    #000714) 
+    ${preferredScheme === "dark" ? "#000714" : "#FFFFFF"}
+    ) 
     padding-box, 
     linear-gradient(
     ${angleClasses[index]},
-    #4264A8,
-    rgba(66 100 178 / ${sheenOpacity}) 
+    ${preferredScheme === "dark" ? "#4264A8" : "#B4C4E4"},
+    rgba(${preferredScheme === "dark" ? "66 100 178" : "180 196 228"}  / ${sheenOpacity}) 
     ${sheenPosition}%) 
     border-box`;
 
   const dynamicClasses = [
     indexClasses[index],
-    "flex flex-col p-12 !transition-none shadow-services rounded-3xl aspect-square w-full h-fit",
+    "flex flex-col p-12 transition-none transition-shadow !duration-500 shadow-services hover:shadow-services-hover rounded-3xl aspect-square w-full h-fit",
     onClick ? "cursor-pointer" : "",
     className,
   ]
@@ -166,7 +160,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
     <motion.div
       className={"aspect-square w-full !transition-none"}
       style={{
-        perspective: 5000,
+        perspective: 1000,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -183,7 +177,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
         style={{
           transformStyle: "preserve-3d",
           transformOrigin: "center center",
-          perspective: 5000,
+          perspective: 1000,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -200,7 +194,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
           className={dynamicClasses}
           style={{
             transformStyle: "preserve-3d",
-            perspective: 5000,
+            perspective: 1000,
             position: "relative",
             background: sheenGradient,
             borderRadius: "24px",

@@ -19,8 +19,8 @@ const config: Config = {
         },
       },
       boxShadow: {
-        services:
-          "0px 1657px 464px 0px rgba(14, 25, 48, 0.02), 0px 1060px 424px 0px rgba(14, 25, 48, 0.15), 0px 596px 358px 0px rgba(14, 25, 48, 0.50), 0px 265px 265px 0px rgba(14, 25, 48, 0.85), 0px 66px 146px 0px rgba(14, 25, 48, 0.98)",
+        services: "var(--service-shadow)",
+        "services-hover": "var(--service-shadow-hover)",
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out",

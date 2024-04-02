@@ -15,7 +15,7 @@ const Services: FC<ServicesProps> = ({ setActiveSection }) => {
     inView && setActiveSection(Sections.services);
   }, [inView]);
   return (
-    <div className="grid grid-cols-3 gap-12 items-center justify-between !bg-transparent">
+    <div className="relative grid grid-cols-3 gap-12 items-center justify-between !bg-transparent">
       {services.map((service) => (
         <ServiceCard
           title={service.title}

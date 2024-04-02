@@ -11,6 +11,9 @@
     --primary-hover: #335599;
     --secondary-hover: #EEF3FE;
     --nav-gradient: linear-gradient(0deg, #FFF 25.52%, rgba(255, 255, 255, 0.69) 60.94%, rgba(255, 255, 255, 0.00) 100%);
+    --service-shadow: 0px 1657px 464px 0px rgba(238, 243, 254, 0.02), 0px 1060px 424px 0px rgba(238, 243, 254, 0.15), 0px 596px 358px 0px rgba(238, 243, 254, 0.50), 0px 265px 265px 0px rgba(238, 243, 254, 0.85), 0px 66px 146px 0px rgba(238, 243, 254, 0.98);
+    --service-shadow-hover: 0px 1657px 464px 0px rgba(212, 221, 242, 0.02), 0px 1060px 424px 0px rgba(212, 221, 242, 0.15), 0px 596px 358px 0px rgba(212, 221, 242, 0.50), 0px 265px 265px 0px rgba(212, 221, 242, 0.85), 0px 66px 146px 0px rgba(212, 221, 242, 0.98);
+    --service-fill: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +25,9 @@
         --primary-hover: #B4C9F3;
         --secondary-hover: #0E1930;
         --nav-gradient: linear-gradient(0deg, #000714 25.52%, rgba(0, 7, 20, 0.69) 60.94%, rgba(0, 7, 20, 0.00) 100%);
+        --service-shadow: 0px 1657px 464px 0px rgba(14, 25, 48, 0.02), 0px 1060px 424px 0px rgba(14, 25, 48, 0.15), 0px 596px 358px 0px rgba(14, 25, 48, 0.50), 0px 265px 265px 0px rgba(14, 25, 48, 0.85), 0px 66px 146px 0px rgba(14, 25, 48, 0.98);
+        --service-shadow-hover: 0px 1657px 464px 0px rgba(26, 40, 71, 0.02), 0px 1060px 424px 0px rgba(26, 40, 71, 0.15), 0px 596px 358px 0px rgba(26, 40, 71, 0.50), 0px 265px 265px 0px rgba(26, 40, 71, 0.85), 0px 66px 146px 0px rgba(26, 40, 71, 0.98);
+        --service-fill: #ffffff;
     }
 }
 
