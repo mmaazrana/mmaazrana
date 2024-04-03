@@ -68,10 +68,10 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
   const [isColumn, setIsColumn] = React.useState(false);
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    // Optionally calculate and set dynamic styles or classes here
-    // based on isColumn state or container dimensions
-  }, [isColumn]); // Dependency array ensures effect runs when isColumn changes
+  // useEffect(() => {
+  // Optionally calculate and set dynamic styles or classes here
+  // based on isColumn state or container dimensions
+  // }, [isColumn]); // Dependency array ensures effect runs when isColumn changes
 
   const toggleLayout = () => {
     setIsColumn(!isColumn);
@@ -160,7 +160,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              clip-path="url(#clip0_56_5)"
+              clipPath="url(#clip0_56_5)"
               className={
                 "hover:scale-90 hover:translate-x-1 hover:translate-y-0.5"
               }

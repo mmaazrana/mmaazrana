@@ -32,7 +32,7 @@ const Nav: FC<NavProps> = ({ setInView }) => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <g
-                  clip-path="url(#clip0_56_5)"
+                  clipPath="url(#clip0_56_5)"
                   className={
                     "hover:scale-90 hover:translate-x-1 hover:translate-y-0.5"
                   }
