@@ -11,11 +11,11 @@ export const HeroHeadings = [
   3500,
   "Web Developer",
   3500,
-  "Mobile App Developer",
-  3500,
-  "Animator",
+  "App Developer",
   3500,
   "3D Artist",
+  3500,
+  "Animator",
   3500,
 ];
 
@@ -23,8 +23,8 @@ export const HeroDescriptions: string[] = [
   "Crafting user-centric digital experiences that blend creativity and functionality for impactful, seamless design.",
   "Transforming ideas into interactive web solutions, I specialize in coding elegant websites with a focus on user experience.",
   "Building the future of mobile experiences, I bring innovative app ideas to life with user-centric design and robust functionality.",
-  "Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.",
   "Sculpting immersive worlds and captivating visuals, I leverage three-dimensional design to bring ideas to life with depth and realism.",
+  "Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.",
 ];
 
 export const navButtons: NavButtonT[] = [

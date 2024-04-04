@@ -50,7 +50,7 @@ const Hero: FC<HeroProps> = ({ setActiveSection }) => {
       />
       <AnimatePresence mode={"wait"}>
         <motion.div
-          className={"w-2/3 !transition-none"}
+          className={"sm:w-2/3 !transition-none"}
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
