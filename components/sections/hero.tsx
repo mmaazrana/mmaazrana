@@ -7,6 +7,7 @@ import Button from "@/components/button";
 import { HeroDescriptions, HeroHeadings } from "@/helpers/constants";
 import { useInView } from "react-intersection-observer";
 import { ButtonTypes, Sections, TextTypes } from "@/helpers/enums";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface HeroProps {
   setActiveSection: (section: Sections) => void;
@@ -47,9 +48,20 @@ const Hero: FC<HeroProps> = ({ setActiveSection }) => {
         className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-extrabold ${archivo.className}`}
         repeat={Infinity}
       />
-      <Typography type={TextTypes.xl}>
-        {HeroDescriptions[index % HeroDescriptions.length]}
-      </Typography>
+      <AnimatePresence mode={"wait"}>
+        <motion.div
+          className={"w-2/3 !transition-none"}
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <Typography type={TextTypes["3xl"]}>
+            {HeroDescriptions[index % HeroDescriptions.length]}
+          </Typography>
+        </motion.div>
+      </AnimatePresence>
 
       <div className={"flex gap-2 items-center justify-start flex-wrap"}>
         <div className={"pt-3 pb-3 pr-3"}>
