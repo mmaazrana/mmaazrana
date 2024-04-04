@@ -16,7 +16,7 @@ export default function Home() {
   const [inView, setInView] = useState(true);
   const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
   return (
-    <div>
+    <div className={"overflow-x-hidden"}>
       <Head>
         <meta
           name="viewport"
