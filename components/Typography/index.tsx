@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { archivo, nunito } from "@/app/fonts";
-import { ColorTypes, TextTypes, WeightTypes } from "@/app/constants";
+import { archivo, nunito } from "@/helpers/fonts";
+
+import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 
 interface TypographyProps {
   children: string | number;

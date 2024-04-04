@@ -1,7 +1,8 @@
 import React, { FC, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Sections, services } from "@/app/constants";
+import { services } from "@/helpers/constants";
 import ServiceCard from "@/components/cards/serviceCard";
+import { Sections } from "@/helpers/enums";
 
 interface ServicesProps {
   setActiveSection: (section: Sections) => void;

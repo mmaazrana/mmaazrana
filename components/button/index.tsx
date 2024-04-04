@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 import Typography from "@/components/Typography";
+
 import {
   ButtonTypes,
   ColorTypes,
   TextTypes,
   WeightTypes,
-} from "@/app/constants";
+} from "@/helpers/enums";
 
 interface ButtonProps {
   type: ButtonTypes;

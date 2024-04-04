@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import Image from "next/image";
 import Typography from "@/components/Typography";
-import { TextTypes, WeightTypes } from "@/app/constants";
+
+import { TextTypes, WeightTypes } from "@/helpers/enums";
 
 interface ProjectCardProps {
   title: string;

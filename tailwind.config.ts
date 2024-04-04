@@ -21,6 +21,8 @@ const config: Config = {
       boxShadow: {
         services: "var(--service-shadow)",
         "services-hover": "var(--service-shadow-hover)",
+        testimonial: "var(--testimonial-shadow)",
+        "testimonial-hover": "var(--testimonial-shadow-hover)",
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out",
@@ -38,6 +40,7 @@ const config: Config = {
       colors: {
         primary: "var(--primary)",
         "primary-accent": "var(--primary-accent)",
+        "primary-accent-50": "var(--primary-accent-50)",
         error: "var(--error)",
         "primary-hover": "var(--primary-hover)",
         secondary: "var(--secondary)",

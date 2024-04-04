@@ -1,18 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import Typography from "@/components/Typography";
-import {
-  breakpoints,
-  TextTypes,
-  useDiagonalInvertMovement,
-  useDiagonalMovement,
-  useReverseDiagonalInvertMovement,
-  useReverseDiagonalMovement,
-  useSideInvertMovement,
-  useSideMovement,
-  useStraightInvertMovement,
-  useStraightMovement,
-  WeightTypes,
-} from "@/app/constants";
+import { breakpoints } from "@/helpers/constants";
 import {
   motion,
   useMotionTemplate,
@@ -20,7 +8,18 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { usePreferredColorScheme } from "@/helpers";
+import {
+  useDiagonalInvertMovement,
+  useDiagonalMovement,
+  usePreferredColorScheme,
+  useReverseDiagonalInvertMovement,
+  useReverseDiagonalMovement,
+  useSideInvertMovement,
+  useSideMovement,
+  useStraightInvertMovement,
+  useStraightMovement,
+} from "@/helpers";
+import { TextTypes, WeightTypes } from "@/helpers/enums";
 
 interface ServiceCardProps {
   title: string;

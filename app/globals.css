@@ -6,6 +6,7 @@
 :root {
     --primary: #22365e;
     --primary-accent: #ffffff;
+    --primary-accent-50: rgba(255, 255, 255, 0.25);
     --secondary: #B4C4E4;
     --error: #D93E51;
     --primary-hover: #335599;
@@ -14,12 +15,15 @@
     --service-shadow: 0px 1657px 464px 0px rgba(238, 243, 254, 0.02), 0px 1060px 424px 0px rgba(238, 243, 254, 0.15), 0px 596px 358px 0px rgba(238, 243, 254, 0.50), 0px 265px 265px 0px rgba(238, 243, 254, 0.85), 0px 66px 146px 0px rgba(238, 243, 254, 0.98);
     --service-shadow-hover: 0px 1657px 464px 0px rgba(212, 221, 242, 0.02), 0px 1060px 424px 0px rgba(212, 221, 242, 0.15), 0px 596px 358px 0px rgba(212, 221, 242, 0.50), 0px 265px 265px 0px rgba(212, 221, 242, 0.85), 0px 66px 146px 0px rgba(212, 221, 242, 0.98);
     --service-fill: #ffffff;
+    --testimonial-shadow: 0px 220px 62px 0px rgba(210, 221, 244, 0.01), 0px 141px 56px 0px rgba(210, 221, 244, 0.04), 0px 79px 48px 0px rgba(210, 221, 244, 0.14), 0px 35px 35px 0px rgba(210, 221, 244, 0.24), 0px 9px 19px 0px rgba(210, 221, 244, 0.27);
+    --testimonial-shadow-hover: 0px 191px 53px 0px rgba(169, 185, 219, 0.01), 0px 122px 49px 0px rgba(169, 185, 219, 0.07), 0px 69px 41px 0px rgba(169, 185, 219, 0.22), 0px 31px 31px 0px rgba(169, 185, 219, 0.37), 0px 8px 17px 0px rgba(169, 185, 219, 0.43);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --primary: #CEDDFA;
         --primary-accent: #000714;
+        --primary-accent-50: rgba(0, 7, 20, 0.25);
         --secondary: #4264A8;
         --error: #FF4A60;
         --primary-hover: #B4C9F3;
@@ -28,6 +32,8 @@
         --service-shadow: 0px 1657px 464px 0px rgba(14, 25, 48, 0.02), 0px 1060px 424px 0px rgba(14, 25, 48, 0.15), 0px 596px 358px 0px rgba(14, 25, 48, 0.50), 0px 265px 265px 0px rgba(14, 25, 48, 0.85), 0px 66px 146px 0px rgba(14, 25, 48, 0.98);
         --service-shadow-hover: 0px 1657px 464px 0px rgba(26, 40, 71, 0.02), 0px 1060px 424px 0px rgba(26, 40, 71, 0.15), 0px 596px 358px 0px rgba(26, 40, 71, 0.50), 0px 265px 265px 0px rgba(26, 40, 71, 0.85), 0px 66px 146px 0px rgba(26, 40, 71, 0.98);
         --service-fill: #ffffff;
+        --testimonial-shadow: 0px 220px 62px 0px rgba(15, 28, 51, 0.01), 0px 141px 56px 0px rgba(15, 28, 51, 0.06), 0px 79px 48px 0px rgba(15, 28, 51, 0.20), 0px 35px 35px 0px rgba(15, 28, 51, 0.35), 0px 9px 19px 0px rgba(15, 28, 51, 0.40);
+        --testimonial-shadow-hover: 0px 191px 53px 0px rgba(35, 57, 97, 0.01), 0px 122px 49px 0px rgba(35, 57, 97, 0.05), 0px 69px 41px 0px rgba(35, 57, 97, 0.16), 0px 31px 31px 0px rgba(35, 57, 97, 0.27), 0px 8px 17px 0px rgba(35, 57, 97, 0.31);
     }
 }
 
@@ -35,6 +41,7 @@
 body {
     color: var(--primary);
     background: var(--primary-accent);;
+    overflow-x: hidden;
 }
 
 
@@ -42,7 +49,6 @@ body * {
     transition-duration: 250ms !important;
     transition-timing-function: ease-in-out;
 }
-
 
 .nav-bg {
     background: var(--nav-gradient);
@@ -52,4 +58,35 @@ body * {
 
 .nav-bg > * {
     will-change: transform !important;
+}
+
+.embla * {
+    transition-property: none;
+}
+
+.embla {
+    max-width: 100vw;
+    margin: auto;
+    /*--slide-height: 300px;*/
+    --slide-spacing: 5rem;
+    --slide-size: 65%;
+}
+
+.embla__viewport {
+    overflow: visible;
+}
+
+.embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+    /*flex-direction: row;*/
+}
+
+.embla__slide {
+    display: flex;
+    /*flex: 0 0 var(--slide-size);*/
+    /*min-width: 0;*/
+    padding-left: var(--slide-spacing);
 }

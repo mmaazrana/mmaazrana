@@ -2,16 +2,11 @@
 import React, { FC, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Typography from "@/components/Typography";
-import { archivo } from "@/app/fonts";
+import { archivo } from "@/helpers/fonts";
 import Button from "@/components/button";
-import {
-  ButtonTypes,
-  HeroDescriptions,
-  HeroHeadings,
-  Sections,
-  TextTypes,
-} from "@/app/constants";
+import { HeroDescriptions, HeroHeadings } from "@/helpers/constants";
 import { useInView } from "react-intersection-observer";
+import { ButtonTypes, Sections, TextTypes } from "@/helpers/enums";
 
 interface HeroProps {
   setActiveSection: (section: Sections) => void;

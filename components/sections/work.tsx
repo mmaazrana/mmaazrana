@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import ProjectCard from "@/components/cards/projectCard";
-import { Sections } from "@/app/constants";
 import { useInView } from "react-intersection-observer";
+import { Sections } from "@/helpers/enums";
 
 interface WorkProps {
   setActiveSection: (section: Sections) => void;

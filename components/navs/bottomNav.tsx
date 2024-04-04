@@ -23,15 +23,16 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import SecondaryButton from "@/components/button/secondaryButton";
 import Typography from "@/components/Typography";
+import { bottomNavButtons } from "@/helpers/constants";
+import Button from "@/components/button";
 import {
-  bottomNavButtons,
+  ButtonTypes,
   ColorTypes,
   Sections,
   TextTypes,
   WeightTypes,
-} from "@/app/constants";
+} from "@/helpers/enums";
 
 interface BottomNavProps {
   inView: boolean;
@@ -394,26 +395,10 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           <motion.div
             className={`${isEndOfPage ? "w-fit" : "w-0"}  overflow-hidden duration-1000 grid-cols-2 grid gap-3`}
           >
-            <SecondaryButton
-              href={""}
-              text={"Linkedin"}
-              className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[125ms] !transition-all  w-full items-start !justify-start`}
-            />
-            <SecondaryButton
-              href={""}
-              text={"Behance"}
-              className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[175ms] !transition-all  w-full items-start !justify-start`}
-            />
-            <SecondaryButton
-              href={""}
-              text={"Github"}
-              className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[225ms] !transition-all  w-full items-start !justify-start`}
-            />
-            <SecondaryButton
-              href={""}
-              text={"Dribbble"}
-              className={`${isEndOfPage ? "opacity-100 scale-100" : "opacity-0 scale-0 translate-y-10"}  delay-[275ms] !transition-all  w-full items-start !justify-start`}
-            />
+            <Button text={"Linkedin"} type={ButtonTypes.secondary} />
+            <Button text={"Behance"} type={ButtonTypes.secondary} />
+            <Button text={"Github"} type={ButtonTypes.secondary} />
+            <Button text={"Dribbble"} type={ButtonTypes.secondary} />
           </motion.div>
           <Link
             className={`${isEndOfPage ? " w-full  px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 p-2" : "w-0 sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px] p-0"} overflow-hidden duration-1000 transition-[width]  sm:block text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl !flex justify-center items-center  sm:p-[9px] md:p-[10px] lg:p-[11px] xl:p-3 rounded-lg bg-primary text-primary-accent font-medium hover:bg-primary-hover `}

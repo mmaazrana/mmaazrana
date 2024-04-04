@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Button from "@/components/button";
-import { navButtons } from "@/app/constants";
+import { navButtons } from "@/helpers/constants";
 import Link from "next/link";
 
 interface NavProps {
@@ -19,7 +19,10 @@ const Nav: FC<NavProps> = ({ setInView }) => {
   }, [inView]);
 
   return (
-    <nav ref={ref} className="w-full">
+    <nav
+      ref={ref}
+      className="w-full xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12"
+    >
       <div className="justify-between items-center mx-auto md:items-center md:flex">
         <div>
           <div className=" flex items-center justify-between md:block  ">
