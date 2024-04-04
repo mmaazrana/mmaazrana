@@ -90,12 +90,12 @@ const ServiceCard: FC<ServiceCardProps> = ({
   // };
 
   const indexClasses = {
-    0: "justify-center sm:justify-end items-start sm:items-end text-right",
-    1: "justify-center sm:justify-end items-start md:items-center text-right sm:text-left md:text-center",
-    2: "justify-center md:justify-end items-start sm:items-end md:items-start text-right md:text-left",
-    3: "justify-center md:justify-start items-end sm:items-start md:items-end text-left md:text-right",
-    4: "justify-center sm:justify-start items-end md:items-center text-left sm:text-right md:text-center",
-    5: "justify-center sm:justify-start items-end sm:items-start text-left sm:text-right sm:text-left",
+    0: "justify-center sm:justify-end items-start sm:items-end text-left",
+    1: "justify-center sm:justify-end items-start md:items-center text-left sm:text-right md:text-center",
+    2: "justify-center md:justify-end items-start sm:items-end md:items-start text-left md:text-right",
+    3: "justify-center md:justify-start items-end sm:items-start md:items-end text-right md:text-right",
+    4: "justify-center sm:justify-start items-end md:items-center text-right sm:text-left md:text-center",
+    5: "justify-center sm:justify-start items-end sm:items-start text-right sm:text-left sm:text-right",
   };
 
   useEffect(() => {
