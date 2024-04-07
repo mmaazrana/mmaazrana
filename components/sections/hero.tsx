@@ -6,8 +6,10 @@ import { archivo } from "@/helpers/fonts";
 import Button from "@/components/button";
 import { HeroDescriptions, HeroHeadings } from "@/helpers/constants";
 import { useInView } from "react-intersection-observer";
-import { ButtonTypes, Sections, TextTypes } from "@/helpers/enums";
+import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import { AnimatePresence, motion } from "framer-motion";
+import Linkedin from "@/components/icons/linkedin";
+import Link from "next/link";
 
 interface HeroProps {
   setActiveSection: (section: Sections) => void;
@@ -65,7 +67,14 @@ const Hero: FC<HeroProps> = ({ setActiveSection }) => {
 
       <div className={"flex gap-2 items-center justify-start flex-wrap"}>
         <div className={"pt-3 pb-3 pr-3"}>
-          <Button type={ButtonTypes.primary} text={"Linkedin"} />
+          <Link href={""}>
+            <Button
+              leftIcon={<Linkedin />}
+              textWeight={WeightTypes.medium}
+              type={ButtonTypes.primary}
+              text={"Linkedin"}
+            />
+          </Link>
         </div>
         <Button type={ButtonTypes.tertiary} text={"awaismaaz@gmail.com"} />
       </div>

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { cloneElement, FC } from "react";
 import Typography from "@/components/Typography";
 
 import {
@@ -20,10 +20,11 @@ interface ButtonProps {
   width?: string;
   height?: string;
   borderWidth?: number;
-  rightIcon?: React.ReactNode;
-  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactElement;
+  leftIcon?: React.ReactElement;
   onClick?: () => void;
   className?: string;
+  textClassName?: string;
   disabled?: boolean;
 }
 
@@ -45,12 +46,13 @@ const Button: FC<ButtonProps> = ({
   width,
   onClick,
   className,
+  textClassName,
   disabled = false,
 }) => {
   const typeClasses: { [index: string]: any } = {
-    primary: `flex justify-center py-2 px-10 xl:py-3 xl:px-6 md:px-4 rounded-lg bg-primary hover:bg-primary-hover ${disabled && ""}`,
-    secondary: `flex justify-center py-2 px-10 xl:py-3 xl:px-6 md:px-4 rounded-lg hover:bg-secondary-hover ${disabled && ""}`,
-    tertiary: `flex justify-center rounded-lg hover:text-primary-hover ${disabled && ""}`,
+    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-lg bg-primary hover:bg-primary-hover ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
+    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-lg hover:bg-secondary-hover ${leftIcon ? "justify-start px-3 xl:px-4" : rightIcon ? "justify-end px-3 xl:px-4" : "justify-center px-10 md:px-4 xl:px-6"} ${disabled && ""}`,
+    tertiary: `flex rounded-lg gap-4 hover:text-primary-hover gap-2 items-center ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
     error: `bg-error ${disabled && ""}`,
   };
 
@@ -76,11 +78,22 @@ const Button: FC<ButtonProps> = ({
     .join(" ");
   return (
     <div className={dynamicClasses} onClick={() => onClick && onClick()}>
-      {leftIcon && leftIcon}
-      <Typography type={textSize} weight={textWeight} color={textColor}>
+      {leftIcon && (
+        <div>
+          {cloneElement(leftIcon, {
+            className: `${type === "primary" ? "fill-primary-accent w-6 h-6" : "fill-primary w-[18px] h-[18px]"} ${leftIcon.props.className}`,
+          })}
+        </div>
+      )}
+      <Typography
+        type={textSize}
+        weight={textWeight}
+        color={textColor}
+        className={textClassName}
+      >
         {text}
       </Typography>
-      {rightIcon && rightIcon}
+      {rightIcon && <div>{rightIcon}</div>}
     </div>
   );
 };
