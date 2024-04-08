@@ -10,11 +10,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
 
-interface HeroProps {
-  setActiveSection: (section: Sections) => void;
-}
+interface HeroProps {}
 
-const Hero: FC<HeroProps> = ({ setActiveSection }) => {
+const Hero: FC<HeroProps> = ({}) => {
   // const durations: number[] = [5100, 4850, 5550, 4350, 4450];
   const durations: number[] = [5110, 4900, 5530, 4300, 4300];
 

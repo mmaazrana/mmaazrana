@@ -201,6 +201,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           >
             {footerButtons.map((section, index) => (
               <div
+                key={index}
                 className={`${isEndOfPage ? "flex" : "hidden"} grow flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-1 md:gap-2 xl:gap-3`}
               >
                 <Typography
