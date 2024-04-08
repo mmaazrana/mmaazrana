@@ -1,4 +1,5 @@
 import { ButtonTypes, Sections } from "@/helpers/enums";
+import React from "react";
 
 export interface NavButtonT {
   text: string;
@@ -10,6 +11,17 @@ export interface BottomNavButtonT {
   text: string;
   href: string;
   section: Sections;
+}
+
+export interface FooterButtonT {
+  text: string;
+  href: string;
+}
+
+export interface FooterSocialT {
+  icon: React.ReactElement;
+  text: string;
+  href: string;
 }
 
 export interface ServiceT {

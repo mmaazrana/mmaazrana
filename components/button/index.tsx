@@ -81,7 +81,7 @@ const Button: FC<ButtonProps> = ({
       {leftIcon && (
         <div>
           {cloneElement(leftIcon, {
-            className: `${type === "primary" ? "fill-primary-accent w-6 h-6" : "fill-primary w-[18px] h-[18px]"} ${leftIcon.props.className}`,
+            className: `${type === "primary" ? "fill-primary-accent w-[14px] sm:w-[16px] md:w-[18px] lg:w-[20px] xl:w-6 h-[14px] sm:h-[16px] md:h-[18px] lg:h-[20px] xl:h-6" : "fill-primary  w-[14px] md:w-[16px] xl:w-[18px] h-[14px] md:h-[16px] xl:h-[18px]"} ${leftIcon.props.className}`,
           })}
         </div>
       )}

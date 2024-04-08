@@ -1,7 +1,7 @@
 "use client";
 import Nav from "@/components/navs/nav";
 import BottomNav from "@/components/navs/bottomNav";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Head from "next/head";
 import Typography from "@/components/Typography";
@@ -15,6 +15,51 @@ import Testimonials from "@/components/sections/testimonials";
 export default function Home() {
   const [inView, setInView] = useState(true);
   const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
+  const heroRef = useRef(null);
+  const workRef = useRef(null);
+  const servicesRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const sectionRefs = [
+    { section: Sections.hero, ref: heroRef },
+    { section: Sections.work, ref: workRef },
+    { section: Sections.services, ref: servicesRef },
+    { section: Sections.testimonials, ref: testimonialsRef },
+    { section: Sections.aboutMe, ref: aboutRef },
+  ];
+  const getDimensions = (ele: any) => {
+    const { height } = ele.getBoundingClientRect();
+    const offsetTop = ele.offsetTop;
+    const offsetBottom = offsetTop + height;
+    return {
+      height,
+      offsetTop,
+      offsetBottom,
+    };
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const { height: headerHeight } = getDimensions(heroRef.current);
+      const scrollPosition = window.scrollY + headerHeight;
+      const selected = sectionRefs.find(({ section, ref }) => {
+        const ele = ref.current;
+        if (ele) {
+          const { offsetBottom, offsetTop } = getDimensions(ele);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+      if (selected && selected.section !== activeSection) {
+        setActiveSection(selected.section);
+      } else if (!selected && activeSection) {
+        setActiveSection(Sections.hero);
+      }
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
   return (
     <div className={"overflow-x-hidden"}>
       <Head>
@@ -78,13 +123,17 @@ export default function Home() {
         <Nav setInView={setInView} />
         <BottomNav inView={inView} activeSection={activeSection} />
         <section
+          id={Sections.hero}
+          ref={heroRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
         >
-          <Hero setActiveSection={setActiveSection} />
+          <Hero />
         </section>
         <section
+          id={Sections.work}
+          ref={workRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -92,9 +141,11 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             My Work
           </Typography>
-          <Work setActiveSection={setActiveSection} />
+          <Work />
         </section>
         <section
+          id={Sections.services}
+          ref={servicesRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -102,18 +153,11 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             Services
           </Typography>
-          <Services setActiveSection={setActiveSection} />
+          <Services />
         </section>
         <section
-          className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
-          }
-        >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            Processes
-          </Typography>
-        </section>
-        <section
+          id={Sections.testimonials}
+          ref={testimonialsRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -122,6 +166,17 @@ export default function Home() {
             Testimonials
           </Typography>
           <Testimonials />
+        </section>
+        <section
+          id={Sections.aboutMe}
+          ref={aboutRef}
+          className={
+            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+          }
+        >
+          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+            About Me
+          </Typography>
         </section>
         <section
           className={

@@ -45,6 +45,6 @@ export const enum Sections {
   hero = "hero",
   work = "work",
   services = "services",
-  processes = "processes",
+  aboutMe = "about",
   testimonials = "testimonials",
 }

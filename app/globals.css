@@ -39,6 +39,9 @@
     }
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
 
 body {
     color: var(--primary);

@@ -26,7 +26,7 @@ const Nav: FC<NavProps> = ({ setInView }) => {
       <div className="justify-between items-center mx-auto md:items-center md:flex">
         <div>
           <div className=" flex items-center justify-between md:block  ">
-            <a href="#">
+            <Link href="/">
               <svg
                 className="h-6 sm:h-7 md:h-8 lg:h-10 "
                 height="40"
@@ -68,7 +68,7 @@ const Nav: FC<NavProps> = ({ setInView }) => {
               </svg>
 
               {/*<Image priority height={40} src={logo} alt={"M MAAZ RANA"}/>*/}
-            </a>
+            </Link>
 
             <div className=" md:hidden ">
               <button

@@ -1,6 +1,7 @@
 import { ButtonTypes, Sections } from "@/helpers/enums";
 import {
   BottomNavButtonT,
+  FooterButtonT,
   NavButtonT,
   ServiceT,
   TestimonialT,
@@ -28,18 +29,66 @@ export const HeroDescriptions: string[] = [
 ];
 
 export const navButtons: NavButtonT[] = [
-  { text: "Work", href: "", type: ButtonTypes.secondary },
-  { text: "Services", href: "", type: ButtonTypes.secondary },
-  { text: "Process", href: "", type: ButtonTypes.secondary },
-  { text: "Testimonials", href: "", type: ButtonTypes.secondary },
-  { text: "Get in Touch", href: "", type: ButtonTypes.primary },
+  { text: "Work", href: `/#${Sections.work}`, type: ButtonTypes.secondary },
+  {
+    text: "Services",
+    href: `/#${Sections.services}`,
+    type: ButtonTypes.secondary,
+  },
+  {
+    text: "Testimonials",
+    href: `/#${Sections.testimonials}`,
+    type: ButtonTypes.secondary,
+  },
+  { text: "About", href: `/#${Sections.aboutMe}`, type: ButtonTypes.secondary },
+  {
+    text: "Get in Touch",
+    href: "mailto:awaismaaz@gmail.com",
+    type: ButtonTypes.primary,
+  },
 ];
 
 export const bottomNavButtons: BottomNavButtonT[] = [
-  { text: "Work", href: "", section: Sections.work },
-  { text: "Services", href: "", section: Sections.services },
-  { text: "Process", href: "", section: Sections.processes },
-  { text: "Testimonials", href: "", section: Sections.testimonials },
+  { text: "Work", href: `/#${Sections.work}`, section: Sections.work },
+  {
+    text: "Services",
+    href: `/#${Sections.services}`,
+    section: Sections.services,
+  },
+  {
+    text: "Testimonials",
+    href: `/#${Sections.testimonials}`,
+    section: Sections.testimonials,
+  },
+  {
+    text: "About Me",
+    href: `/#${Sections.aboutMe}`,
+    section: Sections.aboutMe,
+  },
+];
+
+export const footerButtons: FooterButtonT[][] = [
+  [
+    { text: "Overview", href: "" },
+    { text: "Work", href: `/#${Sections.work}` },
+    { text: "Services", href: `/#${Sections.services}` },
+    { text: "Testimonials", href: `/#${Sections.testimonials}` },
+    { text: "About Me", href: `/#${Sections.aboutMe}` },
+  ],
+  [
+    { text: "More Work", href: "" },
+    { text: "Case Studies", href: "" },
+    { text: "Web Apps", href: "" },
+    { text: "Mobile Apps", href: "" },
+    { text: "Art Works", href: "" },
+  ],
+  [
+    { text: "Top Projects", href: "" },
+    { text: "DeepReel AI Videos", href: "" },
+    { text: "Athelton+", href: "" },
+    { text: "Markdown Editor", href: "" },
+    { text: "Jawline Fitness", href: "" },
+  ],
 ];
 
 export const services: ServiceT[] = [
