@@ -1,8 +1,8 @@
 "use client";
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { motion, useIsPresent } from "framer-motion";
+import { AnimatePresence, motion, stagger, useAnimate } from "framer-motion";
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
@@ -45,6 +45,31 @@ interface BottomNavProps {
 
 const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
   const [isEndOfPage, setIsEndOfPage] = useState(false);
+  const [scope, animate] = useAnimate();
+  const staggerList = stagger(0.1, { startDelay: 0 });
+  const staggerListTwo = stagger(0.05, { startDelay: 0.25 });
+  useEffect(() => {
+    animate(
+      "#sections",
+      isEndOfPage
+        ? { opacity: 0, scale: 0.3, transform: "translateY(50px)" }
+        : { opacity: 1, scale: 1, transform: "translateY(0px)" },
+      {
+        duration: isEndOfPage ? 0.25 : 0.15,
+        delay: staggerList,
+      },
+    );
+    animate(
+      "#pages",
+      isEndOfPage
+        ? { opacity: 1, scale: 1, transform: "translateX(0px)" }
+        : { opacity: 0, scale: 0.3, transform: "translateX(-50px)" },
+      {
+        duration: isEndOfPage ? 0.25 : 0,
+        delay: isEndOfPage ? staggerListTwo : 0,
+      },
+    );
+  }, [isEndOfPage, animate, staggerList]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,41 +95,6 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
     };
   }, []);
 
-  const [isColumn, setIsColumn] = React.useState(false);
-  const containerRef = useRef(null);
-
-  // useEffect(() => {
-  // Optionally calculate and set dynamic styles or classes here
-  // based on isColumn state or container dimensions
-  // }, [isColumn]); // Dependency array ensures effect runs when isColumn changes
-
-  const toggleLayout = () => {
-    setIsColumn(!isColumn);
-  };
-
-  const container = {
-    hidden: { height: "0px" },
-
-    visible: {
-      height: "100px",
-
-      transition: {
-        delayChildren: 0,
-        staggerChildren: 0.01,
-      },
-    },
-    exit: { scale: 0, maxHeight: "0px", maxWidth: "0px" },
-  };
-
-  const item = {
-    hidden: { scale: 0, y: 20 },
-    visible: {
-      scale: 1,
-      y: 0,
-    },
-    exit: { scale: 0, maxHeight: "0px", maxWidth: "0px" },
-  };
-
   const iconComponents = [
     SiFigma,
     SiAdobeillustrator,
@@ -125,26 +115,31 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
     SiJavascript,
     SiTypescript,
   ];
-
-  const isPresent = useIsPresent();
-
   return (
     <div
+      ref={scope}
       className={` ${inView ? "translate-y-32" : "translate-y-0 "} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full`}
     >
-      <div
-        className={`absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl ${isEndOfPage ? "h-[324px]" : "h-[68px]"} -z-10`}
-      ></div>
       <motion.div
-        className={`${isEndOfPage ? "h-[575px] sm:h-[388px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-24 justify-between items-start sm:items-end z-30`}
+        initial={{ height: "68px" }}
+        animate={{
+          height: isEndOfPage ? "324px" : "68px",
+        }}
+        transition={{
+          duration: 0.25,
+        }}
+        className={`absolute transition-colors bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10`}
+      ></motion.div>
+      <motion.div
+        className={`${isEndOfPage ? "h-[575px] sm:h-[358px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-24 justify-between items-start sm:items-end z-30`}
       >
         <div
           className={
-            "flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-10 xl:gap-24 w-full"
+            "flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-10 xl:gap-24 w-full h-full"
           }
         >
-          <motion.div
-            className={`${isEndOfPage ? "min-h-fit lg:min-h-[178px]" : "mt-auto sm:min-h-fit"} flex flex-col items-start justify-start w-full lg:w-fit lg:max-w-fit overflow-hidden h-fit gap-1`}
+          <div
+            className={`flex flex-col items-start justify-start w-full lg:w-fit lg:max-w-fit overflow-hidden min-h-fit h-fit gap-1`}
           >
             <Link href={"/"}>
               <svg
@@ -188,127 +183,242 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
                 </defs>
               </svg>
             </Link>
-            <Typography
-              type={TextTypes.lg}
-              className={`${isEndOfPage ? "inline-block" : "hidden"} opacity-50 shrink`}
-            >
-              Product Designer - Web Developer - Mobile App Developer - Animator
-              - 3D Artist
-            </Typography>
-          </motion.div>
-          <div
-            className={"w-full flex flex-row flex-auto gap-8 justify-between"}
-          >
-            {footerButtons.map((section, index) => (
-              <div
-                key={index}
-                className={`${isEndOfPage ? "flex" : "hidden"} grow flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-1 md:gap-2 xl:gap-3`}
+            <AnimatePresence mode={"wait"}>
+              <motion.div
+                initial={{ opacity: 0, transform: "translateY(100px)" }}
+                animate={{
+                  opacity: isEndOfPage ? 1 : 0,
+                  transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+                }}
+                transition={{
+                  duration: 0.25,
+                  delay: isEndOfPage ? 0.25 : 0,
+                }}
+                className={"transition-none flex w-full min-w-full"}
               >
                 <Typography
-                  type={TextTypes["2xl"]}
-                  weight={WeightTypes.bold}
-                  className={"mb-4 whitespace-nowrap"}
+                  type={TextTypes.lg}
+                  className={`${isEndOfPage ? "inline-block" : "hidden"} opacity-50 shrink`}
                 >
-                  {section[0].text}
+                  Product Designer - Web Developer - Mobile App Developer -
+                  Animator - 3D Artist
                 </Typography>
-                {section.slice(1, section.length).map((button, index) => (
-                  <Link href={button.href} key={index}>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          <AnimatePresence mode={"wait"}>
+            <motion.div
+              className={` ${isEndOfPage ? "flex" : "hidden"} w-full  flex-row flex-auto gap-8 justify-between`}
+            >
+              {footerButtons.map((section, index) => (
+                <motion.div
+                  initial={{ opacity: 0, transform: "translateY(150px)" }}
+                  animate={{
+                    opacity: isEndOfPage ? 1 : 0,
+                    transform: `translateY(${isEndOfPage ? 0 : 150}px)`,
+                  }}
+                  transition={{
+                    duration: isEndOfPage ? 0.25 : 0,
+                    delay: isEndOfPage ? 0.1 : 0,
+                  }}
+                  key={index}
+                  className={`transition-colors grow flex flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-1 md:gap-2 xl:gap-3`}
+                >
+                  <Typography
+                    type={TextTypes["2xl"]}
+                    weight={WeightTypes.bold}
+                    className={"mb-4 whitespace-nowrap"}
+                  >
+                    {section[0].text}
+                  </Typography>
+                  {section.slice(1, section.length).map((button, index) => (
+                    <motion.div
+                      id={"pages"}
+                      key={index}
+                      className={"transition-colors"}
+                    >
+                      <Link href={button.href}>
+                        <Typography
+                          type={TextTypes.xl}
+                          className={"opacity-50 whitespace-nowrap"}
+                        >
+                          {button.text}
+                        </Typography>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+          <AnimatePresence mode={"wait"}>
+            <div
+              className={`transition-colors my-8 px-8 min-w-[80vw] w-full max-w-[450px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
+            >
+              {bottomNavButtons.map((button, index) => (
+                <motion.div
+                  id={"sections"}
+                  key={index}
+                  className={"transition-colors"}
+                >
+                  <Link href={button.href}>
                     <Typography
                       type={TextTypes.xl}
-                      className={"opacity-50 whitespace-nowrap"}
+                      color={ColorTypes.primary}
+                      className={`${button.section === activeSection ? "opacity-100" : "opacity-30"}`}
                     >
                       {button.text}
                     </Typography>
                   </Link>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div
-            className={`!scroll-smooth my-8 px-8 min-w-full sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
-          >
-            {bottomNavButtons.map((button, index) => (
-              <Link
-                key={index}
-                className={`${isEndOfPage && "opacity-0"}`}
-                href={button.href}
-              >
-                <Typography
-                  type={TextTypes.xl}
-                  color={ColorTypes.primary}
-                  className={`${button.section === activeSection ? "opacity-100" : "opacity-30"}`}
-                >
-                  {button.text}
-                </Typography>
-              </Link>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          </AnimatePresence>
         </div>
         <motion.div
-          className={`${isEndOfPage ? "w-full sm:w-fit" : "w-[40px] sm:w-[42px] md:w-[44px] lg:w-[46px] xl:w-[48px]"} min-w-fit max-w-full sm:max-w-fit grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
+          className={`${isEndOfPage ? "w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[271px]" : "max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]"} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
         >
           <div
             className={
               "flex flex-row justify-between items-center gap-6 w-full"
             }
           >
-            <Typography
-              type={TextTypes["3xl"]}
-              weight={WeightTypes.bold}
-              className={`w-full sm:max-w-[202px] lg:max-w-[225px] xl:max-w-[271px] ${isEndOfPage ? "inline-block" : "hidden"}`}
+            <AnimatePresence mode={"wait"}>
+              <motion.div
+                initial={{ opacity: 0, transform: "translateY(100px)" }}
+                animate={{
+                  opacity: isEndOfPage ? 1 : 0,
+                  transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+                }}
+                transition={{
+                  duration: 0.25,
+                  delay: isEndOfPage ? 0.35 : 0.25,
+                }}
+                className={"transition-none flex sm:w-full sm:min-w-full"}
+              >
+                <Typography
+                  type={TextTypes["3xl"]}
+                  weight={WeightTypes.bold}
+                  className={`w-full overflow-hidden ${isEndOfPage ? "inline-block" : "hidden"}`}
+                >
+                  Ready to create something awesome?
+                </Typography>
+              </motion.div>
+            </AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, transform: "translateX(50px)" }}
+              animate={{
+                opacity: isEndOfPage ? 1 : 0,
+                transform: `translateX(${isEndOfPage ? 0 : 50}px)`,
+              }}
+              transition={{
+                duration: 0.25,
+                delay: isEndOfPage ? 0.35 : 0.25,
+              }}
+              className={"transition-none"}
             >
-              Ready to create something awesome?
-            </Typography>
-            <Link
-              href={""}
-              className={`${isEndOfPage ? "block sm:hidden" : "hidden"}`}
-            >
-              <Button
-                leftIcon={
-                  <Mail className={"!fill-none stroke-primary-accent"} />
-                }
-                type={ButtonTypes.primary}
-                textWeight={WeightTypes.semiBold}
-                className={`w-fit !justify-center !items-center !px-4 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3 !overflow-hidden !whitespace-nowrap`}
-                text={"Get in Touch"}
-              />
-            </Link>
+              <Link
+                href={""}
+                className={`${isEndOfPage ? "block sm:hidden" : "hidden"}`}
+              >
+                <Button
+                  leftIcon={
+                    <Mail className={"!fill-none stroke-primary-accent"} />
+                  }
+                  type={ButtonTypes.primary}
+                  textWeight={WeightTypes.semiBold}
+                  className={`w-fit !justify-center !items-center !px-4 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3 !overflow-hidden !whitespace-nowrap`}
+                  text={"Get in Touch"}
+                />
+              </Link>
+            </motion.div>
           </div>
-          <motion.div
-            className={`${isEndOfPage ? "w-full sm:w-fit" : "w-0"}  overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
+          <div
+            className={`${isEndOfPage ? "w-full sm:w-fit" : "w-0"} overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
           >
-            <Link
-              href={"https://www.linkedin.com/in/mmaazrana/"}
-              target={"_blank"}
+            <motion.div
+              animate={{
+                opacity: isEndOfPage ? 1 : 0,
+                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+              }}
+              transition={{
+                duration: isEndOfPage ? 0.25 : 0.15,
+                delay: isEndOfPage ? 0.25 : 0,
+              }}
+              className={"transition-none"}
             >
-              <Button
-                leftIcon={<Linkedin />}
-                text={"Linkedin"}
-                type={ButtonTypes.secondary}
-              />
-            </Link>
-            <Link href={"https://www.behance.net/maazrana3"} target={"_blank"}>
-              <Button
-                leftIcon={<Behance />}
-                text={"Behance"}
-                type={ButtonTypes.secondary}
-              />
-            </Link>
-            <Link href={"https://github.com/mmaazrana"} target={"_blank"}>
-              <Button
-                leftIcon={<Github />}
-                text={"Github"}
-                type={ButtonTypes.secondary}
-              />
-            </Link>
-            <Link href={"https://dribbble.com/mmaazrana"} target={"_blank"}>
-              <Button
-                leftIcon={<Dribbble />}
-                text={"Dribbble"}
-                type={ButtonTypes.secondary}
-              />
-            </Link>
-          </motion.div>
+              <Link
+                href={"https://www.linkedin.com/in/mmaazrana/"}
+                target={"_blank"}
+              >
+                <Button
+                  leftIcon={<Linkedin />}
+                  text={"Linkedin"}
+                  type={ButtonTypes.secondary}
+                />
+              </Link>
+            </motion.div>
+            <motion.div
+              animate={{
+                opacity: isEndOfPage ? 1 : 0,
+                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+              }}
+              transition={{
+                duration: isEndOfPage ? 0.25 : 0.15,
+                delay: isEndOfPage ? 0.3 : 0,
+              }}
+              className={"transition-none"}
+            >
+              <Link
+                href={"https://www.behance.net/maazrana3"}
+                target={"_blank"}
+              >
+                <Button
+                  leftIcon={<Behance />}
+                  text={"Behance"}
+                  type={ButtonTypes.secondary}
+                />
+              </Link>
+            </motion.div>
+            <motion.div
+              animate={{
+                opacity: isEndOfPage ? 1 : 0,
+                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+              }}
+              transition={{
+                duration: isEndOfPage ? 0.25 : 0.15,
+                delay: isEndOfPage ? 0.35 : 0,
+              }}
+              className={"transition-none"}
+            >
+              <Link href={"https://github.com/mmaazrana"} target={"_blank"}>
+                <Button
+                  leftIcon={<Github />}
+                  text={"Github"}
+                  type={ButtonTypes.secondary}
+                />
+              </Link>
+            </motion.div>
+            <motion.div
+              animate={{
+                opacity: isEndOfPage ? 1 : 0,
+                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+              }}
+              transition={{
+                duration: isEndOfPage ? 0.25 : 0.15,
+                delay: isEndOfPage ? 0.4 : 0,
+              }}
+              className={"transition-none"}
+            >
+              <Link href={"https://dribbble.com/mmaazrana"} target={"_blank"}>
+                <Button
+                  leftIcon={<Dribbble />}
+                  text={"Dribbble"}
+                  type={ButtonTypes.secondary}
+                />
+              </Link>
+            </motion.div>
+          </div>
           <Link
             href={"mailto:awaismaaz@gmail.com"}
             className={"w-full hidden sm:block"}
@@ -317,9 +427,9 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
               leftIcon={<Mail className={"!fill-none stroke-primary-accent"} />}
               type={ButtonTypes.primary}
               textWeight={WeightTypes.semiBold}
-              textClassName={`${isEndOfPage ? "!opacity-100 inline-block" : "!opacity-0 hidden"} !delay-1000 !transition-all !duration-300`}
-              className={`${isEndOfPage ? "!w-full !px-2 sm:!px-3 md:!px-4 lg:!px-5 xl:!px-6 !p-2" : ""} !justify-center !items-center sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3 !overflow-hidden !whitespace-nowrap`}
-              text={"Get in Touch"}
+              textClassName={`${isEndOfPage ? "opacity-100" : "opacity-0"}`}
+              className={`justify-start !items-center !px-[8px] md:!px-[11px] lg:!px-[14px] xl:!px-[15px] !p-2 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3 !overflow-hidden !whitespace-nowrap`}
+              text={"awaismaaz@gmail.com"}
             />
           </Link>
         </motion.div>
