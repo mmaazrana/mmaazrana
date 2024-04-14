@@ -104,7 +104,7 @@ const About = () => {
             </Typography>
           </AboutCard>
           <span
-            className={`about:hidden absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[0]}
           </span>
@@ -153,7 +153,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[1]}
           </span>
@@ -218,7 +218,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[2]}
           </span>
@@ -248,7 +248,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[4]}
           </span>
@@ -282,7 +282,7 @@ const About = () => {
           />
         </AboutCard>
         <span
-          className={`about:hidden absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -342,7 +342,7 @@ const About = () => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -482,7 +482,7 @@ const About = () => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[4]}
         </span>
