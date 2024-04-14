@@ -152,7 +152,7 @@ export const aboutSections = [
   "Maaz Rana",
   "Education",
   "Past Clients",
-  "Let's Connect",
+  "Socials",
   "Tech Stack",
   "Work Experience",
 ];

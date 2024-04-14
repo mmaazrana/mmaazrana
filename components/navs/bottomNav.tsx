@@ -121,17 +121,10 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
       className={` ${inView ? "translate-y-32" : "translate-y-0 "} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full`}
     >
       <motion.div
-        initial={{ height: "68px" }}
-        animate={{
-          height: isEndOfPage ? "324px" : "68px",
-        }}
-        transition={{
-          duration: 0.25,
-        }}
-        className={`absolute transition-colors bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10`}
+        className={`${isEndOfPage ? "h-[541px] about:h-[426px] sm:h-[366px] lg:h-[324px]" : "h-[68px]"} absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10`}
       ></motion.div>
       <motion.div
-        className={`${isEndOfPage ? "h-[575px] sm:h-[358px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-24 justify-between items-start sm:items-end z-30`}
+        className={`${isEndOfPage ? "h-[575px] about:h-[470px] sm:h-[400px] lg:h-[358px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-24 justify-between items-start sm:items-end z-30`}
       >
         <div
           className={

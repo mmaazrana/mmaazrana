@@ -37,6 +37,7 @@ const config: Config = {
       },
       screens: {
         xs: "365px",
+        about: "445px",
       },
       width: {
         "8xl": "10rem",

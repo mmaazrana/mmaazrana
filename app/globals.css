@@ -130,10 +130,19 @@ body * {
     background-image: var(--noise-texture) !important;
 }
 
+
 /* Set variable value for small screens */
 @media (max-width: 640px) {
     :root {
         --slide-spacing: 2.5rem;
+    }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-0.5px 0 0 var(--secondary-hover)) drop-shadow(0.5px 0 0 var(--secondary-hover)) drop-shadow(0 -0.5px 0 var(--secondary-hover)) drop-shadow(0 0.5px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-0.5px 0 0 var(--secondary)) drop-shadow(0.5px 0 0 var(--secondary)) drop-shadow(0 -0.5px 0 var(--secondary)) drop-shadow(0 0.5px 0 var(--secondary));
     }
 }
 
@@ -142,12 +151,28 @@ body * {
     :root {
         --slide-spacing: 3rem;
     }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-0.75px 0 0 var(--secondary-hover)) drop-shadow(0.75px 0 0 var(--secondary-hover)) drop-shadow(0 -0.75px 0 var(--secondary-hover)) drop-shadow(0 0.75px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-0.75px 0 0 var(--secondary)) drop-shadow(0.75px 0 0 var(--secondary)) drop-shadow(0 -0.75px 0 var(--secondary)) drop-shadow(0 0.75px 0 var(--secondary));
+    }
 }
 
 /* Set variable value for medium screens */
 @media (min-width: 768px) {
     :root {
         --slide-spacing: 3.5rem;
+    }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-1px 0 0 var(--secondary-hover)) drop-shadow(1px 0 0 var(--secondary-hover)) drop-shadow(0 -1px 0 var(--secondary-hover)) drop-shadow(0 1px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-1px 0 0 var(--secondary)) drop-shadow(1px 0 0 var(--secondary)) drop-shadow(0 -1px 0 var(--secondary)) drop-shadow(0 1px 0 var(--secondary));
     }
 }
 
@@ -156,6 +181,14 @@ body * {
     :root {
         --slide-spacing: 4rem;
     }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-1.25px 0 0 var(--secondary-hover)) drop-shadow(1.25px 0 0 var(--secondary-hover)) drop-shadow(0 -1.25px 0 var(--secondary-hover)) drop-shadow(0 1.25px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-1.25px 0 0 var(--secondary)) drop-shadow(1.25px 0 0 var(--secondary)) drop-shadow(0 -1.25px 0 var(--secondary)) drop-shadow(0 1.25px 0 var(--secondary));
+    }
 }
 
 /* Set variable value for extra large screens */
@@ -163,11 +196,27 @@ body * {
     :root {
         --slide-spacing: 4.5rem;
     }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-1.5px 0 0 var(--secondary-hover)) drop-shadow(1.5px 0 0 var(--secondary-hover)) drop-shadow(0 -1.5px 0 var(--secondary-hover)) drop-shadow(0 1.5px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-1.5px 0 0 var(--secondary)) drop-shadow(1.5px 0 0 var(--secondary)) drop-shadow(0 -1.5px 0 var(--secondary)) drop-shadow(0 1.5px 0 var(--secondary));
+    }
 }
 
 /* Set variable value for extra extra large screens */
 @media (min-width: 1536px) {
     :root {
         --slide-spacing: 5rem;
+    }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-1.75px 0 0 var(--secondary-hover)) drop-shadow(1.75px 0 0 var(--secondary-hover)) drop-shadow(0 -1.75px 0 var(--secondary-hover)) drop-shadow(0 1.75px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-1.75px 0 0 var(--secondary)) drop-shadow(1.75px 0 0 var(--secondary)) drop-shadow(0 -1.75px 0 var(--secondary)) drop-shadow(0 1.75px 0 var(--secondary));
     }
 }
