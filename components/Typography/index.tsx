@@ -39,6 +39,17 @@ const Typography: FC<TypographyProps> = ({
     xs: "text-xs",
   };
 
+  // const colorClasses = {
+  //   primary: "text-primary",
+  //   "primary-accent": "text-primary-accent",
+  //   "primary-hover": "text-primary-hover",
+  //   secondary: "text-secondary",
+  //   "secondary-hover": "text-secondary-hover",
+  //   transparent: "text-transparent",
+  //   error: "text-error",
+  //   golden: "text-golden",
+  // };
+
   const weightClasses = {
     black: `font-black ${archivo.className}`,
     "extra-bold": `font-extrabold ${archivo.className}`,

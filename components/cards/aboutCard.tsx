@@ -1,7 +1,6 @@
 import React, { FC, ReactElement } from "react";
-import Image from "next/image";
-import texture from "../../public/svgs/texture.svg";
 import { motion } from "framer-motion";
+import { usePreferredColorScheme } from "@/helpers";
 
 interface AboutCardProps {
   children: ReactElement;
@@ -16,11 +15,12 @@ const AboutCard: FC<AboutCardProps> = ({
   onMouseEnter,
   onMouseLeave,
 }) => {
+  const preferredScheme = usePreferredColorScheme();
   return (
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`group bg-secondary-hover-10 hover:bg-primary-invert-25 overflow-hidden relative shadow-frosted backdrop-blur-sm hover:backdrop-blur-[7.5px] rounded-xl sm:rounded-2xl md:rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${className}`}
+      className={`group texture bg-secondary-hover-10 hover:bg-primary-invert-25 overflow-hidden relative shadow-frosted backdrop-blur-sm hover:backdrop-blur-[7.5px] rounded-xl sm:rounded-2xl md:rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${className}`}
     >
       <svg
         width="100"
@@ -60,12 +60,12 @@ const AboutCard: FC<AboutCardProps> = ({
           className={`w-full h-full min-w-full min-h-full !transition-all rounded-xl sm:rounded-2xl md:rounded-3xl opacity-25 group-hover:opacity-50`}
         />
       </svg>
-      <Image
-        src={texture}
-        alt={""}
-        fill
-        className={"w-full h-full object-cover opacity-5"}
-      />
+      {/*<Image*/}
+      {/*  src={preferredScheme === "light" ? textureLight : texture}*/}
+      {/*  alt={""}*/}
+      {/*  fill*/}
+      {/*  className={`w-full h-full bg-repeat ${preferredScheme === "light" ? "opacity-100" : "opacity-5"}`}*/}
+      {/*/>*/}
       {children}
     </div>
   );
