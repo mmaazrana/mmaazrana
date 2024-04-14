@@ -39,16 +39,6 @@ const Typography: FC<TypographyProps> = ({
     xs: "text-xs",
   };
 
-  const colorClasses = {
-    primary: "text-primary",
-    "primary-accent": "text-primary-accent",
-    "primary-hover": "text-primary-hover",
-    secondary: "text-secondary",
-    "secondary-hover": "text-secondary-hover",
-    transparent: "text-transparent",
-    error: "text-error",
-  };
-
   const weightClasses = {
     black: `font-black ${archivo.className}`,
     "extra-bold": `font-extrabold ${archivo.className}`,
@@ -62,10 +52,10 @@ const Typography: FC<TypographyProps> = ({
 
   const dynamicClasses = [
     sizeClasses[type],
-    colorClasses[color],
     weightClasses[weight],
     underline ? "underline" : "",
     onClick ? "cursor-pointer" : "",
+    "text-" + color,
     "z-[1]",
     className,
   ]

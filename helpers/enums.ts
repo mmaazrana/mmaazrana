@@ -38,6 +38,7 @@ export const enum ColorTypes {
   secondary = "secondary",
   secondaryHover = "secondary-hover",
   error = "error",
+  golden = "golden",
   transparent = "transparent",
 }
 
