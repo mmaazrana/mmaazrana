@@ -11,6 +11,7 @@ import Hero from "@/components/sections/hero";
 import { isBrowser } from "react-device-detect";
 import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
+import About from "@/components/sections/about";
 
 export default function Home() {
   const [inView, setInView] = useState(true);
@@ -85,7 +86,7 @@ export default function Home() {
           content="initial-scale=1, viewport-fit=cover, width=device-width"
         ></meta>
       </Head>
-      <main className=" overflow-x-visible scrollbar-hide xl:max-w-8xl xl:mx-auto mb-[750px] xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
+      <main className=" overflow-x-visible scrollbar-hide xl:max-w-8xl xl:mx-auto mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
         {isBrowser && (
           <AnimatedCursor
             innerSize={12}
@@ -177,16 +178,17 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             About Me
           </Typography>
+          <About />
         </section>
-        <section
-          className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
-          }
-        >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            Get in Touch
-          </Typography>
-        </section>
+        {/*<section*/}
+        {/*  className={*/}
+        {/*    "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"*/}
+        {/*  }*/}
+        {/*>*/}
+        {/*  <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>*/}
+        {/*    Get in Touch*/}
+        {/*  </Typography>*/}
+        {/*</section>*/}
       </main>
     </div>
   );

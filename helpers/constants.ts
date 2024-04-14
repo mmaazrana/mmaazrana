@@ -147,3 +147,12 @@ export const testimonials: TestimonialT[] = [
     designation: "CEO Inventrios",
   },
 ];
+
+export const aboutSections = [
+  "Maaz Rana",
+  "Education",
+  "Past Clients",
+  "Let's Connect",
+  "Tech Stack",
+  "Work Experience",
+];
