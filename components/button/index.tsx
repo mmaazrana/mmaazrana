@@ -64,6 +64,7 @@ const Button: FC<ButtonProps> = ({
     "secondary-hover": "border-secondary-hover",
     transparent: "border-transparent",
     error: "border-error",
+    golden: "border-golden",
   };
 
   const dynamicClasses = [
