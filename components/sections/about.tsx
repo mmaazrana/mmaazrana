@@ -543,7 +543,7 @@ const About = () => {
             exit={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className={`will-change-[opacity] transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[12.5vw] leading-[1] ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`will-change-[opacity] transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[activeCardIndex]}
           </motion.span>

@@ -27,7 +27,7 @@
     --frosted-gradient-hover: linear-gradient(135deg, rgba(180, 196, 228, 0.05) 0%, rgba(180, 196, 228, 0.50) 100.04%);
     --about-shadow: 0 0 2px var(--secondary);
     --noise-texture: url("/svgs/texture-light.svg");
-    --texture-opacity: 35%;
+    --texture-opacity: 25%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,13 +76,6 @@ body {
     border-image: var(--frosted-gradient-hover);
 }
 
-.custom-text-stroke {
-    filter: drop-shadow(-2px 0 0 var(--secondary-hover)) drop-shadow(2px 0 0 var(--secondary-hover)) drop-shadow(0 -2px 0 var(--secondary-hover)) drop-shadow(0 2px 0 var(--secondary-hover));
-}
-
-.custom-text-stroke-active {
-    filter: drop-shadow(-2px 0 0 var(--secondary)) drop-shadow(2px 0 0 var(--secondary)) drop-shadow(0 -2px 0 var(--secondary)) drop-shadow(0 2px 0 var(--secondary));
-}
 
 body * {
     transition-duration: 250ms !important;
@@ -132,6 +125,13 @@ body * {
     background-image: var(--noise-texture) !important;
 }
 
+.custom-text-stroke {
+    filter: drop-shadow(-3px 0 0 var(--secondary-hover)) drop-shadow(3px 0 0 var(--secondary-hover)) drop-shadow(0 -3px 0 var(--secondary-hover)) drop-shadow(0 3px 0 var(--secondary-hover));
+}
+
+.custom-text-stroke-active {
+    filter: drop-shadow(-4px 0 0 var(--secondary)) drop-shadow(4px 0 0 var(--secondary)) drop-shadow(0 -4px 0 var(--secondary)) drop-shadow(0 4px 0 var(--secondary));
+}
 
 /* Set variable value for small screens */
 @media (max-width: 640px) {
@@ -161,20 +161,20 @@ body * {
     :root {
         --slide-spacing: 3.5rem;
     }
-
-    .custom-text-stroke {
-        filter: drop-shadow(-1.25px 0 0 var(--secondary-hover)) drop-shadow(1.25px 0 0 var(--secondary-hover)) drop-shadow(0 -1.25px 0 var(--secondary-hover)) drop-shadow(0 1.25px 0 var(--secondary-hover));
-    }
-
-    .custom-text-stroke-active {
-        filter: drop-shadow(-1.25px 0 0 var(--secondary)) drop-shadow(1.25px 0 0 var(--secondary)) drop-shadow(0 -1.25px 0 var(--secondary)) drop-shadow(0 1.25px 0 var(--secondary));
-    }
 }
 
 /* Set variable value for large screens */
 @media (min-width: 1024px) {
     :root {
         --slide-spacing: 4rem;
+    }
+
+    .custom-text-stroke {
+        filter: drop-shadow(-2px 0 0 var(--secondary-hover)) drop-shadow(2px 0 0 var(--secondary-hover)) drop-shadow(0 -2px 0 var(--secondary-hover)) drop-shadow(0 2px 0 var(--secondary-hover));
+    }
+
+    .custom-text-stroke-active {
+        filter: drop-shadow(-3px 0 0 var(--secondary)) drop-shadow(3px 0 0 var(--secondary)) drop-shadow(0 -3px 0 var(--secondary)) drop-shadow(0 3px 0 var(--secondary));
     }
 
 }
@@ -185,13 +185,6 @@ body * {
         --slide-spacing: 4.5rem;
     }
 
-    .custom-text-stroke {
-        filter: drop-shadow(-1.5px 0 0 var(--secondary-hover)) drop-shadow(1.5px 0 0 var(--secondary-hover)) drop-shadow(0 -1.5px 0 var(--secondary-hover)) drop-shadow(0 1.5px 0 var(--secondary-hover));
-    }
-
-    .custom-text-stroke-active {
-        filter: drop-shadow(-1.5px 0 0 var(--secondary)) drop-shadow(1.5px 0 0 var(--secondary)) drop-shadow(0 -1.5px 0 var(--secondary)) drop-shadow(0 1.5px 0 var(--secondary));
-    }
 }
 
 /* Set variable value for extra extra large screens */
@@ -199,4 +192,5 @@ body * {
     :root {
         --slide-spacing: 5rem;
     }
+
 }
