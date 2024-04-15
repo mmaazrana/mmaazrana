@@ -34,7 +34,21 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
       <div className={"embla__viewport"} ref={emblaRef}>
         <div className={"embla__container py-4"}>
           {testimonials.map((testimonial, index) => (
-            <div className={"embla__slide"} key={index}>
+            <div
+              className={"embla__slide"}
+              key={index}
+              onClick={() => {
+                if (index > selectedIndex) {
+                  index === testimonials.length - 1 && selectedIndex === 0
+                    ? emblaApi?.scrollPrev()
+                    : emblaApi?.scrollNext();
+                } else if (index < selectedIndex) {
+                  selectedIndex === testimonials.length - 1 && index === 0
+                    ? emblaApi?.scrollNext()
+                    : emblaApi?.scrollPrev();
+                }
+              }}
+            >
               <TestimonialCard
                 testimonial={testimonial.testimonial}
                 client={testimonial.client}
