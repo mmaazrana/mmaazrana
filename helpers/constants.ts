@@ -5,7 +5,44 @@ import {
   NavButtonT,
   ServiceT,
   TestimonialT,
+  WorkExperienceT,
 } from "@/helpers/types";
+import {
+  SiAdobeaftereffects,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+  SiAdobexd,
+  SiBlender,
+  SiDart,
+  SiFigma,
+  SiFirebase,
+  SiFlutter,
+  SiFramer,
+  SiGithub,
+  SiJavascript,
+  SiJira,
+  SiJirasoftware,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNotion,
+  SiPython,
+  SiReact,
+  SiSlack,
+  SiTailwindcss,
+  SiTrello,
+  SiTypescript,
+} from "react-icons/si";
+import Alfabolt from "@/components/icons/alfabolt";
+import TSS from "@/components/icons/tss";
+import Deepreel from "@/components/icons/deepreel";
+import Athleton from "@/components/icons/athleton";
+import Edwiz from "@/components/icons/edwiz";
+import Rivanna from "@/components/icons/rivanna";
+import BeaconTutors from "@/components/icons/beaconTutors";
+import Lyfiti from "@/components/icons/lyfiti";
+import FiveOneFivePools from "@/components/icons/515pools";
+import MenuHub from "@/components/icons/menuHub";
 
 export const HeroHeadings = [
   "Product Designer",
@@ -155,4 +192,113 @@ export const aboutSections = [
   "Socials",
   "Tech Stack",
   "Work Experience",
+];
+
+export const WorkExperiences: WorkExperienceT[] = [
+  {
+    company: "Alfabolt",
+    roles: "Frontend Developer - Product Designer - Design Lead",
+    tenure: "2022 - Present",
+  },
+  {
+    company: "Total School Solutions",
+    roles: "IT Manager - Graphics Lead",
+    tenure: "2022 - 2024",
+  },
+  {
+    company: "Nustac Technologies",
+    roles: "Mobile App Developer - UI/UX Designer",
+    tenure: "2021 - 2024",
+  },
+  {
+    company: "20Four7 VA",
+    roles: "Specialist Art Director",
+    tenure: "2022 - 2023",
+  },
+  {
+    company: "Beacon Tutors Pakistan",
+    roles: "Web Developer - UI/UX Designer",
+    tenure: "2021 - 2022",
+  },
+  {
+    company: "Edwiz Solutions",
+    roles: "Illustration Designer",
+    tenure: "2021 - 2022",
+  },
+];
+
+export const iconComponents = [
+  { Icon: SiFigma, props: { fill: "#F24E1E" } },
+  { Icon: SiAdobeillustrator, props: { fill: "#FF9A00" } },
+  { Icon: SiAdobephotoshop, props: { fill: "#31A8FF" } },
+  { Icon: SiAdobeaftereffects, props: { fill: "#9999FF" } },
+  { Icon: SiAdobepremierepro, props: { fill: "#9999FF" } },
+  { Icon: SiAdobexd, props: { fill: "#FF61F6" } },
+  { Icon: SiBlender, props: { fill: "#E87D0D" } },
+  { Icon: SiFlutter, props: { fill: "#02569B" } },
+  { Icon: SiDart, props: { fill: "#0175C2" } },
+  { Icon: SiFirebase, props: { fill: "#FFCA28" } },
+  { Icon: SiNextdotjs, props: { fill: "var(--primary)" } },
+  { Icon: SiReact, props: { fill: "#61DAFB" } },
+  { Icon: SiNodedotjs, props: { fill: "#339933" } },
+  { Icon: SiPython, props: { fill: "#3776AB" } },
+  { Icon: SiTailwindcss, props: { fill: "#06B6D4" } },
+  { Icon: SiFramer, props: { fill: "#0055FF" } },
+  { Icon: SiJavascript, props: { fill: "#F7DF1E" } },
+  { Icon: SiTypescript, props: { fill: "#3178C6" } },
+  { Icon: SiSlack, props: { fill: "#4A154B" } },
+  { Icon: SiNotion, props: { fill: "var(--primary)" } },
+  { Icon: SiTrello, props: { fill: "#0052CC" } },
+  { Icon: SiJira, props: { fill: "#0052CC" } },
+  { Icon: SiJirasoftware, props: { fill: "#0052CC" } },
+  { Icon: SiGithub, props: { fill: "var(--primary)" } },
+];
+
+export const designIconComponents = [
+  { Icon: SiFigma, props: { fill: "#F24E1E" } },
+  { Icon: SiAdobeillustrator, props: { fill: "#FF9A00" } },
+  { Icon: SiAdobephotoshop, props: { fill: "#31A8FF" } },
+  { Icon: SiAdobeaftereffects, props: { fill: "#9999FF" } },
+  { Icon: SiAdobepremierepro, props: { fill: "#9999FF" } },
+  { Icon: SiAdobexd, props: { fill: "#FF61F6" } },
+  { Icon: SiBlender, props: { fill: "#E87D0D" } },
+];
+
+export const devIconComponents = [
+  { Icon: SiNextdotjs, props: { fill: "var(--primary)" } },
+  { Icon: SiReact, props: { fill: "#61DAFB" } },
+  { Icon: SiFlutter, props: { fill: "#02569B" } },
+  { Icon: SiDart, props: { fill: "#0175C2" } },
+  { Icon: SiFirebase, props: { fill: "#FFCA28" } },
+  { Icon: SiNodedotjs, props: { fill: "#339933" } },
+  { Icon: SiPython, props: { fill: "#3776AB" } },
+  { Icon: SiJavascript, props: { fill: "#F7DF1E" } },
+  { Icon: SiTypescript, props: { fill: "#3178C6" } },
+  { Icon: SiTailwindcss, props: { fill: "#06B6D4" } },
+  { Icon: SiFramer, props: { fill: "#0055FF" } },
+];
+
+export const managementIconComponents = [
+  { Icon: SiSlack, props: { fill: "#4A154B" } },
+  { Icon: SiNotion, props: { fill: "var(--primary)" } },
+  { Icon: SiTrello, props: { fill: "#0052CC" } },
+  { Icon: SiJira, props: { fill: "#0052CC" } },
+  { Icon: SiJirasoftware, props: { fill: "#0052CC" } },
+  { Icon: SiGithub, props: { fill: "var(--primary)" } },
+];
+
+export const clientIconComponents = [
+  { Icon: Alfabolt, props: { fill: "var(--primary-hover)" } },
+  { Icon: TSS, props: { fill: "var(--primary-hover)" } },
+  { Icon: Deepreel, props: { fill: "var(--primary-hover)" } },
+  { Icon: Athleton, props: { fill: "var(--primary-hover)" } },
+  { Icon: Rivanna, props: { fill: "var(--primary-hover)" } },
+  { Icon: Edwiz, props: { fill: "var(--primary-hover)" } },
+  { Icon: BeaconTutors, props: { fill: "var(--primary-hover)" } },
+  {
+    Icon: MenuHub,
+    props: { fill: "var(--primary-hover)" },
+  },
+  { Icon: Lyfiti, props: { fill: "var(--primary-hover)" } },
+  { Icon: FiveOneFivePools, props: { fill: "var(--primary-hover)" } },
 ];

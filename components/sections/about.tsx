@@ -1,31 +1,18 @@
 import React, { useEffect, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
-import { aboutSections } from "@/helpers/constants";
+import {
+  aboutSections,
+  clientIconComponents,
+  designIconComponents,
+  devIconComponents,
+  managementIconComponents,
+  WorkExperiences,
+} from "@/helpers/constants";
 import { archivo } from "@/helpers/fonts";
 import Typography from "@/components/Typography";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import Image from "next/image";
 import pfp from "../../public/images/pfp.webp";
-import {
-  SiAdobeaftereffects,
-  SiAdobeillustrator,
-  SiAdobephotoshop,
-  SiAdobepremierepro,
-  SiAdobexd,
-  SiBlender,
-  SiDart,
-  SiFigma,
-  SiFirebase,
-  SiFlutter,
-  SiFramer,
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPython,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
 import { useInView } from "react-intersection-observer";
 import { getActiveBreakpoint } from "@/helpers";
 import { AnimatePresence, motion } from "framer-motion";
@@ -35,6 +22,7 @@ const About = () => {
   const [isActive, setIsActive] = useState(false);
   const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
   useEffect(() => {
+    console.log(activeBreakpoint);
     setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
   }, [activeBreakpoint]);
   const options = {
@@ -54,46 +42,7 @@ const About = () => {
     triggerOnce: false,
     skip: activeBreakpoint !== "sm",
   });
-  const iconComponents = [
-    SiFigma,
-    SiAdobeillustrator,
-    SiAdobephotoshop,
-    SiAdobeaftereffects,
-    SiAdobepremierepro,
-    SiAdobexd,
-    SiBlender,
-    SiFlutter,
-    SiDart,
-    SiFirebase,
-    SiNextdotjs,
-    SiReact,
-    SiNodedotjs,
-    SiPython,
-    SiTailwindcss,
-    SiFramer,
-    SiJavascript,
-    SiTypescript,
-  ];
-  const clientIconComponents = [
-    SiFigma,
-    SiAdobeillustrator,
-    SiAdobephotoshop,
-    SiAdobeaftereffects,
-    SiAdobepremierepro,
-    SiAdobexd,
-    SiBlender,
-    SiFlutter,
-    SiDart,
-    SiFirebase,
-    SiNextdotjs,
-    SiReact,
-    SiNodedotjs,
-    SiPython,
-    SiTailwindcss,
-    SiFramer,
-    SiJavascript,
-    SiTypescript,
-  ];
+
   return (
     <div
       className={
@@ -186,7 +135,7 @@ const About = () => {
         <div
           className={"md:hidden flex relative"}
           ref={toolsRef}
-          id={aboutSections[2]}
+          id={aboutSections[4]}
         >
           <AboutCard
             className={"flex flex-auto grow shrink h-fit"}
@@ -200,46 +149,55 @@ const About = () => {
             isActive={toolsInView}
           >
             <div className={"flex flex-col gap-6 sm:gap-7 md:gap-8"}>
-              <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
+              <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
                 <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                   Development
                 </Typography>
-                <div
-                  className={"flex flex-row flex-wrap gap-2 sm:gap-3 md:gap-4"}
-                >
-                  {iconComponents.splice(0, 6).map((Icon, index) => (
+                <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
+                  {devIconComponents.map(({ Icon, props }, index) => (
                     <div key={index}>
-                      <Icon size={30} />{" "}
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
                       {/* Adjust the size as per your requirement */}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
+              <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
                 <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                   Design
                 </Typography>
-                <div
-                  className={"flex flex-row flex-wrap gap-2 sm:gap-3 md:gap-4"}
-                >
-                  {iconComponents.splice(0, 6).map((Icon, index) => (
+                <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
+                  {designIconComponents.map(({ Icon, props }, index) => (
                     <div key={index}>
-                      <Icon size={30} />{" "}
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
                       {/* Adjust the size as per your requirement */}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className={"flex flex-col gap-1 sm:gap-3 md:gap-4"}>
+              <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
                 <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                   Management
                 </Typography>
-                <div
-                  className={"flex flex-row flex-wrap gap-2 sm:gap-3 md:gap-4"}
-                >
-                  {iconComponents.splice(0, 6).map((Icon, index) => (
+                <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
+                  {managementIconComponents.map(({ Icon, props }, index) => (
                     <div key={index}>
-                      <Icon size={30} />{" "}
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
                       {/* Adjust the size as per your requirement */}
                     </div>
                   ))}
@@ -250,13 +208,13 @@ const About = () => {
           <span
             className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
-            {aboutSections[2]}
+            {aboutSections[4]}
           </span>
         </div>
         <div
           className={"relative h-fit"}
           ref={clientsRef}
-          id={aboutSections[4]}
+          id={aboutSections[2]}
         >
           <AboutCard
             className={"h-fit"}
@@ -270,12 +228,15 @@ const About = () => {
             isActive={clientsInView}
           >
             <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
-              <div
-                className={"flex flex-row flex-wrap gap-2 sm:gap-3 md:gap-4"}
-              >
-                {clientIconComponents.map((Icon, index) => (
+              <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
+                {clientIconComponents.map(({ Icon, props }, index) => (
                   <div key={index}>
-                    <Icon size={30} />{" "}
+                    <Icon
+                      {...props}
+                      className={
+                        "h-[24px] sm:h-[26px] md:h-[28px] lg:h-[30px] xl:h-[32px]"
+                      }
+                    />{" "}
                     {/* Adjust the size as per your requirement */}
                   </div>
                 ))}
@@ -285,7 +246,7 @@ const About = () => {
           <span
             className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
-            {aboutSections[4]}
+            {aboutSections[2]}
           </span>
         </div>
       </div>
@@ -338,40 +299,55 @@ const About = () => {
           }}
         >
           <div className={"flex flex-col gap-8"}>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-6"}>
               <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                 Development
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {clientIconComponents.splice(0, 6).map((Icon, index) => (
+                {devIconComponents.map(({ Icon, props }, index) => (
                   <div key={index}>
-                    <Icon size={30} />{" "}
+                    <Icon
+                      className={
+                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                      }
+                      {...props}
+                    />{" "}
                     {/* Adjust the size as per your requirement */}
                   </div>
                 ))}
               </div>
             </div>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-6"}>
               <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                 Design
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {clientIconComponents.splice(0, 6).map((Icon, index) => (
+                {designIconComponents.map(({ Icon, props }, index) => (
                   <div key={index}>
-                    <Icon size={30} />{" "}
+                    <Icon
+                      className={
+                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                      }
+                      {...props}
+                    />{" "}
                     {/* Adjust the size as per your requirement */}
                   </div>
                 ))}
               </div>
             </div>
-            <div className={"flex flex-col gap-4"}>
+            <div className={"flex flex-col gap-6"}>
               <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                 Management
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {clientIconComponents.splice(0, 6).map((Icon, index) => (
+                {managementIconComponents.map(({ Icon, props }, index) => (
                   <div key={index}>
-                    <Icon size={30} />{" "}
+                    <Icon
+                      className={
+                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                      }
+                      {...props}
+                    />{" "}
                     {/* Adjust the size as per your requirement */}
                   </div>
                 ))}
@@ -392,7 +368,7 @@ const About = () => {
       {/*  }*/}
       {/*>*/}
       <div
-        className={"h-full order-4 sm:row-span-3 md:row-span-4"}
+        className={"h-fit order-4 sm:row-span-3 md:row-span-4"}
         ref={workRef}
         id={aboutSections[5]}
       >
@@ -408,120 +384,29 @@ const About = () => {
           isActive={workInView}
         >
           <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
-            <div className={"flex flex-col gap-1 md:gap-2"}>
-              <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
-                Alfabolt
-              </Typography>
-              <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryHover}
-                className={"opacity-75"}
-              >
-                Frontend Developer - Product Designer - Design Lead
-              </Typography>
-              <Typography
-                type={TextTypes.lg}
-                weight={WeightTypes.semiBold}
-                color={ColorTypes.secondary}
-              >
-                2022 - Present
-              </Typography>
-            </div>
+            {WorkExperiences.map((workExperience, index) => {
+              return (
+                <div className={"flex flex-col gap-1 md:gap-2"}>
+                  <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+                    {workExperience.company}
+                  </Typography>
+                  <Typography
+                    type={TextTypes.xl}
+                    color={ColorTypes.primaryHover}
+                    className={"opacity-75"}
+                  >
+                    {workExperience.roles}
+                  </Typography>
+                  <Typography
+                    type={TextTypes.lg}
+                    weight={WeightTypes.semiBold}
+                    color={ColorTypes.secondary}
+                  >
+                    {workExperience.tenure}
+                  </Typography>
+                </div>
+              );
+            })}
           </div>
         </AboutCard>
         <span

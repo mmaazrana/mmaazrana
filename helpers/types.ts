@@ -34,3 +34,9 @@ export interface TestimonialT {
   client: string;
   designation: string;
 }
+
+export interface WorkExperienceT {
+  company: string;
+  roles: string;
+  tenure: string;
+}
