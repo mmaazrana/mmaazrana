@@ -27,10 +27,26 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const options = {
+    rootMargin: "-45% 0px -45% 0px",
+    threshold: 0.2,
+    triggerOnce: false,
+  };
+  const [introRef, introInView] = useInView(options);
+  const [educationRef, educationInView] = useInView(options);
+  const [clientsRef, clientsInView] = useInView(options);
+  const [socialsRef, socialsInView] = useInView(options);
+  const [toolsRef, toolsInView] = useInView(options);
+  const [workRef, workInView] = useInView({
+    rootMargin: "-35% 0px -30% 0px",
+    threshold: 0.2,
+    triggerOnce: false,
+  });
   const iconComponents = [
     SiFigma,
     SiAdobeillustrator,
@@ -71,6 +87,14 @@ const About = () => {
     SiJavascript,
     SiTypescript,
   ];
+  const sectionRefs = [
+    { section: aboutSections[0], ref: introRef },
+    { section: aboutSections[1], ref: educationRef },
+    { section: aboutSections[2], ref: clientsRef },
+    { section: aboutSections[3], ref: socialsRef },
+    { section: aboutSections[4], ref: toolsRef },
+    { section: aboutSections[5], ref: workRef },
+  ];
   return (
     <div
       className={
@@ -82,7 +106,7 @@ const About = () => {
           "flex flex-col h-full min-h-full gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 order-1 row-span-4"
         }
       >
-        <div className={"relative h-fit"}>
+        <div className={"relative h-fit"} ref={introRef} id={aboutSections[0]}>
           <AboutCard
             className={"h-fit"}
             onMouseEnter={() => {
@@ -92,6 +116,7 @@ const About = () => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
+            isActive={introInView}
           >
             <Typography
               type={TextTypes.xl}
@@ -104,12 +129,12 @@ const About = () => {
             </Typography>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${introInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[0]}
           </span>
         </div>
-        <div className={"relative"}>
+        <div className={"relative"} ref={educationRef} id={aboutSections[1]}>
           <AboutCard
             className={""}
             onMouseEnter={() => {
@@ -119,6 +144,7 @@ const About = () => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
+            isActive={educationInView}
           >
             <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
               <div className={"flex flex-col gap-1 md:gap-2"}>
@@ -153,12 +179,16 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${educationInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[1]}
           </span>
         </div>
-        <div className={"md:hidden flex relative"}>
+        <div
+          className={"md:hidden flex relative"}
+          ref={toolsRef}
+          id={aboutSections[2]}
+        >
           <AboutCard
             className={"flex flex-auto grow shrink h-fit"}
             onMouseEnter={() => {
@@ -168,6 +198,7 @@ const About = () => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
+            isActive={toolsInView}
           >
             <div className={"flex flex-col gap-6 sm:gap-7 md:gap-8"}>
               <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
@@ -218,12 +249,16 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[2]}
           </span>
         </div>
-        <div className={"relative h-fit"}>
+        <div
+          className={"relative h-fit"}
+          ref={clientsRef}
+          id={aboutSections[4]}
+        >
           <AboutCard
             className={"h-fit"}
             onMouseEnter={() => {
@@ -233,6 +268,7 @@ const About = () => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
+            isActive={clientsInView}
           >
             <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
               <div
@@ -248,7 +284,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[4]}
           </span>
@@ -259,7 +295,11 @@ const About = () => {
       {/*    "flex flex-col h-full min-h-full gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12"*/}
       {/*  }*/}
       {/*>*/}
-      <div className={"relative h-fit order-2"}>
+      <div
+        className={"relative h-fit order-2"}
+        ref={socialsRef}
+        id={aboutSections[3]}
+      >
         <AboutCard
           className={
             "h-fit aspect-square max-h-fit min-h-fit !gap-0 !p-0 !overflow-clip group"
@@ -271,6 +311,7 @@ const About = () => {
           onMouseLeave={() => {
             setIsActive(false);
           }}
+          isActive={socialsInView}
         >
           <Image
             src={pfp}
@@ -282,7 +323,7 @@ const About = () => {
           />
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${socialsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -353,7 +394,11 @@ const About = () => {
       {/*    "flex flex-col h-full min-h-full gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12"*/}
       {/*  }*/}
       {/*>*/}
-      <div className={"h-full order-4 sm:row-span-3 md:row-span-4"}>
+      <div
+        className={"h-full order-4 sm:row-span-3 md:row-span-4"}
+        ref={workRef}
+        id={aboutSections[5]}
+      >
         <AboutCard
           className={"h-full min-h-fit max-h-fit "}
           onMouseEnter={() => {
@@ -363,6 +408,7 @@ const About = () => {
           onMouseLeave={() => {
             setIsActive(false);
           }}
+          isActive={workInView}
         >
           <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
             <div className={"flex flex-col gap-1 md:gap-2"}>
@@ -482,7 +528,7 @@ const About = () => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${workInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[4]}
         </span>
