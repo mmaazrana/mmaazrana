@@ -27,12 +27,7 @@ const AboutCard: FC<AboutCardProps> = ({
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        viewBox="0 0 700 2100"
-        width="700"
-        height="2100"
-        className={
-          "absolute w-full scale-150 opacity-texture -top-2.5 -translate-y-1/2 -left-2.5"
-        }
+        className={"absolute w-full h-full opacity-texture top-0 left-0"}
       >
         <defs>
           <filter
@@ -73,11 +68,11 @@ const AboutCard: FC<AboutCardProps> = ({
             </feSpecularLighting>
           </filter>
         </defs>
-        <rect width="700" height="2100" fill="#ffffff00"></rect>
         <rect
-          width="700"
-          height="2100"
+          width="100%"
+          height="100%"
           fill="#ff0000"
+          y={0}
           filter="url(#nnnoise-filter)"
         ></rect>
       </svg>
