@@ -22,7 +22,7 @@ const AboutCard: FC<AboutCardProps> = ({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`group texture bg-secondary-hover-10 hover:bg-primary-invert-25 overflow-hidden relative about:shadow-frosted backdrop-blur-[2px] about:backdrop-blur-[4px] md:backdrop-blur-sm hover:backdrop-blur-[3px] about:hover:backdrop-blur-[6px] md:hover:backdrop-blur-[7.5px] rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${isActive && " backdrop-blur-[6px] !bg-primary-invert-25"} ${className}`}
+      className={`group texture bg-secondary-hover-10 hover:bg-primary-invert-25 overflow-hidden relative about:shadow-frosted backdrop-blur-[2px] about:backdrop-blur-[4px] md:backdrop-blur-sm hover:backdrop-blur-[3px] about:hover:backdrop-blur-[6px] md:hover:backdrop-blur-[7.5px] rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${isActive && "backdrop-blur-[6px] !bg-primary-invert-25"}  ${className}`}
     >
       <svg
         width="100"

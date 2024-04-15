@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
 import { aboutSections } from "@/helpers/constants";
 import { archivo } from "@/helpers/fonts";
@@ -28,14 +28,20 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { useInView } from "react-intersection-observer";
+import { getActiveBreakpoint } from "@/helpers";
 
 const About = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
+  useEffect(() => {
+    setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
+  }, [activeBreakpoint]);
   const options = {
     rootMargin: "-45% 0px -45% 0px",
     threshold: 0.2,
     triggerOnce: false,
+    skip: activeBreakpoint !== "sm",
   };
   const [introRef, introInView] = useInView(options);
   const [educationRef, educationInView] = useInView(options);
@@ -46,6 +52,7 @@ const About = () => {
     rootMargin: "-35% 0px -30% 0px",
     threshold: 0.2,
     triggerOnce: false,
+    skip: activeBreakpoint !== "sm",
   });
   const iconComponents = [
     SiFigma,
@@ -86,14 +93,6 @@ const About = () => {
     SiFramer,
     SiJavascript,
     SiTypescript,
-  ];
-  const sectionRefs = [
-    { section: aboutSections[0], ref: introRef },
-    { section: aboutSections[1], ref: educationRef },
-    { section: aboutSections[2], ref: clientsRef },
-    { section: aboutSections[3], ref: socialsRef },
-    { section: aboutSections[4], ref: toolsRef },
-    { section: aboutSections[5], ref: workRef },
   ];
   return (
     <div

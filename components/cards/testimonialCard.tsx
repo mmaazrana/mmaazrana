@@ -22,7 +22,6 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
 
   useEffect(() => {
-    console.log(getActiveBreakpoint(window.innerWidth));
     setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
   }, [activeBreakpoint]);
 
