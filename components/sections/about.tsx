@@ -129,7 +129,7 @@ const About = () => {
             </Typography>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${introInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${introInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[0]}
           </span>
@@ -179,7 +179,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${educationInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${educationInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[1]}
           </span>
@@ -249,7 +249,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[2]}
           </span>
@@ -284,7 +284,7 @@ const About = () => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[4]}
           </span>
@@ -317,13 +317,11 @@ const About = () => {
             src={pfp}
             alt={"Maaz Rana"}
             fill
-            className={
-              "!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 group-hover:opacity-100"
-            }
+            className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 group-hover:opacity-100 ${socialsInView && "!opacity-100"}`}
           />
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${socialsInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${socialsInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -383,7 +381,7 @@ const About = () => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -528,7 +526,7 @@ const About = () => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${workInView && "custom-text-stroke-active about:custom-text-stroke"} ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${workInView && "custom-text-stroke-active about:custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[4]}
         </span>

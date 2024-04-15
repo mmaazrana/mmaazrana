@@ -58,7 +58,7 @@ const AboutCard: FC<AboutCardProps> = ({
           height="100%"
           fill="none"
           stroke="url(#linear-gradient)"
-          stroke-width={2}
+          strokeWidth={2}
           className={`w-full h-full min-w-full min-h-full !transition-all rounded-xl sm:rounded-2xl md:rounded-3xl opacity-25 group-hover:opacity-50 ${isActive && "opacity-50"}`}
         />
       </svg>
