@@ -26,7 +26,8 @@
     --frosted-gradient: linear-gradient(135deg, rgba(180, 196, 228, 0.025) 0%, rgba(180, 196, 228, 0.25) 100.04%);
     --frosted-gradient-hover: linear-gradient(135deg, rgba(180, 196, 228, 0.05) 0%, rgba(180, 196, 228, 0.50) 100.04%);
     --about-shadow: 0 0 2px var(--secondary);
-    --noise-texture: url("/svgs/texture-light.svg")
+    --noise-texture: url("/svgs/texture-light.svg");
+    --texture-opacity: 35%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +54,7 @@
         --frosted-gradient-hover: linear-gradient(135deg, rgba(66, 100, 168, 0.05) 0%, rgba(66, 100, 168, 0.50) 100.04%);
         --about-shadow: 0 0 2px var(--secondary);
         --noise-texture: url("/svgs/texture.svg");
+        --texture-opacity: 6%;
     }
 }
 

@@ -60,6 +60,9 @@ const config: Config = {
         "frosted-gradient": "var(--frosted-gradient)",
         "frosted-gradient-hover": "var(--frosted-gradient-hover)",
       },
+      opacity: {
+        texture: "var(--texture-opacity)",
+      },
     },
   },
   plugins: [],
