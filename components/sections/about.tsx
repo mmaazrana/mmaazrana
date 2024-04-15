@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
 import { aboutSections } from "@/helpers/constants";
 import { archivo } from "@/helpers/fonts";
-import { AnimatePresence, motion } from "framer-motion";
 import Typography from "@/components/Typography";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import Image from "next/image";
@@ -29,6 +28,7 @@ import {
 } from "react-icons/si";
 import { useInView } from "react-intersection-observer";
 import { getActiveBreakpoint } from "@/helpers";
+import { AnimatePresence, motion } from "framer-motion";
 
 const About = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -543,7 +543,7 @@ const About = () => {
             exit={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className={`transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[12.5vw] leading-[1] ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`will-change-[opacity] transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[12.5vw] leading-[1] ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[activeCardIndex]}
           </motion.span>
