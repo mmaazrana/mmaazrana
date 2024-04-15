@@ -116,7 +116,11 @@ const About = () => {
                   CGPA - 3.61
                 </Typography>
               </div>
-              <div className={"flex flex-row gap-2 sm:gap-3 md:gap-4"}>
+              <div
+                className={
+                  "flex flex-row gap-2 sm:gap-3 md:gap-4 items-center justify-start"
+                }
+              >
                 <Medal
                   fill={"var(--golden)"}
                   className={
