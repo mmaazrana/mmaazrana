@@ -16,6 +16,7 @@ import pfp from "../../public/images/pfp.webp";
 import { useInView } from "react-intersection-observer";
 import { getActiveBreakpoint } from "@/helpers";
 import { AnimatePresence, motion } from "framer-motion";
+import Medal from "@/components/icons/medal";
 
 const About = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -115,7 +116,14 @@ const About = () => {
                   CGPA - 3.61
                 </Typography>
               </div>
-              <div className={"flex flex-col gap-1 md:gap-2"}>
+              <div className={"flex flex-row gap-2 sm:gap-3 md:gap-4"}>
+                <Medal
+                  fill={"var(--golden)"}
+                  className={
+                    "h-[24px] sm:h-[25px] md:h-[26px] lg:h-[27px] xl:h-[28px]"
+                  }
+                />
+
                 <Typography
                   type={TextTypes.xl}
                   weight={WeightTypes.medium}
@@ -386,7 +394,7 @@ const About = () => {
           <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
             {WorkExperiences.map((workExperience, index) => {
               return (
-                <div className={"flex flex-col gap-1 md:gap-2"}>
+                <div className={"flex flex-col gap-1 md:gap-2"} key={index}>
                   <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
                     {workExperience.company}
                   </Typography>
