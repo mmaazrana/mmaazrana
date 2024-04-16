@@ -50,32 +50,66 @@ const ServiceCard: FC<ServiceCardProps> = ({
     4: "180deg",
     5: "135deg",
   });
-  const cardX = useSpring(useMotionValue(0), { stiffness: 2000, damping: 50 });
-  const cardY = useSpring(useMotionValue(0), { stiffness: 2000, damping: 50 });
+  const cardX = useSpring(useMotionValue(0), { stiffness: 2000, damping: 100 });
+  const cardY = useSpring(useMotionValue(0), { stiffness: 2000, damping: 100 });
   const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
   const rotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Reversed values
-  const cardRotateX = useTransform(cardY, [-300, 300], [10, -10]); // Adjusted rotation values
-  const cardRotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Adjusted rotation values
+  // const cardRotateX = useTransform(cardY, [-300, 300], [10, -10]); // Adjusted rotation values
+  // const cardRotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Adjusted rotation values
   const cardRef = useRef<HTMLDivElement>(null);
   const preferredScheme = usePreferredColorScheme();
+  const [isInitialDelayOver, setIsInitialDelayOver] = useState(false);
+  let initialDelayTimeout: NodeJS.Timeout | null = null;
+  let offsetX: number;
+  let offsetY: number;
   const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-    if (cardRef.current) {
-      const cardRect = cardRef.current.getBoundingClientRect();
+    if (isInitialDelayOver) {
+      if (cardRef.current) {
+        const cardRect = cardRef.current.getBoundingClientRect();
 
-      // Calculate the center of the card
-      const cardCenterX = cardRect.left + cardRect.width / 2;
-      const cardCenterY = cardRect.top + cardRect.height / 2;
+        // Calculate the center of the card
+        const cardCenterX = cardRect.left + cardRect.width / 2;
+        const cardCenterY = cardRect.top + cardRect.height / 2;
 
-      // Calculate offsets from the center of the window
-      const offsetX = event.clientX - cardCenterX;
-      const offsetY = event.clientY - cardCenterY;
+        // Calculate offsets from the center of the window
+        offsetX = event.clientX - cardCenterX;
+        offsetY = event.clientY - cardCenterY;
 
-      cardX.set(offsetX);
-      cardY.set(offsetY);
+        cardX.set(offsetX);
+        cardY.set(offsetY);
+      }
     }
   };
 
+  function handleMouseEnter(event: { clientX: number; clientY: number }) {
+    if (!isInitialDelayOver) {
+      initialDelayTimeout = setTimeout(() => {
+        if (cardRef.current) {
+          const cardRect = cardRef.current.getBoundingClientRect();
+
+          // Calculate the center of the card
+          const cardCenterX = cardRect.left + cardRect.width / 2;
+          const cardCenterY = cardRect.top + cardRect.height / 2;
+
+          // Calculate offsets from the center of the window
+          offsetX = event.clientX - cardCenterX;
+          offsetY = event.clientY - cardCenterY;
+        }
+        setIsInitialDelayOver(true);
+        if (cardRef.current) {
+          cardX.set(offsetX);
+          cardY.set(offsetY);
+        }
+      }, 200); // Set initial delay to 1 second
+    }
+  }
+
   const handleMouseLeave = () => {
+    setIsInitialDelayOver(false);
+    if (initialDelayTimeout) {
+      clearTimeout(initialDelayTimeout);
+    }
+    initialDelayTimeout = null;
     cardX.set(0);
     cardY.set(0);
   };
@@ -163,67 +197,51 @@ const ServiceCard: FC<ServiceCardProps> = ({
     });
   }, [cardRef]);
 
-  // if (window.innerWidth >= breakpoints.lg) {
-  //
-  // } else if (window.innerWidth >= breakpoints.md) {
-  //   setAngleClasses({
-  //     0: "-45deg",
-  //     1: "0deg",
-  //     2: "45deg",
-  //     3: "225deg",
-  //     4: "180deg",
-  //     5: "135deg",
-  //   });
-  //   setHoverAngles({
-  //     0: useReverseDiagonalInvertMovement,
-  //     1: useStraightMovement,
-  //     2: useDiagonalMovement,
-  //     3: useDiagonalInvertMovement,
-  //     4: useStraightInvertMovement,
-  //     5: useReverseDiagonalMovement,
-  //   });
-  // } else {
-  //   setAngleClasses({
-  //     0: "90deg",
-  //     1: "90deg",
-  //     2: "90deg",
-  //     3: "270deg",
-  //     4: "270deg",
-  //     5: "270deg",
-  //   });
-  //   setHoverAngles({
-  //     0: useSideMovement,
-  //     1: useSideMovement,
-  //     2: useSideMovement,
-  //     3: useSideInvertMovement,
-  //     4: useSideInvertMovement,
-  //     5: useSideInvertMovement,
-  //   });
-  // }
-
   const sheenPosition = useTransform(
     hoverAngles[index](rotateX, rotateY),
     [-12, 8],
     [-80, 140],
   );
+  // const sheenOpacity = useTransform(
+  //   sheenPosition,
+  //   [-100, 0, 25, 50, 150, 175, 200],
+  //   [0.1, 0.2, 0.3, 0.3, 0.3, 0.2, 0.1],
+  // );
   const sheenOpacity = useTransform(
     sheenPosition,
-    [-100, 0, 25, 50, 150, 175, 200],
-    [0.1, 0.2, 0.3, 0.3, 0.3, 0.2, 0.1],
+    [-100, 0, 200],
+    [0.1, 0.3, 0.1],
   );
-  const sheenGradient = useMotionTemplate`linear-gradient(
+
+  const sheenGradient =
+    preferredScheme === "dark"
+      ? useMotionTemplate`linear-gradient(
     ${angleClasses[index]},
-    ${preferredScheme === "dark" ? "#0C1427" : "#F4F6FE"},
-    ${preferredScheme === "dark" ? "#070D1D" : "#F9FAFF"},
+    ${"#0C1427"},
+    ${"#070D1D"},
     ${sheenPosition}%,
-    ${preferredScheme === "dark" ? "#000714" : "#FFFFFF"}
-    ) 
-    padding-box, 
+    ${"#000714"}
+    )
+    padding-box,
     linear-gradient(
     ${angleClasses[index]},
-    ${preferredScheme === "dark" ? "#4264A8" : "#B4C4E4"},
-    rgba(${preferredScheme === "dark" ? "66 100 178" : "180 196 228"}  / ${sheenOpacity}) 
-    ${sheenPosition}%) 
+    ${"#4264A8"},
+    rgba(${"66 100 178"}  / ${sheenOpacity})
+    ${sheenPosition}%)
+    border-box`
+      : useMotionTemplate`linear-gradient(
+    ${angleClasses[index]},
+    ${"#F4F6FE"},
+    ${"#F9FAFF"},
+    ${sheenPosition}%,
+    ${"#FFFFFF"}
+    )
+    padding-box,
+    linear-gradient(
+    ${angleClasses[index]},
+    ${"#B4C4E4"},
+    rgba(${"180 196 228"}  / ${sheenOpacity})
+    ${sheenPosition}%)
     border-box`;
 
   const dynamicClasses = [
@@ -234,60 +252,38 @@ const ServiceCard: FC<ServiceCardProps> = ({
   ]
     .filter(Boolean)
     .join(" ");
+
   return (
-    <motion.div
-      className={"sm:aspect-video md:aspect-square w-full !transition-none"}
-      style={{
-        perspective: 1000,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backfaceVisibility: "hidden",
-        backgroundClip: "content-box",
-        outline: "1px solid transparent",
-      }}
-      transition={{ velocity: 0 }}
+    <div
+      className={
+        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000"
+      }
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        className={"sm:aspect-video md:aspect-square w-full !transition-none"}
+        className={
+          "will-change-transform sm:aspect-video md:aspect-square w-full !transition-none origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000 transform-style-3d"
+        }
         style={{
-          transformStyle: "preserve-3d",
-          transformOrigin: "center center",
-          perspective: 1000,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backfaceVisibility: "hidden",
-          backgroundClip: "content-box",
-          outline: "1px solid transparent",
           rotateX,
           rotateY,
         }}
-        transition={{ velocity: 0 }}
       >
         <motion.div
           ref={cardRef}
-          className={dynamicClasses}
+          className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000 transform-style-3d ${dynamicClasses}`}
           style={{
-            transformStyle: "preserve-3d",
-            perspective: 1000,
-            position: "relative",
             background: sheenGradient,
-            border: "1px solid transparent",
-            backfaceVisibility: "hidden",
-            backgroundClip: "content-box",
-            outline: "1px solid transparent",
           }}
-          transition={{ velocity: 0 }}
         >
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.bold}>
             {title}
           </Typography>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

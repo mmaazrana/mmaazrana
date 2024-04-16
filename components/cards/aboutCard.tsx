@@ -24,58 +24,58 @@ const AboutCard: FC<AboutCardProps> = ({
       onMouseLeave={onMouseLeave}
       className={`group bg-secondary-hover-10 hover:bg-primary-invert-25 overflow-hidden relative about:shadow-frosted backdrop-blur-[2px] about:backdrop-blur-[4px] md:backdrop-blur-sm about:hover:backdrop-blur-[5px] md:hover:backdrop-blur-[6px] rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${isActive && "backdrop-blur-[3px] !bg-primary-invert-25"}  ${className}`}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        className={"absolute w-full h-full opacity-texture top-0 left-0"}
-      >
-        <defs>
-          <filter
-            id="nnnoise-filter"
-            x="-20%"
-            y="-20%"
-            width="140%"
-            height="140%"
-            filterUnits="objectBoundingBox"
-            primitiveUnits="userSpaceOnUse"
-            color-interpolation-filters="linearRGB"
-          >
-            <feTurbulence
-              type="turbulence"
-              baseFrequency="0.2"
-              numOctaves="4"
-              seed="15"
-              stitchTiles="stitch"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              result="turbulence"
-            ></feTurbulence>
-            <feSpecularLighting
-              surfaceScale="14"
-              specularConstant="3"
-              specularExponent="20"
-              lighting-color="var(--primary-hover)"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              in="turbulence"
-              result="specularLighting"
-            >
-              <feDistantLight azimuth="3" elevation="185"></feDistantLight>
-            </feSpecularLighting>
-          </filter>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          fill="#ff0000"
-          y={0}
-          filter="url(#nnnoise-filter)"
-        ></rect>
-      </svg>
+      {/*<svg*/}
+      {/*  xmlns="http://www.w3.org/2000/svg"*/}
+      {/*  version="1.1"*/}
+      {/*  className={"absolute w-full h-full opacity-texture top-0 left-0"}*/}
+      {/*>*/}
+      {/*  <defs>*/}
+      {/*    <filter*/}
+      {/*      id="nnnoise-filter"*/}
+      {/*      x="-20%"*/}
+      {/*      y="-20%"*/}
+      {/*      width="140%"*/}
+      {/*      height="140%"*/}
+      {/*      filterUnits="objectBoundingBox"*/}
+      {/*      primitiveUnits="userSpaceOnUse"*/}
+      {/*      color-interpolation-filters="linearRGB"*/}
+      {/*    >*/}
+      {/*      <feTurbulence*/}
+      {/*        type="turbulence"*/}
+      {/*        baseFrequency="0.2"*/}
+      {/*        numOctaves="4"*/}
+      {/*        seed="15"*/}
+      {/*        stitchTiles="stitch"*/}
+      {/*        x="0%"*/}
+      {/*        y="0%"*/}
+      {/*        width="100%"*/}
+      {/*        height="100%"*/}
+      {/*        result="turbulence"*/}
+      {/*      ></feTurbulence>*/}
+      {/*      <feSpecularLighting*/}
+      {/*        surfaceScale="14"*/}
+      {/*        specularConstant="3"*/}
+      {/*        specularExponent="20"*/}
+      {/*        lighting-color="var(--primary-hover)"*/}
+      {/*        x="0%"*/}
+      {/*        y="0%"*/}
+      {/*        width="100%"*/}
+      {/*        height="100%"*/}
+      {/*        in="turbulence"*/}
+      {/*        result="specularLighting"*/}
+      {/*      >*/}
+      {/*        <feDistantLight azimuth="3" elevation="185"></feDistantLight>*/}
+      {/*      </feSpecularLighting>*/}
+      {/*    </filter>*/}
+      {/*  </defs>*/}
+      {/*  <rect*/}
+      {/*    width="100%"*/}
+      {/*    height="100%"*/}
+      {/*    fill="#ff0000"*/}
+      {/*    y={0}*/}
+      {/*    filter="url(#nnnoise-filter)"*/}
+      {/*  ></rect>*/}
+      {/*</svg>*/}
       <svg
         width="100"
         height="100"
