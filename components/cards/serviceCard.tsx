@@ -5,8 +5,8 @@ import {
   motion,
   useMotionTemplate,
   useMotionValue,
-  useSpring,
   useTransform,
+  useWillChange,
 } from "framer-motion";
 import {
   useDiagonalInvertMovement,
@@ -50,66 +50,156 @@ const ServiceCard: FC<ServiceCardProps> = ({
     4: "180deg",
     5: "135deg",
   });
-  const cardX = useSpring(useMotionValue(0), { stiffness: 2000, damping: 100 });
-  const cardY = useSpring(useMotionValue(0), { stiffness: 2000, damping: 100 });
-  const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
-  const rotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Reversed values
+  const willChange = useWillChange();
+  // const cardX = useSpring(useMotionValue(0));
+  // const cardY = useSpring(useMotionValue(0));
+  const cardX = useMotionValue(0);
+  const cardY = useMotionValue(0);
+  const rotateX = useTransform(cardY, [-300, 300], [5, -5]); // Reversed values
+  const rotateY = useTransform(cardX, [-300, 300], [-5, 5]); // Reversed values
   // const cardRotateX = useTransform(cardY, [-300, 300], [10, -10]); // Adjusted rotation values
   // const cardRotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Adjusted rotation values
   const cardRef = useRef<HTMLDivElement>(null);
   const preferredScheme = usePreferredColorScheme();
-  const [isInitialDelayOver, setIsInitialDelayOver] = useState(false);
-  let initialDelayTimeout: NodeJS.Timeout | null = null;
-  let offsetX: number;
-  let offsetY: number;
-  const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-    if (isInitialDelayOver) {
-      if (cardRef.current) {
-        const cardRect = cardRef.current.getBoundingClientRect();
+  // const [isInitialDelayOver, setIsInitialDelayOver] = useState(false);
+  // let initialDelayTimeout: NodeJS.Timeout | null = null;
+  // let offsetX: number;
+  // let offsetY: number;
+  // const handleMouseMove = (event: { clientX: number; clientY: number }) => {
+  //   // if (isInitialDelayOver) {
+  //   if (cardRef.current) {
+  //     const cardRect = cardRef.current.getBoundingClientRect();
+  //     // Calculate the center of the card
+  //     const cardCenterX = cardRect.left + cardRect.width / 2;
+  //     const cardCenterY = cardRect.top + cardRect.height / 2;
+  //     // Calculate offsets from the center of the card
+  //     const offsetX = event.clientX - cardCenterX;
+  //     const offsetY = event.clientY - cardCenterY;
+  //     cardX.set(offsetX);
+  //     cardY.set(offsetY);
+  //   }
+  //   // }
+  // };
 
-        // Calculate the center of the card
-        const cardCenterX = cardRect.left + cardRect.width / 2;
-        const cardCenterY = cardRect.top + cardRect.height / 2;
+  let isMouseMoving = false;
 
-        // Calculate offsets from the center of the window
-        offsetX = event.clientX - cardCenterX;
-        offsetY = event.clientY - cardCenterY;
+  // const handleMouseMove = (event: { clientX: number; clientY: number }) => {
+  //   if (!isMouseMoving && cardRef.current) {
+  //     isMouseMoving = true;
+  //     requestAnimationFrame(() => {
+  //       const cardRect = cardRef.current!.getBoundingClientRect();
+  //       const cardCenterX = cardRect.left + cardRect.width / 2;
+  //       const cardCenterY = cardRect.top + cardRect.height / 2;
+  //       const offsetX = event.clientX - cardCenterX;
+  //       const offsetY = event.clientY - cardCenterY;
+  //       cardX.set(offsetX);
+  //       cardY.set(offsetY);
+  //       isMouseMoving = false;
+  //     });
+  //   }
+  // };
+  //
+  // useEffect(() => {
+  //   const onMouseMove = (event: MouseEvent) => {
+  //     handleMouseMove({ clientX: event.clientX, clientY: event.clientY });
+  //   };
+  //
+  //   document.addEventListener("mousemove", onMouseMove, { passive: true });
+  //
+  //   return () => {
+  //     document.removeEventListener("mousemove", onMouseMove);
+  //   };
+  // }, [handleMouseMove]);
 
-        cardX.set(offsetX);
-        cardY.set(offsetY);
-      }
-    }
-  };
-
-  function handleMouseEnter(event: { clientX: number; clientY: number }) {
-    if (!isInitialDelayOver) {
-      initialDelayTimeout = setTimeout(() => {
-        if (cardRef.current) {
-          const cardRect = cardRef.current.getBoundingClientRect();
-
-          // Calculate the center of the card
+  const handleMouseMove =
+    (cardRef: React.RefObject<HTMLDivElement>) => (event: MouseEvent) => {
+      if (!isMouseMoving && cardRef.current) {
+        isMouseMoving = true;
+        requestAnimationFrame(() => {
+          const cardRect = cardRef.current!.getBoundingClientRect();
           const cardCenterX = cardRect.left + cardRect.width / 2;
           const cardCenterY = cardRect.top + cardRect.height / 2;
-
-          // Calculate offsets from the center of the window
-          offsetX = event.clientX - cardCenterX;
-          offsetY = event.clientY - cardCenterY;
-        }
-        setIsInitialDelayOver(true);
-        if (cardRef.current) {
+          const offsetX = event.clientX - cardCenterX;
+          const offsetY = event.clientY - cardCenterY;
           cardX.set(offsetX);
           cardY.set(offsetY);
-        }
-      }, 200); // Set initial delay to 1 second
+          isMouseMoving = false;
+        });
+      }
+    };
+
+  useEffect(() => {
+    const onMouseMove = handleMouseMove(cardRef);
+
+    if (cardRef.current) {
+      cardRef.current.addEventListener("mousemove", onMouseMove, {
+        passive: true,
+      });
     }
-  }
+
+    return () => {
+      if (cardRef.current) {
+        cardRef.current.removeEventListener("mousemove", onMouseMove);
+      }
+    };
+  }, [cardRef]);
+
+  // const interpolateValues = (
+  //   startValue: number,
+  //   endValue: number,
+  //   duration: number,
+  //   setValueCallback: (value: number) => void,
+  // ) => {
+  //   const startTime = performance.now();
+  //   const update = () => {
+  //     const currentTime = performance.now();
+  //     const elapsedTime = currentTime - startTime;
+  //     const progress = Math.min(1, elapsedTime / duration);
+  //     const interpolatedValue = startValue + (endValue - startValue) * progress;
+  //     setValueCallback(interpolatedValue);
+  //     if (progress < 1) {
+  //       setTimeout(update, 0);
+  //     }
+  //   };
+  //   update();
+  // };
+
+  // function handleMouseEnter(event: { clientX: number; clientY: number }) {
+  //   if (!isInitialDelayOver) {
+  //     initialDelayTimeout = setTimeout(() => {
+  //       if (cardRef.current) {
+  //         const cardRect = cardRef.current.getBoundingClientRect();
+  //
+  //         // Calculate the center of the card
+  //         const cardCenterX = cardRect.left + cardRect.width / 2;
+  //         const cardCenterY = cardRect.top + cardRect.height / 2;
+  //
+  //         // Calculate offsets from the center of the window
+  //         offsetX = event.clientX - cardCenterX;
+  //         offsetY = event.clientY - cardCenterY;
+  //         // Interpolate and set offsetX and offsetY
+  //       }
+  //       setIsInitialDelayOver(true);
+  //       if (cardRef.current) {
+  //         cardX.set(offsetX);
+  //         cardY.set(offsetY);
+  //       }
+  //     }, 150); // Set initial delay to 1 second
+  //   }
+  // }
 
   const handleMouseLeave = () => {
-    setIsInitialDelayOver(false);
-    if (initialDelayTimeout) {
-      clearTimeout(initialDelayTimeout);
-    }
-    initialDelayTimeout = null;
+    // setIsInitialDelayOver(false);
+    // if (initialDelayTimeout) {
+    //   clearTimeout(initialDelayTimeout);
+    // }
+    // initialDelayTimeout = null;
+    // interpolateValues(offsetX, 0, 100, (value) => {
+    //   cardX.set(value);
+    // });
+    // interpolateValues(offsetY, 0, 100, (value) => {
+    //   cardY.set(value);
+    // });
     cardX.set(0);
     cardY.set(0);
   };
@@ -246,7 +336,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   const dynamicClasses = [
     indexClasses[index],
-    "flex flex-col p-8 md:p-9 lg:p-10 xl:p-11 2xl:p-12 transition-none transition-shadow !duration-500 shadow-services hover:shadow-services-hover rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
+    "flex flex-col p-8 md:p-9 lg:p-10 xl:p-11 2xl:p-12 transition-none transition-shadow duration-500 shadow-services group-hover:shadow-services-hover rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
     onClick ? "cursor-pointer" : "",
     className,
   ]
@@ -256,27 +346,31 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000"
+        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
       }
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
         className={
-          "will-change-transform sm:aspect-video md:aspect-square w-full !transition-none origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000 transform-style-3d"
+          "transition-transform transition-none-firefox duration-[75ms] sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d group"
         }
         style={{
           rotateX,
           rotateY,
+          willChange,
         }}
+        // transition={{ velocity: 0}}
       >
         <motion.div
           ref={cardRef}
-          className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-1000 transform-style-3d ${dynamicClasses}`}
+          className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d ${dynamicClasses}`}
           style={{
             background: sheenGradient,
           }}
+
+          // transition={{ velocity: 0 }}
         >
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.bold}>
             {title}
