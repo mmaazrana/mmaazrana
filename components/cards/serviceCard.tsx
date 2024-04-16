@@ -359,7 +359,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
         style={{
           rotateX,
           rotateY,
-          willChange,
         }}
         // transition={{ velocity: 0}}
       >
