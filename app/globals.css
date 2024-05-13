@@ -28,6 +28,11 @@
     --about-shadow: 0 0 2px var(--secondary);
     --noise-texture: url("/svgs/texture-light.svg");
     --texture-opacity: 25%;
+    --cube-top: #E0E8F5;
+    --cube-left: #D3DDF0;
+    --cube-right: #C7D4EC;
+    --white-dynamic: #FFF;
+    --black-dynamic: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +60,11 @@
         --about-shadow: 0 0 2px var(--secondary);
         --noise-texture: url("/svgs/texture.svg");
         --texture-opacity: 3%;
+        --cube-top: #3B5996;
+        --cube-left: #30497B;
+        --cube-right: #233559;
+        --white-dynamic: #000;
+        --black-dynamic: #FFF;
     }
 }
 

@@ -20,7 +20,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         maskType: "luminance",
       }}
     >
-      <path fill="#fff" d="m.255 246.9 9.23-81.51h161.53l-9.23 81.51H.255Z" />
+      <path fill="white" d="m.255 246.9 9.23-81.51h161.53l-9.23 81.51H.255Z" />
     </mask>
     <g mask="url(#mobileA)">
       <path
@@ -45,7 +45,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m12.895 144.55 9.23-81.5h161.53l-9.23 81.5H12.895Z"
       />
     </mask>
@@ -73,7 +73,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M412.887 23.39c-1.36-.86-2.72-1.73-4.08-2.59-.92-1.05-1.97-1.95-3.14-2.7l4.08 2.59c1.17.74 2.23 1.65 3.14 2.7Z"
         />
       </mask>
@@ -95,7 +95,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M412.887 23.39c2.87 3.28 4.37 7.92 3.79 13.07l-4.08-2.59c.58-5.14-.92-9.78-3.79-13.07 1.36.86 2.72 1.73 4.08 2.59Z"
         />
       </mask>
@@ -117,13 +117,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m406.717 16.42 4.08 2.59c5.37 3.4 8.53 9.95 7.68 17.45l-4.08-2.59c.85-7.5-2.31-14.05-7.68-17.45Z"
         />
       </mask>
       <g mask="url(#mobileJ)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m406.717 16.42 4.08 2.59c5.37 3.4 8.53 9.95 7.68 17.45l-4.08-2.59c.85-7.5-2.31-14.05-7.68-17.45Z"
         />
       </g>
@@ -139,7 +139,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m295.957 242.38-4.08-2.59c2.26 1.43 4.96 2.25 7.93 2.25l4.08 2.59c-2.97 0-5.67-.82-7.93-2.25Z"
         />
       </mask>
@@ -161,13 +161,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m294.897 244.07-4.08-2.59c2.5 1.59 5.49 2.49 8.77 2.49l4.08 2.59c-3.28 0-6.27-.9-8.77-2.49Z"
         />
       </mask>
       <g mask="url(#mobileL)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m299.587 243.97 4.08 2.59c-3.28 0-6.27-.9-8.77-2.49l-4.08-2.59c2.5 1.59 5.49 2.49 8.77 2.49Z"
         />
       </g>
@@ -176,7 +176,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m372.117 242.04 4.08 2.59h-72.31l-4.08-2.59h72.31Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m371.897 243.97 4.08 2.59h-72.31l-4.08-2.59h72.31Z"
       />
       <path
@@ -184,7 +184,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m412.587 33.87 4.09 2.59-21.54 190.16-4.08-2.59 21.53-190.16Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m414.397 33.87 4.09 2.59-21.54 190.16-4.08-2.59 21.53-190.16Z"
       />
       <path
@@ -203,7 +203,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m391.057 224.03 4.08 2.59c-1.13 9.95-9.61 18.01-18.94 18.01l-4.08-2.59c9.33 0 17.81-8.07 18.94-18.01Z"
         />
       </mask>
@@ -225,18 +225,18 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m392.867 224.03 4.08 2.59c-1.25 11-10.65 19.94-20.97 19.94l-4.08-2.59c10.32 0 19.72-8.95 20.97-19.94Z"
         />
       </mask>
       <g mask="url(#mobileO)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m392.867 224.03 4.08 2.59c-1.25 11-10.65 19.94-20.97 19.94l-4.08-2.59c10.32 0 19.72-8.95 20.97-19.94Z"
         />
       </g>
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="M397.947 13.93c10.32 0 17.7 8.95 16.45 19.94l-21.53 190.16c-1.25 11-10.65 19.94-20.97 19.94h-72.31c-10.32 0-17.7-8.95-16.45-19.94l21.53-190.16c1.25-11 10.65-19.94 20.97-19.94h72.31Zm-6.89 210.1 21.53-190.16c1.13-9.95-5.53-18.01-14.86-18.01h-72.31c-9.33 0-17.81 8.07-18.94 18.01l-21.53 190.16c-1.13 9.95 5.53 18.01 14.86 18.01h72.31c9.33 0 17.81-8.07 18.94-18.01Z"
       />
     </g>
@@ -252,7 +252,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="M195.155 228.61 220.995.49h107.93l-25.84 228.12h-107.93Z"
       />
     </mask>
@@ -280,7 +280,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m184.064 198.01 3.16-27.93h88.89l-3.16 27.93h-88.89Z"
       />
     </mask>
@@ -308,13 +308,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m193.475 125.26 10.51-92.81h87.08l-10.51 92.81h-87.08Z"
       />
     </mask>
     <g mask="url(#mobileT)">
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         fillOpacity={0.3}
         d="M275.484 32.45h-55.92c-8.61 0-16.42 7.43-17.46 16.6l-6.75 59.6c-1.04 9.17 5.09 16.6 13.7 16.6h55.92c8.61 0 16.42-7.43 17.46-16.6l6.75-59.6c1.04-9.17-5.09-16.6-13.7-16.6Z"
       />
@@ -331,13 +331,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m192.354 190.95 1.63-14.42h13.53l-1.63 14.42h-13.53Z"
       />
     </mask>
     <g mask="url(#mobileU)">
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         fillOpacity={0.6}
         d="M202.764 176.53h-4.02c-2.63 0-5.01 2.27-5.33 5.07l-.48 4.28c-.32 2.8 1.55 5.08 4.18 5.08h4.02c2.63 0 5.01-2.28 5.33-5.08l.48-4.28c.32-2.8-1.55-5.07-4.18-5.07Z"
       />
@@ -354,13 +354,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m212.455 190.95 1.64-14.42h13.53l-1.63 14.42h-13.54Z"
       />
     </mask>
     <g mask="url(#mobileV)">
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         fillOpacity={0.6}
         d="M222.865 176.53h-4.02c-2.63 0-5.01 2.27-5.33 5.07l-.48 4.28c-.32 2.8 1.55 5.08 4.18 5.08h4.02c2.63 0 5.01-2.28 5.33-5.08l.48-4.28c.32-2.8-1.55-5.07-4.18-5.07Z"
       />
@@ -377,13 +377,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m232.555 190.95 1.63-14.42h13.54l-1.64 14.42h-13.53Z"
       />
     </mask>
     <g mask="url(#mobileW)">
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         fillOpacity={0.6}
         d="M242.964 176.53h-4.02c-2.63 0-5.01 2.27-5.33 5.07l-.48 4.28c-.32 2.8 1.55 5.08 4.18 5.08h4.02c2.63 0 5.01-2.28 5.33-5.08l.48-4.28c.32-2.8-1.55-5.07-4.18-5.07Z"
       />
@@ -400,13 +400,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       }}
     >
       <path
-        fill="#fff"
+        fill="white"
         d="m252.665 190.95 1.63-14.42h13.53l-1.63 14.42h-13.53Z"
       />
     </mask>
     <g mask="url(#mobileX)">
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         fillOpacity={0.6}
         d="M263.075 176.53h-4.02c-2.63 0-5.01 2.27-5.33 5.07l-.48 4.28c-.32 2.8 1.55 5.08 4.18 5.08h4.02c2.63 0 5.01-2.28 5.33-5.08l.48-4.28c.32-2.8-1.55-5.07-4.18-5.07Z"
       />
@@ -424,7 +424,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m45.845 121.22 4.32-38.18h28.96l-4.33 38.18h-28.95Z"
         />
       </mask>
@@ -448,7 +448,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m103.725 121.44 4.37-38.63h36.24l-4.37 38.63h-36.24Z"
         />
       </mask>
@@ -472,7 +472,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m35.585 213.16 2.47-21.76h36.24l-2.47 21.76h-36.24Z"
         />
       </mask>
@@ -496,13 +496,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m99.105 222.75 4.369-38.63h29.51l-4.38 38.63h-29.5Z"
         />
       </mask>
       <g mask="url(#mobileB1)">
         <path
-          fill="#fff"
+          fill="var(--black-dynamic)"
           d="M123.824 193.44c-2.78 0-5.31 1.78-6.64 1.78-1.4 0-3.38-1.67-5.67-1.67h-.12c-3.08.04-6.12 1.9-8.04 4.85-3.87 5.91-2.48 14.65.09 19.46 1.25 2.3 2.73 4.9 5.07 4.9h.1c2.3-.1 3.34-1.59 6.12-1.59 2.78 0 3.35 1.52 5.66 1.52h.15c2.48-.03 4.31-2.38 6.08-4.74 2.05-2.72 3.08-5.36 3.14-5.5-.06-.02-4.58-1.96-3.98-7.82.51-4.89 4.56-7.23 4.75-7.34-1.77-3.36-5.04-3.74-6.19-3.83-.18-.01-.35-.02-.53-.02m1.6-9.31c-1.83.08-4.17 1.3-5.67 2.92-1.34 1.44-2.62 3.76-2.59 5.98.12 0 .23.01.35.01 1.9 0 3.95-1.22 5.33-2.75 1.46-1.63 2.56-3.91 2.57-6.16"
         />
       </g>
@@ -527,8 +527,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={295.61}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.1} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.1} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="mobileE"
@@ -549,8 +549,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={193.261}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.1} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.1} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="mobileM"
@@ -571,8 +571,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={111.557}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.1} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.1} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="mobileS"
@@ -582,8 +582,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={221.108}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.1} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.1} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <filter
         id="mobileG"

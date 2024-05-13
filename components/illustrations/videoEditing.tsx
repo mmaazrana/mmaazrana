@@ -22,13 +22,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m135.209 17.59 3.27 2.07c3.17 2.01 5.04 5.88 4.54 10.32l-3.27-2.07c.5-4.44-1.37-8.3-4.54-10.32Z"
         />
       </mask>
       <g mask="url(#videoB)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m135.209 17.59 3.27 2.07c3.17 2.01 5.04 5.88 4.54 10.32l-3.27-2.07c.5-4.44-1.37-8.3-4.54-10.32Z"
         />
       </g>
@@ -44,7 +44,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m26.609 248.32-3.27-2.07c1.39.88 3.05 1.38 4.87 1.38l3.27 2.07c-1.82 0-3.48-.5-4.87-1.38Z"
         />
       </mask>
@@ -66,13 +66,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m26.21 248.95-3.27-2.07c1.48.94 3.25 1.47 5.19 1.47l3.27 2.07c-1.94 0-3.71-.54-5.19-1.47Z"
         />
       </mask>
       <g mask="url(#videoD)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m28.13 248.35 3.27 2.07c-1.94 0-3.71-.54-5.19-1.47l-3.27-2.07c1.48.94 3.25 1.47 5.19 1.47Z"
         />
       </g>
@@ -81,7 +81,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m103.819 247.63 3.27 2.07h-75.61l-3.27-2.07h75.61Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m103.739 248.351 3.26 2.07h-75.6l-3.27-2.07h75.61Z"
       />
       <path
@@ -100,7 +100,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M112.889 247.95c-1.74 1.11-3.74 1.75-5.8 1.75l-3.27-2.07c2.06 0 4.06-.64 5.8-1.75l3.27 2.07Z"
         />
       </mask>
@@ -111,7 +111,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         />
       </g>
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m139.749 27.91 3.27 2.07-23.63 208.67-3.27-2.08 23.63-208.66Z"
       />
       <mask
@@ -126,7 +126,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m112.889 247.95-3.27-2.07c3.09-1.97 5.38-5.4 5.82-9.3l3.27 2.07c-.44 3.9-2.73 7.34-5.82 9.3Z"
         />
       </mask>
@@ -137,7 +137,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         />
       </g>
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="M130.039 16.12c6.09 0 10.45 5.29 9.72 11.79l-23.63 208.67c-.74 6.49-6.29 11.78-12.39 11.78h-75.61c-6.1 0-10.46-5.29-9.73-11.78L42.04 27.91c.74-6.5 6.29-11.79 12.4-11.79h75.61-.01Zm-14.59 220.45 23.63-208.67c.69-6.11-3.4-11.06-9.12-11.06h-75.61c-5.73 0-10.94 4.95-11.63 11.06L19.09 236.57c-.69 6.1 3.39 11.06 9.12 11.06h75.61c5.73 0 10.94-4.96 11.63-11.06Z"
       />
       <path
@@ -156,13 +156,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m116.119 236.57 3.27 2.07c-.74 6.49-6.29 11.78-12.39 11.78l-3.27-2.07c6.09 0 11.65-5.29 12.39-11.78Z"
         />
       </mask>
       <g mask="url(#videoH)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m116.119 236.57 3.27 2.07c-.74 6.49-6.29 11.78-12.39 11.78l-3.27-2.07c6.09 0 11.65-5.29 12.39-11.78Z"
         />
       </g>
@@ -178,7 +178,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m142.08 248.831-3.27-2.07c1.26.8 2.76 1.25 4.41 1.25l3.27 2.07c-1.65 0-3.16-.45-4.41-1.25Z"
         />
       </mask>
@@ -200,13 +200,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m141.69 249.461-3.27-2.07c1.35.86 2.96 1.34 4.73 1.34l3.27 2.07c-1.77 0-3.38-.49-4.73-1.34Z"
         />
       </mask>
       <g mask="url(#videoJ)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m143.15 248.731 3.27 2.07c-1.77 0-3.38-.49-4.73-1.34l-3.27-2.07c1.35.86 2.96 1.34 4.73 1.34Z"
         />
       </g>
@@ -222,7 +222,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M398.86 172.591a8.02 8.02 0 0 1 1.9 1.68l-3.27-2.07a8.02 8.02 0 0 0-1.9-1.68l3.27 2.07Z"
         />
       </mask>
@@ -244,7 +244,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M400.759 174.271c1.5 1.81 2.27 4.32 1.95 7.08l-3.27-2.07c.31-2.76-.46-5.27-1.95-7.08l3.27 2.07Z"
         />
       </mask>
@@ -266,13 +266,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m395.989 169.891 3.27 2.07c2.89 1.83 4.59 5.36 4.14 9.39l-3.27-2.07c.46-4.04-1.24-7.56-4.14-9.39Z"
         />
       </mask>
       <g mask="url(#videoM)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m395.989 169.891 3.27 2.07c2.89 1.83 4.59 5.36 4.14 9.39l-3.27-2.07c.46-4.04-1.24-7.56-4.14-9.39Z"
         />
       </g>
@@ -281,7 +281,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m382.26 248.011 3.269 2.07h-239.04l-3.26-2.07H382.26Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m382.179 248.731 3.27 2.07h-239.04l-3.26-2.07h239.03Z"
       />
       <path
@@ -289,7 +289,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m399.45 179.281 3.27 2.07-6.65 58.72-3.27-2.07 6.65-58.72Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m400.13 179.281 3.259 2.07-6.649 58.72-3.261-2.07 6.651-58.72Z"
       />
       <path
@@ -308,7 +308,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m392.8 238.001 3.27 2.07c-.63 5.53-5.34 10.01-10.54 10.01l-3.27-2.07c5.2 0 9.91-4.49 10.54-10.01Z"
         />
       </mask>
@@ -330,18 +330,18 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m393.48 238.001 3.27 2.07c-.67 5.92-5.73 10.74-11.3 10.74l-3.27-2.07c5.56 0 10.63-4.82 11.3-10.74Z"
         />
       </mask>
       <g mask="url(#videoP)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m393.48 238.001 3.27 2.07c-.67 5.92-5.73 10.74-11.3 10.74l-3.27-2.07c5.56 0 10.63-4.82 11.3-10.74Z"
         />
       </g>
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="M391.26 168.541c5.56 0 9.54 4.82 8.87 10.74l-6.651 58.71c-.67 5.92-5.73 10.74-11.3 10.74h-239.03c-5.55 0-9.54-4.82-8.87-10.74l6.65-58.71c.67-5.92 5.74-10.74 11.3-10.74H391.26Zm1.539 69.45 6.65-58.71c.63-5.53-3.069-10.01-8.269-10.01H152.149c-5.2 0-9.9 4.49-10.53 10.01l-6.649 58.71c-.63 5.53 3.069 10.01 8.259 10.01H382.26c5.2 0 9.909-4.49 10.539-10.01Z"
       />
       <mask
@@ -356,7 +356,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m155.509 149.83-3.27-2.07c1.8 1.14 3.95 1.79 6.31 1.79l3.27 2.07c-2.36 0-4.51-.65-6.31-1.79Z"
         />
       </mask>
@@ -378,13 +378,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m155.12 150.461-3.27-2.07c1.89 1.2 4.14 1.88 6.61 1.88l3.27 2.07c-2.47 0-4.73-.68-6.61-1.88Z"
         />
       </mask>
       <g mask="url(#videoR)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m158.469 150.271 3.27 2.07c-2.47 0-4.73-.68-6.61-1.88l-3.27-2.07c1.89 1.2 4.14 1.88 6.61 1.88Z"
         />
       </g>
@@ -400,13 +400,13 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m411.489 17.87 3.27 2.07c4.05 2.57 6.43 7.5 5.79 13.16l-3.27-2.07c.64-5.66-1.74-10.59-5.79-13.16Z"
         />
       </mask>
       <g mask="url(#videoS)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m411.489 17.87 3.27 2.07c4.05 2.57 6.43 7.5 5.79 13.16l-3.27-2.07c.64-5.66-1.74-10.59-5.79-13.16Z"
         />
       </g>
@@ -415,7 +415,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m389.759 149.55 3.26 2.07h-231.2l-3.27-2.07h231.21Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m389.67 150.271 3.27 2.07h-231.2l-3.27-2.07h231.2Z"
       />
       <path
@@ -423,7 +423,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         d="m416.61 31.03 3.27 2.07-11.8 104.2-3.27-2.07 11.8-104.2Z"
       />
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="m417.289 31.02 3.26 2.08-11.8 104.201-3.26-2.07 11.8-104.21Z"
       />
       <path
@@ -442,7 +442,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m404.809 135.23 3.27 2.07c-.9 7.91-7.64 14.32-15.06 14.32l-3.27-2.07c7.41 0 14.16-6.41 15.06-14.32Z"
         />
       </mask>
@@ -464,18 +464,18 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m405.49 135.23 3.27 2.07c-.94 8.29-8.03 15.04-15.81 15.04l-3.27-2.07c7.78 0 14.88-6.75 15.81-15.04Z"
         />
       </mask>
       <g mask="url(#videoV)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="m405.49 135.23 3.27 2.07c-.94 8.29-8.03 15.04-15.81 15.04l-3.27-2.07c7.78 0 14.88-6.75 15.81-15.04Z"
         />
       </g>
       <path
-        fill="#4264A8"
+        fill="var(--secondary)"
         d="M404.879 15.99c7.78 0 13.35 6.75 12.41 15.04l-11.8 104.21c-.94 8.29-8.03 15.04-15.81 15.04h-231.2c-7.78 0-13.35-6.75-12.41-15.04l11.8-104.21c.94-8.29 8.03-15.04 15.81-15.04h231.2Zm-.07 119.25 11.8-104.21c.89-7.9-4.4-14.32-11.81-14.32h-231.2c-7.42 0-14.16 6.42-15.06 14.32l-11.8 104.21c-.9 7.91 4.39 14.32 11.81 14.32h231.2c7.41 0 14.16-6.41 15.06-14.32Z"
       />
       <mask
@@ -490,7 +490,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m166.079 130.751 14.71-129.9h156.49l-14.71 129.9h-156.49Z"
         />
       </mask>
@@ -518,7 +518,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m338.389 130.751 14.71-129.9h48.2l-14.71 129.9h-48.2Z"
         />
       </mask>
@@ -556,7 +556,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m357.399 70.51 6.58-58.12h21.75l-6.58 58.12h-21.75Z"
         />
       </mask>
@@ -575,24 +575,24 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m150.159 239.74 6.9-60.92h227.32l-6.9 60.92h-227.32Z"
         />
       </mask>
       {/*bottom sliders*/}
       <g mask="url(#videoC1)">
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M180.849 184.87h-20.86c-1.5 0-2.86 1.3-3.05 2.9l-.63 5.6c-.18 1.61.89 2.9 2.39 2.9h20.86c1.51 0 2.87-1.3 3.05-2.9l.63-5.6c.18-1.6-.89-2.9-2.4-2.9"
           opacity={0.3}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M254.939 184.87h-60.65c-1.79 0-3.43 1.56-3.65 3.48l-.51 4.46c-.22 1.91 1.07 3.47 2.86 3.47h60.65l1.29-11.41m12.63 0h-11.73l-1.29 11.41h11.73c1.79 0 3.43-1.56 3.65-3.47l.51-4.46c.22-1.92-1.07-3.48-2.86-3.48"
           opacity={0.6}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M286.449 184.87h-5.7c-1.36 0-2.6 1.17-2.76 2.63l-.7 6.15c-.16 1.45.8 2.63 2.17 2.63h5.7c1.36 0 2.6-1.17 2.76-2.63l.7-6.15c.16-1.45-.8-2.63-2.17-2.63ZM323.519 184.87h-23.94c-1.53 0-2.91 1.32-3.1 2.95l-.62 5.51c-.18 1.63.91 2.95 2.43 2.95h23.94c1.53 0 2.91-1.32 3.09-2.95l.62-5.51c.18-1.63-.9-2.95-2.42-2.95ZM380.529 184.87h-42.27c-1.75 0-3.34 1.51-3.55 3.38l-.53 4.65c-.21 1.86 1.04 3.37 2.78 3.37h42.27c1.75 0 3.34-1.51 3.55-3.37l.53-4.65c.21-1.87-1.04-3.38-2.78-3.38Z"
           opacity={0.3}
         />
@@ -651,22 +651,22 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
           opacity={0.3}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M156.979 214.91c-1.71 0-2.93-1.48-2.73-3.3l.54-4.8c.21-1.83 1.76-3.3 3.47-3.3h54.76c1.71 0 2.93 1.48 2.73 3.3l-.54 4.8c-.21 1.83-1.76 3.3-3.47 3.3h-54.76Zm56.16-12.37h-54.76c-2.21 0-4.22 1.91-4.49 4.27l-.54 4.8c-.27 2.36 1.31 4.27 3.52 4.27h54.76c2.21 0 4.22-1.91 4.49-4.27l.54-4.8c.27-2.36-1.31-4.27-3.52-4.27Z"
           opacity={0.15}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M252.939 202.54h-25.06c-2.19 0-4.18 1.9-4.44 4.22l-.55 4.89c-.26 2.33 1.3 4.22 3.49 4.22h25.06l.11-.96h-25.06c-1.69 0-2.89-1.46-2.69-3.26l.55-4.89c.2-1.8 1.74-3.26 3.43-3.26h25.06l.11-.96m25.66 0h-24.76l-.11.96h24.76c1.69 0 2.89 1.46 2.69 3.26l-.55 4.89c-.2 1.8-1.74 3.26-3.43 3.26h-24.76l-.11.96h24.76c2.19 0 4.18-1.9 4.44-4.22l.55-4.89c.26-2.33-1.3-4.22-3.49-4.22"
           opacity={0.6}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M290.759 214.91c-1.73 0-2.97-1.5-2.76-3.35l.53-4.71c.21-1.84 1.79-3.35 3.52-3.35h59.13c1.73 0 2.96 1.5 2.75 3.35l-.53 4.71c-.21 1.85-1.78 3.35-3.51 3.35h-59.13Zm60.53-12.37h-59.13c-2.23 0-4.27 1.94-4.53 4.31l-.53 4.71c-.27 2.38 1.33 4.31 3.56 4.31h59.13c2.23 0 4.26-1.93 4.53-4.31l.53-4.71c.27-2.37-1.32-4.31-3.55-4.31M363.109 214.91c-1.71 0-2.93-1.48-2.73-3.3l.54-4.8c.21-1.82 1.76-3.3 3.47-3.3h12.77c1.71 0 2.93 1.49 2.73 3.3l-.54 4.8c-.21 1.83-1.76 3.3-3.47 3.3h-12.77Zm14.17-12.37h-12.77c-2.21 0-4.22 1.92-4.49 4.27l-.54 4.8c-.27 2.36 1.31 4.27 3.52 4.27h12.77c2.21 0 4.22-1.91 4.49-4.27l.54-4.8c.27-2.35-1.31-4.27-3.52-4.27Z"
           opacity={0.15}
         />
         <path
-          fill="#4264A8"
+          fill="var(--secondary)"
           d="M256.069 178.82c-.24 0-.47.22-.5.49l-.63 5.56-1.29 11.41-.71 6.27-.11.96-1.29 11.41-.11.96-.63 5.55-.08.72-1.29 11.41-.08.72-.57 4.99c-.03.26.15.48.39.48.24 0 .48-.22.51-.48l.57-4.99.08-.72 1.29-11.41.08-.72.63-5.55.11-.96 1.29-11.41.11-.96.71-6.27 1.29-11.41.63-5.56c.03-.27-.15-.49-.4-.49Z"
         />
       </g>
@@ -682,7 +682,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="M9.4 156.671 26.99 1.301h101.559l-17.6 155.37H9.399Z"
         />
       </mask>
@@ -710,7 +710,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m.87 232.081 6.97-61.54h101.899l-6.97 61.54H.869Z"
         />
       </mask>
@@ -738,11 +738,11 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m20.74 145.891 15.1-133.34h80.779l-15.1 133.34h-80.78Z"
         />
       </mask>
-      <g fill="#4264A8" mask="url(#videoM1)">
+      <g fill="var(--secondary)" mask="url(#videoM1)">
         <path
           d="M111.179 12.55h-69.9c-3 0-5.73 2.6-6.1 5.8v.13c-.38 3.21 1.77 5.8 4.77 5.8h69.9c3 0 5.73-2.59 6.1-5.8v-.13c.38-3.2-1.77-5.8-4.77-5.8Z"
           opacity={0.3}
@@ -768,9 +768,9 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
           maskType: "luminance",
         }}
       >
-        <path fill="#fff" d="m10.83 231.251 5.89-52H99.7l-5.89 52H10.83Z" />
+        <path fill="white" d="m10.83 231.251 5.89-52H99.7l-5.89 52H10.83Z" />
       </mask>
-      <g fill="#4264A8" mask="url(#videoN1)">
+      <g fill="var(--secondary)" mask="url(#videoN1)">
         <path
           d="M47.6 179.251H23.06c-3.5 0-6.69 3.03-7.11 6.76l-2.38 21.06c-.42 3.74 2.08 6.76 5.58 6.76h24.54c3.51 0 6.69-3.03 7.11-6.76l2.38-21.06c.42-3.73-2.07-6.76-5.58-6.76Z"
           opacity={0.15}
@@ -795,9 +795,9 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
           maskType: "luminance",
         }}
       >
-        <path fill="#fff" d="m177.529 117.57 12-106h136.29l-12 106h-136.29Z" />
+        <path fill="white" d="m177.529 117.57 12-106h136.29l-12 106h-136.29Z" />
       </mask>
-      <g fill="#4264A8" mask="url(#videoO1)">
+      <g fill="var(--secondary)" mask="url(#videoO1)">
         <path
           d="M318.13 11.57H197.22c-4.25 0-8.11 3.68-8.62 8.21l-7.4 65.3c-.51 4.53 2.51 8.2 6.76 8.2h120.91c4.25 0 8.11-3.67 8.62-8.2l7.4-65.3c.51-4.53-2.51-8.21-6.76-8.21Z"
           opacity={0.3}
@@ -823,11 +823,11 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         }}
       >
         <path
-          fill="#fff"
+          fill="white"
           d="m346.789 121.59 1.71-15.11h32.72l-1.71 15.11h-32.72Z"
         />
       </mask>
-      <g fill="#4264A8" mask="url(#videoP1)">
+      <g fill="var(--secondary)" mask="url(#videoP1)">
         <path
           d="M359.109 106.66c-.3 0-.63.08-.94.26l-9.41 5.42c-1.32.76-1.53 2.64-.38 3.4l8.18 5.41c.28.18.58.27.89.27.96 0 1.93-.82 2.06-1.96l1.23-10.82c.13-1.15-.66-1.97-1.62-1.97M370.129 106.48c-.84 0-1.7.72-1.81 1.72l-1.32 11.66c-.11 1 .58 1.72 1.42 1.72.27 0 .55-.07.83-.24l10.13-5.82c1.15-.66 1.34-2.32.34-2.98l-8.81-5.82c-.24-.16-.51-.24-.78-.24Z"
           opacity={0.6}
@@ -876,8 +876,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={-32.836}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoZ"
@@ -887,8 +887,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={33.01}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoA1"
@@ -898,8 +898,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={84.316}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoD"
@@ -909,8 +909,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={210.91}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoe1"
@@ -920,8 +920,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={221.566}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoF1"
@@ -931,8 +931,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={217.778}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoG1"
@@ -942,8 +942,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={210.275}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoH1"
@@ -953,8 +953,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={210.25}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoJ1"
@@ -964,8 +964,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={44.801}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <linearGradient
         id="videoL1"
@@ -975,11 +975,11 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y2={139.556}
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#4264A8" stopOpacity={0.25} />
-        <stop offset={1} stopColor="#4264A8" />
+        <stop stopColor="var(--secondary)" stopOpacity={0.25} />
+        <stop offset={1} stopColor="var(--secondary)" />
       </linearGradient>
       <clipPath id="videoA">
-        <path fill="#fff" d="M.87.85h419.79V250.8H.87z" />
+        <path fill="white" d="M.87.85h419.79V250.8H.87z" />
       </clipPath>
     </defs>
   </svg>
