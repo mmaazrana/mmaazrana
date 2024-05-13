@@ -12,17 +12,17 @@ const Work: FC<WorkProps> = ({}) => {
         className={"grid sm:flex gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12"}
       >
         <ProjectCard
-          title={"Athleton+"}
+          title={"DeepReel AI Videos"}
           description={
             "Short description about the app mentioned above, should be limited to two lines"
           }
-          imagePath={"Athleton.svg"}
+          imagePath={"/svgs/deepreel.svg"}
           alt={false}
         />
         <ProjectCard
-          title={"Athleton+"}
+          title={"Nutrigram"}
           description={"Short description about the app mentioned above"}
-          imagePath={"Markdown.svg"}
+          imagePath={"svgs/nutrigram.svg"}
           alt={true}
         />
       </div>
@@ -30,9 +30,9 @@ const Work: FC<WorkProps> = ({}) => {
         className={"grid sm:flex gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12"}
       >
         <ProjectCard
-          title={"Athleton+"}
+          title={"Markdown Editor"}
           description={"Short description about the app mentioned above"}
-          imagePath={"Markdown.svg"}
+          imagePath={"svgs/markdown.svg"}
           alt={true}
         />
         <ProjectCard
@@ -40,7 +40,7 @@ const Work: FC<WorkProps> = ({}) => {
           description={
             "Short description about the app mentioned above, should be limited to two lines"
           }
-          imagePath={"Athleton.svg"}
+          imagePath={"svgs/athleton.svg"}
           alt={false}
         />
       </div>

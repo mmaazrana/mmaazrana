@@ -20,6 +20,12 @@ import {
   useStraightMovement,
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
+import { Blender } from "@/components/illustrations/blender";
+import { LogoDesign } from "@/components/illustrations/logoDesign";
+import { WebAppDevelopment } from "@/components/illustrations/webAppDevelopment";
+import { VideoEditing } from "@/components/illustrations/videoEditing";
+import { ProductDesign } from "@/components/illustrations/productDesign";
+import { MobileAppDevelopment } from "@/components/illustrations/mobileAppDevelopment";
 
 interface ServiceCardProps {
   title: string;
@@ -354,7 +360,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
     >
       <motion.div
         className={
-          "transition-transform transition-none-firefox duration-[75ms] sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d group"
+          "transition-transform relative transition-none-firefox duration-[75ms] sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d group"
         }
         style={{
           rotateX,
@@ -362,6 +368,56 @@ const ServiceCard: FC<ServiceCardProps> = ({
         }}
         // transition={{ velocity: 0}}
       >
+        {index === 0 ? (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-end items-start w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+            }
+          >
+            <WebAppDevelopment />
+          </div>
+        ) : index === 1 ? (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-center items-start w-full h-full -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+            }
+          >
+            <ProductDesign />
+          </div>
+        ) : index === 2 ? (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-start items-start w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+            }
+          >
+            <MobileAppDevelopment />
+          </div>
+        ) : index === 3 ? (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-end items-end w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+            }
+          >
+            <VideoEditing />
+          </div>
+        ) : index === 4 ? (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-center items-end w-full h-full mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+            }
+          >
+            <LogoDesign />
+          </div>
+        ) : (
+          <div
+            className={
+              "absolute pointer-events-none z-10 flex justify-start items-end w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+            }
+          >
+            <Blender />
+          </div>
+        )}
+
         <motion.div
           ref={cardRef}
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d ${dynamicClasses}`}
