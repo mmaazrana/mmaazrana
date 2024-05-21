@@ -44,17 +44,20 @@ import Lyfiti from "@/components/icons/lyfiti";
 import FiveOneFivePools from "@/components/icons/515pools";
 import MenuHub from "@/components/icons/menuHub";
 
-export const HeroHeadings = [
+export const HeroHeadings: string[] = [
   "Product Designer",
-  3500,
   "Web Developer",
-  3500,
   "App Developer",
-  3500,
   "3D Artist",
-  3500,
   "Animator",
-  3500,
+];
+
+export const LottiePaths: string[] = [
+  "/lotties/product.lottie",
+  "/lotties/web.lottie",
+  "/lotties/mobile.lottie",
+  "/lotties/blender.lottie",
+  "/lotties/video.lottie",
 ];
 
 export const HeroDescriptions: string[] = [
