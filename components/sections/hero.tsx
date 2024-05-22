@@ -40,10 +40,14 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <div
       className={
-        " w-full flex flex-row justify-center items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-3 md:gap-4 xl:gap-5 min-h-[600px]"
+        " w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-6 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
       }
     >
-      <div className={"flex basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4"}>
+      <div
+        className={
+          "flex basis-full md:basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4"
+        }
+      >
         {/*<TypeAnimation*/}
         {/*  wrapper={"h1"}*/}
         {/*  sequence={HeroHeadings}*/}
@@ -82,7 +86,7 @@ const Hero: FC<HeroProps> = ({}) => {
       </div>
       <DotLottiePlayer
         className={
-          "flex basis-[45%] transition-none self-center items-center justify-center origin-left scale-[120%]"
+          "flex  max-w-[75%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
         }
         src={LottiePaths[index]}
         autoplay
