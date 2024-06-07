@@ -5,6 +5,7 @@ import Button from "@/components/button";
 import {
   HeroDescriptions,
   HeroHeadings,
+  LottieLightPaths,
   LottiePaths,
 } from "@/helpers/constants";
 import { ButtonTypes, TextTypes, WeightTypes } from "@/helpers/enums";
@@ -12,23 +13,34 @@ import { AnimatePresence, motion } from "framer-motion";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
 import { DotLottiePlayer } from "@dotlottie/react-player";
+import { useInView } from "react-intersection-observer";
+import { useColorScheme } from "@/components/utils/hooks";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
   // const durations: number[] = [5100, 4850, 5550, 4350, 4450];
   // const durations: number[] = [5110, 4900, 5530, 4300, 4300];
-
+  const [ref, inView] = useInView();
   const [index, setIndex] = React.useState(0);
-
+  const { isDark } = useColorScheme();
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIndex((prevIndex) => {
-        return (prevIndex + 1) % HeroDescriptions.length;
-      });
-    }, 5000);
-    return () => clearInterval(intervalId);
-  });
+    let intervalId: NodeJS.Timeout;
+
+    if (inView) {
+      intervalId = setInterval(() => {
+        setIndex((prevIndex) => {
+          return (prevIndex + 1) % HeroDescriptions.length;
+        });
+      }, 5000);
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [inView]);
 
   // const options = {
   //   animationData: product,
@@ -39,6 +51,7 @@ const Hero: FC<HeroProps> = ({}) => {
 
   return (
     <div
+      ref={ref}
       className={
         " w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-6 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
       }
@@ -88,7 +101,7 @@ const Hero: FC<HeroProps> = ({}) => {
         className={
           "flex  max-w-[75%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
         }
-        src={LottiePaths[index]}
+        src={isDark ? LottiePaths[index] : LottieLightPaths[index]}
         autoplay
       ></DotLottiePlayer>
     </div>

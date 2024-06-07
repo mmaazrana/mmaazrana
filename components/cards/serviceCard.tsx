@@ -20,12 +20,14 @@ import {
   useStraightMovement,
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
-import { Blender } from "@/components/illustrations/blender";
-import { LogoDesign } from "@/components/illustrations/logoDesign";
-import { WebAppDevelopment } from "@/components/illustrations/webAppDevelopment";
-import { VideoEditing } from "@/components/illustrations/videoEditing";
-import { ProductDesign } from "@/components/illustrations/productDesign";
-import { MobileAppDevelopment } from "@/components/illustrations/mobileAppDevelopment";
+import {
+  BlenderDesktop,
+  LogoDesktop,
+  ProductDesktop,
+  VideoEditingDesktop,
+  WebDesktop,
+} from "@/components/illustrations-op";
+import AppDesktop from "@/components/illustrations-op/AppDesktop";
 
 interface ServiceCardProps {
   title: string;
@@ -374,7 +376,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-end items-start w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <WebAppDevelopment />
+            <WebDesktop />
           </div>
         ) : index === 1 ? (
           <div
@@ -382,7 +384,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-center items-start w-full h-full -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <ProductDesign />
+            <ProductDesktop />
           </div>
         ) : index === 2 ? (
           <div
@@ -390,7 +392,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-start items-start w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <MobileAppDevelopment />
+            <AppDesktop />
           </div>
         ) : index === 3 ? (
           <div
@@ -398,7 +400,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-end items-end w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
             }
           >
-            <VideoEditing />
+            <VideoEditingDesktop />
           </div>
         ) : index === 4 ? (
           <div
@@ -406,7 +408,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-center items-end w-full h-full mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
             }
           >
-            <LogoDesign />
+            <LogoDesktop />
           </div>
         ) : (
           <div
@@ -414,7 +416,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
               "absolute pointer-events-none z-10 flex justify-start items-end w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
             }
           >
-            <Blender />
+            <BlenderDesktop />
           </div>
         )}
 

@@ -60,6 +60,14 @@ export const LottiePaths: string[] = [
   "/lotties/video.lottie",
 ];
 
+export const LottieLightPaths: string[] = [
+  "/lotties/product-light.lottie",
+  "/lotties/web-light.lottie",
+  "/lotties/mobile-light.lottie",
+  "/lotties/blender-light.lottie",
+  "/lotties/video-light.lottie",
+];
+
 export const HeroDescriptions: string[] = [
   "Crafting user-centric digital experiences that blend creativity and functionality for impactful, seamless design.",
   "Transforming ideas into interactive web solutions, I specialize in coding elegant websites with a focus on user experience.",
@@ -133,11 +141,11 @@ export const footerButtons: FooterButtonT[][] = [
 
 export const services: ServiceT[] = [
   { title: "Web Application Development", index: 0 },
-  { title: "Product Design", index: 1 },
+  { title: "Product \n Design", index: 1 },
   { title: "Mobile Application Development", index: 2 },
-  { title: "Video Editing", index: 3 },
-  { title: "Logo Design", index: 4 },
-  { title: "3D Design & Animation", index: 5 },
+  { title: "Video \n Editing", index: 3 },
+  { title: "Logo \n Design", index: 4 },
+  { title: "3D Design \n & Animation", index: 5 },
 ];
 
 export const breakpoints = {

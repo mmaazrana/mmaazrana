@@ -4,7 +4,7 @@ import { archivo, nunito } from "@/helpers/fonts";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 
 interface TypographyProps {
-  children: string | number;
+  children: string;
   type: TextTypes;
   color?: ColorTypes;
   weight?: WeightTypes;
@@ -79,7 +79,12 @@ const Typography: FC<TypographyProps> = ({
         onClick && onClick();
       }}
     >
-      {children}
+      {children.split("\n").map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index !== children.split("\n").length - 1 && <br />}
+        </React.Fragment>
+      ))}
     </span>
   );
 };
