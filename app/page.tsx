@@ -12,6 +12,7 @@ import { isBrowser } from "react-device-detect";
 import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function Home() {
   const [inView, setInView] = useState(true);
@@ -64,6 +65,7 @@ export default function Home() {
   return (
     <div className={"overflow-x-hidden"}>
       <Head>
+        <GoogleAnalytics gaId="G-PNNJWR7KVB" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
