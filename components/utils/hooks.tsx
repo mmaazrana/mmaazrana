@@ -15,7 +15,7 @@ export function useColorScheme() {
 
   const [isDark, setIsDark] = useColorSchemeState();
   const value = useMemo(
-    () => (isDark === undefined ? !!systemPrefersDark : isDark),
+    () => (isDark === undefined ? systemPrefersDark : isDark),
     [isDark, systemPrefersDark],
   );
 

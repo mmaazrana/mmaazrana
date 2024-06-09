@@ -13,7 +13,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
 import { DotLottiePlayer } from "@dotlottie/react-player";
-import { useInView } from "react-intersection-observer";
 import { useColorScheme } from "@/components/utils/hooks";
 
 interface HeroProps {}
@@ -21,26 +20,22 @@ interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
   // const durations: number[] = [5100, 4850, 5550, 4350, 4450];
   // const durations: number[] = [5110, 4900, 5530, 4300, 4300];
-  const [ref, inView] = useInView();
   const [index, setIndex] = React.useState(0);
   const { isDark } = useColorScheme();
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-
-    if (inView) {
-      intervalId = setInterval(() => {
-        setIndex((prevIndex) => {
-          return (prevIndex + 1) % HeroDescriptions.length;
-        });
-      }, 5000);
-    }
+    intervalId = setInterval(() => {
+      setIndex((prevIndex) => {
+        return (prevIndex + 1) % HeroDescriptions.length;
+      });
+    }, 5000);
 
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
       }
     };
-  }, [inView]);
+  }, []);
 
   // const options = {
   //   animationData: product,
@@ -51,9 +46,8 @@ const Hero: FC<HeroProps> = ({}) => {
 
   return (
     <div
-      ref={ref}
       className={
-        " w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-6 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
+        " w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
       }
     >
       <div
@@ -82,7 +76,24 @@ const Hero: FC<HeroProps> = ({}) => {
             </Typography>
           </motion.div>
         </AnimatePresence>
-
+        <AnimatePresence mode="wait">
+          <motion.div
+            className={"!transition-none"}
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <Typography
+              type={TextTypes["3xl"]}
+              weight={WeightTypes.regular}
+              className={"!transition-none !opacity-75"}
+            >
+              {HeroDescriptions[index % HeroDescriptions.length]}
+            </Typography>
+          </motion.div>
+        </AnimatePresence>
         <div className="flex gap-2 items-center justify-start flex-wrap">
           <div className={"pt-3 pb-3 pr-3"}>
             <Link href={""}>
@@ -99,7 +110,7 @@ const Hero: FC<HeroProps> = ({}) => {
       </div>
       <DotLottiePlayer
         className={
-          "flex  max-w-[75%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
+          "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
         }
         src={isDark ? LottiePaths[index] : LottieLightPaths[index]}
         autoplay
