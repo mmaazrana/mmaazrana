@@ -24,6 +24,12 @@ export interface FooterSocialT {
   href: string;
 }
 
+export interface ProjectT {
+  title: string;
+  description: string;
+  imagePath: string;
+}
+
 export interface ServiceT {
   title: string;
   index: 0 | 1 | 2 | 3 | 4 | 5;

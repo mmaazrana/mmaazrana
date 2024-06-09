@@ -18,8 +18,6 @@ import { useColorScheme } from "@/components/utils/hooks";
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
-  // const durations: number[] = [5100, 4850, 5550, 4350, 4450];
-  // const durations: number[] = [5110, 4900, 5530, 4300, 4300];
   const [index, setIndex] = React.useState(0);
   const { isDark } = useColorScheme();
   useEffect(() => {
@@ -36,13 +34,6 @@ const Hero: FC<HeroProps> = ({}) => {
       }
     };
   }, []);
-
-  // const options = {
-  //   animationData: product,
-  //   loop: false,
-  // };
-  //
-  // const { View } = useLottie(options);
 
   return (
     <div
@@ -65,11 +56,11 @@ const Hero: FC<HeroProps> = ({}) => {
         <AnimatePresence mode="wait">
           <motion.div
             className={"!transition-none"}
-            key={index}
-            initial={{ opacity: 0, transform: "translateY(50px)" }}
+            key={"heading" + index}
+            initial={{ opacity: 0, transform: "translateY(20px)" }}
             animate={{ opacity: 1, transform: "translateY(0px)" }}
-            exit={{ opacity: 0, transform: "translateY(-50px)" }}
-            transition={{ duration: 0.25 }}
+            exit={{ opacity: 0, transform: "translateY(-20px)" }}
+            transition={{ duration: 0.35 }}
           >
             <Typography type={TextTypes["8xl"]} weight={WeightTypes.bold}>
               {HeroHeadings[index % HeroHeadings.length]}
@@ -79,11 +70,11 @@ const Hero: FC<HeroProps> = ({}) => {
         <AnimatePresence mode="wait">
           <motion.div
             className={"!transition-none"}
-            key={index}
+            key={"description" + index}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.35 }}
           >
             <Typography
               type={TextTypes["3xl"]}

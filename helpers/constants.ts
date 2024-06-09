@@ -3,6 +3,7 @@ import {
   BottomNavButtonT,
   FooterButtonT,
   NavButtonT,
+  ProjectT,
   ServiceT,
   TestimonialT,
   WorkExperienceT,
@@ -137,6 +138,31 @@ export const footerButtons: FooterButtonT[][] = [
     { text: "Markdown Editor", href: "" },
     { text: "Jawline Fitness", href: "" },
   ],
+];
+
+export const projects: ProjectT[] = [
+  {
+    title: "DeepReel AI Videos",
+    description:
+      "Short description about the app mentioned above, should be limited to two lines",
+    imagePath: "/svgs/deepreel.svg",
+  },
+  {
+    title: "Nutrigram",
+    description: "Short description about the app mentioned above",
+    imagePath: "/svgs/nutrigram.svg",
+  },
+  {
+    title: "Markdown Editor",
+    description: "Short description about the app mentioned above",
+    imagePath: "/svgs/markdown.svg",
+  },
+  {
+    title: "Athleton+",
+    description:
+      "Short description about the app mentioned above, should be limited to two lines",
+    imagePath: "/svgs/athleton.svg",
+  },
 ];
 
 export const services: ServiceT[] = [
