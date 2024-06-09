@@ -6,7 +6,6 @@ import {
   useMotionTemplate,
   useMotionValue,
   useTransform,
-  useWillChange,
 } from "framer-motion";
 import {
   useDiagonalInvertMovement,
@@ -21,11 +20,23 @@ import {
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
 import {
+  AppMobile,
+  AppTab,
   BlenderDesktop,
+  BlenderMobile,
+  BlenderTab,
   LogoDesktop,
+  LogoMobile,
+  LogoTab,
   ProductDesktop,
+  ProductMobile,
+  ProductTab,
   VideoEditingDesktop,
+  VideoMobile,
+  VideoTab,
   WebDesktop,
+  WebMobile,
+  WebTab,
 } from "@/components/illustrations-op";
 import AppDesktop from "@/components/illustrations-op/AppDesktop";
 
@@ -58,66 +69,14 @@ const ServiceCard: FC<ServiceCardProps> = ({
     4: "180deg",
     5: "135deg",
   });
-  const willChange = useWillChange();
-  // const cardX = useSpring(useMotionValue(0));
-  // const cardY = useSpring(useMotionValue(0));
+  const [windowWidth, setWindowWidth] = useState(1200);
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
   const rotateX = useTransform(cardY, [-300, 300], [5, -5]); // Reversed values
   const rotateY = useTransform(cardX, [-300, 300], [-5, 5]); // Reversed values
-  // const cardRotateX = useTransform(cardY, [-300, 300], [10, -10]); // Adjusted rotation values
-  // const cardRotateY = useTransform(cardX, [-300, 300], [-10, 10]); // Adjusted rotation values
   const cardRef = useRef<HTMLDivElement>(null);
   const preferredScheme = usePreferredColorScheme();
-  // const [isInitialDelayOver, setIsInitialDelayOver] = useState(false);
-  // let initialDelayTimeout: NodeJS.Timeout | null = null;
-  // let offsetX: number;
-  // let offsetY: number;
-  // const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-  //   // if (isInitialDelayOver) {
-  //   if (cardRef.current) {
-  //     const cardRect = cardRef.current.getBoundingClientRect();
-  //     // Calculate the center of the card
-  //     const cardCenterX = cardRect.left + cardRect.width / 2;
-  //     const cardCenterY = cardRect.top + cardRect.height / 2;
-  //     // Calculate offsets from the center of the card
-  //     const offsetX = event.clientX - cardCenterX;
-  //     const offsetY = event.clientY - cardCenterY;
-  //     cardX.set(offsetX);
-  //     cardY.set(offsetY);
-  //   }
-  //   // }
-  // };
-
   let isMouseMoving = false;
-
-  // const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-  //   if (!isMouseMoving && cardRef.current) {
-  //     isMouseMoving = true;
-  //     requestAnimationFrame(() => {
-  //       const cardRect = cardRef.current!.getBoundingClientRect();
-  //       const cardCenterX = cardRect.left + cardRect.width / 2;
-  //       const cardCenterY = cardRect.top + cardRect.height / 2;
-  //       const offsetX = event.clientX - cardCenterX;
-  //       const offsetY = event.clientY - cardCenterY;
-  //       cardX.set(offsetX);
-  //       cardY.set(offsetY);
-  //       isMouseMoving = false;
-  //     });
-  //   }
-  // };
-  //
-  // useEffect(() => {
-  //   const onMouseMove = (event: MouseEvent) => {
-  //     handleMouseMove({ clientX: event.clientX, clientY: event.clientY });
-  //   };
-  //
-  //   document.addEventListener("mousemove", onMouseMove, { passive: true });
-  //
-  //   return () => {
-  //     document.removeEventListener("mousemove", onMouseMove);
-  //   };
-  // }, [handleMouseMove]);
 
   const handleMouseMove =
     (cardRef: React.RefObject<HTMLDivElement>) => (event: MouseEvent) => {
@@ -136,6 +95,20 @@ const ServiceCard: FC<ServiceCardProps> = ({
       }
     };
 
+  const handleMouseLeave = () => {
+    cardX.set(0);
+    cardY.set(0);
+  };
+
+  const indexClasses = {
+    0: "justify-center sm:justify-end items-start sm:items-end text-left sm:text-right",
+    1: "justify-center sm:justify-end items-start md:items-center text-left md:text-center",
+    2: "justify-center md:justify-end items-start sm:items-end md:items-start text-left sm:text-right md:text-left",
+    3: "justify-center md:justify-start items-end sm:items-start md:items-end text-right sm:text-left md:text-right",
+    4: "justify-center sm:justify-start items-end md:items-center text-right md:text-center",
+    5: "justify-center sm:justify-start items-end sm:items-start text-right sm:text-left sm:text-left",
+  };
+
   useEffect(() => {
     const onMouseMove = handleMouseMove(cardRef);
 
@@ -152,159 +125,94 @@ const ServiceCard: FC<ServiceCardProps> = ({
     };
   }, [cardRef]);
 
-  // const interpolateValues = (
-  //   startValue: number,
-  //   endValue: number,
-  //   duration: number,
-  //   setValueCallback: (value: number) => void,
-  // ) => {
-  //   const startTime = performance.now();
-  //   const update = () => {
-  //     const currentTime = performance.now();
-  //     const elapsedTime = currentTime - startTime;
-  //     const progress = Math.min(1, elapsedTime / duration);
-  //     const interpolatedValue = startValue + (endValue - startValue) * progress;
-  //     setValueCallback(interpolatedValue);
-  //     if (progress < 1) {
-  //       setTimeout(update, 0);
-  //     }
-  //   };
-  //   update();
-  // };
-
-  // function handleMouseEnter(event: { clientX: number; clientY: number }) {
-  //   if (!isInitialDelayOver) {
-  //     initialDelayTimeout = setTimeout(() => {
-  //       if (cardRef.current) {
-  //         const cardRect = cardRef.current.getBoundingClientRect();
-  //
-  //         // Calculate the center of the card
-  //         const cardCenterX = cardRect.left + cardRect.width / 2;
-  //         const cardCenterY = cardRect.top + cardRect.height / 2;
-  //
-  //         // Calculate offsets from the center of the window
-  //         offsetX = event.clientX - cardCenterX;
-  //         offsetY = event.clientY - cardCenterY;
-  //         // Interpolate and set offsetX and offsetY
-  //       }
-  //       setIsInitialDelayOver(true);
-  //       if (cardRef.current) {
-  //         cardX.set(offsetX);
-  //         cardY.set(offsetY);
-  //       }
-  //     }, 150); // Set initial delay to 1 second
-  //   }
-  // }
-
-  const handleMouseLeave = () => {
-    // setIsInitialDelayOver(false);
-    // if (initialDelayTimeout) {
-    //   clearTimeout(initialDelayTimeout);
-    // }
-    // initialDelayTimeout = null;
-    // interpolateValues(offsetX, 0, 100, (value) => {
-    //   cardX.set(value);
-    // });
-    // interpolateValues(offsetY, 0, 100, (value) => {
-    //   cardY.set(value);
-    // });
-    cardX.set(0);
-    cardY.set(0);
-  };
-
-  // const angleClasses = {
-  //   0: "-45deg",
-  //   1: "0deg",
-  //   2: "45deg",
-  //   3: "225deg",
-  //   4: "180deg",
-  //   5: "135deg",
-  // };
-
-  const indexClasses = {
-    0: "justify-center sm:justify-end items-start sm:items-end text-left sm:text-right",
-    1: "justify-center sm:justify-end items-start md:items-center text-left sm:text-right md:text-center",
-    2: "justify-center md:justify-end items-start sm:items-end md:items-start text-left sm:text-right md:text-left",
-    3: "justify-center md:justify-start items-end sm:items-start md:items-end text-right md:text-right",
-    4: "justify-center sm:justify-start items-end md:items-center text-right sm:text-left md:text-center",
-    5: "justify-center sm:justify-start items-end sm:items-start text-right sm:text-left sm:text-left",
-  };
-
   useEffect(() => {
     setAngleClasses({
-      0: window.innerWidth >= breakpoints.sm ? "-45deg" : "90deg",
+      0: windowWidth >= breakpoints.sm ? "-45deg" : "90deg",
       1:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? "0deg"
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? "45deg"
             : "90deg",
       2:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? "45deg"
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? "270deg"
             : "90deg",
       3:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? "225deg"
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? "90deg"
             : "270deg",
       4:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? "180deg"
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? "225deg"
             : "270deg",
-      5: window.innerWidth >= breakpoints.sm ? "135deg" : "270deg",
+      5: windowWidth >= breakpoints.sm ? "135deg" : "270deg",
     });
     setHoverAngles({
       0:
-        window.innerWidth >= breakpoints.sm
+        windowWidth >= breakpoints.sm
           ? useReverseDiagonalInvertMovement
           : useSideMovement,
       1:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? useStraightMovement
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? useDiagonalMovement
             : useSideMovement,
       2:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? useDiagonalMovement
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? useSideInvertMovement
             : useSideMovement,
       3:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? useDiagonalInvertMovement
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? useSideMovement
             : useSideInvertMovement,
       4:
-        window.innerWidth >= breakpoints.md
+        windowWidth >= breakpoints.md
           ? useStraightInvertMovement
-          : window.innerWidth >= breakpoints.sm
+          : windowWidth >= breakpoints.sm
             ? useDiagonalInvertMovement
             : useSideInvertMovement,
       5:
-        window.innerWidth >= breakpoints.sm
+        windowWidth >= breakpoints.sm
           ? useReverseDiagonalMovement
           : useSideInvertMovement,
     });
-  }, [cardRef]);
+  }, [cardRef, windowWidth]);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const sheenPosition = useTransform(
     hoverAngles[index](rotateX, rotateY),
     [-12, 8],
     [-80, 140],
   );
-  // const sheenOpacity = useTransform(
-  //   sheenPosition,
-  //   [-100, 0, 25, 50, 150, 175, 200],
-  //   [0.1, 0.2, 0.3, 0.3, 0.3, 0.2, 0.1],
-  // );
+
   const sheenOpacity = useTransform(
     sheenPosition,
     [-100, 0, 200],
@@ -344,7 +252,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   const dynamicClasses = [
     indexClasses[index],
-    "flex flex-col p-8 md:p-9 lg:p-10 xl:p-11 2xl:p-12 transition-none transition-shadow duration-500 shadow-services group-hover:shadow-services-hover rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
+    "flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none transition-shadow duration-500 shadow-services group-hover:shadow-services-hover rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
     onClick ? "cursor-pointer" : "",
     className,
   ]
@@ -354,7 +262,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
+        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
       }
       // onMouseEnter={handleMouseEnter}
       // onMouseMove={handleMouseMove}
@@ -373,50 +281,86 @@ const ServiceCard: FC<ServiceCardProps> = ({
         {index === 0 ? (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-end items-start w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+              "absolute right-0 pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <WebDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <WebDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <WebTab />
+            ) : (
+              <WebMobile />
+            )}
           </div>
         ) : index === 1 ? (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-center items-start w-full h-full -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+              "absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <ProductDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <ProductDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <ProductTab />
+            ) : (
+              <ProductMobile />
+            )}
           </div>
         ) : index === 2 ? (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-start items-start w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-1 lg:-mt-2 xl:-mt-3 2xl:-mt-4"
+              "absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
             }
           >
-            <AppDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <AppDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <AppTab />
+            ) : (
+              <AppMobile />
+            )}
           </div>
         ) : index === 3 ? (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-end items-end w-full h-full pr-8 md:pr-9 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+              "absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
             }
           >
-            <VideoEditingDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <VideoEditingDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <VideoTab />
+            ) : (
+              <VideoMobile />
+            )}
           </div>
         ) : index === 4 ? (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-center items-end w-full h-full mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+              "absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
             }
           >
-            <LogoDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <LogoDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <LogoTab />
+            ) : (
+              <LogoMobile />
+            )}
           </div>
         ) : (
           <div
             className={
-              "absolute pointer-events-none z-10 flex justify-start items-end w-full h-full pl-8 md:pl-9 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-1 lg:mt-2 xl:mt-3 2xl:mt-4"
+              "absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
             }
           >
-            <BlenderDesktop />
+            {windowWidth >= breakpoints.md ? (
+              <BlenderDesktop />
+            ) : windowWidth >= breakpoints.sm ? (
+              <BlenderTab />
+            ) : (
+              <BlenderMobile />
+            )}
           </div>
         )}
 

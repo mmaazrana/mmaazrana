@@ -5,8 +5,8 @@ const SvgWebMobile = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 212 135"
-    className={`overflow-visible min-w-[119%] ${props.className}`}
+    viewBox="0 0 150 135"
+    className={`overflow-visible min-w-[100%] min-h-[115%] service:min-h-[150%] -mr-10 service:mr-0 ${props.className}`}
     fill="none"
     {...props}
   >

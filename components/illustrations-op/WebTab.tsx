@@ -5,8 +5,8 @@ const SvgWebTab = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 275 250"
-    className={`overflow-visible min-w-[119%] ${props.className}`}
+    viewBox="0 0 270 215"
+    className={`overflow-visible min-w-[100%] mr-32 ${props.className}`}
     fill="none"
     {...props}
   >

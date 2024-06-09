@@ -140,9 +140,9 @@ export const footerButtons: FooterButtonT[][] = [
 ];
 
 export const services: ServiceT[] = [
-  { title: "Web Application Development", index: 0 },
+  { title: "Web App \n Development", index: 0 },
   { title: "Product \n Design", index: 1 },
-  { title: "Mobile Application Development", index: 2 },
+  { title: "Mobile App \n Development", index: 2 },
   { title: "Video \n Editing", index: 3 },
   { title: "Logo \n Design", index: 4 },
   { title: "3D Design \n & Animation", index: 5 },

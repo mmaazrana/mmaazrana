@@ -5,8 +5,8 @@ const SvgProductTab = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 338 261"
-    className={`overflow-visible min-w-[119%] ${props.className}`}
+    viewBox="0 0 315 225"
+    className={`overflow-visible min-w-[100%] ml-28 ${props.className}`}
     fill="none"
     {...props}
   >

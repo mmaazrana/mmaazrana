@@ -6,7 +6,7 @@ const SvgLogoMobile = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 208 155"
-    className={`overflow-visible min-w-[119%] ${props.className}`}
+    className={`overflow-visible min-w-[100%] min-h-[172%] service:min-h-[180%] -ml-20 service:-ml-12 ${props.className}`}
     fill="none"
     {...props}
   >

@@ -6,7 +6,7 @@ const SvgBlenderDesktop = (props: SVGProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 530 290"
-    className={`overflow-visible -ml-6 min-w-[135%] ${props.className}`}
+    className={`overflow-visible -ml-3 lg:-ml-6 min-w-[135%] ${props.className}`}
     fill="none"
     {...props}
   >

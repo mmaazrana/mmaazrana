@@ -38,6 +38,7 @@ const config: Config = {
       screens: {
         xs: "365px",
         about: "445px",
+        service: "500px",
       },
       width: {
         "8xl": "10rem",
