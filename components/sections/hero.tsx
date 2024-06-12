@@ -53,7 +53,7 @@ const Hero: FC<HeroProps> = ({}) => {
         {/*  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-extrabold ${archivo.className}`}*/}
         {/*  repeat={Infinity}*/}
         {/*/>*/}
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             className={"!transition-none"}
             key={"heading" + index}
@@ -67,7 +67,7 @@ const Hero: FC<HeroProps> = ({}) => {
             </Typography>
           </motion.div>
         </AnimatePresence>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             className={"!transition-none"}
             key={"description" + index}
@@ -99,13 +99,21 @@ const Hero: FC<HeroProps> = ({}) => {
           <Button type={ButtonTypes.tertiary} text={"awaismaaz@gmail.com"} />
         </div>
       </div>
-      <DotLottiePlayer
+      <AnimatePresence mode="wait" initial={false}>
+        <DotLottiePlayer
+          key={"lottie" + index}
+          className={
+            "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
+          }
+          src={isDark ? LottiePaths[index] : LottieLightPaths[index]}
+          autoplay
+        ></DotLottiePlayer>
+      </AnimatePresence>
+      <span
         className={
-          "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
+          "w-[60vw] h-[60vw] right-0 bottom-0 translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 opacity-50"
         }
-        src={isDark ? LottiePaths[index] : LottieLightPaths[index]}
-        autoplay
-      ></DotLottiePlayer>
+      ></span>
     </div>
   );
 };

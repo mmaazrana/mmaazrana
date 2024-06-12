@@ -289,7 +289,7 @@ const About = () => {
             src={pfp}
             alt={"Maaz Rana"}
             fill
-            className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 group-hover:opacity-100 ${socialsInView && "!opacity-100"}`}
+            className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${socialsInView && "!opacity-100 !saturate-100"}`}
           />
         </AboutCard>
         <span

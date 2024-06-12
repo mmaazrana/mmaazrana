@@ -144,18 +144,22 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
                 <g
                   clipPath="url(#clip0_56_5)"
                   className={
-                    "hover:scale-90 hover:translate-x-1 hover:translate-y-0.5"
+                    "hover:scale-90 hover:translate-x-1 hover:translate-y-0.5 transition-all duration-300"
                   }
                 >
                   <path
                     d="M37.9168 11.7766C38.119 12.2045 38.119 12.703 37.9168 13.1309L31.747 26.3592L26.7153 37.1516C26.1416 38.3837 24.3875 38.3837 23.8138 37.1516L20.2304 29.4723C19.6567 28.2402 17.9027 28.2402 17.329 29.4723L12.7252 39.3383C12.4618 39.9026 11.8975 40.2647 11.2721 40.2647H1.83872C0.667785 40.2647 -0.108138 39.0467 0.385631 37.9887L5.80769 26.3592L12.2925 12.4537L17.329 1.66136C17.9027 0.429287 19.6567 0.429287 20.2304 1.66136L23.8138 9.34064C24.3875 10.5727 26.1416 10.5727 26.7153 9.34064L30.2986 1.66136C30.8723 0.429287 32.6264 0.429287 33.2001 1.66136L37.9168 11.7766Z"
                     fill="var(--primary)"
-                    className={"hover:fill-primary-hover"}
+                    className={
+                      "hover:fill-primary-hover transition-all duration-300"
+                    }
                   />
                   <path
                     d="M48.6904 40.2648H40.7477C39.5768 40.2648 38.8009 39.0468 39.2946 37.9887L43.2636 29.4724C43.8373 28.2403 45.5914 28.2403 46.1651 29.4724L50.134 37.9887C50.6278 39.0515 49.8519 40.2648 48.6809 40.2648H48.6904Z"
                     fill="var(--secondary)"
-                    className={"hover:fill-primary-hover"}
+                    className={
+                      "hover:fill-primary-hover transition-all duration-300"
+                    }
                   />
                 </g>
 
@@ -427,6 +431,9 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           </Link>
         </motion.div>
       </motion.div>
+      <span
+        className={`w-[25vw] h-[25vw] left-0 bottom-0 -translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10  ${isEndOfPage ? "opacity-50" : "opacity-0"} transition-all duration-300`}
+      ></span>
     </div>
   );
 };

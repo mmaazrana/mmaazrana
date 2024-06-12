@@ -39,6 +39,7 @@ import {
   WebTab,
 } from "@/components/illustrations-op";
 import AppDesktop from "@/components/illustrations-op/AppDesktop";
+import { useInView } from "react-intersection-observer";
 
 interface ServiceCardProps {
   title: string;
@@ -69,6 +70,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
     4: "180deg",
     5: "135deg",
   });
+  const [ref, inView] = useInView();
   const [windowWidth, setWindowWidth] = useState(1200);
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
@@ -264,6 +266,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
       className={
         "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
       }
+      ref={ref}
       // onMouseEnter={handleMouseEnter}
       // onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
