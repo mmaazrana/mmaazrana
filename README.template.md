@@ -69,26 +69,26 @@ and intuitive products.
 ## 🚀 &nbsp;Technologies
 
 ![Next JS](https://mmaazrana.github.io/images/next.webp)
-![Next JS](https://mmaazrana.github.io/images/react.webp)
-![Next JS](https://mmaazrana.github.io/images/flutter.webp)
-![Next JS](https://mmaazrana.github.io/images/dart.webp)
-![Next JS](https://mmaazrana.github.io/images/firebase.webp)
-![Next JS](https://mmaazrana.github.io/images/framer.webp)
-![Next JS](https://mmaazrana.github.io/images/node.webp)
-![Next JS](https://mmaazrana.github.io/images/typescript.webp)
-![Next JS](https://mmaazrana.github.io/images/javascript.webp)
-![Next JS](https://mmaazrana.github.io/images/tailwind.webp)
-![Next JS](https://mmaazrana.github.io/images/python.webp)
+![React JS](https://mmaazrana.github.io/images/react.webp)
+![Flutter](https://mmaazrana.github.io/images/flutter.webp)
+![Dart](https://mmaazrana.github.io/images/dart.webp)
+![Firebase](https://mmaazrana.github.io/images/firebase.webp)
+![Framer](https://mmaazrana.github.io/images/framer.webp)
+![Node JS](https://mmaazrana.github.io/images/node.webp)
+![Javascript](https://mmaazrana.github.io/images/typescript.webp)
+![Typescript](https://mmaazrana.github.io/images/javascript.webp)
+![Tailwind CSS](https://mmaazrana.github.io/images/tailwind.webp)
+![Python](https://mmaazrana.github.io/images/python.webp)
 
 ## ⭐ &nbsp;Design Tools
 
-![Next JS](https://mmaazrana.github.io/images/figma.webp)
-![Next JS](https://mmaazrana.github.io/images/illustrator.webp)
-![Next JS](https://mmaazrana.github.io/images/photoshop.webp)
-![Next JS](https://mmaazrana.github.io/images/ae.webp)
-![Next JS](https://mmaazrana.github.io/images/premiere.webp)
-![Next JS](https://mmaazrana.github.io/images/xd.webp)
-![Next JS](https://mmaazrana.github.io/images/blender.webp)
+![Figma](https://mmaazrana.github.io/images/figma.webp)
+![Adobe Illustrator](https://mmaazrana.github.io/images/illustrator.webp)
+![Adobe Photoshop](https://mmaazrana.github.io/images/photoshop.webp)
+![Adobe After Effects](https://mmaazrana.github.io/images/ae.webp)
+![Adobe Premiere Pro](https://mmaazrana.github.io/images/premiere.webp)
+![Adobe Xd](https://mmaazrana.github.io/images/xd.webp)
+![Blender](https://mmaazrana.github.io/images/blender.webp)
 
 ## 🙌 &nbsp;Let's Connect
 
