@@ -1,5 +1,3 @@
-&nbsp;
-
 <a href="https://maazrana.com">
     <picture>
         <source
