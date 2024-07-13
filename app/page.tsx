@@ -63,7 +63,7 @@ export default function Home() {
     };
   }, [activeSection]);
   return (
-    <div className={"overflow-x-hidden"}>
+    <div className={"overflow-x-hidden max-w-[100vw]"}>
       <Head>
         <GoogleAnalytics gaId="G-PNNJWR7KVB" />
         <meta
@@ -88,7 +88,7 @@ export default function Home() {
           content="initial-scale=1, viewport-fit=cover, width=device-width"
         ></meta>
       </Head>
-      <main className=" overflow-x-visible scrollbar-hide xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
+      <main className="overflow-x-visible scrollbar-hide xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
         {isBrowser && (
           <AnimatedCursor
             innerSize={12}

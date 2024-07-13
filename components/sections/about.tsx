@@ -12,7 +12,7 @@ import { archivo } from "@/helpers/fonts";
 import Typography from "@/components/Typography";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import Image from "next/image";
-import pfp from "../../public/images/pfp.webp";
+import pfp from "../../public/images/memoji-pfp.webp";
 import { useInView } from "react-intersection-observer";
 import { getActiveBreakpoint } from "@/helpers";
 import { AnimatePresence, motion } from "framer-motion";
