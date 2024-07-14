@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { services } from "@/helpers/constants";
 import ServiceCard from "@/components/cards/serviceCard";
+import Image from "next/image";
 
 interface ServicesProps {}
 
@@ -12,6 +13,17 @@ const Services: FC<ServicesProps> = ({}) => {
           title={service.title}
           index={service.index}
           key={service.index}
+          svg={
+            <Image
+              src={service.srcDark}
+              alt={service.title}
+              height={500}
+              width={500}
+              quality={75}
+              priority
+              className={service.className}
+            />
+          }
         />
       ))}
     </div>

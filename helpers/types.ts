@@ -32,8 +32,13 @@ export interface ProjectT {
 
 export interface ServiceT {
   title: string;
-  index: 0 | 1 | 2 | 3 | 4 | 5;
+  index: IndexT;
+  className: string;
+  srcDark: string;
+  srcLight: string;
 }
+
+export type IndexT = 0 | 1 | 2 | 3 | 4 | 5;
 
 export interface TestimonialT {
   testimonial: string;
@@ -45,4 +50,13 @@ export interface WorkExperienceT {
   company: string;
   roles: string;
   tenure: string;
+}
+
+export interface BreakpointT {
+  "2xl"?: number;
+  lg?: number;
+  md: any;
+  sm: any;
+  xl?: number;
+  xs?: number;
 }

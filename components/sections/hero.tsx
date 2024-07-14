@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <div
       className={
-        " w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
+        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
       }
     >
       <div
@@ -109,11 +109,11 @@ const Hero: FC<HeroProps> = ({}) => {
           autoplay
         ></DotLottiePlayer>
       </AnimatePresence>
-      <span
-        className={
-          "w-[60vw] h-[60vw] right-0 bottom-0 translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 opacity-50"
-        }
-      ></span>
+      {/*<span*/}
+      {/*  className={*/}
+      {/*    "w-[60vw] h-[60vw] right-0 bottom-0 translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 opacity-50"*/}
+      {/*  }*/}
+      {/*></span>*/}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { projects } from "@/helpers/constants";
 interface WorkProps {}
 
 const Work: FC<WorkProps> = ({}) => {
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ triggerOnce: true });
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0 });
 

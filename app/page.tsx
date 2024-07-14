@@ -2,13 +2,11 @@
 import Nav from "@/components/navs/nav";
 import BottomNav from "@/components/navs/bottomNav";
 import React, { useEffect, useRef, useState } from "react";
-import AnimatedCursor from "react-animated-cursor";
 import Head from "next/head";
 import Typography from "@/components/Typography";
 import Services from "@/components/sections/services";
 import Work from "@/components/sections/work";
 import Hero from "@/components/sections/hero";
-import { isBrowser } from "react-device-detect";
 import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
@@ -88,41 +86,41 @@ export default function Home() {
           content="initial-scale=1, viewport-fit=cover, width=device-width"
         ></meta>
       </Head>
-      <main className="overflow-x-visible scrollbar-hide xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
-        {isBrowser && (
-          <AnimatedCursor
-            innerSize={12}
-            outerSize={8}
-            color="66, 100, 168"
-            outerAlpha={0.2}
-            innerScale={0.7}
-            outerScale={5}
-            clickables={[
-              "a",
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              "label[for]",
-              "select",
-              "textarea",
-              "button",
-              ".link",
-              // {
-              //     target: '.custom',
-              //     options: {
-              //         innerSize: 12,
-              //         outerSize: 12,
-              //         color: '255, 255, 255',
-              //         outerAlpha: 0.3,
-              //         innerScale: 0.7,
-              //         outerScale: 5
-              //     }
-              // }
-            ]}
-          />
-        )}
+      <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
+        {/*{isBrowser && (*/}
+        {/*  <AnimatedCursor*/}
+        {/*    innerSize={12}*/}
+        {/*    outerSize={8}*/}
+        {/*    color="66, 100, 168"*/}
+        {/*    outerAlpha={0.2}*/}
+        {/*    innerScale={0.7}*/}
+        {/*    outerScale={5}*/}
+        {/*    clickables={[*/}
+        {/*      "a",*/}
+        {/*      'input[type="text"]',*/}
+        {/*      'input[type="email"]',*/}
+        {/*      'input[type="number"]',*/}
+        {/*      'input[type="submit"]',*/}
+        {/*      'input[type="image"]',*/}
+        {/*      "label[for]",*/}
+        {/*      "select",*/}
+        {/*      "textarea",*/}
+        {/*      "button",*/}
+        {/*      ".link",*/}
+        {/*      // {*/}
+        {/*      //     target: '.custom',*/}
+        {/*      //     options: {*/}
+        {/*      //         innerSize: 12,*/}
+        {/*      //         outerSize: 12,*/}
+        {/*      //         color: '255, 255, 255',*/}
+        {/*      //         outerAlpha: 0.3,*/}
+        {/*      //         innerScale: 0.7,*/}
+        {/*      //         outerScale: 5*/}
+        {/*      //     }*/}
+        {/*      // }*/}
+        {/*    ]}*/}
+        {/*  />*/}
+        {/*)}*/}
         <Nav setInView={setInView} />
         <BottomNav inView={inView} activeSection={activeSection} />
         <section

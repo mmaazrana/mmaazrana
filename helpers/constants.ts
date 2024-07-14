@@ -166,12 +166,54 @@ export const projects: ProjectT[] = [
 ];
 
 export const services: ServiceT[] = [
-  { title: "Web App \n Development", index: 0 },
-  { title: "Product \n Design", index: 1 },
-  { title: "Mobile App \n Development", index: 2 },
-  { title: "Video \n Editing", index: 3 },
-  { title: "Logo \n Design", index: 4 },
-  { title: "3D Design \n & Animation", index: 5 },
+  {
+    title: "Web App \n Development",
+    index: 0,
+    className:
+      "min-w-[130%] right-0 justify-end items-center md:items-start pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
+    srcDark: "/svgs/web-desktop.svg",
+    srcLight: "/svgs/web-desktop.svg",
+  },
+  {
+    title: "Product \n Design",
+    index: 1,
+    className:
+      "w-[150%] min-h-[125%] left-1/2 -translate-x-1/2 justify-start md:justify-center items-center md:items-start -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
+    srcDark: "/svgs/product-desktop.svg",
+    srcLight: "/svgs/product-desktop.svg",
+  },
+  {
+    title: "Mobile App \n Development",
+    index: 2,
+    className:
+      "min-w-[137%] left-0 justify-end md:justify-start items-center md:items-start pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
+    srcDark: "/svgs/app-desktop.svg",
+    srcLight: "/svgs/app-desktop.svg",
+  },
+  {
+    title: "Video \n Editing",
+    index: 3,
+    className:
+      "min-w-[130%] top-0 translate-y-1/4 right-0 justify-end sm:justify-start md:justify-end items-center md:items-end pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4",
+    srcDark: "/svgs/video-desktop.svg",
+    srcLight: "/svgs/video-desktop.svg",
+  },
+  {
+    title: "Logo \n Design",
+    index: 4,
+    className:
+      "w-[150%] left-1/2 -translate-x-1/2 top-0 translate-y-1/4 justify-end md:justify-center items-center md:items-end mt-0 md:mt-6 lg:mt-4 xl:mt-4 2xl:mt-6",
+    srcDark: "/svgs/logo-desktop.svg",
+    srcLight: "/svgs/logo-desktop.svg",
+  },
+  {
+    title: "3D Design \n & Animation",
+    index: 5,
+    className:
+      "min-w-[135%] top-0 translate-y-1/4 left-0 justify-end sm:justify-start items-center md:items-end pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4",
+    srcDark: "/svgs/blender-desktop.svg",
+    srcLight: "/svgs/blender-desktop.svg",
+  },
 ];
 
 export const breakpoints = {

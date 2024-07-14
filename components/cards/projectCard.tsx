@@ -33,6 +33,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <Image
         width={200}
         height={100}
+        quality={75}
         className={`border-none bg-secondary  overflow-hidden shadow-2xl ${alt ? "border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl" : "border-[1.3px] rounded-xl sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 origin-top-left"}`}
         src={imagePath}
         alt={"Project Banner"}

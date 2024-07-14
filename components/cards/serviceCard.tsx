@@ -1,4 +1,12 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, {
+  cloneElement,
+  FC,
+  ReactElement,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Typography from "@/components/Typography";
 import { breakpoints } from "@/helpers/constants";
 import {
@@ -19,33 +27,34 @@ import {
   useStraightMovement,
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
-import {
-  AppMobile,
-  AppTab,
-  BlenderDesktop,
-  BlenderMobile,
-  BlenderTab,
-  LogoDesktop,
-  LogoMobile,
-  LogoTab,
-  ProductDesktop,
-  ProductMobile,
-  ProductTab,
-  VideoEditingDesktop,
-  VideoMobile,
-  VideoTab,
-  WebDesktop,
-  WebMobile,
-  WebTab,
-} from "@/components/illustrations-op";
-import AppDesktop from "@/components/illustrations-op/AppDesktop";
 import { useInView } from "react-intersection-observer";
+// import {
+//   AppDesktop,
+//   AppMobile,
+//   AppTab,
+//   BlenderDesktop,
+//   BlenderMobile,
+//   BlenderTab,
+//   LogoDesktop,
+//   LogoMobile,
+//   LogoTab,
+//   ProductDesktop,
+//   ProductMobile,
+//   ProductTab,
+//   VideoEditingDesktop,
+//   VideoMobile,
+//   VideoTab,
+//   WebDesktop,
+//   WebMobile,
+//   WebTab,
+// } from "@/components/illustrations-op";
 
 interface ServiceCardProps {
   title: string;
   index: 0 | 1 | 2 | 3 | 4 | 5;
   className?: string;
   onClick?: () => void;
+  svg: ReactElement;
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({
@@ -53,23 +62,8 @@ const ServiceCard: FC<ServiceCardProps> = ({
   index,
   className,
   onClick,
+  svg,
 }) => {
-  const [hoverAngles, setHoverAngles] = useState({
-    0: useReverseDiagonalInvertMovement,
-    1: useStraightMovement,
-    2: useDiagonalMovement,
-    3: useDiagonalInvertMovement,
-    4: useStraightInvertMovement,
-    5: useReverseDiagonalMovement,
-  });
-  const [angleClasses, setAngleClasses] = useState({
-    0: "-45deg",
-    1: "0deg",
-    2: "45deg",
-    3: "225deg",
-    4: "180deg",
-    5: "135deg",
-  });
   const [ref, inView] = useInView();
   const [windowWidth, setWindowWidth] = useState(1200);
   const cardX = useMotionValue(0);
@@ -84,7 +78,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
     (cardRef: React.RefObject<HTMLDivElement>) => (event: MouseEvent) => {
       if (!isMouseMoving && cardRef.current) {
         isMouseMoving = true;
-        requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
           const cardRect = cardRef.current!.getBoundingClientRect();
           const cardCenterX = cardRect.left + cardRect.width / 2;
           const cardCenterY = cardRect.top + cardRect.height / 2;
@@ -113,22 +107,41 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   useEffect(() => {
     const onMouseMove = handleMouseMove(cardRef);
-
-    if (cardRef.current) {
-      cardRef.current.addEventListener("mousemove", onMouseMove, {
+    const cardElement = cardRef.current;
+    if (cardElement) {
+      cardElement.addEventListener("mousemove", onMouseMove, {
         passive: true,
       });
     }
 
     return () => {
-      if (cardRef.current) {
-        cardRef.current.removeEventListener("mousemove", onMouseMove);
+      if (cardElement) {
+        cardElement.removeEventListener("mousemove", onMouseMove);
       }
     };
   }, [cardRef]);
 
   useEffect(() => {
-    setAngleClasses({
+    setWindowWidth(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const angleClasses = useMemo(
+    () => ({
       0: windowWidth >= breakpoints.sm ? "-45deg" : "90deg",
       1:
         windowWidth >= breakpoints.md
@@ -155,8 +168,12 @@ const ServiceCard: FC<ServiceCardProps> = ({
             ? "225deg"
             : "270deg",
       5: windowWidth >= breakpoints.sm ? "135deg" : "270deg",
-    });
-    setHoverAngles({
+    }),
+    [windowWidth],
+  );
+
+  const hoverAngles = useMemo(
+    () => ({
       0:
         windowWidth >= breakpoints.sm
           ? useReverseDiagonalInvertMovement
@@ -189,25 +206,9 @@ const ServiceCard: FC<ServiceCardProps> = ({
         windowWidth >= breakpoints.sm
           ? useReverseDiagonalMovement
           : useSideInvertMovement,
-    });
-  }, [cardRef, windowWidth]);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    }),
+    [windowWidth],
+  );
 
   const sheenPosition = useTransform(
     hoverAngles[index](rotateX, rotateY),
@@ -225,30 +226,30 @@ const ServiceCard: FC<ServiceCardProps> = ({
     preferredScheme === "dark"
       ? useMotionTemplate`linear-gradient(
     ${angleClasses[index]},
-    ${"#0C1427"},
-    ${"#070D1D"},
+    #0C1427,
+    #070D1D,
     ${sheenPosition}%,
-    ${"#000714"}
+    #000714
     )
     padding-box,
     linear-gradient(
     ${angleClasses[index]},
-    ${"#4264A8"},
-    rgba(${"66 100 178"}  / ${sheenOpacity})
+    #4264A8,
+    rgba(66 100 178 / ${sheenOpacity})
     ${sheenPosition}%)
     border-box`
       : useMotionTemplate`linear-gradient(
     ${angleClasses[index]},
-    ${"#F4F6FE"},
-    ${"#F9FAFF"},
+    #F4F6FE,
+    #F9FAFF,
     ${sheenPosition}%,
-    ${"#FFFFFF"}
+    #FFFFFF
     )
     padding-box,
     linear-gradient(
     ${angleClasses[index]},
-    ${"#B4C4E4"},
-    rgba(${"180 196 228"}  / ${sheenOpacity})
+    #B4C4E4,
+    rgba(180 196 228 / ${sheenOpacity})
     ${sheenPosition}%)
     border-box`;
 
@@ -267,8 +268,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
         "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
       }
       ref={ref}
-      // onMouseEnter={handleMouseEnter}
-      // onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
@@ -279,102 +278,105 @@ const ServiceCard: FC<ServiceCardProps> = ({
           rotateX,
           rotateY,
         }}
-        // transition={{ velocity: 0}}
       >
-        {index === 0 ? (
-          <div
-            className={
-              "absolute right-0 pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <WebDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <WebTab />
-            ) : (
-              <WebMobile />
-            )}
-          </div>
-        ) : index === 1 ? (
-          <div
-            className={
-              "absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <ProductDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <ProductTab />
-            ) : (
-              <ProductMobile />
-            )}
-          </div>
-        ) : index === 2 ? (
-          <div
-            className={
-              "absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <AppDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <AppTab />
-            ) : (
-              <AppMobile />
-            )}
-          </div>
-        ) : index === 3 ? (
-          <div
-            className={
-              "absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <VideoEditingDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <VideoTab />
-            ) : (
-              <VideoMobile />
-            )}
-          </div>
-        ) : index === 4 ? (
-          <div
-            className={
-              "absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <LogoDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <LogoTab />
-            ) : (
-              <LogoMobile />
-            )}
-          </div>
-        ) : (
-          <div
-            className={
-              "absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"
-            }
-          >
-            {windowWidth >= breakpoints.md ? (
-              <BlenderDesktop />
-            ) : windowWidth >= breakpoints.sm ? (
-              <BlenderTab />
-            ) : (
-              <BlenderMobile />
-            )}
-          </div>
+        {/*{index === 0 ? (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute right-0 pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <WebDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <WebTab />*/}
+        {/*    ) : (*/}
+        {/*      <WebMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*) : index === 1 ? (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <ProductDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <ProductTab />*/}
+        {/*    ) : (*/}
+        {/*      <ProductMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*) : index === 2 ? (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <AppDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <AppTab />*/}
+        {/*    ) : (*/}
+        {/*      <AppMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*) : index === 3 ? (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <VideoEditingDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <VideoTab />*/}
+        {/*    ) : (*/}
+        {/*      <VideoMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*) : index === 4 ? (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <LogoDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <LogoTab />*/}
+        {/*    ) : (*/}
+        {/*      <LogoMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*) : (*/}
+        {/*  <div*/}
+        {/*    className={*/}
+        {/*      "absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
+        {/*    }*/}
+        {/*  >*/}
+        {/*    {windowWidth >= breakpoints.md ? (*/}
+        {/*      <BlenderDesktop />*/}
+        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
+        {/*      <BlenderTab />*/}
+        {/*    ) : (*/}
+        {/*      <BlenderMobile />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*)}*/}
+        {svg && (
+          <span>
+            {cloneElement(svg, {
+              className: `absolute pointer-events-none z-10 flex h-full !max-w-[200%] !max-h-[200%] ${svg.props.className}`,
+            })}
+          </span>
         )}
-
         <motion.div
           ref={cardRef}
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d ${dynamicClasses}`}
           style={{
             background: sheenGradient,
           }}
-
-          // transition={{ velocity: 0 }}
         >
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.bold}>
             {title}
