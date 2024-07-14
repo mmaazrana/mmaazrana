@@ -10,8 +10,8 @@ import Hero from "@/components/sections/hero";
 import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { breakpoints } from "@/helpers/constants";
+import GoogleAnalytics from "@/app/GoogleAnalytics";
 
 export default function Home() {
   const [inView, setInView] = useState(true);
@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className={"overflow-x-hidden max-w-[100vw]"}>
       <Head>
-        <GoogleAnalytics gaId="G-PNNJWR7KVB" />
+        <GoogleAnalytics />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
