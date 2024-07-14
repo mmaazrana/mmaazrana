@@ -20,26 +20,6 @@ import {
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
 import { useInView } from "react-intersection-observer";
-// import {
-//   AppDesktop,
-//   AppMobile,
-//   AppTab,
-//   BlenderDesktop,
-//   BlenderMobile,
-//   BlenderTab,
-//   LogoDesktop,
-//   LogoMobile,
-//   LogoTab,
-//   ProductDesktop,
-//   ProductMobile,
-//   ProductTab,
-//   VideoEditingDesktop,
-//   VideoMobile,
-//   VideoTab,
-//   WebDesktop,
-//   WebMobile,
-//   WebTab,
-// } from "@/components/illustrations-op";
 
 interface ServiceCardProps {
   title: string;
