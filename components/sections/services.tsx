@@ -41,7 +41,6 @@ const Services: FC<ServicesProps> = ({ windowWidth, currentScreen }) => {
                 height={500}
                 width={500}
                 quality={75}
-                priority
               />
             </div>
           }
