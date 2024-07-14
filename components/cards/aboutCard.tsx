@@ -22,7 +22,7 @@ const AboutCard: FC<AboutCardProps> = ({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`group bg-secondary-hover-10 hover:bg-primary-invert-25 transition-colors duration-300 ease-in-out overflow-hidden relative about:shadow-frosted backdrop-blur-[2px] about:backdrop-blur-[4px] md:backdrop-blur-sm rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${isActive && "backdrop-blur-[3px] !bg-primary-invert-25"}  ${className}`}
+      className={`about group bg-secondary-hover-10 hover:bg-primary-invert-25 transition-colors duration-300 ease-in-out overflow-hidden relative about:shadow-frosted backdrop-blur-[2px] about:backdrop-blur-[4px] md:backdrop-blur-sm rounded-3xl gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${isActive && "backdrop-blur-[3px] !bg-primary-invert-25"}  ${className}`}
     >
       {/*<svg*/}
       {/*  xmlns="http://www.w3.org/2000/svg"*/}

@@ -219,7 +219,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        "sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
+        "service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
       }
       ref={ref}
       onMouseLeave={handleMouseLeave}
