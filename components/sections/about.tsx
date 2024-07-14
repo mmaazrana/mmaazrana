@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
 import {
   aboutSections,
@@ -18,14 +18,17 @@ import { getActiveBreakpoint } from "@/helpers";
 import { AnimatePresence, motion } from "framer-motion";
 import Medal from "@/components/icons/medal";
 
-const About = () => {
+interface AboutProps {
+  windowWidth: number;
+}
+
+const About: FC<AboutProps> = ({ windowWidth }) => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
   useEffect(() => {
-    console.log(activeBreakpoint);
     setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
-  }, [activeBreakpoint]);
+  }, [windowWidth]);
   const options = {
     rootMargin: "-45% 0px -45% 0px",
     threshold: 0.2,

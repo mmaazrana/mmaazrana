@@ -11,10 +11,13 @@ import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { breakpoints } from "@/helpers/constants";
 
 export default function Home() {
   const [inView, setInView] = useState(true);
   const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState("");
   const heroRef = useRef(null);
   const workRef = useRef(null);
   const servicesRef = useRef(null);
@@ -37,6 +40,25 @@ export default function Home() {
       offsetBottom,
     };
   };
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      windowWidth >= breakpoints.md
+        ? setCurrentScreen("desktop")
+        : windowWidth >= breakpoints.sm
+          ? setCurrentScreen("tab")
+          : setCurrentScreen("mobile");
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowWidth]);
   useEffect(() => {
     const handleScroll = () => {
       const { height: headerHeight } = getDimensions(heroRef.current);
@@ -154,7 +176,7 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             Services
           </Typography>
-          <Services />
+          <Services windowWidth={windowWidth} currentScreen={currentScreen} />
         </section>
         <section
           id={Sections.testimonials}
@@ -166,7 +188,7 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             Testimonials
           </Typography>
-          <Testimonials />
+          <Testimonials windowWidth={windowWidth} />
         </section>
         <section
           id={Sections.aboutMe}
@@ -178,7 +200,7 @@ export default function Home() {
           <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
             About Me
           </Typography>
-          <About />
+          <About windowWidth={windowWidth} />
         </section>
         {/*<section*/}
         {/*  className={*/}

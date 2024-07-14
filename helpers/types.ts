@@ -34,8 +34,7 @@ export interface ServiceT {
   title: string;
   index: IndexT;
   className: string;
-  srcDark: string;
-  srcLight: string;
+  baseSrc: string;
 }
 
 export type IndexT = 0 | 1 | 2 | 3 | 4 | 5;

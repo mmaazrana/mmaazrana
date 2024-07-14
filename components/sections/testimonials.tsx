@@ -5,9 +5,11 @@ import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-interface TestimonialsProps {}
+interface TestimonialsProps {
+  windowWidth: number;
+}
 
-const Testimonials: FC<TestimonialsProps> = ({}) => {
+const Testimonials: FC<TestimonialsProps> = ({ windowWidth }) => {
   const OPTIONS: EmblaOptionsType = { loop: true };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [
@@ -51,6 +53,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
             >
               <TestimonialCard
                 testimonial={testimonial.testimonial}
+                windowWidth={windowWidth}
                 client={testimonial.client}
                 designation={testimonial.designation}
                 isActive={selectedIndex === index}

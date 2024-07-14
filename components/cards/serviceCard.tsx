@@ -1,12 +1,4 @@
-import React, {
-  cloneElement,
-  FC,
-  ReactElement,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { FC, ReactElement, useEffect, useMemo, useRef } from "react";
 import Typography from "@/components/Typography";
 import { breakpoints } from "@/helpers/constants";
 import {
@@ -51,6 +43,7 @@ import { useInView } from "react-intersection-observer";
 
 interface ServiceCardProps {
   title: string;
+  windowWidth: number;
   index: 0 | 1 | 2 | 3 | 4 | 5;
   className?: string;
   onClick?: () => void;
@@ -59,13 +52,13 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({
   title,
+  windowWidth,
   index,
   className,
   onClick,
   svg,
 }) => {
   const [ref, inView] = useInView();
-  const [windowWidth, setWindowWidth] = useState(1200);
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
   const rotateX = useTransform(cardY, [-300, 300], [5, -5]); // Reversed values
@@ -120,25 +113,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
       }
     };
   }, [cardRef]);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const angleClasses = useMemo(
     () => ({
@@ -279,98 +253,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
           rotateY,
         }}
       >
-        {/*{index === 0 ? (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute right-0 pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <WebDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <WebTab />*/}
-        {/*    ) : (*/}
-        {/*      <WebMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*) : index === 1 ? (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <ProductDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <ProductTab />*/}
-        {/*    ) : (*/}
-        {/*      <ProductMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*) : index === 2 ? (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <AppDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <AppTab />*/}
-        {/*    ) : (*/}
-        {/*      <AppMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*) : index === 3 ? (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <VideoEditingDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <VideoTab />*/}
-        {/*    ) : (*/}
-        {/*      <VideoMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*) : index === 4 ? (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <LogoDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <LogoTab />*/}
-        {/*    ) : (*/}
-        {/*      <LogoMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*) : (*/}
-        {/*  <div*/}
-        {/*    className={*/}
-        {/*      "absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4"*/}
-        {/*    }*/}
-        {/*  >*/}
-        {/*    {windowWidth >= breakpoints.md ? (*/}
-        {/*      <BlenderDesktop />*/}
-        {/*    ) : windowWidth >= breakpoints.sm ? (*/}
-        {/*      <BlenderTab />*/}
-        {/*    ) : (*/}
-        {/*      <BlenderMobile />*/}
-        {/*    )}*/}
-        {/*  </div>*/}
-        {/*)}*/}
-        {svg && (
-          <span>
-            {cloneElement(svg, {
-              className: `absolute pointer-events-none z-10 flex h-full !max-w-[200%] !max-h-[200%] ${svg.props.className}`,
-            })}
-          </span>
-        )}
+        {svg && svg}
         <motion.div
           ref={cardRef}
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d ${dynamicClasses}`}

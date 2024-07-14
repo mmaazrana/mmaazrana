@@ -7,6 +7,7 @@ import { getActiveBreakpoint } from "@/helpers";
 
 interface TestimonialCardProps {
   testimonial: string;
+  windowWidth: number;
   client: string;
   designation: string;
   isActive: boolean;
@@ -14,6 +15,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard: FC<TestimonialCardProps> = ({
   testimonial,
+  windowWidth,
   client,
   designation,
   isActive,
@@ -23,7 +25,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
 
   useEffect(() => {
     setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
-  }, [activeBreakpoint]);
+  }, [windowWidth]);
 
   return (
     <div
