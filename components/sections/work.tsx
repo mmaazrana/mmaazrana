@@ -4,9 +4,11 @@ import { stagger, useAnimate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projects } from "@/helpers/constants";
 
-interface WorkProps {}
+interface WorkProps {
+  windowWidth: number;
+}
 
-const Work: FC<WorkProps> = ({}) => {
+const Work: FC<WorkProps> = ({ windowWidth }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0 });
@@ -41,6 +43,7 @@ const Work: FC<WorkProps> = ({}) => {
               title={project.title}
               description={project.description}
               imagePath={project.imagePath}
+              windowWidth={windowWidth}
               placeholderPath={project.placeholderPath}
               altImagePath={project.altImagePath}
               altPlaceholderPath={project.altPlaceholderPath}
@@ -59,6 +62,7 @@ const Work: FC<WorkProps> = ({}) => {
               title={project.title}
               description={project.description}
               imagePath={project.imagePath}
+              windowWidth={windowWidth}
               placeholderPath={project.placeholderPath}
               altImagePath={project.altImagePath}
               altPlaceholderPath={project.altPlaceholderPath}

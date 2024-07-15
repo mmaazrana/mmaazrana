@@ -189,7 +189,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <Work />
+          <Work windowWidth={windowWidth} />
         </section>
         <section
           id={Sections.services}
