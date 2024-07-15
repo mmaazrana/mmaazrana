@@ -41,6 +41,9 @@ const Work: FC<WorkProps> = ({}) => {
               title={project.title}
               description={project.description}
               imagePath={project.imagePath}
+              placeholderPath={project.placeholderPath}
+              altImagePath={project.altImagePath}
+              altPlaceholderPath={project.altPlaceholderPath}
               alt={i % 2 === 1}
             />
           ))}
@@ -56,6 +59,9 @@ const Work: FC<WorkProps> = ({}) => {
               title={project.title}
               description={project.description}
               imagePath={project.imagePath}
+              placeholderPath={project.placeholderPath}
+              altImagePath={project.altImagePath}
+              altPlaceholderPath={project.altPlaceholderPath}
               alt={i % 2 !== 1}
             />
           ))}

@@ -28,6 +28,9 @@ export interface ProjectT {
   title: string;
   description: string;
   imagePath: string;
+  placeholderPath: string;
+  altImagePath?: string;
+  altPlaceholderPath?: string;
 }
 
 export interface ServiceT {
@@ -35,6 +38,7 @@ export interface ServiceT {
   index: IndexT;
   className: string;
   baseSrc: string;
+  placeholderSrc: string;
 }
 
 export type IndexT = 0 | 1 | 2 | 3 | 4 | 5;

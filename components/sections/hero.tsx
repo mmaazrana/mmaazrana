@@ -109,11 +109,11 @@ const Hero: FC<HeroProps> = ({}) => {
           autoplay
         ></DotLottiePlayer>
       </AnimatePresence>
-      {/*<span*/}
-      {/*  className={*/}
-      {/*    "w-[60vw] h-[60vw] right-0 bottom-0 translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 opacity-50"*/}
-      {/*  }*/}
-      {/*></span>*/}
+      <span
+        className={
+          "w-[60vw] h-[60vw] left-0 bottom-0 -translate-x-1/2 translate-y-1/2 aspect-square rounded-full bg-secondary-hover blur-[300px] absolute -z-10 opacity-50"
+        }
+      ></span>
     </div>
   );
 };

@@ -26,6 +26,7 @@ const config: Config = {
         "services-hover": "var(--service-shadow-hover)",
         testimonial: "var(--testimonial-shadow)",
         "testimonial-hover": "var(--testimonial-shadow-hover)",
+        "work-hover": "var(--work-shadow-hover)",
         frosted: "var(--frosted-shadow)",
       },
       dropShadow: {
@@ -58,6 +59,7 @@ const config: Config = {
         secondary: "var(--secondary)",
         "secondary-hover": "var(--secondary-hover)",
         "secondary-hover-10": "var(--secondary-hover-10)",
+        "secondary-hover-90": "var(--secondary-hover-90)",
         "frosted-gradient": "var(--frosted-gradient)",
         "frosted-gradient-hover": "var(--frosted-gradient-hover)",
       },

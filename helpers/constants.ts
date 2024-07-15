@@ -145,23 +145,31 @@ export const projects: ProjectT[] = [
     title: "DeepReel AI Videos",
     description:
       "Short description about the app mentioned above, should be limited to two lines",
-    imagePath: "/svgs/deepreel.svg",
+    imagePath: "/images/deepreel.webp",
+    placeholderPath: "/images/placeholders/deepreel.webp",
   },
   {
     title: "Nutrigram",
     description: "Short description about the app mentioned above",
-    imagePath: "/svgs/nutrigram.svg",
+    imagePath: "/images/nutrigram.webp",
+    placeholderPath: "/images/placeholders/nutrigram.webp",
+    altImagePath: "/images/nutrigram-alt.webp",
+    altPlaceholderPath: "/images/placeholders/nutrigram-alt.webp",
   },
   {
     title: "Markdown Editor",
     description: "Short description about the app mentioned above",
-    imagePath: "/svgs/markdown.svg",
+    imagePath: "/images/markdown.webp",
+    placeholderPath: "/images/placeholders/markdown.webp",
+    altImagePath: "/images/markdown-alt.webp",
+    altPlaceholderPath: "/images/placeholders/markdown-alt.webp",
   },
   {
     title: "Athleton+",
     description:
       "Short description about the app mentioned above, should be limited to two lines",
-    imagePath: "/svgs/athleton.svg",
+    imagePath: "/images/athleton.webp",
+    placeholderPath: "/images/placeholders/athleton.webp",
   },
 ];
 
@@ -172,6 +180,7 @@ export const services: ServiceT[] = [
     className:
       "absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
     baseSrc: "/svgs/web",
+    placeholderSrc: "/placeholders/web",
   },
   {
     title: "Product \n Design",
@@ -179,6 +188,7 @@ export const services: ServiceT[] = [
     className:
       "absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
     baseSrc: "/svgs/product",
+    placeholderSrc: "/placeholders/product",
   },
   {
     title: "Mobile App \n Development",
@@ -186,6 +196,7 @@ export const services: ServiceT[] = [
     className:
       "absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4",
     baseSrc: "/svgs/app",
+    placeholderSrc: "/placeholders/app",
   },
   {
     title: "Video \n Editing",
@@ -193,6 +204,7 @@ export const services: ServiceT[] = [
     className:
       "absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4",
     baseSrc: "/svgs/video",
+    placeholderSrc: "/placeholders/video",
   },
   {
     title: "Logo \n Design",
@@ -200,6 +212,7 @@ export const services: ServiceT[] = [
     className:
       "absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4",
     baseSrc: "/svgs/logo",
+    placeholderSrc: "/placeholders/logo",
   },
   {
     title: "3D Design \n & Animation",
@@ -207,6 +220,7 @@ export const services: ServiceT[] = [
     className:
       "absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4",
     baseSrc: "/svgs/blender",
+    placeholderSrc: "/placeholders/blender",
   },
 ];
 
