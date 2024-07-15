@@ -7,7 +7,7 @@ import Typography from "@/components/Typography";
 import Services from "@/components/sections/services";
 import Work from "@/components/sections/work";
 import Hero from "@/components/sections/hero";
-import { Sections, TextTypes, WeightTypes } from "@/helpers/enums";
+import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
 import { breakpoints } from "@/helpers/constants";
@@ -16,6 +16,9 @@ import { isBrowser } from "react-device-detect";
 
 // Import with next's dynamic import
 import dynamic from "next/dynamic";
+import Button from "@/components/button";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: true,
@@ -173,9 +176,19 @@ export default function Home() {
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
         >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            My Work
-          </Typography>
+          <div className={"flex justify-between items-center w-full"}>
+            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+              My Work
+            </Typography>
+            <Link href={"/work"}>
+              <Button
+                type={ButtonTypes.secondary}
+                text={"Explore"}
+                className={"!gap-1"}
+                rightIcon={<ChevronRight />}
+              />
+            </Link>
+          </div>
           <Work />
         </section>
         <section
@@ -185,9 +198,19 @@ export default function Home() {
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
         >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            Services
-          </Typography>
+          <div className={"flex justify-between items-center w-full"}>
+            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+              Services
+            </Typography>
+            <Link href={"/services"}>
+              <Button
+                type={ButtonTypes.secondary}
+                text={"All Services"}
+                className={"!gap-1"}
+                rightIcon={<ChevronRight />}
+              />
+            </Link>
+          </div>
           <Services windowWidth={windowWidth} currentScreen={currentScreen} />
         </section>
         <section
@@ -197,9 +220,19 @@ export default function Home() {
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
         >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            Testimonials
-          </Typography>
+          <div className={"flex justify-between items-center w-full"}>
+            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+              Testimonials
+            </Typography>
+            <Link href={"/clients"}>
+              <Button
+                type={ButtonTypes.secondary}
+                text={"Clients"}
+                className={"!gap-1"}
+                rightIcon={<ChevronRight />}
+              />
+            </Link>
+          </div>
           <Testimonials windowWidth={windowWidth} />
         </section>
         <section
@@ -209,9 +242,19 @@ export default function Home() {
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
         >
-          <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
-            About Me
-          </Typography>
+          <div className={"flex justify-between items-center w-full"}>
+            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+              About Me
+            </Typography>
+            <Link href={"/about"}>
+              <Button
+                type={ButtonTypes.secondary}
+                text={"Read More"}
+                className={"!gap-1"}
+                rightIcon={<ChevronRight />}
+              />
+            </Link>
+          </div>
           <About windowWidth={windowWidth} />
         </section>
         {/*<section*/}
