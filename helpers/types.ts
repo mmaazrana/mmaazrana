@@ -1,5 +1,6 @@
 import { ButtonTypes, Sections } from "@/helpers/enums";
 import React from "react";
+import { IconType } from "react-icons";
 
 export interface NavButtonT {
   text: string;
@@ -62,4 +63,19 @@ export interface BreakpointT {
   sm: any;
   xl?: number;
   xs?: number;
+}
+
+export interface ClientDataT {
+  heading: string;
+  testimonial: string;
+  clientName: string;
+  companyName: string;
+  productsInvolved: ClientProductT[];
+  technologiesInvolved: IconType[];
+}
+
+export interface ClientProductT {
+  logo: any;
+  name: string;
+  services: string[];
 }

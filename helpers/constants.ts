@@ -1,6 +1,7 @@
 import { ButtonTypes, Sections } from "@/helpers/enums";
 import {
   BottomNavButtonT,
+  ClientDataT,
   FooterButtonT,
   NavButtonT,
   ProjectT,
@@ -144,7 +145,7 @@ export const projects: ProjectT[] = [
   {
     title: "DeepReel AI Videos",
     description:
-      "Short description about the app mentioned above, should be limited to two lines",
+      "DeepReel’s AI video editor generates avatar script, visuals, music &amp; captions automatically in minutes. No video editing skills required!",
     imagePath: "/images/deepreel.webp",
     placeholderPath: "/images/placeholders/deepreel.webp",
   },
@@ -165,9 +166,9 @@ export const projects: ProjectT[] = [
     altPlaceholderPath: "/images/placeholders/markdown-alt.webp",
   },
   {
-    title: "Athleton+",
+    title: "Elbrezal Honey",
     description:
-      "Short description about the app mentioned above, should be limited to two lines",
+      "the El Brezal brand represents the most natural and strongest beekeeping products—products that are 100% natural and pure.",
     imagePath: "/images/athleton.webp",
     placeholderPath: "/images/placeholders/athleton.webp",
   },
@@ -388,4 +389,79 @@ export const clientIconComponents = [
   },
   { Icon: Lyfiti, props: { fill: "var(--primary-hover)" } },
   { Icon: FiveOneFivePools, props: { fill: "var(--primary-hover)" } },
+];
+
+export const clientData: ClientDataT[] = [
+  {
+    heading: "Alfabolt",
+    testimonial:
+      "Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.",
+    clientName: "Ali Farooq",
+    companyName: "Alfabolt",
+    productsInvolved: [
+      {
+        logo: Deepreel,
+        name: "DeepReel",
+        services: [
+          "Product Design",
+          "Web App",
+          "Website",
+          "Canva Add On",
+          "Adobe Express Add On",
+        ],
+      },
+      {
+        logo: Athleton,
+        name: "Athleton+",
+        services: ["Product Design"],
+      },
+      {
+        logo: FiveOneFivePools,
+        name: "",
+        services: ["Product Design"],
+      },
+      {
+        logo: Alfabolt,
+        name: "Alfabolt",
+        services: ["Product Design", "Website"],
+      },
+    ],
+    technologiesInvolved: [SiFigma, SiNextdotjs],
+  },
+  {
+    heading: "Rivanna",
+    testimonial:
+      "Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.",
+    clientName: "Ali Farooq",
+    companyName: "Alfabolt",
+    productsInvolved: [
+      {
+        logo: Deepreel,
+        name: "DeepReel",
+        services: [
+          "Product Design",
+          "Web App",
+          "Website",
+          "Canva Add On",
+          "Adobe Express Add On",
+        ],
+      },
+      {
+        logo: Athleton,
+        name: "Athleton+",
+        services: ["Product Design"],
+      },
+      {
+        logo: FiveOneFivePools,
+        name: "",
+        services: ["Product Design"],
+      },
+      {
+        logo: Alfabolt,
+        name: "Alfabolt",
+        services: ["Product Design", "Website"],
+      },
+    ],
+    technologiesInvolved: [SiFigma, SiNextdotjs],
+  },
 ];

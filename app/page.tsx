@@ -12,7 +12,6 @@ import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
 import { breakpoints } from "@/helpers/constants";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
-import { isBrowser } from "react-device-detect";
 
 // Import with next's dynamic import
 import dynamic from "next/dynamic";
@@ -120,44 +119,44 @@ export default function Home() {
         ></meta>
       </Head>
       <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
-        {isBrowser && (
-          <AnimatedCursor
-            innerSize={12}
-            outerSize={8}
-            color="66, 100, 168"
-            outerAlpha={0.2}
-            innerScale={0.7}
-            outerScale={5}
-            clickables={[
-              "a",
-              'input[type="text"]',
-              'input[type="email"]',
-              'input[type="number"]',
-              'input[type="submit"]',
-              'input[type="image"]',
-              "label[for]",
-              "select",
-              "textarea",
-              "button",
-              ".link",
-              ".about",
-              ".testimonial",
-              ".service",
-              ".work",
-              // {
-              //     target: '.custom',
-              //     options: {
-              //         innerSize: 12,
-              //         outerSize: 12,
-              //         color: '255, 255, 255',
-              //         outerAlpha: 0.3,
-              //         innerScale: 0.7,
-              //         outerScale: 5
-              //     }
-              // }
-            ]}
-          />
-        )}
+        {/*{isBrowser && (*/}
+        {/*  <AnimatedCursor*/}
+        {/*    innerSize={12}*/}
+        {/*    outerSize={8}*/}
+        {/*    color="66, 100, 168"*/}
+        {/*    outerAlpha={0.2}*/}
+        {/*    innerScale={0.7}*/}
+        {/*    outerScale={5}*/}
+        {/*    clickables={[*/}
+        {/*      "a",*/}
+        {/*      'input[type="text"]',*/}
+        {/*      'input[type="email"]',*/}
+        {/*      'input[type="number"]',*/}
+        {/*      'input[type="submit"]',*/}
+        {/*      'input[type="image"]',*/}
+        {/*      "label[for]",*/}
+        {/*      "select",*/}
+        {/*      "textarea",*/}
+        {/*      "button",*/}
+        {/*      ".link",*/}
+        {/*      ".about",*/}
+        {/*      ".testimonial",*/}
+        {/*      ".service",*/}
+        {/*      ".work",*/}
+        {/*      // {*/}
+        {/*      //     target: '.custom',*/}
+        {/*      //     options: {*/}
+        {/*      //         innerSize: 12,*/}
+        {/*      //         outerSize: 12,*/}
+        {/*      //         color: '255, 255, 255',*/}
+        {/*      //         outerAlpha: 0.3,*/}
+        {/*      //         innerScale: 0.7,*/}
+        {/*      //         outerScale: 5*/}
+        {/*      //     }*/}
+        {/*      // }*/}
+        {/*    ]}*/}
+        {/*  />*/}
+        {/*)}*/}
         <Nav setInView={setInView} />
         <BottomNav inView={inView} activeSection={activeSection} />
         <section
