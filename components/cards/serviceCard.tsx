@@ -1,4 +1,11 @@
-import React, { FC, ReactElement, useEffect, useMemo, useRef } from "react";
+import React, {
+  FC,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import Typography from "@/components/Typography";
 import { breakpoints } from "@/helpers/constants";
 import {
@@ -19,7 +26,6 @@ import {
   useStraightMovement,
 } from "@/helpers";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
-import { useInView } from "react-intersection-observer";
 
 interface ServiceCardProps {
   title: string;
@@ -38,36 +44,40 @@ const ServiceCard: FC<ServiceCardProps> = ({
   onClick,
   svg,
 }) => {
-  const [ref, inView] = useInView();
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
   const rotateX = useTransform(cardY, [-300, 300], [5, -5]); // Reversed values
   const rotateY = useTransform(cardX, [-300, 300], [-5, 5]); // Reversed values
   const cardRef = useRef<HTMLDivElement>(null);
   const preferredScheme = usePreferredColorScheme();
-  let isMouseMoving = false;
+  const isMouseMoving = useRef(false);
 
   const handleMouseMove =
     (cardRef: React.RefObject<HTMLDivElement>) => (event: MouseEvent) => {
-      if (!isMouseMoving && cardRef.current) {
-        isMouseMoving = true;
+      if (!isMouseMoving.current && cardRef.current) {
+        isMouseMoving.current = true;
         window.requestAnimationFrame(() => {
-          const cardRect = cardRef.current!.getBoundingClientRect();
-          const cardCenterX = cardRect.left + cardRect.width / 2;
-          const cardCenterY = cardRect.top + cardRect.height / 2;
-          const offsetX = event.clientX - cardCenterX;
-          const offsetY = event.clientY - cardCenterY;
-          cardX.set(offsetX);
-          cardY.set(offsetY);
-          isMouseMoving = false;
+          const { left, top, width, height } =
+            cardRef.current!.getBoundingClientRect();
+          cardX.set(event.clientX - (left + width / 2));
+          cardY.set(event.clientY - (top + height / 2));
+          isMouseMoving.current = false;
         });
       }
     };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     cardX.set(0);
     cardY.set(0);
-  };
+  }, [cardX, cardY]);
+
+  useEffect(() => {
+    const onMouseMove = handleMouseMove(cardRef);
+    cardRef.current?.addEventListener("mousemove", onMouseMove, {
+      passive: true,
+    });
+    return () => cardRef.current?.removeEventListener("mousemove", onMouseMove);
+  }, []);
 
   const indexClasses = {
     0: "justify-center sm:justify-end items-start sm:items-end text-left sm:text-right",
@@ -209,7 +219,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   const dynamicClasses = [
     indexClasses[index],
-    "flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none transition-shadow duration-500 shadow-services group-hover:shadow-services-hover rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
+    "flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit",
     onClick ? "cursor-pointer" : "",
     className,
   ]
@@ -219,24 +229,15 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        "cursor-pointer service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 group"
+        "cursor-pointer  service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent group"
       }
-      ref={ref}
       onMouseLeave={handleMouseLeave}
     >
-      <motion.div
-        className={
-          "transition-transform relative transition-none-firefox duration-[75ms] sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d group"
-        }
-        style={{
-          rotateX,
-          rotateY,
-        }}
-      >
+      <motion.div className="relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group">
         {svg && svg}
         <motion.div
           ref={cardRef}
-          className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-600 transform-style-3d ${dynamicClasses}`}
+          className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
           style={{
             background: sheenGradient,
           }}

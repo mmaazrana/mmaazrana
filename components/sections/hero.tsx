@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Typography from "@/components/Typography";
 import Button from "@/components/button";
 import {
@@ -12,28 +12,57 @@ import { ButtonTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import { AnimatePresence, motion } from "framer-motion";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
-import { DotLottiePlayer } from "@dotlottie/react-player";
 import { useColorScheme } from "@/components/utils/hooks";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
   const { isDark } = useColorScheme();
+  const [animationCache, setAnimationCache] = useState<{
+    [key: string]: string;
+  }>({});
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    intervalId = setInterval(() => {
-      setIndex((prevIndex) => {
-        return (prevIndex + 1) % HeroDescriptions.length;
-      });
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % HeroDescriptions.length);
     }, 5000);
 
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
+    return () => clearInterval(intervalId);
   }, []);
+
+  // Pre-fetch all animations once on component mount
+  useEffect(() => {
+    const pathsToCache = isDark ? LottiePaths : LottieLightPaths;
+    const fetchAnimations = async () => {
+      const cache: { [key: string]: string } = {};
+
+      await Promise.all(
+        pathsToCache.map((path) =>
+          fetch(path)
+            .then((response) => response.blob())
+            .then((blob) => {
+              cache[path] = URL.createObjectURL(blob);
+            })
+            .catch((error) =>
+              console.error("Failed to fetch animation:", error),
+            ),
+        ),
+      );
+
+      setAnimationCache(cache);
+      setLoading(false); // Set loading to false once all animations are cached
+    };
+
+    fetchAnimations();
+  }, [isDark]);
+
+  const currentAnimation = isDark
+    ? LottiePaths[index]
+    : LottieLightPaths[index];
+  const cachedAnimation = animationCache[currentAnimation] || currentAnimation;
 
   return (
     <div
@@ -78,7 +107,7 @@ const Hero: FC<HeroProps> = ({}) => {
           >
             <Typography
               type={TextTypes["3xl"]}
-              weight={WeightTypes.regular}
+              weight={WeightTypes.light}
               className={"!transition-none !opacity-75"}
             >
               {HeroDescriptions[index % HeroDescriptions.length]}
@@ -87,7 +116,10 @@ const Hero: FC<HeroProps> = ({}) => {
         </AnimatePresence>
         <div className="flex gap-2 items-center justify-start flex-wrap">
           <div className={"pt-3 pb-3 pr-3"}>
-            <Link href={""}>
+            <Link
+              href={"https://www.linkedin.com/in/mmaazrana/"}
+              target={"_blank"}
+            >
               <Button
                 leftIcon={<Linkedin />}
                 textWeight={WeightTypes.medium}
@@ -96,18 +128,31 @@ const Hero: FC<HeroProps> = ({}) => {
               />
             </Link>
           </div>
-          <Button type={ButtonTypes.tertiary} text={"awaismaaz@gmail.com"} />
+          <Link
+            href={"mailto:awaismaaz@gmail.com"}
+            className={"cursor-pointer"}
+            target={"_blank"}
+          >
+            <Button type={ButtonTypes.tertiary} text={"awaismaaz@gmail.com"} />
+          </Link>
         </div>
       </div>
       <AnimatePresence mode="wait" initial={false}>
-        <DotLottiePlayer
-          key={"lottie" + index}
-          className={
-            "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
-          }
-          src={isDark ? LottiePaths[index] : LottieLightPaths[index]}
-          autoplay
-        ></DotLottiePlayer>
+        {loading ? (
+          <div className="max-w-[100%] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] flex justify-center items-center ">
+            <div className="rounded-full h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 2xl:h-10 w-5 sm:w-6 md:w-7 lg:w-8 xl:w-9 2xl:w-10 bg-secondary animate-ping"></div>
+          </div>
+        ) : (
+          <DotLottieReact
+            key={"lottie" + index}
+            className={
+              "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
+            }
+            useFrameInterpolation={false}
+            src={cachedAnimation}
+            autoplay
+          />
+        )}
       </AnimatePresence>
       <span
         className={

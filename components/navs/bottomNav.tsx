@@ -237,7 +237,9 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
                       <Link href={button.href}>
                         <Typography
                           type={TextTypes.xl}
-                          className={"opacity-50 whitespace-nowrap"}
+                          className={
+                            "opacity-30 hover:opacity-50 transition-opacity duration-250 whitespace-nowrap"
+                          }
                         >
                           {button.text}
                         </Typography>
@@ -250,7 +252,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           </AnimatePresence>
           <AnimatePresence mode={"wait"}>
             <div
-              className={`transition-colors my-8 px-8 min-w-[80vw] w-full max-w-[450px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[615px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
+              className={`transition-colors my-8 px-8 min-w-[80vw] w-full max-w-[450px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[625px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
             >
               {bottomNavButtons.map((button, index) => (
                 <motion.div
@@ -262,7 +264,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
                     <Typography
                       type={TextTypes.xl}
                       color={ColorTypes.primary}
-                      className={`${button.section === activeSection ? "opacity-100" : "opacity-30"} transition-opacity duration-300`}
+                      className={`${button.section === activeSection ? "opacity-100" : "opacity-30 hover:opacity-50"} transition-opacity duration-300`}
                     >
                       {button.text}
                     </Typography>
@@ -273,7 +275,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           </AnimatePresence>
         </div>
         <motion.div
-          className={`${isEndOfPage ? "w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[271px]" : "max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]"} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
+          className={`${isEndOfPage ? "w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[280px]" : "max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]"} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
         >
           <div
             className={
@@ -423,7 +425,7 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
             <Button
               leftIcon={<Mail className={"!fill-none stroke-primary-accent"} />}
               type={ButtonTypes.primary}
-              textWeight={WeightTypes.semiBold}
+              textWeight={WeightTypes.medium}
               textClassName={`${isEndOfPage ? "opacity-100" : "opacity-0"}`}
               className={`justify-start !items-center !px-[8px] md:!px-[11px] lg:!px-[14px] xl:!px-[15px] !p-2 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3 !overflow-hidden !whitespace-nowrap`}
               text={"awaismaaz@gmail.com"}

@@ -104,7 +104,7 @@ const Nav: FC<NavProps> = ({ setInView }) => {
                 : "opacity-0 pointer-events-none"
             } `}
           >
-            <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2 md:gap-0">
+            <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2">
               {navButtons.map((button, index) => (
                 <li key={index}>
                   <Link href={button.href}>

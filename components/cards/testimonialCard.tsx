@@ -38,7 +38,7 @@ const TestimonialCard: FC<TestimonialCardProps> = React.memo(
     return (
       <div
         ref={ref}
-        className={`cursor-pointer ${isActive && "shadow-testimonial hover:shadow-testimonial-hover"} testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300`}
+        className={`cursor-pointer ${isActive && "shadow-testimonial hover:shadow-testimonial-hover"} testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group`}
       >
         <svg
           width="100"
@@ -115,12 +115,12 @@ const TestimonialCard: FC<TestimonialCardProps> = React.memo(
           />
         </svg>
         <div
-          className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? "opacity-100" : "opacity-25"}`}
+          className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? "opacity-100" : "opacity-25 group-hover:opacity-50 transition-opacity duration-200"}`}
         >
           <Typography type={TextTypes["2xl"]}>{testimonial}</Typography>
         </div>
         <div
-          className={`flex flex-row w-full gap-2 !transition-all !duration-500 !delay-200 ${isActive ? "opacity-100" : "opacity-25"}`}
+          className={`flex flex-row w-full gap-2 !transition-all !duration-500 !delay-200 ${isActive ? "opacity-100" : "opacity-25 group-hover:opacity-50 transition-opacity duration-200"}`}
         >
           <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
             {client}

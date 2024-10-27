@@ -11,17 +11,11 @@ import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
 import About from "@/components/sections/about";
 import { breakpoints } from "@/helpers/constants";
-import GoogleAnalytics from "@/app/GoogleAnalytics";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 // Import with next's dynamic import
-import dynamic from "next/dynamic";
 import Button from "@/components/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-
-const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
-  ssr: true,
-});
 
 export default function Home() {
   const [inView, setInView] = useState(true);
@@ -69,6 +63,7 @@ export default function Home() {
       window.removeEventListener("resize", handleResize);
     };
   }, [windowWidth]);
+
   useEffect(() => {
     const handleScroll = () => {
       const { height: headerHeight } = getDimensions(heroRef.current);
@@ -95,7 +90,7 @@ export default function Home() {
   return (
     <div className={"overflow-x-hidden max-w-[100vw]"}>
       <Head>
-        <GoogleAnalytics />
+        <GoogleAnalytics gaId="G-PNNJWR7KVB" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
@@ -119,44 +114,6 @@ export default function Home() {
         ></meta>
       </Head>
       <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
-        {/*{isBrowser && (*/}
-        {/*  <AnimatedCursor*/}
-        {/*    innerSize={12}*/}
-        {/*    outerSize={8}*/}
-        {/*    color="66, 100, 168"*/}
-        {/*    outerAlpha={0.2}*/}
-        {/*    innerScale={0.7}*/}
-        {/*    outerScale={5}*/}
-        {/*    clickables={[*/}
-        {/*      "a",*/}
-        {/*      'input[type="text"]',*/}
-        {/*      'input[type="email"]',*/}
-        {/*      'input[type="number"]',*/}
-        {/*      'input[type="submit"]',*/}
-        {/*      'input[type="image"]',*/}
-        {/*      "label[for]",*/}
-        {/*      "select",*/}
-        {/*      "textarea",*/}
-        {/*      "button",*/}
-        {/*      ".link",*/}
-        {/*      ".about",*/}
-        {/*      ".testimonial",*/}
-        {/*      ".service",*/}
-        {/*      ".work",*/}
-        {/*      // {*/}
-        {/*      //     target: '.custom',*/}
-        {/*      //     options: {*/}
-        {/*      //         innerSize: 12,*/}
-        {/*      //         outerSize: 12,*/}
-        {/*      //         color: '255, 255, 255',*/}
-        {/*      //         outerAlpha: 0.3,*/}
-        {/*      //         innerScale: 0.7,*/}
-        {/*      //         outerScale: 5*/}
-        {/*      //     }*/}
-        {/*      // }*/}
-        {/*    ]}*/}
-        {/*  />*/}
-        {/*)}*/}
         <Nav setInView={setInView} />
         <BottomNav inView={inView} activeSection={activeSection} />
         <section

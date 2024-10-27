@@ -50,10 +50,17 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const typeClasses: { [index: string]: any } = {
-    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-lg bg-primary hover:bg-primary-hover ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
-    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-lg hover:bg-secondary-hover ${leftIcon ? "justify-start px-3 xl:px-4" : rightIcon ? "justify-end px-3 xl:px-4" : "justify-center px-10 md:px-4 xl:px-6"} ${disabled && ""}`,
-    tertiary: `flex rounded-lg gap-4 hover:text-primary-hover gap-2 items-center ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
+    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-full bg-primary hover:bg-primary-hover ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
+    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-full hover:bg-secondary-hover ${leftIcon ? "justify-start pr-4 xl:pr-5 pl-3 xl:pl-4" : rightIcon ? "justify-end pl-4 xl:pl-5 pr-2 xl:pr-3" : "justify-center px-10 md:px-4 xl:px-6"} ${disabled && ""}`,
+    tertiary: `flex rounded-full gap-4 !text-error hover:text-primary-hover gap-2 items-center ${leftIcon ? "justify-start" : rightIcon ? "justify-end" : "justify-center"} ${disabled && ""}`,
     error: `bg-error ${disabled && ""}`,
+  };
+
+  const textClasses: { [index: string]: any } = {
+    primary: ``,
+    secondary: ``,
+    tertiary: `hover:text-primary-hover transition-colors duration-250`,
+    error: ``,
   };
 
   const borderColorClasses = {
@@ -90,7 +97,7 @@ const Button: FC<ButtonProps> = ({
         type={textSize}
         weight={textWeight}
         color={textColor}
-        className={textClassName}
+        className={`!leading-tight ${textClasses[type]} ${textClassName}`}
       >
         {text}
       </Typography>

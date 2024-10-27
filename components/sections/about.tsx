@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, memo, useEffect, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
 import {
   aboutSections,
@@ -436,17 +436,12 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
           "hidden about:flex absolute w-full h-full top-0 left-0 text-center justify-center items-center -z-10"
         }
       >
-        <AnimatePresence mode={"wait"}>
-          <motion.span
+        <AnimatePresence mode="wait">
+          <AnimatedText
             key={activeCardIndex}
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
-            className={`will-change-[opacity] transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[10.5vw] leading-[1] ${isActive ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
-          >
-            {aboutSections[activeCardIndex]}
-          </motion.span>
+            text={aboutSections[activeCardIndex]}
+            isActive={isActive} // Pass appropriate state
+          />
         </AnimatePresence>
       </div>
     </div>
@@ -454,3 +449,23 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
 };
 
 export default About;
+
+interface AnimatedTextProps {
+  text: string;
+  isActive: boolean;
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = memo(({ text, isActive }) => (
+  <motion.span
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2 }}
+    style={{ willChange: "opacity, transform" }} // Only animate opacity and transform
+    className={`transition-none duration-200 text-primary-accent uppercase font-black text-[10.5vw] 2xl:text-[180px] leading-[1] ${
+      isActive ? "custom-text-stroke-active" : "custom-text-stroke"
+    } ${archivo.className}`}
+  >
+    {text}
+  </motion.span>
+));
