@@ -20,10 +20,10 @@ interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
   const { isDark } = useColorScheme();
-  const [animationCache, setAnimationCache] = useState<{
-    [key: string]: string;
-  }>({});
-  const [loading, setLoading] = useState(true);
+  // const [animationCache, setAnimationCache] = useState<{
+  //   [key: string]: string;
+  // }>({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -33,36 +33,47 @@ const Hero: FC<HeroProps> = ({}) => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // Pre-fetch all animations once on component mount
-  useEffect(() => {
-    const pathsToCache = isDark ? LottiePaths : LottieLightPaths;
-    const fetchAnimations = async () => {
-      const cache: { [key: string]: string } = {};
-
-      await Promise.all(
-        pathsToCache.map((path) =>
-          fetch(path)
-            .then((response) => response.blob())
-            .then((blob) => {
-              cache[path] = URL.createObjectURL(blob);
-            })
-            .catch((error) =>
-              console.error("Failed to fetch animation:", error),
-            ),
-        ),
-      );
-
-      setAnimationCache(cache);
-      setLoading(false); // Set loading to false once all animations are cached
-    };
-
-    fetchAnimations();
-  }, [isDark]);
+  // // Prefetch the first animation before mounting, and then fetch the rest in the background
+  // useEffect(() => {
+  //   const pathsToCache = isDark ? LottiePaths : LottieLightPaths;
+  //
+  //   const fetchInitialAnimation = async () => {
+  //     const cache: { [key: string]: string } = {};
+  //
+  //     // Fetch the first animation only
+  //     try {
+  //       const response = await fetch(pathsToCache[0]);
+  //       const blob = await response.blob();
+  //       cache[pathsToCache[0]] = URL.createObjectURL(blob);
+  //     } catch (error) {
+  //       console.error("Failed to fetch initial animation:", error);
+  //     }
+  //
+  //     setAnimationCache(cache);
+  //     setLoading(false); // Set loading to false once the first animation is cached
+  //
+  //     // Fetch remaining animations in the background
+  //     pathsToCache.slice(1).forEach(async (path) => {
+  //       try {
+  //         const response = await fetch(path);
+  //         const blob = await response.blob();
+  //         setAnimationCache((prevCache) => ({
+  //           ...prevCache,
+  //           [path]: URL.createObjectURL(blob),
+  //         }));
+  //       } catch (error) {
+  //         console.error("Failed to fetch animation:", error);
+  //       }
+  //     });
+  //   };
+  //
+  //   fetchInitialAnimation();
+  // }, [isDark]);
 
   const currentAnimation = isDark
     ? LottiePaths[index]
     : LottieLightPaths[index];
-  const cachedAnimation = animationCache[currentAnimation] || currentAnimation;
+  // const cachedAnimation = animationCache[currentAnimation] || currentAnimation;
 
   return (
     <div
@@ -149,7 +160,7 @@ const Hero: FC<HeroProps> = ({}) => {
               "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
             }
             useFrameInterpolation={false}
-            src={cachedAnimation}
+            src={currentAnimation}
             autoplay
           />
         )}

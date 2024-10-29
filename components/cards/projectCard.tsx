@@ -54,9 +54,8 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <Typography type={TextTypes.xl}>{description}</Typography>
       </div>
       <Image
-        width={1920}
-        height={1080}
-        loading="lazy"
+        width={1310}
+        height={837}
         placeholder={"blur"}
         blurDataURL={placeholderPath}
         className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl group-hover:scale-[0.55] ${cardInView && "!scale-[0.55]"}` : `border-[1.3px] rounded-xl sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 ${cardInView && "!scale-100"} `} origin-top-left transition-transform duration-300`}
@@ -65,8 +64,8 @@ const ProjectCard: FC<ProjectCardProps> = ({
       />
       {alt && altImagePath && altPlaceholderPath && (
         <Image
-          width={1920}
-          height={1080}
+          width={390}
+          height={845}
           loading="eager"
           placeholder="blur"
           fetchPriority="high"
