@@ -12,73 +12,31 @@ import { ButtonTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import { AnimatePresence, motion } from "framer-motion";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
-import { useColorScheme } from "@/components/utils/hooks";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useTheme } from "next-themes";
+import LottieWorkerAnimation from "@/components/utils/lottie";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
-  const { isDark } = useColorScheme();
-  // const [animationCache, setAnimationCache] = useState<{
-  //   [key: string]: string;
-  // }>({});
+  const { resolvedTheme } = useTheme();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % HeroDescriptions.length);
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  // // Prefetch the first animation before mounting, and then fetch the rest in the background
-  // useEffect(() => {
-  //   const pathsToCache = isDark ? LottiePaths : LottieLightPaths;
-  //
-  //   const fetchInitialAnimation = async () => {
-  //     const cache: { [key: string]: string } = {};
-  //
-  //     // Fetch the first animation only
-  //     try {
-  //       const response = await fetch(pathsToCache[0]);
-  //       const blob = await response.blob();
-  //       cache[pathsToCache[0]] = URL.createObjectURL(blob);
-  //     } catch (error) {
-  //       console.error("Failed to fetch initial animation:", error);
-  //     }
-  //
-  //     setAnimationCache(cache);
-  //     setLoading(false); // Set loading to false once the first animation is cached
-  //
-  //     // Fetch remaining animations in the background
-  //     pathsToCache.slice(1).forEach(async (path) => {
-  //       try {
-  //         const response = await fetch(path);
-  //         const blob = await response.blob();
-  //         setAnimationCache((prevCache) => ({
-  //           ...prevCache,
-  //           [path]: URL.createObjectURL(blob),
-  //         }));
-  //       } catch (error) {
-  //         console.error("Failed to fetch animation:", error);
-  //       }
-  //     });
-  //   };
-  //
-  //   fetchInitialAnimation();
-  // }, [isDark]);
-
-  const currentAnimation = isDark
-    ? LottiePaths[index]
-    : LottieLightPaths[index];
-  // const cachedAnimation = animationCache[currentAnimation] || currentAnimation;
+  const currentAnimation =
+    resolvedTheme === "dark" ? LottiePaths[index] : LottieLightPaths[index];
 
   return (
     <div
       className={
-        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px]"
+        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]"
       }
     >
       <div
@@ -154,15 +112,14 @@ const Hero: FC<HeroProps> = ({}) => {
             <div className="rounded-full h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 2xl:h-10 w-5 sm:w-6 md:w-7 lg:w-8 xl:w-9 2xl:w-10 bg-secondary animate-ping"></div>
           </div>
         ) : (
-          <DotLottieReact
+          <motion.div
             key={"lottie" + index}
             className={
               "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
             }
-            useFrameInterpolation={false}
-            src={currentAnimation}
-            autoplay
-          />
+          >
+            <LottieWorkerAnimation src={currentAnimation} />
+          </motion.div>
         )}
       </AnimatePresence>
       <span

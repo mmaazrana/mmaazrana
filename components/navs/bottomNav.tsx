@@ -40,7 +40,7 @@ import Dribbble from "@/components/icons/dribbble";
 
 interface BottomNavProps {
   inView: boolean;
-  activeSection: Sections;
+  activeSection?: Sections;
 }
 
 const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {

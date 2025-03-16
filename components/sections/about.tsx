@@ -169,17 +169,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                   Development
                 </Typography>
                 <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
-                  {devIconComponents.map(({ Icon, props }, index) => (
-                    <div key={index}>
-                      <Icon
-                        className={
-                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                        }
-                        {...props}
-                      />{" "}
-                      {/* Adjust the size as per your requirement */}
-                    </div>
-                  ))}
+                  {Object.values(devIconComponents).map(
+                    ({ Icon, props }, index) => (
+                      <div key={index}>
+                        <Icon
+                          className={
+                            "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                          }
+                          {...props}
+                        />{" "}
+                        {/* Adjust the size as per your requirement */}
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
               <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
@@ -187,17 +189,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                   Design
                 </Typography>
                 <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
-                  {designIconComponents.map(({ Icon, props }, index) => (
-                    <div key={index}>
-                      <Icon
-                        className={
-                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                        }
-                        {...props}
-                      />{" "}
-                      {/* Adjust the size as per your requirement */}
-                    </div>
-                  ))}
+                  {Object.values(designIconComponents).map(
+                    ({ Icon, props }, index) => (
+                      <div key={index}>
+                        <Icon
+                          className={
+                            "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                          }
+                          {...props}
+                        />{" "}
+                        {/* Adjust the size as per your requirement */}
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
               <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
@@ -205,17 +209,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                   Management
                 </Typography>
                 <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
-                  {managementIconComponents.map(({ Icon, props }, index) => (
-                    <div key={index}>
-                      <Icon
-                        className={
-                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                        }
-                        {...props}
-                      />{" "}
-                      {/* Adjust the size as per your requirement */}
-                    </div>
-                  ))}
+                  {Object.values(managementIconComponents).map(
+                    ({ Icon, props }, index) => (
+                      <div key={index}>
+                        <Icon
+                          className={
+                            "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                          }
+                          {...props}
+                        />{" "}
+                        {/* Adjust the size as per your requirement */}
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
@@ -293,6 +299,7 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
             alt={"Maaz Rana"}
             fill
             className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${socialsInView && "!opacity-100 !saturate-100"}`}
+            placeholder="blur"
           />
         </AboutCard>
         <span
@@ -319,17 +326,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                 Development
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {devIconComponents.map(({ Icon, props }, index) => (
-                  <div key={index}>
-                    <Icon
-                      className={
-                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                      }
-                      {...props}
-                    />{" "}
-                    {/* Adjust the size as per your requirement */}
-                  </div>
-                ))}
+                {Object.values(devIconComponents).map(
+                  ({ Icon, props }, index) => (
+                    <div key={index}>
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
+                      {/* Adjust the size as per your requirement */}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
             <div className={"flex flex-col gap-6"}>
@@ -337,17 +346,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                 Design
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {designIconComponents.map(({ Icon, props }, index) => (
-                  <div key={index}>
-                    <Icon
-                      className={
-                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                      }
-                      {...props}
-                    />{" "}
-                    {/* Adjust the size as per your requirement */}
-                  </div>
-                ))}
+                {Object.values(designIconComponents).map(
+                  ({ Icon, props }, index) => (
+                    <div key={index}>
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
+                      {/* Adjust the size as per your requirement */}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
             <div className={"flex flex-col gap-6"}>
@@ -355,17 +366,19 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
                 Management
               </Typography>
               <div className={"flex flex-row flex-wrap gap-4"}>
-                {managementIconComponents.map(({ Icon, props }, index) => (
-                  <div key={index}>
-                    <Icon
-                      className={
-                        "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
-                      }
-                      {...props}
-                    />{" "}
-                    {/* Adjust the size as per your requirement */}
-                  </div>
-                ))}
+                {Object.values(managementIconComponents).map(
+                  ({ Icon, props }, index) => (
+                    <div key={index}>
+                      <Icon
+                        className={
+                          "w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]"
+                        }
+                        {...props}
+                      />{" "}
+                      {/* Adjust the size as per your requirement */}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>

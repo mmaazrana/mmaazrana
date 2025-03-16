@@ -45,6 +45,12 @@ import BeaconTutors from "@/components/icons/beaconTutors";
 import Lyfiti from "@/components/icons/lyfiti";
 import FiveOneFivePools from "@/components/icons/515pools";
 import MenuHub from "@/components/icons/menuHub";
+import deepReelProject from "../public/images/deepreel.webp";
+import nutrigramProject from "../public/images/nutrigram.webp";
+import nutrigramAltProject from "../public/images/nutrigram-alt.webp";
+import markdownProject from "../public/images/markdown.webp";
+import markdownAltProject from "../public/images/markdown-alt.webp";
+import athletonProject from "../public/images/athleton.webp";
 
 export const HeroHeadings: string[] = [
   "Product Designer",
@@ -55,11 +61,11 @@ export const HeroHeadings: string[] = [
 ];
 
 export const LottiePaths: string[] = [
-  "/lotties/product.lottie",
-  "/lotties/web.lottie",
-  "/lotties/mobile.lottie",
-  "/lotties/blender.lottie",
-  "/lotties/video.lottie",
+  "https://lottie.host/f4163d11-af03-4689-b1b0-757862066f91/JuFMA6eW3b.lottie",
+  "https://lottie.host/5f1f32ed-787f-4ce4-8605-e51fc38fd3ad/NTHxB2bgaF.lottie",
+  "https://lottie.host/c1faf8ba-20de-49cb-bdbb-b5f9e5f9d233/FAkp9DRzBn.lottie",
+  "https://lottie.host/36c7490a-3f67-41f4-89a5-003578a3058d/QTRT5TzYBD.lottie",
+  "https://lottie.host/1b3beeb7-e069-499d-8a1f-7276f7220d87/mUkVw9uBCL.lottie",
 ];
 
 export const LottieLightPaths: string[] = [
@@ -146,31 +152,25 @@ export const projects: ProjectT[] = [
     title: "DeepReel AI Videos",
     description:
       "DeepReel’s AI video editor generates avatar script, visuals, music &amp; captions automatically in minutes. No video editing skills required!",
-    imagePath: "/images/deepreel.webp",
-    placeholderPath: "/images/placeholders/deepreel.webp",
+    image: deepReelProject,
   },
   {
     title: "Nutrigram",
     description: "Short description about the app mentioned above",
-    imagePath: "/images/nutrigram.webp",
-    placeholderPath: "/images/placeholders/nutrigram.webp",
-    altImagePath: "/images/nutrigram-alt.webp",
-    altPlaceholderPath: "/images/placeholders/nutrigram-alt.webp",
+    image: nutrigramProject,
+    altImage: nutrigramAltProject,
   },
   {
     title: "Markdown Editor",
     description: "Short description about the app mentioned above",
-    imagePath: "/images/markdown.webp",
-    placeholderPath: "/images/placeholders/markdown.webp",
-    altImagePath: "/images/markdown-alt.webp",
-    altPlaceholderPath: "/images/placeholders/markdown-alt.webp",
+    image: markdownProject,
+    altImage: markdownAltProject,
   },
   {
     title: "Elbrezal Honey",
     description:
       "the El Brezal brand represents the most natural and strongest beekeeping products—products that are 100% natural and pure.",
-    imagePath: "/images/athleton.webp",
-    placeholderPath: "/images/placeholders/athleton.webp",
+    image: athletonProject,
   },
 ];
 
@@ -239,37 +239,37 @@ export const testimonials: TestimonialT[] = [
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios1",
   },
   {
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios2",
   },
   {
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios3",
   },
   {
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios4",
   },
   {
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios5",
   },
   {
     testimonial:
       "Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.",
     client: "John Doe",
-    designation: "CEO Inventrios",
+    designation: "CEO Inventrios6",
   },
 ];
 
@@ -315,65 +315,44 @@ export const WorkExperiences: WorkExperienceT[] = [
   },
 ];
 
-export const iconComponents = [
-  { Icon: SiFigma, props: { fill: "#F24E1E" } },
-  { Icon: SiAdobeillustrator, props: { fill: "#FF9A00" } },
-  { Icon: SiAdobephotoshop, props: { fill: "#31A8FF" } },
-  { Icon: SiAdobeaftereffects, props: { fill: "#9999FF" } },
-  { Icon: SiAdobepremierepro, props: { fill: "#9999FF" } },
-  { Icon: SiAdobexd, props: { fill: "#FF61F6" } },
-  { Icon: SiBlender, props: { fill: "#E87D0D" } },
-  { Icon: SiFlutter, props: { fill: "#02569B" } },
-  { Icon: SiDart, props: { fill: "#0175C2" } },
-  { Icon: SiFirebase, props: { fill: "#FFCA28" } },
-  { Icon: SiNextdotjs, props: { fill: "var(--primary)" } },
-  { Icon: SiReact, props: { fill: "#61DAFB" } },
-  { Icon: SiNodedotjs, props: { fill: "#339933" } },
-  { Icon: SiPython, props: { fill: "#3776AB" } },
-  { Icon: SiTailwindcss, props: { fill: "#06B6D4" } },
-  { Icon: SiFramer, props: { fill: "#0055FF" } },
-  { Icon: SiJavascript, props: { fill: "#F7DF1E" } },
-  { Icon: SiTypescript, props: { fill: "#3178C6" } },
-  { Icon: SiSlack, props: { fill: "#4A154B" } },
-  { Icon: SiNotion, props: { fill: "var(--primary)" } },
-  { Icon: SiTrello, props: { fill: "#0052CC" } },
-  { Icon: SiJira, props: { fill: "#0052CC" } },
-  { Icon: SiJirasoftware, props: { fill: "#0052CC" } },
-  { Icon: SiGithub, props: { fill: "var(--primary)" } },
-];
+export const designIconComponents = {
+  figma: { Icon: SiFigma, props: { fill: "#F24E1E" } },
+  illustrator: { Icon: SiAdobeillustrator, props: { fill: "#FF9A00" } },
+  photoshop: { Icon: SiAdobephotoshop, props: { fill: "#31A8FF" } },
+  afterEffects: { Icon: SiAdobeaftereffects, props: { fill: "#9999FF" } },
+  premierePro: { Icon: SiAdobepremierepro, props: { fill: "#9999FF" } },
+  adobeXd: { Icon: SiAdobexd, props: { fill: "#FF61F6" } },
+  blender: { Icon: SiBlender, props: { fill: "#E87D0D" } },
+};
 
-export const designIconComponents = [
-  { Icon: SiFigma, props: { fill: "#F24E1E" } },
-  { Icon: SiAdobeillustrator, props: { fill: "#FF9A00" } },
-  { Icon: SiAdobephotoshop, props: { fill: "#31A8FF" } },
-  { Icon: SiAdobeaftereffects, props: { fill: "#9999FF" } },
-  { Icon: SiAdobepremierepro, props: { fill: "#9999FF" } },
-  { Icon: SiAdobexd, props: { fill: "#FF61F6" } },
-  { Icon: SiBlender, props: { fill: "#E87D0D" } },
-];
+export const devIconComponents = {
+  next: { Icon: SiNextdotjs, props: { fill: "var(--primary)" } },
+  react: { Icon: SiReact, props: { fill: "#61DAFB" } },
+  flutter: { Icon: SiFlutter, props: { fill: "#02569B" } },
+  dart: { Icon: SiDart, props: { fill: "#0175C2" } },
+  firebase: { Icon: SiFirebase, props: { fill: "#FFCA28" } },
+  node: { Icon: SiNodedotjs, props: { fill: "#339933" } },
+  python: { Icon: SiPython, props: { fill: "#3776AB" } },
+  javascript: { Icon: SiJavascript, props: { fill: "#F7DF1E" } },
+  typescript: { Icon: SiTypescript, props: { fill: "#3178C6" } },
+  tailwind: { Icon: SiTailwindcss, props: { fill: "#06B6D4" } },
+  framer: { Icon: SiFramer, props: { fill: "#0055FF" } },
+};
 
-export const devIconComponents = [
-  { Icon: SiNextdotjs, props: { fill: "var(--primary)" } },
-  { Icon: SiReact, props: { fill: "#61DAFB" } },
-  { Icon: SiFlutter, props: { fill: "#02569B" } },
-  { Icon: SiDart, props: { fill: "#0175C2" } },
-  { Icon: SiFirebase, props: { fill: "#FFCA28" } },
-  { Icon: SiNodedotjs, props: { fill: "#339933" } },
-  { Icon: SiPython, props: { fill: "#3776AB" } },
-  { Icon: SiJavascript, props: { fill: "#F7DF1E" } },
-  { Icon: SiTypescript, props: { fill: "#3178C6" } },
-  { Icon: SiTailwindcss, props: { fill: "#06B6D4" } },
-  { Icon: SiFramer, props: { fill: "#0055FF" } },
-];
+export const managementIconComponents = {
+  slack: { Icon: SiSlack, props: { fill: "#4A154B" } },
+  notion: { Icon: SiNotion, props: { fill: "var(--primary)" } },
+  trello: { Icon: SiTrello, props: { fill: "#0052CC" } },
+  jira: { Icon: SiJira, props: { fill: "#0052CC" } },
+  jiraSoftware: { Icon: SiJirasoftware, props: { fill: "#0052CC" } },
+  github: { Icon: SiGithub, props: { fill: "var(--primary)" } },
+};
 
-export const managementIconComponents = [
-  { Icon: SiSlack, props: { fill: "#4A154B" } },
-  { Icon: SiNotion, props: { fill: "var(--primary)" } },
-  { Icon: SiTrello, props: { fill: "#0052CC" } },
-  { Icon: SiJira, props: { fill: "#0052CC" } },
-  { Icon: SiJirasoftware, props: { fill: "#0052CC" } },
-  { Icon: SiGithub, props: { fill: "var(--primary)" } },
-];
+export const iconComponents = {
+  ...designIconComponents,
+  ...devIconComponents,
+  ...managementIconComponents,
+};
 
 export const clientIconComponents = [
   { Icon: Alfabolt, props: { fill: "var(--primary-hover)" } },
@@ -389,6 +368,22 @@ export const clientIconComponents = [
   },
   { Icon: Lyfiti, props: { fill: "var(--primary-hover)" } },
   { Icon: FiveOneFivePools, props: { fill: "var(--primary-hover)" } },
+];
+
+export const clientColorIconComponents = [
+  { Icon: Alfabolt, props: {} },
+  { Icon: TSS, props: {} },
+  { Icon: Deepreel, props: {} },
+  { Icon: Athleton, props: {} },
+  { Icon: Rivanna, props: {} },
+  { Icon: Edwiz, props: {} },
+  { Icon: BeaconTutors, props: {} },
+  {
+    Icon: MenuHub,
+    props: {},
+  },
+  { Icon: Lyfiti, props: {} },
+  { Icon: FiveOneFivePools, props: {} },
 ];
 
 export const clientData: ClientDataT[] = [
@@ -426,7 +421,10 @@ export const clientData: ClientDataT[] = [
         services: ["Product Design", "Website"],
       },
     ],
-    technologiesInvolved: [SiFigma, SiNextdotjs],
+    technologiesInvolved: [
+      designIconComponents["figma"],
+      devIconComponents["next"],
+    ],
   },
   {
     heading: "Rivanna",
@@ -462,6 +460,9 @@ export const clientData: ClientDataT[] = [
         services: ["Product Design", "Website"],
       },
     ],
-    technologiesInvolved: [SiFigma, SiNextdotjs],
+    technologiesInvolved: [
+      designIconComponents["figma"],
+      devIconComponents["next"],
+    ],
   },
 ];

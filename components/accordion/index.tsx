@@ -63,7 +63,13 @@ const Accordion: FC<AccordionProps> = ({
           </div>
         </button>
       </div>
-      {content && <div>{content}</div>}
+      {content && (
+        <div
+          className={`h-auto overflow-hidden transition-all duration-700 ${isOpen ? "max-h-[1000px]" : "max-h-[0px]"}`}
+        >
+          {content}
+        </div>
+      )}
     </div>
   );
 };

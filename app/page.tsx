@@ -167,7 +167,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <Services windowWidth={windowWidth} currentScreen={currentScreen} />
+          <Services currentScreen={currentScreen} />
         </section>
         <section
           id={Sections.testimonials}

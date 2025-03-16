@@ -52,6 +52,7 @@ const Testimonials: FC<TestimonialsProps> = ({ windowWidth }) => {
               }}
             >
               <TestimonialCard
+                variant={"animated"}
                 testimonial={testimonial.testimonial}
                 windowWidth={windowWidth}
                 client={testimonial.client}

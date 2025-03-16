@@ -1,4 +1,4 @@
-import React, { cloneElement, FC } from "react";
+import React, { cloneElement, FC, ReactElement } from "react";
 import Typography from "@/components/Typography";
 
 import {
@@ -20,8 +20,8 @@ interface ButtonProps {
   width?: string;
   height?: string;
   borderWidth?: number;
-  rightIcon?: React.ReactElement;
-  leftIcon?: React.ReactElement;
+  rightIcon?: ReactElement<{ className?: string }>;
+  leftIcon?: ReactElement<{ className?: string }>;
   onClick?: () => void;
   className?: string;
   textClassName?: string;

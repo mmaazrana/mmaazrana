@@ -1,17 +1,15 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { services } from "@/helpers/constants";
 import ServiceCard from "@/components/cards/serviceCard";
 import Image from "next/image";
-import { useColorScheme } from "@/components/utils/hooks";
+import { useTheme } from "next-themes";
 
 interface ServicesProps {
-  windowWidth: number;
   currentScreen: string;
 }
 
-const Services: FC<ServicesProps> = ({ windowWidth, currentScreen }) => {
-  const { isDark } = useColorScheme();
-  const [currentMode, setCurrentMode] = useState("");
+const Services: FC<ServicesProps> = ({ currentScreen }) => {
+  const { resolvedTheme } = useTheme();
 
   const loaderClasses = [
     "absolute right-0 sm:right-auto sm:left-0 md:left-auto md:top-0 pointer-events-none z-10 flex justify-end items-center md:items-start w-fit h-full p-8 md:p-10 lg:p-14 xl:p-16 2xl:p-24",
@@ -40,14 +38,10 @@ const Services: FC<ServicesProps> = ({ windowWidth, currentScreen }) => {
     "w-full min-w-[185%] -ml-[5.7rem] service:min-w-[170%] service:-ml-[3.25rem] sm:ml-28 sm:-mb-16 md:-ml-2 lg:-ml-3 2xl:-ml-4 md:mt-2 lg:mt-0 md:-mb-16 lg:-mb-24 xl:-mb-28 2xl:-mb-36 md:min-w-[152%] 2xl:min-w-[130%] sm:min-w-[100%]",
   ];
 
-  useEffect(() => {
-    isDark ? setCurrentMode("") : setCurrentMode("-light");
-  }, [isDark]);
   return (
     <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12 items-center justify-between !bg-transparent w-full">
       {services.map((service, index) => (
         <ServiceCard
-          windowWidth={windowWidth}
           title={service.title}
           index={service.index}
           key={service.index}
@@ -55,9 +49,9 @@ const Services: FC<ServicesProps> = ({ windowWidth, currentScreen }) => {
             currentScreen ? (
               <div className={serviceClasses[index]}>
                 <Image
-                  src={
-                    service.baseSrc + "-" + currentScreen + currentMode + ".svg"
-                  }
+                  src={`${service.baseSrc}-${currentScreen}${
+                    resolvedTheme === "dark" ? "" : "-light"
+                  }.svg`}
                   className={imageClasses[index]}
                   alt={service.title}
                   height={500}

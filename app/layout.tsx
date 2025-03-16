@@ -1,6 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
+import { Archivo, Nunito } from "next/font/google";
+import Providers from "@/app/providers";
+
+const nunito = Nunito({
+  weight: ["200", "300", "400", "500"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -15,8 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en  ">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${nunito.className} ${archivo.className}`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

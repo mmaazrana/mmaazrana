@@ -44,8 +44,13 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-module.exports = withBundleAnalyzer(
-  withPWA({
-    reactStrictMode: false,
-  }),
-);
+const nextConfig = {
+  experimental: {
+    turbo: {
+      enabled: true, // Enable Turbopack
+    },
+  },
+  reactStrictMode: false,
+};
+
+module.exports = withBundleAnalyzer(withPWA(nextConfig));

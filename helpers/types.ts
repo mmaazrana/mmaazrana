@@ -1,6 +1,7 @@
 import { ButtonTypes, Sections } from "@/helpers/enums";
 import React from "react";
 import { IconType } from "react-icons";
+import { StaticImageData } from "next/image";
 
 export interface NavButtonT {
   text: string;
@@ -28,10 +29,8 @@ export interface FooterSocialT {
 export interface ProjectT {
   title: string;
   description: string;
-  imagePath: string;
-  placeholderPath: string;
-  altImagePath?: string;
-  altPlaceholderPath?: string;
+  image: StaticImageData;
+  altImage?: StaticImageData;
 }
 
 export interface ServiceT {
@@ -71,7 +70,7 @@ export interface ClientDataT {
   clientName: string;
   companyName: string;
   productsInvolved: ClientProductT[];
-  technologiesInvolved: IconType[];
+  technologiesInvolved: { Icon: IconType; props: any }[];
 }
 
 export interface ClientProductT {
