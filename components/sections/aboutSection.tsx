@@ -18,11 +18,11 @@ import { getActiveBreakpoint } from "@/helpers";
 import { AnimatePresence, motion } from "framer-motion";
 import Medal from "@/components/icons/medal";
 
-interface AboutProps {
+interface AboutSectionProps {
   windowWidth: number;
 }
 
-const About: FC<AboutProps> = ({ windowWidth }) => {
+const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
@@ -461,8 +461,6 @@ const About: FC<AboutProps> = ({ windowWidth }) => {
   );
 };
 
-export default About;
-
 interface AnimatedTextProps {
   text: string;
   isActive: boolean;
@@ -482,3 +480,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = memo(({ text, isActive }) => (
     {text}
   </motion.span>
 ));
+
+AboutSection.displayName = "AboutSection";
+
+export default AboutSection;

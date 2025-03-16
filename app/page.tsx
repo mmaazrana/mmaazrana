@@ -9,13 +9,13 @@ import Work from "@/components/sections/work";
 import Hero from "@/components/sections/hero";
 import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
-import About from "@/components/sections/about";
 import { breakpoints } from "@/helpers/constants";
 import { GoogleAnalytics } from "@next/third-parties/google";
 // Import with next's dynamic import
 import Button from "@/components/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import AboutSection from "@/components/sections/aboutSection";
 
 export default function Home() {
   const [inView, setInView] = useState(true);
@@ -211,7 +211,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <About windowWidth={windowWidth} />
+          <AboutSection windowWidth={windowWidth} />
         </section>
         {/*<section*/}
         {/*  className={*/}

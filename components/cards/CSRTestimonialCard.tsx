@@ -128,4 +128,6 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, "variant">> =
     );
   });
 
+CSRTestimonialCard.displayName = "CSRTestimonialCard";
+
 export default CSRTestimonialCard;

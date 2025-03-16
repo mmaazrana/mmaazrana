@@ -3,7 +3,7 @@ import React from "react";
 import Typography from "@/components/Typography";
 import { TextTypes, WeightTypes } from "@/helpers/enums";
 
-function About() {
+function AboutPage() {
   return (
     <div
       className={"flex w-full h-[100dvh] justify-center items-center m-auto"}
@@ -15,4 +15,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;
