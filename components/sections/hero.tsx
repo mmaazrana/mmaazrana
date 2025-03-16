@@ -9,7 +9,7 @@ import {
   LottiePaths,
 } from "@/helpers/constants";
 import { ButtonTypes, TextTypes, WeightTypes } from "@/helpers/enums";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -36,7 +36,7 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <div
       className={
-        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center my-10 sm:my-12 md:my-16 xl:my-20 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]"
+        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]"
       }
     >
       <div

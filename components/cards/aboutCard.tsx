@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
-import { motion } from "framer-motion";
 import { usePreferredColorScheme } from "@/helpers";
+import * as m from "motion/react-m";
 
 interface AboutCardProps {
   children: ReactElement;
@@ -101,7 +101,7 @@ const AboutCard: FC<AboutCardProps> = ({
             />
           </linearGradient>
         </defs>
-        <motion.rect
+        <m.rect
           x="10"
           y="10"
           rx={24}

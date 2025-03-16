@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Typography from "@/components/Typography";
 
 import { TextTypes, WeightTypes } from "@/helpers/enums";
-import { useInView } from "react-intersection-observer";
 import { getActiveBreakpoint } from "@/helpers";
+import { useInView } from "motion/react";
 
 interface ProjectCardMobileProps {
   title: string;
@@ -33,7 +33,8 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
     triggerOnce: false,
     skip: activeBreakpoint !== "sm",
   };
-  const [cardRef, cardInView] = useInView(options);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef);
 
   return (
     <div
@@ -51,7 +52,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
       </div>
       <Image
         placeholder={"blur"}
-        className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl group-hover:scale-[0.55] ${cardInView && "!scale-[0.55]"}` : `border-[1.3px] rounded-xl sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 ${cardInView && "!scale-100"} `} origin-top-left transition-transform duration-300`}
+        className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl group-hover:scale-[0.55] ${isInView && "!scale-[0.55]"}` : `border-[1.3px] rounded-xl sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 ${isInView && "!scale-100"} `} origin-top-left transition-transform duration-300`}
         src={image}
         alt={"Project Banner"}
       />
@@ -59,7 +60,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
         <Image
           priority
           placeholder="blur"
-          className={`border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-300 ${cardInView && "!-translate-y-[10%]"}`}
+          className={`border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-300 ${isInView && "!-translate-y-[10%]"}`}
           src={altImage}
           alt={"Project Banner"}
         />

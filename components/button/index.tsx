@@ -1,3 +1,5 @@
+"use client";
+
 import React, { cloneElement, FC, ReactElement } from "react";
 import Typography from "@/components/Typography";
 

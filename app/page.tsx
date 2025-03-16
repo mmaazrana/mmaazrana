@@ -1,7 +1,6 @@
-"use client";
 import Nav from "@/components/navs/nav";
 import BottomNav from "@/components/navs/bottomNav";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Typography from "@/components/Typography";
 import Services from "@/components/sections/services";
@@ -9,84 +8,46 @@ import Work from "@/components/sections/work";
 import Hero from "@/components/sections/hero";
 import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
 import Testimonials from "@/components/sections/testimonials";
-import { breakpoints } from "@/helpers/constants";
 import { GoogleAnalytics } from "@next/third-parties/google";
-// Import with next's dynamic import
 import Button from "@/components/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import AboutSection from "@/components/sections/aboutSection";
 
 export default function Home() {
-  const [inView, setInView] = useState(true);
-  const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [currentScreen, setCurrentScreen] = useState("");
-  const heroRef = useRef(null);
-  const workRef = useRef(null);
-  const servicesRef = useRef(null);
-  const testimonialsRef = useRef(null);
-  const aboutRef = useRef(null);
-  const sectionRefs = [
-    { section: Sections.hero, ref: heroRef },
-    { section: Sections.work, ref: workRef },
-    { section: Sections.services, ref: servicesRef },
-    { section: Sections.testimonials, ref: testimonialsRef },
-    { section: Sections.aboutMe, ref: aboutRef },
-  ];
-  const getDimensions = (ele: any) => {
-    const { height } = ele.getBoundingClientRect();
-    const offsetTop = ele.offsetTop;
-    const offsetBottom = offsetTop + height;
-    return {
-      height,
-      offsetTop,
-      offsetBottom,
-    };
-  };
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-      windowWidth >= breakpoints.md
-        ? setCurrentScreen("desktop")
-        : windowWidth >= breakpoints.sm
-          ? setCurrentScreen("tab")
-          : setCurrentScreen("mobile");
-    };
+  // const [windowWidth, setWindowWidth] = useState(0);
+  // const [currentScreen, setCurrentScreen] = useState("");
+  //
+  // const getDimensions = (ele: any) => {
+  //   const { height } = ele.getBoundingClientRect();
+  //   const offsetTop = ele.offsetTop;
+  //   const offsetBottom = offsetTop + height;
+  //   return {
+  //     height,
+  //     offsetTop,
+  //     offsetBottom,
+  //   };
+  // };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //     windowWidth >= breakpoints.md
+  //       ? setCurrentScreen("desktop")
+  //       : windowWidth >= breakpoints.sm
+  //         ? setCurrentScreen("tab")
+  //         : setCurrentScreen("mobile");
+  //   };
+  //
+  //   window.addEventListener("resize", handleResize);
+  //
+  //   handleResize();
+  //
+  //   // Clean up the event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [windowWidth]);
 
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [windowWidth]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const { height: headerHeight } = getDimensions(heroRef.current);
-      const scrollPosition = window.scrollY + headerHeight;
-      const selected = sectionRefs.find(({ section, ref }) => {
-        const ele = ref.current;
-        if (ele) {
-          const { offsetBottom, offsetTop } = getDimensions(ele);
-          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
-        }
-      });
-      if (selected && selected.section !== activeSection) {
-        setActiveSection(selected.section);
-      } else if (!selected && activeSection) {
-        setActiveSection(Sections.hero);
-      }
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [activeSection]);
   return (
     <div className={"overflow-x-hidden max-w-[100vw]"}>
       <Head>
@@ -113,12 +74,11 @@ export default function Home() {
           content="initial-scale=1, viewport-fit=cover, width=device-width"
         ></meta>
       </Head>
-      <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-center justify-center flex-col">
-        <Nav setInView={setInView} />
-        <BottomNav inView={inView} activeSection={activeSection} />
+      <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col">
+        <Nav />
+        <BottomNav />
         <section
           id={Sections.hero}
-          ref={heroRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -127,7 +87,6 @@ export default function Home() {
         </section>
         <section
           id={Sections.work}
-          ref={workRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -145,11 +104,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <Work windowWidth={windowWidth} />
+          <Work />
         </section>
         <section
           id={Sections.services}
-          ref={servicesRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -167,11 +125,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <Services currentScreen={currentScreen} />
+          <Services />
         </section>
         <section
           id={Sections.testimonials}
-          ref={testimonialsRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -189,11 +146,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <Testimonials windowWidth={windowWidth} />
+          <Testimonials />
         </section>
         <section
           id={Sections.aboutMe}
-          ref={aboutRef}
           className={
             "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
           }
@@ -211,7 +167,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <AboutSection windowWidth={windowWidth} />
+          <AboutSection />
         </section>
         {/*<section*/}
         {/*  className={*/}

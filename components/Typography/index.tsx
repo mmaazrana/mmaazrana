@@ -9,7 +9,6 @@ interface TypographyProps {
   color?: ColorTypes;
   weight?: WeightTypes;
   className?: string;
-  onClick?: () => void;
   underline?: boolean;
 }
 
@@ -19,7 +18,6 @@ const Typography: FC<TypographyProps> = ({
   color = ColorTypes.primary,
   weight = WeightTypes.regular,
   className,
-  onClick,
   underline = false,
 }) => {
   const sizeClasses = {
@@ -65,7 +63,6 @@ const Typography: FC<TypographyProps> = ({
     sizeClasses[type],
     weightClasses[weight],
     underline ? "underline" : "",
-    onClick ? "cursor-pointer" : "",
     "text-" + color,
     "z-[1]",
     className,
@@ -73,12 +70,7 @@ const Typography: FC<TypographyProps> = ({
     .filter(Boolean)
     .join(" ");
   return (
-    <span
-      className={dynamicClasses}
-      onClick={() => {
-        onClick && onClick();
-      }}
-    >
+    <span className={dynamicClasses}>
       {children.split("\n").map((line, index) => (
         <React.Fragment key={index}>
           {line}

@@ -1,4 +1,6 @@
-import React, { FC, memo, useEffect, useState } from "react";
+"use client";
+
+import React, { FC, memo, useRef, useState } from "react";
 import AboutCard from "@/components/cards/aboutCard";
 import {
   aboutSections,
@@ -13,38 +15,45 @@ import Typography from "@/components/Typography";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import Image from "next/image";
 import pfp from "../../public/images/memoji-pfp.webp";
-import { useInView } from "react-intersection-observer";
-import { getActiveBreakpoint } from "@/helpers";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import Medal from "@/components/icons/medal";
 
-interface AboutSectionProps {
-  windowWidth: number;
-}
+interface AboutSectionProps {}
 
-const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
+const AboutSection: FC<AboutSectionProps> = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [activeBreakpoint, setActiveBreakpoint] = useState("2xl");
-  useEffect(() => {
-    setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
-  }, [windowWidth]);
-  const options = {
-    rootMargin: "-45% 0px -45% 0px",
-    threshold: 0.2,
-    triggerOnce: false,
-    skip: activeBreakpoint !== "sm",
-  };
-  const [introRef, introInView] = useInView(options);
-  const [educationRef, educationInView] = useInView(options);
-  const [clientsRef, clientsInView] = useInView(options);
-  const [socialsRef, socialsInView] = useInView(options);
-  const [toolsRef, toolsInView] = useInView(options);
-  const [workRef, workInView] = useInView({
-    rootMargin: "-35% 0px -30% 0px",
-    threshold: 0.2,
-    triggerOnce: false,
-    skip: activeBreakpoint !== "sm",
+
+  const introRef = useRef(null);
+  const educationRef = useRef(null);
+  const clientsRef = useRef(null);
+  const socialsRef = useRef(null);
+  const toolsRef = useRef(null);
+  const workRef = useRef(null);
+
+  const introIsInView = useInView(introRef, {
+    margin: `-45% 0px -45% 0px`,
+    amount: 0.2,
+  });
+  const educationIsInView = useInView(educationRef, {
+    margin: `-45% 0px -45% 0px`,
+    amount: 0.2,
+  });
+  const clientsIsInView = useInView(clientsRef, {
+    margin: `-45% 0px -45% 0px`,
+    amount: 0.2,
+  });
+  const socialsIsInView = useInView(socialsRef, {
+    margin: `-45% 0px -45% 0px`,
+    amount: 0.2,
+  });
+  const toolsIsInView = useInView(toolsRef, {
+    margin: `-45% 0px -45% 0px`,
+    amount: 0.2,
+  });
+  const workIsInView = useInView(workRef, {
+    margin: `-35% 0px -30% 0px`,
+    amount: 0.2,
   });
 
   return (
@@ -68,7 +77,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
-            isActive={introInView}
+            isActive={introIsInView}
           >
             <Typography
               type={TextTypes.xl}
@@ -81,7 +90,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             </Typography>
           </AboutCard>
           <span
-            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${introInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${introIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[0]}
           </span>
@@ -96,7 +105,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
-            isActive={educationInView}
+            isActive={educationIsInView}
           >
             <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
               <div className={"flex flex-col gap-1 md:gap-2"}>
@@ -142,7 +151,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${educationInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${educationIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[1]}
           </span>
@@ -161,7 +170,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
-            isActive={toolsInView}
+            isActive={toolsIsInView}
           >
             <div className={"flex flex-col gap-6 sm:gap-7 md:gap-8"}>
               <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
@@ -227,7 +236,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${toolsIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[4]}
           </span>
@@ -246,7 +255,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
-            isActive={clientsInView}
+            isActive={clientsIsInView}
           >
             <div className={"flex flex-col gap-2 sm:gap-3 md:gap-4"}>
               <div className={"flex flex-row flex-wrap gap-3 md:gap-4"}>
@@ -265,7 +274,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
             </div>
           </AboutCard>
           <span
-            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+            className={` about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${clientsIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
           >
             {aboutSections[2]}
           </span>
@@ -292,18 +301,18 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
           onMouseLeave={() => {
             setIsActive(false);
           }}
-          isActive={socialsInView}
+          isActive={socialsIsInView}
         >
           <Image
             src={pfp}
             alt={"Maaz Rana"}
             fill
-            className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${socialsInView && "!opacity-100 !saturate-100"}`}
+            className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${socialsIsInView && "!opacity-100 !saturate-100"}`}
             placeholder="blur"
           />
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${socialsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 -translate-x-3 left-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${socialsIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[3]}
         </span>
@@ -409,7 +418,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
           onMouseLeave={() => {
             setIsActive(false);
           }}
-          isActive={workInView}
+          isActive={workIsInView}
         >
           <div className={"flex flex-col gap-4 sm:gap-5 md:gap-6"}>
             {WorkExperiences.map((workExperience, index) => {
@@ -438,7 +447,7 @@ const AboutSection: FC<AboutSectionProps> = ({ windowWidth }) => {
           </div>
         </AboutCard>
         <span
-          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${workInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
+          className={`about:hidden inline-block absolute bottom-0 translate-y-1/2 translate-x-3 right-0 -z-10 transition-filter duration-200 text-primary-accent uppercase stroke font-black text-[9vw] leading-[1] text-start ${workIsInView ? "custom-text-stroke-active" : "custom-text-stroke"} ${archivo.className}`}
         >
           {aboutSections[4]}
         </span>

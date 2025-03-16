@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MotionValue, useTransform } from "framer-motion";
+import { MotionValue, useTransform } from "motion/react";
 import { breakpoints } from "@/helpers/constants";
 
 export const usePreferredColorScheme = () => {

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/helpers/constants";
 import TestimonialCard from "@/components/cards/testimonialCard";
@@ -5,18 +7,16 @@ import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-interface TestimonialsProps {
-  windowWidth: number;
-}
+interface TestimonialsProps {}
 
-const Testimonials: FC<TestimonialsProps> = ({ windowWidth }) => {
+const Testimonials: FC<TestimonialsProps> = () => {
   const OPTIONS: EmblaOptionsType = { loop: true };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [
     Autoplay({
       stopOnInteraction: false,
       stopOnMouseEnter: true,
-      delay: 4000,
+      delay: 10000,
     }),
   ]);
 
@@ -54,7 +54,6 @@ const Testimonials: FC<TestimonialsProps> = ({ windowWidth }) => {
               <TestimonialCard
                 variant={"animated"}
                 testimonial={testimonial.testimonial}
-                windowWidth={windowWidth}
                 client={testimonial.client}
                 designation={testimonial.designation}
                 isActive={selectedIndex === index}

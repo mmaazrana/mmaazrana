@@ -5,7 +5,6 @@ import SSRTestimonialCard from "@/components/cards/SSRTestimonialCard";
 export interface TestimonialCardProps {
   variant: "animated" | "flat";
   testimonial: string;
-  windowWidth?: number;
   client: string;
   designation: string;
   isActive: boolean;

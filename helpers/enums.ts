@@ -42,7 +42,7 @@ export const enum ColorTypes {
   transparent = "transparent",
 }
 
-export const enum Sections {
+export enum Sections {
   hero = "hero",
   work = "work",
   services = "services",

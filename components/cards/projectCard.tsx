@@ -10,7 +10,6 @@ interface ProjectCardProps {
   description: string;
   image: StaticImageData;
   alt: boolean;
-  windowWidth: number;
   altImage?: StaticImageData;
 }
 
@@ -19,7 +18,6 @@ const ProjectCard: FC<ProjectCardProps> = ({
   description,
   image,
   alt,
-  windowWidth,
   altImage,
 }) => {
   return (

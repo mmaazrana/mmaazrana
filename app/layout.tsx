@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import React from "react";
 import { Archivo, Nunito } from "next/font/google";
 import Providers from "@/app/providers";
+import { domAnimation, LazyMotion } from "motion/react";
 
 const nunito = Nunito({
   weight: ["200", "300", "400", "500"],
@@ -31,9 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${nunito.className} ${archivo.className}`}>
-        <Providers>{children}</Providers>
-      </body>
+      <LazyMotion features={domAnimation}>
+        <body className={`${nunito.className} ${archivo.className}`}>
+          <Providers>{children}</Providers>
+        </body>
+      </LazyMotion>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import Typography from "@/components/Typography";
 import React, { FC, useEffect, useState } from "react";
 

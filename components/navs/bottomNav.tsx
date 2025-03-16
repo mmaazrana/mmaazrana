@@ -1,8 +1,9 @@
 "use client";
+
 import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { AnimatePresence, motion, stagger, useAnimate } from "framer-motion";
+import { AnimatePresence, motion, stagger, useAnimate } from "motion/react";
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
@@ -38,16 +39,16 @@ import Behance from "@/components/icons/behance";
 import Github from "@/components/icons/github";
 import Dribbble from "@/components/icons/dribbble";
 
-interface BottomNavProps {
-  inView: boolean;
-  activeSection?: Sections;
-}
+interface BottomNavProps {}
 
-const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
+const BottomNav: FC<BottomNavProps> = () => {
+  const [isInView, setIsInView] = useState(false);
   const [isEndOfPage, setIsEndOfPage] = useState(false);
+  const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0 });
   const staggerListTwo = stagger(0.05, { startDelay: 0.25 });
+
   useEffect(() => {
     animate(
       "#sections",
@@ -73,6 +74,9 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const navbar = document.querySelector("#navbar");
+      if (!navbar) return;
+      const navbarHeight = navbar.getBoundingClientRect().height;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop =
@@ -82,11 +86,39 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
 
-      if (windowHeight + scrollTop >= documentHeight - 180) {
-        setIsEndOfPage(true);
-      } else {
-        setIsEndOfPage(false);
+      // Get hero section to handle default active section
+      const hero = document.getElementById(Sections.hero);
+      if (!hero) return;
+
+      let currentSection = Sections.hero;
+
+      Object.values(Sections).forEach((id) => {
+        const ele = document.getElementById(id);
+        if (ele) {
+          const rect = ele.getBoundingClientRect();
+          const offsetTop = rect.top + window.scrollY;
+          const offsetBottom = rect.bottom + window.scrollY;
+
+          // Check if the section is in view
+          if (
+            scrollTop >= offsetTop - navbarHeight &&
+            scrollTop < offsetBottom
+          ) {
+            currentSection = id;
+          }
+        }
+      });
+
+      // Only update if the active section changes
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
       }
+
+      // Handle navbar visibility
+      setIsInView(scrollTop > navbarHeight);
+
+      // Check if at end of page
+      setIsEndOfPage(windowHeight + scrollTop >= documentHeight - 180);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -118,7 +150,8 @@ const BottomNav: FC<BottomNavProps> = ({ inView, activeSection }) => {
   return (
     <div
       ref={scope}
-      className={` ${inView ? "translate-y-32" : "translate-y-0 "} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300`}
+      id={"bottom-navbar"}
+      className={` ${isInView ? "translate-y-0" : "translate-y-32"} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300`}
     >
       <motion.div
         className={`${isEndOfPage ? "h-[541px] about:h-[426px] sm:h-[366px] lg:h-[324px]" : "h-[68px]"} absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10 transition-all duration-300`}
