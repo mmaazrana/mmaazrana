@@ -3,7 +3,8 @@
 import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { AnimatePresence, motion, stagger, useAnimate } from "motion/react";
+import { AnimatePresence, stagger, useAnimate } from "motion/react";
+import * as m from "motion/react-m";
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
@@ -153,10 +154,10 @@ const BottomNav: FC<BottomNavProps> = () => {
       id={"bottom-navbar"}
       className={` ${isInView ? "translate-y-0" : "translate-y-32"} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300`}
     >
-      <motion.div
+      <div
         className={`${isEndOfPage ? "h-[541px] about:h-[426px] sm:h-[366px] lg:h-[324px]" : "h-[68px]"} absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10 transition-all duration-300`}
-      ></motion.div>
-      <motion.div
+      ></div>
+      <div
         className={`${isEndOfPage ? "h-[575px] about:h-[470px] sm:h-[400px] lg:h-[358px]" : "h-[149px] md:h-[150px] lg:h-[159px] xl:h-[162px]"} px-8 sm:px-9 md:px-10 lg:px-11 xl:px-8 pb-6 sm:pb-7 lg:pb-8 pt-20 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 xl:gap-24 justify-between items-start sm:items-end z-30 transition-all duration-300`}
       >
         <div
@@ -214,7 +215,7 @@ const BottomNav: FC<BottomNavProps> = () => {
               </svg>
             </Link>
             <AnimatePresence mode={"wait"}>
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, transform: "translateY(100px)" }}
                 animate={{
                   opacity: isEndOfPage ? 1 : 0,
@@ -233,15 +234,15 @@ const BottomNav: FC<BottomNavProps> = () => {
                   Product Designer - Web Developer - Mobile App Developer -
                   Animator - 3D Artist
                 </Typography>
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
           <AnimatePresence mode={"wait"}>
-            <motion.div
+            <div
               className={` ${isEndOfPage ? "flex" : "hidden"} w-full  flex-row flex-auto gap-8 justify-between`}
             >
               {footerButtons.map((section, index) => (
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, transform: "translateY(150px)" }}
                   animate={{
                     opacity: isEndOfPage ? 1 : 0,
@@ -262,7 +263,7 @@ const BottomNav: FC<BottomNavProps> = () => {
                     {section[0].text}
                   </Typography>
                   {section.slice(1, section.length).map((button, index) => (
-                    <motion.div
+                    <div
                       id={"pages"}
                       key={index}
                       className={"transition-colors"}
@@ -277,18 +278,18 @@ const BottomNav: FC<BottomNavProps> = () => {
                           {button.text}
                         </Typography>
                       </Link>
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </div>
           </AnimatePresence>
           <AnimatePresence mode={"wait"}>
             <div
               className={`transition-colors my-8 px-8 min-w-[80vw] w-full max-w-[450px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[625px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12`}
             >
               {bottomNavButtons.map((button, index) => (
-                <motion.div
+                <div
                   id={"sections"}
                   key={index}
                   className={"transition-colors"}
@@ -302,12 +303,12 @@ const BottomNav: FC<BottomNavProps> = () => {
                       {button.text}
                     </Typography>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </AnimatePresence>
         </div>
-        <motion.div
+        <div
           className={`${isEndOfPage ? "w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[280px]" : "max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]"} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
         >
           <div
@@ -316,7 +317,7 @@ const BottomNav: FC<BottomNavProps> = () => {
             }
           >
             <AnimatePresence mode={"wait"}>
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, transform: "translateY(100px)" }}
                 animate={{
                   opacity: isEndOfPage ? 1 : 0,
@@ -335,9 +336,9 @@ const BottomNav: FC<BottomNavProps> = () => {
                 >
                   Ready to create something awesome?
                 </Typography>
-              </motion.div>
+              </m.div>
             </AnimatePresence>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, transform: "translateX(50px)" }}
               animate={{
                 opacity: isEndOfPage ? 1 : 0,
@@ -363,12 +364,12 @@ const BottomNav: FC<BottomNavProps> = () => {
                   text={"Get in Touch"}
                 />
               </Link>
-            </motion.div>
+            </m.div>
           </div>
           <div
             className={`${isEndOfPage ? "w-full sm:w-fit" : "w-0"} overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
           >
-            <motion.div
+            <m.div
               animate={{
                 opacity: isEndOfPage ? 1 : 0,
                 transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
@@ -389,8 +390,8 @@ const BottomNav: FC<BottomNavProps> = () => {
                   type={ButtonTypes.secondary}
                 />
               </Link>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               animate={{
                 opacity: isEndOfPage ? 1 : 0,
                 transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
@@ -411,8 +412,8 @@ const BottomNav: FC<BottomNavProps> = () => {
                   type={ButtonTypes.secondary}
                 />
               </Link>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               animate={{
                 opacity: isEndOfPage ? 1 : 0,
                 transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
@@ -430,8 +431,8 @@ const BottomNav: FC<BottomNavProps> = () => {
                   type={ButtonTypes.secondary}
                 />
               </Link>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               animate={{
                 opacity: isEndOfPage ? 1 : 0,
                 transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
@@ -449,7 +450,7 @@ const BottomNav: FC<BottomNavProps> = () => {
                   type={ButtonTypes.secondary}
                 />
               </Link>
-            </motion.div>
+            </m.div>
           </div>
           <Link
             href={"mailto:awaismaaz@gmail.com"}
@@ -464,8 +465,8 @@ const BottomNav: FC<BottomNavProps> = () => {
               text={"awaismaaz@gmail.com"}
             />
           </Link>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
       <span
         className={`w-[25vw] h-[25vw] left-0 bottom-0 -translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10  ${isEndOfPage ? "opacity-50" : "opacity-0"} transition-all duration-300`}
       ></span>

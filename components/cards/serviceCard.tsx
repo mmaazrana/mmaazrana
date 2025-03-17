@@ -117,7 +117,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
             className={imageClasses[index]}
             alt={title}
             quality={75}
-            loading="eager"
           />
         </div>
         <div

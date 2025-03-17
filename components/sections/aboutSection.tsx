@@ -15,7 +15,8 @@ import Typography from "@/components/Typography";
 import { ColorTypes, TextTypes, WeightTypes } from "@/helpers/enums";
 import Image from "next/image";
 import pfp from "../../public/images/memoji-pfp.webp";
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { AnimatePresence, useInView } from "motion/react";
+import * as m from "motion/react-m";
 import Medal from "@/components/icons/medal";
 
 interface AboutSectionProps {}
@@ -476,7 +477,7 @@ interface AnimatedTextProps {
 }
 
 const AnimatedText: React.FC<AnimatedTextProps> = memo(({ text, isActive }) => (
-  <motion.span
+  <m.span
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
@@ -487,7 +488,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = memo(({ text, isActive }) => (
     } ${archivo.className}`}
   >
     {text}
-  </motion.span>
+  </m.span>
 ));
 
 AboutSection.displayName = "AboutSection";

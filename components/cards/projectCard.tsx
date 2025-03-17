@@ -34,16 +34,15 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <Typography type={TextTypes.xl}>{description}</Typography>
       </div>
       <Image
-        placeholder={"blur"}
-        className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-xl sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100  `} origin-top-left transition-transform duration-300`}
+        priority
+        className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-xs sm:rounded-md lg:rounded-lg xl:rounded-xl overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100  `} origin-top-left transition-transform duration-[400ms]`}
         src={image}
         alt={"Project Banner"}
       />
       {alt && altImage && (
         <Image
           priority
-          placeholder="blur"
-          className={`border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-300"}`}
+          className={`border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg lg:rounded-xl xl:rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-500`}
           src={altImage}
           alt={"Project Banner"}
         />

@@ -9,7 +9,8 @@ import {
   LottiePaths,
 } from "@/helpers/constants";
 import { ButtonTypes, TextTypes, WeightTypes } from "@/helpers/enums";
-import { AnimatePresence, motion } from "motion/react";
+import * as m from "motion/react-m";
+import { AnimatePresence } from "motion/react";
 import Linkedin from "@/components/icons/linkedin";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -36,7 +37,7 @@ const Hero: FC<HeroProps> = ({}) => {
   return (
     <div
       className={
-        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]"
+        "w-full flex flex-col-reverse md:flex-row justify-center md:items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]"
       }
     >
       <div
@@ -52,7 +53,7 @@ const Hero: FC<HeroProps> = ({}) => {
         {/*  repeat={Infinity}*/}
         {/*/>*/}
         <AnimatePresence mode="wait" initial={false}>
-          <motion.div
+          <m.div
             className={"!transition-none"}
             key={"heading" + index}
             initial={{ opacity: 0, transform: "translateY(20px)" }}
@@ -63,10 +64,10 @@ const Hero: FC<HeroProps> = ({}) => {
             <Typography type={TextTypes["8xl"]} weight={WeightTypes.bold}>
               {HeroHeadings[index % HeroHeadings.length]}
             </Typography>
-          </motion.div>
+          </m.div>
         </AnimatePresence>
         <AnimatePresence mode="wait" initial={false}>
-          <motion.div
+          <m.div
             className={"!transition-none"}
             key={"description" + index}
             initial={{ opacity: 0 }}
@@ -81,7 +82,7 @@ const Hero: FC<HeroProps> = ({}) => {
             >
               {HeroDescriptions[index % HeroDescriptions.length]}
             </Typography>
-          </motion.div>
+          </m.div>
         </AnimatePresence>
         <div className="flex gap-2 items-center justify-start flex-wrap">
           <div className={"pt-3 pb-3 pr-3"}>
@@ -108,18 +109,18 @@ const Hero: FC<HeroProps> = ({}) => {
       </div>
       <AnimatePresence mode="wait" initial={false}>
         {loading ? (
-          <div className="max-w-[100%] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] flex justify-center items-center ">
+          <div className="max-w-[100%]  md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] flex justify-center items-center ">
             <div className="rounded-full h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 2xl:h-10 w-5 sm:w-6 md:w-7 lg:w-8 xl:w-9 2xl:w-10 bg-secondary animate-ping"></div>
           </div>
         ) : (
-          <motion.div
+          <div
             key={"lottie" + index}
             className={
-              "flex -mr-6 md:mr-6 max-w-[100%] h-[250px] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
+              "flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]"
             }
           >
             <LottieWorkerAnimation src={currentAnimation} />
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
       <span
