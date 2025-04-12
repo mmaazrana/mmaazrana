@@ -2,9 +2,9 @@
 
 /** @type {import('next').NextConfig} */
 
-const runtimeCaching = require("next-pwa/cache");
-const withPWA = require("next-pwa")({
-  dest: "public",
+const runtimeCaching = require('next-pwa/cache');
+const withPWA = require('next-pwa')({
+  dest: 'public',
   register: true,
   skipWaiting: true,
   runtimeCaching,
@@ -13,9 +13,7 @@ const withPWA = require("next-pwa")({
 module.exports = {
   webpack(config) {
     // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg"),
-    );
+    const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));
 
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
@@ -29,8 +27,8 @@ module.exports = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
-      },
+        use: ['@svgr/webpack'],
+      }
     );
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
@@ -40,8 +38,8 @@ module.exports = {
   },
 };
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
 });
 
 const nextConfig = {

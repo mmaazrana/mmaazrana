@@ -1,7 +1,7 @@
-import { ButtonTypes, Sections } from "@/helpers/enums";
-import React from "react";
-import { IconType } from "react-icons";
-import { StaticImageData } from "next/image";
+import { ButtonTypes, Sections } from '@/helpers/enums';
+import React from 'react';
+import { IconType } from 'react-icons';
+import { StaticImageData } from 'next/image';
 
 export interface NavButtonT {
   text: string;
@@ -56,7 +56,7 @@ export interface WorkExperienceT {
 }
 
 export interface BreakpointT {
-  "2xl"?: number;
+  '2xl'?: number;
   lg?: number;
   md: any;
   sm: any;

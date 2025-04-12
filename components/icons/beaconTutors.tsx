@@ -1,5 +1,5 @@
-import * as React from "react";
-import { SVGProps } from "react";
+import * as React from 'react';
+import { SVGProps } from 'react';
 
 const BeaconTutors = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" {...props}>
@@ -15,14 +15,8 @@ const BeaconTutors = (props: SVGProps<SVGSVGElement>) => (
       fill="#61ABC6"
       d="M28.568 15.596c-7.329 6.376-10.517 12.826-11.103 19.367a23.27 23.27 0 0 1-4.783-21.273c1.21 16.07 8.3 4.838 15.886 1.906Z"
     />
-    <path
-      fill="#7EC241"
-      d="M5.427 23.017a1.906 1.906 0 1 0 0-3.811 1.906 1.906 0 0 0 0 3.81Z"
-    />
-    <path
-      fill="#DA0E8C"
-      d="M29.778 25.27a1.832 1.832 0 1 1-3.664.001 1.832 1.832 0 0 1 3.664 0Z"
-    />
+    <path fill="#7EC241" d="M5.427 23.017a1.906 1.906 0 1 0 0-3.811 1.906 1.906 0 0 0 0 3.81Z" />
+    <path fill="#DA0E8C" d="M29.778 25.27a1.832 1.832 0 1 1-3.664.001 1.832 1.832 0 0 1 3.664 0Z" />
     <path
       fill="#61ABC6"
       d="M19.627 16.97a2.584 2.584 0 1 1-2.583-2.583 2.602 2.602 0 0 1 2.583 2.583ZM29.76 4.273c-1.393 2.052-5.497 4.214-11.727 4.837-6.89.696-7.934 5.35-7.934 5.35.348-2.931 1.374-4.489 6.047-7.329A16.857 16.857 0 0 0 22.064.553c2.838.57 5.486 1.85 7.695 3.72Z"

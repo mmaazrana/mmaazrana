@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { DotLottieWorker } from "@lottiefiles/dotlottie-web";
+import React, { useEffect, useRef } from 'react';
+import { DotLottieWorker } from '@lottiefiles/dotlottie-web';
 
 interface LottieWorkerAnimationProps {
   src: string;
@@ -10,7 +10,7 @@ interface LottieWorkerAnimationProps {
 
 const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
   src,
-  workerId = "default-worker",
+  workerId = 'default-worker',
   width = 500,
   height = 500,
 }) => {
@@ -24,10 +24,7 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
         src,
         autoplay: true,
         loop: false,
-        segment: [
-          5,
-          workerRef.current ? workerRef.current?.totalFrames - 1 : 300,
-        ],
+        segment: [5, workerRef.current ? workerRef.current?.totalFrames - 1 : 300],
         workerId,
       });
 
@@ -40,7 +37,7 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={"flex -w-full h-full md:max-w-full fade-in"}
+      className={'flex -w-full h-full md:max-w-full fade-in'}
       width={width}
       height={height}
     ></canvas>

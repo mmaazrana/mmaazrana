@@ -143,4 +143,4 @@ and intuitive products.
     </picture> 
 </a>
 
-[//]: # (![Maaz's GitHub stats]&#40;https://github-readme-stats-mmaazranas-projects.vercel.app/api?username=mmaazrana&show_icons=true&rank_icon=github&include_all_commits=true&hide_title=true&text_color=CEDDFA&icon_color=4264A8&bg_color=0E1930&border_radius=18&hide_border=true&hide=contribs&show=prs_merged_percentage&#41;)
+[//]: # "![Maaz's GitHub stats](https://github-readme-stats-mmaazranas-projects.vercel.app/api?username=mmaazrana&show_icons=true&rank_icon=github&include_all_commits=true&hide_title=true&text_color=CEDDFA&icon_color=4264A8&bg_color=0E1930&border_radius=18&hide_border=true&hide=contribs&show=prs_merged_percentage)"

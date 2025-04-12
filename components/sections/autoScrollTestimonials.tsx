@@ -1,19 +1,17 @@
-"use client";
+'use client';
 
-import React, { FC, useState } from "react";
-import { EmblaOptionsType } from "embla-carousel";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
-import TestimonialCard from "@/components/cards/testimonialCard";
-import { TestimonialT } from "@/helpers/types";
+import React, { FC, useState } from 'react';
+import { EmblaOptionsType } from 'embla-carousel';
+import useEmblaCarousel from 'embla-carousel-react';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import TestimonialCard from '@/components/cards/testimonialCard';
+import { TestimonialT } from '@/helpers/types';
 
 interface AutoScrollTestimonialsProps {
   testimonials: TestimonialT[];
 }
 
-const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
-  testimonials,
-}) => {
+const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({ testimonials }) => {
   const OPTIONS: EmblaOptionsType = { loop: true };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [

@@ -1,18 +1,18 @@
-import Nav from "@/components/navs/nav";
-import BottomNav from "@/components/navs/bottomNav";
-import React from "react";
-import Head from "next/head";
-import Typography from "@/components/Typography";
-import Services from "@/components/sections/services";
-import Work from "@/components/sections/work";
-import Hero from "@/components/sections/hero";
-import { ButtonTypes, Sections, TextTypes, WeightTypes } from "@/helpers/enums";
-import Testimonials from "@/components/sections/testimonials";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import Button from "@/components/button";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
-import AboutSection from "@/components/sections/aboutSection";
+import Nav from '@/components/navs/nav';
+import BottomNav from '@/components/navs/bottomNav';
+import React from 'react';
+import Head from 'next/head';
+import Typography from '@/components/Typography';
+import Services from '@/components/sections/services';
+import Work from '@/components/sections/work';
+import Hero from '@/components/sections/hero';
+import { ButtonTypes, Sections, TextTypes, WeightTypes } from '@/helpers/enums';
+import Testimonials from '@/components/sections/testimonials';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Button from '@/components/button';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import AboutSection from '@/components/sections/aboutSection';
 
 export default function Home() {
   // const [windowWidth, setWindowWidth] = useState(0);
@@ -49,7 +49,7 @@ export default function Home() {
   // }, [windowWidth]);
 
   return (
-    <div className={"overflow-x-hidden max-w-[100vw]"}>
+    <div className={'overflow-x-hidden max-w-[100vw]'}>
       <Head>
         <GoogleAnalytics gaId="G-PNNJWR7KVB" />
         <meta
@@ -80,7 +80,7 @@ export default function Home() {
         <section
           id={Sections.hero}
           className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+            'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
           <Hero />
@@ -88,18 +88,18 @@ export default function Home() {
         <section
           id={Sections.work}
           className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+            'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={"flex justify-between items-center w-full"}>
-            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+          <div className={'flex justify-between items-center w-full'}>
+            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               My Work
             </Typography>
-            <Link href={"/work"}>
+            <Link href={'/work'}>
               <Button
                 type={ButtonTypes.secondary}
-                text={"Explore"}
-                className={"!gap-1"}
+                text={'Explore'}
+                className={'!gap-1'}
                 rightIcon={<ChevronRight />}
               />
             </Link>
@@ -109,18 +109,18 @@ export default function Home() {
         <section
           id={Sections.services}
           className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+            'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={"flex justify-between items-center w-full"}>
-            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+          <div className={'flex justify-between items-center w-full'}>
+            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               Services
             </Typography>
-            <Link href={"/services"}>
+            <Link href={'/services'}>
               <Button
                 type={ButtonTypes.secondary}
-                text={"All Services"}
-                className={"!gap-1"}
+                text={'All Services'}
+                className={'!gap-1'}
                 rightIcon={<ChevronRight />}
               />
             </Link>
@@ -130,18 +130,18 @@ export default function Home() {
         <section
           id={Sections.testimonials}
           className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+            'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={"flex justify-between items-center w-full"}>
-            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+          <div className={'flex justify-between items-center w-full'}>
+            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               Testimonials
             </Typography>
-            <Link href={"/clients"}>
+            <Link href={'/clients'}>
               <Button
                 type={ButtonTypes.secondary}
-                text={"Clients"}
-                className={"!gap-1"}
+                text={'Clients'}
+                className={'!gap-1'}
                 rightIcon={<ChevronRight />}
               />
             </Link>
@@ -151,18 +151,18 @@ export default function Home() {
         <section
           id={Sections.aboutMe}
           className={
-            "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"
+            'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={"flex justify-between items-center w-full"}>
-            <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>
+          <div className={'flex justify-between items-center w-full'}>
+            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               About Me
             </Typography>
-            <Link href={"/about"}>
+            <Link href={'/about'}>
               <Button
                 type={ButtonTypes.secondary}
-                text={"Read More"}
-                className={"!gap-1"}
+                text={'Read More'}
+                className={'!gap-1'}
                 rightIcon={<ChevronRight />}
               />
             </Link>

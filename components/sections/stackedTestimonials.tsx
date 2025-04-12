@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { testimonials } from "@/helpers/constants";
-import Typography from "@/components/Typography";
-import { TextTypes, WeightTypes } from "@/helpers/enums";
-import AutoScrollTestimonials from "@/components/sections/autoScrollTestimonials";
+import React, { FC } from 'react';
+import { testimonials } from '@/helpers/constants';
+import Typography from '@/components/Typography';
+import { TextTypes, WeightTypes } from '@/helpers/enums';
+import AutoScrollTestimonials from '@/components/sections/autoScrollTestimonials';
 
 interface StackedTestimonialsProps {}
 
@@ -13,26 +13,22 @@ const StackedTestimonials: FC<StackedTestimonialsProps> = () => {
 
   return (
     <>
-      <div className={"ml-80"}>
+      <div className={'ml-80'}>
         <AutoScrollTestimonials testimonials={firstHalf} />
       </div>
-      <div className={"flex flex-col justify-center items-center w-full gap-2"}>
+      <div className={'flex flex-col justify-center items-center w-full gap-2'}>
         <Typography
-          type={TextTypes["8xl"]}
+          type={TextTypes['8xl']}
           weight={WeightTypes.extraBold}
-          className={"text-center"}
+          className={'text-center'}
         >
           Testimonials
         </Typography>
-        <Typography
-          type={TextTypes["2xl"]}
-          weight={WeightTypes.regular}
-          className={"text-center"}
-        >
+        <Typography type={TextTypes['2xl']} weight={WeightTypes.regular} className={'text-center'}>
           Don’t just take my word for it
         </Typography>
       </div>
-      <div className={"mr-80"}>
+      <div className={'mr-80'}>
         <AutoScrollTestimonials testimonials={secondHalf} />
       </div>
     </>
