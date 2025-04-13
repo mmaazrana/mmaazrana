@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Typography from '@/components/Typography';
 
@@ -28,11 +28,17 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
     amount: 0.2,
   });
 
+  useEffect(() => {
+    if (!isInView && cardRef.current) {
+      cardRef.current.scrollTop = 0;
+    }
+  }, [isInView]);
+
   return (
     <div
       ref={cardRef}
       id={'project'}
-      className={`cursor-pointer group work overflow-hidden h-[320px] sm:h-[384px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 p-8 sm:p-9 ${alt ? 'sm:basis-60' : 'flex-1'} transition-all duration-300`}
+      className={`cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar max-h-[320px] sm:max-h-[384px] h-[320px] sm:h-[384px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 p-8 sm:p-9 ${alt ? 'sm:basis-60' : 'flex-1'} ${isInView && 'overflow-y-scroll'} transition-all duration-300 select-none`}
     >
       <div className={'flex flex-col gap-1 sm:gap-2'}>
         <Typography type={TextTypes['4xl']} weight={WeightTypes.bold}>
@@ -42,14 +48,14 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
       </div>
       <Image
         priority
-        className={`border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-md sm:rounded-lg ${isInView && '!scale-[0.55]'}` : `border-[1.3px] rounded-xl sm:rounded-md overflow-hidden align-top min-w-full scale-150 ${isInView && '!scale-100'} `} origin-top-left transition-transform duration-300`}
+        className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-md sm:rounded-lg ${isInView && '!scale-[0.55]'}` : `border-[1.3px] rounded-xl sm:rounded-md overflow-hidden align-top min-w-full scale-150 ${isInView && '!scale-100'} `} origin-top-left transition-transform duration-300`}
         src={image}
         alt={'Project Banner'}
       />
       {alt && altImage && (
         <Image
           priority
-          className={`border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[10%]'}`}
+          className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-3xl sm:rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[10%]'}`}
           src={altImage}
           alt={'Project Banner'}
         />
