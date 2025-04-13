@@ -19,8 +19,6 @@ const Testimonials: FC<TestimonialsProps> = () => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, []);
 
-  const autoplay = emblaApi?.plugins()?.autoplay;
-
   useEffect(() => {
     if (!emblaApi) return;
     onSelect(emblaApi);

@@ -16,7 +16,6 @@ interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
   const { resolvedTheme } = useTheme();
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -35,13 +34,6 @@ const Hero: FC<HeroProps> = ({}) => {
       }
     >
       <div className={'flex basis-full md:basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4'}>
-        {/*<TypeAnimation*/}
-        {/*  wrapper={"h1"}*/}
-        {/*  sequence={HeroHeadings}*/}
-        {/*  speed={50}*/}
-        {/*  className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-extrabold ${archivo.className}`}*/}
-        {/*  repeat={Infinity}*/}
-        {/*/>*/}
         <AnimatePresence mode="wait" initial={false}>
           <m.div
             className={'!transition-none'}
@@ -91,20 +83,14 @@ const Hero: FC<HeroProps> = ({}) => {
         </div>
       </div>
       <AnimatePresence mode="wait" initial={false}>
-        {loading ? (
-          <div className="max-w-[100%]  md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] flex justify-center items-center ">
-            <div className="rounded-full h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9 2xl:h-10 w-5 sm:w-6 md:w-7 lg:w-8 xl:w-9 2xl:w-10 bg-secondary animate-ping"></div>
-          </div>
-        ) : (
-          <div
-            key={'lottie' + index}
-            className={
-              'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
-            }
-          >
-            <LottieWorkerAnimation src={currentAnimation} />
-          </div>
-        )}
+        <div
+          key={'lottie' + index}
+          className={
+            'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
+          }
+        >
+          <LottieWorkerAnimation src={currentAnimation} />
+        </div>
       </AnimatePresence>
       <span
         className={
