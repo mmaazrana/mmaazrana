@@ -120,7 +120,11 @@ const Hero: FC<HeroProps> = ({}) => {
         </AnimatePresence>
         <div className="flex gap-2 items-center justify-start flex-wrap">
           <div className={'pt-3 pb-3 pr-3'}>
-            <Link href={'https://www.linkedin.com/in/mmaazrana/'} target={'_blank'}>
+            <Link
+              href={'https://www.linkedin.com/in/mmaazrana/'}
+              target={'_blank'}
+              aria-label="Linkedin"
+            >
               <Button
                 leftIcon={<Linkedin />}
                 textWeight={WeightTypes.medium}
@@ -129,7 +133,12 @@ const Hero: FC<HeroProps> = ({}) => {
               />
             </Link>
           </div>
-          <Link href={'mailto:awaismaaz@gmail.com'} className={'cursor-pointer'} target={'_blank'}>
+          <Link
+            href={'mailto:awaismaaz@gmail.com'}
+            className={'cursor-pointer'}
+            target={'_blank'}
+            aria-label="Email"
+          >
             <Button type={ButtonTypes.tertiary} text={'awaismaaz@gmail.com'} />
           </Link>
         </div>

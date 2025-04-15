@@ -71,7 +71,7 @@ export default function Home() {
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               My Work
             </Typography>
-            <Link href={'/work'}>
+            <Link href={'/work'} aria-label="Explore Work">
               <Button
                 type={ButtonTypes.secondary}
                 text={'Explore'}
@@ -92,7 +92,7 @@ export default function Home() {
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               Services
             </Typography>
-            <Link href={'/services'}>
+            <Link href={'/services'} aria-label="All Services">
               <Button
                 type={ButtonTypes.secondary}
                 text={'All Services'}
@@ -113,7 +113,7 @@ export default function Home() {
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               Testimonials
             </Typography>
-            <Link href={'/clients'}>
+            <Link href={'/clients'} aria-label="Clients">
               <Button
                 type={ButtonTypes.secondary}
                 text={'Clients'}
@@ -134,7 +134,7 @@ export default function Home() {
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               About Me
             </Typography>
-            <Link href={'/about'}>
+            <Link href={'/about'} aria-label="Read More">
               <Button
                 type={ButtonTypes.secondary}
                 text={'Read More'}
