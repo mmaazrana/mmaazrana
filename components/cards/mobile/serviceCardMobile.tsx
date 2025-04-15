@@ -104,6 +104,7 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
             className={imageClasses[index]}
             alt={title}
             quality={75}
+            loading="lazy"
           />
         </div>
         <div

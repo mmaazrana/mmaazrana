@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
-import Button from '@/components/button';
+import Button from '@/components/button/Index';
 import { ButtonTypes, WeightTypes } from '@/helpers/enums';
 import { useBottomNav } from './BottomNavContext';
 
@@ -18,6 +18,7 @@ const ContactButton: FC<ContactButtonProps> = ({ isMobile = false }) => {
     <Link
       href={isMobile ? '' : 'mailto:awaismaaz@gmail.com'}
       className={`${isMobile ? 'block sm:hidden' : 'w-full hidden sm:block'}`}
+      aria-label={isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
     >
       <Button
         leftIcon={<Mail className={'!fill-none stroke-primary-accent'} />}

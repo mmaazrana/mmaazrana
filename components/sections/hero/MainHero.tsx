@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Typography from '@/components/Typography';
-import Button from '@/components/button';
+import Button from '@/components/button/Index';
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants';
 import { ButtonTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import * as m from 'motion/react-m';
@@ -11,9 +11,9 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import LottieWorkerAnimation from '@/components/utils/lottie';
 
-interface HeroProps {}
+interface MainHeroProps {}
 
-const Hero: FC<HeroProps> = ({}) => {
+const MainHero: FC<MainHeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
   const { resolvedTheme } = useTheme();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -162,4 +162,4 @@ const Hero: FC<HeroProps> = ({}) => {
   );
 };
 
-export default Hero;
+export default MainHero;

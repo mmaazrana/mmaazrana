@@ -15,7 +15,7 @@ interface NavLinkProps {
 
 const NavLink: FC<NavLinkProps> = ({ href, text, isActive, type = TextTypes.xl, color }) => (
   <div className={'transition-colors'}>
-    <Link href={href}>
+    <Link href={href} aria-label={text}>
       <Typography
         type={type}
         color={color}

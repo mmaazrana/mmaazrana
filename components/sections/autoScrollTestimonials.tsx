@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FC, useState } from 'react';
-import TestimonialCard from '@/components/cards/testimonialCard';
+import TestimonialCard from '@/components/cards/TestimonialCard';
 import { TestimonialT } from '@/helpers/types';
 
 interface AutoScrollTestimonialsProps {

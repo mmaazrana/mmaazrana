@@ -1,6 +1,7 @@
-import { ButtonTypes, Sections } from '@/helpers/enums';
+import { ButtonTypes, Sections, WorkCategories } from '@/helpers/enums';
 import {
   BottomNavButtonT,
+  BottomNavCategoryT,
   ClientDataT,
   FooterButtonT,
   NavButtonT,
@@ -51,6 +52,33 @@ import nutrigramAltProject from '../public/images/projects/nutrigram-alt.webp';
 import markdownProject from '../public/images/projects/markdown-main.webp';
 import markdownAltProject from '../public/images/projects/markdown-alt.webp';
 import athletonProject from '../public/images/projects/athleton.webp';
+import {
+  nutrigram,
+  jawlineFitness,
+  elBrezal,
+  beaconTutorsAdmin,
+  beaconTutors,
+  menuHub,
+  deepReelWebsite,
+  deepReelAI,
+  athletonPlus,
+  deepReelCanva,
+  markdownEditor,
+  tutorania,
+  robinBeauty,
+  aylaAI,
+  smartCatch,
+  superDuperStudio,
+  humanizarTexto,
+  pools515,
+  ProjectAnalysisT,
+  inventrios,
+  codingInterviewPrep,
+  beaconTutorsCRM,
+  rivanna,
+  equanimity,
+} from './projectAnalytics';
+import { alfabolt } from './projectAnalytics';
 
 export const HeroHeadings: string[] = [
   'Product Designer',
@@ -120,6 +148,26 @@ export const bottomNavButtons: BottomNavButtonT[] = [
     text: 'About Me',
     href: `/#${Sections.aboutMe}`,
     section: Sections.aboutMe,
+  },
+];
+
+export const workBottomNavCategories: BottomNavCategoryT[] = [
+  { text: 'Product Design', key: WorkCategories.productDesign },
+  {
+    text: 'Product Development',
+    key: WorkCategories.productDevelopment,
+  },
+  {
+    text: 'Video Editing',
+    key: WorkCategories.videoEditing,
+  },
+  {
+    text: 'Graphics Design',
+    key: WorkCategories.illustration,
+  },
+  {
+    text: '3D Artworks',
+    key: WorkCategories.blender,
   },
 ];
 
@@ -313,6 +361,43 @@ export const WorkExperiences: WorkExperienceT[] = [
     roles: 'Illustration Designer',
     tenure: '2021 - 2022',
   },
+];
+
+export const productDesignProjects: ProjectAnalysisT[] = [
+  alfabolt,
+  humanizarTexto,
+  pools515,
+  elBrezal,
+  superDuperStudio,
+  smartCatch,
+  aylaAI,
+  robinBeauty,
+  tutorania,
+  markdownEditor,
+  athletonPlus,
+  deepReelAI,
+  deepReelWebsite,
+  menuHub,
+  beaconTutors,
+  beaconTutorsAdmin,
+  equanimity,
+  nutrigram,
+  jawlineFitness,
+  rivanna,
+  beaconTutorsCRM,
+  codingInterviewPrep,
+  inventrios,
+];
+
+export const productDevelopmentProjects: ProjectAnalysisT[] = [
+  alfabolt,
+  deepReelCanva,
+  jawlineFitness,
+  superDuperStudio,
+  tutorania,
+  beaconTutors,
+  beaconTutorsAdmin,
+  inventrios,
 ];
 
 export const designIconComponents = {

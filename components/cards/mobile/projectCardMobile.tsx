@@ -40,7 +40,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
       id={'project'}
       className={`cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar max-h-[320px] sm:max-h-[384px] h-[320px] sm:h-[384px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 p-8 sm:p-9 ${alt ? 'sm:basis-60' : 'flex-1'} ${isInView && 'overflow-y-scroll'} transition-all duration-300 select-none`}
     >
-      <div className={'flex flex-col gap-1 sm:gap-2'}>
+      <div className={'flex flex-col gap-1 sm:gap-2 sticky top-0'}>
         <Typography type={TextTypes['4xl']} weight={WeightTypes.bold}>
           {title}
         </Typography>

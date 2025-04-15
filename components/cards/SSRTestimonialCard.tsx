@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
-import { TestimonialCardProps } from '@/components/cards/testimonialCard';
+import { TestimonialCardProps } from '@/components/cards/TestimonialCard';
 
 const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
   testimonial,

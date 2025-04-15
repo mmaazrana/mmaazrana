@@ -1,15 +1,16 @@
 'use client';
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import { Sections } from '@/helpers/enums';
+import { Sections, WorkCategories } from '@/helpers/enums';
+import { log } from 'console';
 
 interface BottomNavContextType {
   isEndOfPage: boolean;
   isInView: boolean;
-  activeSection: Sections;
+  activeSection: Sections | WorkCategories;
   setIsEndOfPage: (value: boolean) => void;
   setIsInView: (value: boolean) => void;
-  setActiveSection: (section: Sections) => void;
+  setActiveSection: (section: Sections | WorkCategories) => void;
 }
 
 const BottomNavContext = createContext<BottomNavContextType | undefined>(undefined);
@@ -29,7 +30,7 @@ interface BottomNavProviderProps {
 export const BottomNavProvider: React.FC<BottomNavProviderProps> = ({ children }) => {
   const [isEndOfPage, setIsEndOfPage] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const [activeSection, setActiveSection] = useState<Sections>(Sections.hero);
+  const [activeSection, setActiveSection] = useState<Sections | WorkCategories>(Sections.hero);
 
   // Optimized scroll handler with throttling
   const handleScroll = useCallback(() => {
@@ -37,6 +38,7 @@ export const BottomNavProvider: React.FC<BottomNavProviderProps> = ({ children }
     if (!navbar) return;
 
     const navbarHeight = navbar.getBoundingClientRect().height;
+
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
     const scrollTop =
@@ -44,6 +46,9 @@ export const BottomNavProvider: React.FC<BottomNavProviderProps> = ({ children }
       window.pageYOffset ||
       document.body.scrollTop +
         ((document.documentElement && document.documentElement.scrollTop) || 0);
+
+    setIsInView(scrollTop > navbarHeight);
+    setIsEndOfPage(windowHeight + scrollTop >= documentHeight - 180);
 
     const hero = document.getElementById(Sections.hero);
     if (!hero) return;
@@ -66,9 +71,6 @@ export const BottomNavProvider: React.FC<BottomNavProviderProps> = ({ children }
     if (currentSection !== activeSection) {
       setActiveSection(currentSection);
     }
-
-    setIsInView(scrollTop > navbarHeight);
-    setIsEndOfPage(windowHeight + scrollTop >= documentHeight - 180);
   }, [activeSection]);
 
   useEffect(() => {

@@ -10,12 +10,12 @@ import Linkedin from '@/components/icons/linkedin';
 import Behance from '@/components/icons/behance';
 import Github from '@/components/icons/github';
 import Dribbble from '@/components/icons/dribbble';
-import Logo from './bottomNav/Logo';
-import ContactButton from './bottomNav/ContactButton';
-import SocialLink from './bottomNav/SocialLink';
-import FooterSection from './bottomNav/FooterSection';
+import Logo from './Logo';
+import ContactButton from './ContactButton';
+import SocialLink from './SocialLink';
+import FooterSection from './FooterSection';
 import { Sections, TextTypes, ColorTypes, WeightTypes } from '@/helpers/enums';
-import { BottomNavProvider, useBottomNav } from './bottomNav/BottomNavContext';
+import { BottomNavProvider, useBottomNav } from './BottomNavContext';
 
 // Types
 interface BottomNavProps {}
@@ -140,7 +140,7 @@ const BottomNavContent: FC = () => {
           >
             {bottomNavButtons.map((button, index) => (
               <div id="sections" key={index} className={'transition-colors'}>
-                <Link href={button.href}>
+                <Link href={button.href} aria-label={button.text}>
                   <Typography
                     type={TextTypes.xl}
                     color={ColorTypes.primary}

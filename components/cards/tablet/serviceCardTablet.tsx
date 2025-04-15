@@ -104,6 +104,7 @@ const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className
             className={imageClasses[index]}
             alt={title}
             quality={75}
+            loading="lazy"
           />
         </div>
         <div

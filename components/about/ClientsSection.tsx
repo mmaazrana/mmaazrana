@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FC, useRef, useState } from 'react';
-import AboutCard from '@/components/cards/aboutCard';
+import AboutCard from '@/components/cards/AboutCard';
 import { clientIconComponents } from '@/helpers/constants';
 import SectionTitle from './SectionTitle';
 import { useAboutContext } from './AboutContext';

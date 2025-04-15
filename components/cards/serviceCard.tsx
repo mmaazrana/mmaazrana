@@ -112,6 +112,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, index, className, onClick })
             className={imageClasses[index]}
             alt={title}
             quality={75}
+            loading="lazy"
           />
         </div>
         <div

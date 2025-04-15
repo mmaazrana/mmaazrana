@@ -3,7 +3,7 @@
 import React, { FC, useRef } from 'react';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
-import { TestimonialCardProps } from '@/components/cards/testimonialCard';
+import { TestimonialCardProps } from '@/components/cards/TestimonialCard';
 import { useInView } from 'motion/react';
 import * as m from 'motion/react-m';
 

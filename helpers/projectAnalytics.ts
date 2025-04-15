@@ -32,6 +32,7 @@ import smartCatchMain from '../public/images/projects/smart-catch-main.webp';
 import smartCatchAlt from '../public/images/projects/smart-catch-alt.webp';
 import elBrezalImage from '../public/images/projects/el-brezal.webp';
 import robinImage from '../public/images/projects/robin.webp';
+import { WorkCategories } from './enums';
 
 export interface ProjectAnalysisT {
   title: string;
@@ -45,7 +46,7 @@ export interface ProjectAnalysisT {
     challenges: string[];
     solutions: string[];
   };
-  category: string;
+  categories: WorkCategories[];
   techStack: string[];
   liveUrl?: string;
   images: {
@@ -108,7 +109,7 @@ export const pools515: ProjectAnalysisT = {
       'Designed a user-friendly interface that simplifies complex pool maintenance tasks',
     ],
   },
-  category: 'Web Application',
+  categories: [WorkCategories.productDesign],
   techStack: ['React/Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Cloud Database'],
   images: {
     main: pools515Main,
@@ -175,7 +176,7 @@ export const beaconTutors: ProjectAnalysisT = {
       'Built responsive layouts for all device sizes',
     ],
   },
-  category: 'Educational Platform',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Tailwind CSS', 'TypeScript'],
   images: {
     main: beaconTutorWebsite,
@@ -248,7 +249,7 @@ export const deepReelAI: ProjectAnalysisT = {
       'Designed user-friendly interfaces for technical features',
     ],
   },
-  category: 'AI Video Platform',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -333,7 +334,7 @@ export const jawlineFitness: ProjectAnalysisT = {
       'Designed intuitive navigation patterns',
     ],
   },
-  category: 'Fitness Application',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'React Native',
     'TypeScript',
@@ -419,7 +420,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
       'Established consistent cross-platform design system',
     ],
   },
-  category: 'Educational Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -504,7 +505,7 @@ export const equanimity: ProjectAnalysisT = {
       'Integrated document verification system',
     ],
   },
-  category: 'Financial Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -589,7 +590,7 @@ export const aylaAI: ProjectAnalysisT = {
       'Optimized AI processing pipeline',
     ],
   },
-  category: 'AI Assistant Application',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'TypeScript',
@@ -674,7 +675,7 @@ export const deepReelCanva: ProjectAnalysisT = {
       'Established consistent design system',
     ],
   },
-  category: 'Design Tool Integration',
+  categories: [WorkCategories.productDevelopment],
   techStack: [
     'React.js',
     'TypeScript',
@@ -759,7 +760,7 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
       'Established reliable data synchronization',
     ],
   },
-  category: 'Administrative Platform',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -845,7 +846,7 @@ export const markdownEditor: ProjectAnalysisT = {
       'Designed intuitive document organization system',
     ],
   },
-  category: 'Productivity Application',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'TypeScript',
@@ -930,7 +931,7 @@ export const menuHub: ProjectAnalysisT = {
       'Established consistent design patterns',
     ],
   },
-  category: 'Restaurant Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1016,7 +1017,7 @@ export const nutrigram: ProjectAnalysisT = {
       'Implemented offline-first architecture',
     ],
   },
-  category: 'Health & Fitness',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'TypeScript',
@@ -1102,7 +1103,7 @@ export const athletonPlus: ProjectAnalysisT = {
       'Designed user-friendly booking flow',
     ],
   },
-  category: 'Fitness Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'Next.js',
@@ -1188,7 +1189,7 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
       'Designed efficient filtering mechanism',
     ],
   },
-  category: 'Customer Relationship Management',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1274,7 +1275,7 @@ export const inventrios: ProjectAnalysisT = {
       'Established clear visual patterns',
     ],
   },
-  category: 'Corporate Website',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1359,7 +1360,7 @@ export const superDuperStudio: ProjectAnalysisT = {
       'Established consistent design patterns',
     ],
   },
-  category: 'Educational Website',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1444,7 +1445,7 @@ export const deepReelWebsite: ProjectAnalysisT = {
       'Built responsive video components',
     ],
   },
-  category: 'SaaS Platform',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1530,7 +1531,7 @@ export const alfabolt: ProjectAnalysisT = {
       'Designed scalable page templates',
     ],
   },
-  category: 'Corporate Website',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1615,7 +1616,7 @@ export const tutorania: ProjectAnalysisT = {
       'Designed scalable search architecture',
     ],
   },
-  category: 'Education Management',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1633,7 +1634,7 @@ export const tutorania: ProjectAnalysisT = {
   },
 };
 
-export const rivanna: ProjectAnalysisT = {
+export const rivannaProduct: ProjectAnalysisT = {
   title: 'Rivanna',
   shortDescription:
     'A sophisticated legal document analysis platform featuring semantic search, document comparison, and market norm analysis tools for legal professionals.',
@@ -1701,7 +1702,7 @@ export const rivanna: ProjectAnalysisT = {
       'Optimized search response time',
     ],
   },
-  category: 'Legal Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1719,7 +1720,7 @@ export const rivanna: ProjectAnalysisT = {
   },
 };
 
-export const rivannaWebsite: ProjectAnalysisT = {
+export const rivanna: ProjectAnalysisT = {
   title: 'Rivanna Website',
   shortDescription:
     'A professional legal technology company website showcasing advanced document analysis and market intelligence tools through a clean, modern interface focused on legal professionals.',
@@ -1787,7 +1788,7 @@ export const rivannaWebsite: ProjectAnalysisT = {
       'Established consistent content strategy',
     ],
   },
-  category: 'Legal Technology Website',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -1872,7 +1873,7 @@ export const humanizarTexto: ProjectAnalysisT = {
       'Optimized app responsiveness',
     ],
   },
-  category: 'Productivity Application',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'TypeScript',
@@ -1957,7 +1958,7 @@ export const smartCatch: ProjectAnalysisT = {
       'Optimized image processing pipeline',
     ],
   },
-  category: 'Community Platform',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'React Native',
     'TypeScript',
@@ -2043,7 +2044,7 @@ export const elBrezal: ProjectAnalysisT = {
       'Optimized image loading system',
     ],
   },
-  category: 'E-commerce Platform',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',
@@ -2128,7 +2129,7 @@ export const robinBeauty: ProjectAnalysisT = {
       'Designed adaptive user profiling',
     ],
   },
-  category: 'Beauty Technology',
+  categories: [WorkCategories.productDesign],
   techStack: [
     'Next.js',
     'TypeScript',

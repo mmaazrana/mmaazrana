@@ -41,7 +41,7 @@ const FooterSection: FC<FooterSectionProps> = ({ section }) => {
       </Typography>
       {section.slice(1).map((button, index) => (
         <div id="pages" key={index} className={'transition-colors'}>
-          <Link href={button.href}>
+          <Link href={button.href} aria-label={button.text}>
             <Typography
               type={TextTypes.xl}
               className={

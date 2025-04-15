@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import pfp from '../../public/images/memoji-pfp.webp';
 import React, { FC, useRef, useState } from 'react';
-import AboutCard from '@/components/cards/aboutCard';
+import AboutCard from '@/components/cards/AboutCard';
 import Typography from '@/components/Typography';
 import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './SectionTitle';

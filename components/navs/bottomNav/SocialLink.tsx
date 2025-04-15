@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Button from '@/components/button';
+import Button from '@/components/button/Index';
 import { ButtonTypes } from '@/helpers/enums';
 import { useBottomNav } from './BottomNavContext';
 
@@ -29,7 +29,7 @@ const SocialLink: FC<SocialLinkProps> = ({ icon, text, href, index }) => {
       }}
       className={'transition-none'}
     >
-      <Link href={href} target={'_blank'}>
+      <Link href={href} target={'_blank'} aria-label={text}>
         <Button leftIcon={icon} text={text} type={ButtonTypes.secondary} />
       </Link>
     </motion.div>

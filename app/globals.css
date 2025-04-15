@@ -80,6 +80,7 @@
   --bottom-left-desktop:
     linear-gradient(135deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
     linear-gradient(135deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+  --work-gradient: linear-gradient(90deg, #ffffff 5%, transparent 10%, transparent 90%, #ffffff);
 }
 
 [data-theme='dark'] {
@@ -159,6 +160,14 @@
   --bottom-left-desktop:
     linear-gradient(135deg, #0c1427, #070d1d, 60%, #000714) padding-box,
     linear-gradient(135deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
+  --work-gradient: linear-gradient(90deg, #000714 0%, transparent 10%, transparent 90%, #000714);
+  --work-nav-gradient: linear-gradient(
+    90deg,
+    #000714 10%,
+    transparent 30%,
+    transparent 70%,
+    #000714 90%
+  );
 }
 
 @theme {
@@ -176,6 +185,8 @@
   --color-secondary-hover-90: var(--secondary-hover-90);
   --color-frosted-gradient: var(--frosted-gradient);
   --color-frosted-gradient-hover: var(--frosted-gradient-hover);
+  --color-work-gradient: var(--work-gradient);
+  --color-work-nav-gradient: var(--work-nav-gradient);
   --opacity-texture-opacity: var(--texture-opacity);
   --max-width-8xl: 100rem;
   --width-8xl: 10rem;
@@ -336,6 +347,15 @@ body {
 
 .bottom-left-desktop-gradient {
   background: var(--bottom-left-desktop);
+}
+
+.work-gradient {
+  background: var(--work-gradient);
+}
+
+.work-nav-gradient {
+  background: var(--work-nav-gradient);
+  border-radius: 9999px;
 }
 
 @-moz-document url-prefix() {

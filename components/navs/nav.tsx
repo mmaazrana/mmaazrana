@@ -1,11 +1,11 @@
 'use client';
 
 import React, { FC, useState } from 'react';
-import Button from '@/components/button';
 import { navButtons } from '@/helpers/constants';
 import Link from 'next/link';
 import MaazRanaLogo from '../icons/maazRanaLogo';
 import MenuButton from '@/components/button/MenuButton';
+import Button from '../button/Index';
 
 interface NavProps {}
 
@@ -17,7 +17,7 @@ const Nav: FC<NavProps> = () => {
       <div className="justify-between items-center mx-auto md:items-center md:flex">
         <div>
           <div className=" flex items-center justify-between md:block  ">
-            <Link href="/">
+            <Link href="/" aria-label="Home">
               <MaazRanaLogo />
             </Link>
 
@@ -41,7 +41,7 @@ const Nav: FC<NavProps> = () => {
             <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2">
               {navButtons.map((button, index) => (
                 <li key={index}>
-                  <Link href={button.href}>
+                  <Link href={button.href} aria-label={button.text}>
                     <Button type={button.type} text={button.text} />
                   </Link>
                 </li>

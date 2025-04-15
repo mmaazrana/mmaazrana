@@ -42,6 +42,7 @@
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "tailwindcss-3d": "^1.0.7"
   },
   "resolutions": {

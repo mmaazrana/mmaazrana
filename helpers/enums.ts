@@ -49,3 +49,11 @@ export enum Sections {
   aboutMe = 'about',
   testimonials = 'testimonials',
 }
+
+export enum WorkCategories {
+  productDesign = 'product-design',
+  productDevelopment = 'product-development',
+  blender = 'blender',
+  videoEditing = 'video-editing',
+  illustration = 'illustration',
+}

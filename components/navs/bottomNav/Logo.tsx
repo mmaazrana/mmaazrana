@@ -8,7 +8,7 @@ const Logo: FC = () => {
   const { isEndOfPage } = useBottomNav();
 
   return (
-    <Link href={'/'}>
+    <Link href={'/'} aria-label="Home">
       <svg
         className={`${isEndOfPage ? 'block h-[36px] md:h-[34px] lg:h-[36px] xl:h-[40px] lg:w-auto mb-2 lg:mb-4 xl:mb-6' : 'hidden sm:block h-[40px] lg:h-[44px] xl:h-[48px]'} object-cover`}
         viewBox="0 0 275 41"
