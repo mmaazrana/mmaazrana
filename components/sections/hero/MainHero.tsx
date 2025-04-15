@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Typography from '@/components/Typography';
-import Button from '@/components/button/Index';
+import Button from '@/components/button';
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants';
 import { ButtonTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import * as m from 'motion/react-m';

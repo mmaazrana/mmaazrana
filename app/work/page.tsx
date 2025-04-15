@@ -1,20 +1,15 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import Nav from '@/components/navs/Nav';
-import ProjectCard from '@/components/cards/ProjectCard';
-import ProjectCardMobile from '@/components/cards/mobile/ProjectCardMobile';
-import { projectsAnalysis } from '@/helpers/projectAnalytics';
 import WorkHero from '@/components/sections/hero/WorkHero';
 import WorkBottomNav from '@/components/navs/bottomNav/WorkBottomNav';
-import { TextTypes, WeightTypes, WorkCategories } from '@/helpers/enums';
+import { WorkCategories } from '@/helpers/enums';
 import ProductDesignProjects from '@/components/sections/work/ProductDesignProjects';
 import ProductDevelopmentProjects from '@/components/sections/work/ProductDevelopmentProjects';
 import BlenderProjects from '@/components/sections/work/BlenderProjects';
 import VideoEditingProjects from '@/components/sections/work/VideoEditingProjects';
 import GraphicDesignProjects from '@/components/sections/work/GraphicDesignProjects';
-import { ArrowDown } from 'lucide-react';
-import Typography from '@/components/Typography';
-import { workBottomNavCategories } from '@/helpers/constants';
 import TitleBar from '@/components/sections/work/TitleBar';
 function Work() {
   const [activeTab, setActiveTab] = useState<WorkCategories>(WorkCategories.productDesign);

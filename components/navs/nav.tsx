@@ -5,7 +5,7 @@ import { navButtons } from '@/helpers/constants';
 import Link from 'next/link';
 import MaazRanaLogo from '../icons/maazRanaLogo';
 import MenuButton from '@/components/button/MenuButton';
-import Button from '../button/Index';
+import Button from '@/components/button';
 
 interface NavProps {}
 

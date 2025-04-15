@@ -14,7 +14,7 @@ import Logo from './Logo';
 import ContactButton from './ContactButton';
 import SocialLink from './SocialLink';
 import FooterSection from './FooterSection';
-import { Sections, TextTypes, ColorTypes, WeightTypes } from '@/helpers/enums';
+import { TextTypes, ColorTypes, WeightTypes } from '@/helpers/enums';
 import { BottomNavProvider, useBottomNav } from './BottomNavContext';
 
 // Types

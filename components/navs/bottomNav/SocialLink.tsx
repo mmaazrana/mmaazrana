@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Button from '@/components/button/Index';
+import Button from '@/components/button';
 import { ButtonTypes } from '@/helpers/enums';
 import { useBottomNav } from './BottomNavContext';
 

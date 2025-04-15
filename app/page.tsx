@@ -9,7 +9,7 @@ import Hero from '@/components/sections/hero/MainHero';
 import { ButtonTypes, Sections, TextTypes, WeightTypes } from '@/helpers/enums';
 import Testimonials from '@/components/sections/Testimonials';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Button from '@/components/button/Index';
+import Button from '@/components/button';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import AboutSection from '@/components/sections/AboutSection';
