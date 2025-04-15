@@ -9,12 +9,13 @@ import { useAboutContext } from './about-content';
 import Medal from '@/components/icons/medal';
 import { useInView } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
+
 interface EducationSectionProps {
   className?: string;
 }
 
 const EducationSection: FC<EducationSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive, isActive } = useAboutContext();
+  const { setActiveCard, setIsActive } = useAboutContext();
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 445 });
   const educationRef = useRef(null);

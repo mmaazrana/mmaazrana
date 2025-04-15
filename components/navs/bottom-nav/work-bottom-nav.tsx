@@ -1,11 +1,10 @@
 'use client';
 
-import React, { FC, useCallback, useMemo, useEffect, Suspense, useState } from 'react';
-import Link from 'next/link';
+import React, { FC, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, stagger, useAnimate } from 'motion/react';
 import * as m from 'motion/react-m';
 import Typography from '@/components/Typography';
-import { bottomNavButtons, footerButtons, workBottomNavCategories } from '@/helpers/constants';
+import { footerButtons, workBottomNavCategories } from '@/helpers/constants';
 import Linkedin from '@/components/icons/linkedin';
 import Behance from '@/components/icons/behance';
 import Github from '@/components/icons/github';
@@ -14,7 +13,7 @@ import Logo from './logo';
 import ContactButton from './contact-button';
 import SocialLink from './social-link';
 import FooterSection from './footer-section';
-import { Sections, TextTypes, ColorTypes, WeightTypes, WorkCategories } from '@/helpers/enums';
+import { ColorTypes, TextTypes, WeightTypes, WorkCategories } from '@/helpers/enums';
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -244,7 +243,11 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                   >
                     <m.div
                       initial={{ opacity: 0, width: 0, translateX: -200 }} // Initial state
-                      animate={{ opacity: 1, width: 'auto', translateX: 0 }} // Animate to this state
+                      animate={{
+                        opacity: 1,
+                        width: 'auto',
+                        translateX: 0,
+                      }} // Animate to this state
                       exit={{ opacity: 0, width: 0, translateX: -200 }} // Exit state
                       transition={{
                         opacity: { duration: 0.3, delay: 0.2 },
@@ -283,7 +286,11 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                     >
                       <m.div
                         initial={{ opacity: 0, width: 0, translateX: -40 }} // Initial state
-                        animate={{ opacity: 1, width: 'auto', translateX: 0 }} // Animate to this state
+                        animate={{
+                          opacity: 1,
+                          width: 'auto',
+                          translateX: 0,
+                        }} // Animate to this state
                         exit={{ opacity: 0, width: 0, translateX: -40 }} // Exit state
                         transition={{
                           opacity: { duration: 0.35, delay: 0.1 },
@@ -318,7 +325,11 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                   >
                     <m.div
                       initial={{ opacity: 0, width: 0, translateX: 250 }} // Initial state
-                      animate={{ opacity: 1, width: 'auto', translateX: 0 }} // Animate to this state
+                      animate={{
+                        opacity: 1,
+                        width: 'auto',
+                        translateX: 0,
+                      }} // Animate to this state
                       exit={{ opacity: 0, width: 0, translateX: 250 }} // Exit state
                       transition={{
                         opacity: { duration: 0.3, delay: 0.2 },

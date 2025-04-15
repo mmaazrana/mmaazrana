@@ -3,7 +3,7 @@
 import React, { FC, useMemo, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
 import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
+import { TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import {
@@ -13,6 +13,7 @@ import {
 } from '@/helpers/constants';
 import { useInView } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
+
 interface TechStackSectionProps {
   className?: string;
 }
@@ -36,7 +37,7 @@ const IconContainer: React.FC<IconContainerProps> = React.memo(({ Icon, props })
 IconContainer.displayName = 'IconContainer';
 
 const TechStackSection: FC<TechStackSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive, isActive } = useAboutContext();
+  const { setActiveCard, setIsActive } = useAboutContext();
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 445 });
   const toolsRef = useRef(null);

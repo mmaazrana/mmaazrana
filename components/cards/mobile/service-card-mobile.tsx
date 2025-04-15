@@ -46,15 +46,6 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
     blenderMobileLight,
   ];
 
-  const hoverRotationClasses = {
-    0: 'hover:rotate-y-6 hover:-rotate-x-6',
-    1: 'hover:-rotate-x-12',
-    2: 'hover:-rotate-y-6 hover:-rotate-x-6',
-    3: 'hover:rotate-y-6 hover:rotate-x-6',
-    4: 'hover:rotate-x-12',
-    5: 'hover:-rotate-y-6 hover:rotate-x-6',
-  };
-
   const indexClasses = {
     0: 'justify-center items-start text-left top-right-desktop-gradient',
     1: 'justify-center items-start text-left top-center-desktop-gradient',

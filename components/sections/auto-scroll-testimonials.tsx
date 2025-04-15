@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import TestimonialCard from '@/components/cards/testimonial-card';
 import { TestimonialT } from '@/helpers/types';
 

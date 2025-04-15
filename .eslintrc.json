@@ -1,6 +1,11 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }]
   }
 }

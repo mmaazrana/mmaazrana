@@ -2,7 +2,6 @@
 
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { Sections, WorkCategories } from '@/helpers/enums';
-import { log } from 'console';
 
 interface BottomNavContextType {
   isEndOfPage: boolean;

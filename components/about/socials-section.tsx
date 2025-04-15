@@ -4,18 +4,17 @@ import Image from 'next/image';
 import pfp from '../../public/images/memoji-pfp.webp';
 import React, { FC, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
-import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
+
 interface SocialsSectionProps {
   className?: string;
 }
 
 const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive, isActive } = useAboutContext();
+  const { setActiveCard, setIsActive } = useAboutContext();
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 445 });
 

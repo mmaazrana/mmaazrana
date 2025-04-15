@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { DotLottieWorker } from '@lottiefiles/dotlottie-web';
 
 interface LottieWorkerAnimationProps {

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useCallback, useMemo, useEffect } from 'react';
+import React, { FC, useCallback, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { stagger, useAnimate } from 'motion/react';
 import * as m from 'motion/react-m';
@@ -10,12 +10,12 @@ import Linkedin from '@/components/icons/linkedin';
 import Behance from '@/components/icons/behance';
 import Github from '@/components/icons/github';
 import Dribbble from '@/components/icons/dribbble';
-import Logo from './logo';
 import ContactButton from './contact-button';
 import SocialLink from './social-link';
 import FooterSection from './footer-section';
-import { TextTypes, ColorTypes, WeightTypes } from '@/helpers/enums';
+import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
+import Logo from '@/components/navs/bottom-nav/logo';
 
 // Types
 interface BottomNavProps {}

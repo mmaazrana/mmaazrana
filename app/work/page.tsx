@@ -2,16 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import Nav from '@/components/navs/nav';
-import WorkBottomNav from '@/components/navs/bottomNav/work-bottom-nav';
+import WorkHero from '@/components/sections/hero/work-hero';
+import WorkBottomNav from '@/components/navs/bottom-nav/work-bottom-nav';
 import { WorkCategories } from '@/helpers/enums';
 import ProductDesignProjects from '@/components/sections/work/product-design-projects';
 import ProductDevelopmentProjects from '@/components/sections/work/product-development-projects';
 import BlenderProjects from '@/components/sections/work/blender-projects';
 import VideoEditingProjects from '@/components/sections/work/video-editing-projects';
 import GraphicDesignProjects from '@/components/sections/work/graphic-design-projects';
-import WorkHero from '@/components/sections/hero/work-hero';
 import TitleBar from '@/components/sections/work/title-bar';
-
 function Work() {
   const [activeTab, setActiveTab] = useState<WorkCategories>(WorkCategories.productDesign);
   const [ActiveComponent, setActiveComponent] = useState<React.ReactNode>(

@@ -1,14 +1,12 @@
 import Nav from '@/components/navs/nav';
-import BottomNav from '@/components/navs/bottomNav/bottom-nav';
+import BottomNav from '@/components/navs/bottom-nav';
 import React from 'react';
-import Head from 'next/head';
 import Typography from '@/components/Typography';
 import Services from '@/components/sections/services';
 import Work from '@/components/sections/work';
 import Hero from '@/components/sections/hero/main-hero';
 import { ButtonTypes, Sections, TextTypes, WeightTypes } from '@/helpers/enums';
 import Testimonials from '@/components/sections/testimonials';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import Button from '@/components/button';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';

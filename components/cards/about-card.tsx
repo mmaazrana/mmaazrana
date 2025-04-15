@@ -1,5 +1,4 @@
 import React, { FC, ReactElement, useId } from 'react';
-import { usePreferredColorScheme } from '@/helpers';
 import * as m from 'motion/react-m';
 
 interface AboutCardProps {

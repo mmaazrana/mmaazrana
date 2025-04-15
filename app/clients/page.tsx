@@ -1,5 +1,5 @@
 import Nav from '@/components/navs/nav';
-import BottomNav from '@/components/navs/bottomNav/bottom-nav';
+import BottomNav from '@/components/navs/bottom-nav';
 import React from 'react';
 import StackedTestimonials from '@/components/sections/stacked-testimonials';
 import EsteemedClients from '@/components/sections/esteemed-clients';

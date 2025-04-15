@@ -1,9 +1,9 @@
 // app/components/sections/WorkSection.tsx
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import { workBottomNavCategories } from '@/helpers/constants';
-import { AnimatePresence, delay } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 import * as m from 'motion/react-m';
 
 interface TitleBarProps {

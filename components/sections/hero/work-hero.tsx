@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import { useTheme } from 'next-themes';

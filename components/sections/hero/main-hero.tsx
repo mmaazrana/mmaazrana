@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import Typography from '@/components/Typography';
 import Button from '@/components/button';
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants';

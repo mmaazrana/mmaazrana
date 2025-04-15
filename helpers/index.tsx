@@ -70,21 +70,21 @@ export const useReverseDiagonalInvertMovement = (
     return newRotateX - newRotateY;
   });
 export const useStraightMovement = (rotateX: MotionValue<number>, rotateY: MotionValue<number>) =>
-  useTransform<number, number>([rotateX, rotateY], ([newRotateX, newRotateY]) => {
+  useTransform<number, number>([rotateX, rotateY], ([newRotateX]) => {
     return newRotateX;
   });
 export const useStraightInvertMovement = (
   rotateX: MotionValue<number>,
   rotateY: MotionValue<number>
 ) =>
-  useTransform<number, number>([rotateX, rotateY], ([newRotateX, newRotateY]) => {
+  useTransform<number, number>([rotateX, rotateY], ([newRotateX]) => {
     return 1 - newRotateX;
   });
 export const useSideMovement = (rotateX: MotionValue<number>, rotateY: MotionValue<number>) =>
-  useTransform<number, number>([rotateX, rotateY], ([newRotateX, newRotateY]) => {
+  useTransform<number, number>([rotateX, rotateY], ([newRotateY]) => {
     return newRotateY;
   });
 export const useSideInvertMovement = (rotateX: MotionValue<number>, rotateY: MotionValue<number>) =>
-  useTransform<number, number>([rotateX, rotateY], ([newRotateX, newRotateY]) => {
+  useTransform<number, number>([rotateX, rotateY], ([newRotateY]) => {
     return 1 - newRotateY;
   });

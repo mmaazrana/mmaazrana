@@ -7,12 +7,13 @@ import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
+
 interface ClientsSectionProps {
   className?: string;
 }
 
 const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive, isActive } = useAboutContext();
+  const { setActiveCard, setIsActive } = useAboutContext();
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 445 });
 

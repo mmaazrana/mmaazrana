@@ -3,10 +3,6 @@ import React from 'react';
 import ProjectCard from '@/components/cards/project-card';
 import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile';
 import { productDesignProjects } from '@/helpers/constants';
-import { WeightTypes } from '@/helpers/enums';
-import Typography from '@/components/Typography';
-import { TextTypes } from '@/helpers/enums';
-import { ArrowDown, ArrowRight } from 'lucide-react';
 
 interface ProductDesignProjectsProps {}
 

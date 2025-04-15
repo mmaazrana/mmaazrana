@@ -34,7 +34,7 @@ const WorkExperienceItem: React.FC<{
 WorkExperienceItem.displayName = 'WorkExperienceItem';
 
 const WorkExperienceSection: FC<WorkExperienceSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive, isActive } = useAboutContext();
+  const { setActiveCard, setIsActive } = useAboutContext();
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 445 });
 
