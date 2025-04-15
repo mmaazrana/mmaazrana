@@ -2,7 +2,7 @@
 
 import React, { FC, useCallback, useEffect, useState, useRef } from 'react';
 import { testimonials } from '@/helpers/constants';
-import TestimonialCard from '@/components/cards/TestimonialCard';
+import TestimonialCard from '@/components/cards/testimonial-card';
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion, useInView } from 'framer-motion';

@@ -10,12 +10,12 @@ import Linkedin from '@/components/icons/linkedin';
 import Behance from '@/components/icons/behance';
 import Github from '@/components/icons/github';
 import Dribbble from '@/components/icons/dribbble';
-import Logo from './Logo';
-import ContactButton from './ContactButton';
-import SocialLink from './SocialLink';
-import FooterSection from './FooterSection';
+import Logo from './logo';
+import ContactButton from './contact-button';
+import SocialLink from './social-link';
+import FooterSection from './footer-section';
 import { Sections, TextTypes, ColorTypes, WeightTypes, WorkCategories } from '@/helpers/enums';
-import { BottomNavProvider, useBottomNav } from './BottomNavContext';
+import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 

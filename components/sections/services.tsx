@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { services } from '@/helpers/constants';
-import ServiceCard from '@/components/cards/ServiceCard';
-import ServiceCardTablet from '@/components/cards/tablet/ServiceCardTablet';
-import ServiceCardMobile from '@/components/cards/mobile/ServiceCardMobile';
+import ServiceCard from '@/components/cards/service-card';
+import ServiceCardTablet from '@/components/cards/tablet/service-card-tablet';
+import ServiceCardMobile from '@/components/cards/mobile/service-card-mobile';
 
 interface ServicesProps {}
 

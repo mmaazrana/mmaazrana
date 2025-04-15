@@ -1,10 +1,10 @@
 'use client';
 
 import React, { FC, useRef, useState } from 'react';
-import AboutCard from '@/components/cards/AboutCard';
+import AboutCard from '@/components/cards/about-card';
 import { clientIconComponents } from '@/helpers/constants';
-import SectionTitle from './SectionTitle';
-import { useAboutContext } from './AboutContext';
+import SectionTitle from './section-title';
+import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
 import { useMediaQuery } from 'react-responsive';
 interface ClientsSectionProps {

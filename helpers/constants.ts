@@ -44,7 +44,7 @@ import Edwiz from '@/components/icons/edwiz';
 import Rivanna from '@/components/icons/rivanna';
 import BeaconTutors from '@/components/icons/beaconTutors';
 import Lyfiti from '@/components/icons/lyfiti';
-import FiveOneFivePools from '@/components/icons/515pools';
+import FiveOneFivePools from '@/components/icons/pools515';
 import MenuHub from '@/components/icons/menuHub';
 import deepReelProject from '../public/images/projects/deepreel.webp';
 import nutrigramProject from '../public/images/projects/nutrigram-main.webp';
@@ -53,32 +53,32 @@ import markdownProject from '../public/images/projects/markdown-main.webp';
 import markdownAltProject from '../public/images/projects/markdown-alt.webp';
 import athletonProject from '../public/images/projects/athleton.webp';
 import {
-  nutrigram,
-  jawlineFitness,
-  elBrezal,
-  beaconTutorsAdmin,
-  beaconTutors,
-  menuHub,
-  deepReelWebsite,
-  deepReelAI,
+  alfabolt,
   athletonPlus,
-  deepReelCanva,
-  markdownEditor,
-  tutorania,
-  robinBeauty,
   aylaAI,
-  smartCatch,
-  superDuperStudio,
+  beaconTutors,
+  beaconTutorsAdmin,
+  beaconTutorsCRM,
+  codingInterviewPrep,
+  deepReelAI,
+  deepReelCanva,
+  deepReelWebsite,
+  elBrezal,
+  equanimity,
   humanizarTexto,
+  inventrios,
+  jawlineFitness,
+  markdownEditor,
+  menuHub,
+  nutrigram,
   pools515,
   ProjectAnalysisT,
-  inventrios,
-  codingInterviewPrep,
-  beaconTutorsCRM,
   rivanna,
-  equanimity,
-} from './projectAnalytics';
-import { alfabolt } from './projectAnalytics';
+  robinBeauty,
+  smartCatch,
+  superDuperStudio,
+  tutorania,
+} from './project-analytics';
 
 export const HeroHeadings: string[] = [
   'Product Designer',

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import CSRTestimonialCard from '@/components/cards/CSRTestimonialCard';
-import SSRTestimonialCard from '@/components/cards/SSRTestimonialCard';
+import CSRTestimonialCard from '@/components/cards/csr-testimonial-card';
+import SSRTestimonialCard from '@/components/cards/ssr-testimonial-card';
 
 export interface TestimonialCardProps {
   variant: 'animated' | 'flat';

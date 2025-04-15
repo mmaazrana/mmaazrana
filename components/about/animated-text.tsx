@@ -2,7 +2,7 @@
 
 import { archivo } from '@/helpers/fonts';
 import { AnimatePresence, m } from 'motion/react';
-import { useAboutContext } from './AboutContext';
+import { useAboutContext } from './about-content';
 
 const AnimatedText = () => {
   const { activeCard, isActive } = useAboutContext();

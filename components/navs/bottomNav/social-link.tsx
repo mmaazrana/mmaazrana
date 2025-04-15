@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '@/components/button';
 import { ButtonTypes } from '@/helpers/enums';
-import { useBottomNav } from './BottomNavContext';
+import { useBottomNav } from './bottom-nav-context';
 
 interface SocialLinkProps {
   icon: React.ReactElement<{ className?: string }>;

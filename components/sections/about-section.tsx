@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { AboutProvider } from '../about/AboutContext';
-import IntroSection from '../about/IntroSection';
-import EducationSection from '../about/EducationSection';
-import TechStackSection from '../about/TechStackSection';
-import ClientsSection from '../about/ClientsSection';
-import SocialsSection from '../about/SocialsSection';
-import WorkExperienceSection from '../about/WorkExperienceSection';
-import AnimatedText from '../about/AnimatedText';
+import { AboutProvider } from '../about/about-content';
+import IntroSection from '@/components/about/intro-section';
+import EducationSection from '../about/education-section';
+import TechStackSection from '@/components/about/tech-stack-section';
+import ClientsSection from '@/components/about/clients-section';
+import SocialsSection from '@/components/about/socials-section';
+import WorkExperienceSection from '@/components/about/work-experience-section';
+import AnimatedText from '@/components/about/animated-text';
 
 const AboutSection: FC = () => (
   <AboutProvider>

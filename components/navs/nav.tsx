@@ -4,7 +4,7 @@ import React, { FC, useState } from 'react';
 import { navButtons } from '@/helpers/constants';
 import Link from 'next/link';
 import MaazRanaLogo from '../icons/maazRanaLogo';
-import MenuButton from '@/components/button/MenuButton';
+import MenuButton from '@/components/button/menu-button';
 import Button from '@/components/button';
 
 interface NavProps {}

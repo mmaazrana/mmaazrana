@@ -1,18 +1,18 @@
-import Nav from '@/components/navs/Nav';
-import BottomNav from '@/components/navs/bottomNav/BottomNav';
+import Nav from '@/components/navs/nav';
+import BottomNav from '@/components/navs/bottomNav/bottom-nav';
 import React from 'react';
 import Head from 'next/head';
 import Typography from '@/components/Typography';
-import Services from '@/components/sections/Services';
-import Work from '@/components/sections/Work';
-import Hero from '@/components/sections/hero/MainHero';
+import Services from '@/components/sections/services';
+import Work from '@/components/sections/work';
+import Hero from '@/components/sections/hero/main-hero';
 import { ButtonTypes, Sections, TextTypes, WeightTypes } from '@/helpers/enums';
-import Testimonials from '@/components/sections/Testimonials';
+import Testimonials from '@/components/sections/testimonials';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Button from '@/components/button';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import AboutSection from '@/components/sections/AboutSection';
+import AboutSection from '@/components/sections/about-section';
 
 export default function Home() {
   // const [windowWidth, setWindowWidth] = useState(0);

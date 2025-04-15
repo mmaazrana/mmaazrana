@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Typography from '@/components/Typography';
 import Link from 'next/link';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
-import { useBottomNav } from './BottomNavContext';
+import { useBottomNav } from './bottom-nav-context';
 
 interface FooterSectionProps {
   section: Array<{

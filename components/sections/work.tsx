@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import ProjectCard from '@/components/cards/ProjectCard';
+import ProjectCard from '@/components/cards/project-card';
 import { projects } from '@/helpers/constants';
-import ProjectCardMobile from '@/components/cards/mobile/ProjectCardMobile';
+import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile';
 
 interface WorkProps {}
 

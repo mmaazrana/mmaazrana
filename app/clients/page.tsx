@@ -1,11 +1,9 @@
-import Nav from '@/components/navs/Nav';
-import BottomNav from '@/components/navs/bottomNav/BottomNav';
+import Nav from '@/components/navs/nav';
+import BottomNav from '@/components/navs/bottomNav/bottom-nav';
 import React from 'react';
-import Head from 'next/head';
-import GoogleAnalytics from '@/app/GoogleAnalytics';
-import StackedTestimonials from '@/components/sections/StackedTestimonials';
-import EsteemedClients from '@/components/sections/EsteemedClients';
-import WorkDetails from '@/components/sections/WorkDetails';
+import StackedTestimonials from '@/components/sections/stacked-testimonials';
+import EsteemedClients from '@/components/sections/esteemed-clients';
+import WorkDetails from '@/components/sections/work-details';
 
 export default function Home() {
   return (

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Mail } from 'lucide-react';
 import Button from '@/components/button';
 import { ButtonTypes, WeightTypes } from '@/helpers/enums';
-import { useBottomNav } from './BottomNavContext';
+import { useBottomNav } from './bottom-nav-context';
 
 interface ContactButtonProps {
   isMobile?: boolean;

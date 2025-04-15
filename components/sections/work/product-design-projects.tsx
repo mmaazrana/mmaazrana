@@ -1,7 +1,7 @@
 // app/components/projects/ProductDesignProjects.tsx
 import React from 'react';
-import ProjectCard from '@/components/cards/ProjectCard';
-import ProjectCardMobile from '@/components/cards/mobile/ProjectCardMobile';
+import ProjectCard from '@/components/cards/project-card';
+import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile';
 import { productDesignProjects } from '@/helpers/constants';
 import { WeightTypes } from '@/helpers/enums';
 import Typography from '@/components/Typography';

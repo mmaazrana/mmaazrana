@@ -1,16 +1,17 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Nav from '@/components/navs/Nav';
-import WorkHero from '@/components/sections/hero/WorkHero';
-import WorkBottomNav from '@/components/navs/bottomNav/WorkBottomNav';
+import Nav from '@/components/navs/nav';
+import WorkBottomNav from '@/components/navs/bottomNav/work-bottom-nav';
 import { WorkCategories } from '@/helpers/enums';
-import ProductDesignProjects from '@/components/sections/work/ProductDesignProjects';
-import ProductDevelopmentProjects from '@/components/sections/work/ProductDevelopmentProjects';
-import BlenderProjects from '@/components/sections/work/BlenderProjects';
-import VideoEditingProjects from '@/components/sections/work/VideoEditingProjects';
-import GraphicDesignProjects from '@/components/sections/work/GraphicDesignProjects';
-import TitleBar from '@/components/sections/work/TitleBar';
+import ProductDesignProjects from '@/components/sections/work/product-design-projects';
+import ProductDevelopmentProjects from '@/components/sections/work/product-development-projects';
+import BlenderProjects from '@/components/sections/work/blender-projects';
+import VideoEditingProjects from '@/components/sections/work/video-editing-projects';
+import GraphicDesignProjects from '@/components/sections/work/graphic-design-projects';
+import WorkHero from '@/components/sections/hero/work-hero';
+import TitleBar from '@/components/sections/work/title-bar';
+
 function Work() {
   const [activeTab, setActiveTab] = useState<WorkCategories>(WorkCategories.productDesign);
   const [ActiveComponent, setActiveComponent] = useState<React.ReactNode>(

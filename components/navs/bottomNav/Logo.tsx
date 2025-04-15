@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { useBottomNav } from './BottomNavContext';
+import { useBottomNav } from './bottom-nav-context';
 
 const Logo: FC = () => {
   const { isEndOfPage } = useBottomNav();
