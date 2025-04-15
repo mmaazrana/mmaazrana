@@ -1,7 +1,6 @@
 'use client';
 
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { getActiveBreakpoint } from '@/helpers';
+import React, { FC, useRef } from 'react';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import { TestimonialCardProps } from '@/components/cards/testimonialCard';
@@ -12,91 +11,25 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
   ({ testimonial, client, designation, isActive }) => {
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref);
-    const [activeBreakpoint, setActiveBreakpoint] = useState('2xl');
-    const [rectSize, setRectSize] = useState({ width: 0, height: 0 });
-
-    const strokeDashoffset: Record<string, number> = {
-      '2xl': 2025,
-      xl: 2147,
-      lg: 2240,
-      md: 2315,
-      sm: 2410,
-    };
-    const strokeDasharray: Record<string, number> = {
-      '2xl': 104,
-      xl: 94,
-      lg: 84,
-      md: 74,
-      sm: 64,
-    };
-
-    // Update rectangle size dynamically
-    useEffect(() => {
-      const updateSize = () => {
-        if (ref.current) {
-          const { width, height } = ref.current.getBoundingClientRect();
-          setRectSize({ width, height });
-        }
-      };
-
-      const observer = new ResizeObserver(updateSize);
-      if (ref.current) observer.observe(ref.current);
-
-      // Cleanup observer
-      return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-      const handleResize = () => {
-        setActiveBreakpoint(getActiveBreakpoint(window.innerWidth));
-      };
-      handleResize();
-
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    useEffect(() => {}, [activeBreakpoint]);
 
     return (
       <div
         ref={ref}
-        className={`cursor-pointer ${isActive && 'shadow-testimonial hover:shadow-testimonial-hover'} testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group`}
+        className={`cursor-pointer outline ${isInView && isActive && 'outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] !duration-[1s]'} ${isActive ? 'outline-secondary shadow-testimonial-hover' : 'outline-secondary-hover'} outline-[0px] testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 w-full h-full !transition-all !duration-300 ease-linear group`}
       >
-        <svg
-          width="100"
-          height="100"
-          className={
-            'absolute w-full h-full -top-2.5 -left-2.5 overflow-visible !transition-all duration-[100s]'
-          }
-          style={{ willChange: 'stroke-dashoffset, stroke-dasharray' }}
-        >
-          <m.rect
-            x="10"
-            y="10"
-            width={rectSize.width - 20}
-            height={rectSize.height - 20}
-            fill="none"
-            animate={{
-              strokeDashoffset: strokeDashoffset[activeBreakpoint],
-              strokeDasharray: `1400,${isInView && isActive ? strokeDasharray[activeBreakpoint] : 3000}`,
-            }}
-            transition={{
-              duration: !isActive ? 1 : isInView ? 1 : 0,
-              delay: !isActive ? 2.85 : isInView ? 0.85 : 0,
-            }}
-            strokeDashoffset="0"
-            strokeLinecap={'round'}
-            rx={activeBreakpoint === 'md' || activeBreakpoint === 'sm' ? 16 : 24}
-            className={`${isActive ? 'stroke-secondary' : 'stroke-secondary-hover'} stroke-[3px] md:stroke-[3.25px] lg:stroke-[3.5px] xl:stroke-[3.75px] 2xl:stroke-[4px] w-full h-full !transition-colors !duration-[2s]`}
-          />
-        </svg>
         <svg
           fill={'none'}
           className={
             'absolute z-1 overflow-visible h-[45px] md:h-[52px] lg:h-[60px] xl:h-[68px] 2xl:h-[79px] w-[50px] md:w-[58px] lg:w-[67px] xl:w-[76px] 2xl:w-[88px] right-0 translate-x-1/2 bottom-4 2xl:bottom-1.5 -translate-y-1/2'
           }
         >
+          <line
+            x1="52.5%"
+            y1="-20%"
+            x2="52.5%"
+            y2="120%"
+            className="stroke-[3px] md:stroke-[3.25px] lg:stroke-[3.5px] xl:stroke-[3.75px] 2xl:stroke-[4px] stroke-primary-accent"
+          />
           <m.path
             className={`scale-[57%] md:scale-[66%] lg:scale-[76%] xl:scale-[88%] 2xl:scale-100 stroke-[5px] md:stroke-[4.75px] lg:stroke-[4.5px] xl:stroke-[4.25px] 2xl:stroke-[4px] ${isActive ? 'stroke-secondary' : 'stroke-secondary-hover'} !transition-colors !duration-[2s]`}
             fill={'none'}
@@ -106,7 +39,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
             }}
             transition={{
               duration: !isActive ? 0.5 : isInView ? 1 : 0,
-              delay: !isActive ? 3.75 : isInView ? 1.75 : 0,
+              delay: !isActive ? 1.75 : isInView ? 0.75 : 0,
             }}
             strokeLinecap={'round'}
             strokeLinejoin={'round'}
@@ -122,7 +55,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
             }}
             transition={{
               duration: !isActive ? 0.5 : isInView ? 1 : 0,
-              delay: !isActive ? 2.5 : isInView ? 1.5 : 0,
+              delay: !isActive ? 1.5 : isInView ? 0.5 : 0,
             }}
             strokeLinecap={'round'}
             strokeLinejoin={'round'}
@@ -132,12 +65,12 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           />
         </svg>
         <div
-          className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 group-hover:opacity-50 transition-opacity duration-200'}`}
+          className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
           <Typography type={TextTypes['2xl']}>{testimonial}</Typography>
         </div>
         <div
-          className={`flex flex-row w-full gap-2 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 group-hover:opacity-50 transition-opacity duration-200'}`}
+          className={`flex flex-row w-full gap-2 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
           <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
             {client}

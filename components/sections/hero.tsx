@@ -1,11 +1,11 @@
 'use client';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import Typography from '@/components/Typography';
 import Button from '@/components/button';
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants';
 import { ButtonTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import * as m from 'motion/react-m';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, useInView } from 'motion/react';
 import Linkedin from '@/components/icons/linkedin';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
@@ -16,19 +16,71 @@ interface HeroProps {}
 const Hero: FC<HeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0);
   const { resolvedTheme } = useTheme();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, {
+    margin: '-5% 0px -5% 0px',
+    amount: 0.2,
+  });
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
+  const startTimeRef = useRef<number>(Date.now());
+  const remainingTimeRef = useRef<number>(6000); // Initial interval duration
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length);
-    }, 6000);
+    const intervalDuration = 6000;
 
-    return () => clearInterval(intervalId);
-  }, []);
+    const startTimer = () => {
+      startTimeRef.current = Date.now();
+      // Use timeout for the first run after resuming with remaining time
+      timeoutIdRef.current = setTimeout(() => {
+        setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length);
+        remainingTimeRef.current = intervalDuration; // Reset remaining time
+        startTimeRef.current = Date.now(); // Reset start time for interval
+        timeoutIdRef.current = null; // Clear timeout ref
+
+        // Start the regular interval after the first timeout
+        intervalIdRef.current = setInterval(() => {
+          setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length);
+          startTimeRef.current = Date.now(); // Update start time for next interval
+          // No need to update remainingTimeRef here as interval clears/restarts
+        }, intervalDuration);
+      }, remainingTimeRef.current);
+    };
+
+    const clearTimers = () => {
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current);
+        timeoutIdRef.current = null;
+        // Calculate remaining time if a timeout was active
+        const elapsed = Date.now() - startTimeRef.current;
+        remainingTimeRef.current = Math.max(0, remainingTimeRef.current - elapsed);
+      }
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = null;
+        // Calculate remaining time if an interval was active
+        const elapsed = Date.now() - startTimeRef.current;
+        remainingTimeRef.current = Math.max(0, intervalDuration - elapsed);
+      }
+    };
+
+    if (isInView) {
+      startTimer();
+    } else {
+      clearTimers();
+    }
+
+    // Cleanup function: Clear timers and update remaining time when leaving view or unmounting
+    return () => {
+      clearTimers();
+    };
+  }, [isInView]); // Rerun effect when isInView changes
 
   const currentAnimation = resolvedTheme === 'dark' ? LottiePaths[index] : LottieLightPaths[index];
 
   return (
     <div
+      ref={sectionRef}
       className={
         'w-full flex flex-col-reverse md:flex-row justify-center md:items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
       }
@@ -89,7 +141,7 @@ const Hero: FC<HeroProps> = ({}) => {
             'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
           }
         >
-          <LottieWorkerAnimation src={currentAnimation} />
+          <LottieWorkerAnimation src={currentAnimation} isPlaying={isInView} />
         </div>
       </AnimatePresence>
       <span
