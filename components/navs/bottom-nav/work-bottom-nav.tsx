@@ -38,6 +38,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
   const currentIndex = workBottomNavCategories.findIndex(
     category => category.key === selectedTabId
   );
+
   const currentCategory = workBottomNavCategories[currentIndex];
 
   const SelectedComponent = workBottomNavCategories.find(
@@ -117,7 +118,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
   return (
     <div
       ref={scope}
-      id={'bottom-navbar'}
+      id={'work-bottom-navbar'}
       className={`${isInView ? 'translate-y-0' : 'translate-y-32'} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300`}
     >
       <div
@@ -164,7 +165,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
           </div>
           <div
             className={
-              'my-9 px-40 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 hidden lg:flex'
+              'my-9 px-40 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 hidden lg:flex z-[50]'
             }
           >
             {workBottomNavCategories.map((button, index) => (
@@ -187,13 +188,13 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
           </div>
           <div
             className={
-              'my-6 px-8 sm:px-28 md:px-32 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 flex justify-between items-center lg:hidden'
+              'my-7 about:my-6 px-6 xs:px-8 sm:px-28 md:px-32 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 flex justify-between items-center lg:hidden z-[50]'
             }
           >
             <span
-              className={`absolute left-1/2 flex -translate-x-1/2 top-1/2 -translate-y-1/2 h-full self-center w-full z-10 ${isEndOfPage ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}
+              className={`absolute left-1/2 flex -translate-x-1/2 top-1/2 -translate-y-1/2 h-full self-center w-full z-[60] ${isEndOfPage ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}
             >
-              <span className="mx-8 sm:mx-28 md:mx-32 left-0 top-0 h-full w-full work-nav-gradient rounded-full" />
+              <span className="mx-8 sm:mx-28 md:mx-32 left-0 top-0 h-full w-full work-nav-gradient rounded-full blur-sm" />
             </span>
             <m.button
               initial={{ opacity: 0, transform: 'translateY(100px)' }}
@@ -215,10 +216,10 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                   ].key
                 )
               }
-              className="h-12 w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-[20]"
+              className="h-10 sm:h-12 w-10 sm:w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-100"
               aria-label="Previous Tab"
             >
-              <ChevronLeft className="w-6 h-6 stroke-primary" />
+              <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6 stroke-primary" />
             </m.button>
             <div
               className={
@@ -238,7 +239,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                       delay: 0.2,
                     }}
                     className={
-                      'absolute left-0 about:block hidden -translate-x-1/3 px-10 py-4 whitespace-nowrap'
+                      'absolute left-0 about:block hidden -translate-x-1/3 px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap'
                     }
                   >
                     <m.div
@@ -256,7 +257,11 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                       }}
                       key={workBottomNavCategories[currentIndex - 1].key} // Unique key for each tab
                     >
-                      <Typography type={TextTypes.base} color={ColorTypes.primary}>
+                      <Typography
+                        type={TextTypes.base}
+                        color={ColorTypes.primary}
+                        className="opacity-40"
+                      >
                         {workBottomNavCategories[currentIndex - 1].text}
                       </Typography>
                     </m.div>
@@ -266,7 +271,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
               {currentCategory && (
                 <div
                   className={
-                    'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-12'
+                    'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-0 about:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18'
                   }
                 >
                   <AnimatePresence mode="wait">
@@ -281,7 +286,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                         delay: 0.3,
                       }}
                       className={
-                        'self-center align-center origin-center transform-origin-center px-10 py-4 whitespace-nowrap z-10 overflow-hidden'
+                        'self-center align-center origin-center transform-origin-center px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap z-100 overflow-hidden'
                       }
                     >
                       <m.div
@@ -320,7 +325,7 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                       delay: 0.4,
                     }}
                     className={
-                      'absolute about:block hidden right-0 translate-x-1/3 px-10 py-4 whitespace-nowrap'
+                      'absolute about:block hidden right-0 translate-x-1/3 px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap'
                     }
                   >
                     <m.div
@@ -338,7 +343,11 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                       }}
                       key={workBottomNavCategories[currentIndex + 1].key} // Unique key for each tab
                     >
-                      <Typography type={TextTypes.base} color={ColorTypes.primary}>
+                      <Typography
+                        type={TextTypes.base}
+                        color={ColorTypes.primary}
+                        className="opacity-40"
+                      >
                         {workBottomNavCategories[currentIndex + 1].text}
                       </Typography>
                     </m.div>
@@ -365,10 +374,10 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ setActiveTab }) => {
                   ].key
                 )
               }
-              className="h-12 w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-[20]"
+              className="h-10 sm:h-12 w-10 sm:w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-100"
               aria-label="Next Tab"
             >
-              <ChevronRight className="w-6 h-6 stroke-primary" />
+              <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6 stroke-primary" />
             </m.button>
           </div>
         </div>

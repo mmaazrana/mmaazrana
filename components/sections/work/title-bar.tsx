@@ -15,22 +15,22 @@ const TitleBar: React.FC<TitleBarProps> = ({ activeTab }) => {
   const currentCategory = workBottomNavCategories[currentIndex];
 
   return (
-    <div className={'w-full overflow-hidden'}>
+    <div className={'w-full overflow-x-hidden'}>
       <div className={'relative justify-center flex w-full '}>
         <span
           className={
-            'absolute left-1/2 flex -translate-x-1/2 top-1/2 -translate-y-1/2 h-full w-[100vw] self-center work-gradient bg-blue-500 w-full max-w-8xl z-10'
+            'absolute left-1/2 flex -translate-x-1/2 top-1/2 -translate-y-1/2 h-full w-[100vw] self-center work-gradient w-full max-w-8xl z-[5]'
           }
         />
         <span
-          className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary opacity-75`}
+          className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary opacity-75 z-[3]`}
         />
 
         <AnimatePresence mode="wait">
           {currentIndex > 0 && (
             <m.div
               className={
-                'absolute left-0 -translate-x-3/5 px-10 py-8 bg-primary-accent whitespace-nowrap'
+                'hidden about:block absolute left-0 -translate-x-3/5 px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8 bg-primary-accent whitespace-nowrap z-[4]'
               }
             >
               <m.div
@@ -44,7 +44,11 @@ const TitleBar: React.FC<TitleBarProps> = ({ activeTab }) => {
                 }}
                 key={workBottomNavCategories[currentIndex - 1].key} // Unique key for each tab
               >
-                <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+                <Typography
+                  type={TextTypes['4xl']}
+                  weight={WeightTypes.extraBold}
+                  className="opacity-50"
+                >
                   {workBottomNavCategories[currentIndex - 1].text}
                 </Typography>
               </m.div>
@@ -54,14 +58,17 @@ const TitleBar: React.FC<TitleBarProps> = ({ activeTab }) => {
         {currentCategory && (
           <div
             className={
-              'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-12'
+              'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-0 about:px-6 sm:px-7 md:px-8 lg:px-9 xl:px-10'
             }
           >
             <div
               className={
-                'self-center align-center origin-center transform-origin-center px-10 py-8 bg-primary-accent whitespace-nowrap z-10 overflow-hidden'
+                'relative self-center align-center origin-center transform-origin-center px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8 whitespace-nowrap z-10 overflow-hidden'
               }
             >
+              <span
+                className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 w-full bg-primary-accent -z-1`}
+              />
               <AnimatePresence mode="wait">
                 <m.div
                   initial={{ opacity: 0, width: 0, translateX: -100 }} // Initial state
@@ -86,7 +93,7 @@ const TitleBar: React.FC<TitleBarProps> = ({ activeTab }) => {
           {currentIndex < workBottomNavCategories.length - 1 && (
             <m.div
               className={
-                'absolute right-0 translate-x-3/5 px-10 py-8 bg-primary-accent whitespace-nowrap'
+                'hidden about:block absolute right-0 translate-x-3/5 px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8 bg-primary-accent whitespace-nowrap z-[4]'
               }
             >
               <m.div
@@ -100,7 +107,11 @@ const TitleBar: React.FC<TitleBarProps> = ({ activeTab }) => {
                 }}
                 key={workBottomNavCategories[currentIndex + 1].key} // Unique key for each tab
               >
-                <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+                <Typography
+                  type={TextTypes['4xl']}
+                  weight={WeightTypes.extraBold}
+                  className="opacity-50"
+                >
                   {workBottomNavCategories[currentIndex + 1].text}
                 </Typography>
               </m.div>

@@ -83,3 +83,9 @@ export interface ClientProductT {
   name: string;
   services: string[];
 }
+
+export interface GraphicDesignProjectT {
+  title: string;
+  description: string;
+  image: StaticImageData[];
+}

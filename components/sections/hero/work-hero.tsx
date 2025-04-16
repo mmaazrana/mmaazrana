@@ -58,9 +58,9 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
 
   return (
     <>
-      <div className={'flex flex-row justify-center items-start w-full h-64'}>
+      <div className={'flex flex-row justify-center items-start w-full h-[40vw] sm:h-64'}>
         {firstHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} />
+          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading="eager" />
         ))}
       </div>
       <div className={'flex flex-col justify-center items-center w-full gap-6'}>
@@ -80,9 +80,9 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
           UI/UX design, 3D design and animation, video editing, and logo creation.
         </Typography>
       </div>
-      <div className={'flex flex-row justify-center items-start w-full h-64 ml-4'}>
+      <div className={'flex flex-row justify-center items-start w-full h-[40vw] sm:h-64 ml-4'}>
         {secondHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} />
+          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading="eager" />
         ))}
       </div>
     </>
