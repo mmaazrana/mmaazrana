@@ -89,3 +89,9 @@ export interface GraphicDesignProjectT {
   description: string;
   image: StaticImageData[];
 }
+
+export interface BlenderProjectT {
+  title: string;
+  description: string;
+  image: StaticImageData[];
+}
