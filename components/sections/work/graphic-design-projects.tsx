@@ -169,7 +169,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                 </div>
               )}
               <div
-                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] left-0 right-0 w-full h-fit transition-opacity duration-300 ${
+                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
                   isMobile
                     ? isInView
                       ? 'opacity-100'
@@ -183,7 +183,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                 </Typography>
               </div>
               <div
-                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-end bottom-0 translate-y-[100%] right-0 w-full h-fit transition-opacity duration-300 ${
+                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-end bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
                   isMobile
                     ? isInView
                       ? 'opacity-100'
