@@ -113,7 +113,9 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                     <Image
                       src={project.image[currentImageIndex]}
                       alt={project.title}
-                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105 select-none"
+                      className={`w-full h-auto transition-transform duration-300  select-none 
+                        ${isMobile && isInView ? 'scale-105' : 'group-hover:scale-105'}
+                        `}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1535px) 33vw, 400px"
                       loading="lazy"
                       placeholder="blur"
@@ -169,7 +171,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                 </div>
               )}
               <div
-                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
+                className={`py-3 sm:py-4 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
                   isMobile
                     ? isInView
                       ? 'opacity-100'
@@ -183,7 +185,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                 </Typography>
               </div>
               <div
-                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-end bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
+                className={`py-4 sm:py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
                   isMobile
                     ? isInView
                       ? 'opacity-100'
@@ -192,7 +194,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                 }`}
               >
                 <span className="absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0" />
-                <Typography type={TextTypes['sm']} className="mx-6 text-center">
+                <Typography type={TextTypes['base']} className="mx-6 text-center">
                   {project.description}
                 </Typography>
               </div>
