@@ -4,11 +4,14 @@ import Image from 'next/image';
 import { graphicDesignProjects } from '@/helpers/constants';
 import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 
 interface GraphicDesignProjectsProps {}
 
 const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <div className="w-full">
       <div className="columns-1 sm:columns-2 lg:columns-3 2xl:columns-4 gap-0.5 sm:gap-1 lg:gap-1.5 2xl:gap-2">
@@ -18,6 +21,12 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
           const touchEndX = useRef<number>(0);
           const isDragging = useRef<boolean>(false);
           const direction = useRef<'left' | 'right'>('left');
+          const ref = useRef<HTMLDivElement>(null);
+          const isInView = useInView(ref, {
+            once: false,
+            margin: '15% 0% 0% 0%',
+            amount: 1,
+          });
 
           const handleStart = (clientX: number) => {
             touchStartX.current = clientX;
@@ -61,10 +70,11 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
           return (
             <div
               key={index}
-              className="break-inside-avoid mb-0.5 sm:mb-1 lg:mb-1.5 group transition-shadow duration-300 relative"
+              ref={ref}
+              className="break-inside-avoid mb-1 lg:mb-1.5 group transition-shadow duration-300 relative"
             >
               <div
-                className={`relative w-full overflow-hidden bg-white rounded-xl select-none touch-none ${project.image.length > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
+                className={`relative w-full overflow-hidden bg-white rounded-xl select-none ${project.image.length > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
                 onTouchStart={e => handleStart(e.touches[0].clientX)}
                 onTouchMove={e => handleMove(e.touches[0].clientX)}
                 onTouchEnd={handleEnd}
@@ -103,7 +113,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                     <Image
                       src={project.image[currentImageIndex]}
                       alt={project.title}
-                      className="w-full h-auto pointer-events-none transition-transform duration-300 group-hover:scale-105 select-none touch-none"
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-105 select-none"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1535px) 33vw, 400px"
                       loading="lazy"
                       placeholder="blur"
@@ -140,7 +150,7 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                           direction.current = imgIndex > currentImageIndex ? 'left' : 'right';
                           setCurrentImageIndex(imgIndex);
                         }}
-                        className={`relative w-full h-16 flex-grow rounded overflow-hidden transition-opacity ${
+                        className={`relative w-full h-16 flex-grow rounded-md overflow-hidden transition-opacity ${
                           currentImageIndex === imgIndex ? '' : 'opacity-50 hover:opacity-100'
                         }`}
                       >
@@ -158,13 +168,29 @@ const GraphicDesignProjects: React.FC<GraphicDesignProjectsProps> = () => {
                   </div>
                 </div>
               )}
-              <div className="py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] left-0 right-0 w-full h-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div
+                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] left-0 right-0 w-full h-fit transition-opacity duration-300 ${
+                  isMobile
+                    ? isInView
+                      ? 'opacity-100'
+                      : 'opacity-0'
+                    : 'opacity-0 group-hover:opacity-100'
+                }`}
+              >
                 <span className="absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0" />
                 <Typography type={TextTypes['xl']} weight={WeightTypes.bold}>
                   {project.title}
                 </Typography>
               </div>
-              <div className="py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-end bottom-0 translate-y-[100%] right-0 w-full h-fit opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div
+                className={`py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-end bottom-0 translate-y-[100%] right-0 w-full h-fit transition-opacity duration-300 ${
+                  isMobile
+                    ? isInView
+                      ? 'opacity-100'
+                      : 'opacity-0'
+                    : 'opacity-0 group-hover:opacity-100'
+                }`}
+              >
                 <span className="absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0" />
                 <Typography type={TextTypes['sm']} className="mx-6 text-center">
                   {project.description}
