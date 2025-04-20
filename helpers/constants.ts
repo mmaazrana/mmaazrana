@@ -154,11 +154,11 @@ export const LottiePaths: string[] = [
 ];
 
 export const LottieLightPaths: string[] = [
-  '/lotties/product-light.lottie',
-  '/lotties/web-light.lottie',
-  '/lotties/mobile-light.lottie',
-  '/lotties/blender-light.lottie',
-  '/lotties/video-light.lottie',
+  'https://lottie.host/fe958409-38ce-43c1-b4a9-197e7ee533db/PNOlYlGU80.lottie',
+  'https://lottie.host/fbd1b396-5276-4c9e-a71c-26179cbd8fbf/SexOhmG8im.lottie',
+  'https://lottie.host/61413701-6be9-4188-8e80-8e9321718cac/wXMYKawPQB.lottie',
+  'https://lottie.host/30c24204-0e61-4a80-abd0-7e30e13646d3/trQIO2xNpJ.lottie',
+  'https://lottie.host/62043cba-21e1-408c-bc02-31cb26530c95/PiUj9mIaWF.lottie',
 ];
 
 export const HeroDescriptions: string[] = [
