@@ -10,6 +10,7 @@ import {
   ProjectT,
   ServiceT,
   TestimonialT,
+  VideoProjectT,
   WorkExperienceT,
 } from '@/helpers/types';
 import {
@@ -134,6 +135,7 @@ import {
   teqnirLogoProject,
 } from './graphics-projects';
 import { carProject, chairProject, deskProject, discordProject, dumbbelsProject, earbudsProject, elevationProject, flutterProject, headphoneProject, homeProject, interiorProject, phoneProject, roomProject, youtubeProject } from './blender-projects';
+import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTutorProject4, beaconTutorProject5, budsProject1, budsProject2, budsProject3, carsDebateProject, creativerseProject, fireStarterProject, markazProject, nfcProject, nustacProject, phoneVideoProject, plutoProject } from './video-projects';
 
 export const HeroHeadings: string[] = [
   'Product Designer',
@@ -453,6 +455,25 @@ export const productDevelopmentProjects: ProjectAnalysisT[] = [
   beaconTutors,
   beaconTutorsAdmin,
   inventrios,
+];
+
+export const videoProjects: VideoProjectT[] = [
+  beaconTutorProject1,
+  beaconTutorProject2,
+  beaconTutorProject3,
+  beaconTutorProject4,
+  beaconTutorProject5,
+  budsProject1,
+  budsProject2,
+  budsProject3,
+  carsDebateProject,
+  creativerseProject,
+  fireStarterProject,
+  markazProject,
+  nfcProject,
+  nustacProject,
+  phoneVideoProject,
+  plutoProject,
 ];
 
 export const graphicDesignProjects: GraphicDesignProjectT[] = [

@@ -95,3 +95,10 @@ export interface BlenderProjectT {
   description: string;
   image: StaticImageData[];
 }
+
+export interface  VideoProjectT {
+  title: string;
+  description: string;
+  fileName: string;
+  thumbnail: StaticImageData;
+}
