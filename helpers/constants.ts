@@ -7,7 +7,6 @@ import {
   FooterButtonT,
   GraphicDesignProjectT,
   NavButtonT,
-  ProjectT,
   ServiceT,
   TestimonialT,
   VideoProjectT,
@@ -49,12 +48,6 @@ import BeaconTutors from '@/components/icons/beaconTutors';
 import Lyfiti from '@/components/icons/lyfiti';
 import FiveOneFivePools from '@/components/icons/pools515';
 import MenuHub from '@/components/icons/menuHub';
-import deepReelProject from '../public/images/projects/deepreel.webp';
-import nutrigramProject from '../public/images/projects/nutrigram-main.webp';
-import nutrigramAltProject from '../public/images/projects/nutrigram-alt.webp';
-import markdownProject from '../public/images/projects/markdown-main.webp';
-import markdownAltProject from '../public/images/projects/markdown-alt.webp';
-import athletonProject from '../public/images/projects/athleton.webp';
 import {
   alfabolt,
   athletonPlus,

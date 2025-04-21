@@ -67,7 +67,7 @@ export default function Home() {
         >
           <div className={'flex justify-between items-center w-full'}>
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
-              My Work
+              Featured Work
             </Typography>
             <Link href={'/work'} aria-label="Explore Work">
               <Button
@@ -86,18 +86,10 @@ export default function Home() {
             'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={'flex justify-between items-center w-full'}>
+          <div className={'flex justify-start items-center w-full'}>
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
               Services
             </Typography>
-            <Link href={'/services'} aria-label="All Services">
-              <Button
-                type={ButtonTypes.secondary}
-                text={'All Services'}
-                className={'!gap-1'}
-                rightIcon={<ChevronRight />}
-              />
-            </Link>
           </div>
           <Services />
         </section>
@@ -128,18 +120,10 @@ export default function Home() {
             'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
           }
         >
-          <div className={'flex justify-between items-center w-full'}>
+          <div className={'flex justify-start items-center w-full'}>
             <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
-              About Me
+              Profile
             </Typography>
-            <Link href={'/about'} aria-label="Read More">
-              <Button
-                type={ButtonTypes.secondary}
-                text={'Read More'}
-                className={'!gap-1'}
-                rightIcon={<ChevronRight />}
-              />
-            </Link>
           </div>
           <AboutSection />
         </section>
