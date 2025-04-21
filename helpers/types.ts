@@ -35,7 +35,7 @@ export interface ProjectT {
   title: string;
   description: string;
   image: StaticImageData;
-  altImage?: StaticImageData;
+  altImage?: StaticImageData[];
 }
 
 export interface ServiceT {

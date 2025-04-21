@@ -252,31 +252,11 @@ export const footerButtons: FooterButtonT[][] = [
   ],
 ];
 
-export const projects: ProjectT[] = [
-  {
-    title: 'DeepReel AI Videos',
-    description:
-      'DeepReel’s AI video editor generates avatar script, visuals, music &amp; captions automatically in minutes. No video editing skills required!',
-    image: deepReelProject,
-  },
-  {
-    title: 'Nutrigram',
-    description: 'Short description about the app mentioned above',
-    image: nutrigramProject,
-    altImage: nutrigramAltProject,
-  },
-  {
-    title: 'Markdown Editor',
-    description: 'Short description about the app mentioned above',
-    image: markdownProject,
-    altImage: markdownAltProject,
-  },
-  {
-    title: 'Elbrezal Honey',
-    description:
-      'the El Brezal brand represents the most natural and strongest beekeeping products—products that are 100% natural and pure.',
-    image: athletonProject,
-  },
+export const featuredProjects: ProjectAnalysisT[] = [
+  alfabolt,
+  humanizarTexto,
+  aylaAI,
+  elBrezal  
 ];
 
 export const services: ServiceT[] = [
@@ -342,40 +322,53 @@ export const breakpoints = {
 export const testimonials: TestimonialT[] = [
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios1',
+      'Alfabolt\'s interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team\'s productivity by 25%.',
+    client: 'Ali Farooq',
+    designation: 'CEO, Alfabolt',
   },
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios2',
+      'Maaz brought our El Brezal brand to life with designs that perfectly capture the natural essence of our honey products. The website he delivered exceeded our expectations with its beautiful imagery and smooth shopping experience.',
+    client: 'Antonio Vega',
+    designation: 'Owner, El Brezal Honey',
+  },
+    {
+    testimonial:
+      'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
+    client: 'Peter',
+    designation: 'Founder, Rivanna',
   },
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios3',
+      'Working with Maaz on our TSS graphics package was incredibly smooth. He took our educational content and transformed it with visuals that are engaging, clear, and perfectly aligned with our brand identity.',
+    client: 'Rameen',
+    designation: 'Country Manager, Total School Solutions',
   },
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios4',
+      'The logos and branding materials Maaz designed for MenuHub perfectly communicate our value proposition. His ability to translate our vision into visual elements that resonate with our target audience is remarkable.',
+    client: 'David Chen',
+    designation: 'Founder, MenuHub',
   },
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios5',
+      'The Nutrigram app Maaz designed has revolutionized how our clients track their nutrition. The interface is clean, engaging, and incredibly user-friendly. Our user retention has increased by 40% since launch!',
+    client: 'Hassaan Ali',
+    designation: 'Founder, Nutrigram',
   },
   {
     testimonial:
-      'Maaz is a creative powerhouse – his graphic design, UI skills, and 3D designs elevate every project. A go-to video editor and programmer, clients love the seamless blend of innovation and functionality he brings.',
-    client: 'John Doe',
-    designation: 'CEO Inventrios6',
+      'Working with Maaz on the Markdown Editor was exceptional. His attention to detail and understanding of developer workflows resulted in a tool our entire engineering team now uses daily. The keyboard shortcuts and real-time preview are game-changers.',
+    client: 'Usama Ejaz',
+    designation: 'Co-Founder, Nustac Technologies',
   },
+  {
+    testimonial:
+      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
+    client: 'Imran Haider',
+    designation: 'Founder, Beacon Tutors Pakistan',
+  },
+
 ];
 
 export const aboutSections = [

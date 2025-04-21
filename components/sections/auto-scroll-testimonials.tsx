@@ -1,6 +1,9 @@
 'use client';
 
 import React, { FC } from 'react';
+import { EmblaOptionsType } from 'embla-carousel';
+import useEmblaCarousel from 'embla-carousel-react';
+import AutoScroll from 'embla-carousel-auto-scroll';
 import TestimonialCard from '@/components/cards/testimonial-card';
 import { TestimonialT } from '@/helpers/types';
 
@@ -9,12 +12,20 @@ interface AutoScrollTestimonialsProps {
 }
 
 const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({ testimonials }) => {
+  const OPTIONS: EmblaOptionsType = { loop: true };
+  const [emblaRef] = useEmblaCarousel(OPTIONS, [
+    AutoScroll({
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+      speed: 1,
+    }),
+  ]);
   return (
-    <div className=" w-full">
-      <div className="">
-        <div className=" py-4">
+    <div className="embla w-full">
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container py-4">
           {testimonials.map((testimonial, index) => (
-            <div className="" key={index}>
+            <div className="embla__slide" key={index}>
               <TestimonialCard
                 variant="flat"
                 testimonial={testimonial.testimonial}

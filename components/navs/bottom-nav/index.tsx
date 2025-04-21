@@ -64,7 +64,7 @@ const BottomNavContent: FC = () => {
   const SocialLinks = useMemo(
     () => (
       <div
-        className={`${isEndOfPage ? 'w-full sm:w-fit' : 'w-0'} overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
+        className={`${isEndOfPage ? 'w-full' : 'w-0'} -translate-x-4 overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
       >
         {[
           { icon: <Linkedin />, text: 'Linkedin', href: 'https://www.linkedin.com/in/mmaazrana/' },
@@ -157,26 +157,29 @@ const BottomNavContent: FC = () => {
           className={`${isEndOfPage ? 'w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[280px]' : 'max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]'} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
         >
           <div className={'flex flex-row justify-between items-center gap-6 w-full'}>
-            <m.div
-              initial={{ opacity: 0, transform: 'translateY(100px)' }}
-              animate={{
-                opacity: isEndOfPage ? 1 : 0,
-                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-              }}
-              transition={{
-                duration: 0.25,
-                delay: isEndOfPage ? 0.35 : 0.25,
-              }}
-              className={'transition-none flex sm:w-full sm:min-w-full'}
-            >
-              <Typography
-                type={TextTypes['3xl']}
-                weight={WeightTypes.bold}
-                className={`w-full overflow-hidden ${isEndOfPage ? 'inline-block' : 'hidden'}`}
+            {isEndOfPage && (
+              <m.div
+                layout
+                initial={{ opacity: 0, transform: 'translateY(100px)' }}
+                animate={{
+                  opacity: isEndOfPage ? 1 : 0,
+                  transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
+                }}
+                transition={{
+                  duration: 0.3,
+                  delay: isEndOfPage ? 0.4 : 0.25,
+                }}
+                className={'transition-none flex sm:w-full sm:min-w-full'}
               >
-                Ready to create something awesome?
-              </Typography>
-            </m.div>
+                <Typography
+                  type={TextTypes['3xl']}
+                  weight={WeightTypes.bold}
+                  className={`w-full overflow-hidden`}
+                >
+                  Ready to create something awesome?
+                </Typography>
+              </m.div>
+            )}
             <m.div
               initial={{ opacity: 0, transform: 'translateX(50px)' }}
               animate={{

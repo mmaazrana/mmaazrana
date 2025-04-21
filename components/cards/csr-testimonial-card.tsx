@@ -24,11 +24,11 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           }
         >
           <line
-            x1="52.5%"
+            x1="52%"
             y1="-20%"
-            x2="52.5%"
+            x2="52%"
             y2="120%"
-            className="stroke-[3px] md:stroke-[3.25px] lg:stroke-[3.5px] xl:stroke-[3.75px] 2xl:stroke-[4px] stroke-primary-accent"
+            className={`stroke-[3.25px] md:stroke-[3.5px] lg:stroke-[3.75px] xl:stroke-[4px] 2xl:stroke-[4.25px] ${isActive ? 'stroke-primary-accent' : 'stroke-transparent'} transition-colors duration-300`}
           />
           <m.path
             className={`scale-[57%] md:scale-[66%] lg:scale-[76%] xl:scale-[88%] 2xl:scale-100 stroke-[5px] md:stroke-[4.75px] lg:stroke-[4.5px] xl:stroke-[4.25px] 2xl:stroke-[4px] ${isActive ? 'stroke-secondary' : 'stroke-secondary-hover'} !transition-colors !duration-[2s]`}

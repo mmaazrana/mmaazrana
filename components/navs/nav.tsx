@@ -6,6 +6,7 @@ import Link from 'next/link';
 import MaazRanaLogo from '../icons/maazRanaLogo';
 import MenuButton from '@/components/button/menu-button';
 import Button from '@/components/button';
+import { ButtonTypes } from '@/helpers/enums';
 
 interface NavProps {}
 
@@ -40,7 +41,10 @@ const Nav: FC<NavProps> = () => {
           >
             <ul className="items-end justify-end gap-3 xl:gap-3 md:flex md:gap-2">
               {navButtons.map((button, index) => (
-                <li key={index}>
+                <li
+                  key={index}
+                  className={`${button.type === ButtonTypes.primary && 'xs:ml-1 sm:ml-2 md:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6'}`}
+                >
                   <Link href={button.href} aria-label={button.text}>
                     <Button type={button.type} text={button.text} />
                   </Link>
