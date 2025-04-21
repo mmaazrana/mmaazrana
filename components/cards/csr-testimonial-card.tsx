@@ -15,7 +15,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
     return (
       <div
         ref={ref}
-        className={`cursor-pointer outline ${isInView && isActive && 'outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] !duration-[1s]'} ${isActive ? 'outline-secondary shadow-testimonial-hover' : 'outline-secondary-hover'} outline-[0px] testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 w-full h-full !transition-all !duration-300 ease-linear group`}
+        className={`cursor-pointer outline ${isInView && isActive && 'outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] !duration-[1s]'} ${isActive ? 'outline-secondary shadow-testimonial-hover' : 'outline-secondary-hover'} outline-[0px] testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 h-full !transition-all !duration-300 ease-linear group`}
       >
         <svg
           fill={'none'}

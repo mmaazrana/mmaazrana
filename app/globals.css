@@ -193,6 +193,7 @@
   --breakpoint-xs: 365px;
   --breakpoint-about: 445px;
   --breakpoint-service: 500px;
+  --breakpoint-nav: 815px;
   --animation-fade-in: fadeIn 0.5s ease-out;
   --animation-fade-out: fadeOut 0.5s ease-out;
   --drop-shadow-about: var(--about-shadow);
