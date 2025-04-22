@@ -7,10 +7,12 @@ import ProductDevelopmentProjects from '@/components/sections/work/product-devel
 import BlenderProjects from '@/components/sections/work/blender-projects';
 import VideoEditingProjects from '@/components/sections/work/video-editing-projects';
 import GraphicDesignProjects from '@/components/sections/work/graphic-design-projects';
+import { workBottomNavCategories } from '@/helpers/constants';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface WorkContextType {
-  activeTab: WorkCategories;
-  setActiveTab: React.Dispatch<React.SetStateAction<WorkCategories>>;
+  activeTab: string;
+  handleTabChange: (id: string) => void;
   ActiveComponent: React.ReactNode;
 }
 
@@ -29,10 +31,17 @@ interface WorkProviderProps {
 }
 
 export function WorkProvider({ children }: WorkProviderProps) {
-  const [activeTab, setActiveTab] = useState<WorkCategories>(WorkCategories.productDesign);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParam = useSearchParams();
+  const activeTab = searchParam.get('tab') || workBottomNavCategories[0].key;
   const [ActiveComponent, setActiveComponent] = useState<React.ReactNode>(
     <ProductDesignProjects />
   );
+
+  const handleTabChange = (id: string) => {
+    router.push(`${pathname}?tab=${id}`, { scroll: false });
+  };
 
   useEffect(() => {
     switch (activeTab) {
@@ -58,7 +67,7 @@ export function WorkProvider({ children }: WorkProviderProps) {
   }, [activeTab]);
 
   return (
-    <WorkContext.Provider value={{ activeTab, setActiveTab, ActiveComponent }}>
+    <WorkContext.Provider value={{ activeTab, handleTabChange, ActiveComponent }}>
       {children}
     </WorkContext.Provider>
   );

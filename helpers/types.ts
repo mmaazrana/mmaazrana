@@ -1,4 +1,4 @@
-import { ButtonTypes, Sections, WorkCategories } from '@/helpers/enums';
+import { ButtonTypes, ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
 import React from 'react';
 import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
@@ -9,6 +9,16 @@ export interface NavButtonT {
   type: ButtonTypes;
 }
 
+export interface IconComponentT {
+  Icon: IconType;
+  props: {
+    fill: string;
+    [key: string]: string;
+  };
+}
+
+export type IconComponentsT = Record<string, IconComponentT>;
+
 export interface BottomNavButtonT {
   text: string;
   href: string;
@@ -17,7 +27,12 @@ export interface BottomNavButtonT {
 
 export interface BottomNavCategoryT {
   text: string;
-  key: WorkCategories;
+  key: WorkCategories | ProjectCategories;
+}
+
+export interface BottomNavProjectCategoryT {
+  text: string;
+  key: ProjectCategories;
 }
 
 export interface FooterButtonT {

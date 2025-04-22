@@ -1,4 +1,4 @@
-import { ButtonTypes, Sections, WorkCategories } from '@/helpers/enums';
+import { ButtonTypes, ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
 import {
   BlenderProjectT,
   BottomNavButtonT,
@@ -6,6 +6,7 @@ import {
   ClientDataT,
   FooterButtonT,
   GraphicDesignProjectT,
+  IconComponentsT,
   NavButtonT,
   ServiceT,
   TestimonialT,
@@ -130,6 +131,7 @@ import {
 import { carProject, chairProject, deskProject, discordProject, dumbbelsProject, earbudsProject, elevationProject, flutterProject, headphoneProject, homeProject, interiorProject, phoneProject, roomProject, youtubeProject } from './blender-projects';
 import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTutorProject4, beaconTutorProject5, budsProject1, budsProject2, budsProject3, carsDebateProject, creativerseProject, fireStarterProject, markazProject, nfcProject, nustacProject, phoneVideoProject, plutoProject } from './video-projects';
 
+
 export const HeroHeadings: string[] = [
   'Product Designer',
   'Web Developer',
@@ -218,6 +220,22 @@ export const workBottomNavCategories: BottomNavCategoryT[] = [
   {
     text: '3D Artworks',
     key: WorkCategories.blender,
+  },
+];
+
+export const projectCategories: BottomNavCategoryT[] = [
+  { text: 'Overview', key: ProjectCategories.overview },
+  {
+    text: 'Key Features',
+    key: ProjectCategories.keyFeatures,
+  },
+  {
+    text: 'Tech Stack',
+    key: ProjectCategories.techStack,
+  },
+  {
+    text: 'Challenges & Solutions',
+    key: ProjectCategories.challengesAndSolutions,
   },
 ];
 
@@ -532,7 +550,7 @@ export const blenderProjects: BlenderProjectT[] = [
   dumbbelsProject,
 ];
 
-export const designIconComponents = {
+export const designIconComponents: IconComponentsT = {
   figma: { Icon: SiFigma, props: { fill: '#F24E1E' } },
   illustrator: { Icon: SiAdobeillustrator, props: { fill: '#FF9A00' } },
   photoshop: { Icon: SiAdobephotoshop, props: { fill: '#31A8FF' } },
@@ -542,7 +560,7 @@ export const designIconComponents = {
   blender: { Icon: SiBlender, props: { fill: '#E87D0D' } },
 };
 
-export const devIconComponents = {
+export const devIconComponents: IconComponentsT = {
   next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
   react: { Icon: SiReact, props: { fill: '#61DAFB' } },
   flutter: { Icon: SiFlutter, props: { fill: '#02569B' } },
@@ -556,7 +574,7 @@ export const devIconComponents = {
   framer: { Icon: SiFramer, props: { fill: '#0055FF' } },
 };
 
-export const managementIconComponents = {
+export const managementIconComponents: IconComponentsT  = {
   slack: { Icon: SiSlack, props: { fill: '#4A154B' } },
   notion: { Icon: SiNotion, props: { fill: 'var(--primary)' } },
   trello: { Icon: SiTrello, props: { fill: '#0052CC' } },
@@ -565,7 +583,7 @@ export const managementIconComponents = {
   github: { Icon: SiGithub, props: { fill: 'var(--primary)' } },
 };
 
-export const iconComponents = {
+export const iconComponents: IconComponentsT = {
   ...designIconComponents,
   ...devIconComponents,
   ...managementIconComponents,

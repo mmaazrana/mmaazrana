@@ -1,21 +1,15 @@
 'use client';
 
-import React, { FC, useCallback, useEffect, useMemo } from 'react';
+import React, { FC, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import { stagger, useAnimate } from 'motion/react';
-import * as m from 'motion/react-m';
 import Typography from '@/components/Typography';
 import { bottomNavButtons, footerButtons } from '@/helpers/constants';
-import Linkedin from '@/components/icons/linkedin';
-import Behance from '@/components/icons/behance';
-import Github from '@/components/icons/github';
-import Dribbble from '@/components/icons/dribbble';
-import ContactButton from './contact-button';
-import SocialLink from './social-link';
 import FooterSection from './footer-section';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
+import { ColorTypes, TextTypes } from '@/helpers/enums';
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
-import Logo from '@/components/navs/bottom-nav/logo';
+import FooterCTA from './footer-cta';
+import LogoSection from './logo-section';
 
 // Types
 interface BottomNavProps {}
@@ -60,31 +54,6 @@ const BottomNavContent: FC = () => {
     handleAnimations();
   }, [handleAnimations]);
 
-  // Memoized social links component
-  const SocialLinks = useMemo(
-    () => (
-      <div
-        className={`${isEndOfPage ? 'w-full' : 'w-0'} -translate-x-4 overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
-      >
-        {[
-          { icon: <Linkedin />, text: 'Linkedin', href: 'https://www.linkedin.com/in/mmaazrana/' },
-          { icon: <Behance />, text: 'Behance', href: 'https://www.behance.net/maazrana3' },
-          { icon: <Github />, text: 'Github', href: 'https://github.com/mmaazrana' },
-          { icon: <Dribbble />, text: 'Dribbble', href: 'https://dribbble.com/mmaazrana' },
-        ].map((link, index) => (
-          <SocialLink
-            key={index}
-            icon={link.icon}
-            text={link.text}
-            href={link.href}
-            index={index}
-          />
-        ))}
-      </div>
-    ),
-    [isEndOfPage]
-  );
-
   return (
     <div
       ref={scope}
@@ -100,39 +69,8 @@ const BottomNavContent: FC = () => {
         <div
           className={'flex flex-col lg:flex-row gap-1 sm:gap-2 lg:gap-10 xl:gap-24 w-full h-full'}
         >
-          <div
-            className={
-              'flex flex-col items-start justify-start w-full lg:w-fit lg:max-w-fit overflow-hidden min-h-fit h-fit gap-1'
-            }
-          >
-            <Logo />
-            <m.div
-              initial={{ opacity: 0, transform: 'translateY(100px)' }}
-              animate={{
-                opacity: isEndOfPage ? 1 : 0,
-                transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-              }}
-              transition={{
-                duration: 0.25,
-                delay: isEndOfPage ? 0.25 : 0,
-              }}
-              className={'transition-none flex w-full min-w-full'}
-            >
-              <Typography
-                type={TextTypes.lg}
-                className={`${isEndOfPage ? 'inline-block' : 'hidden'} opacity-50 shrink`}
-              >
-                Product Designer - Web Developer - Mobile App Developer - Animator - 3D Artist
-              </Typography>
-            </m.div>
-          </div>
-          <div
-            className={`${isEndOfPage ? 'flex' : 'hidden'} w-full flex-row flex-auto gap-8 justify-between`}
-          >
-            {footerButtons.map((section, index) => (
-              <FooterSection key={index} section={section} />
-            ))}
-          </div>
+          <LogoSection isEndOfPage={isEndOfPage} />
+          <FooterSection footerButtons={footerButtons} isEndOfPage={isEndOfPage} />
           <div
             className={
               'transition-colors my-8 px-8 min-w-[80vw] w-full max-w-[450px] sm:min-w-[404px] md:min-w-[458px] lg:min-w-[537px] xl:min-w-[625px] left-1/2 -translate-x-1/2 bottom-0 absolute flex justify-between gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'
@@ -153,51 +91,7 @@ const BottomNavContent: FC = () => {
             ))}
           </div>
         </div>
-        <div
-          className={`${isEndOfPage ? 'w-full sm:max-w-[202px] md:max-w-[217px] lg:max-w-[232px] xl:max-w-[280px]' : 'max-w-[40px] sm:max-w-[34px] md:max-w-[40px] lg:max-w-[46px] xl:max-w-[52px]'} w-full grow shrink relative delay-100 duration-500 flex flex-col justify-end items-center sm:items-end flex-wrap gap-6`}
-        >
-          <div className={'flex flex-row justify-between items-center gap-6 w-full'}>
-            {isEndOfPage && (
-              <m.div
-                layout
-                initial={{ opacity: 0, transform: 'translateY(100px)' }}
-                animate={{
-                  opacity: isEndOfPage ? 1 : 0,
-                  transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-                }}
-                transition={{
-                  duration: 0.3,
-                  delay: isEndOfPage ? 0.4 : 0.25,
-                }}
-                className={'transition-none flex sm:w-full sm:min-w-full'}
-              >
-                <Typography
-                  type={TextTypes['3xl']}
-                  weight={WeightTypes.bold}
-                  className={`w-full overflow-hidden`}
-                >
-                  Ready to create something awesome?
-                </Typography>
-              </m.div>
-            )}
-            <m.div
-              initial={{ opacity: 0, transform: 'translateX(50px)' }}
-              animate={{
-                opacity: isEndOfPage ? 1 : 0,
-                transform: `translateX(${isEndOfPage ? 0 : 50}px)`,
-              }}
-              transition={{
-                duration: 0.25,
-                delay: isEndOfPage ? 0.35 : 0.25,
-              }}
-              className={'transition-none'}
-            >
-              <ContactButton isMobile />
-            </m.div>
-          </div>
-          {SocialLinks}
-          <ContactButton />
-        </div>
+        <FooterCTA isEndOfPage={isEndOfPage} />
       </div>
       <span
         className={`w-[25vw] h-[25vw] left-0 bottom-0 -translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 ${isEndOfPage ? 'opacity-50' : 'opacity-0'} transition-all duration-300`}

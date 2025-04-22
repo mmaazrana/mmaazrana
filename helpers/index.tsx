@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MotionValue, useTransform } from 'motion/react';
 import { breakpoints } from '@/helpers/constants';
-
 export const usePreferredColorScheme = () => {
   const [preferredScheme, setPreferredScheme] = useState<'dark' | 'light'>('light');
 

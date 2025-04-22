@@ -1,8 +1,9 @@
 import React from 'react';
 import Nav from '@/components/navs/nav';
 import WorkHero from '@/components/sections/hero/work-hero';
-import { WorkProvider } from '@/app/context/WorkProvider';
+import { WorkProvider } from '@/app/context/work-provider';
 import MyWorkSection from '@/components/sections/work/my-work-section';
+import WorkBottomNav from '@/components/navs/bottom-nav/work-bottom-nav';
 
 export default function Work() {
   return (
@@ -18,6 +19,7 @@ export default function Work() {
             <WorkHero />
           </section>
           <MyWorkSection />
+          <WorkBottomNav />
         </main>
       </div>
     </WorkProvider>

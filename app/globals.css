@@ -326,6 +326,16 @@ body {
     drop-shadow(0 -4px 0 var(--secondary)) drop-shadow(0 4px 0 var(--secondary));
 }
 
+.secondary-text-stroke {
+  filter: drop-shadow(-1px 0 0 var(--secondary)) drop-shadow(1px 0 0 var(--secondary))
+    drop-shadow(0 -1px 0 var(--secondary)) drop-shadow(0 1px 0 var(--secondary));
+}
+
+.error-text-stroke {
+  filter: drop-shadow(-1px 0 0 var(--error)) drop-shadow(1px 0 0 var(--error))
+    drop-shadow(0 -1px 0 var(--error)) drop-shadow(0 1px 0 var(--error));
+}
+
 .top-right-desktop-gradient {
   background: var(--top-right-desktop);
 }

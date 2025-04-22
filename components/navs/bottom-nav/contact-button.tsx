@@ -19,7 +19,7 @@ const ContactButton: FC<ContactButtonProps> = ({ isMobile = false }) => {
   return (
     <m.span layout animate={{ width: isEndOfPage ? '100%' : 'fit' }} transition={{ duration: 0.4 }}>
       <Link
-        href={isMobile ? '' : 'mailto:awaismaaz@gmail.com'}
+        href={'mailto:awaismaaz@gmail.com'}
         className={`${isMobile ? 'flex sm:hidden !justify-center !items-center !px-4 !py-2.5 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3' : 'hidden sm:flex !justify-center !items-center !px-[8px] md:!px-[11px] lg:!px-[14px] xl:!px-[15px] !p-2 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3'} flex-row gap-2 bg-primary hover:bg-primary-hover rounded-full !overflow-hidden !whitespace-nowrap`}
         aria-label={isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
       >

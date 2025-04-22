@@ -2,26 +2,26 @@
 
 import React, { FC, useCallback, useEffect } from 'react';
 import { stagger, useAnimate } from 'motion/react';
-import { workBottomNavCategories, footerButtons } from '@/helpers/constants';
-import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
-import { useWorkContext } from '@/app/context/work-provider';
-import FooterCTA from './footer-cta';
-import LogoSection from './logo-section';
+import { footerButtons, projectCategories } from '@/helpers/constants';
 import FooterSection from './footer-section';
+import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
 import DesktopCategoryNav from './desktop-category-nav';
 import MobileCategoryNav from './mobile-category-nav';
+import LogoSection from './logo-section';
+import FooterCTA from './footer-cta';
+import { useProjectContext } from '@/app/context/project-provider';
 
 // Types
-interface WorkBottomNavProps {}
+interface ProjectBottomNavProps {}
 
 // Main Component
-const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
+const ProjectBottomNavContent: FC<ProjectBottomNavProps> = () => {
   const { isEndOfPage, isInView } = useBottomNav();
-  const { handleTabChange, activeTab } = useWorkContext();
+  const { handleTabChange, activeTab } = useProjectContext();
   const [scope, animate] = useAnimate();
 
-  const currentIndex = workBottomNavCategories.findIndex(category => category.key === activeTab);
-  const SelectedComponent = workBottomNavCategories[currentIndex].key;
+  const currentIndex = projectCategories.findIndex(category => category.key === activeTab);
+  const SelectedComponent = projectCategories[currentIndex].key;
 
   // Reusable animation configurations
   const animationConfig = {
@@ -76,13 +76,13 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
           <LogoSection isEndOfPage={isEndOfPage} />
           <FooterSection footerButtons={footerButtons} isEndOfPage={isEndOfPage} />
           <DesktopCategoryNav
-            categories={workBottomNavCategories}
+            categories={projectCategories}
             activeTab={SelectedComponent}
             handleTabChange={handleTabChange}
           />
           <MobileCategoryNav
             currentIndex={currentIndex}
-            categories={workBottomNavCategories}
+            categories={projectCategories}
             activeTab={activeTab}
             handleTabChange={handleTabChange}
             isEndOfPage={isEndOfPage}
@@ -97,12 +97,12 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
   );
 };
 
-const WorkBottomNav: FC<WorkBottomNavProps> = () => {
+const ProjectBottomNav: FC<ProjectBottomNavProps> = () => {
   return (
     <BottomNavProvider>
-      <WorkBottomNavContent />
+      <ProjectBottomNavContent />
     </BottomNavProvider>
   );
 };
 
-export default WorkBottomNav;
+export default ProjectBottomNav;

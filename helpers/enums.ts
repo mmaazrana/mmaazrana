@@ -57,3 +57,10 @@ export enum WorkCategories {
   videoEditing = 'video-editing',
   illustration = 'illustration',
 }
+
+export enum ProjectCategories {
+  overview = 'overview',
+  keyFeatures = 'key-features',
+  techStack = 'tech-stack',
+  challengesAndSolutions = 'challenges-and-solutions',
+}

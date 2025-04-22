@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import TitleBar from '@/components/sections/work/title-bar';
-import { useWorkContext } from '@/app/context/work-provider';
-import { workBottomNavCategories } from '@/helpers/constants';
+import { useProjectContext } from '@/app/context/project-provider';
+import { projectCategories } from '@/helpers/constants';
+import TitleBar from '../work/title-bar';
 
-export default function MyWorkSection() {
-  const { ActiveComponent, handleTabChange, activeTab } = useWorkContext();
+export default function ProjectDetailsSection() {
+  const { ActiveComponent, handleTabChange, activeTab } = useProjectContext();
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function MyWorkSection() {
         <TitleBar
           handleTabChange={handleTabChange}
           activeTab={activeTab}
-          categories={workBottomNavCategories}
+          categories={projectCategories}
         />
         {ActiveComponent}
       </section>
