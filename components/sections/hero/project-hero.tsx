@@ -79,9 +79,9 @@ export default function ProjectHero() {
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
                 className={`shadow-testimonial object-cover w-full h-full rounded-xl transform-style-3d ${rotationClasses[index]} `}
-                loading="eager"
+                loading="lazy"
                 placeholder="blur"
-                sizes="20vw"
+                sizes="15vw"
               />
             </div>
           );

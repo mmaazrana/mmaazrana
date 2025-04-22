@@ -119,6 +119,9 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
                     <Image
                       src={screenshot}
                       alt={`${projectData.title} screenshot ${index + 1}`}
+                      loading="lazy"
+                      placeholder="blur"
+                      sizes="25vw"
                       className="w-full h-fit"
                     />
                   </div>
