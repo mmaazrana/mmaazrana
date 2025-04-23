@@ -21,6 +21,7 @@
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@vercel/blob": "^1.0.0",
+    "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "10.4.21",
     "embla-carousel-auto-scroll": "^8.5.2",
     "embla-carousel-autoplay": "^8.5.2",

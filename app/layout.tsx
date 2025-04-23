@@ -6,6 +6,7 @@ import Providers from '@/app/providers';
 import { domAnimation, LazyMotion } from 'motion/react';
 import Head from 'next/head';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const nunito = Nunito({
   weight: ['200', '300', '400', '500'],
@@ -58,7 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>{children}</Providers>
         </body>
       </LazyMotion>
-      <GoogleAnalytics gaId="G-PNNJWR7KVB" />
+      <SpeedInsights />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
     </html>
   );
 }
