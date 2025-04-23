@@ -35,7 +35,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-12 sm:mb-4">
+    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-8 sm:mb-4">
       <div className="flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full">
         <div className="flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14">
           <div className="flex flex-row flex-wrap items-start justify-start gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8">
@@ -100,16 +100,16 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
           </div>
         </div>
         {projectData.images.screenshots.length > 0 && (
-          <div className="relative flex w-full lg:w-fit h-fit">
+          <div className="relative flex w-[110%] about:w-full self-center lg:w-fit h-fit">
             <div
-              className="relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-6 xs:px-7 md:px-8 xl:px-8 py-5 xs:py-6 md:py-7 xl:py-8 bg-primary-accent outline outline-1 outline-secondary/50 rounded-3xl lg:rounded-4xl"
+              className="relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-2 xs:px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 xl:py-9 2xl:py-10 bg-primary-accent outline outline-1 outline-secondary/50 rounded-2xl sm:rounded-3xl lg:rounded-4xl"
               ref={emblaRef}
             >
               <div className="flex">
                 {projectData.images.screenshots.map((screenshot, index) => (
                   <div
                     key={index}
-                    className={`relative flex-[0_0_50%] min-w-[65vw] sm:min-w-xs md:min-w-sm lg:min-w-md md:flex-[0_0_33.33%] -mx-5 sm:-mx-6 md:-mx-7 lg:-mx-8 h-fit rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300 ${
+                    className={`relative flex-[0_0_50%] min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md md:flex-[0_0_33.33%] -mx-5 sm:-mx-6 md:-mx-7 lg:-mx-8 h-fit rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300 ${
                       index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
                     } ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
                   >
@@ -118,7 +118,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
                       alt={`${projectData.title} screenshot ${index + 1}`}
                       loading="lazy"
                       placeholder="blur"
-                      sizes="25vw"
+                      sizes="50vw"
                       className="w-full h-fit"
                     />
                   </div>
@@ -129,9 +129,9 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
               type={TextTypes['8xl']}
               weight={WeightTypes.black}
               color={ColorTypes.primaryAccent}
-              className="absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[75%] -right-4 text-right -z-10"
+              className="absolute w-full about:w-1/2 bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10"
             >
-              Project &nbsp;Screenshots
+              Project Screenshots
             </Typography>
           </div>
         )}

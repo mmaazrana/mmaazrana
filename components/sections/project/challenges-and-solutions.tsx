@@ -12,7 +12,7 @@ export default function ProjectChallengesAndSolutions({
   projectData,
 }: ChallengesAndSolutionsProps) {
   return (
-    <div className="relative grid grid-cols-1 lg:grid-cols-2 px-2 xs:px-4 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12 mb-20 sm:mb-4 w-full">
+    <div className="relative grid grid-cols-1 lg:grid-cols-2 px-2 xs:px-4 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12 mb-10 sm:mb-4 w-full">
       <div className="w-full gap-3 xs:gap-4 md:gap-5 xl:gap-6 flex flex-col">
         <div className="flex py-5 sm:py-6 lg:py-7 xl:py-6 gap-5 sm:gap-6 lg:gap-7 2xl:gap-8 self-center">
           <Typography type={TextTypes['5xl']} weight={WeightTypes.bold}>
