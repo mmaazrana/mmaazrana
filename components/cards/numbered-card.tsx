@@ -1,7 +1,7 @@
 import { ColorTypes, WeightTypes } from '@/helpers/enums';
 import Typography from '@/components/Typography';
 import { TextTypes } from '@/helpers/enums';
-import { px, transform, useInView } from 'motion/react';
+import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
