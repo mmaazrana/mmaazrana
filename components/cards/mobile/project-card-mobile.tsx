@@ -25,7 +25,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, {
-    margin: '-45% 0px -45% 0px',
+    margin: '-25% 0px -25% 0px',
     amount: 0.2,
   });
 

@@ -28,8 +28,8 @@ const Nav: FC<NavProps> = () => {
           </div>
         </div>
         <div
-          className={`absolute right-8 top-18 z-50 items-end justify-end text-left nav:rounded-none nav:pl-4 nav:relative nav:flex nav:right-0 nav:top-0 nav:z-0 transition-transform duration-300 ${
-            showNavbar ? 'pointer-events-auto translate-x-0' : 'pointer-events-none translate-x-40'
+          className={`absolute right-8 top-18 z-50 items-end justify-end text-left nav:rounded-none nav:pl-4 nav:relative nav:flex nav:right-0 nav:top-0 nav:z-0 ${
+            showNavbar ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
         >
           <div

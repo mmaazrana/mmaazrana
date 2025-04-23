@@ -35,7 +35,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8">
+    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-24 sm:mb-4">
       <div className="flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full">
         <div className="flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14">
           <div className="flex flex-row flex-wrap items-start justify-start gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8">
