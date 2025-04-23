@@ -58,6 +58,7 @@
   );
   --about-shadow: 0 0 2px var(--secondary);
   --image-carousel-shadow: 0px 25px 50px var(--secondary);
+  --auto-testimonial-shadow: 0px 15px 50px var(--secondary-50);
   --noise-texture: url('/svgs/texture-light.svg');
   --texture-opacity: 25%;
   --cube-top: #e0e8f5;
@@ -141,6 +142,7 @@
   );
   --about-shadow: 0 0 2px var(--secondary);
   --image-carousel-shadow: 0px 25px 50px var(--secondary);
+  --auto-testimonial-shadow: 0px 15px 50px var(--secondary-50);
   --noise-texture: url('/svgs/texture.svg');
   --texture-opacity: 3%;
   --cube-top: #3b5996;
@@ -183,6 +185,8 @@
   --color-primary-accent-25: var(--primary-accent-25);
   --color-primary-invert: var(--primary-invert);
   --color-primary-invert-25: var(--primary-invert-25);
+  --color-black-dynamic: var(--black-dynamic);
+  --color-white-dynamic: var(--white-dynamic);
   --color-error: var(--error);
   --color-golden: var(--golden);
   --color-secondary: var(--secondary);
@@ -204,6 +208,7 @@
   --animation-fade-out: fadeOut 0.5s ease-out;
   --drop-shadow-about: var(--about-shadow);
   --drop-shadow-image-carousel: var(--image-carousel-shadow);
+  --drop-shadow-auto-testimonial: var(--auto-testimonial-shadow);
   --shadow-services: var(--service-shadow);
   --shadow-services-hover: var(--service-shadow-hover);
   --shadow-testimonial: var(--testimonial-shadow);
@@ -379,6 +384,7 @@ body {
 .rounded-rect {
   rx: 28px;
   ry: 28px;
+  border-radius: 28px;
 }
 
 @-moz-document url-prefix() {
@@ -404,14 +410,39 @@ body {
   }
 }
 
+/* Set variable value for min screens */
+@media (min-width: 365px) {
+  :root {
+    --slide-spacing: 2rem;
+  }
+  .rounded-rect {
+    rx: 12px;
+    ry: 12px;
+    border-radius: 12px;
+  }
+}
+
+/* Set variable value for xs screens */
+@media (min-width: 450px) {
+  :root {
+    --slide-spacing: 2.5rem;
+  }
+  .rounded-rect {
+    rx: 14px;
+    ry: 14px;
+    border-radius: 14px;
+  }
+}
+
 /* Set variable value for small screens */
 @media (min-width: 640px) {
   :root {
     --slide-spacing: 3rem;
   }
   .rounded-rect {
-    rx: 12px;
-    ry: 12px;
+    rx: 16px;
+    ry: 16px;
+    border-radius: 16px;
   }
 }
 
@@ -421,8 +452,9 @@ body {
     --slide-spacing: 3.5rem;
   }
   .rounded-rect {
-    rx: 16px;
-    ry: 16px;
+    rx: 18px;
+    ry: 18px;
+    border-radius: 18px;
   }
 }
 
@@ -444,6 +476,7 @@ body {
   .rounded-rect {
     rx: 20px;
     ry: 20px;
+    border-radius: 20px;
   }
 }
 
@@ -455,6 +488,7 @@ body {
   .rounded-rect {
     rx: 24px;
     ry: 24px;
+    border-radius: 24px;
   }
 }
 

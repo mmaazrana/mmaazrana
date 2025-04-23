@@ -9,9 +9,13 @@ import { TestimonialT } from '@/helpers/types';
 
 interface AutoScrollTestimonialsProps {
   testimonials: TestimonialT[];
+  offset?: boolean;
 }
 
-const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({ testimonials }) => {
+const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
+  testimonials,
+  offset = false,
+}) => {
   const OPTIONS: EmblaOptionsType = { loop: true };
   const [emblaRef] = useEmblaCarousel(OPTIONS, [
     AutoScroll({
@@ -21,11 +25,11 @@ const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({ testimonials 
     }),
   ]);
   return (
-    <div className="embla w-full">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container py-4">
+    <div className={`embla w-full`}>
+      <div className={`embla__viewport`} ref={emblaRef}>
+        <div className={`embla__container ${offset ? 'ml-80' : 'mr-80'} py-4`}>
           {testimonials.map((testimonial, index) => (
-            <div className="embla__slide" key={index}>
+            <div className="embla__slide h-full" key={index}>
               <TestimonialCard
                 variant="flat"
                 testimonial={testimonial.testimonial}

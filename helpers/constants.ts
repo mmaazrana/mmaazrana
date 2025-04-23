@@ -20,6 +20,7 @@ import {
   SiAdobepremierepro,
   SiAdobexd,
   SiBlender,
+  SiCanva,
   SiDart,
   SiFigma,
   SiFirebase,
@@ -130,6 +131,7 @@ import {
 } from './graphics-projects';
 import { carProject, chairProject, deskProject, discordProject, dumbbelsProject, earbudsProject, elevationProject, flutterProject, headphoneProject, homeProject, interiorProject, phoneProject, roomProject, youtubeProject } from './blender-projects';
 import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTutorProject4, beaconTutorProject5, budsProject1, budsProject2, budsProject3, carsDebateProject, creativerseProject, fireStarterProject, markazProject, nfcProject, nustacProject, phoneVideoProject, plutoProject } from './video-projects';
+import { getPageSlug } from './parsers';
 
 
 export const HeroHeadings: string[] = [
@@ -558,6 +560,7 @@ export const designIconComponents: IconComponentsT = {
   premierePro: { Icon: SiAdobepremierepro, props: { fill: '#9999FF' } },
   adobeXd: { Icon: SiAdobexd, props: { fill: '#FF61F6' } },
   blender: { Icon: SiBlender, props: { fill: '#E87D0D' } },
+  canva: { Icon: SiCanva, props: { fill: '#00C4CC' } },
 };
 
 export const devIconComponents: IconComponentsT = {
@@ -629,28 +632,55 @@ export const clientData: ClientDataT[] = [
     clientName: 'Ali Farooq',
     companyName: 'Alfabolt',
     productsInvolved: [
-      {
-        logo: Deepreel,
-        name: 'DeepReel',
-        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
+            {
+        logo: Alfabolt,
+        primaryColor: '#EE1E3A',
+        name: 'Alfabolt',
+        services: ['Product Design', 'Website'],
+        link: `work/${getPageSlug(alfabolt.title)}`,
       },
       {
         logo: Athleton,
+        primaryColor: 'var(--black-dynamic)',
         name: 'Athleton+',
         services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },
+      {
+        logo: Deepreel,
+        primaryColor: '#FA5F33',
+        name: '',
+        services: ['Product Design', 'Website'],
+        link: `work/${getPageSlug(deepReelAI.title)}`,
       },
       {
         logo: FiveOneFivePools,
+        primaryColor: '#5884CF',
         name: '',
         services: ['Product Design'],
+        link: `work/${getPageSlug(pools515.title)}`,
       },
       {
-        logo: Alfabolt,
-        name: 'Alfabolt',
-        services: ['Product Design', 'Website'],
+        logo: Deepreel,
+        primaryColor: '#FF3C5F',
+        name: 'DeepReel',
+        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
+        link: '/work?deepreel',
       },
     ],
-    technologiesInvolved: [designIconComponents['figma'], devIconComponents['next']],
+    technologiesInvolved: [
+      { Icon: devIconComponents['next'], title: 'Next.js' },
+      { Icon: devIconComponents['react'], title: 'React' },
+      { Icon: devIconComponents['typescript'], title: 'TypeScript' },
+      { Icon: devIconComponents['javascript'], title: 'JavaScript' },
+      { Icon: devIconComponents['framer'], title: 'Framer' },
+      { Icon: designIconComponents['canva'], title: 'Canva' },
+      { Icon: devIconComponents['tailwind'], title: 'Tailwind CSS' },
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+      { Icon: designIconComponents['blender'], title: 'Blender' },
+    ],
   },
   {
     heading: 'Rivanna',
@@ -659,27 +689,45 @@ export const clientData: ClientDataT[] = [
     clientName: 'Ali Farooq',
     companyName: 'Alfabolt',
     productsInvolved: [
-      {
-        logo: Deepreel,
-        name: 'DeepReel',
-        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
+            {
+        logo: Alfabolt,
+        primaryColor: '#EE1E3A',
+        name: 'Alfabolt',
+        services: ['Product Design', 'Website'],
+        link: `work/${getPageSlug(alfabolt.title)}`,
       },
       {
         logo: Athleton,
+        primaryColor: 'var(--black-dynamic)',
         name: 'Athleton+',
         services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },
+      {
+        logo: Deepreel,
+        primaryColor: '#FA5F33',
+        name: '',
+        services: ['Product Design', 'Website'],
+        link: `work/${getPageSlug(deepReelAI.title)}`,
       },
       {
         logo: FiveOneFivePools,
+        primaryColor: '#5884CF',
         name: '',
         services: ['Product Design'],
+        link: `work/${getPageSlug(pools515.title)}`,
       },
       {
-        logo: Alfabolt,
-        name: 'Alfabolt',
-        services: ['Product Design', 'Website'],
+        logo: Deepreel,
+        primaryColor: '#FF3C5F',
+        name: 'DeepReel',
+        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
+        link: '/work?deepreel',
       },
     ],
-    technologiesInvolved: [designIconComponents['figma'], devIconComponents['next']],
+    technologiesInvolved: [
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: devIconComponents['next'], title: 'Next.js' },
+    ],
   },
 ];

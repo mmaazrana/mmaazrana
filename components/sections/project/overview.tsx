@@ -129,9 +129,9 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
               type={TextTypes['8xl']}
               weight={WeightTypes.black}
               color={ColorTypes.primaryAccent}
-              className="absolute w-full bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10"
+              className="absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10"
             >
-              Project Screenshots
+              PROJECT SCREENSHOTS
             </Typography>
           </div>
         )}

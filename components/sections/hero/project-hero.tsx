@@ -105,7 +105,7 @@ export default function ProjectHero() {
                 className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index + 1]} `}
                 loading="lazy"
                 placeholder="blur"
-                sizes="20vw"
+                sizes="33vw"
               />
             </div>
           );

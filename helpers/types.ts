@@ -90,13 +90,20 @@ export interface ClientDataT {
   clientName: string;
   companyName: string;
   productsInvolved: ClientProductT[];
-  technologiesInvolved: { Icon: IconType; props: any }[];
+  technologiesInvolved: ClientTechnologyT[];
 }
 
 export interface ClientProductT {
   logo: any;
+  primaryColor: string;
   name: string;
   services: string[];
+  link: string;
+}
+
+export interface ClientTechnologyT {
+  Icon: { Icon: IconType; props: any };
+  title: string;
 }
 
 export interface GraphicDesignProjectT {

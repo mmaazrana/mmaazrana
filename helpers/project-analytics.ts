@@ -279,7 +279,7 @@ export const pools515: ProjectAnalysisT = {
   ],
   images: {
     main: pools515Main,
-    screenshots: [pools515Alt],
+    screenshots: [pools515Alt,pools515Alt,pools515Alt],
   },
 };
 
@@ -389,7 +389,7 @@ export const beaconTutors: ProjectAnalysisT = {
   ],
   images: {
     main: beaconTutorWebsite,
-    screenshots: [beaconTutorWebsite],
+    screenshots: [beaconTutorWebsite,beaconTutorWebsite,beaconTutorWebsite],
   },
 };
 
@@ -519,7 +519,7 @@ export const deepReelAI: ProjectAnalysisT = {
   ],
   images: {
     main: deepreel,
-    screenshots: [deepreel],
+    screenshots: [deepreel,deepreel,deepreel],
   },
   liveUrl: 'https://www.deepreel.com',
 };
@@ -652,7 +652,7 @@ export const jawlineFitness: ProjectAnalysisT = {
   ],
   images: {
     main: jawlineMain,
-    screenshots: [jawlineAlt],
+    screenshots: [jawlineAlt,jawlineAlt,jawlineAlt],
   },
 };
 
@@ -793,7 +793,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
   ],
   images: {
     main: interviewMain,
-    screenshots: [interviewAlt],
+    screenshots: [interviewAlt,interviewAlt,interviewAlt],
   },
 };
 
@@ -923,7 +923,7 @@ export const equanimity: ProjectAnalysisT = {
   ],
   images: {
     main: equanimityImage,
-    screenshots: [equanimityImage],
+    screenshots: [equanimityImage,equanimityImage,equanimityImage],
   },
 };
 
@@ -1065,7 +1065,7 @@ export const aylaAI: ProjectAnalysisT = {
   ],
   images: {
     main: aylaMain,
-    screenshots: [aylaAlt],
+    screenshots: [aylaAlt,aylaAlt,aylaAlt],
   },
 };
 
@@ -1194,7 +1194,7 @@ export const deepReelCanva: ProjectAnalysisT = {
   ],
   images: {
     main: canvaVideo,
-    screenshots: [canvaAudio],
+    screenshots: [canvaAudio,canvaAudio,canvaAudio],
   },
   liveUrl: 'https://www.canva.com/apps/deepreel',
 };
@@ -1335,7 +1335,7 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
   ],
   images: {
     main: beaconTutorsAdminPanel,
-    screenshots: [beaconTutorsAdminPanel],
+    screenshots: [beaconTutorsAdminPanel,beaconTutorsAdminPanel,beaconTutorsAdminPanel],
   },
 };
 
@@ -1464,7 +1464,7 @@ export const markdownEditor: ProjectAnalysisT = {
   ],
   images: {
     main: markdownMain,
-    screenshots: [markdownAlt],
+    screenshots: [markdownAlt,markdownAlt,markdownAlt],
   },
 };
 
@@ -1614,7 +1614,7 @@ export const menuHub: ProjectAnalysisT = {
   ],
   images: {
     main: menuMain,
-    screenshots: [menuAlt],
+    screenshots: [menuAlt,menuAlt,menuAlt],
   },
 };
 
@@ -1761,7 +1761,7 @@ export const nutrigram: ProjectAnalysisT = {
   ],
   images: {
     main: nutrigramMain,
-    screenshots: [nutrigramAlt],
+    screenshots: [nutrigramAlt,nutrigramAlt,nutrigramAlt],
   },
 };
 
@@ -1912,7 +1912,7 @@ export const athletonPlus: ProjectAnalysisT = {
   ],
   images: {
     main: athleton,
-    screenshots: [athleton],
+    screenshots: [athleton,athleton,athleton],
   },
 };
 
@@ -2050,7 +2050,7 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
   ],
   images: {
     main: beaconTutorCRM,
-    screenshots: [beaconTutorCRM],
+    screenshots: [beaconTutorCRM,beaconTutorCRM,beaconTutorCRM],
   },
 };
 
@@ -2194,7 +2194,7 @@ export const inventrios: ProjectAnalysisT = {
   ],
   images: {
     main: inventriosImage,
-    screenshots: [inventriosImage],
+    screenshots: [inventriosImage,inventriosImage,inventriosImage],
   },
 };
 
@@ -2336,7 +2336,7 @@ export const superDuperStudio: ProjectAnalysisT = {
   ],
   images: {
     main: superDuper,
-    screenshots: [superDuper],
+    screenshots: [superDuper,superDuper,superDuper],
   },
 };
 
@@ -2485,7 +2485,7 @@ export const deepReelWebsite: ProjectAnalysisT = {
   ],
   images: {
     main: deepreel,
-    screenshots: [deepreel],
+    screenshots: [deepreel,deepreel,deepreel],
   },
   liveUrl: 'https://www.deepreel.com',
 };
@@ -2818,7 +2818,7 @@ export const tutorania: ProjectAnalysisT = {
   ],
   images: {
     main: tutoraniaImage,
-    screenshots: [tutoraniaImage],
+    screenshots: [tutoraniaImage,tutoraniaImage,tutoraniaImage],
   },
 };
 
@@ -2967,7 +2967,7 @@ export const rivannaProduct: ProjectAnalysisT = {
   ],
   images: {
     main: rivannaImage,
-    screenshots: [rivannaImage],
+    screenshots: [rivannaImage,rivannaImage,rivannaImage],
   },
 };
 
@@ -3112,7 +3112,7 @@ export const rivanna: ProjectAnalysisT = {
   ],
   images: {
     main: rivannaImage,
-    screenshots: [rivannaImage],
+    screenshots: [rivannaImage,rivannaImage,rivannaImage],
   },
 };
 
@@ -3251,7 +3251,7 @@ export const humanizarTexto: ProjectAnalysisT = {
   ],
   images: {
     main: humanizarMain,
-    screenshots: [humanizarAlt],
+    screenshots: [humanizarAlt,humanizarAlt,humanizarAlt],
   },
 };
 
@@ -3399,7 +3399,7 @@ export const smartCatch: ProjectAnalysisT = {
   ],
   images: {
     main: smartCatchMain,
-    screenshots: [smartCatchAlt],
+    screenshots: [smartCatchAlt,smartCatchAlt,smartCatchAlt],
   },
 };
 
@@ -3549,7 +3549,7 @@ export const elBrezal: ProjectAnalysisT = {
   ],
   images: {
     main: elBrezalImage,
-    screenshots: [elBrezalImage],
+    screenshots: [elBrezalImage,elBrezalImage,elBrezalImage],
   },
 };
 
@@ -3679,7 +3679,7 @@ export const robinBeauty: ProjectAnalysisT = {
   ],
   images: {
     main: robinImage,
-    screenshots: [robinImage],
+    screenshots: [robinImage,robinImage,robinImage],
   },
 };
 

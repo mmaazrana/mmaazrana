@@ -3,10 +3,10 @@
 import React, { FC, useRef, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Typography from '@/components/Typography';
-
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import { useInView } from 'motion/react';
 import Link from 'next/link';
+import { getPageSlug } from '@/helpers/parsers';
 
 interface ProjectCardMobileProps {
   title: string;
@@ -36,7 +36,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
   }, [isInView]);
 
   return (
-    <Link href={`/work/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Link href={`/work/${getPageSlug(title)}`}>
       <div
         ref={cardRef}
         id={'project'}

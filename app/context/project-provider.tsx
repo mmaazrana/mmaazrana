@@ -9,6 +9,7 @@ import ProjectTechStack from '@/components/sections/project/tech-stack';
 import ProjectChallengesAndSolutions from '@/components/sections/project/challenges-and-solutions';
 import ProjectOverview from '@/components/sections/project/overview';
 import { ProjectAnalysisT, projectsAnalysis } from '@/helpers/project-analytics';
+import { getPageSlug } from '@/helpers/parsers';
 
 interface ProjectContextType {
   activeTab: string;
@@ -36,15 +37,9 @@ export function ProjectProvider({ children }: ProjectProviderProps) {
   const pathname = usePathname();
   const searchParam = useSearchParams();
   const activeTab = searchParam.get('tab') || projectCategories[0].key;
-
-  console.log(pathname);
-  console.log(searchParam);
-  console.log(projectsAnalysis[3].title.toLowerCase().replace(/\s+/g, '-'));
-
   const projectData =
-    projectsAnalysis.find(
-      p => p.title.toLowerCase().replace(/\s+/g, '-') === pathname.split('/').pop()
-    ) || projectsAnalysis[0];
+    projectsAnalysis.find(p => getPageSlug(p.title) === pathname.split('/').pop()) ||
+    projectsAnalysis[0];
   const handleTabChange = (id: string) => {
     router.push(`${pathname}?tab=${id}`, { scroll: false });
   };

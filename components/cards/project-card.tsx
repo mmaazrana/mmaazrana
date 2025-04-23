@@ -7,6 +7,7 @@ import Typography from '@/components/Typography';
 
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import Link from 'next/link';
+import { getPageSlug } from '@/helpers/parsers';
 
 interface ProjectCardProps {
   title: string;
@@ -85,7 +86,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
   }, []);
 
   return (
-    <Link href={`/work/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Link href={`/work/${getPageSlug(title)}`}>
       <div
         ref={cardRef}
         id={'project'}
