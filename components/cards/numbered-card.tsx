@@ -42,9 +42,9 @@ export default function NumberedCard({ index, title, description, rotation }: Nu
           rotation === 'left'
             ? '-left-8 xs:-left-10 sm:-left-12'
             : '-right-8 xs:-right-10 sm:-right-12'
-        } opacity-60 z-[-10] ${
+        } z-[-10] ${
           rotation === 'left' ? 'error-text-stroke' : 'secondary-text-stroke'
-        } text-primary-accent uppercase font-black !text-[1000%]`}
+        } text-primary-accent/95 uppercase font-black !text-[1000%]`}
       >
         {`${index + 1}`}
       </Typography>

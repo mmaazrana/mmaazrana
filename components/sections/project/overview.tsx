@@ -35,7 +35,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-24 sm:mb-4">
+    <div className="flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-12 sm:mb-4">
       <div className="flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full">
         <div className="flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14">
           <div className="flex flex-row flex-wrap items-start justify-start gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8">
@@ -102,10 +102,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
         {projectData.images.screenshots.length > 0 && (
           <div className="relative flex w-full lg:w-fit h-fit">
             <div
-              style={{
-                filter: `drop-shadow(0px 25px 50px var(--secondary))`,
-              }}
-              className="relative z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-6 xs:px-7 md:px-8 xl:px-8 py-5 xs:py-6 md:py-7 xl:py-8 bg-primary-accent outline outline-1 outline-secondary/50 rounded-3xl lg:rounded-4xl"
+              className="relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-6 xs:px-7 md:px-8 xl:px-8 py-5 xs:py-6 md:py-7 xl:py-8 bg-primary-accent outline outline-1 outline-secondary/50 rounded-3xl lg:rounded-4xl"
               ref={emblaRef}
             >
               <div className="flex">
@@ -132,7 +129,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
               type={TextTypes['8xl']}
               weight={WeightTypes.black}
               color={ColorTypes.primaryAccent}
-              className="absolute bottom-0 secondary-text-stroke opacity-50 translate-y-[75%] -right-4 text-right -z-10"
+              className="absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[75%] -right-4 text-right -z-10"
             >
               Project &nbsp;Screenshots
             </Typography>

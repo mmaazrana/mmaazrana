@@ -8,7 +8,9 @@
   --primary-invert: #ceddfa;
   --primary-invert-25: rgba(206, 221, 250, 0.25);
   --secondary: #b4c4e4;
+  --secondary-50: #b4c4e450;
   --error: #d93e51;
+  --error-50: #d93e5150;
   --golden: #ffb800;
   --primary-hover: #335599;
   --secondary-hover: #eef3fe;
@@ -55,6 +57,7 @@
     rgba(180, 196, 228, 0.5) 100.04%
   );
   --about-shadow: 0 0 2px var(--secondary);
+  --image-carousel-shadow: 0px 25px 50px var(--secondary);
   --noise-texture: url('/svgs/texture-light.svg');
   --texture-opacity: 25%;
   --cube-top: #e0e8f5;
@@ -90,7 +93,9 @@
   --primary-invert: #22365e;
   --primary-invert-25: rgba(34, 54, 94, 0.25);
   --secondary: #4264a8;
+  --secondary-50: #4264a850;
   --error: #ff4a60;
+  --error-50: #ff4a6050;
   --golden: #ffb800;
   --primary-hover: #b4c9f3;
   --secondary-hover: #0e1930;
@@ -135,6 +140,7 @@
     rgba(66, 100, 168, 0.5) 100.04%
   );
   --about-shadow: 0 0 2px var(--secondary);
+  --image-carousel-shadow: 0px 25px 50px var(--secondary);
   --noise-texture: url('/svgs/texture.svg');
   --texture-opacity: 3%;
   --cube-top: #3b5996;
@@ -197,6 +203,7 @@
   --animation-fade-in: fadeIn 0.5s ease-out;
   --animation-fade-out: fadeOut 0.5s ease-out;
   --drop-shadow-about: var(--about-shadow);
+  --drop-shadow-image-carousel: var(--image-carousel-shadow);
   --shadow-services: var(--service-shadow);
   --shadow-services-hover: var(--service-shadow-hover);
   --shadow-testimonial: var(--testimonial-shadow);
@@ -327,13 +334,13 @@ body {
 }
 
 .secondary-text-stroke {
-  filter: drop-shadow(-1px 0 0 var(--secondary)) drop-shadow(1px 0 0 var(--secondary))
-    drop-shadow(0 -1px 0 var(--secondary)) drop-shadow(0 1px 0 var(--secondary));
+  filter: drop-shadow(-1px 0 0 var(--secondary-50)) drop-shadow(1px 0 0 var(--secondary-50))
+    drop-shadow(0 -1px 0 var(--secondary-50)) drop-shadow(0 1px 0 var(--secondary-50));
 }
 
 .error-text-stroke {
-  filter: drop-shadow(-1px 0 0 var(--error)) drop-shadow(1px 0 0 var(--error))
-    drop-shadow(0 -1px 0 var(--error)) drop-shadow(0 1px 0 var(--error));
+  filter: drop-shadow(-1px 0 0 var(--error-50)) drop-shadow(1px 0 0 var(--error-50))
+    drop-shadow(0 -1px 0 var(--error-50)) drop-shadow(0 1px 0 var(--error-50));
 }
 
 .top-right-desktop-gradient {

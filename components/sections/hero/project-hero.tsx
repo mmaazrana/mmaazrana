@@ -64,8 +64,8 @@ export default function ProjectHero() {
             </div>
           </div> */}
 
-      {/* Hero Images  */}
-      <div className="relative w-full h-28 xs:h-32 sm:h-fit flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28">
+      {/* Hero Images - Desktop Layout */}
+      <div className="relative w-full h-28 xs:h-32 sm:h-fit hidden sm:flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28">
         {Array.from({ length: 5 }).map((_, index) => {
           const screenshotIndex = index % Math.max(1, projectData.images.screenshots.length);
           const screenshot = projectData.images.screenshots[screenshotIndex];
@@ -79,6 +79,30 @@ export default function ProjectHero() {
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
                 className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index]} `}
+                loading="lazy"
+                placeholder="blur"
+                sizes="20vw"
+              />
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Hero Images - Mobile Layout */}
+      <div className="relative w-full h-48 xs:h-64 flex sm:hidden flex-row justify-center items-center gap-0 mb-11 xs:mb-12.5 sm:mb-14 xs:mt-10 sm:mt-14">
+        {Array.from({ length: 3 }).map((_, index) => {
+          const screenshotIndex = index % Math.max(2, projectData.images.screenshots.length);
+          const screenshot = projectData.images.screenshots[screenshotIndex];
+
+          return (
+            <div
+              key={index}
+              className={`w-full h-full flex aspect-[3/4] perspective-[70px] ${scaleClasses[index + 1]} transition-all duration-300`}
+            >
+              <Image
+                src={screenshot}
+                alt={`${projectData.title} screenshot ${index + 1}`}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index + 1]} `}
                 loading="lazy"
                 placeholder="blur"
                 sizes="20vw"
