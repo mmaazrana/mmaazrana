@@ -369,6 +369,11 @@ body {
   border-radius: 9999px;
 }
 
+.rounded-rect {
+  rx: 28px;
+  ry: 28px;
+}
+
 @-moz-document url-prefix() {
   .transition-none-firefox {
     transition: none !important;
@@ -397,12 +402,20 @@ body {
   :root {
     --slide-spacing: 3rem;
   }
+  .rounded-rect {
+    rx: 12px;
+    ry: 12px;
+  }
 }
 
 /* Set variable value for medium screens */
 @media (min-width: 768px) {
   :root {
     --slide-spacing: 3.5rem;
+  }
+  .rounded-rect {
+    rx: 16px;
+    ry: 16px;
   }
 }
 
@@ -421,12 +434,20 @@ body {
     filter: drop-shadow(-3px 0 0 var(--secondary)) drop-shadow(3px 0 0 var(--secondary))
       drop-shadow(0 -3px 0 var(--secondary)) drop-shadow(0 3px 0 var(--secondary));
   }
+  .rounded-rect {
+    rx: 20px;
+    ry: 20px;
+  }
 }
 
 /* Set variable value for extra large screens */
 @media (min-width: 1280px) {
   :root {
     --slide-spacing: 4.5rem;
+  }
+  .rounded-rect {
+    rx: 24px;
+    ry: 24px;
   }
 }
 

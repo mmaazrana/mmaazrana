@@ -28,16 +28,18 @@ const Nav: FC<NavProps> = () => {
           </div>
         </div>
         <div
-          className={
-            'absolute right-8 top-18 z-50 items-end justify-end text-left nav:rounded-none nav:pl-4 nav:relative nav:flex nav:right-0 nav:top-0 nav:z-0 '
-          }
+          className={`absolute right-8 top-18 z-50 items-end justify-end text-left nav:rounded-none nav:pl-4 nav:relative nav:flex nav:right-0 nav:top-0 nav:z-0 transition-transform duration-300 ${
+            showNavbar ? 'pointer-events-auto translate-x-0' : 'pointer-events-none translate-x-40'
+          }`}
         >
           <div
-            className={`${
-              showNavbar
-                ? 'bg-secondary-hover/25 backdrop-blur-md outline outline-secondary-hover/75 pointer-events-auto block opacity-100'
-                : 'opacity-0 pointer-events-none'
-            } nav:bg-transparent nav:outline-transparent nav:opacity-100 nav:pointer-events-auto rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg p-4 mt-4 nav:block nav:p-0 nav:mt-0 nav:w-auto nav:shadow-none transition-opacity duration-300`}
+            className={`
+              nav:bg-transparent nav:outline-transparent nav:opacity-100 nav:pointer-events-auto
+              ${
+                showNavbar
+                  ? 'bg-secondary-hover/25 backdrop-blur-md outline outline-secondary-hover/75 pointer-events-auto block opacity-100 '
+                  : 'opacity-0 !pointer-events-none'
+              }  rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg p-4 mt-4 nav:block nav:p-0 nav:mt-0 nav:w-auto nav:shadow-none transition-opacity duration-300`}
           >
             <ul className="items-end justify-end nav:gap-2 lg:gap-3 xl:gap-3 nav:flex ">
               {navButtons.map((button, index) => (

@@ -14,19 +14,19 @@ import Typography from '@/components/Typography';
 export default function ProjectHero() {
   const { projectData } = useProjectContext();
   const rotationClasses = [
-    'rotate-y-24',
-    'rotate-y-12',
+    'rotate-y-20 lg:rotate-y-22 xl:rotate-y-24',
+    'rotate-y-8 lg:rotate-y-10 xl:rotate-y-12',
     'rotate-y-0',
-    '-rotate-y-12',
-    '-rotate-y-24',
+    '-rotate-y-8 lg:-rotate-y-10 xl:-rotate-y-12',
+    '-rotate-y-20 lg:-rotate-y-22 xl:-rotate-y-24',
   ];
 
   const scaleClasses = [
-    'mr-[3.4%] scale-150 hover:-translate-y-12',
-    ' scale-110 hover:-translate-y-10',
+    'mr-[1.8%] lg:mr-[2.6%] xl:mr-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
+    'scale-108 lg:scale-109 xl:scale-110 hover:-translate-y-10',
     'scale-100 hover:-translate-y-8',
-    'scale-110 hover:-translate-y-10',
-    'ml-[3.4%] scale-150 hover:-translate-y-12',
+    'scale-108 lg:scale-109 xl:scale-110 hover:-translate-y-10',
+    'ml-[1.8%] lg:ml-[2.6%] xl:ml-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
   ];
 
   return (
@@ -65,7 +65,7 @@ export default function ProjectHero() {
           </div> */}
 
       {/* Hero Images  */}
-      <div className="relative w-full h-fit flex flex-row justify-center items-center gap-1 mb-20 mt-28">
+      <div className="relative w-full h-28 xs:h-32 sm:h-fit flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28">
         {Array.from({ length: 5 }).map((_, index) => {
           const screenshotIndex = index % Math.max(1, projectData.images.screenshots.length);
           const screenshot = projectData.images.screenshots[screenshotIndex];
@@ -73,15 +73,15 @@ export default function ProjectHero() {
           return (
             <div
               key={index}
-              className={`w-full h-full flex aspect-[3/4] perspective-[300px] ${scaleClasses[index]} transition-all duration-300`}
+              className={`w-full h-full flex aspect-[3/4] perspective-[100px] sm:perspective-[200px] md:perspective-[300px] ${scaleClasses[index]} transition-all duration-300`}
             >
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full h-full rounded-xl transform-style-3d ${rotationClasses[index]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index]} `}
                 loading="lazy"
                 placeholder="blur"
-                sizes="15vw"
+                sizes="20vw"
               />
             </div>
           );
@@ -89,17 +89,21 @@ export default function ProjectHero() {
       </div>
 
       {/* Project Header */}
-      <div className="mb-12 flex flex-col max-w-4xl gap-6 items-center justify-center text-center">
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col gap-4">
+      <div className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-12 flex flex-col max-w-4xl gap-6 items-center justify-center text-center">
+        <div className="flex flex-col gap-7 xs:gap-8 md:gap-9 xl:gap-10">
+          <div className="flex flex-col gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4">
             <Typography type={TextTypes['6xl']} weight={WeightTypes.bold}>
               {projectData.title}
             </Typography>
-            <Typography type={TextTypes['2xl']} weight={WeightTypes.light} className="opacity-75">
+            <Typography
+              type={TextTypes['2xl']}
+              weight={WeightTypes.light}
+              className="opacity-75 px-8 xs:px-10 sm:px-12 md:px-14 lg:px-16 xl:px-18 2xl:px-20"
+            >
               {projectData.shortDescription}
             </Typography>
           </div>
-          <div className="flex flex-row justify-center items-center gap-3">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3">
             <Link
               href={'mailto:awaismaaz@gmail.com'}
               target="_blank"
