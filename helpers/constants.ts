@@ -72,7 +72,6 @@ import {
   pools515,
   ProjectAnalysisT,
   rivanna,
-  rivannaProduct,
   robinBeauty,
   smartCatch,
   superDuperStudio,

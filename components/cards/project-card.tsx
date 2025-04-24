@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useRef, useEffect, useId } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 
 import Image, { StaticImageData } from 'next/image';
 import Typography from '@/components/Typography';
@@ -26,7 +26,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
   const lastTime = useRef(0);
   const velocity = useRef(0);
   const animationFrame = useRef<number>(0);
-  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     isDragging.current = true;

@@ -6,7 +6,7 @@ import { clientIconComponents } from '@/helpers/constants';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
-import MediaQuery, { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 
 interface ClientsSectionProps {
   className?: string;
