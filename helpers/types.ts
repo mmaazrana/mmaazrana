@@ -1,5 +1,5 @@
 import { ButtonTypes, ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
-import React from 'react';
+import React, { SVGProps } from 'react';
 import { IconType } from 'react-icons';
 import { StaticImageData } from 'next/image';
 

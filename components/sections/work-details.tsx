@@ -13,7 +13,7 @@ const WorkDetails = () => {
           <Accordion
             key={index}
             heading={data.heading}
-            isExpanded
+            isExpanded={index === 0}
             content={
               <div className={'flex flex-col gap-10 py-4'}>
                 <TestimonialData

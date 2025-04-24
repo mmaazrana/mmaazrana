@@ -142,6 +142,7 @@ import TutoraniaSvg from '@/components/icons/tutorania';
 import SvgNutrigram from '@/components/icons/nutrigram';
 import SvgHumanizarTexto from '@/components/icons/humanizar-texto';
 import SvgElbrezal from '@/components/icons/elbrezal';
+import SvgKueenzTechnologies from '@/components/icons/kueenz-technologies';
 
 
 export const HeroHeadings: string[] = [
