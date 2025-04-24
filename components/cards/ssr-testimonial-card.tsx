@@ -9,15 +9,18 @@ const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
   client,
   designation,
 }) => {
+  const delayClasses = ['!delay-0', '!delay-50', '!delay-100', '!delay-150', '!delay-200'];
   return (
     <div className="relative z-1 group">
-      <div className="absolute -top-8 left-6 z-[-15] flex flex-row gap-2">
-        {[0, 50, 100, 150, 200].map((delay, index) => (
-          <Star
-            key={index}
-            className={`stroke-secondary/50 fill-secondary/10 group-hover:stroke-secondary group-hover:fill-secondary/75 group-hover:-translate-y-8 stroke-[0.75px] md:stroke-[1px] lg:stroke-[1.25px] h-16 w-16 !transition-all !duration-300 !delay-[${delay}ms]`}
-          />
-        ))}
+      <div className="absolute -top-5 xs:-top-6 md:-top-7 xl:-top-8 left-3 xs:left-4 md:left-5 xl:left-6 z-[-15] flex flex-row gap-1 sm:gap-1.5 lg:gap-2">
+        {Array(5)
+          .fill(0)
+          .map((_, index) => (
+            <Star
+              key={index}
+              className={`stroke-secondary/50 fill-secondary/10 group-hover:stroke-secondary group-hover:fill-secondary/75 group-hover:-translate-y-8 stroke-[0.75px] md:stroke-[1px] lg:stroke-[1.25px] h-10 xs:h-11 sm:h-12 md:h-13 lg:h-14 xl:h-15 2xl:h-16 w-10 xs:w-11 sm:w-12 md:w-13 lg:w-14 xl:w-15 2xl:w-16 !transition-all !duration-300 ${delayClasses[index]}`}
+            />
+          ))}
       </div>
       <div className="relative backdrop-blur-xs outline bg-secondary-hover/15 hover:bg-primary-accent/90 hover:drop-shadow-auto-testimonial hover:-translate-y-4 outline-secondary/50 hover:outline-secondary outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] h-full w-[80vw] sm:w-[500px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group">
         <svg
