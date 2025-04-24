@@ -3,15 +3,10 @@ import Typography from '@/components/Typography';
 import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import { Target } from 'lucide-react';
 import ProductDetailsCard from './product-details-card';
+import { ClientProductT } from '@/helpers/types';
 
 interface ProductsInvolvedProps {
-  products: Array<{
-    name: string;
-    link: string;
-    logo: React.ComponentType<{ className?: string }>;
-    services: string[];
-    primaryColor: string;
-  }>;
+  products: Array<ClientProductT>;
 }
 
 const ProductsInvolved: React.FC<ProductsInvolvedProps> = ({ products }) => {

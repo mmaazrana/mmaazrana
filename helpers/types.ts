@@ -96,7 +96,7 @@ export interface ClientDataT {
 export interface ClientProductT {
   logo: any;
   primaryColor: string;
-  name: string;
+  name ?: string;
   services: string[];
   link: string;
 }

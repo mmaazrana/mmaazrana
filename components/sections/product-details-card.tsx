@@ -3,14 +3,10 @@ import Typography from '@/components/Typography';
 import { TextTypes, WeightTypes } from '@/helpers/enums';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
+import { ClientProductT } from '@/helpers/types';
+
 interface ProductDetailsCardProps {
-  product: {
-    name: string;
-    link: string;
-    logo: React.ComponentType<{ className?: string }>;
-    services: string[];
-    primaryColor: string;
-  };
+  product: ClientProductT;
 }
 
 const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
@@ -73,11 +69,13 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
           '-z-1 absolute top-0 left-0 w-full h-full rounded-rect opacity-1 group-hover:opacity-20 transition-opacity duration-300'
         }
       />
-      <div className={'flex items-center gap-3 sm:gap-3.5 xl:gap-4 max-w-[12.5rem]'}>
-        <product.logo className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 w-fit" />
-        <Typography type={TextTypes['3xl']} weight={WeightTypes.semiBold}>
-          {product.name}
-        </Typography>
+      <div className={'flex items-center gap-3 sm:gap-3.5 xl:gap-4 w-fit'}>
+        <product.logo className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 w-fit max-w-[10rem]" />
+        {product.name && (
+          <Typography type={TextTypes['2xl']} weight={WeightTypes.semiBold}>
+            {product.name}
+          </Typography>
+        )}
       </div>
       <div
         className={

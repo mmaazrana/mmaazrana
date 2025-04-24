@@ -134,6 +134,14 @@ import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTu
 import { getPageSlug } from './parsers';
 import SuperDuperStudio from '@/components/icons/super-duper-studio';
 import AylaLogo from '@/components/icons/ayla';
+import SvgInventrios from '@/components/icons/Inventrios';
+import EquanimitySvg from '@/components/icons/equanimity';
+import SvgRobinBeauty from '@/components/icons/robin-beauty';
+import SvgSmartCatch from '@/components/icons/smart-catch';
+import TutoraniaSvg from '@/components/icons/tutorania';
+import SvgNutrigram from '@/components/icons/nutrigram';
+import SvgHumanizarTexto from '@/components/icons/humanizar-texto';
+import SvgElbrezal from '@/components/icons/elbrezal';
 
 
 export const HeroHeadings: string[] = [
@@ -685,6 +693,78 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    heading: 'Kueenz Technologies',
+    testimonial:
+      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+    clientName: 'Anum Mujahid',
+    companyName: 'Co-Founder Kueenz Technologies',
+    productsInvolved: [
+      {
+        logo: SvgHumanizarTexto,
+        primaryColor: '#6209D2',
+        name: 'Humanizar Texto',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },    
+        {
+        logo: SvgElbrezal,
+        primaryColor: '#FAD235',
+        name: 'Elbrezal Honey',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+    ],
+    
+    technologiesInvolved: [
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+    ],
+  },
+    {
+    heading: 'Beacon Tutors',
+    testimonial:
+      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+    clientName: 'Imran Haider',
+    companyName: 'Founder Beacon Tutors Pakistan',
+    productsInvolved: [
+      {
+        logo: BeaconTutors,
+        primaryColor: '#FF6F66',
+        name: 'Beacon Tutors Pakistan',
+        services: ['Product Design', 'Website', 'Graphic Design', 'Animation', 'Illustration'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },    
+      {
+        logo: BeaconTutors,
+        primaryColor: '#C6F0EB',
+        name: 'Beacon Tutors CRM',
+        services: ['Product Design', 'Web App'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+              {
+        logo: TutoraniaSvg,
+        primaryColor: '#6EC2FF',
+        name: 'Tutorania',
+        services: ['Product Design', 'Web App'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+    ],
+    
+    technologiesInvolved: [
+      { Icon: devIconComponents['next'], title: 'Next.js' },
+      { Icon: devIconComponents['react'], title: 'React' },
+      { Icon: devIconComponents['typescript'], title: 'TypeScript' },
+      { Icon: devIconComponents['javascript'], title: 'JavaScript' },
+      { Icon: devIconComponents['tailwind'], title: 'Tailwind CSS' },
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+      { Icon: designIconComponents['afterEffects'], title: 'After Effects' },
+      { Icon: designIconComponents['premierePro'], title: 'Premiere Pro' },
+    ],
+  },
+  {
     heading: 'Rivanna',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
@@ -710,6 +790,116 @@ export const clientData: ClientDataT[] = [
       { Icon: designIconComponents['figma'], title: 'Figma' },
       { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
       { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+    ],
+  },
+    {
+    heading: 'Nustac',
+    testimonial:
+      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+    clientName: 'Usama Ejaz',
+    companyName: 'Co-Founder Nustac Technologies',
+    productsInvolved: [
+            {
+        logo: Rivanna,
+        primaryColor: '#FFE363',
+        name: 'Jawline Fitness',
+        services: ['Product Design', 'Mobile App', 'Animation', 'Illustration'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+      {
+        logo: AylaLogo,
+        primaryColor: '#5382DB',
+        name: 'Interview Preparation',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },    
+      {
+        logo: AylaLogo,
+        primaryColor: 'var(--black-dynamic)',
+        name: 'Markdown Editor',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },   
+      {
+        logo: SvgSmartCatch,
+        primaryColor: '#003882',
+        name: '',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },   
+    ],
+    technologiesInvolved: [
+      { Icon: devIconComponents['flutter'], title: 'Flutter' },
+      { Icon: devIconComponents['dart'], title: 'Dart' },
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+      { Icon: designIconComponents['afterEffects'], title: 'After Effects' },
+      { Icon: designIconComponents['premierePro'], title: 'Premiere Pro' },
+    ],
+  },
+      {
+    heading: 'Inventrios',
+    testimonial:
+      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+    clientName: 'Fatima Zehra',
+    companyName: 'Co-Founder Inventrios',
+    productsInvolved: [
+            {
+        logo: SvgRobinBeauty,
+        primaryColor: '#94DDEF',
+        name: '',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+      {
+        logo: MenuHub,
+        primaryColor: '#F37832',
+        name: '',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },    
+      {
+        logo: EquanimitySvg,
+        primaryColor: '#005AC1',
+        name: 'Equanimity',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },   
+      {
+        logo: SvgInventrios,
+        primaryColor: '#40AFF9',
+        name: 'Inventrios',
+        services: ['Product Design', 'Website', 'Animation', 'Illustration'],
+        link: `work/${getPageSlug(athletonPlus.title)}`,
+      },   
+    ],
+    technologiesInvolved: [
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
+      { Icon: designIconComponents['afterEffects'], title: 'After Effects' },
+      { Icon: designIconComponents['premierePro'], title: 'Premiere Pro' },
+    ],
+  },
+        {
+    heading: 'Nutrigram',
+    testimonial:
+      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+    clientName: 'Hassan Ali',
+    companyName: 'Founder Nutrigram',
+    productsInvolved: [
+            {
+        logo: SvgNutrigram,
+        primaryColor: '#E23352',
+        name: 'Nutrigram',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(rivanna.title)}`,
+      },
+    ],
+    technologiesInvolved: [
+      { Icon: designIconComponents['figma'], title: 'Figma' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
     ],
   },
 ];
