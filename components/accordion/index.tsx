@@ -48,7 +48,7 @@ const Accordion: FC<AccordionProps> = ({
             type={TextTypes['4xl']}
             weight={WeightTypes.extraBold}
             className={
-              'px-6 xs:px-7 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12 py-5 xs:py-6 sm:py-7 md:py-8 xl:py-9 2xl:py-10 bg-primary-accent'
+              'px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-5 xs:py-6 sm:py-7 md:py-8 xl:py-9 2xl:py-10 bg-primary-accent'
             }
           >
             {heading}

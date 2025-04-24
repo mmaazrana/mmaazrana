@@ -47,12 +47,12 @@ const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className
   ];
 
   const indexClasses = {
-    0: 'justify-end items-end text-right top-right-desktop-gradient',
-    1: 'justify-end items-start text-left top-center-desktop-gradient',
-    2: 'justify-center items-end text-right top-left-desktop-gradient',
-    3: 'justify-center items-start md:items-end text-left bottom-right-desktop-gradient',
-    4: 'justify-start items-end text-right bottom-center-desktop-gradient',
-    5: 'justify-start items-start text-left bottom-left-desktop-gradient',
+    0: 'justify-end items-end text-right top-left-tablet-gradient',
+    1: 'justify-end items-start text-left top-right-tablet-gradient',
+    2: 'justify-center items-end text-right center-left-tablet-gradient',
+    3: 'justify-center items-start md:items-end text-left center-right-tablet-gradient',
+    4: 'justify-start items-end text-right bottom-left-tablet-gradient',
+    5: 'justify-start items-start text-left bottom-right-tablet-gradient',
   };
 
   const serviceClasses = [
@@ -75,7 +75,7 @@ const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className
 
   const dynamicClasses = [
     indexClasses[index],
-    'flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit',
+    'flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-2xl sm:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit',
     onClick ? 'cursor-pointer' : '',
     className,
   ]

@@ -10,7 +10,7 @@ interface VideoProjectCardProps {
 
 export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCardProps) {
   return (
-    <div className="relative w-full h-fit mb-1 lg:mb-1.5 rounded-lg overflow-hidden">
+    <div className="relative w-full h-fit mb-1 lg:mb-1.5 rounded-lg hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
       <ReactPlayer
         url={`${process.env.NEXT_PUBLIC_CDN_BASE_URL}/${fileName}`}
         light={

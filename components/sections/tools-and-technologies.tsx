@@ -34,7 +34,7 @@ const ToolsAndTechnologies: React.FC<ToolsAndTechnologiesProps> = ({ technologie
       </div>
       <div
         className={
-          'flex flex-wrap gap-2 sm:gap-2.5 md:gap-3 xl:gap-3.5 2xl:gap-4 ml-0 md:ml-9 lg:ml-10 xl:ml-11 2xl:ml-12 mb-6 md:mb-7 xl:mb-8'
+          'flex flex-wrap gap-x-2 sm:gap-x-2.5 md:gap-x-3 xl:gap-x-3.5 gap-y-4 xs:gap-y-3.5 md:gap-y-4 xl:gap-y-4.5 2xl:gap-4 ml-0 md:ml-9 lg:ml-10 xl:ml-11 2xl:ml-12 mb-6 md:mb-7 xl:mb-8'
         }
       >
         {technologies.map((technology, index) => (

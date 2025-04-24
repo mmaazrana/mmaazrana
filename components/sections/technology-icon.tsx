@@ -18,7 +18,7 @@ const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
   return (
     <div
       className={
-        'relative flex flex-row justify-center items-center ml-1 px-3 xs:px-4 md:px-5 xl:px-6 py-2.5 xs:py-3 md:py-3.5 xl:py-4 gap-1.5 xs:gap-2 md:gap-2.5 xl:gap-3 rounded-full group cursor-default'
+        'relative flex flex-row justify-center items-center ml-1 px-2 xs:px-3 md:px-4 xl:px-5 py-2 xs:py-2.5 md:py-3 xl:py-3.5 gap-1.5 xs:gap-2 md:gap-2.5 xl:gap-3 rounded-full group cursor-default'
       }
     >
       <span
@@ -47,7 +47,7 @@ const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
       />
       <technology.Icon.Icon
         {...technology.Icon.props}
-        className={'h-5 xs:h-6 md:h-7 xl:h-8 w-5 xs:w-6 md:w-7 xl:w-8'}
+        className={'h-4.5 xs:h-5 md:h-5.5 xl:h-6 w-4.5 xs:w-5 md:w-5.5 xl:w-6'}
       />
       <Typography type={TextTypes['xl']} weight={WeightTypes.light} className={'opacity-80'}>
         {technology.title}

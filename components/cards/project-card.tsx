@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useRef, useEffect } from 'react';
+import React, { FC, useRef, useEffect, useId } from 'react';
 
 import Image, { StaticImageData } from 'next/image';
 import Typography from '@/components/Typography';
@@ -26,6 +26,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
   const lastTime = useRef(0);
   const velocity = useRef(0);
   const animationFrame = useRef<number>(0);
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     isDragging.current = true;
@@ -94,7 +95,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
-        className={`cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-1/3' : 'flex-1 md:basis-3/5 lg:basis-2/3 '} transition-all duration-300 scroll-smooth hover:scroll-auto hover:overflow-y-scroll select-none`}
+        className={`drop-shadow-product cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 hover:-translate-y-4 ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-1/3' : 'flex-1 md:basis-3/5 lg:basis-2/3 '} transition-all duration-300 scroll-smooth hover:scroll-auto hover:overflow-y-scroll select-none`}
       >
         <div className={'flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 sticky top-0'}>
           <Typography type={TextTypes['4xl']} weight={WeightTypes.bold}>

@@ -47,12 +47,12 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
   ];
 
   const indexClasses = {
-    0: 'justify-center items-start text-left top-right-desktop-gradient',
-    1: 'justify-center items-start text-left top-center-desktop-gradient',
-    2: 'justify-center items-start text-left top-left-desktop-gradient',
-    3: 'justify-center items-end text-right bottom-right-desktop-gradient',
-    4: 'justify-center items-end text-right bottom-center-desktop-gradient',
-    5: 'justify-center items-end text-right bottom-left-desktop-gradient',
+    0: 'justify-center items-start text-left center-right-tablet-gradient',
+    1: 'justify-center items-start text-left center-right-tablet-gradient',
+    2: 'justify-center items-start text-left center-right-tablet-gradient',
+    3: 'justify-center items-end text-right center-left-tablet-gradient',
+    4: 'justify-center items-end text-right center-left-tablet-gradient',
+    5: 'justify-center items-end text-right center-left-tablet-gradient',
   };
 
   const serviceClasses = [

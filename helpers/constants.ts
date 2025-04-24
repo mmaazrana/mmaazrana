@@ -46,10 +46,10 @@ import Deepreel from '@/components/icons/deepreel';
 import Athleton from '@/components/icons/athleton';
 import Edwiz from '@/components/icons/edwiz';
 import Rivanna from '@/components/icons/rivanna';
-import BeaconTutors from '@/components/icons/beaconTutors';
+import BeaconTutors from '@/components/icons/beacon-tutors';
 import Lyfiti from '@/components/icons/lyfiti';
 import FiveOneFivePools from '@/components/icons/pools515';
-import MenuHub from '@/components/icons/menuHub';
+import MenuHub from '@/components/icons/menu-hub';
 import {
   alfabolt,
   athletonPlus,
@@ -72,6 +72,7 @@ import {
   pools515,
   ProjectAnalysisT,
   rivanna,
+  rivannaProduct,
   robinBeauty,
   smartCatch,
   superDuperStudio,
@@ -132,6 +133,8 @@ import {
 import { carProject, chairProject, deskProject, discordProject, dumbbelsProject, earbudsProject, elevationProject, flutterProject, headphoneProject, homeProject, interiorProject, phoneProject, roomProject, youtubeProject } from './blender-projects';
 import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTutorProject4, beaconTutorProject5, budsProject1, budsProject2, budsProject3, carsDebateProject, creativerseProject, fireStarterProject, markazProject, nfcProject, nustacProject, phoneVideoProject, plutoProject } from './video-projects';
 import { getPageSlug } from './parsers';
+import SuperDuperStudio from '@/components/icons/super-duper-studio';
+import AylaLogo from '@/components/icons/ayla';
 
 
 export const HeroHeadings: string[] = [
@@ -630,7 +633,7 @@ export const clientData: ClientDataT[] = [
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
     clientName: 'Ali Farooq',
-    companyName: 'Alfabolt',
+    companyName: 'CEO Alfabolt',
     productsInvolved: [
             {
         logo: Alfabolt,
@@ -647,11 +650,11 @@ export const clientData: ClientDataT[] = [
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
-        logo: Deepreel,
+        logo: SuperDuperStudio,
         primaryColor: '#FA5F33',
         name: '',
         services: ['Product Design', 'Website'],
-        link: `work/${getPageSlug(deepReelAI.title)}`,
+        link: `work/${getPageSlug(superDuperStudio.title)}`,
       },
       {
         logo: FiveOneFivePools,
@@ -665,7 +668,7 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#FF3C5F',
         name: 'DeepReel',
         services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
-        link: '/work?deepreel',
+        link: `work/${getPageSlug(deepReelAI.title)}`,
       },
     ],
     technologiesInvolved: [
@@ -686,48 +689,28 @@ export const clientData: ClientDataT[] = [
     heading: 'Rivanna',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Ali Farooq',
-    companyName: 'Alfabolt',
+    clientName: 'Peter',
+    companyName: 'Founder of Rivanna',
     productsInvolved: [
             {
-        logo: Alfabolt,
-        primaryColor: '#EE1E3A',
-        name: 'Alfabolt',
-        services: ['Product Design', 'Website'],
-        link: `work/${getPageSlug(alfabolt.title)}`,
+        logo: Rivanna,
+        primaryColor: '#59606E',
+        name: 'Rivanna',
+        services: ['Product Design'],
+        link: `work/${getPageSlug(rivanna.title)}`,
       },
       {
-        logo: Athleton,
-        primaryColor: 'var(--black-dynamic)',
-        name: 'Athleton+',
+        logo: AylaLogo,
+        primaryColor: '#7D8FFF',
+        name: 'Ayla AI',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },
-      {
-        logo: Deepreel,
-        primaryColor: '#FA5F33',
-        name: '',
-        services: ['Product Design', 'Website'],
-        link: `work/${getPageSlug(deepReelAI.title)}`,
-      },
-      {
-        logo: FiveOneFivePools,
-        primaryColor: '#5884CF',
-        name: '',
-        services: ['Product Design'],
-        link: `work/${getPageSlug(pools515.title)}`,
-      },
-      {
-        logo: Deepreel,
-        primaryColor: '#FF3C5F',
-        name: 'DeepReel',
-        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
-        link: '/work?deepreel',
-      },
+      },    
     ],
     technologiesInvolved: [
       { Icon: designIconComponents['figma'], title: 'Figma' },
-      { Icon: devIconComponents['next'], title: 'Next.js' },
+      { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
+      { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
     ],
   },
 ];

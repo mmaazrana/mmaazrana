@@ -59,6 +59,7 @@
   --about-shadow: 0 0 2px var(--secondary);
   --image-carousel-shadow: 0px 25px 50px var(--secondary);
   --auto-testimonial-shadow: 0px 15px 50px var(--secondary-50);
+  --product-shadow: 0px 0px 0px var(--white-dynamic);
   --noise-texture: url('/svgs/texture-light.svg');
   --texture-opacity: 25%;
   --cube-top: #e0e8f5;
@@ -67,8 +68,8 @@
   --white-dynamic: #fff;
   --black-dynamic: #000;
   --top-right-desktop:
-    linear-gradient(-5deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
-    linear-gradient(-5deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+    linear-gradient(-45deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
+    linear-gradient(-45deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
   --top-center-desktop:
     linear-gradient(0deg, #f4f6fe, #f9faff, 70%, #ffffff) padding-box,
     linear-gradient(0deg, #b4c4e4, rgba(180, 196, 228, 0.3) 70%) border-box;
@@ -82,6 +83,24 @@
     linear-gradient(180deg, #f4f6fe, #f9faff, 40%, #ffffff) padding-box,
     linear-gradient(180deg, #b4c4e4, rgba(180, 196, 228, 0.3) 40%) border-box;
   --bottom-left-desktop:
+    linear-gradient(135deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
+    linear-gradient(135deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+  --top-left-tablet:
+    linear-gradient(-45deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
+    linear-gradient(-45deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+  --top-right-tablet:
+    linear-gradient(45deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
+    linear-gradient(45deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+  --center-left-tablet:
+    linear-gradient(-90deg, #f4f6fe, #f9faff, 50%, #ffffff) padding-box,
+    linear-gradient(-90deg, #b4c4e4, rgba(180, 196, 228, 0.3) 50%) border-box;
+  --center-right-tablet:
+    linear-gradient(90deg, #f4f6fe, #f9faff, 50%, #ffffff) padding-box,
+    linear-gradient(90deg, #b4c4e4, rgba(180, 196, 228, 0.3) 50%) border-box;
+  --bottom-left-tablet:
+    linear-gradient(-135deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
+    linear-gradient(-135deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
+  --bottom-right-tablet:
     linear-gradient(135deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
     linear-gradient(135deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
   --work-gradient: linear-gradient(90deg, #ffffff 5%, transparent 10%, transparent 90%, #ffffff);
@@ -143,6 +162,7 @@
   --about-shadow: 0 0 2px var(--secondary);
   --image-carousel-shadow: 0px 25px 50px var(--secondary);
   --auto-testimonial-shadow: 0px 15px 50px var(--secondary-50);
+  --product-shadow: 0px 10px 30px var(--white-dynamic);
   --noise-texture: url('/svgs/texture.svg');
   --texture-opacity: 3%;
   --cube-top: #3b5996;
@@ -166,6 +186,24 @@
     linear-gradient(180deg, #0c1427, #070d1d, 40%, #000714) padding-box,
     linear-gradient(180deg, #4264a8, rgba(66, 100, 178, 0.3) 40%) border-box;
   --bottom-left-desktop:
+    linear-gradient(135deg, #0c1427, #070d1d, 60%, #000714) padding-box,
+    linear-gradient(135deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
+  --top-left-tablet:
+    linear-gradient(-45deg, #0c1427, #070d1d, 60%, #000714) padding-box,
+    linear-gradient(-45deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
+  --top-right-tablet:
+    linear-gradient(45deg, #0c1427, #070d1d, 60%, #000714) padding-box,
+    linear-gradient(45deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
+  --center-left-tablet:
+    linear-gradient(-90deg, #0c1427, #070d1d, 50%, #000714) padding-box,
+    linear-gradient(-90deg, #4264a8, rgba(66, 100, 178, 0.3) 50%) border-box;
+  --center-right-tablet:
+    linear-gradient(90deg, #0c1427, #070d1d, 50%, #000714) padding-box,
+    linear-gradient(90deg, #4264a8, rgba(66, 100, 178, 0.3) 50%) border-box;
+  --bottom-left-tablet:
+    linear-gradient(-135deg, #0c1427, #070d1d, 60%, #000714) padding-box,
+    linear-gradient(-135deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
+  --bottom-right-tablet:
     linear-gradient(135deg, #0c1427, #070d1d, 60%, #000714) padding-box,
     linear-gradient(135deg, #4264a8, rgba(66, 100, 178, 0.3) 60%) border-box;
   --work-gradient: linear-gradient(90deg, #000714 0%, transparent 10%, transparent 90%, #000714);
@@ -209,6 +247,7 @@
   --drop-shadow-about: var(--about-shadow);
   --drop-shadow-image-carousel: var(--image-carousel-shadow);
   --drop-shadow-auto-testimonial: var(--auto-testimonial-shadow);
+  --drop-shadow-product: var(--product-shadow);
   --shadow-services: var(--service-shadow);
   --shadow-services-hover: var(--service-shadow-hover);
   --shadow-testimonial: var(--testimonial-shadow);
@@ -370,6 +409,30 @@ body {
 
 .bottom-left-desktop-gradient {
   background: var(--bottom-left-desktop);
+}
+
+.top-left-tablet-gradient {
+  background: var(--top-left-tablet);
+}
+
+.top-right-tablet-gradient {
+  background: var(--top-right-tablet);
+}
+
+.center-left-tablet-gradient {
+  background: var(--center-left-tablet);
+}
+
+.center-right-tablet-gradient {
+  background: var(--center-right-tablet);
+}
+
+.bottom-left-tablet-gradient {
+  background: var(--bottom-left-tablet);
+}
+
+.bottom-right-tablet-gradient {
+  background: var(--bottom-right-tablet);
 }
 
 .work-gradient {

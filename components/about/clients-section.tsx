@@ -6,7 +6,7 @@ import { clientIconComponents } from '@/helpers/constants';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
-import { useMediaQuery } from 'react-responsive';
+import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 interface ClientsSectionProps {
   className?: string;
@@ -61,7 +61,7 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
       <SectionTitle
         text="Clients"
         isInView={isMobile ? clientsIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className="translate-x-3 right-0 left-auto hidden about:block"
       />
     </div>
   );
