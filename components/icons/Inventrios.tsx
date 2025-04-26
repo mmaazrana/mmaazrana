@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const SvgInventrios = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 37 32' fill='none' {...props}>
     <path fill='#40AFF9' d='m32.208 21.952-5.704-9.92h-2.332l5.72 9.92L24.091 32h2.332z' />
@@ -27,5 +27,5 @@ const SvgInventrios = (props: SVGProps<SVGSVGElement>) => (
     />
     <path fill='#1B55B2' d='m1.166 20.144-1.166 2L5.687 32h11.487l1.15-2H6.855z' />
   </svg>
-);
-export default SvgInventrios;
+)
+export default SvgInventrios

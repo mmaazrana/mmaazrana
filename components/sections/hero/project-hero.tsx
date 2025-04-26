@@ -1,24 +1,24 @@
-'use client';
-import Button from '@/components/button';
+'use client'
+import Button from '@/components/button'
 
-import {} from '@/helpers/enums';
+import {} from '@/helpers/enums'
 
-import {} from '@/helpers/enums';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail } from 'lucide-react';
-import { useProjectContext } from '@/app/context/project-provider';
-import Typography from '@/components/Typography';
+import {} from '@/helpers/enums'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Mail } from 'lucide-react'
+import { useProjectContext } from '@/app/context/project-provider'
+import Typography from '@/components/Typography'
 
 export default function ProjectHero() {
-  const { projectData } = useProjectContext();
+  const { projectData } = useProjectContext()
   const rotationClasses = [
     'rotate-y-20 lg:rotate-y-22 xl:rotate-y-24',
     'rotate-y-8 lg:rotate-y-10 xl:rotate-y-12',
     'rotate-y-0',
     '-rotate-y-8 lg:-rotate-y-10 xl:-rotate-y-12',
     '-rotate-y-20 lg:-rotate-y-22 xl:-rotate-y-24',
-  ];
+  ]
 
   const scaleClasses = [
     'mr-[1.8%] lg:mr-[2.6%] xl:mr-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
@@ -26,7 +26,7 @@ export default function ProjectHero() {
     'scale-100 hover:-translate-y-8',
     'scale-108 lg:scale-109 xl:scale-110 hover:-translate-y-10',
     'ml-[1.8%] lg:ml-[2.6%] xl:ml-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
-  ];
+  ]
 
   return (
     <div className='flex flex-col justify-start items-center w-full'>
@@ -35,9 +35,9 @@ export default function ProjectHero() {
             <Link href="/work" target="_blank" rel="noopener noreferrer" className="w-fit">
               <Button
                 className="w-fit"
-                type={'secondary'}
+                type='secondary'
                 text="Back to Work"
-                textSize={'xl'}
+                textSize='xl'
                 textWeight='regular'
                 leftIcon={<ChevronLeft className="!fill-none stroke-primary" />}
               />
@@ -52,9 +52,9 @@ export default function ProjectHero() {
                   className="w-fit"
                 >
                   <Button
-                    type={'secondary'}
+                    type='secondary'
                     text={category}
-                    textSize={'lg'}
+                    textSize='lg'
                     textWeight='regular'
                     className="bg-secondary-hover/50 hover:bg-secondary-hover"
                   />
@@ -66,8 +66,8 @@ export default function ProjectHero() {
       {/* Hero Images - Desktop Layout */}
       <div className='relative w-full h-28 xs:h-32 sm:h-fit hidden sm:flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28'>
         {Array.from({ length: 5 }).map((_, index) => {
-          const screenshotIndex = index % Math.max(1, projectData.images.screenshots.length);
-          const screenshot = projectData.images.screenshots[screenshotIndex];
+          const screenshotIndex = index % Math.max(1, projectData.images.screenshots.length)
+          const screenshot = projectData.images.screenshots[screenshotIndex]
 
           return (
             <div
@@ -83,15 +83,15 @@ export default function ProjectHero() {
                 sizes='20vw'
               />
             </div>
-          );
+          )
         })}
       </div>
 
       {/* Hero Images - Mobile Layout */}
       <div className='relative w-full h-48 xs:h-64 flex sm:hidden flex-row justify-center items-center gap-0 mb-11 xs:mb-12.5 sm:mb-14 xs:mt-10 sm:mt-14'>
         {Array.from({ length: 3 }).map((_, index) => {
-          const screenshotIndex = index % Math.max(2, projectData.images.screenshots.length);
-          const screenshot = projectData.images.screenshots[screenshotIndex];
+          const screenshotIndex = index % Math.max(2, projectData.images.screenshots.length)
+          const screenshot = projectData.images.screenshots[screenshotIndex]
 
           return (
             <div
@@ -107,7 +107,7 @@ export default function ProjectHero() {
                 sizes='33vw'
               />
             </div>
-          );
+          )
         })}
       </div>
 
@@ -115,11 +115,11 @@ export default function ProjectHero() {
       <div className='mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-12 flex flex-col max-w-4xl gap-6 items-center justify-center text-center'>
         <div className='flex flex-col gap-7 xs:gap-8 md:gap-9 xl:gap-10'>
           <div className='flex flex-col gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4'>
-            <Typography type={'6xl'} weight='bold'>
+            <Typography type='6xl' weight='bold'>
               {projectData.title}
             </Typography>
             <Typography
-              type={'2xl'}
+              type='2xl'
               weight='light'
               className='opacity-75 px-8 xs:px-10 sm:px-12 md:px-14 lg:px-16 xl:px-18 2xl:px-20'
             >
@@ -128,16 +128,16 @@ export default function ProjectHero() {
           </div>
           <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3'>
             <Link
-              href={'mailto:awaismaaz@gmail.com'}
+              href='mailto:awaismaaz@gmail.com'
               target='_blank'
               rel='noopener noreferrer'
               className='w-fit'
             >
               <Button
                 className='w-fit'
-                type={'primary'}
+                type='primary'
                 text='Get in Touch'
-                textSize={'xl'}
+                textSize='xl'
                 textWeight='medium'
                 leftIcon={<Mail className='!fill-none stroke-primary-accent' />}
               />
@@ -151,9 +151,9 @@ export default function ProjectHero() {
               >
                 <Button
                   className='w-fit'
-                  type={'secondary'}
+                  type='secondary'
                   text='Visit Live Site'
-                  textSize={'xl'}
+                  textSize='xl'
                   textWeight='regular'
                 />
               </Link>
@@ -162,5 +162,5 @@ export default function ProjectHero() {
         </div>
       </div>
     </div>
-  );
+  )
 }

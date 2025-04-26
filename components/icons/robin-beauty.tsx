@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const SvgRobinBeauty = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 50' fill='none' {...props}>
     <g clipPath='url(#robin-beauty_svg__a)'>
@@ -14,5 +14,5 @@ const SvgRobinBeauty = (props: SVGProps<SVGSVGElement>) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default SvgRobinBeauty;
+)
+export default SvgRobinBeauty

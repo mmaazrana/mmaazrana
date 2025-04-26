@@ -1,10 +1,10 @@
-import React from 'react';
-import { archivo } from '@/helpers/fonts';
+import React from 'react'
+import { archivo } from '@/helpers/fonts'
 
 interface SectionTitleProps {
-  text: string;
-  isInView: boolean;
-  className?: string;
+  text: string
+  isInView: boolean
+  className?: string
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ text, isInView, className = '' }) => {
@@ -17,7 +17,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ text, isInView, className =
     >
       {text}
     </span>
-  );
-};
+  )
+}
 
-export default SectionTitle;
+export default SectionTitle

@@ -1,8 +1,8 @@
-import { ProjectAnalysisT } from '@/helpers/project-analytics';
-import TechnologyCard from '../../cards/technology-card';
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
+import TechnologyCard from '../../cards/technology-card'
 
 interface TechStackProps {
-  projectData: ProjectAnalysisT;
+  projectData: ProjectAnalysisT
 }
 
 export default function ProjectTechStack({ projectData }: TechStackProps) {
@@ -14,5 +14,5 @@ export default function ProjectTechStack({ projectData }: TechStackProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

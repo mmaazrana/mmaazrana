@@ -1,37 +1,37 @@
-import Typography from '@/components/Typography';
-import { ProjectAnalysisT } from '@/helpers/project-analytics';
-import Image from 'next/image';
-import Link from 'next/link';
-import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useEffect, useState } from 'react';
-import { workBottomNavCategories } from '@/helpers/constants';
-import Button from '@/components/button';
-import { ExternalLink } from 'lucide-react';
+import Typography from '@/components/Typography'
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
+import Image from 'next/image'
+import Link from 'next/link'
+import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect, useState } from 'react'
+import { workBottomNavCategories } from '@/helpers/constants'
+import Button from '@/components/button'
+import { ExternalLink } from 'lucide-react'
 
 interface OverviewProps {
-  projectData: ProjectAnalysisT;
+  projectData: ProjectAnalysisT
 }
 
 export default function ProjectOverview({ projectData }: OverviewProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center' });
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center' })
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setActiveIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
+    if (!emblaApi) return
+    setActiveIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
 
   useEffect(() => {
     if (emblaApi) {
-      emblaApi.on('select', onSelect);
-      onSelect();
+      emblaApi.on('select', onSelect)
+      onSelect()
     }
     return () => {
       if (emblaApi) {
-        emblaApi.off('select', onSelect);
+        emblaApi.off('select', onSelect)
       }
-    };
-  }, [emblaApi, onSelect]);
+    }
+  }, [emblaApi, onSelect])
 
   return (
     <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-8 sm:mb-4'>
@@ -41,7 +41,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
             {projectData.categories.map(category => (
               <Link key={category} href={`/work?tab=${category}`}>
                 <Typography
-                  type={'xl'}
+                  type='xl'
                   className='px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 xl:py-3 whitespace-nowrap text-center bg-secondary-hover/15 outline outline-1 outline-secondary hover:bg-primary-invert/70 transition-all duration-300 rounded-full cursor-pointer'
                 >
                   {`${workBottomNavCategories.find(c => c.key === category)?.text}`}
@@ -51,10 +51,10 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
           </div>
           <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
             <div className='flex flex-col items-start justify-start gap-6'>
-              <Typography type={'5xl'} weight='bold' className=''>
+              <Typography type='5xl' weight='bold' className=''>
                 Project Requirements
               </Typography>
-              <Typography type={'xl'} weight='light' className='opacity-75 leading-relaxed'>
+              <Typography type='xl' weight='light' className='opacity-75 leading-relaxed'>
                 {projectData.detailedAnalysis.overview}
               </Typography>
             </div>
@@ -63,7 +63,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
                 {projectData.detailedAnalysis.requirements.map((item, index) => (
                   <div key={index} className='flex items-start gap-5'>
                     <span className='text-xs -ml-1 xs:-ml-1.5 md:-ml-2 w-4 xs:w-5 md:w-6 h-0.5 bg bg-secondary rounded-full font-bold self-center' />
-                    <Typography type={'xl'} weight='light' className='opacity-75'>
+                    <Typography type='xl' weight='light' className='opacity-75'>
                       {item}
                     </Typography>
                   </div>
@@ -72,19 +72,21 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
               {projectData.liveUrl && (
                 <Link href={projectData.liveUrl || ''} target='_blank' className='w-fit'>
                   <Button
-                    type={'primary'}
+                    type='primary'
                     rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
                     text={`Visit live Website`}
-                  />{' '}
+                  />
+                  ' '
                 </Link>
               )}
               {projectData.figmaUrl && (
                 <Link href={projectData.figmaUrl || ''} target='_blank' className='w-fit'>
                   <Button
-                    type={'primary'}
+                    type='primary'
                     rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
                     text={`Visit Figma File`}
-                  />{' '}
+                  />
+                  ' '
                 </Link>
               )}
             </div>
@@ -117,9 +119,9 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
               </div>
             </div>
             <Typography
-              type={'8xl'}
+              type='8xl'
               weight='black'
-              color={'primary-accent'}
+              color='primary-accent'
               className='absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
             >
               PROJECT SCREENSHOTS
@@ -131,9 +133,9 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
         <span className='text-xs w-full h-0.5 bg bg-secondary/25 rounded-full font-bold self-center' />
 
         <Typography
-          type={'lg'}
+          type='lg'
           weight='light'
-          color={'primary-hover'}
+          color='primary-hover'
           className='opacity-50 whitespace-nowrap'
         >
           {`Completed - ${projectData.detailedAnalysis.completeOn}`}
@@ -141,5 +143,5 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
         <span className='text-xs w-full h-0.5 bg bg-secondary/25 rounded-full font-bold self-center' />
       </div>
     </div>
-  );
+  )
 }

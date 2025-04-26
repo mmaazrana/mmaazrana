@@ -1,21 +1,21 @@
 // app/components/projects/ProductDesignProjects.tsx
-import React from 'react';
-import ProjectCard from '@/components/cards/project-card';
-import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile';
-import { productDesignProjects } from '@/helpers/constants';
+import React from 'react'
+import ProjectCard from '@/components/cards/project-card'
+import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile'
+import { productDesignProjects } from '@/helpers/constants'
 
 interface ProductDesignProjectsProps {}
 
 const ProductDesignProjects: React.FC<ProductDesignProjectsProps> = () => {
   return (
-    <div className={'w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}>
-      <div className={'w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}>
+    <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+      <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
         {/* Desktop Layout */}
         {Array.from({ length: Math.ceil(productDesignProjects.length / 2) }).map(
           (_, groupIndex) => (
             <div
               key={groupIndex}
-              className={'hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 '}
+              className='hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 '
             >
               {productDesignProjects.slice(groupIndex * 2, groupIndex * 2 + 2).map((project, i) => (
                 <ProjectCard
@@ -28,11 +28,11 @@ const ProductDesignProjects: React.FC<ProductDesignProjectsProps> = () => {
                 />
               ))}
             </div>
-          )
+          ),
         )}
 
         {/* Mobile Layout */}
-        <div className={'flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}>
+        <div className='flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
           {productDesignProjects.map((project, i) => (
             <ProjectCardMobile
               key={i}
@@ -46,7 +46,7 @@ const ProductDesignProjects: React.FC<ProductDesignProjectsProps> = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductDesignProjects;
+export default ProductDesignProjects

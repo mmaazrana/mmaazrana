@@ -1,8 +1,8 @@
-import { ProjectAnalysisT } from '@/helpers/project-analytics';
-import IconCard from '../../cards/icon-card';
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
+import IconCard from '../../cards/icon-card'
 
 interface KeyFeaturesProps {
-  projectData: ProjectAnalysisT;
+  projectData: ProjectAnalysisT
 }
 
 export default function ProjectKeyFeatures({ projectData }: KeyFeaturesProps) {
@@ -19,5 +19,5 @@ export default function ProjectKeyFeatures({ projectData }: KeyFeaturesProps) {
         ))}
       </div>
     </div>
-  );
+  )
 }

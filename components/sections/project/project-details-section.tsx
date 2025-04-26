@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { useProjectContext } from '@/app/context/project-provider';
-import { projectCategories } from '@/helpers/constants';
-import TitleBar from '../work/title-bar';
+import React from 'react'
+import { useProjectContext } from '@/app/context/project-provider'
+import { projectCategories } from '@/helpers/constants'
+import TitleBar from '../work/title-bar'
 
 export default function ProjectDetailsSection() {
-  const { ActiveComponent, handleTabChange, activeTab } = useProjectContext();
+  const { ActiveComponent, handleTabChange, activeTab } = useProjectContext()
 
   return (
     <>
@@ -23,5 +23,5 @@ export default function ProjectDetailsSection() {
         {ActiveComponent}
       </section>
     </>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 const BeaconTutors = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' {...props}>
@@ -42,5 +42,5 @@ const BeaconTutors = (props: SVGProps<SVGSVGElement>) => (
       d='M27.799 12.995a3.078 3.078 0 0 0-3.536 2.51 3.079 3.079 0 0 0-2.51-3.537 3.06 3.06 0 0 0 3.536-2.491 3.04 3.04 0 0 0 2.51 3.518Z'
     />
   </svg>
-);
-export default BeaconTutors;
+)
+export default BeaconTutors

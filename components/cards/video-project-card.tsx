@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactPlayer from 'react-player/lazy';
-import { PlayIcon } from 'lucide-react';
-import Image, { StaticImageData } from 'next/image';
+import React from 'react'
+import ReactPlayer from 'react-player/lazy'
+import { PlayIcon } from 'lucide-react'
+import Image, { StaticImageData } from 'next/image'
 
 interface VideoProjectCardProps {
-  fileName: string;
-  thumbnail: StaticImageData;
+  fileName: string
+  thumbnail: StaticImageData
 }
 
 export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCardProps) {
@@ -30,9 +30,7 @@ export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCa
           <div className='w-full aspect-video bg-secondary/5 rounded-lg overflow-hidden flex items-center justify-center animate-pulse'>
             <div
               className='flex flex-col items-center justify-center gap-2'
-              style={{
-                animation: 'fadeIn 1s ease-in-out infinite alternate',
-              }}
+              style={{ animation: 'fadeIn 1s ease-in-out infinite alternate' }}
             >
               <div className='w-12 h-12 border-4 border-secondary-hover border-t-secondary rounded-full animate-spin' />
             </div>
@@ -47,5 +45,5 @@ export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCa
         height='100%'
       />
     </div>
-  );
+  )
 }

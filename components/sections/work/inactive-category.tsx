@@ -1,16 +1,16 @@
-import { BottomNavCategoryT } from '@/helpers/types';
-import * as m from 'motion/react-m';
-import {} from '@/helpers/enums';
-import Typography from '@/components/Typography';
+import { BottomNavCategoryT } from '@/helpers/types'
+import * as m from 'motion/react-m'
+import {} from '@/helpers/enums'
+import Typography from '@/components/Typography'
 
 interface InActiveCategoryProps {
-  category: BottomNavCategoryT;
-  position: 'left' | 'right';
-  onClick: () => void;
+  category: BottomNavCategoryT
+  position: 'left' | 'right'
+  onClick: () => void
 }
 
 export default function InActiveCategory({ category, position, onClick }: InActiveCategoryProps) {
-  const isLeft = position === 'left';
+  const isLeft = position === 'left'
 
   return (
     <m.button
@@ -40,5 +40,5 @@ export default function InActiveCategory({ category, position, onClick }: InActi
         </Typography>
       </m.div>
     </m.button>
-  );
+  )
 }

@@ -1,68 +1,64 @@
 // app/components/projects/BlenderProjects.tsx
-import React, { useState, useRef } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import Typography from '@/components/Typography';
-import {} from '@/helpers/enums';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useMediaQuery } from 'react-responsive';
-import { GraphicDesignProjectT } from '@/helpers/types';
+import React, { useState, useRef } from 'react'
+import Image, { StaticImageData } from 'next/image'
+import Typography from '@/components/Typography'
+import {} from '@/helpers/enums'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useMediaQuery } from 'react-responsive'
+import { GraphicDesignProjectT } from '@/helpers/types'
 
 interface ImageProjectCardProps {
-  project: GraphicDesignProjectT;
+  project: GraphicDesignProjectT
 }
 
 const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
-  const isDragging = useRef<boolean>(false);
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const direction = useRef<'left' | 'right'>('left');
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once: false,
-    margin: '15% 0% 0% 0%',
-    amount: 1,
-  });
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const touchStartX = useRef<number>(0)
+  const touchEndX = useRef<number>(0)
+  const isDragging = useRef<boolean>(false)
+  const isMobile = useMediaQuery({ maxWidth: 768 })
+  const direction = useRef<'left' | 'right'>('left')
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: false, margin: '15% 0% 0% 0%', amount: 1 })
 
   const handleStart = (clientX: number) => {
-    touchStartX.current = clientX;
-    isDragging.current = true;
-  };
+    touchStartX.current = clientX
+    isDragging.current = true
+  }
 
   const handleMove = (clientX: number) => {
-    if (!isDragging.current) return;
-    touchEndX.current = clientX;
-  };
+    if (!isDragging.current) return
+    touchEndX.current = clientX
+  }
 
   const handleEnd = () => {
-    if (!isDragging.current) return;
+    if (!isDragging.current) return
 
     if (!touchStartX.current || !touchEndX.current) {
-      isDragging.current = false;
-      return;
+      isDragging.current = false
+      return
     }
 
-    const diff = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 50; // minimum distance for a swipe
+    const diff = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 50 // minimum distance for a swipe
 
     if (Math.abs(diff) > minSwipeDistance) {
       if (diff > 0) {
         // Swiped left
-        direction.current = 'left';
-        setCurrentImageIndex(prev => (prev === project.image.length - 1 ? 0 : prev + 1));
+        direction.current = 'left'
+        setCurrentImageIndex(prev => (prev === project.image.length - 1 ? 0 : prev + 1))
       } else {
         // Swiped right
-        direction.current = 'right';
-        setCurrentImageIndex(prev => (prev === 0 ? project.image.length - 1 : prev - 1));
+        direction.current = 'right'
+        setCurrentImageIndex(prev => (prev === 0 ? project.image.length - 1 : prev - 1))
       }
     }
 
     // Reset values
-    touchStartX.current = 0;
-    touchEndX.current = 0;
-    isDragging.current = false;
-  };
+    touchStartX.current = 0
+    touchEndX.current = 0
+    isDragging.current = false
+  }
 
   return (
     <div
@@ -83,24 +79,11 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
           <motion.div
             layout
             key={currentImageIndex}
-            initial={{
-              opacity: 0,
-              scale: 0.95,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.95,
-            }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             transition={{
-              layout: {
-                type: 'spring',
-                stiffness: 400,
-                damping: 30,
-              },
+              layout: { type: 'spring', stiffness: 400, damping: 30 },
               opacity: { duration: 0.2 },
               scale: { duration: 0.2 },
             }}
@@ -135,8 +118,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
               <button
                 key={imgIndex}
                 onClick={() => {
-                  direction.current = imgIndex > currentImageIndex ? 'left' : 'right';
-                  setCurrentImageIndex(imgIndex);
+                  direction.current = imgIndex > currentImageIndex ? 'left' : 'right'
+                  setCurrentImageIndex(imgIndex)
                 }}
                 className={`relative w-full h-16 flex-grow rounded-md overflow-hidden transition-opacity ${
                   currentImageIndex === imgIndex ? '' : 'opacity-50 hover:opacity-100'
@@ -158,7 +141,10 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
       )}
       <div
         className={`py-3 sm:py-4 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
-          isMobile ? (isInView ? 'opacity-100' : 'opacity-0') : 'opacity-0 group-hover:opacity-100'
+          isMobile ?
+            isInView ? 'opacity-100'
+            : 'opacity-0'
+          : 'opacity-0 group-hover:opacity-100'
         }`}
       >
         <span className='absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0' />
@@ -168,7 +154,10 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
       </div>
       <div
         className={`py-4 sm:py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
-          isMobile ? (isInView ? 'opacity-100' : 'opacity-0') : 'opacity-0 group-hover:opacity-100'
+          isMobile ?
+            isInView ? 'opacity-100'
+            : 'opacity-0'
+          : 'opacity-0 group-hover:opacity-100'
         }`}
       >
         <span className='absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0' />
@@ -177,7 +166,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         </Typography>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ImageProjectCard;
+export default ImageProjectCard

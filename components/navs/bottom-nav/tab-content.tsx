@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import * as m from 'motion/react-m';
-import Typography from '@/components/Typography';
+import React, { FC } from 'react'
+import * as m from 'motion/react-m'
+import Typography from '@/components/Typography'
 
 interface TabContentProps {
-  initialTranslateX: number;
-  exitTranslateX: number;
-  delay: number;
-  text: string;
-  textOpacity?: string;
-  categoryKey: string;
+  initialTranslateX: number
+  exitTranslateX: number
+  delay: number
+  text: string
+  textOpacity?: string
+  categoryKey: string
 }
 
 const TabContent: FC<TabContentProps> = ({
@@ -23,11 +23,7 @@ const TabContent: FC<TabContentProps> = ({
 }) => (
   <m.div
     initial={{ opacity: 0, width: 0, translateX: initialTranslateX }}
-    animate={{
-      opacity: 1,
-      width: 'auto',
-      translateX: 0,
-    }}
+    animate={{ opacity: 1, width: 'auto', translateX: 0 }}
     exit={{ opacity: 0, width: 0, translateX: exitTranslateX }}
     transition={{
       opacity: { duration: 0.3, delay },
@@ -36,10 +32,10 @@ const TabContent: FC<TabContentProps> = ({
     }}
     key={categoryKey}
   >
-    <Typography type={'base'} color={'primary'} className={textOpacity}>
+    <Typography type='base' color='primary' className={textOpacity}>
       {text}
     </Typography>
   </m.div>
-);
+)
 
-export default TabContent;
+export default TabContent

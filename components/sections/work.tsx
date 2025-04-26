@@ -1,19 +1,19 @@
-import React, { FC } from 'react';
-import ProjectCard from '@/components/cards/project-card';
-import { featuredProjects } from '@/helpers/constants';
-import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile';
+import React, { FC } from 'react'
+import ProjectCard from '@/components/cards/project-card'
+import { featuredProjects } from '@/helpers/constants'
+import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile'
 
 interface WorkProps {}
 
 const Work: FC<WorkProps> = () => {
   return (
-    <div className={'w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}>
+    <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
       {/* Desktop Layout */}
       {[featuredProjects.slice(0, 2), featuredProjects.slice(2, 4)].map(
         (projectGroup, groupIndex) => (
           <div
             key={groupIndex}
-            className={'hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}
+            className='hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'
           >
             {projectGroup.map((project, i) => (
               <ProjectCard
@@ -26,10 +26,10 @@ const Work: FC<WorkProps> = () => {
               />
             ))}
           </div>
-        )
+        ),
       )}
       {/* Mobile Layout */}
-      <div className={'flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'}>
+      <div className='flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
         {featuredProjects.map((project, i) => (
           <ProjectCardMobile
             key={i}
@@ -42,7 +42,7 @@ const Work: FC<WorkProps> = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Work;
+export default Work

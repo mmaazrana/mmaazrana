@@ -1,4 +1,4 @@
-import { ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
+import { ProjectCategories, Sections, WorkCategories } from '@/helpers/enums'
 import {
   BlenderProjectT,
   BottomNavButtonT,
@@ -12,7 +12,7 @@ import {
   TestimonialT,
   VideoProjectT,
   WorkExperienceT,
-} from '@/helpers/types';
+} from '@/helpers/types'
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
@@ -39,17 +39,17 @@ import {
   SiTailwindcss,
   SiTrello,
   SiTypescript,
-} from 'react-icons/si';
-import Alfabolt from '@/components/icons/alfabolt';
-import TSS from '@/components/icons/tss';
-import Deepreel from '@/components/icons/deepreel';
-import Athleton from '@/components/icons/athleton';
-import Edwiz from '@/components/icons/edwiz';
-import Rivanna from '@/components/icons/rivanna';
-import BeaconTutors from '@/components/icons/beacon-tutors';
-import Lyfiti from '@/components/icons/lyfiti';
-import FiveOneFivePools from '@/components/icons/pools515';
-import MenuHub from '@/components/icons/menu-hub';
+} from 'react-icons/si'
+import Alfabolt from '@/components/icons/alfabolt'
+import TSS from '@/components/icons/tss'
+import Deepreel from '@/components/icons/deepreel'
+import Athleton from '@/components/icons/athleton'
+import Edwiz from '@/components/icons/edwiz'
+import Rivanna from '@/components/icons/rivanna'
+import BeaconTutors from '@/components/icons/beacon-tutors'
+import Lyfiti from '@/components/icons/lyfiti'
+import FiveOneFivePools from '@/components/icons/pools515'
+import MenuHub from '@/components/icons/menu-hub'
 import {
   alfabolt,
   athletonPlus,
@@ -76,7 +76,7 @@ import {
   smartCatch,
   superDuperStudio,
   tutorania,
-} from './project-analytics';
+} from './project-analytics'
 import {
   alfaboltProject,
   techtonicLogoProject,
@@ -128,7 +128,7 @@ import {
   markdownPosterProject,
   maazLogoProject,
   teqnirLogoProject,
-} from './graphics-projects';
+} from './graphics-projects'
 import {
   carProject,
   chairProject,
@@ -144,7 +144,7 @@ import {
   phoneProject,
   roomProject,
   youtubeProject,
-} from './blender-projects';
+} from './blender-projects'
 import {
   beaconTutorProject1,
   beaconTutorProject2,
@@ -162,18 +162,18 @@ import {
   nustacProject,
   phoneVideoProject,
   plutoProject,
-} from './video-projects';
-import { getPageSlug } from './parsers';
-import SuperDuperStudio from '@/components/icons/super-duper-studio';
-import AylaLogo from '@/components/icons/ayla';
-import SvgInventrios from '@/components/icons/Inventrios';
-import EquanimitySvg from '@/components/icons/equanimity';
-import SvgRobinBeauty from '@/components/icons/robin-beauty';
-import SvgSmartCatch from '@/components/icons/smart-catch';
-import TutoraniaSvg from '@/components/icons/tutorania';
-import SvgNutrigram from '@/components/icons/nutrigram';
-import SvgHumanizarTexto from '@/components/icons/humanizar-texto';
-import SvgElbrezal from '@/components/icons/elbrezal';
+} from './video-projects'
+import { getPageSlug } from './parsers'
+import SuperDuperStudio from '@/components/icons/super-duper-studio'
+import AylaLogo from '@/components/icons/ayla'
+import SvgInventrios from '@/components/icons/Inventrios'
+import EquanimitySvg from '@/components/icons/equanimity'
+import SvgRobinBeauty from '@/components/icons/robin-beauty'
+import SvgSmartCatch from '@/components/icons/smart-catch'
+import TutoraniaSvg from '@/components/icons/tutorania'
+import SvgNutrigram from '@/components/icons/nutrigram'
+import SvgHumanizarTexto from '@/components/icons/humanizar-texto'
+import SvgElbrezal from '@/components/icons/elbrezal'
 
 export const HeroHeadings: string[] = [
   'Product Designer',
@@ -181,7 +181,7 @@ export const HeroHeadings: string[] = [
   'App Developer',
   '3D Artist',
   'Animator',
-];
+]
 
 export const LottiePaths: string[] = [
   'https://lottie.host/f4163d11-af03-4689-b1b0-757862066f91/JuFMA6eW3b.lottie',
@@ -189,7 +189,7 @@ export const LottiePaths: string[] = [
   'https://lottie.host/c1faf8ba-20de-49cb-bdbb-b5f9e5f9d233/FAkp9DRzBn.lottie',
   'https://lottie.host/36c7490a-3f67-41f4-89a5-003578a3058d/QTRT5TzYBD.lottie',
   'https://lottie.host/1b3beeb7-e069-499d-8a1f-7276f7220d87/mUkVw9uBCL.lottie',
-];
+]
 
 export const LottieLightPaths: string[] = [
   'https://lottie.host/fe958409-38ce-43c1-b4a9-197e7ee533db/PNOlYlGU80.lottie',
@@ -197,7 +197,7 @@ export const LottieLightPaths: string[] = [
   'https://lottie.host/61413701-6be9-4188-8e80-8e9321718cac/wXMYKawPQB.lottie',
   'https://lottie.host/30c24204-0e61-4a80-abd0-7e30e13646d3/trQIO2xNpJ.lottie',
   'https://lottie.host/62043cba-21e1-408c-bc02-31cb26530c95/PiUj9mIaWF.lottie',
-];
+]
 
 export const HeroDescriptions: string[] = [
   'Crafting user-centric digital experiences that blend creativity and functionality for impactful, seamless design.',
@@ -205,82 +205,37 @@ export const HeroDescriptions: string[] = [
   'Building the future of mobile experiences, I bring innovative app ideas to life with user-centric design and robust functionality.',
   'Sculpting immersive worlds and captivating visuals, I leverage three-dimensional design to bring ideas to life with depth and realism.',
   'Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.',
-];
+]
 
 export const navButtons: NavButtonT[] = [
   { text: 'Work', href: `/#${Sections.work}`, type: 'secondary' },
-  {
-    text: 'Services',
-    href: `/#${Sections.services}`,
-    type: 'secondary',
-  },
-  {
-    text: 'Testimonials',
-    href: `/#${Sections.testimonials}`,
-    type: 'secondary',
-  },
+  { text: 'Services', href: `/#${Sections.services}`, type: 'secondary' },
+  { text: 'Testimonials', href: `/#${Sections.testimonials}`, type: 'secondary' },
   { text: 'About', href: `/#${Sections.aboutMe}`, type: 'secondary' },
-  {
-    text: 'Get in Touch',
-    href: 'mailto:awaismaaz@gmail.com',
-    type: 'primary',
-  },
-];
+  { text: 'Get in Touch', href: 'mailto:awaismaaz@gmail.com', type: 'primary' },
+]
 
 export const bottomNavButtons: BottomNavButtonT[] = [
   { text: 'Work', href: `/#${Sections.work}`, section: Sections.work },
-  {
-    text: 'Services',
-    href: `/#${Sections.services}`,
-    section: Sections.services,
-  },
-  {
-    text: 'Testimonials',
-    href: `/#${Sections.testimonials}`,
-    section: Sections.testimonials,
-  },
-  {
-    text: 'About Me',
-    href: `/#${Sections.aboutMe}`,
-    section: Sections.aboutMe,
-  },
-];
+  { text: 'Services', href: `/#${Sections.services}`, section: Sections.services },
+  { text: 'Testimonials', href: `/#${Sections.testimonials}`, section: Sections.testimonials },
+  { text: 'About Me', href: `/#${Sections.aboutMe}`, section: Sections.aboutMe },
+]
 
 export const workBottomNavCategories: BottomNavCategoryT[] = [
   { text: 'Product Design', key: WorkCategories.productDesign },
-  {
-    text: 'Product Development',
-    key: WorkCategories.productDevelopment,
-  },
-  {
-    text: 'Video Editing',
-    key: WorkCategories.videoEditing,
-  },
-  {
-    text: 'Graphics Design',
-    key: WorkCategories.illustration,
-  },
-  {
-    text: '3D Artworks',
-    key: WorkCategories.blender,
-  },
-];
+  { text: 'Product Development', key: WorkCategories.productDevelopment },
+  { text: 'Video Editing', key: WorkCategories.videoEditing },
+  { text: 'Graphics Design', key: WorkCategories.illustration },
+  { text: '3D Artworks', key: WorkCategories.blender },
+]
 
 export const projectCategories: BottomNavCategoryT[] = [
   { text: 'Overview', key: ProjectCategories.overview },
-  {
-    text: 'Key Features',
-    key: ProjectCategories.keyFeatures,
-  },
-  {
-    text: 'Tech Stack',
-    key: ProjectCategories.techStack,
-  },
-  {
-    text: 'Challenges & Solutions',
-    key: ProjectCategories.challengesAndSolutions,
-  },
-];
+  { text: 'Key Features', key: ProjectCategories.keyFeatures },
+  { text: 'Tech Stack', key: ProjectCategories.techStack },
+  { text: 'Challenges & Solutions', key: ProjectCategories.challengesAndSolutions },
+]
 
 export const footerButtons: FooterButtonT[][] = [
   [
@@ -304,9 +259,9 @@ export const footerButtons: FooterButtonT[][] = [
     { text: 'Markdown Editor', href: '' },
     { text: 'Jawline Fitness', href: '' },
   ],
-];
+]
 
-export const featuredProjects: ProjectAnalysisT[] = [alfabolt, humanizarTexto, aylaAI, elBrezal];
+export const featuredProjects: ProjectAnalysisT[] = [alfabolt, humanizarTexto, aylaAI, elBrezal]
 
 export const services: ServiceT[] = [
   {
@@ -357,16 +312,9 @@ export const services: ServiceT[] = [
     baseSrc: '/svgs/blender',
     placeholderSrc: '/placeholders/blender',
   },
-];
+]
 
-export const breakpoints = {
-  '2xl': 1536,
-  lg: 1024,
-  md: 768,
-  sm: 640,
-  xl: 1280,
-  xs: 365,
-};
+export const breakpoints = { '2xl': 1536, lg: 1024, md: 768, sm: 640, xl: 1280, xs: 365 }
 
 export const testimonials: TestimonialT[] = [
   {
@@ -417,7 +365,7 @@ export const testimonials: TestimonialT[] = [
     client: 'Imran Haider',
     designation: 'Founder, Beacon Tutors Pakistan',
   },
-];
+]
 
 export const aboutSections = [
   'Maaz Rana',
@@ -426,7 +374,7 @@ export const aboutSections = [
   'Socials',
   'Tech Stack',
   'Work Experience',
-];
+]
 
 export const WorkExperiences: WorkExperienceT[] = [
   {
@@ -434,32 +382,20 @@ export const WorkExperiences: WorkExperienceT[] = [
     roles: 'Frontend Developer - Product Designer - Design Lead',
     tenure: '2022 - Present',
   },
-  {
-    company: 'Total School Solutions',
-    roles: 'IT Manager - Graphics Lead',
-    tenure: '2022 - 2024',
-  },
+  { company: 'Total School Solutions', roles: 'IT Manager - Graphics Lead', tenure: '2022 - 2024' },
   {
     company: 'Nustac Technologies',
     roles: 'Mobile App Developer - UI/UX Designer',
     tenure: '2021 - 2024',
   },
-  {
-    company: '20Four7 VA',
-    roles: 'Specialist Art Director',
-    tenure: '2022 - 2023',
-  },
+  { company: '20Four7 VA', roles: 'Specialist Art Director', tenure: '2022 - 2023' },
   {
     company: 'Beacon Tutors Pakistan',
     roles: 'Web Developer - UI/UX Designer',
     tenure: '2021 - 2022',
   },
-  {
-    company: 'Edwiz Solutions',
-    roles: 'Illustration Designer',
-    tenure: '2021 - 2022',
-  },
-];
+  { company: 'Edwiz Solutions', roles: 'Illustration Designer', tenure: '2021 - 2022' },
+]
 
 export const productDesignProjects: ProjectAnalysisT[] = [
   alfabolt,
@@ -485,7 +421,7 @@ export const productDesignProjects: ProjectAnalysisT[] = [
   beaconTutorsCRM,
   codingInterviewPrep,
   inventrios,
-];
+]
 
 export const productDevelopmentProjects: ProjectAnalysisT[] = [
   alfabolt,
@@ -496,7 +432,7 @@ export const productDevelopmentProjects: ProjectAnalysisT[] = [
   beaconTutors,
   beaconTutorsAdmin,
   inventrios,
-];
+]
 
 export const videoProjects: VideoProjectT[] = [
   beaconTutorProject1,
@@ -515,7 +451,7 @@ export const videoProjects: VideoProjectT[] = [
   nustacProject,
   phoneVideoProject,
   plutoProject,
-];
+]
 
 export const graphicDesignProjects: GraphicDesignProjectT[] = [
   alfaboltProject,
@@ -568,7 +504,7 @@ export const graphicDesignProjects: GraphicDesignProjectT[] = [
   menuHubLogoProject,
   moveLogoProject,
   maazLogoProject,
-];
+]
 
 export const blenderProjects: BlenderProjectT[] = [
   discordProject,
@@ -585,7 +521,7 @@ export const blenderProjects: BlenderProjectT[] = [
   elevationProject,
   homeProject,
   dumbbelsProject,
-];
+]
 
 export const designIconComponents: IconComponentsT = {
   figma: { Icon: SiFigma, props: { fill: '#F24E1E' } },
@@ -596,7 +532,7 @@ export const designIconComponents: IconComponentsT = {
   adobeXd: { Icon: SiAdobexd, props: { fill: '#FF61F6' } },
   blender: { Icon: SiBlender, props: { fill: '#E87D0D' } },
   canva: { Icon: SiCanva, props: { fill: '#00C4CC' } },
-};
+}
 
 export const devIconComponents: IconComponentsT = {
   next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
@@ -610,7 +546,7 @@ export const devIconComponents: IconComponentsT = {
   typescript: { Icon: SiTypescript, props: { fill: '#3178C6' } },
   tailwind: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
   framer: { Icon: SiFramer, props: { fill: '#0055FF' } },
-};
+}
 
 export const managementIconComponents: IconComponentsT = {
   slack: { Icon: SiSlack, props: { fill: '#4A154B' } },
@@ -619,13 +555,13 @@ export const managementIconComponents: IconComponentsT = {
   jira: { Icon: SiJira, props: { fill: '#0052CC' } },
   jiraSoftware: { Icon: SiJirasoftware, props: { fill: '#0052CC' } },
   github: { Icon: SiGithub, props: { fill: 'var(--primary)' } },
-};
+}
 
 export const iconComponents: IconComponentsT = {
   ...designIconComponents,
   ...devIconComponents,
   ...managementIconComponents,
-};
+}
 
 export const clientIconComponents = [
   { Icon: Alfabolt, props: { fill: 'var(--primary-hover)' } },
@@ -635,13 +571,10 @@ export const clientIconComponents = [
   { Icon: Rivanna, props: { fill: 'var(--primary-hover)' } },
   { Icon: Edwiz, props: { fill: 'var(--primary-hover)' } },
   { Icon: BeaconTutors, props: { fill: 'var(--primary-hover)' } },
-  {
-    Icon: MenuHub,
-    props: { fill: 'var(--primary-hover)' },
-  },
+  { Icon: MenuHub, props: { fill: 'var(--primary-hover)' } },
   { Icon: Lyfiti, props: { fill: 'var(--primary-hover)' } },
   { Icon: FiveOneFivePools },
-];
+]
 
 export const clientColorIconComponents = [
   { Icon: Alfabolt, props: {} },
@@ -651,13 +584,10 @@ export const clientColorIconComponents = [
   { Icon: Rivanna, props: {} },
   { Icon: Edwiz, props: {} },
   { Icon: BeaconTutors, props: {} },
-  {
-    Icon: MenuHub,
-    props: {},
-  },
+  { Icon: MenuHub, props: {} },
   { Icon: Lyfiti, props: {} },
   { Icon: FiveOneFivePools, props: {} },
-];
+]
 
 export const clientData: ClientDataT[] = [
   {
@@ -927,4 +857,4 @@ export const clientData: ClientDataT[] = [
       { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
     ],
   },
-];
+]

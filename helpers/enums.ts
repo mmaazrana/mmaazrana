@@ -33,6 +33,7 @@ const enum WeightTypesE {
   extraLight = 'extra-light',
 }
 
+
 export const enum ColorTypesE {
   primary = 'primary',
   primaryAccent = 'primary-accent',

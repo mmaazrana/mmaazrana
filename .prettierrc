@@ -1,6 +1,8 @@
 {
-  "semi": true,
-  "trailingComma": "es5",
+  "experimentalTernaries": true,
+  "semi": false,
+  "trailingComma": "all",
+  "objectWrap": "collapse",
   "singleQuote": true,
   "tabWidth": 2,
   "useTabs": false,
@@ -10,5 +12,6 @@
   "endOfLine": "lf",
   "jsxSingleQuote": true,
   "bracketSameLine": false,
-  "quoteProps": "as-needed"
+  "quoteProps": "as-needed",
+  "htmlWhitespaceSensitivity": "strict"
 }

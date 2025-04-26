@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import CategoryButton from './category-button';
-import { workBottomNavCategories } from '@/helpers/constants';
+import React, { FC } from 'react'
+import CategoryButton from './category-button'
+import { workBottomNavCategories } from '@/helpers/constants'
 
 interface DesktopCategoryNavProps {
-  categories: typeof workBottomNavCategories;
-  activeTab: string;
-  handleTabChange: (key: string) => void;
+  categories: typeof workBottomNavCategories
+  activeTab: string
+  handleTabChange: (key: string) => void
 }
 
 const DesktopCategoryNav: FC<DesktopCategoryNavProps> = ({
@@ -25,6 +25,6 @@ const DesktopCategoryNav: FC<DesktopCategoryNavProps> = ({
       />
     ))}
   </div>
-);
+)
 
-export default DesktopCategoryNav;
+export default DesktopCategoryNav

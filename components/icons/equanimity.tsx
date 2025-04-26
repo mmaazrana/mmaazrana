@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const EquanimitySvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='none' {...props}>
     <path
@@ -13,9 +13,7 @@ const EquanimitySvg = (props: SVGProps<SVGSVGElement>) => (
       x={0}
       y={0}
       maskUnits='userSpaceOnUse'
-      style={{
-        maskType: 'luminance',
-      }}
+      style={{ maskType: 'luminance' }}
     >
       <path
         fill='#fff'
@@ -41,5 +39,5 @@ const EquanimitySvg = (props: SVGProps<SVGSVGElement>) => (
       />
     </g>
   </svg>
-);
-export default EquanimitySvg;
+)
+export default EquanimitySvg

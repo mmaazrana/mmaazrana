@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const SvgHumanizarTexto = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512.6 457.58' {...props}>
     <path
@@ -35,5 +35,5 @@ const SvgHumanizarTexto = (props: SVGProps<SVGSVGElement>) => (
       d='M323.7 218.83c-.13 1.24-.27 2.48-.4 3.72.13-1.24.27-2.48.4-3.72M144.71 222.6c0 .79.02 1.59.02 2.38 0-.79-.02-1.59-.02-2.38M323.36 225.08c.09.17.2.34.26.52.02.05-.13.15-.2.23-.09-.17-.2-.34-.25-.52-.02-.05.13-.15.2-.23Z'
     />
   </svg>
-);
-export default SvgHumanizarTexto;
+)
+export default SvgHumanizarTexto

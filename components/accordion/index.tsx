@@ -1,15 +1,15 @@
-'use client';
-import Typography from '@/components/Typography';
-import React, { FC, useEffect, useState } from 'react';
-import * as m from 'motion/react-m';
-import {} from '@/helpers/enums';
+'use client'
+import Typography from '@/components/Typography'
+import React, { FC, useEffect, useState } from 'react'
+import * as m from 'motion/react-m'
+import {} from '@/helpers/enums'
 
 interface AccordionProps {
-  heading: string;
-  isExpanded: boolean;
-  content?: React.ReactElement;
-  onClick?: () => void;
-  className?: string;
+  heading: string
+  isExpanded: boolean
+  content?: React.ReactElement
+  onClick?: () => void
+  className?: string
 }
 
 const Accordion: FC<AccordionProps> = ({
@@ -19,22 +19,22 @@ const Accordion: FC<AccordionProps> = ({
   onClick,
   className,
 }) => {
-  const [isOpen, setIsOpen] = useState(isExpanded);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isOpen, setIsOpen] = useState(isExpanded)
+  const [isClicked, setIsClicked] = useState(false)
   useEffect(() => {
-    setIsClicked(true);
+    setIsClicked(true)
     const timer = setTimeout(() => {
-      setIsClicked(false);
-    }, 300);
-    return () => clearTimeout(timer); // Cleanup the timeout
-  }, [isOpen]);
+      setIsClicked(false)
+    }, 300)
+    return () => clearTimeout(timer) // Cleanup the timeout
+  }, [isOpen])
 
   return (
     <div
       className={`flex flex-col w-full max-w-full ${className}`}
       onClick={() => onClick && onClick()}
     >
-      <div className={'relative flex w-full'}>
+      <div className='relative flex w-full'>
         <div
           className={`absolute transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary ${isClicked ? 'opacity-100 scale-x-[0.985]' : 'opacity-75'}`}
         />
@@ -85,7 +85,7 @@ const Accordion: FC<AccordionProps> = ({
         </m.div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Accordion;
+export default Accordion

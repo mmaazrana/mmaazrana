@@ -1,38 +1,35 @@
-'use client';
+'use client'
 
-import React, { FC, useRef, useState } from 'react';
-import AboutCard from '@/components/cards/about-card';
-import Typography from '@/components/Typography';
-import SectionTitle from './section-title';
-import { useAboutContext } from './about-content';
-import { useInView } from 'motion/react';
-import { useMediaQuery } from 'react-responsive';
+import React, { FC, useRef, useState } from 'react'
+import AboutCard from '@/components/cards/about-card'
+import Typography from '@/components/Typography'
+import SectionTitle from './section-title'
+import { useAboutContext } from './about-content'
+import { useInView } from 'motion/react'
+import { useMediaQuery } from 'react-responsive'
 
 interface IntroSectionProps {
-  className?: string;
+  className?: string
 }
 
 const IntroSection: FC<IntroSectionProps> = ({ className }) => {
-  const { setActiveCard, setIsActive } = useAboutContext();
-  const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useMediaQuery({ maxWidth: 445 });
+  const { setActiveCard, setIsActive } = useAboutContext()
+  const [isHovered, setIsHovered] = useState(false)
+  const isMobile = useMediaQuery({ maxWidth: 445 })
 
-  const introRef = useRef(null);
-  const introIsInView = useInView(introRef, {
-    margin: `-45% 0px -45% 0px`,
-    amount: 0.2,
-  });
+  const introRef = useRef(null)
+  const introIsInView = useInView(introRef, { margin: `-45% 0px -45% 0px`, amount: 0.2 })
 
   const handleMouseEnter = () => {
-    setActiveCard('MAAZ RANA');
-    setIsActive(true);
-    setIsHovered(true);
-  };
+    setActiveCard('MAAZ RANA')
+    setIsActive(true)
+    setIsHovered(true)
+  }
 
   const handleMouseLeave = () => {
-    setIsActive(false);
-    setIsHovered(false);
-  };
+    setIsActive(false)
+    setIsHovered(false)
+  }
 
   return (
     <div
@@ -46,10 +43,10 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
         isActive={isHovered || (isMobile && introIsInView)}
       >
         <Typography
-          type={'xl'}
-          leading={'prose'}
+          type='xl'
+          leading='prose'
           weight='light'
-          color={'primary-hover'}
+          color='primary-hover'
           className='opacity-75 group-hover:opacity-100 transition-100 duration-300'
         >
           User-centric Product Designer & Developer with 5+ Years of experience, focused on
@@ -62,7 +59,7 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
         className='translate-x-3 right-0 left-auto'
       />
     </div>
-  );
-};
+  )
+}
 
-export default IntroSection;
+export default IntroSection

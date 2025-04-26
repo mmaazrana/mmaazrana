@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { archivo } from '@/helpers/fonts';
-import { AnimatePresence, m } from 'motion/react';
-import { useAboutContext } from './about-content';
+import { archivo } from '@/helpers/fonts'
+import { AnimatePresence, m } from 'motion/react'
+import { useAboutContext } from './about-content'
 
 const AnimatedText = () => {
-  const { activeCard, isActive } = useAboutContext();
+  const { activeCard, isActive } = useAboutContext()
 
   return (
     <div className='hidden about:flex absolute w-full h-full top-0 left-0 text-center justify-center items-center -z-10'>
@@ -25,7 +25,7 @@ const AnimatedText = () => {
         </m.span>
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
-export default AnimatedText;
+export default AnimatedText

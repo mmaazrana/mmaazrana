@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 const Lyfiti = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 95 32' {...props}>
@@ -10,9 +10,7 @@ const Lyfiti = (props: SVGProps<SVGSVGElement>) => (
       x={0}
       y={0}
       maskUnits='userSpaceOnUse'
-      style={{
-        maskType: 'luminance',
-      }}
+      style={{ maskType: 'luminance' }}
     >
       <path fill='white' d='M94.438 0H.065v32h94.373V0Z' />
     </mask>
@@ -23,5 +21,5 @@ const Lyfiti = (props: SVGProps<SVGSVGElement>) => (
       />
     </g>
   </svg>
-);
-export default Lyfiti;
+)
+export default Lyfiti

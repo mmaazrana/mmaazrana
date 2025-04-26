@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const SuperDuperStudio = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 407 248' fill='none' {...props}>
     <g clipPath='url(#super-duper)'>
@@ -30,5 +30,5 @@ const SuperDuperStudio = (props: SVGProps<SVGSVGElement>) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default SuperDuperStudio;
+)
+export default SuperDuperStudio

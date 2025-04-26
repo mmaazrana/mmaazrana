@@ -1,28 +1,20 @@
-import Typography from '@/components/Typography';
-import { useInView } from 'motion/react';
-import { useRef } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import Typography from '@/components/Typography'
+import { useInView } from 'motion/react'
+import { useRef } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 interface TechnologyCardProps {
   tech: {
-    icon: {
-      Icon: React.ComponentType<any>;
-      props: {
-        fill: string;
-      };
-    };
-    title: string;
-    usage: string;
-  };
+    icon: { Icon: React.ComponentType<any>; props: { fill: string } }
+    title: string
+    usage: string
+  }
 }
 
 export default function TechnologyCard({ tech }: TechnologyCardProps) {
-  const isMobile = useMediaQuery({ maxWidth: 640 });
-  const cardRef = useRef(null);
-  const cardIsInView = useInView(cardRef, {
-    margin: `-45% 0px -45% 0px`,
-    amount: 0.2,
-  });
+  const isMobile = useMediaQuery({ maxWidth: 640 })
+  const cardRef = useRef(null)
+  const cardIsInView = useInView(cardRef, { margin: `-45% 0px -45% 0px`, amount: 0.2 })
   return (
     <div
       ref={cardRef}
@@ -36,7 +28,7 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
           }}
           className={`absolute -z-10 overflow-visible w-full h-full min-w-full min-h-full !transition-opacity rounded-3xl opacity-0 group-hover:opacity-25 -z-1 ${cardIsInView && isMobile && 'opacity-25'}`}
         />
-        <svg width='100' height='100' className={'absolute w-full h-full overflow-visible group'}>
+        <svg width='100' height='100' className='absolute w-full h-full overflow-visible group'>
           <rect
             x='0'
             y='0'
@@ -71,14 +63,14 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
           />
         )}
         <div className='flex flex-col items-center justify-center gap-1 sm:gap-1.5 lg:gap-2'>
-          <Typography type={'2xl'} weight='bold' className='text-center'>
+          <Typography type='2xl' weight='bold' className='text-center'>
             {tech.title}
           </Typography>
-          <Typography type={'lg'} weight='light' className='text-center opacity-75'>
+          <Typography type='lg' weight='light' className='text-center opacity-75'>
             {tech.usage}
           </Typography>
         </div>
       </div>
     </div>
-  );
+  )
 }

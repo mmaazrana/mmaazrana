@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import { motion } from 'framer-motion';
-import Typography from '@/components/Typography';
-import Link from 'next/link';
-import { FooterButtonT } from '@/helpers/types';
+import React, { FC } from 'react'
+import { motion } from 'framer-motion'
+import Typography from '@/components/Typography'
+import Link from 'next/link'
+import { FooterButtonT } from '@/helpers/types'
 
 interface FooterSectionProps {
-  footerButtons: FooterButtonT[][];
-  isEndOfPage: boolean;
+  footerButtons: FooterButtonT[][]
+  isEndOfPage: boolean
 }
 
 const FooterSection: FC<FooterSectionProps> = ({ isEndOfPage, footerButtons }) => {
@@ -24,24 +24,21 @@ const FooterSection: FC<FooterSectionProps> = ({ isEndOfPage, footerButtons }) =
             opacity: isEndOfPage ? 1 : 0,
             transform: `translateY(${isEndOfPage ? 0 : 150}px)`,
           }}
-          transition={{
-            duration: isEndOfPage ? 0.25 : 0,
-            delay: isEndOfPage ? 0.1 : 0,
-          }}
+          transition={{ duration: isEndOfPage ? 0.25 : 0, delay: isEndOfPage ? 0.1 : 0 }}
           className={
             'transition-colors grow flex flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-1 md:gap-2 xl:gap-3'
           }
         >
-          <Typography type={'2xl'} weight='semi-bold' className={'mb-4 whitespace-nowrap'}>
+          <Typography type='2xl' weight='semi-bold' className='mb-4 whitespace-nowrap'>
             {section[0].text}
           </Typography>
           {section.slice(1).map((button, index) => (
-            <div id='pages' key={index} className={'transition-colors'}>
+            <div id='pages' key={index} className='transition-colors'>
               <Link href={button.href} aria-label={button.text}>
                 <Typography
-                  type={'xl'}
+                  type='xl'
                   weight='light'
-                  leading={'flat'}
+                  leading='flat'
                   className={
                     'opacity-50 hover:opacity-100 transition-opacity duration-250 whitespace-nowrap'
                   }
@@ -54,7 +51,7 @@ const FooterSection: FC<FooterSectionProps> = ({ isEndOfPage, footerButtons }) =
         </motion.div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default FooterSection;
+export default FooterSection

@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
-import { archivo, nunito } from '@/helpers/fonts';
+import React, { FC } from 'react'
+import { archivo, nunito } from '@/helpers/fonts'
 
-import { ColorTypes, LeadingTypes, TextTypes, WeightTypes } from '@/helpers/enums';
+import { ColorTypes, LeadingTypes, TextTypes, WeightTypes } from '@/helpers/enums'
 
 interface TypographyProps {
-  children: string;
-  type: TextTypes;
-  color?: ColorTypes;
-  weight?: WeightTypes;
-  leading?: LeadingTypes;
-  className?: string;
-  underline?: boolean;
+  children: string
+  type: TextTypes
+  color?: ColorTypes
+  weight?: WeightTypes
+  leading?: LeadingTypes
+  className?: string
+  underline?: boolean
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -38,7 +38,7 @@ const Typography: FC<TypographyProps> = ({
     sm: 'text-step--2',
     xs: 'text-step--3',
     xxs: 'text-step--4',
-  };
+  }
 
   // const colorClasses = {
   //   primary: "text-primary",
@@ -58,7 +58,7 @@ const Typography: FC<TypographyProps> = ({
     medium: 'leading-[1.45]',
     prose: 'leading-[1.55]',
     max: 'leading-[1.65]',
-  };
+  }
 
   const weightClasses = {
     black: `font-[1000] tracking-[0.035rem] ${archivo.className}`,
@@ -69,7 +69,7 @@ const Typography: FC<TypographyProps> = ({
     regular: `font-[275] tracking-[0.015rem] ${nunito.className}`,
     light: `font-[175] tracking-[0.0125rem] ${nunito.className}`,
     'extra-light': `font-[75] tracking-[0.01rem] ${nunito.className}`,
-  };
+  }
 
   const dynamicClasses = [
     sizeClasses[type],
@@ -81,7 +81,7 @@ const Typography: FC<TypographyProps> = ({
     className,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(' ')
   return (
     <span className={dynamicClasses}>
       {children.split('\n').map((line, index) => (
@@ -91,7 +91,7 @@ const Typography: FC<TypographyProps> = ({
         </React.Fragment>
       ))}
     </span>
-  );
-};
+  )
+}
 
-export default Typography;
+export default Typography

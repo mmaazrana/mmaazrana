@@ -1,45 +1,45 @@
-import { StaticImageData } from 'next/image';
-import athleton from '../public/images/projects/athleton.webp';
-import alfaboltImage from '../public/images/projects/alfabolt.webp';
-import superDuper from '../public/images/projects/super-duper.webp';
-import aylaAlt from '../public/images/projects/ayla-alt.webp';
-import aylaMain from '../public/images/projects/ayla-main.webp';
-import beaconTutorsAdminPanel from '../public/images/projects/beacon-tutor-admin-panel.webp';
-import beaconTutorWebsite from '../public/images/projects/beacon-tutor-website.webp';
-import beaconTutorCRM from '../public/images/projects/beacon-tutor-crm.webp';
-import canvaAudio from '../public/images/projects/canva-audio.webp';
-import canvaVideo from '../public/images/projects/canva-video.webp';
-import deepreel from '../public/images/projects/deepreel.webp';
-import equanimityImage from '../public/images/projects/equanimity.webp';
-import humanizarMain from '../public/images/projects/humanizar-main.webp';
-import humanizarAlt from '../public/images/projects/humanizar-alt.webp';
-import interviewMain from '../public/images/projects/interview-main.webp';
-import interviewAlt from '../public/images/projects/interview-alt.webp';
-import inventriosImage from '../public/images/projects/inventrios.webp';
-import jawlineMain from '../public/images/projects/jawline-main.webp';
-import jawlineAlt from '../public/images/projects/jawline-alt.webp';
-import markdownMain from '../public/images/projects/markdown-main.webp';
-import markdownAlt from '../public/images/projects/markdown-alt.webp';
-import menuMain from '../public/images/projects/menu-main.webp';
-import menuAlt from '../public/images/projects/menu-alt.webp';
-import nutrigramMain from '../public/images/projects/nutrigram-main.webp';
-import nutrigramAlt from '../public/images/projects/nutrigram-alt.webp';
-import pools515Main from '../public/images/projects/pools-515-main.webp';
-import pools515Alt from '../public/images/projects/pools-515-alt.webp';
-import rivannaImage from '../public/images/projects/rivanna.webp';
-import tutoraniaImage from '../public/images/projects/tutorania.webp';
-import smartCatchMain from '../public/images/projects/smart-catch-main.webp';
-import smartCatchAlt from '../public/images/projects/smart-catch-alt.webp';
-import elBrezalImage from '../public/images/projects/el-brezal.webp';
-import robinImage from '../public/images/projects/robin.webp';
+import { StaticImageData } from 'next/image'
+import athleton from '../public/images/projects/athleton.webp'
+import alfaboltImage from '../public/images/projects/alfabolt.webp'
+import superDuper from '../public/images/projects/super-duper.webp'
+import aylaAlt from '../public/images/projects/ayla-alt.webp'
+import aylaMain from '../public/images/projects/ayla-main.webp'
+import beaconTutorsAdminPanel from '../public/images/projects/beacon-tutor-admin-panel.webp'
+import beaconTutorWebsite from '../public/images/projects/beacon-tutor-website.webp'
+import beaconTutorCRM from '../public/images/projects/beacon-tutor-crm.webp'
+import canvaAudio from '../public/images/projects/canva-audio.webp'
+import canvaVideo from '../public/images/projects/canva-video.webp'
+import deepreel from '../public/images/projects/deepreel.webp'
+import equanimityImage from '../public/images/projects/equanimity.webp'
+import humanizarMain from '../public/images/projects/humanizar-main.webp'
+import humanizarAlt from '../public/images/projects/humanizar-alt.webp'
+import interviewMain from '../public/images/projects/interview-main.webp'
+import interviewAlt from '../public/images/projects/interview-alt.webp'
+import inventriosImage from '../public/images/projects/inventrios.webp'
+import jawlineMain from '../public/images/projects/jawline-main.webp'
+import jawlineAlt from '../public/images/projects/jawline-alt.webp'
+import markdownMain from '../public/images/projects/markdown-main.webp'
+import markdownAlt from '../public/images/projects/markdown-alt.webp'
+import menuMain from '../public/images/projects/menu-main.webp'
+import menuAlt from '../public/images/projects/menu-alt.webp'
+import nutrigramMain from '../public/images/projects/nutrigram-main.webp'
+import nutrigramAlt from '../public/images/projects/nutrigram-alt.webp'
+import pools515Main from '../public/images/projects/pools-515-main.webp'
+import pools515Alt from '../public/images/projects/pools-515-alt.webp'
+import rivannaImage from '../public/images/projects/rivanna.webp'
+import tutoraniaImage from '../public/images/projects/tutorania.webp'
+import smartCatchMain from '../public/images/projects/smart-catch-main.webp'
+import smartCatchAlt from '../public/images/projects/smart-catch-alt.webp'
+import elBrezalImage from '../public/images/projects/el-brezal.webp'
+import robinImage from '../public/images/projects/robin.webp'
 
 // Individual Project Analysis
 // Alfabolt
-import alfaboltCaseStudy from '../public/images/projects/individual/alfabolt/case-study.webp';
-import alfaboltLanding from '../public/images/projects/individual/alfabolt/landing.webp';
-import alfaboltPricing from '../public/images/projects/individual/alfabolt/pricing.webp';
-import alfaboltService from '../public/images/projects/individual/alfabolt/service.webp';
-import alfaboltTechnology from '../public/images/projects/individual/alfabolt/technology.webp';
+import alfaboltCaseStudy from '../public/images/projects/individual/alfabolt/case-study.webp'
+import alfaboltLanding from '../public/images/projects/individual/alfabolt/landing.webp'
+import alfaboltPricing from '../public/images/projects/individual/alfabolt/pricing.webp'
+import alfaboltService from '../public/images/projects/individual/alfabolt/service.webp'
+import alfaboltTechnology from '../public/images/projects/individual/alfabolt/technology.webp'
 
 import {
   Star,
@@ -55,7 +55,7 @@ import {
   SquareRoundCorner,
   CreditCard,
   Factory,
-} from 'lucide-react';
+} from 'lucide-react'
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
@@ -100,10 +100,10 @@ import {
   SiTensorflow,
   SiSocketdotio,
   SiNativescript,
-} from 'react-icons/si';
-import { WorkCategories } from './enums';
-import { IconType } from 'react-icons/lib';
-import { IconComponentsT, IconComponentT } from './types';
+} from 'react-icons/si'
+import { WorkCategories } from './enums'
+import { IconType } from 'react-icons/lib'
+import { IconComponentsT, IconComponentT } from './types'
 
 export const techStackIcons: IconComponentsT = {
   next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
@@ -132,43 +132,40 @@ export const techStackIcons: IconComponentsT = {
   jira: { Icon: SiJira, props: { fill: '#0052CC' } },
   jiraSoftware: { Icon: SiJirasoftware, props: { fill: '#0052CC' } },
   github: { Icon: SiGithub, props: { fill: 'var(--primary)' } },
-};
+}
 
 export interface keyFeaturesT {
-  title: string;
-  description: string;
-  icon: IconType;
+  title: string
+  description: string
+  icon: IconType
 }
 export interface techStackT {
-  title: string;
-  usage: string;
-  icon: IconComponentT;
+  title: string
+  usage: string
+  icon: IconComponentT
 }
 
 export interface challengesAndSolutionsT {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 export interface ProjectAnalysisT {
-  title: string;
-  shortDescription: string;
+  title: string
+  shortDescription: string
   detailedAnalysis: {
-    overview: string;
-    completeOn: string;
-    requirements: string[];
-    keyFeatures: keyFeaturesT[];
-    challenges: challengesAndSolutionsT[];
-    solutions: challengesAndSolutionsT[];
-  };
-  categories: WorkCategories[];
-  techStack: techStackT[];
-  liveUrl?: string;
-  figmaUrl?: string;
-  images: {
-    main: StaticImageData;
-    screenshots: StaticImageData[];
-  };
+    overview: string
+    completeOn: string
+    requirements: string[]
+    keyFeatures: keyFeaturesT[]
+    challenges: challengesAndSolutionsT[]
+    solutions: challengesAndSolutionsT[]
+  }
+  categories: WorkCategories[]
+  techStack: techStackT[]
+  liveUrl?: string
+  figmaUrl?: string
+  images: { main: StaticImageData; screenshots: StaticImageData[] }
 }
 
 export const pools515: ProjectAnalysisT = {
@@ -228,11 +225,7 @@ export const pools515: ProjectAnalysisT = {
         description: 'Comprehensive system for managing invoices, payments, and recurring billing.',
         icon: Star,
       },
-      {
-        title: 'On-site inspection management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'On-site inspection management', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
@@ -298,11 +291,8 @@ export const pools515: ProjectAnalysisT = {
     },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
   ],
-  images: {
-    main: pools515Main,
-    screenshots: [pools515Alt, pools515Alt, pools515Alt],
-  },
-};
+  images: { main: pools515Main, screenshots: [pools515Alt, pools515Alt, pools515Alt] },
+}
 
 export const beaconTutors: ProjectAnalysisT = {
   title: 'Beacon Tutors Pakistan',
@@ -322,11 +312,7 @@ export const beaconTutors: ProjectAnalysisT = {
       'Multi-step form with progress indicators for easy navigation',
     ],
     keyFeatures: [
-      {
-        title: 'City-based tutor matching',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'City-based tutor matching', description: 'Detailed service pages', icon: Star },
       {
         title: 'Chemical tracking',
         description: 'Inventory and usage tracking for pool chemicals and supplies.',
@@ -347,21 +333,13 @@ export const beaconTutors: ProjectAnalysisT = {
         description: 'Self-service portal for clients to view service history and make requests.',
         icon: Star,
       },
-      {
-        title: 'User role management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'User role management', description: 'Detailed service pages', icon: Star },
       {
         title: 'Detailed inquiry form with subject selection',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Educational resource sharing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Educational resource sharing', description: 'Detailed service pages', icon: Star },
     ],
 
     challenges: [
@@ -381,10 +359,7 @@ export const beaconTutors: ProjectAnalysisT = {
         title: 'Managing different user roles and permissions',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Ensuring seamless mobile responsiveness',
-        description: 'Detailed service pages',
-      },
+      { title: 'Ensuring seamless mobile responsiveness', description: 'Detailed service pages' },
     ],
     solutions: [
       {
@@ -424,7 +399,7 @@ export const beaconTutors: ProjectAnalysisT = {
     main: beaconTutorWebsite,
     screenshots: [beaconTutorWebsite, beaconTutorWebsite, beaconTutorWebsite],
   },
-};
+}
 
 export const deepReelAI: ProjectAnalysisT = {
   title: 'DeepReel AI Videos',
@@ -460,11 +435,7 @@ export const deepReelAI: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Multiple avatar style options',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Multiple avatar style options', description: 'Detailed service pages', icon: Star },
       {
         title: 'Background customization tools',
         description: 'Detailed service pages',
@@ -480,16 +451,8 @@ export const deepReelAI: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Dark and light theme support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Multi-language avatar support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Dark and light theme support', description: 'Detailed service pages', icon: Star },
+      { title: 'Multi-language avatar support', description: 'Detailed service pages', icon: Star },
       {
         title: 'Cloud-based video storage and management',
         description: 'Detailed service pages',
@@ -505,10 +468,7 @@ export const deepReelAI: ProjectAnalysisT = {
         title: 'Managing real-time video preview performance',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Handling large-scale asset management',
-        description: 'Detailed service pages',
-      },
+      { title: 'Handling large-scale asset management', description: 'Detailed service pages' },
       {
         title: 'Ensuring seamless video processing and delivery',
         description: 'Detailed service pages',
@@ -570,12 +530,9 @@ export const deepReelAI: ProjectAnalysisT = {
       icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
     },
   ],
-  images: {
-    main: deepreel,
-    screenshots: [deepreel, deepreel, deepreel],
-  },
+  images: { main: deepreel, screenshots: [deepreel, deepreel, deepreel] },
   liveUrl: 'https://www.deepreel.com',
-};
+}
 
 export const jawlineFitness: ProjectAnalysisT = {
   title: 'Jawline Fitness',
@@ -621,49 +578,28 @@ export const jawlineFitness: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Voice-guided workouts',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Voice-guided workouts', description: 'Detailed service pages', icon: Star },
       {
         title: 'Customizable exercise settings',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Vibration feedback system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Vibration feedback system', description: 'Detailed service pages', icon: Star },
       {
         title: 'Exercise duration customization',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Progress calendar view',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Progress calendar view', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: 'Creating intuitive exercise demonstration visuals',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Implementing precise timer functionality',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing multiple reminder schedules',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring accurate progress tracking',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implementing precise timer functionality', description: 'Detailed service pages' },
+      { title: 'Managing multiple reminder schedules', description: 'Detailed service pages' },
+      { title: 'Ensuring accurate progress tracking', description: 'Detailed service pages' },
       {
         title: 'Optimizing app performance with animations',
         description: 'Detailed service pages',
@@ -690,10 +626,7 @@ export const jawlineFitness: ProjectAnalysisT = {
         title: 'Optimized animations for smooth performance',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Designed intuitive navigation patterns',
-        description: 'Detailed service pages',
-      },
+      { title: 'Designed intuitive navigation patterns', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -719,11 +652,8 @@ export const jawlineFitness: ProjectAnalysisT = {
       icon: { Icon: SiNativescript, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: jawlineMain,
-    screenshots: [jawlineAlt, jawlineAlt, jawlineAlt],
-  },
-};
+  images: { main: jawlineMain, screenshots: [jawlineAlt, jawlineAlt, jawlineAlt] },
+}
 
 export const codingInterviewPrep: ProjectAnalysisT = {
   title: 'Coding Interview Prep',
@@ -764,36 +694,20 @@ export const codingInterviewPrep: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Social comparison features',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Social comparison features', description: 'Detailed service pages', icon: Star },
       {
         title: 'Interview preparation timeline',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Custom study plan creation',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Achievement tracking system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Custom study plan creation', description: 'Detailed service pages', icon: Star },
+      { title: 'Achievement tracking system', description: 'Detailed service pages', icon: Star },
       {
         title: 'Programming language selection guide',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Comprehensive DSA curriculum',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Comprehensive DSA curriculum', description: 'Detailed service pages', icon: Star },
       {
         title: 'Integration with coding platforms (LeetCode, HackerRank)',
         description: 'Detailed service pages',
@@ -818,14 +732,8 @@ export const codingInterviewPrep: ProjectAnalysisT = {
         title: 'Managing vast educational content structure',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Ensuring accurate difficulty progression',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Integrating multiple coding platforms',
-        description: 'Detailed service pages',
-      },
+      { title: 'Ensuring accurate difficulty progression', description: 'Detailed service pages' },
+      { title: 'Integrating multiple coding platforms', description: 'Detailed service pages' },
       {
         title: 'Maintaining consistent cross-platform experience',
         description: 'Detailed service pages',
@@ -840,10 +748,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
         title: 'Implemented interactive visualization systems',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created modular content management system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created modular content management system', description: 'Detailed service pages' },
       {
         title: 'Established consistent cross-platform design system',
         description: 'Detailed service pages',
@@ -880,11 +785,8 @@ export const codingInterviewPrep: ProjectAnalysisT = {
       icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
     },
   ],
-  images: {
-    main: interviewMain,
-    screenshots: [interviewAlt, interviewAlt, interviewAlt],
-  },
-};
+  images: { main: interviewMain, screenshots: [interviewAlt, interviewAlt, interviewAlt] },
+}
 
 export const equanimity: ProjectAnalysisT = {
   title: 'Equanimity',
@@ -910,11 +812,7 @@ export const equanimity: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Fund discovery and browsing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Fund discovery and browsing', description: 'Detailed service pages', icon: Star },
       {
         title: 'Real-time chat communication system',
         description: 'Detailed service pages',
@@ -945,11 +843,7 @@ export const equanimity: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Investment progress tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Investment progress tracking', description: 'Detailed service pages', icon: Star },
       {
         title: 'Multi-step fund creation process',
         description: 'Detailed service pages',
@@ -961,44 +855,23 @@ export const equanimity: ProjectAnalysisT = {
         title: 'Implementing secure investment transactions',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Managing complex fund creation workflows',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Building real-time communication features',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex fund creation workflows', description: 'Detailed service pages' },
+      { title: 'Building real-time communication features', description: 'Detailed service pages' },
       {
         title: 'Ensuring data accuracy for financial information',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Creating intuitive investment interfaces',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling document verification processes',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating intuitive investment interfaces', description: 'Detailed service pages' },
+      { title: 'Handling document verification processes', description: 'Detailed service pages' },
     ],
     solutions: [
       {
         title: 'Developed secure transaction processing system',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created step-by-step fund creation wizard',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented WebSocket-based chat system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Integrated document verification system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created step-by-step fund creation wizard', description: 'Detailed service pages' },
+      { title: 'Implemented WebSocket-based chat system', description: 'Detailed service pages' },
+      { title: 'Integrated document verification system', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -1030,7 +903,7 @@ export const equanimity: ProjectAnalysisT = {
     main: equanimityImage,
     screenshots: [equanimityImage, equanimityImage, equanimityImage],
   },
-};
+}
 
 export const aylaAI: ProjectAnalysisT = {
   title: 'Ayla AI Assistant',
@@ -1056,51 +929,15 @@ export const aylaAI: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Smart reminder system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Medication tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Appointment management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Biometric authentication',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Customizable AI personality',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Location-based services',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Profile customization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Natural language processing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Context-aware assistance',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Smart reminder system', description: 'Detailed service pages', icon: Star },
+      { title: 'Medication tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Appointment management', description: 'Detailed service pages', icon: Star },
+      { title: 'Biometric authentication', description: 'Detailed service pages', icon: Star },
+      { title: 'Customizable AI personality', description: 'Detailed service pages', icon: Star },
+      { title: 'Location-based services', description: 'Detailed service pages', icon: Star },
+      { title: 'Profile customization', description: 'Detailed service pages', icon: Star },
+      { title: 'Natural language processing', description: 'Detailed service pages', icon: Star },
+      { title: 'Context-aware assistance', description: 'Detailed service pages', icon: Star },
       {
         title: 'Multi-modal interaction options',
         description: 'Detailed service pages',
@@ -1108,56 +945,29 @@ export const aylaAI: ProjectAnalysisT = {
       },
     ],
     challenges: [
-      {
-        title: 'Creating natural conversational flows',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing context-aware responses',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing complex reminder systems',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring user privacy and data security',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling offline functionality',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing AI response time',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating natural conversational flows', description: 'Detailed service pages' },
+      { title: 'Implementing context-aware responses', description: 'Detailed service pages' },
+      { title: 'Managing complex reminder systems', description: 'Detailed service pages' },
+      { title: 'Ensuring user privacy and data security', description: 'Detailed service pages' },
+      { title: 'Handling offline functionality', description: 'Detailed service pages' },
+      { title: 'Optimizing AI response time', description: 'Detailed service pages' },
     ],
     solutions: [
       {
         title: 'Developed sophisticated conversation handling system',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Implemented context retention mechanism',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implemented context retention mechanism', description: 'Detailed service pages' },
       {
         title: 'Created flexible reminder management system',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Built secure local data storage solution',
-        description: 'Detailed service pages',
-      },
+      { title: 'Built secure local data storage solution', description: 'Detailed service pages' },
       {
         title: 'Designed efficient offline-first architecture',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Optimized AI processing pipeline',
-        description: 'Detailed service pages',
-      },
+      { title: 'Optimized AI processing pipeline', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -1180,11 +990,8 @@ export const aylaAI: ProjectAnalysisT = {
     },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
-  images: {
-    main: aylaMain,
-    screenshots: [aylaAlt, aylaAlt, aylaAlt],
-  },
-};
+  images: { main: aylaMain, screenshots: [aylaAlt, aylaAlt, aylaAlt] },
+}
 
 export const deepReelCanva: ProjectAnalysisT = {
   title: 'DeepReel Canva App',
@@ -1215,90 +1022,41 @@ export const deepReelCanva: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Multiple aspect ratio support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Multiple aspect ratio support', description: 'Detailed service pages', icon: Star },
       {
         title: 'Script translation capabilities',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Voice expressiveness control',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Speaking style adjustment',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Custom voice creation',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Video preview system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Credit management system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Feedback collection mechanism',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Voice expressiveness control', description: 'Detailed service pages', icon: Star },
+      { title: 'Speaking style adjustment', description: 'Detailed service pages', icon: Star },
+      { title: 'Custom voice creation', description: 'Detailed service pages', icon: Star },
+      { title: 'Video preview system', description: 'Detailed service pages', icon: Star },
+      { title: 'Credit management system', description: 'Detailed service pages', icon: Star },
+      { title: 'Feedback collection mechanism', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: "Integrating complex AI features within Canva's ecosystem",
         description: 'Detailed service pages',
       },
-      {
-        title: 'Managing cross-platform compatibility',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing video preview performance',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling different aspect ratios',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring seamless user authentication',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing cross-platform compatibility', description: 'Detailed service pages' },
+      { title: 'Optimizing video preview performance', description: 'Detailed service pages' },
+      { title: 'Handling different aspect ratios', description: 'Detailed service pages' },
+      { title: 'Ensuring seamless user authentication', description: 'Detailed service pages' },
       {
         title: 'Maintaining consistent UI/UX with both platforms',
         description: 'Detailed service pages',
       },
     ],
     solutions: [
-      {
-        title: 'Developed custom Canva SDK implementation',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed custom Canva SDK implementation', description: 'Detailed service pages' },
       {
         title: 'Created efficient video processing pipeline',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Implemented adaptive preview system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established consistent design system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implemented adaptive preview system', description: 'Detailed service pages' },
+      { title: 'Established consistent design system', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDevelopment],
@@ -1325,12 +1083,9 @@ export const deepReelCanva: ProjectAnalysisT = {
       icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
     },
   ],
-  images: {
-    main: canvaVideo,
-    screenshots: [canvaAudio, canvaAudio, canvaAudio],
-  },
+  images: { main: canvaVideo, screenshots: [canvaAudio, canvaAudio, canvaAudio] },
   liveUrl: 'https://www.canva.com/apps/deepreel',
-};
+}
 
 export const beaconTutorsAdmin: ProjectAnalysisT = {
   title: 'Beacon Tutors Admin Dashboard',
@@ -1356,77 +1111,27 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Review system with moderation',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Review system with moderation', description: 'Detailed service pages', icon: Star },
       {
         title: 'Announcement creation and management',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Tutor approval system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Student feedback management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User profile management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Administrative controls',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Data filtering and sorting',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User role management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Activity tracking system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Tutor approval system', description: 'Detailed service pages', icon: Star },
+      { title: 'Student feedback management', description: 'Detailed service pages', icon: Star },
+      { title: 'User profile management', description: 'Detailed service pages', icon: Star },
+      { title: 'Administrative controls', description: 'Detailed service pages', icon: Star },
+      { title: 'Data filtering and sorting', description: 'Detailed service pages', icon: Star },
+      { title: 'User role management', description: 'Detailed service pages', icon: Star },
+      { title: 'Activity tracking system', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Managing complex user relationships',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing efficient data filtering',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring secure access control',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling large volumes of inquiries',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive moderation tools',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Maintaining data consistency',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex user relationships', description: 'Detailed service pages' },
+      { title: 'Implementing efficient data filtering', description: 'Detailed service pages' },
+      { title: 'Ensuring secure access control', description: 'Detailed service pages' },
+      { title: 'Handling large volumes of inquiries', description: 'Detailed service pages' },
+      { title: 'Creating intuitive moderation tools', description: 'Detailed service pages' },
+      { title: 'Maintaining data consistency', description: 'Detailed service pages' },
     ],
     solutions: [
       {
@@ -1445,14 +1150,8 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
         title: 'Built scalable inquiry management workflow',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Designed efficient moderation interface',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established reliable data synchronization',
-        description: 'Detailed service pages',
-      },
+      { title: 'Designed efficient moderation interface', description: 'Detailed service pages' },
+      { title: 'Established reliable data synchronization', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -1494,7 +1193,7 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
     main: beaconTutorsAdminPanel,
     screenshots: [beaconTutorsAdminPanel, beaconTutorsAdminPanel, beaconTutorsAdminPanel],
   },
-};
+}
 
 export const markdownEditor: ProjectAnalysisT = {
   title: 'Markdown Editor',
@@ -1515,102 +1214,40 @@ export const markdownEditor: ProjectAnalysisT = {
       'Seamless preview mode integration',
     ],
     keyFeatures: [
-      {
-        title: 'Advanced markdown editing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Table creation and management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Image and file attachments',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document organization by date',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Advanced markdown editing', description: 'Detailed service pages', icon: Star },
+      { title: 'Table creation and management', description: 'Detailed service pages', icon: Star },
+      { title: 'Image and file attachments', description: 'Detailed service pages', icon: Star },
+      { title: 'Document organization by date', description: 'Detailed service pages', icon: Star },
       {
         title: 'Full-text search functionality',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Tags and checklist support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Rich text formatting options',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document preview mode',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Auto-save functionality',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Custom formatting toolbar',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Multiple document support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Export capabilities',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Tags and checklist support', description: 'Detailed service pages', icon: Star },
+      { title: 'Rich text formatting options', description: 'Detailed service pages', icon: Star },
+      { title: 'Document preview mode', description: 'Detailed service pages', icon: Star },
+      { title: 'Auto-save functionality', description: 'Detailed service pages', icon: Star },
+      { title: 'Custom formatting toolbar', description: 'Detailed service pages', icon: Star },
+      { title: 'Multiple document support', description: 'Detailed service pages', icon: Star },
+      { title: 'Export capabilities', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: 'Implementing complex table creation interface',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Managing large attachment libraries',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring smooth preview rendering',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing search performance',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling different markdown extensions',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing large attachment libraries', description: 'Detailed service pages' },
+      { title: 'Ensuring smooth preview rendering', description: 'Detailed service pages' },
+      { title: 'Optimizing search performance', description: 'Detailed service pages' },
+      { title: 'Handling different markdown extensions', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed custom table creation interface',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed custom table creation interface', description: 'Detailed service pages' },
       {
         title: 'Implemented efficient attachment management',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created optimized markdown preview system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created optimized markdown preview system', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -1627,11 +1264,8 @@ export const markdownEditor: ProjectAnalysisT = {
     },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
-  images: {
-    main: markdownMain,
-    screenshots: [markdownAlt, markdownAlt, markdownAlt],
-  },
-};
+  images: { main: markdownMain, screenshots: [markdownAlt, markdownAlt, markdownAlt] },
+}
 
 export const menuHub: ProjectAnalysisT = {
   title: 'MenuHub',
@@ -1662,82 +1296,27 @@ export const menuHub: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Order management system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Customer engagement tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Business analytics dashboard',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Multi-location support',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Menu item categorization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Photo gallery management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Pricing tier options',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Restaurant discovery platform',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Business owner dashboard',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Customer feedback system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Order management system', description: 'Detailed service pages', icon: Star },
+      { title: 'Customer engagement tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Business analytics dashboard', description: 'Detailed service pages', icon: Star },
+      { title: 'Multi-location support', description: 'Detailed service pages', icon: Star },
+      { title: 'Menu item categorization', description: 'Detailed service pages', icon: Star },
+      { title: 'Photo gallery management', description: 'Detailed service pages', icon: Star },
+      { title: 'Pricing tier options', description: 'Detailed service pages', icon: Star },
+      { title: 'Restaurant discovery platform', description: 'Detailed service pages', icon: Star },
+      { title: 'Business owner dashboard', description: 'Detailed service pages', icon: Star },
+      { title: 'Customer feedback system', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: 'Creating intuitive menu digitization process',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Managing complex restaurant data',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing efficient order system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring scalable platform architecture',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling multiple pricing tiers',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Maintaining consistent user experience',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex restaurant data', description: 'Detailed service pages' },
+      { title: 'Implementing efficient order system', description: 'Detailed service pages' },
+      { title: 'Ensuring scalable platform architecture', description: 'Detailed service pages' },
+      { title: 'Handling multiple pricing tiers', description: 'Detailed service pages' },
+      { title: 'Maintaining consistent user experience', description: 'Detailed service pages' },
     ],
     solutions: [
       {
@@ -1748,22 +1327,10 @@ export const menuHub: ProjectAnalysisT = {
         title: 'Built robust restaurant data management system',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Implemented real-time order tracking',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created scalable cloud infrastructure',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed flexible pricing system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established consistent design patterns',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implemented real-time order tracking', description: 'Detailed service pages' },
+      { title: 'Created scalable cloud infrastructure', description: 'Detailed service pages' },
+      { title: 'Designed flexible pricing system', description: 'Detailed service pages' },
+      { title: 'Established consistent design patterns', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -1797,11 +1364,8 @@ export const menuHub: ProjectAnalysisT = {
       icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
     },
   ],
-  images: {
-    main: menuMain,
-    screenshots: [menuAlt, menuAlt, menuAlt],
-  },
-};
+  images: { main: menuMain, screenshots: [menuAlt, menuAlt, menuAlt] },
+}
 
 export const nutrigram: ProjectAnalysisT = {
   title: 'Nutrigram',
@@ -1827,56 +1391,16 @@ export const nutrigram: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Detailed nutritional analysis',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Social competition system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Food photo logging',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Progress history tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Friend leaderboard',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Customizable serving sizes',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Comprehensive food database',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Visual progress indicators',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Meal history logging',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Nutritional goals tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Detailed nutritional analysis', description: 'Detailed service pages', icon: Star },
+      { title: 'Social competition system', description: 'Detailed service pages', icon: Star },
+      { title: 'Food photo logging', description: 'Detailed service pages', icon: Star },
+      { title: 'Progress history tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Friend leaderboard', description: 'Detailed service pages', icon: Star },
+      { title: 'Customizable serving sizes', description: 'Detailed service pages', icon: Star },
+      { title: 'Comprehensive food database', description: 'Detailed service pages', icon: Star },
+      { title: 'Visual progress indicators', description: 'Detailed service pages', icon: Star },
+      { title: 'Meal history logging', description: 'Detailed service pages', icon: Star },
+      { title: 'Nutritional goals tracking', description: 'Detailed service pages', icon: Star },
       {
         title: 'Multi-metric health monitoring',
         description: 'Detailed service pages',
@@ -1884,30 +1408,15 @@ export const nutrigram: ProjectAnalysisT = {
       },
     ],
     challenges: [
-      {
-        title: 'Creating intuitive food logging process',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating intuitive food logging process', description: 'Detailed service pages' },
       {
         title: 'Implementing accurate nutritional calculations',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Managing real-time social features',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring data accuracy and consistency',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Building engaging competitive features',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling offline functionality',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing real-time social features', description: 'Detailed service pages' },
+      { title: 'Ensuring data accuracy and consistency', description: 'Detailed service pages' },
+      { title: 'Building engaging competitive features', description: 'Detailed service pages' },
+      { title: 'Handling offline functionality', description: 'Detailed service pages' },
     ],
     solutions: [
       {
@@ -1918,22 +1427,10 @@ export const nutrigram: ProjectAnalysisT = {
         title: 'Implemented comprehensive nutritional database',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created efficient real-time social system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built robust data validation system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed engaging competition mechanics',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented offline-first architecture',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created efficient real-time social system', description: 'Detailed service pages' },
+      { title: 'Built robust data validation system', description: 'Detailed service pages' },
+      { title: 'Designed engaging competition mechanics', description: 'Detailed service pages' },
+      { title: 'Implemented offline-first architecture', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -1960,11 +1457,8 @@ export const nutrigram: ProjectAnalysisT = {
     },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
-  images: {
-    main: nutrigramMain,
-    screenshots: [nutrigramAlt, nutrigramAlt, nutrigramAlt],
-  },
-};
+  images: { main: nutrigramMain, screenshots: [nutrigramAlt, nutrigramAlt, nutrigramAlt] },
+}
 
 export const athletonPlus: ProjectAnalysisT = {
   title: 'Athleton+',
@@ -1995,109 +1489,39 @@ export const athletonPlus: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Workout progress tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Session calendar management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Profile customization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Settings management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Progress reporting',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Mobile app integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Client management tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Workout history tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Payment processing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Notification system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Workout progress tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Session calendar management', description: 'Detailed service pages', icon: Star },
+      { title: 'Profile customization', description: 'Detailed service pages', icon: Star },
+      { title: 'Settings management', description: 'Detailed service pages', icon: Star },
+      { title: 'Progress reporting', description: 'Detailed service pages', icon: Star },
+      { title: 'Mobile app integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Client management tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Workout history tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Payment processing', description: 'Detailed service pages', icon: Star },
+      { title: 'Notification system', description: 'Detailed service pages', icon: Star },
     ],
 
     challenges: [
-      {
-        title: 'Managing complex scheduling requirements',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing real-time updates',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring cross-platform consistency',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Building efficient notification system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling timezone differences',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive booking interface',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex scheduling requirements', description: 'Detailed service pages' },
+      { title: 'Implementing real-time updates', description: 'Detailed service pages' },
+      { title: 'Ensuring cross-platform consistency', description: 'Detailed service pages' },
+      { title: 'Building efficient notification system', description: 'Detailed service pages' },
+      { title: 'Handling timezone differences', description: 'Detailed service pages' },
+      { title: 'Creating intuitive booking interface', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed robust scheduling algorithm',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed robust scheduling algorithm', description: 'Detailed service pages' },
       {
         title: 'Implemented WebSocket for real-time features',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created consistent cross-platform design',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created consistent cross-platform design', description: 'Detailed service pages' },
       {
         title: 'Built reliable notification delivery system',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Integrated timezone management',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed user-friendly booking flow',
-        description: 'Detailed service pages',
-      },
+      { title: 'Integrated timezone management', description: 'Detailed service pages' },
+      { title: 'Designed user-friendly booking flow', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -2127,11 +1551,8 @@ export const athletonPlus: ProjectAnalysisT = {
       icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
     },
   ],
-  images: {
-    main: athleton,
-    screenshots: [athleton, athleton, athleton],
-  },
-};
+  images: { main: athleton, screenshots: [athleton, athleton, athleton] },
+}
 
 export const beaconTutorsCRM: ProjectAnalysisT = {
   title: 'Beacon Tutors CRM',
@@ -2157,16 +1578,8 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Lead processing pipeline',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Demo session tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Lead processing pipeline', description: 'Detailed service pages', icon: Star },
+      { title: 'Demo session tracking', description: 'Detailed service pages', icon: Star },
       {
         title: 'Student information management',
         description: 'Detailed service pages',
@@ -2177,81 +1590,26 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Contact information tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Automated workflow management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Status tracking system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Multi-step processing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Inquiry categorization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Detailed reporting',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User role management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Contact information tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Automated workflow management', description: 'Detailed service pages', icon: Star },
+      { title: 'Status tracking system', description: 'Detailed service pages', icon: Star },
+      { title: 'Multi-step processing', description: 'Detailed service pages', icon: Star },
+      { title: 'Inquiry categorization', description: 'Detailed service pages', icon: Star },
+      { title: 'Detailed reporting', description: 'Detailed service pages', icon: Star },
+      { title: 'User role management', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Managing complex inquiry workflows',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing efficient data organization',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive status tracking',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex inquiry workflows', description: 'Detailed service pages' },
+      { title: 'Implementing efficient data organization', description: 'Detailed service pages' },
+      { title: 'Creating intuitive status tracking', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed structured workflow pipeline',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created organized data architecture',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented clear status indicators',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built flexible inquiry type system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established data validation rules',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed efficient filtering mechanism',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed structured workflow pipeline', description: 'Detailed service pages' },
+      { title: 'Created organized data architecture', description: 'Detailed service pages' },
+      { title: 'Implemented clear status indicators', description: 'Detailed service pages' },
+      { title: 'Built flexible inquiry type system', description: 'Detailed service pages' },
+      { title: 'Established data validation rules', description: 'Detailed service pages' },
+      { title: 'Designed efficient filtering mechanism', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -2285,11 +1643,8 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
       icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: beaconTutorCRM,
-    screenshots: [beaconTutorCRM, beaconTutorCRM, beaconTutorCRM],
-  },
-};
+  images: { main: beaconTutorCRM, screenshots: [beaconTutorCRM, beaconTutorCRM, beaconTutorCRM] },
+}
 
 export const inventrios: ProjectAnalysisT = {
   title: 'Inventrios',
@@ -2310,114 +1665,33 @@ export const inventrios: ProjectAnalysisT = {
       'Professional testimonial presentation',
     ],
     keyFeatures: [
-      {
-        title: 'Service showcase cards',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Project portfolio section',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Testimonials integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Contact form system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Animated transitions',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Custom illustrations',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Responsive design',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Case study presentations',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Service descriptions',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Team section',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Project management overview',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Technology stack display',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Service showcase cards', description: 'Detailed service pages', icon: Star },
+      { title: 'Project portfolio section', description: 'Detailed service pages', icon: Star },
+      { title: 'Testimonials integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Contact form system', description: 'Detailed service pages', icon: Star },
+      { title: 'Animated transitions', description: 'Detailed service pages', icon: Star },
+      { title: 'Custom illustrations', description: 'Detailed service pages', icon: Star },
+      { title: 'Responsive design', description: 'Detailed service pages', icon: Star },
+      { title: 'Case study presentations', description: 'Detailed service pages', icon: Star },
+      { title: 'Service descriptions', description: 'Detailed service pages', icon: Star },
+      { title: 'Team section', description: 'Detailed service pages', icon: Star },
+      { title: 'Project management overview', description: 'Detailed service pages', icon: Star },
+      { title: 'Technology stack display', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Creating cohesive dark theme design',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing smooth animations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Organizing diverse service offerings',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring responsive layouts',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing performance',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating cohesive dark theme design', description: 'Detailed service pages' },
+      { title: 'Implementing smooth animations', description: 'Detailed service pages' },
+      { title: 'Organizing diverse service offerings', description: 'Detailed service pages' },
+      { title: 'Ensuring responsive layouts', description: 'Detailed service pages' },
+      { title: 'Optimizing performance', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed consistent color system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built custom animation framework',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created organized service structure',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented flexible grid system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimized asset delivery',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established clear visual patterns',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed consistent color system', description: 'Detailed service pages' },
+      { title: 'Built custom animation framework', description: 'Detailed service pages' },
+      { title: 'Created organized service structure', description: 'Detailed service pages' },
+      { title: 'Implemented flexible grid system', description: 'Detailed service pages' },
+      { title: 'Optimized asset delivery', description: 'Detailed service pages' },
+      { title: 'Established clear visual patterns', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -2445,7 +1719,7 @@ export const inventrios: ProjectAnalysisT = {
     main: inventriosImage,
     screenshots: [inventriosImage, inventriosImage, inventriosImage],
   },
-};
+}
 
 export const superDuperStudio: ProjectAnalysisT = {
   title: 'Super Duper Studio',
@@ -2466,110 +1740,35 @@ export const superDuperStudio: ProjectAnalysisT = {
       'Mobile-responsive design with consistent styling',
     ],
     keyFeatures: [
-      {
-        title: 'Program showcase sections',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Interactive service cards',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Testimonial integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Newsletter subscription',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Social media integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Program pricing tables',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Photo galleries',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Contact form system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Event calendar',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Location information',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Team member profiles',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Service package details',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Program showcase sections', description: 'Detailed service pages', icon: Star },
+      { title: 'Interactive service cards', description: 'Detailed service pages', icon: Star },
+      { title: 'Testimonial integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Newsletter subscription', description: 'Detailed service pages', icon: Star },
+      { title: 'Social media integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Program pricing tables', description: 'Detailed service pages', icon: Star },
+      { title: 'Photo galleries', description: 'Detailed service pages', icon: Star },
+      { title: 'Contact form system', description: 'Detailed service pages', icon: Star },
+      { title: 'Event calendar', description: 'Detailed service pages', icon: Star },
+      { title: 'Location information', description: 'Detailed service pages', icon: Star },
+      { title: 'Team member profiles', description: 'Detailed service pages', icon: Star },
+      { title: 'Service package details', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: 'Balancing playful design with functionality',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Creating engaging content presentation',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing responsive layouts',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing rich media content',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring fast load times',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Maintaining consistent branding',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating engaging content presentation', description: 'Detailed service pages' },
+      { title: 'Implementing responsive layouts', description: 'Detailed service pages' },
+      { title: 'Managing rich media content', description: 'Detailed service pages' },
+      { title: 'Ensuring fast load times', description: 'Detailed service pages' },
+      { title: 'Maintaining consistent branding', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed modular design system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created engaging content blocks',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented flexible responsive design',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimized media delivery',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed modular design system', description: 'Detailed service pages' },
+      { title: 'Created engaging content blocks', description: 'Detailed service pages' },
+      { title: 'Implemented flexible responsive design', description: 'Detailed service pages' },
+      { title: 'Optimized media delivery', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -2603,11 +1802,8 @@ export const superDuperStudio: ProjectAnalysisT = {
     { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
     { title: 'SendGrid', usage: 'Email', icon: { Icon: SiSendgrid, props: { fill: '#0052CC' } } },
   ],
-  images: {
-    main: superDuper,
-    screenshots: [superDuper, superDuper, superDuper],
-  },
-};
+  images: { main: superDuper, screenshots: [superDuper, superDuper, superDuper] },
+}
 
 export const deepReelWebsite: ProjectAnalysisT = {
   title: 'DeepReel Website',
@@ -2628,118 +1824,37 @@ export const deepReelWebsite: ProjectAnalysisT = {
       'Engaging call-to-action placement',
     ],
     keyFeatures: [
-      {
-        title: 'AI avatar showcase',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Language support display',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Pricing tier comparison',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Feature benefit cards',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Ethics and safety section',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Integration highlights',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Video campaign builder',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Testimonials section',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Technology partnerships',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Platform capabilities',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Custom solutions',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Enterprise features',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'AI avatar showcase', description: 'Detailed service pages', icon: Star },
+      { title: 'Language support display', description: 'Detailed service pages', icon: Star },
+      { title: 'Pricing tier comparison', description: 'Detailed service pages', icon: Star },
+      { title: 'Feature benefit cards', description: 'Detailed service pages', icon: Star },
+      { title: 'Ethics and safety section', description: 'Detailed service pages', icon: Star },
+      { title: 'Integration highlights', description: 'Detailed service pages', icon: Star },
+      { title: 'Video campaign builder', description: 'Detailed service pages', icon: Star },
+      { title: 'Testimonials section', description: 'Detailed service pages', icon: Star },
+      { title: 'Technology partnerships', description: 'Detailed service pages', icon: Star },
+      { title: 'Platform capabilities', description: 'Detailed service pages', icon: Star },
+      { title: 'Custom solutions', description: 'Detailed service pages', icon: Star },
+      { title: 'Enterprise features', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Communicating complex AI features',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Demonstrating video capabilities',
-        description: 'Detailed service pages',
-      },
+      { title: 'Communicating complex AI features', description: 'Detailed service pages' },
+      { title: 'Demonstrating video capabilities', description: 'Detailed service pages' },
       {
         title: 'Maintaining performance with video content',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Creating clear pricing structure',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Balancing information density',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring responsive video playback',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating clear pricing structure', description: 'Detailed service pages' },
+      { title: 'Balancing information density', description: 'Detailed service pages' },
+      { title: 'Ensuring responsive video playback', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed clear feature presentations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created intuitive product demonstrations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented professional design system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Structured information hierarchy',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built interactive feature showcases',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established consistent content strategy',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed clear feature presentations', description: 'Detailed service pages' },
+      { title: 'Created intuitive product demonstrations', description: 'Detailed service pages' },
+      { title: 'Implemented professional design system', description: 'Detailed service pages' },
+      { title: 'Structured information hierarchy', description: 'Detailed service pages' },
+      { title: 'Built interactive feature showcases', description: 'Detailed service pages' },
+      { title: 'Established consistent content strategy', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -2768,12 +1883,9 @@ export const deepReelWebsite: ProjectAnalysisT = {
       icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: deepreel,
-    screenshots: [deepreel, deepreel, deepreel],
-  },
+  images: { main: deepreel, screenshots: [deepreel, deepreel, deepreel] },
   liveUrl: 'https://www.deepreel.com',
-};
+}
 
 export const alfabolt: ProjectAnalysisT = {
   title: 'Alfabolt Website',
@@ -2922,39 +2034,16 @@ export const alfabolt: ProjectAnalysisT = {
         description:
           'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
       },
-      {
-        title: 'Contrast and Touch Area Testing',
-        description: 'Designed scalable page templates',
-      },
+      { title: 'Contrast and Touch Area Testing', description: 'Designed scalable page templates' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    {
-      title: 'Next.js',
-      usage: 'Front-End Framework',
-      icon: techStackIcons.next,
-    },
-    {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: techStackIcons.typescript,
-    },
-    {
-      title: 'Vercel',
-      usage: 'Deployment Platform',
-      icon: techStackIcons.vercel,
-    },
-    {
-      title: 'Google Analytics',
-      usage: 'Analytics Tool',
-      icon: techStackIcons.googleAnalytics,
-    },
-    {
-      title: 'Figma',
-      usage: 'UI/UX Design',
-      icon: techStackIcons.figma,
-    },
+    { title: 'Next.js', usage: 'Front-End Framework', icon: techStackIcons.next },
+    { title: 'TypeScript', usage: 'Programming Language', icon: techStackIcons.typescript },
+    { title: 'Vercel', usage: 'Deployment Platform', icon: techStackIcons.vercel },
+    { title: 'Google Analytics', usage: 'Analytics Tool', icon: techStackIcons.googleAnalytics },
+    { title: 'Figma', usage: 'UI/UX Design', icon: techStackIcons.figma },
     {
       title: 'Adobe Illustrator',
       usage: 'Icon & Illustration Design',
@@ -2965,11 +2054,7 @@ export const alfabolt: ProjectAnalysisT = {
       usage: 'Image Resizing & Optimization',
       icon: techStackIcons.photoshop,
     },
-    {
-      title: 'Blender',
-      usage: '3D Mockups & Rendering',
-      icon: techStackIcons.blender,
-    },
+    { title: 'Blender', usage: '3D Mockups & Rendering', icon: techStackIcons.blender },
   ],
   images: {
     main: alfaboltImage,
@@ -2981,7 +2066,7 @@ export const alfabolt: ProjectAnalysisT = {
       alfaboltTechnology,
     ],
   },
-};
+}
 
 export const tutorania: ProjectAnalysisT = {
   title: 'Tutorania',
@@ -3002,56 +2087,20 @@ export const tutorania: ProjectAnalysisT = {
       'Responsive design adapting to different screen sizes',
     ],
     keyFeatures: [
-      {
-        title: 'Team member management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Team member management', description: 'Detailed service pages', icon: Star },
       {
         title: 'Performance analytics tracking',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Detailed activity reporting',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Member profile management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Data visualization tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Custom report generation',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Team organization tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Progress tracking metrics',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Historical data analysis',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User role management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Detailed activity reporting', description: 'Detailed service pages', icon: Star },
+      { title: 'Member profile management', description: 'Detailed service pages', icon: Star },
+      { title: 'Data visualization tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Custom report generation', description: 'Detailed service pages', icon: Star },
+      { title: 'Team organization tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Progress tracking metrics', description: 'Detailed service pages', icon: Star },
+      { title: 'Historical data analysis', description: 'Detailed service pages', icon: Star },
+      { title: 'User role management', description: 'Detailed service pages', icon: Star },
       {
         title: 'Interactive analytics dashboard',
         description: 'Detailed service pages',
@@ -3064,56 +2113,23 @@ export const tutorania: ProjectAnalysisT = {
       },
     ],
     challenges: [
-      {
-        title: 'Managing complex team hierarchies',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing efficient data visualization',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling large datasets for analytics',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive reporting tools',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring data accuracy and consistency',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Building scalable search functionality',
-        description: 'Detailed service pages',
-      },
+      { title: 'Managing complex team hierarchies', description: 'Detailed service pages' },
+      { title: 'Implementing efficient data visualization', description: 'Detailed service pages' },
+      { title: 'Handling large datasets for analytics', description: 'Detailed service pages' },
+      { title: 'Creating intuitive reporting tools', description: 'Detailed service pages' },
+      { title: 'Ensuring data accuracy and consistency', description: 'Detailed service pages' },
+      { title: 'Building scalable search functionality', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed flexible team management system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented optimized charting solutions',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed flexible team management system', description: 'Detailed service pages' },
+      { title: 'Implemented optimized charting solutions', description: 'Detailed service pages' },
       {
         title: 'Created efficient data processing pipeline',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Built user-friendly report generator',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established robust data validation',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed scalable search architecture',
-        description: 'Detailed service pages',
-      },
+      { title: 'Built user-friendly report generator', description: 'Detailed service pages' },
+      { title: 'Established robust data validation', description: 'Detailed service pages' },
+      { title: 'Designed scalable search architecture', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
@@ -3142,11 +2158,8 @@ export const tutorania: ProjectAnalysisT = {
       icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: tutoraniaImage,
-    screenshots: [tutoraniaImage, tutoraniaImage, tutoraniaImage],
-  },
-};
+  images: { main: tutoraniaImage, screenshots: [tutoraniaImage, tutoraniaImage, tutoraniaImage] },
+}
 
 export const rivannaProduct: ProjectAnalysisT = {
   title: 'Rivanna',
@@ -3167,118 +2180,38 @@ export const rivannaProduct: ProjectAnalysisT = {
       'Consistent action button placement',
     ],
     keyFeatures: [
-      {
-        title: 'Advanced semantic search',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document comparison tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Market norm analysis',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Advanced semantic search', description: 'Detailed service pages', icon: Star },
+      { title: 'Document comparison tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Market norm analysis', description: 'Detailed service pages', icon: Star },
       {
         title: 'Precedent search functionality',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Cross-reference capabilities',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document preview system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Search result filtering',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Relevancy scoring',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document categorization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Version tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Statistical analysis tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Export functionality',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Cross-reference capabilities', description: 'Detailed service pages', icon: Star },
+      { title: 'Document preview system', description: 'Detailed service pages', icon: Star },
+      { title: 'Search result filtering', description: 'Detailed service pages', icon: Star },
+      { title: 'Relevancy scoring', description: 'Detailed service pages', icon: Star },
+      { title: 'Document categorization', description: 'Detailed service pages', icon: Star },
+      { title: 'Version tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Statistical analysis tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Export functionality', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Implementing complex semantic search',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing large document datasets',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive comparison views',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring search accuracy',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling document versioning',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing search performance',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implementing complex semantic search', description: 'Detailed service pages' },
+      { title: 'Managing large document datasets', description: 'Detailed service pages' },
+      { title: 'Creating intuitive comparison views', description: 'Detailed service pages' },
+      { title: 'Ensuring search accuracy', description: 'Detailed service pages' },
+      { title: 'Handling document versioning', description: 'Detailed service pages' },
+      { title: 'Optimizing search performance', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed advanced search algorithms',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created efficient document storage system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built intuitive comparison interface',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented precise search matching',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed robust version control',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimized search response time',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed advanced search algorithms', description: 'Detailed service pages' },
+      { title: 'Created efficient document storage system', description: 'Detailed service pages' },
+      { title: 'Built intuitive comparison interface', description: 'Detailed service pages' },
+      { title: 'Implemented precise search matching', description: 'Detailed service pages' },
+      { title: 'Designed robust version control', description: 'Detailed service pages' },
+      { title: 'Optimized search response time', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -3307,11 +2240,8 @@ export const rivannaProduct: ProjectAnalysisT = {
       icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: rivannaImage,
-    screenshots: [rivannaImage, rivannaImage, rivannaImage],
-  },
-};
+  images: { main: rivannaImage, screenshots: [rivannaImage, rivannaImage, rivannaImage] },
+}
 
 export const rivanna: ProjectAnalysisT = {
   title: 'Rivanna Website',
@@ -3332,114 +2262,37 @@ export const rivanna: ProjectAnalysisT = {
       'Strategic whitespace utilization',
     ],
     keyFeatures: [
-      {
-        title: 'Product feature showcase',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Interactive demonstrations',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Pricing plan comparison',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Documentation access',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Product feature showcase', description: 'Detailed service pages', icon: Star },
+      { title: 'Interactive demonstrations', description: 'Detailed service pages', icon: Star },
+      { title: 'Pricing plan comparison', description: 'Detailed service pages', icon: Star },
+      { title: 'Documentation access', description: 'Detailed service pages', icon: Star },
       {
         title: 'Market intelligence presentation',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Use case scenarios',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Legal technology overview',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Industry expertise highlights',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Platform capabilities',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Search functionality showcase',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Document analysis examples',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Client testimonials',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Use case scenarios', description: 'Detailed service pages', icon: Star },
+      { title: 'Legal technology overview', description: 'Detailed service pages', icon: Star },
+      { title: 'Industry expertise highlights', description: 'Detailed service pages', icon: Star },
+      { title: 'Platform capabilities', description: 'Detailed service pages', icon: Star },
+      { title: 'Search functionality showcase', description: 'Detailed service pages', icon: Star },
+      { title: 'Document analysis examples', description: 'Detailed service pages', icon: Star },
+      { title: 'Client testimonials', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Communicating complex legal technology',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Presenting technical features clearly',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Maintaining professional brand image',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Balancing information density',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating engaging demonstrations',
-        description: 'Detailed service pages',
-      },
+      { title: 'Communicating complex legal technology', description: 'Detailed service pages' },
+      { title: 'Presenting technical features clearly', description: 'Detailed service pages' },
+      { title: 'Maintaining professional brand image', description: 'Detailed service pages' },
+      { title: 'Balancing information density', description: 'Detailed service pages' },
+      { title: 'Creating engaging demonstrations', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed clear feature presentations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created intuitive product demonstrations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented professional design system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Structured information hierarchy',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built interactive feature showcases',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established consistent content strategy',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed clear feature presentations', description: 'Detailed service pages' },
+      { title: 'Created intuitive product demonstrations', description: 'Detailed service pages' },
+      { title: 'Implemented professional design system', description: 'Detailed service pages' },
+      { title: 'Structured information hierarchy', description: 'Detailed service pages' },
+      { title: 'Built interactive feature showcases', description: 'Detailed service pages' },
+      { title: 'Established consistent content strategy', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -3472,11 +2325,8 @@ export const rivanna: ProjectAnalysisT = {
       icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
     },
   ],
-  images: {
-    main: rivannaImage,
-    screenshots: [rivannaImage, rivannaImage, rivannaImage],
-  },
-};
+  images: { main: rivannaImage, screenshots: [rivannaImage, rivannaImage, rivannaImage] },
+}
 
 export const humanizarTexto: ProjectAnalysisT = {
   title: 'Humanizar Texto',
@@ -3497,110 +2347,43 @@ export const humanizarTexto: ProjectAnalysisT = {
       'Professional illustration integration',
     ],
     keyFeatures: [
-      {
-        title: 'AI-powered text humanization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'AI-powered text humanization', description: 'Detailed service pages', icon: Star },
       {
         title: 'Text paraphrasing capabilities',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Subscription plan management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User account system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Premium feature access',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Payment processing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Text history tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Settings customization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Email verification',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Feedback collection',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Subscription plan management', description: 'Detailed service pages', icon: Star },
+      { title: 'User account system', description: 'Detailed service pages', icon: Star },
+      { title: 'Premium feature access', description: 'Detailed service pages', icon: Star },
+      { title: 'Payment processing', description: 'Detailed service pages', icon: Star },
+      { title: 'Text history tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Settings customization', description: 'Detailed service pages', icon: Star },
+      { title: 'Email verification', description: 'Detailed service pages', icon: Star },
+      { title: 'Feedback collection', description: 'Detailed service pages', icon: Star },
       {
         title: 'Multiple text processing modes',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Word count tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Word count tracking', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Implementing complex text processing',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing subscription lifecycles',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating intuitive text editing',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring secure payments',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling user authentication',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing app performance',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implementing complex text processing', description: 'Detailed service pages' },
+      { title: 'Managing subscription lifecycles', description: 'Detailed service pages' },
+      { title: 'Creating intuitive text editing', description: 'Detailed service pages' },
+      { title: 'Ensuring secure payments', description: 'Detailed service pages' },
+      { title: 'Handling user authentication', description: 'Detailed service pages' },
+      { title: 'Optimizing app performance', description: 'Detailed service pages' },
     ],
     solutions: [
       {
         title: 'Developed efficient text processing pipeline',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created robust subscription management',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built user-friendly text editor',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented secure payment system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created robust subscription management', description: 'Detailed service pages' },
+      { title: 'Built user-friendly text editor', description: 'Detailed service pages' },
+      { title: 'Implemented secure payment system', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -3619,11 +2402,8 @@ export const humanizarTexto: ProjectAnalysisT = {
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
   ],
-  images: {
-    main: humanizarMain,
-    screenshots: [humanizarAlt, humanizarAlt, humanizarAlt],
-  },
-};
+  images: { main: humanizarMain, screenshots: [humanizarAlt, humanizarAlt, humanizarAlt] },
+}
 
 export const smartCatch: ProjectAnalysisT = {
   title: 'Smart Catch',
@@ -3644,118 +2424,42 @@ export const smartCatch: ProjectAnalysisT = {
       'Visual fish species comparison tools',
     ],
     keyFeatures: [
-      {
-        title: 'Fish species identification',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Real-time weather tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Fish species identification', description: 'Detailed service pages', icon: Star },
+      { title: 'Real-time weather tracking', description: 'Detailed service pages', icon: Star },
       {
         title: 'Community forums and discussions',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'User profile management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'User profile management', description: 'Detailed service pages', icon: Star },
       {
         title: 'Location-based weather updates',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Fishing tips and guides',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Species information database',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Community photo sharing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Expert advice section',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Catch logging system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Weather forecast integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Social interaction features',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Fishing tips and guides', description: 'Detailed service pages', icon: Star },
+      { title: 'Species information database', description: 'Detailed service pages', icon: Star },
+      { title: 'Community photo sharing', description: 'Detailed service pages', icon: Star },
+      { title: 'Expert advice section', description: 'Detailed service pages', icon: Star },
+      { title: 'Catch logging system', description: 'Detailed service pages', icon: Star },
+      { title: 'Weather forecast integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Social interaction features', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Implementing accurate fish identification',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing real-time weather updates',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating engaging community features',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Handling offline functionality',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Ensuring data accuracy',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing image processing',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implementing accurate fish identification', description: 'Detailed service pages' },
+      { title: 'Managing real-time weather updates', description: 'Detailed service pages' },
+      { title: 'Creating engaging community features', description: 'Detailed service pages' },
+      { title: 'Handling offline functionality', description: 'Detailed service pages' },
+      { title: 'Ensuring data accuracy', description: 'Detailed service pages' },
+      { title: 'Optimizing image processing', description: 'Detailed service pages' },
     ],
     solutions: [
-      {
-        title: 'Developed robust image recognition system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented efficient weather tracking',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built interactive community platform',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Created offline-first architecture',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Established data validation system',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimized image processing pipeline',
-        description: 'Detailed service pages',
-      },
+      { title: 'Developed robust image recognition system', description: 'Detailed service pages' },
+      { title: 'Implemented efficient weather tracking', description: 'Detailed service pages' },
+      { title: 'Built interactive community platform', description: 'Detailed service pages' },
+      { title: 'Created offline-first architecture', description: 'Detailed service pages' },
+      { title: 'Established data validation system', description: 'Detailed service pages' },
+      { title: 'Optimized image processing pipeline', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -3783,11 +2487,8 @@ export const smartCatch: ProjectAnalysisT = {
       icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
     },
   ],
-  images: {
-    main: smartCatchMain,
-    screenshots: [smartCatchAlt, smartCatchAlt, smartCatchAlt],
-  },
-};
+  images: { main: smartCatchMain, screenshots: [smartCatchAlt, smartCatchAlt, smartCatchAlt] },
+}
 
 export const elBrezal: ProjectAnalysisT = {
   title: 'El Brezal Honey',
@@ -3813,113 +2514,47 @@ export const elBrezal: ProjectAnalysisT = {
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Recipe collection and sharing',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Recipe collection and sharing', description: 'Detailed service pages', icon: Star },
       {
         title: 'Honey variety education section',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Product comparison tools',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Beekeeping information',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Shopping cart functionality',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Order management system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Customer reviews integration',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Honey sourcing information',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Product comparison tools', description: 'Detailed service pages', icon: Star },
+      { title: 'Beekeeping information', description: 'Detailed service pages', icon: Star },
+      { title: 'Shopping cart functionality', description: 'Detailed service pages', icon: Star },
+      { title: 'Order management system', description: 'Detailed service pages', icon: Star },
+      { title: 'Customer reviews integration', description: 'Detailed service pages', icon: Star },
+      { title: 'Honey sourcing information', description: 'Detailed service pages', icon: Star },
       {
         title: 'Nutritional information display',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Recipe search functionality',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Product filtering system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Recipe search functionality', description: 'Detailed service pages', icon: Star },
+      { title: 'Product filtering system', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
       {
         title: 'Presenting complex product information clearly',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Creating engaging recipe layouts',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing product inventory',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implementing secure checkout',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Organizing educational content',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimizing image-heavy pages',
-        description: 'Detailed service pages',
-      },
+      { title: 'Creating engaging recipe layouts', description: 'Detailed service pages' },
+      { title: 'Managing product inventory', description: 'Detailed service pages' },
+      { title: 'Implementing secure checkout', description: 'Detailed service pages' },
+      { title: 'Organizing educational content', description: 'Detailed service pages' },
+      { title: 'Optimizing image-heavy pages', description: 'Detailed service pages' },
     ],
     solutions: [
       {
         title: 'Developed clear product information hierarchy',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Created interactive recipe format',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Built robust inventory management',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Implemented secure payment gateway',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Designed organized content structure',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Optimized image loading system',
-        description: 'Detailed service pages',
-      },
+      { title: 'Created interactive recipe format', description: 'Detailed service pages' },
+      { title: 'Built robust inventory management', description: 'Detailed service pages' },
+      { title: 'Implemented secure payment gateway', description: 'Detailed service pages' },
+      { title: 'Designed organized content structure', description: 'Detailed service pages' },
+      { title: 'Optimized image loading system', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -3949,11 +2584,8 @@ export const elBrezal: ProjectAnalysisT = {
       icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
     },
   ],
-  images: {
-    main: elBrezalImage,
-    screenshots: [elBrezalImage, elBrezalImage, elBrezalImage],
-  },
-};
+  images: { main: elBrezalImage, screenshots: [elBrezalImage, elBrezalImage, elBrezalImage] },
+}
 
 export const robinBeauty: ProjectAnalysisT = {
   title: 'Robin Beauty Bazar',
@@ -3974,80 +2606,27 @@ export const robinBeauty: ProjectAnalysisT = {
       'User-friendly account management screens',
     ],
     keyFeatures: [
-      {
-        title: 'AI-powered skin analysis',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Personalized beauty routines',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Product recommendations',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Subscription management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Beauty profile creation',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Skincare quiz system',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Product matching algorithm',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'User preference tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Routine customization',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      {
-        title: 'Progress monitoring',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'AI-powered skin analysis', description: 'Detailed service pages', icon: Star },
+      { title: 'Personalized beauty routines', description: 'Detailed service pages', icon: Star },
+      { title: 'Product recommendations', description: 'Detailed service pages', icon: Star },
+      { title: 'Subscription management', description: 'Detailed service pages', icon: Star },
+      { title: 'Beauty profile creation', description: 'Detailed service pages', icon: Star },
+      { title: 'Skincare quiz system', description: 'Detailed service pages', icon: Star },
+      { title: 'Product matching algorithm', description: 'Detailed service pages', icon: Star },
+      { title: 'User preference tracking', description: 'Detailed service pages', icon: Star },
+      { title: 'Routine customization', description: 'Detailed service pages', icon: Star },
+      { title: 'Progress monitoring', description: 'Detailed service pages', icon: Star },
       {
         title: 'Product effectiveness tracking',
         description: 'Detailed service pages',
         icon: Star,
       },
-      {
-        title: 'Beauty community features',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
+      { title: 'Beauty community features', description: 'Detailed service pages', icon: Star },
     ],
     challenges: [
-      {
-        title: 'Implementing accurate skin analysis',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Creating personalized recommendations',
-        description: 'Detailed service pages',
-      },
-      {
-        title: 'Managing subscription features',
-        description: 'Detailed service pages',
-      },
+      { title: 'Implementing accurate skin analysis', description: 'Detailed service pages' },
+      { title: 'Creating personalized recommendations', description: 'Detailed service pages' },
+      { title: 'Managing subscription features', description: 'Detailed service pages' },
     ],
     solutions: [
       {
@@ -4062,10 +2641,7 @@ export const robinBeauty: ProjectAnalysisT = {
         title: 'Implemented robust subscription management',
         description: 'Detailed service pages',
       },
-      {
-        title: 'Built extensive product cataloging',
-        description: 'Detailed service pages',
-      },
+      { title: 'Built extensive product cataloging', description: 'Detailed service pages' },
     ],
   },
   categories: [WorkCategories.productDesign],
@@ -4095,11 +2671,8 @@ export const robinBeauty: ProjectAnalysisT = {
       icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
     },
   ],
-  images: {
-    main: robinImage,
-    screenshots: [robinImage, robinImage, robinImage],
-  },
-};
+  images: { main: robinImage, screenshots: [robinImage, robinImage, robinImage] },
+}
 
 export const projectsAnalysis: ProjectAnalysisT[] = [
   alfabolt,
@@ -4126,4 +2699,4 @@ export const projectsAnalysis: ProjectAnalysisT[] = [
   beaconTutorsCRM,
   codingInterviewPrep,
   inventrios,
-];
+]

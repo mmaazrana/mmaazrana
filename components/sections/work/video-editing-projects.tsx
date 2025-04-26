@@ -1,7 +1,7 @@
 // app/components/projects/BlenderProjects.tsx
-import VideoProjectCard from '@/components/cards/video-project-card';
-import { videoProjects } from '@/helpers/constants';
-import React from 'react';
+import VideoProjectCard from '@/components/cards/video-project-card'
+import { videoProjects } from '@/helpers/constants'
+import React from 'react'
 
 interface VideoEditingProjectsProps {}
 
@@ -16,11 +16,11 @@ const VideoEditingProjects: React.FC<VideoEditingProjectsProps> = () => {
               fileName={project.fileName}
               thumbnail={project.thumbnail}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VideoEditingProjects;
+export default VideoEditingProjects

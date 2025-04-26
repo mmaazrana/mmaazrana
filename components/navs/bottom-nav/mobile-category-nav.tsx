@@ -1,19 +1,19 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import { AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { workBottomNavCategories } from '@/helpers/constants';
-import AnimatedTab from './animated-tab';
-import TabButton from './tab-button';
-import TabContent from './tab-content';
+import React, { FC } from 'react'
+import { AnimatePresence } from 'motion/react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { workBottomNavCategories } from '@/helpers/constants'
+import AnimatedTab from './animated-tab'
+import TabButton from './tab-button'
+import TabContent from './tab-content'
 
 interface MobileCategoryNavProps {
-  currentIndex: number;
-  categories: typeof workBottomNavCategories;
-  activeTab: string;
-  handleTabChange: (key: string) => void;
-  isEndOfPage: boolean;
+  currentIndex: number
+  categories: typeof workBottomNavCategories
+  activeTab: string
+  handleTabChange: (key: string) => void
+  isEndOfPage: boolean
 }
 
 const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
@@ -23,23 +23,23 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
   handleTabChange,
   isEndOfPage,
 }) => {
-  const currentCategory = categories[currentIndex];
+  const currentCategory = categories[currentIndex]
 
   const handlePrevClick = () => {
     handleTabChange(
       categories[
         (categories.findIndex(button => button.key === activeTab) - 1 + categories.length) %
           categories.length
-      ].key
-    );
-  };
+      ].key,
+    )
+  }
 
   const handleNextClick = () => {
     handleTabChange(
       categories[(categories.findIndex(button => button.key === activeTab) + 1) % categories.length]
-        .key
-    );
-  };
+        .key,
+    )
+  }
 
   return (
     <div className='my-7 about:my-6 px-6 xs:px-8 sm:px-28 md:px-32 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 flex justify-between items-center lg:hidden z-[50]'>
@@ -125,7 +125,7 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
         icon={<ChevronRight className='w-5 sm:w-6 h-5 sm:h-6 stroke-primary' />}
       />
     </div>
-  );
-};
+  )
+}
 
-export default MobileCategoryNav;
+export default MobileCategoryNav

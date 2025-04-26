@@ -1,17 +1,12 @@
-import React from 'react';
-import Typography from '@/components/Typography';
-import {} from '@/helpers/enums';
+import React from 'react'
+import Typography from '@/components/Typography'
+import {} from '@/helpers/enums'
 
 interface TechnologyIconProps {
   technology: {
-    title: string;
-    Icon: {
-      Icon: React.ComponentType<{ className?: string }>;
-      props: {
-        fill: string;
-      };
-    };
-  };
+    title: string
+    Icon: { Icon: React.ComponentType<{ className?: string }>; props: { fill: string } }
+  }
 }
 
 const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
@@ -22,38 +17,32 @@ const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
       }
     >
       <span
-        style={{
-          filter: `drop-shadow(0px 0px 50px ${technology.Icon.props.fill})`,
-        }}
+        style={{ filter: `drop-shadow(0px 0px 50px ${technology.Icon.props.fill})` }}
         className={
           '-z-1 bg-primary-accent/15 absolute top-0 left-0 w-full h-full rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300'
         }
       />
       <span
-        style={{
-          backgroundColor: technology.Icon.props.fill,
-        }}
+        style={{ backgroundColor: technology.Icon.props.fill }}
         className={
           '-z-1 absolute top-0 left-0 w-full h-full rounded-full opacity-5 group-hover:opacity-30 transition-opacity duration-300'
         }
       />
       <span
-        style={{
-          outlineColor: technology.Icon.props.fill,
-        }}
+        style={{ outlineColor: technology.Icon.props.fill }}
         className={
           '-z-1 absolute top-0 left-0 w-full h-full rounded-full outline outline-1 opacity-35 group-hover:opacity-70 transition-opacity duration-300'
         }
       />
       <technology.Icon.Icon
         {...technology.Icon.props}
-        className={'h-4.5 xs:h-5 md:h-5.5 xl:h-6 w-4.5 xs:w-5 md:w-5.5 xl:w-6'}
+        className='h-4.5 xs:h-5 md:h-5.5 xl:h-6 w-4.5 xs:w-5 md:w-5.5 xl:w-6'
       />
-      <Typography type='xl' weight='light' className={'opacity-80'}>
+      <Typography type='xl' weight='light' className='opacity-80'>
         {technology.title}
       </Typography>
     </div>
-  );
-};
+  )
+}
 
-export default TechnologyIcon;
+export default TechnologyIcon

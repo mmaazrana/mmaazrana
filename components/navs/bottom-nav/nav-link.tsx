@@ -1,20 +1,20 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import Link from 'next/link';
-import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes } from '@/helpers/enums';
+import React, { FC } from 'react'
+import Link from 'next/link'
+import Typography from '@/components/Typography'
+import { ColorTypes, TextTypes } from '@/helpers/enums'
 
 interface NavLinkProps {
-  href: string;
-  text: string;
-  isActive?: boolean;
-  type?: TextTypes;
-  color?: ColorTypes;
+  href: string
+  text: string
+  isActive?: boolean
+  type?: TextTypes
+  color?: ColorTypes
 }
 
 const NavLink: FC<NavLinkProps> = ({ href, text, isActive, type = 'xl', color }) => (
-  <div className={'transition-colors'}>
+  <div className='transition-colors'>
     <Link href={href} aria-label={text}>
       <Typography
         type={type}
@@ -25,6 +25,6 @@ const NavLink: FC<NavLinkProps> = ({ href, text, isActive, type = 'xl', color })
       </Typography>
     </Link>
   </div>
-);
+)
 
-export default NavLink;
+export default NavLink

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const AylaLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 193 187' fill='none' {...props}>
     <g strokeMiterlimit={10} strokeWidth={0.75} clipPath='url(#ayla-ai-a)'>
@@ -415,5 +415,5 @@ const AylaLogo = (props: SVGProps<SVGSVGElement>) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default AylaLogo;
+)
+export default AylaLogo

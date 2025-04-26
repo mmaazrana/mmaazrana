@@ -1,4 +1,4 @@
-import { Archivo, Fredoka, Nunito_Sans, Poiret_One, Rethink_Sans } from 'next/font/google';
+import { Archivo, Nunito_Sans } from 'next/font/google'
 
 export const nunito = Nunito_Sans({
   weight: 'variable',
@@ -7,7 +7,7 @@ export const nunito = Nunito_Sans({
   display: 'swap',
   preload: true,
   axes: ['wdth', 'opsz', 'YTLC'],
-});
+})
 
 export const archivo = Archivo({
   weight: 'variable',
@@ -15,4 +15,4 @@ export const archivo = Archivo({
   subsets: ['latin'],
   preload: true,
   axes: ['wdth'],
-});
+})

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const TutoraniaSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 33' fill='none' {...props}>
     <path
@@ -14,17 +14,13 @@ const TutoraniaSvg = (props: SVGProps<SVGSVGElement>) => (
       fill='url(#Group_102878978_svg__c)'
       d='m29.828 22.49-17.34 9.9a.83.83 0 0 1-1.122-.295.8.8 0 0 1-.11-.405s-.015-5.878-.017-5.88c.071-1.733-.92-3.474-2.345-4.454l5.023-2.893 3.046 1.738a4.93 4.93 0 0 0 4.9 0l8.878-5.1c-.244 1.305.773 6.72-.913 7.39'
       opacity={0.5}
-      style={{
-        mixBlendMode: 'darken',
-      }}
+      style={{ mixBlendMode: 'darken' }}
     />
     <path
       fill='url(#Group_102878978_svg__d)'
       d='m13.924 18.469-2.671 1.537L8.9 21.37l-.041-.023-.037-.023a1 1 0 0 0-.095-.054l-6.19-3.536c-.017 0-.037-.018-.053-.03a1 1 0 0 1-.097-.06c-.028-.014-.058-.035-.083-.05a5.3 5.3 0 0 1-1.57-1.738 5.05 5.05 0 0 1-.733-2.406v-.09c-.02-.486.144-.961.46-1.333.164-.183.383-.31.625-.364.482-.078.976.02 1.39.275l.042.023.041.023 2.465 1.407 2.299 1.314.043.025.042.023 3.855 2.201 2.582 1.478.044.023z'
       opacity={0.5}
-      style={{
-        mixBlendMode: 'darken',
-      }}
+      style={{ mixBlendMode: 'darken' }}
     />
     <path
       fill='url(#Group_102878978_svg__e)'
@@ -88,5 +84,5 @@ const TutoraniaSvg = (props: SVGProps<SVGSVGElement>) => (
       </linearGradient>
     </defs>
   </svg>
-);
-export default TutoraniaSvg;
+)
+export default TutoraniaSvg

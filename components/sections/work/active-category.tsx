@@ -1,11 +1,11 @@
-import Typography from '@/components/Typography';
-import {} from '@/helpers/enums';
-import * as m from 'motion/react-m';
-import { BottomNavCategoryT } from '@/helpers/types';
-import { AnimatePresence } from 'motion/react';
+import Typography from '@/components/Typography'
+import {} from '@/helpers/enums'
+import * as m from 'motion/react-m'
+import { BottomNavCategoryT } from '@/helpers/types'
+import { AnimatePresence } from 'motion/react'
 
 interface ActiveCategoryProps {
-  currentCategory: BottomNavCategoryT;
+  currentCategory: BottomNavCategoryT
 }
 
 export default function ActiveCategory({ currentCategory }: ActiveCategoryProps) {
@@ -42,5 +42,5 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
         </AnimatePresence>
       </div>
     </div>
-  );
+  )
 }

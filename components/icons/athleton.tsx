@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 const Athleton = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 32' {...props}>
@@ -16,5 +16,5 @@ const Athleton = (props: SVGProps<SVGSVGElement>) => (
       fill='var(--black-dynamic)'
     />
   </svg>
-);
-export default Athleton;
+)
+export default Athleton

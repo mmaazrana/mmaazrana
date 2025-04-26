@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 const SvgNutrigram = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 811 835.27' {...props}>
     <defs>
@@ -226,5 +226,5 @@ const SvgNutrigram = (props: SVGProps<SVGSVGElement>) => (
     <path fill='url(#nutrigram_svg__a)' d='M34.06 554.02h741.9v196.62H34.06z' opacity={0.5} />
     <rect width={810.03} height={28.5} y={527.49} fill='#7b1e31' rx={11.38} ry={11.38} />
   </svg>
-);
-export default SvgNutrigram;
+)
+export default SvgNutrigram

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { SVGProps, useId } from 'react';
+import * as React from 'react'
+import { SVGProps, useId } from 'react'
 
 const FiveOneFivePools = (props: SVGProps<SVGSVGElement>) => {
-  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '')
 
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 231 40' fill='none' {...props}>
@@ -24,6 +24,6 @@ const FiveOneFivePools = (props: SVGProps<SVGSVGElement>) => {
         </linearGradient>
       </defs>
     </svg>
-  );
-};
-export default FiveOneFivePools;
+  )
+}
+export default FiveOneFivePools

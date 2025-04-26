@@ -1,23 +1,23 @@
 // app/components/sections/WorkSection.tsx
-import React from 'react';
-import { AnimatePresence } from 'motion/react';
-import InActiveCategory from './inactive-category';
-import ActiveCategory from './active-category';
-import { BottomNavCategoryT } from '@/helpers/types';
+import React from 'react'
+import { AnimatePresence } from 'motion/react'
+import InActiveCategory from './inactive-category'
+import ActiveCategory from './active-category'
+import { BottomNavCategoryT } from '@/helpers/types'
 
 interface TitleBarProps {
-  handleTabChange: (id: string) => void;
-  activeTab: string;
-  categories: BottomNavCategoryT[];
+  handleTabChange: (id: string) => void
+  activeTab: string
+  categories: BottomNavCategoryT[]
 }
 
 const TitleBar: React.FC<TitleBarProps> = ({ handleTabChange, activeTab, categories }) => {
   // const { handleTabChange, activeTab } = useWorkContext();
-  const currentIndex = categories.findIndex(category => category.key === activeTab);
-  const currentCategory = categories[currentIndex];
+  const currentIndex = categories.findIndex(category => category.key === activeTab)
+  const currentCategory = categories[currentIndex]
   return (
-    <div className={'w-full overflow-x-hidden'}>
-      <div className={'relative justify-center flex w-full '}>
+    <div className='w-full overflow-x-hidden'>
+      <div className='relative justify-center flex w-full '>
         <span
           className={
             'absolute left-1/2 flex -translate-x-1/2 top-1/2 -translate-y-1/2 h-full w-[100vw] self-center work-gradient w-full max-w-8xl z-[5] pointer-events-none'
@@ -47,7 +47,7 @@ const TitleBar: React.FC<TitleBarProps> = ({ handleTabChange, activeTab, categor
         </AnimatePresence>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TitleBar;
+export default TitleBar

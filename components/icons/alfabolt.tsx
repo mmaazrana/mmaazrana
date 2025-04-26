@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from 'react'
+import { SVGProps } from 'react'
 
 const Alfabolt = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 32' {...props}>
@@ -12,5 +12,5 @@ const Alfabolt = (props: SVGProps<SVGSVGElement>) => (
       fill='#EE1E3A'
     />
   </svg>
-);
-export default Alfabolt;
+)
+export default Alfabolt

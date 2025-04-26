@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import { DotLottieWorker } from '@lottiefiles/dotlottie-web';
+import React, { useEffect, useRef } from 'react'
+import { DotLottieWorker } from '@lottiefiles/dotlottie-web'
 
 interface LottieWorkerAnimationProps {
-  src: string;
-  workerId?: string; // Optional worker ID for performance optimization
-  width?: number;
-  height?: number;
-  isPlaying?: boolean;
+  src: string
+  workerId?: string // Optional worker ID for performance optimization
+  width?: number
+  height?: number
+  isPlaying?: boolean
 }
 
 const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
@@ -16,8 +16,8 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
   height = 500,
   isPlaying = true,
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const workerRef = useRef<DotLottieWorker | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const workerRef = useRef<DotLottieWorker | null>(null)
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -31,7 +31,7 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
           // @ts-ignore
           segment: [2, workerRef.current ? workerRef.current?.totalFrames - 1 : 300],
           workerId,
-        });
+        })
       } else {
         // Potentially update src if needed, but handle worker recreation carefully
         // workerRef.current.load(src); // Example, depends on library API
@@ -39,35 +39,34 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
 
       return () => {
         // Clean up only when component unmounts
-        workerRef.current?.destroy();
-        workerRef.current = null; // Reset ref on cleanup
-      };
+        workerRef.current?.destroy()
+        workerRef.current = null // Reset ref on cleanup
+      }
     }
-  }, [src, workerId]); // Keep dependencies minimal for worker creation
+  }, [src, workerId]) // Keep dependencies minimal for worker creation
 
   // Effect for controlling play/pause based on isPlaying state
   useEffect(() => {
     if (workerRef.current) {
       if (isPlaying) {
-        workerRef.current.play();
+        workerRef.current.play()
       } else {
-        workerRef.current.pause();
+        workerRef.current.pause()
       }
     }
-  }, [isPlaying]);
+  }, [isPlaying])
 
   return (
     <div>
-      {' '}
-      {/* Wrap canvas and button */}
+      ' '{/* Wrap canvas and button */}
       <canvas
         ref={canvasRef}
-        className={'flex w-full h-full md:max-w-full fade-in'} // Adjusted width class
+        className='flex w-full h-full md:max-w-full fade-in' // Adjusted width class
         width={width}
         height={height}
       ></canvas>
     </div>
-  );
-};
+  )
+}
 
-export default LottieWorkerAnimation;
+export default LottieWorkerAnimation

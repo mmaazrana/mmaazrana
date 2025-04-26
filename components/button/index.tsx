@@ -1,28 +1,28 @@
-'use client';
+'use client'
 
-import React, { cloneElement, FC, ReactElement } from 'react';
-import Typography from '@/components/Typography';
+import React, { cloneElement, FC, ReactElement } from 'react'
+import Typography from '@/components/Typography'
 
-import { ButtonTypes, ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
+import { ButtonTypes, ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums'
 
 interface ButtonProps {
-  type: ButtonTypes;
-  text: string;
-  textSize?: TextTypes;
-  textColor?: ColorTypes;
-  borderColor?: ColorTypes;
-  textWeight?: WeightTypes;
-  size?: 'large' | 'medium' | 'small';
-  loading?: boolean;
-  width?: string;
-  height?: string;
-  borderWidth?: number;
-  rightIcon?: ReactElement<{ className?: string }>;
-  leftIcon?: ReactElement<{ className?: string }>;
-  onClick?: () => void;
-  className?: string;
-  textClassName?: string;
-  disabled?: boolean;
+  type: ButtonTypes
+  text: string
+  textSize?: TextTypes
+  textColor?: ColorTypes
+  borderColor?: ColorTypes
+  textWeight?: WeightTypes
+  size?: 'large' | 'medium' | 'small'
+  loading?: boolean
+  width?: string
+  height?: string
+  borderWidth?: number
+  rightIcon?: ReactElement<{ className?: string }>
+  leftIcon?: ReactElement<{ className?: string }>
+  onClick?: () => void
+  className?: string
+  textClassName?: string
+  disabled?: boolean
 }
 
 const Button: FC<ButtonProps> = ({
@@ -41,18 +41,30 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const typeClasses: { [index: string]: any } = {
-    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-full bg-primary hover:bg-primary-hover ${leftIcon ? 'justify-start' : rightIcon ? 'justify-end' : 'justify-center'} ${disabled && ''}`,
-    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-full hover:bg-secondary-hover ${leftIcon ? 'justify-start pr-4 xl:pr-5 pl-3 xl:pl-4' : rightIcon ? 'justify-end pl-4 xl:pl-5 pr-2 xl:pr-3' : 'justify-center px-10 md:px-4 xl:px-6'} ${disabled && ''}`,
-    tertiary: `flex rounded-full gap-4 !text-error hover:text-primary-hover gap-2 items-center ${leftIcon ? 'justify-start' : rightIcon ? 'justify-end' : 'justify-center'} ${disabled && ''}`,
+    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-full bg-primary hover:bg-primary-hover ${
+      leftIcon ? 'justify-start'
+      : rightIcon ? 'justify-end'
+      : 'justify-center'
+    } ${disabled && ''}`,
+    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-full hover:bg-secondary-hover ${
+      leftIcon ? 'justify-start pr-4 xl:pr-5 pl-3 xl:pl-4'
+      : rightIcon ? 'justify-end pl-4 xl:pl-5 pr-2 xl:pr-3'
+      : 'justify-center px-10 md:px-4 xl:px-6'
+    } ${disabled && ''}`,
+    tertiary: `flex rounded-full gap-4 !text-error hover:text-primary-hover gap-2 items-center ${
+      leftIcon ? 'justify-start'
+      : rightIcon ? 'justify-end'
+      : 'justify-center'
+    } ${disabled && ''}`,
     error: `bg-error ${disabled && ''}`,
-  };
+  }
 
   const textClasses: { [index: string]: any } = {
     primary: ``,
     secondary: ``,
     tertiary: `hover:text-primary-hover transition-colors duration-250`,
     error: ``,
-  };
+  }
 
   const borderColorClasses = {
     primary: 'border-primary hover:border-primary-hover',
@@ -63,18 +75,20 @@ const Button: FC<ButtonProps> = ({
     transparent: 'border-transparent',
     error: 'border-error',
     golden: 'border-golden',
-  };
+  }
 
   const dynamicClasses = [
     typeClasses[type],
     borderColorClasses[borderColor],
     `border-[${borderWidth}]`,
     'transition-all duration-250',
-    disabled ? 'cursor-disabled' : onClick ? 'cursor-pointer' : '',
+    disabled ? 'cursor-disabled'
+    : onClick ? 'cursor-pointer'
+    : '',
     className,
   ]
     .filter(Boolean)
-    .join(' ');
+    .join(' ')
   return (
     <div className={dynamicClasses} onClick={() => onClick && onClick()}>
       {leftIcon && (
@@ -94,7 +108,7 @@ const Button: FC<ButtonProps> = ({
       </Typography>
       {rightIcon && <div>{rightIcon}</div>}
     </div>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

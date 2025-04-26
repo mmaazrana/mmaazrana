@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import * as m from 'motion/react-m';
-import Typography from '@/components/Typography';
-import Logo from './logo';
+import React, { FC } from 'react'
+import * as m from 'motion/react-m'
+import Typography from '@/components/Typography'
+import Logo from './logo'
 
 interface LogoSectionProps {
-  isEndOfPage: boolean;
+  isEndOfPage: boolean
 }
 
 const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
@@ -23,23 +23,20 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           opacity: isEndOfPage ? 1 : 0,
           transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
         }}
-        transition={{
-          duration: 0.25,
-          delay: isEndOfPage ? 0.25 : 0,
-        }}
-        className={'transition-none flex w-full min-w-full'}
+        transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
+        className='transition-none flex w-full min-w-full'
       >
         <Typography
-          type={'lg'}
+          type='lg'
           weight='light'
-          leading={'prose'}
+          leading='prose'
           className={`${isEndOfPage ? 'inline-block' : 'hidden'} opacity-75 shrink`}
         >
           Product Designer - Web Developer - Mobile App Developer - Animator - 3D Artist
         </Typography>
       </m.div>
     </div>
-  );
-};
+  )
+}
 
-export default LogoSection;
+export default LogoSection

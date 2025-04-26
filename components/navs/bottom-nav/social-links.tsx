@@ -1,8 +1,8 @@
-import SocialLink from './social-link';
-import Linkedin from '@/components/icons/linkedin';
-import Behance from '@/components/icons/behance';
-import Github from '@/components/icons/github';
-import Dribbble from '@/components/icons/dribbble';
+import SocialLink from './social-link'
+import Linkedin from '@/components/icons/linkedin'
+import Behance from '@/components/icons/behance'
+import Github from '@/components/icons/github'
+import Dribbble from '@/components/icons/dribbble'
 
 // Memoized social links component
 export default function SocialLinks({ isEndOfPage }: { isEndOfPage: boolean }) {
@@ -19,5 +19,5 @@ export default function SocialLinks({ isEndOfPage }: { isEndOfPage: boolean }) {
         <SocialLink key={index} icon={link.icon} text={link.text} href={link.href} index={index} />
       ))}
     </div>
-  );
+  )
 }

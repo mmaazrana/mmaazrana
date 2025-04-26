@@ -1,29 +1,25 @@
-'use client';
+'use client'
 
-import React, { FC } from 'react';
-import { EmblaOptionsType } from 'embla-carousel';
-import useEmblaCarousel from 'embla-carousel-react';
-import AutoScroll from 'embla-carousel-auto-scroll';
-import TestimonialCard from '@/components/cards/testimonial-card';
-import { TestimonialT } from '@/helpers/types';
+import React, { FC } from 'react'
+import { EmblaOptionsType } from 'embla-carousel'
+import useEmblaCarousel from 'embla-carousel-react'
+import AutoScroll from 'embla-carousel-auto-scroll'
+import TestimonialCard from '@/components/cards/testimonial-card'
+import { TestimonialT } from '@/helpers/types'
 
 interface AutoScrollTestimonialsProps {
-  testimonials: TestimonialT[];
-  offset?: boolean;
+  testimonials: TestimonialT[]
+  offset?: boolean
 }
 
 const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
   testimonials,
   offset = false,
 }) => {
-  const OPTIONS: EmblaOptionsType = { loop: true };
+  const OPTIONS: EmblaOptionsType = { loop: true }
   const [emblaRef] = useEmblaCarousel(OPTIONS, [
-    AutoScroll({
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-      speed: 1,
-    }),
-  ]);
+    AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1 }),
+  ])
   return (
     <div className={`embla w-full`}>
       <div className={`embla__viewport`} ref={emblaRef}>
@@ -42,7 +38,7 @@ const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AutoScrollTestimonials;
+export default AutoScrollTestimonials

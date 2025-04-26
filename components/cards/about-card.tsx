@@ -1,12 +1,12 @@
-import React, { FC, ReactElement, useId } from 'react';
-import * as m from 'motion/react-m';
+import React, { FC, ReactElement, useId } from 'react'
+import * as m from 'motion/react-m'
 
 interface AboutCardProps {
-  children: ReactElement;
-  className?: string;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-  isActive?: boolean;
+  children: ReactElement
+  className?: string
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  isActive?: boolean
 }
 
 const AboutCard: FC<AboutCardProps> = ({
@@ -16,7 +16,7 @@ const AboutCard: FC<AboutCardProps> = ({
   onMouseLeave,
   isActive,
 }) => {
-  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '')
 
   return (
     <div
@@ -60,7 +60,7 @@ const AboutCard: FC<AboutCardProps> = ({
       </svg>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default AboutCard;
+export default AboutCard

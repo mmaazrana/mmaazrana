@@ -1,9 +1,9 @@
-import React from 'react';
-import { clientData } from '@/helpers/constants';
-import Accordion from '@/components/accordion';
-import ProductsInvolved from './products-involved';
-import ToolsAndTechnologies from './tools-and-technologies';
-import TestimonialData from './testimonial-data';
+import React from 'react'
+import { clientData } from '@/helpers/constants'
+import Accordion from '@/components/accordion'
+import ProductsInvolved from './products-involved'
+import ToolsAndTechnologies from './tools-and-technologies'
+import TestimonialData from './testimonial-data'
 
 const WorkDetails = () => {
   return (
@@ -15,7 +15,7 @@ const WorkDetails = () => {
             heading={data.heading}
             isExpanded={index === 0}
             content={
-              <div className={'flex flex-col gap-10 py-4'}>
+              <div className='flex flex-col gap-10 py-4'>
                 <TestimonialData
                   testimonial={data.testimonial}
                   clientName={data.clientName}
@@ -28,10 +28,10 @@ const WorkDetails = () => {
               </div>
             }
           />
-        );
+        )
       })}
     </>
-  );
-};
+  )
+}
 
-export default WorkDetails;
+export default WorkDetails

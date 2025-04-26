@@ -1,18 +1,18 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import React from 'react';
-import Providers from '@/app/providers';
-import { domAnimation, LazyMotion } from 'motion/react';
-import Head from 'next/head';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import './globals.css'
+import type { Metadata } from 'next'
+import React from 'react'
+import Providers from '@/app/providers'
+import { domAnimation, LazyMotion } from 'motion/react'
+import Head from 'next/head'
+import { GoogleAnalytics } from '@next/third-parties/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   manifest: '/manifest.json',
   title: 'MAAZ RANA - Personal Branding',
   description:
     'Detail Oriented Product Designer and Developer focused on producing human friendly solutions to real world problems.',
-};
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -48,5 +48,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <SpeedInsights />
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
     </html>
-  );
+  )
 }

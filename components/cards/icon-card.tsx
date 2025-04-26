@@ -1,24 +1,21 @@
-import Typography from '@/components/Typography';
-import {} from '@/helpers/enums';
-import { useId, useRef } from 'react';
-import * as m from 'motion/react-m';
-import { useInView } from 'motion/react';
-import { useMediaQuery } from 'react-responsive';
+import Typography from '@/components/Typography'
+import {} from '@/helpers/enums'
+import { useId, useRef } from 'react'
+import * as m from 'motion/react-m'
+import { useInView } from 'motion/react'
+import { useMediaQuery } from 'react-responsive'
 
 interface IconCardProps {
-  icon?: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
+  icon?: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
 }
 
 export default function IconCard({ icon: Icon, title, description }: IconCardProps) {
-  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
-  const isMobile = useMediaQuery({ maxWidth: 640 });
-  const cardRef = useRef(null);
-  const cardIsInView = useInView(cardRef, {
-    margin: `-45% 0px -45% 0px`,
-    amount: 0.2,
-  });
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '')
+  const isMobile = useMediaQuery({ maxWidth: 640 })
+  const cardRef = useRef(null)
+  const cardIsInView = useInView(cardRef, { margin: `-45% 0px -45% 0px`, amount: 0.2 })
   return (
     <div ref={cardRef} className='relative group'>
       {Icon && (
@@ -65,14 +62,14 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
           <Icon className='self-end top-4 xs:top-5 sm:top-0 right-4 xs:right-5 sm:right-0 absolute sm:relative sm:self-start w-8 xs:w-9 sm:w-8 md:w-9 lg:w-10 xl:w-11 2xl:w-12 h-8 xs:h-9 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 stroke-1 text-secondary' />
         )}
         <div className='flex flex-col mr-10 xs:mr-12 sm:mr-0 gap-2 sm:gap-2.5 lg:gap-3'>
-          <Typography type={'3xl'} weight='bold'>
+          <Typography type='3xl' weight='bold'>
             {title}
           </Typography>
-          <Typography type={'xl'} className='opacity-75'>
+          <Typography type='xl' className='opacity-75'>
             {description}
           </Typography>
         </div>
       </div>
     </div>
-  );
+  )
 }
