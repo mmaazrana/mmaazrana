@@ -58,7 +58,6 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
 
   return (
     <div>
-      ' '{/* Wrap canvas and button */}
       <canvas
         ref={canvasRef}
         className='flex w-full h-full md:max-w-full fade-in' // Adjusted width class

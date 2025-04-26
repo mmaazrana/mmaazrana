@@ -76,7 +76,6 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
                     rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
                     text={`Visit live Website`}
                   />
-                  ' '
                 </Link>
               )}
               {projectData.figmaUrl && (
@@ -86,7 +85,6 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
                     rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
                     text={`Visit Figma File`}
                   />
-                  ' '
                 </Link>
               )}
             </div>
@@ -95,14 +93,14 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
         {projectData.images.screenshots.length > 0 && (
           <div className='relative flex w-[110%] about:w-full self-center lg:w-fit h-fit'>
             <div
-              className='relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-2 xs:px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 xl:py-9 2xl:py-10 bg-primary-accent outline outline-1 outline-secondary/50 rounded-2xl sm:rounded-3xl lg:rounded-4xl'
+              className='relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit px-2 xs:px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 py-4 xs:py-5 sm:py-6 md:py-7 lg:py-8 xl:py-9 2xl:py-10 bg-primary-accent outline outline-1 outline-secondary/50 rounded-4xl'
               ref={emblaRef}
             >
               <div className='flex'>
                 {projectData.images.screenshots.map((screenshot, index) => (
                   <div
                     key={index}
-                    className={`relative flex-[0_0_50%] min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md md:flex-[0_0_33.33%] -mx-5 sm:-mx-6 md:-mx-7 lg:-mx-8 h-fit rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden transition-all duration-300 ${
+                    className={`relative flex-[0_0_50%] min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md md:flex-[0_0_33.33%] -mx-5 sm:-mx-6 md:-mx-7 lg:-mx-8 h-fit rounded-2xl overflow-hidden transition-all duration-300 ${
                       index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
                     } ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
                   >

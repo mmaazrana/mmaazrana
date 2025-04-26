@@ -1,7 +1,11 @@
 @import 'tailwindcss';
 
 /* styles/fonts.module.css */
+/* @link https://utopia.fyi/type/calculator?c=320,14,1.125,1920,20,1.2,10,4,&s=0.75|0.5|0.25|0.125,1.25|1.5|1.75|2|2.25|2.5|2.75|3|3.5|4|4.5|5|6|7|8,xs-l|l-s|10xl-7xl|2xl-5xl&g=2xl,5xl,7xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=320,14,1.125,1920,20,1.2,10,4,&s=0.75|0.5|0.25|0.125,1.25|1.5|1.75|2|2.25|2.5|2.75|3|3.5|4|4.5|5|6|7|8,&g=2xl,5xl,7xl,12 */
+
 :root {
+  /*utopia*/
   --step--4: clamp(0.4682rem, 0.4654rem + 0.014vw, 0.4823rem);
   --step--3: clamp(0.5267rem, 0.5164rem + 0.052vw, 0.5787rem);
   --step--2: clamp(0.5926rem, 0.5722rem + 0.1019vw, 0.6944rem);
@@ -17,6 +21,30 @@
   --step-8: clamp(1.9243rem, 1.4492rem + 2.3755vw, 4.2998rem);
   --step-9: clamp(2.1649rem, 1.5659rem + 2.9949vw, 5.1598rem);
   --step-10: clamp(2.4355rem, 1.6842rem + 3.7562vw, 6.1917rem);
+  --space-4xs: clamp(0.125rem, 0.1125rem + 0.0625vw, 0.1875rem);
+  --space-3xs: clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem);
+  --space-2xs: clamp(0.4375rem, 0.4rem + 0.1875vw, 0.625rem);
+  --space-xs: clamp(0.6875rem, 0.6375rem + 0.25vw, 0.9375rem);
+  --space-s: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
+  --space-m: clamp(1.125rem, 1.0375rem + 0.4375vw, 1.5625rem);
+  --space-l: clamp(1.3125rem, 1.2rem + 0.5625vw, 1.875rem);
+  --space-xl: clamp(1.5625rem, 1.4375rem + 0.625vw, 2.1875rem);
+  --space-2xl: clamp(1.75rem, 1.6rem + 0.75vw, 2.5rem);
+  --space-3xl: clamp(2rem, 1.8375rem + 0.8125vw, 2.8125rem);
+  --space-4xl: clamp(2.1875rem, 2rem + 0.9375vw, 3.125rem);
+  --space-5xl: clamp(2.4375rem, 2.2375rem + 1vw, 3.4375rem);
+  --space-6xl: clamp(2.625rem, 2.4rem + 1.125vw, 3.75rem);
+  --space-7xl: clamp(3.0625rem, 2.8rem + 1.3125vw, 4.375rem);
+  --space-8xl: clamp(3.5rem, 3.2rem + 1.5vw, 5rem);
+  --space-9xl: clamp(3.9375rem, 3.6rem + 1.6875vw, 5.625rem);
+  --space-10xl: clamp(4.375rem, 4rem + 1.875vw, 6.25rem);
+  --space-11xl: clamp(5.25rem, 4.8rem + 2.25vw, 7.5rem);
+  --space-12xl: clamp(6.125rem, 5.6rem + 2.625vw, 8.75rem);
+  --space-13xl: clamp(7rem, 6.4rem + 3vw, 10rem);
+  --fluid-250-350: clamp(15.625rem, 14.375rem + 6.25vw, 21.875rem);
+  --fluid-3-4: clamp(0.1875rem, 0.175rem + 0.0625vw, 0.25rem);
+  --fluid-4: 4px;
+  /*local*/
   --primary: #22365e;
   --primary-accent: #ffffff;
   --primary-accent-25: rgba(255, 255, 255, 0.25);
@@ -232,6 +260,7 @@
 }
 
 @theme {
+  /*utopia*/
   --text-step--4: var(--step--4);
   --text-step--3: var(--step--3);
   --text-step--2: var(--step--2);
@@ -247,6 +276,40 @@
   --text-step-8: var(--step-8);
   --text-step-9: var(--step-9);
   --text-step-10: var(--step-10);
+  --spacing-4xs: var(--space-4xs);
+  --spacing-3xs: var(--space-3xs);
+  --spacing-2xs: var(--space-2xs);
+  --spacing-xs: var(--space-xs);
+  --spacing-s: var(--space-s);
+  --spacing-m: var(--space-m);
+  --spacing-l: var(--space-l);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+  --spacing-5xl: var(--space-5xl);
+  --spacing-6xl: var(--space-6xl);
+  --spacing-7xl: var(--space-7xl);
+  --spacing-8xl: var(--space-8xl);
+  --spacing-9xl: var(--space-9xl);
+  --spacing-10xl: var(--space-10xl);
+  --spacing-11xl: var(--space-11xl);
+  --spacing-12xl: var(--space-12xl);
+  --spacing-13xl: var(--space-13xl);
+  --radius-s: var(--space-2xs);
+  --radius-m: var(--space-xs);
+  --radius-l: var(--space-s);
+  --radius-xl: var(--space-m);
+  --radius-2xl: var(--space-l);
+  --radius-3xl: var(--space-xl);
+  --radius-4xl: var(--space-2xl);
+  --radius-5xl: var(--space-3xl);
+  --radius-6xl: var(--space-4xl);
+  --radius-7xl: var(--space-5xl);
+  --radius-8xl: var(--space-6xl);
+  --radius-9xl: var(--space-7xl);
+  --radius-10xl: var(--space-8xl);
+  /*local*/
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-accent: var(--primary-accent);
@@ -475,9 +538,9 @@ body {
 }
 
 .rounded-rect {
-  rx: 28px;
-  ry: 28px;
-  border-radius: 28px;
+  rx: var(--space-xl);
+  ry: var(--space-xl);
+  border-radius: var(--space-xl);
 }
 
 @-moz-document url-prefix() {
@@ -508,22 +571,12 @@ body {
   :root {
     --slide-spacing: 2rem;
   }
-  .rounded-rect {
-    rx: 12px;
-    ry: 12px;
-    border-radius: 12px;
-  }
 }
 
 /* Set variable value for xs screens */
 @media (min-width: 450px) {
   :root {
     --slide-spacing: 2.5rem;
-  }
-  .rounded-rect {
-    rx: 14px;
-    ry: 14px;
-    border-radius: 14px;
   }
 }
 
@@ -532,22 +585,12 @@ body {
   :root {
     --slide-spacing: 3rem;
   }
-  .rounded-rect {
-    rx: 16px;
-    ry: 16px;
-    border-radius: 16px;
-  }
 }
 
 /* Set variable value for medium screens */
 @media (min-width: 768px) {
   :root {
     --slide-spacing: 3.5rem;
-  }
-  .rounded-rect {
-    rx: 18px;
-    ry: 18px;
-    border-radius: 18px;
   }
 }
 
@@ -566,22 +609,12 @@ body {
     filter: drop-shadow(-3px 0 0 var(--secondary)) drop-shadow(3px 0 0 var(--secondary))
       drop-shadow(0 -3px 0 var(--secondary)) drop-shadow(0 3px 0 var(--secondary));
   }
-  .rounded-rect {
-    rx: 20px;
-    ry: 20px;
-    border-radius: 20px;
-  }
 }
 
 /* Set variable value for extra large screens */
 @media (min-width: 1280px) {
   :root {
     --slide-spacing: 4.5rem;
-  }
-  .rounded-rect {
-    rx: 24px;
-    ry: 24px;
-    border-radius: 24px;
   }
 }
 

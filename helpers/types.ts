@@ -60,6 +60,10 @@ export interface ServiceT {
 
 export type IndexT = 0 | 1 | 2 | 3 | 4 | 5
 
+export interface TestimonialsT {
+  [key: string]: TestimonialT
+}
+
 export interface TestimonialT {
   testimonial: string
   client: string
@@ -85,7 +89,7 @@ export interface ClientDataT {
   heading: string
   testimonial: string
   clientName: string
-  companyName: string
+  designation: string
   productsInvolved: ClientProductT[]
   technologiesInvolved: ClientTechnologyT[]
 }

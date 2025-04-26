@@ -55,7 +55,7 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
             fill='none'
             stroke={`url(#aboutCardStroke${id})`}
             strokeWidth={2}
-            className={`w-full h-full min-w-full min-h-full !transition-all rounded-rect rounded-xl sm:rounded-2xl md:rounded-3xl opacity-25 group-hover:opacity-50 ${cardIsInView && isMobile && 'opacity-50'}`}
+            className={`w-full h-full min-w-full min-h-full !transition-all rounded-rect opacity-25 group-hover:opacity-50 ${cardIsInView && isMobile && 'opacity-50'}`}
           />
         </svg>
         {Icon && (

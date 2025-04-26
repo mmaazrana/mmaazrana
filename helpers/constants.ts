@@ -9,6 +9,7 @@ import {
   IconComponentsT,
   NavButtonT,
   ServiceT,
+  TestimonialsT,
   TestimonialT,
   VideoProjectT,
   WorkExperienceT,
@@ -207,6 +208,7 @@ export const HeroDescriptions: string[] = [
   'Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.',
 ]
 
+
 export const navButtons: NavButtonT[] = [
   { text: 'Work', href: `/#${Sections.work}`, type: 'secondary' },
   { text: 'Services', href: `/#${Sections.services}`, type: 'secondary' },
@@ -316,56 +318,64 @@ export const services: ServiceT[] = [
 
 export const breakpoints = { '2xl': 1536, lg: 1024, md: 768, sm: 640, xl: 1280, xs: 365 }
 
-export const testimonials: TestimonialT[] = [
-  {
+export const testimonialsData: TestimonialsT = {
+  "alfabolt" : {
     testimonial:
       "Alfabolt's interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team's productivity by 25%.",
     client: 'Ali Farooq',
     designation: 'CEO, Alfabolt',
   },
-  {
+  "kueenz" : {
     testimonial:
-      'Maaz brought our El Brezal brand to life with designs that perfectly capture the natural essence of our honey products. The website he delivered exceeded our expectations with its beautiful imagery and smooth shopping experience.',
-    client: 'Antonio Vega',
-    designation: 'Owner, El Brezal Honey',
+      'I\'ve had the pleasure of collaborating with Maaz on various projects, and I cannot recommend him highly enough. As a product designer, he brings exceptional talent and a strategic mindset to every challenge. What sets him apart is not just his technical design skills, but his ability to understand the broader business context and provide thoughtful guidance that elevates the entire project. \n \n Maaz consistently delivers high-quality work on time and communicates clearly throughout the process. He listens carefully to requirements while confidently offering valuable insights that often lead to better outcomes than initially envisioned. His collaborative approach makes him an asset to any team, as he balances creative vision with practical execution. \n \n I look forward to working with Maaz on future projects and highly recommend him to anyone seeking a product designer who combines creative excellence with business acumen and professionalism.',
+    client: 'Anum Mujahid',
+    designation: 'Co-Founder, Kueenz',
   },
-  {
+  "rivanna" : {
     testimonial:
       'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
     client: 'Peter',
     designation: 'Founder, Rivanna',
   },
-  {
+  "tss" : {
     testimonial:
       'Working with Maaz on our TSS graphics package was incredibly smooth. He took our educational content and transformed it with visuals that are engaging, clear, and perfectly aligned with our brand identity.',
     client: 'Rameen',
     designation: 'Country Manager, Total School Solutions',
   },
-  {
+  "inventrios" : {
     testimonial:
       'The logos and branding materials Maaz designed for MenuHub perfectly communicate our value proposition. His ability to translate our vision into visual elements that resonate with our target audience is remarkable.',
     client: 'David Chen',
     designation: 'Founder, MenuHub',
   },
-  {
+  "nutrigram" :   {
     testimonial:
       'The Nutrigram app Maaz designed has revolutionized how our clients track their nutrition. The interface is clean, engaging, and incredibly user-friendly. Our user retention has increased by 40% since launch!',
     client: 'Hassaan Ali',
     designation: 'Founder, Nutrigram',
   },
-  {
+  "markdownEditor" : {
     testimonial:
       'Working with Maaz on the Markdown Editor was exceptional. His attention to detail and understanding of developer workflows resulted in a tool our entire engineering team now uses daily. The keyboard shortcuts and real-time preview are game-changers.',
     client: 'Usama Ejaz',
     designation: 'Co-Founder, Nustac Technologies',
   },
-  {
+  "beaconTutors" : {
     testimonial:
       'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
     client: 'Imran Haider',
     designation: 'Founder, Beacon Tutors Pakistan',
   },
-]
+  "nustac" : {
+    testimonial:
+      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
+    client: 'Imran Haider',
+    designation: 'Founder, Beacon Tutors Pakistan',
+  },
+}
+
+export const testimonials: TestimonialT[] = Object.values(testimonialsData)
 
 export const aboutSections = [
   'Maaz Rana',
@@ -592,10 +602,9 @@ export const clientColorIconComponents = [
 export const clientData: ClientDataT[] = [
   {
     heading: 'Alfabolt',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Ali Farooq',
-    companyName: 'CEO Alfabolt',
+    testimonial:testimonialsData['alfabolt'].testimonial,
+    clientName: testimonialsData['alfabolt'].client,
+    designation: testimonialsData['alfabolt'].designation,
     productsInvolved: [
       {
         logo: Alfabolt,
@@ -649,10 +658,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Kueenz Technologies',
-    testimonial:
-      "I've had the pleasure of collaborating with Maaz on various projects, and I cannot recommend him highly enough. As a product designer, he brings exceptional talent and a strategic mindset to every challenge. What sets him apart is not just his technical design skills, but his ability to understand the broader business context and provide thoughtful guidance that elevates the entire project. \n \n Maaz consistently delivers high-quality work on time and communicates clearly throughout the process. He listens carefully to requirements while confidently offering valuable insights that often lead to better outcomes than initially envisioned. His collaborative approach makes him an asset to any team, as he balances creative vision with practical execution. \n \n I look forward to working with Maaz on future projects and highly recommend him to anyone seeking a product designer who combines creative excellence with business acumen and professionalism.",
-    clientName: 'Anum Mujahid',
-    companyName: 'Co-Founder Kueenz Technologies',
+    testimonial: testimonialsData['kueenz'].testimonial,
+    clientName: testimonialsData['kueenz'].client,
+    designation: testimonialsData['kueenz'].designation,
     productsInvolved: [
       {
         logo: SvgHumanizarTexto,
@@ -678,10 +686,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Beacon Tutors',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Imran Haider',
-    companyName: 'Founder Beacon Tutors Pakistan',
+    testimonial: testimonialsData['beaconTutors'].testimonial,
+    clientName: testimonialsData['beaconTutors'].client,
+    designation: testimonialsData['beaconTutors'].designation,
     productsInvolved: [
       {
         logo: BeaconTutors,
@@ -721,10 +728,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Rivanna',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Peter',
-    companyName: 'Founder of Rivanna',
+    testimonial: testimonialsData['rivanna'].testimonial,
+    clientName: testimonialsData['rivanna'].client,
+    designation: testimonialsData['rivanna'].designation,
     productsInvolved: [
       {
         logo: Rivanna,
@@ -749,10 +755,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Nustac',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Usama Ejaz',
-    companyName: 'Co-Founder Nustac Technologies',
+    testimonial: testimonialsData['nustac'].testimonial,
+    clientName: testimonialsData['nustac'].client,
+    designation: testimonialsData['nustac'].designation,
     productsInvolved: [
       {
         logo: Rivanna,
@@ -795,10 +800,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Inventrios',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Fatima Zehra',
-    companyName: 'Co-Founder Inventrios',
+    testimonial: testimonialsData['inventrios'].testimonial,
+    clientName: testimonialsData['inventrios'].client,
+    designation: testimonialsData['inventrios'].designation,
     productsInvolved: [
       {
         logo: SvgRobinBeauty,
@@ -839,10 +843,9 @@ export const clientData: ClientDataT[] = [
   },
   {
     heading: 'Nutrigram',
-    testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
-    clientName: 'Hassan Ali',
-    companyName: 'Founder Nutrigram',
+    testimonial: testimonialsData['nutrigram'].testimonial,
+    clientName: testimonialsData['nutrigram'].client,
+    designation: testimonialsData['nutrigram'].designation,
     productsInvolved: [
       {
         logo: SvgNutrigram,

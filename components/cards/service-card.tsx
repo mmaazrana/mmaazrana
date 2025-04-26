@@ -90,7 +90,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, index, className, onClick })
 
   const dynamicClasses = [
     indexClasses[index],
-    'flex flex-col p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-2xl lg:rounded-3xl aspect-square w-full h-fit',
+    'flex flex-col p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-3xl aspect-square w-full h-fit',
     onClick ? 'cursor-pointer' : '',
     className,
   ]

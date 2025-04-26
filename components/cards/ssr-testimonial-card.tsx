@@ -10,6 +10,7 @@ const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
   designation,
 }) => {
   const delayClasses = ['!delay-0', '!delay-50', '!delay-100', '!delay-150', '!delay-200']
+
   return (
     <div className='relative z-1 group'>
       <div className='absolute -top-5 xs:-top-6 md:-top-7 xl:-top-8 left-3 xs:left-4 md:left-5 xl:left-6 z-[-15] flex flex-row gap-1 sm:gap-1.5 lg:gap-2'>
@@ -22,7 +23,7 @@ const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
             />
           ))}
       </div>
-      <div className='relative backdrop-blur-xs outline bg-secondary-hover/15 hover:bg-primary-accent/90 hover:drop-shadow-auto-testimonial hover:-translate-y-4 outline-secondary/50 hover:outline-secondary outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] h-full w-[80vw] sm:w-[500px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group'>
+      <div className='relative backdrop-blur-xs outline bg-secondary-hover/15 hover:bg-primary-accent/90 hover:drop-shadow-auto-testimonial hover:-translate-y-4 outline-secondary/50 hover:outline-secondary outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] h-full w-[80vw] sm:w-[500px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group'>
         <svg
           fill='none'
           className={
@@ -57,14 +58,25 @@ const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
           />
         </svg>
         <div className='flex flex-col gap-2'>
-          <Typography type='2xl'>{testimonial}</Typography>
+          <Typography
+            type='xl'
+            weight='light'
+            leading='medium'
+            className='line-clamp-12 md:line-clamp-6 xl:line-clamp-5'
+          >
+            {testimonial}
+          </Typography>
         </div>
-        <div className='flex flex-row w-full gap-2'>
-          <Typography type='xl' weight='bold'>
+        <div className='inline-block w-full'>
+          <Typography type='xl' weight='semi-bold' leading='flat' className='inline'>
             {client}
           </Typography>
-          <Typography type='xl'>-</Typography>
-          <Typography type='xl'>{designation}</Typography>
+          <Typography type='xl' weight='light' leading='flat' className='inline'>
+            &nbsp; -&nbsp;
+          </Typography>
+          <Typography type='xl' weight='light' leading='flat' className='inline'>
+            {designation}
+          </Typography>
         </div>
       </div>
     </div>

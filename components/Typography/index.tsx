@@ -77,7 +77,7 @@ const Typography: FC<TypographyProps> = ({
     leadingClasses[leading],
     underline ? 'underline' : '',
     'text-' + color,
-    'z-[1]',
+    'z-1',
     className,
   ]
     .filter(Boolean)

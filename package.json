@@ -24,7 +24,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "10.4.21",
     "embla-carousel-auto-scroll": "^8.5.2",
-    "embla-carousel-autoplay": "^8.5.2",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.5.2",
     "eslint": "^9.24.0",
     "eslint-config-next": "15.2.2",

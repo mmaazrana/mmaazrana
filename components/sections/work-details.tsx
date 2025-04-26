@@ -19,7 +19,7 @@ const WorkDetails = () => {
                 <TestimonialData
                   testimonial={data.testimonial}
                   clientName={data.clientName}
-                  companyName={data.companyName}
+                  designation={data.designation}
                 />
                 <div className={`flex flex-col gap-12`}>
                   <ProductsInvolved products={data.productsInvolved} />

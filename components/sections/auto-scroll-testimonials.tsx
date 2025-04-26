@@ -16,7 +16,7 @@ const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
   testimonials,
   offset = false,
 }) => {
-  const OPTIONS: EmblaOptionsType = { loop: true }
+  const OPTIONS: EmblaOptionsType = { loop: true, containScroll: 'keepSnaps' }
   const [emblaRef] = useEmblaCarousel(OPTIONS, [
     AutoScroll({ stopOnInteraction: false, stopOnMouseEnter: true, speed: 1 }),
   ])

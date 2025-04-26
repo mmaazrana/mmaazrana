@@ -5,17 +5,35 @@ import Typography from '@/components/Typography'
 import { TestimonialCardProps } from '@/components/cards/testimonial-card'
 import { useInView } from 'motion/react'
 import * as m from 'motion/react-m'
+import { Star } from 'lucide-react'
 
 const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo(
   ({ testimonial, client, designation, isActive }) => {
     const ref = useRef<HTMLDivElement>(null)
     const isInView = useInView(ref)
+    const delayClasses = [
+      '!delay-[500ms]',
+      '!delay-[550ms]',
+      '!delay-[600ms]',
+      '!delay-[650ms]',
+      '!delay-[700ms]',
+    ]
 
     return (
       <div
         ref={ref}
-        className={`cursor-pointer outline ${isInView && isActive && 'outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] !duration-[1s]'} ${isActive ? 'outline-secondary shadow-testimonial-hover' : 'outline-secondary-hover'} outline-[0px] testimonial relative h-[270px] sm:h-[232px] md:h-[240px] lg:h-[256px] xl:h-[300px] w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl md:rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 h-full !transition-all !duration-300 ease-linear group`}
+        className={`relative cursor-pointer outline ${isInView && isActive && 'outline-(length:--fluid-3-4) !duration-[1s]'} ${isActive ? 'outline-secondary shadow-testimonial-hover' : 'outline-secondary-hover'} testimonial relative w-[300px] sm:w-[450px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl gap-2xl p-3xl h-full !transition-all !duration-300 ease-linear group`}
       >
+        <div className='absolute -top-2xs md:-top-l left-3 xs:left-4 md:left-5 xl:left-6 z-[-15] flex flex-row gap-1 sm:gap-1.5 lg:gap-2'>
+          {Array(5)
+            .fill(0)
+            .map((_, index) => (
+              <Star
+                key={index}
+                className={`stroke-[0.75px] md:stroke-[1px] lg:stroke-[1.25px] h-10 xs:h-11 sm:h-12 md:h-13 lg:h-14 xl:h-15 2xl:h-16 w-10 xs:w-11 sm:w-12 md:w-13 lg:w-14 xl:w-15 2xl:w-16 !transition-all !duration-300 ${delayClasses[index]} ${isInView && isActive ? 'stroke-secondary fill-secondary/75 -translate-y-7' : 'stroke-primary-accent/50 fill-primary-accent/15'}`}
+              />
+            ))}
+        </div>
         <svg
           fill='none'
           className={
@@ -74,7 +92,12 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
         <div
           className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
-          <Typography type='xl' leading='prose' weight='light'>
+          <Typography
+            type='xl'
+            leading='prose'
+            weight='light'
+            className='line-clamp-12 md:line-clamp-6 xl:line-clamp-5'
+          >
             {testimonial}
           </Typography>
         </div>

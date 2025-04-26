@@ -75,7 +75,7 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
 
   const dynamicClasses = [
     indexClasses[index],
-    'flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-xl md:rounded-2xl lg:rounded-3xl sm:aspect-video md:aspect-square w-full h-fit',
+    'flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-xl sm:aspect-video md:aspect-square w-full h-fit',
     onClick ? 'cursor-pointer' : '',
     className,
   ]

@@ -6,6 +6,7 @@ import TestimonialCard from '@/components/cards/testimonial-card'
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import { motion } from 'framer-motion'
+import Autoplay from 'embla-carousel-autoplay'
 
 interface TestimonialsProps {}
 
@@ -13,7 +14,9 @@ const Testimonials: FC<TestimonialsProps> = () => {
   const OPTIONS: EmblaOptionsType = { loop: true }
   const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [])
+  const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [
+    Autoplay({ delay: 10000, stopOnMouseEnter: true }),
+  ])
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap())

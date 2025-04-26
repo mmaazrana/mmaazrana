@@ -21,7 +21,6 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
                 'w-full h-full opacity-70 hover:opacity-100 hover:scale-102 hover:-translate-y-2 transition-all duration-300'
               }
             />
-            ' '
           </div>
         ))}
       </div>
@@ -29,7 +28,7 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
         <Typography type='6xl' weight='extra-bold' className='text-center'>
           Esteemed Clients
         </Typography>
-        <Typography type='2xl' weight='light' className='text-center max-w-3xl opacity-75'>
+        <Typography type='2xl' weight='light' className='text-center max-w-[40rem] opacity-75'>
           Organizations and professionals who have entrusted me with their projects, resulting in
           exceptional outcomes.
         </Typography>
@@ -47,7 +46,6 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
                 'w-full h-full opacity-75 hover:opacity-100 hover:scale-102 hover:translate-y-2 transition-all duration-300'
               }
             />
-            ' '
           </div>
         ))}
       </div>

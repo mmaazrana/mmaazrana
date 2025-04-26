@@ -77,7 +77,7 @@ export default function ProjectHero() {
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-xl transform-style-3d ${rotationClasses[index]} `}
                 loading='lazy'
                 placeholder='blur'
                 sizes='20vw'
@@ -101,7 +101,7 @@ export default function ProjectHero() {
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md sm:rounded-lg lg:rounded-xl transform-style-3d ${rotationClasses[index + 1]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-xl transform-style-3d ${rotationClasses[index + 1]} `}
                 loading='lazy'
                 placeholder='blur'
                 sizes='33vw'
@@ -112,7 +112,7 @@ export default function ProjectHero() {
       </div>
 
       {/* Project Header */}
-      <div className='mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-12 flex flex-col max-w-4xl gap-6 items-center justify-center text-center'>
+      <div className='mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-12 flex flex-col max-w-[60rem] gap-6 items-center justify-center text-center'>
         <div className='flex flex-col gap-7 xs:gap-8 md:gap-9 xl:gap-10'>
           <div className='flex flex-col gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4'>
             <Typography type='6xl' weight='bold'>

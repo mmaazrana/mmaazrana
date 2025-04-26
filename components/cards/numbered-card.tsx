@@ -45,7 +45,7 @@ export default function NumberedCard({ index, title, description, rotation }: Nu
         {`${index + 1}`}
       </Typography>
       <div
-        className={`flex flex-col items-center justify-center py-7 xs:py-7.5 sm:py-8 md:py-8.5 lg:py-9 xl:py-9.5 2xl:py-10 px-7 xs:px-7.5 sm:px-8 md:px-8.5 lg:px-9 xl:px-9.5 2xl:px-10 gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4 outline outline-1 outline-secondary/40 bg-secondary-hover/10 hover:bg-primary-invert/25 transition-colors duration-300 ease-in-out z-[2] rounded-2xl md:rounded-3xl backdrop-blur-xs ${cardIsInView && isMobile && '!bg-primary-invert/25'}`}
+        className={`flex flex-col items-center justify-center py-7 xs:py-7.5 sm:py-8 md:py-8.5 lg:py-9 xl:py-9.5 2xl:py-10 px-7 xs:px-7.5 sm:px-8 md:px-8.5 lg:px-9 xl:px-9.5 2xl:px-10 gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4 outline outline-1 outline-secondary/40 bg-secondary-hover/10 hover:bg-primary-invert/25 transition-colors duration-300 ease-in-out z-[2] rounded-3xl backdrop-blur-xs ${cardIsInView && isMobile && '!bg-primary-invert/25'}`}
       >
         <Typography type='2xl' weight='bold' className='text-center'>
           {title}

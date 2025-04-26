@@ -18,7 +18,7 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
   return (
     <div
       ref={cardRef}
-      className={`relative overflow-visible flex flex-col items-center justify-center rounded-xl sm:rounded-2xl md:rounded-3xl about:aspect-square hover:-translate-y-4 transition-all duration-300 group ${cardIsInView && isMobile && '-translate-y-4'}`}
+      className={`relative overflow-visible flex flex-col items-center justify-center rounded-rect about:aspect-square hover:-translate-y-4 transition-all duration-300 group ${cardIsInView && isMobile && '-translate-y-4'}`}
     >
       <div className='absolute -z-10 w-full h-full overflow-visible group'>
         <span
@@ -26,7 +26,7 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
             background: tech.icon.props.fill,
             filter: `drop-shadow(0px 50px 50px ${tech.icon.props.fill})`,
           }}
-          className={`absolute -z-10 overflow-visible w-full h-full min-w-full min-h-full !transition-opacity rounded-3xl opacity-0 group-hover:opacity-25 -z-1 ${cardIsInView && isMobile && 'opacity-25'}`}
+          className={`absolute -z-10 overflow-visible w-full h-full min-w-full min-h-full !transition-opacity rounded-rect opacity-0 group-hover:opacity-25 -z-1 ${cardIsInView && isMobile && 'opacity-25'}`}
         />
         <svg width='100' height='100' className='absolute w-full h-full overflow-visible group'>
           <rect

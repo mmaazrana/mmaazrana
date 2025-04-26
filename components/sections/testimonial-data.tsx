@@ -5,13 +5,13 @@ import {} from '@/helpers/enums'
 interface TestimonialDataProps {
   testimonial: string
   clientName: string
-  companyName: string
+  designation: string
 }
 
 const TestimonialData: React.FC<TestimonialDataProps> = ({
   testimonial,
   clientName,
-  companyName,
+  designation,
 }) => {
   return (
     <div className='flex flex-col gap-5 xs:gap-6 md:gap-7 xl:gap-8 relative mr-0 sm:mr-2'>
@@ -54,7 +54,7 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
         </Typography>
         <Typography type='xl'>-</Typography>
         <Typography type='xl' className='opacity-75'>
-          {companyName}
+          {designation}
         </Typography>
       </div>
     </div>
