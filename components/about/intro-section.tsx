@@ -3,7 +3,6 @@
 import React, { FC, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
 import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { useInView } from 'motion/react';
@@ -38,23 +37,29 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
   return (
     <div
       ref={introRef}
-      className={`relative h-fit order-1 sm:row-span-2 md:row-span-3 ${className}`}
+      className={`relative h-fit order-1 sm:row-span-2 md:row-span-3 group ${className}`}
     >
       <AboutCard
-        className="h-full min-h-fit max-h-fit"
+        className='h-full min-h-fit max-h-fit'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && introIsInView)}
       >
-        <Typography type={TextTypes.xl} color={ColorTypes.primaryHover} className="opacity-75">
+        <Typography
+          type={'xl'}
+          leading={'prose'}
+          weight='light'
+          color={'primary-hover'}
+          className='opacity-75 group-hover:opacity-100 transition-100 duration-300'
+        >
           User-centric Product Designer & Developer with 5+ Years of experience, focused on
           developing visually stunning and intuitive products
         </Typography>
       </AboutCard>
       <SectionTitle
-        text="Intro"
+        text='Intro'
         isInView={isMobile ? introIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className='translate-x-3 right-0 left-auto'
       />
     </div>
   );

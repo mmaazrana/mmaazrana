@@ -1,6 +1,6 @@
-import { ColorTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import Typography from '@/components/Typography';
-import { TextTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
@@ -35,9 +35,9 @@ export default function NumberedCard({ index, title, description, rotation }: Nu
       } transform-style-preserve-3d transition-transform duration-300 ease-in-out ${cardIsInView && isMobile && '-translate-y-2'}`}
     >
       <Typography
-        type={TextTypes['9xl']}
-        weight={WeightTypes.black}
-        color={ColorTypes.error}
+        type={'9xl'}
+        weight='black'
+        color={'error'}
         className={`absolute top-4 xs:top-2 sm:top-0 -translate-y-1/2 ${
           rotation === 'left'
             ? '-left-8 xs:-left-10 sm:-left-12'
@@ -51,14 +51,10 @@ export default function NumberedCard({ index, title, description, rotation }: Nu
       <div
         className={`flex flex-col items-center justify-center py-7 xs:py-7.5 sm:py-8 md:py-8.5 lg:py-9 xl:py-9.5 2xl:py-10 px-7 xs:px-7.5 sm:px-8 md:px-8.5 lg:px-9 xl:px-9.5 2xl:px-10 gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4 outline outline-1 outline-secondary/40 bg-secondary-hover/10 hover:bg-primary-invert/25 transition-colors duration-300 ease-in-out z-[2] rounded-2xl md:rounded-3xl backdrop-blur-xs ${cardIsInView && isMobile && '!bg-primary-invert/25'}`}
       >
-        <Typography type={TextTypes['2xl']} weight={WeightTypes.bold} className="text-center">
+        <Typography type={'2xl'} weight='bold' className='text-center'>
           {title}
         </Typography>
-        <Typography
-          type={TextTypes['lg']}
-          weight={WeightTypes.light}
-          className="opacity-80 text-center"
-        >
+        <Typography type='lg' weight='light' className='opacity-80 text-center'>
           {description}
         </Typography>
       </div>

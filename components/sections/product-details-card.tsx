@@ -1,6 +1,6 @@
 import React, { useId } from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { ClientProductT } from '@/helpers/types';
@@ -15,7 +15,7 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
   return (
     <Link
       href={product.link}
-      target="_blank"
+      target='_blank'
       className={
         'relative flex grow flex-col sm:flex-row justify-center items-center p-6 xs:p-7 sm:p-8 md:p-9 lg:p-10 xl:p-11 2xl:p-12 gap-5 xs:gap-5.5 sm:gap-6 md:gap-3.5 lg:gap-4 xl:gap-4.5 2xl:gap-5 rounded-rect overflow-hidden group cursor-default hover:-translate-y-2 transition-transform duration-300'
       }
@@ -31,23 +31,23 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
         <defs>
           <linearGradient
             id={`aboutCardStroke${id}`}
-            gradientUnits="userSpaceOnUse"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-            gradientTransform="rotate(60)"
+            gradientUnits='userSpaceOnUse'
+            x1='0%'
+            y1='0%'
+            x2='100%'
+            y2='100%'
+            gradientTransform='rotate(60)'
           >
-            <stop offset="0%" stopColor={product.primaryColor} stopOpacity="15%" />
-            <stop offset="95%" stopColor={product.primaryColor} stopOpacity="100%" />
+            <stop offset='0%' stopColor={product.primaryColor} stopOpacity='15%' />
+            <stop offset='95%' stopColor={product.primaryColor} stopOpacity='100%' />
           </linearGradient>
         </defs>
         <rect
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill="none"
+          x='0'
+          y='0'
+          width='100%'
+          height='100%'
+          fill='none'
           stroke={`url(#aboutCardStroke${id})`}
           strokeWidth={3}
           className={`w-full h-full min-w-full min-h-full !transition-all rounded-rect opacity-80 group-hover:opacity-100`}
@@ -70,9 +70,9 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
         }
       />
       <div className={'flex items-center gap-3 sm:gap-3.5 xl:gap-4 w-fit'}>
-        <product.logo className="h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 w-fit max-w-[10rem]" />
+        <product.logo className='h-6 xs:h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 w-fit max-w-[10rem]' />
         {product.name && (
-          <Typography type={TextTypes['2xl']} weight={WeightTypes.semiBold}>
+          <Typography type={'2xl'} weight='semi-bold'>
             {product.name}
           </Typography>
         )}
@@ -89,7 +89,7 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
               'flex px-2.5 md:px-3 xl:px-3.5 py-1.5 md:py-2 rounded-full bg-black-dynamic/5 group-hover:bg-black-dynamic/10 transition-colors duration-300'
             }
           >
-            <Typography type={TextTypes.sm}>{service}</Typography>
+            <Typography type={'sm'}>{service}</Typography>
           </div>
         ))}
       </div>

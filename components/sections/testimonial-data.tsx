@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 
 interface TestimonialDataProps {
   testimonial: string;
@@ -16,8 +16,9 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
   return (
     <div className={'flex flex-col gap-5 xs:gap-6 md:gap-7 xl:gap-8 relative mr-0 sm:mr-2'}>
       <Typography
-        type={TextTypes['2xl']}
-        className={'opacity-80 pr-0 sm:pr-22 md:pr-28 lg:pr-30 xl:pr-32 2xl:pr-34'}
+        type='xl'
+        weight='light'
+        className={'pr-0 leading-[1.6] sm:pr-22 md:pr-28 lg:pr-30 xl:pr-32 2xl:pr-34'}
       >
         {testimonial}
       </Typography>
@@ -31,28 +32,28 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
         <path
           className={`stroke-[1px] md:stroke-[1.5px] xl:stroke-[2px] stroke-secondary/75 !transition-colors !duration-300 group-hover:stroke-secondary`}
           fill={'none'}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="235"
-          strokeDashoffset="520"
-          d="m35.33,10.33c0-5.21-3.15-8.4-8.33-8.33H10.33C5.12,2,2,5.13,2,10.22v25.12c0,5.21,3.12,8.33,8.33,8.33q4.17,0,4.17,4.17v4.17c0,4.17-4.17,8.33-8.33,8.33s-4.17.03-4.17,4.3v8.2q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z"
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeDasharray='235'
+          strokeDashoffset='520'
+          d='m35.33,10.33c0-5.21-3.15-8.4-8.33-8.33H10.33C5.12,2,2,5.13,2,10.22v25.12c0,5.21,3.12,8.33,8.33,8.33q4.17,0,4.17,4.17v4.17c0,4.17-4.17,8.33-8.33,8.33s-4.17.03-4.17,4.3v8.2q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z'
         />
         <path
           className={`stroke-[1px] md:stroke-[1.5px] xl:stroke-[2px] stroke-secondary/75 !transition-colors !duration-300 group-hover:stroke-secondary`}
           fill={'none'}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="235"
-          strokeDashoffset="520"
-          d="m85.33,10.33c0-5.21-3.15-8.4-8.33-8.33h-16.67c-5.21,0-8.33,3.12-8.33,8.22v25.12c0,5.21,3.12,8.33,8.33,8.33h3.12c0,9.38,1.04,16.67-11.46,16.67v12.5q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z"
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeDasharray='235'
+          strokeDashoffset='520'
+          d='m85.33,10.33c0-5.21-3.15-8.4-8.33-8.33h-16.67c-5.21,0-8.33,3.12-8.33,8.22v25.12c0,5.21,3.12,8.33,8.33,8.33h3.12c0,9.38,1.04,16.67-11.46,16.67v12.5q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z'
         />
       </svg>
       <div className={'flex justify-start items-center gap-1.5 md:gap-2'}>
-        <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+        <Typography type={'xl'} weight='medium'>
           {clientName}
         </Typography>
-        <Typography type={TextTypes.xl}>-</Typography>
-        <Typography type={TextTypes.xl} className={'opacity-75'}>
+        <Typography type={'xl'}>-</Typography>
+        <Typography type={'xl'} className={'opacity-75'}>
           {companyName}
         </Typography>
       </div>

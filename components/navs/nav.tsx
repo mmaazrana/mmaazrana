@@ -14,15 +14,15 @@ const Nav: FC<NavProps> = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   return (
-    <nav id={'navbar'} className="w-full xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12">
-      <div className="justify-between items-center mx-auto nav:items-center nav:flex">
+    <nav id={'navbar'} className='w-full xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12'>
+      <div className='justify-between items-center mx-auto nav:items-center nav:flex'>
         <div>
-          <div className=" flex items-center justify-between nav:block  ">
-            <Link href="/" aria-label="Home">
+          <div className=' flex items-center justify-between nav:block  '>
+            <Link href='/' aria-label='Home'>
               <MaazRanaLogo />
             </Link>
 
-            <div className="nav:hidden z-100 pointer-events-auto">
+            <div className='nav:hidden z-100 pointer-events-auto'>
               <MenuButton onClick={() => setShowNavbar(!showNavbar)} showNavbar={showNavbar} />
             </div>
           </div>
@@ -41,11 +41,11 @@ const Nav: FC<NavProps> = () => {
                   : 'opacity-0 pointer-events-none nav:pointer-events-auto'
               }  rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg p-4 mt-4 nav:block nav:p-0 nav:mt-0 nav:w-auto nav:shadow-none transition-opacity duration-300`}
           >
-            <ul className="items-end justify-end nav:gap-2 lg:gap-3 xl:gap-3 nav:flex ">
+            <ul className='items-end justify-end nav:gap-2 lg:gap-3 xl:gap-3 nav:flex '>
               {navButtons.map((button, index) => (
                 <li
                   key={index}
-                  className={`${button.type === ButtonTypes.primary ? 'w-40 nav:w-fit mt-3 nav:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6' : 'mt-1 nav:mt-0'}`}
+                  className={`${button.type === 'primary' ? 'w-40 nav:w-fit mt-3 nav:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6' : 'mt-1 nav:mt-0'}`}
                 >
                   <Link href={button.href} aria-label={button.text}>
                     <Button type={button.type} text={button.text} />

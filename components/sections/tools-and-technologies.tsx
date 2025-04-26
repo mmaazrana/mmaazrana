@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import { FlaskRound } from 'lucide-react';
 import TechnologyIcon from './technology-icon';
 
@@ -28,7 +28,7 @@ const ToolsAndTechnologies: React.FC<ToolsAndTechnologiesProps> = ({ technologie
             'ml-2 h-9 sm:h-10 md:h-11 xl:h-12 w-9 xs:w-10 md:w-11 xl:w-12 stroke-secondary stroke-1'
           }
         />
-        <Typography type={TextTypes['3xl']} weight={WeightTypes.bold}>
+        <Typography type={'3xl'} weight='bold'>
           Tools & Technologies
         </Typography>
       </div>

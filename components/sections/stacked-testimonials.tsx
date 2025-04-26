@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { testimonials } from '@/helpers/constants';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import AutoScrollTestimonials from '@/components/sections/auto-scroll-testimonials';
 
 interface StackedTestimonialsProps {}
@@ -15,14 +15,10 @@ const StackedTestimonials: FC<StackedTestimonialsProps> = () => {
     <>
       <AutoScrollTestimonials testimonials={firstHalf} offset={true} />
       <div className={'flex flex-col justify-center items-center w-full gap-2'}>
-        <Typography
-          type={TextTypes['8xl']}
-          weight={WeightTypes.extraBold}
-          className={'text-center'}
-        >
+        <Typography type={'8xl'} weight='extra-bold' className={'text-center'}>
           Testimonials
         </Typography>
-        <Typography type={TextTypes['2xl']} weight={WeightTypes.regular} className={'text-center'}>
+        <Typography type={'2xl'} weight='regular' className={'text-center'}>
           Don’t just take my word for it
         </Typography>
       </div>

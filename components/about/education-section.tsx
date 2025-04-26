@@ -3,7 +3,6 @@
 import React, { FC, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
 import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import Medal from '@/components/icons/medal';
@@ -41,46 +40,41 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
       className={`relative h-fit order-2 sm:row-span-2 md:row-span-3 ${className}`}
     >
       <AboutCard
-        className="h-full min-h-fit max-h-fit"
+        className='h-full min-h-fit max-h-fit'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && educationIsInView)}
       >
-        <div className={'flex flex-col gap-2 sm:gap-3 md:gap-4'}>
-          <div className={'flex flex-col gap-1 md:gap-2'}>
-            <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+        <div className={'flex flex-col gap-6 sm:gap-7 md:gap-8'}>
+          <div className={'flex flex-col gap-2 md:gap-3'}>
+            <Typography type={'xl'} weight='semi-bold' leading={'light'}>
               Software Engineering
             </Typography>
             <Typography
-              type={TextTypes.xl}
-              color={ColorTypes.primaryHover}
-              className={'opacity-75'}
+              type={'lg'}
+              leading={'medium'}
+              weight='light'
+              color={'primary-hover'}
+              className={'opacity-80'}
             >
               Bachelors of Engineering - National University of Sciences and Technology
             </Typography>
-            <Typography
-              type={TextTypes.lg}
-              weight={WeightTypes.semiBold}
-              color={ColorTypes.secondary}
-            >
+            <Typography type={'lg'} weight='bold' color={'secondary'} leading={'flat'}>
               CGPA - 3.61
             </Typography>
           </div>
-          <div className={'flex flex-row gap-2 sm:gap-3 md:gap-4 items-center justify-start'}>
-            <Medal
-              fill={'var(--golden)'}
-              className={'h-[24px] sm:h-[25px] md:h-[26px] lg:h-[27px] xl:h-[28px]'}
-            />
-            <Typography type={TextTypes.xl} weight={WeightTypes.medium} color={ColorTypes.golden}>
+          <div className={'flex flex-row gap-1 sm:gap-2 md:gap-3 items-center justify-start'}>
+            <Medal className={'fill-golden h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7'} />
+            <Typography type={'lg'} weight='medium' color={'golden'} leading={'flat'}>
               President&apos;s Gold Medalist
             </Typography>
           </div>
         </div>
       </AboutCard>
       <SectionTitle
-        text="Education"
+        text='Education'
         isInView={isMobile ? educationIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className='translate-x-3 right-0 left-auto'
       />
     </div>
   );

@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import { useTheme } from 'next-themes';
 import webDesktop from '../../../public/svgs/web-desktop.svg';
 import productDesktop from '../../../public/svgs/product-desktop.svg';
@@ -60,29 +60,21 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
     <>
       <div className={'flex flex-row justify-center items-start w-full h-[40vw] sm:h-64'}>
         {firstHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading="eager" />
+          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading='eager' />
         ))}
       </div>
       <div className={'flex flex-col justify-center items-center w-full gap-6'}>
-        <Typography
-          type={TextTypes['8xl']}
-          weight={WeightTypes.extraBold}
-          className={'text-center'}
-        >
+        <Typography type={'8xl'} weight='extra-bold' className={'text-center'}>
           My Work
         </Typography>
-        <Typography
-          type={TextTypes['2xl']}
-          weight={WeightTypes.regular}
-          className={'text-center max-w-200 opacity-75'}
-        >
+        <Typography type={'2xl'} weight='regular' className={'text-center max-w-200 opacity-75'}>
           Demonstrating expertise in diverse fields such as mobile and web application development,
           UI/UX design, 3D design and animation, video editing, and logo creation.
         </Typography>
       </div>
       <div className={'flex flex-row justify-center items-start w-full h-[40vw] sm:h-64 ml-4'}>
         {secondHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading="eager" />
+          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading='eager' />
         ))}
       </div>
     </>

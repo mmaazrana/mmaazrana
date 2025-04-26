@@ -40,7 +40,7 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
       className={`relative h-fit order-3 sm:row-span-2 md:row-span-3 ${className}`}
     >
       <AboutCard
-        className="h-full min-h-fit max-h-fit"
+        className='h-full min-h-fit max-h-fit'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && clientsIsInView)}
@@ -59,9 +59,9 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
         </div>
       </AboutCard>
       <SectionTitle
-        text="Clients"
+        text='Clients'
         isInView={isMobile ? clientsIsInView : true}
-        className="translate-x-3 right-0 left-auto hidden about:block"
+        className='translate-x-3 right-0 left-auto hidden about:block'
       />
     </div>
   );

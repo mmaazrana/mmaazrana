@@ -26,21 +26,21 @@ const TitleBar: React.FC<TitleBarProps> = ({ handleTabChange, activeTab, categor
         <span
           className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary opacity-75 z-[3] pointer-events-none`}
         />
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode='wait'>
           {currentIndex > 0 && (
             <InActiveCategory
               category={categories[currentIndex - 1]}
-              position="left"
+              position='left'
               onClick={() => handleTabChange(categories[currentIndex - 1].key)}
             />
           )}
         </AnimatePresence>
         {currentCategory && <ActiveCategory currentCategory={currentCategory} />}
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode='wait'>
           {currentIndex < categories.length - 1 && (
             <InActiveCategory
               category={categories[currentIndex + 1]}
-              position="right"
+              position='right'
               onClick={() => handleTabChange(categories[currentIndex + 1].key)}
             />
           )}

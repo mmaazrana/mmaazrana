@@ -2,7 +2,7 @@
 
 import React, { FC, useEffect, useState } from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import webTablet from '@/public/svgs/web-tab.svg';
@@ -88,20 +88,20 @@ const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className
         'cursor-pointer service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent group'
       }
     >
-      <div className="relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group">
+      <div className='relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group'>
         <div className={serviceClasses[index]}>
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
             className={imageClasses[index]}
             alt={title}
             quality={75}
-            loading="lazy"
+            loading='lazy'
           />
         </div>
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography type={TextTypes['4xl']} weight={WeightTypes.bold}>
+          <Typography type='4xl' weight='bold'>
             {title}
           </Typography>
         </div>

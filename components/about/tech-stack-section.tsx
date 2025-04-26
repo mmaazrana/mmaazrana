@@ -3,7 +3,6 @@
 import React, { FC, useMemo, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import {
@@ -66,7 +65,7 @@ const TechStackSection: FC<TechStackSectionProps> = ({ className }) => {
           | typeof managementIconComponents
       ) => (
         <div className={'flex flex-col gap-4 sm:gap-5 md:gap-6'}>
-          <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+          <Typography type={'xl'} weight='semi-bold' leading={'prose'}>
             {title}
           </Typography>
           <div className={'flex flex-row flex-wrap gap-3 md:gap-4'}>
@@ -83,7 +82,7 @@ const TechStackSection: FC<TechStackSectionProps> = ({ className }) => {
   return (
     <div ref={toolsRef} className={`relative h-fit order-3 sm:row-span-2 ${className}`}>
       <AboutCard
-        className="h-full min-h-fit max-h-fit"
+        className='h-full min-h-fit max-h-fit'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && toolsIsInView)}
@@ -95,9 +94,9 @@ const TechStackSection: FC<TechStackSectionProps> = ({ className }) => {
         </div>
       </AboutCard>
       <SectionTitle
-        text="Tech Stack"
+        text='Tech Stack'
         isInView={isMobile ? toolsIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className='translate-x-3 right-0 left-auto'
       />
     </div>
   );

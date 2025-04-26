@@ -29,9 +29,9 @@ const AutoScrollTestimonials: FC<AutoScrollTestimonialsProps> = ({
       <div className={`embla__viewport`} ref={emblaRef}>
         <div className={`embla__container ${offset ? 'ml-80' : 'mr-80'} py-4`}>
           {testimonials.map((testimonial, index) => (
-            <div className="embla__slide h-full" key={index}>
+            <div className='embla__slide h-full' key={index}>
               <TestimonialCard
-                variant="flat"
+                variant='flat'
                 testimonial={testimonial.testimonial}
                 client={testimonial.client}
                 designation={testimonial.designation}

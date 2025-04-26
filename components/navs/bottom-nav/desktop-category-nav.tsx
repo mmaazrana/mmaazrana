@@ -15,7 +15,7 @@ const DesktopCategoryNav: FC<DesktopCategoryNavProps> = ({
   activeTab,
   handleTabChange,
 }) => (
-  <div className="my-9 px-40 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 hidden lg:flex z-[50]">
+  <div className='my-9 px-40 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 hidden lg:flex z-[50]'>
     {categories.map((button, index) => (
       <CategoryButton
         key={index}

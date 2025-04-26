@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import { GraphicDesignProjectT } from '@/helpers/types';
@@ -67,7 +67,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
   return (
     <div
       ref={ref}
-      className="break-inside-avoid mb-1 lg:mb-1.5 group transition-shadow duration-300 relative"
+      className='break-inside-avoid mb-1 lg:mb-1.5 group transition-shadow duration-300 relative'
     >
       <div
         className={`relative w-full overflow-hidden bg-white rounded-xl select-none ${project.image.length > 1 ? 'touch-none cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
@@ -79,7 +79,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         onMouseUp={handleEnd}
         onMouseLeave={handleEnd}
       >
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode='wait' initial={false}>
           <motion.div
             layout
             key={currentImageIndex}
@@ -104,7 +104,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
               opacity: { duration: 0.2 },
               scale: { duration: 0.2 },
             }}
-            className="relative w-full"
+            className='relative w-full'
           >
             <Image
               src={project.image[currentImageIndex]}
@@ -112,16 +112,16 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
               className={`w-full h-auto transition-transform duration-300  select-none 
                         ${isMobile && isInView ? 'scale-105' : 'pointer-events-none touch-none group-hover:scale-105'}
                         `}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1535px) 33vw, 400px"
-              loading="lazy"
-              placeholder="blur"
+              sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1535px) 33vw, 400px'
+              loading='lazy'
+              placeholder='blur'
             />
           </motion.div>
         </AnimatePresence>
         {project.image.length > 1 && (
-          <div className="absolute bottom-2 right-2 flex items-center gap-1">
-            <div className="bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full">
-              <Typography type={TextTypes['sm']} className="text-white">
+          <div className='absolute bottom-2 right-2 flex items-center gap-1'>
+            <div className='bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full'>
+              <Typography type='sm' className='text-white'>
                 {`${currentImageIndex + 1} / ${project.image.length}`}
               </Typography>
             </div>
@@ -129,8 +129,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         )}
       </div>
       {project.image.length > 1 && (
-        <div className="mt-1 overflow-x-auto no-scrollbar">
-          <div className="flex gap-1 w-full">
+        <div className='mt-1 overflow-x-auto no-scrollbar'>
+          <div className='flex gap-1 w-full'>
             {project.image.map((img: StaticImageData, imgIndex: number) => (
               <button
                 key={imgIndex}
@@ -145,11 +145,11 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
                 <Image
                   src={img}
                   alt={`${project.title} - Image ${imgIndex + 1}`}
-                  className="object-cover"
+                  className='object-cover'
                   fill
-                  sizes="200px"
-                  loading="lazy"
-                  placeholder="blur"
+                  sizes='200px'
+                  loading='lazy'
+                  placeholder='blur'
                 />
               </button>
             ))}
@@ -161,8 +161,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
           isMobile ? (isInView ? 'opacity-100' : 'opacity-0') : 'opacity-0 group-hover:opacity-100'
         }`}
       >
-        <span className="absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0" />
-        <Typography type={TextTypes['xl']} weight={WeightTypes.bold}>
+        <span className='absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0' />
+        <Typography type='xl' weight='bold'>
           {project.title}
         </Typography>
       </div>
@@ -171,8 +171,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
           isMobile ? (isInView ? 'opacity-100' : 'opacity-0') : 'opacity-0 group-hover:opacity-100'
         }`}
       >
-        <span className="absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0" />
-        <Typography type={TextTypes['base']} className="mx-6 text-center">
+        <span className='absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0' />
+        <Typography type='base' className='mx-6 text-center'>
           {project.description}
         </Typography>
       </div>

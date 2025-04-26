@@ -1,6 +1,6 @@
 import { BottomNavCategoryT } from '@/helpers/types';
 import * as m from 'motion/react-m';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import Typography from '@/components/Typography';
 
 interface InActiveCategoryProps {
@@ -35,7 +35,7 @@ export default function InActiveCategory({ category, position, onClick }: InActi
         }}
         key={category.key}
       >
-        <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold} className="opacity-50">
+        <Typography type='4xl' weight='extra-bold' className='opacity-50'>
           {category.text}
         </Typography>
       </m.div>

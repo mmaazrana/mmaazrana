@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { clientColorIconComponents } from '@/helpers/constants';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 
 interface EsteemedClientsProps {}
 
@@ -25,19 +25,12 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
         ))}
       </div>
       <div className={'flex flex-col justify-center items-center w-full gap-4'}>
-        <Typography
-          type={TextTypes['6xl']}
-          weight={WeightTypes.extraBold}
-          className={'text-center'}
-        >
+        <Typography type={'6xl'} weight='extra-bold' className={'text-center'}>
           Esteemed Clients
         </Typography>
-        <Typography
-          type={TextTypes['2xl']}
-          weight={WeightTypes.light}
-          className={'text-center max-w-3xl opacity-75'}
-        >
-          Comapnies and Individuals who have trusted me to deliver exceptional results.
+        <Typography type={'2xl'} weight='light' className={'text-center max-w-3xl opacity-75'}>
+          Organizations and professionals who have entrusted me with their projects, resulting in
+          exceptional outcomes.
         </Typography>
       </div>
       <div

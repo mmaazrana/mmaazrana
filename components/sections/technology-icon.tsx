@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 
 interface TechnologyIconProps {
   technology: {
@@ -49,7 +49,7 @@ const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
         {...technology.Icon.props}
         className={'h-4.5 xs:h-5 md:h-5.5 xl:h-6 w-4.5 xs:w-5 md:w-5.5 xl:w-6'}
       />
-      <Typography type={TextTypes['xl']} weight={WeightTypes.light} className={'opacity-80'}>
+      <Typography type='xl' weight='light' className={'opacity-80'}>
         {technology.title}
       </Typography>
     </div>

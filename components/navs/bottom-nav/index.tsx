@@ -6,7 +6,6 @@ import { stagger, useAnimate } from 'motion/react';
 import Typography from '@/components/Typography';
 import { bottomNavButtons, footerButtons } from '@/helpers/constants';
 import FooterSection from './footer-section';
-import { ColorTypes, TextTypes } from '@/helpers/enums';
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context';
 import FooterCTA from './footer-cta';
 import LogoSection from './logo-section';
@@ -77,12 +76,13 @@ const BottomNavContent: FC = () => {
             }
           >
             {bottomNavButtons.map((button, index) => (
-              <div id="sections" key={index} className={'transition-colors'}>
+              <div id='sections' key={index} className={'transition-colors'}>
                 <Link href={button.href} aria-label={button.text}>
                   <Typography
-                    type={TextTypes.xl}
-                    color={ColorTypes.primary}
-                    className={`${button.section === activeSection ? 'opacity-100' : 'opacity-30 hover:opacity-50'} transition-opacity duration-300`}
+                    type={'xl'}
+                    weight={button.section === activeSection ? 'medium' : 'light'}
+                    color={'primary'}
+                    className={`${button.section === activeSection ? 'opacity-100' : 'opacity-40 hover:opacity-80'} transition-all duration-300`}
                   >
                     {button.text}
                   </Typography>

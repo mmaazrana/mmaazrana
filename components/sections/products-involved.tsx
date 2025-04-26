@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import { Target } from 'lucide-react';
 import ProductDetailsCard from './product-details-card';
 import { ClientProductT } from '@/helpers/types';
@@ -22,15 +21,15 @@ const ProductsInvolved: React.FC<ProductsInvolvedProps> = ({ products }) => {
               'ml-2 h-9 sm:h-10 md:h-11 xl:h-12 w-9 xs:w-10 md:w-11 xl:w-12 stroke-secondary stroke-1'
             }
           />
-          <Typography type={TextTypes['3xl']} weight={WeightTypes.bold}>
+          <Typography type={'3xl'} weight='bold'>
             Products Involved
           </Typography>
         </div>
         <Typography
-          type={TextTypes['lg']}
-          weight={WeightTypes.light}
-          color={ColorTypes.secondary}
-          className="tracking-widest hidden about:block"
+          type='lg'
+          weight='light'
+          color={'secondary'}
+          className='tracking-widest hidden about:block'
         >
           {`${products.length} PRODUCTS`}
         </Typography>

@@ -23,7 +23,7 @@ const TabButton: FC<TabButtonProps> = ({ onClick, ariaLabel, isEndOfPage, delay,
       delay,
     }}
     onClick={onClick}
-    className="h-10 sm:h-12 w-10 sm:w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-100"
+    className='h-10 sm:h-12 w-10 sm:w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl z-100'
     aria-label={ariaLabel}
   >
     {icon}

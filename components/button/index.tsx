@@ -26,15 +26,15 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
-  type = ButtonTypes.primary,
-  textColor = type === ButtonTypes.primary ? ColorTypes.primaryAccent : ColorTypes.primary,
+  type = 'primary',
+  textColor = type === 'primary' ? 'primary-accent' : 'primary',
   text,
-  textSize = TextTypes.xl,
+  textSize = 'xl',
   leftIcon,
   rightIcon,
-  borderColor = ColorTypes.transparent,
+  borderColor = 'transparent',
   borderWidth = 0,
-  textWeight = WeightTypes.regular,
+  textWeight = 'regular',
   onClick,
   className,
   textClassName,

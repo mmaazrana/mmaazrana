@@ -2,7 +2,7 @@
 import Typography from '@/components/Typography';
 import React, { FC, useEffect, useState } from 'react';
 import * as m from 'motion/react-m';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 
 interface AccordionProps {
   heading: string;
@@ -45,8 +45,8 @@ const Accordion: FC<AccordionProps> = ({
           }
         >
           <Typography
-            type={TextTypes['4xl']}
-            weight={WeightTypes.bold}
+            type='4xl'
+            weight='bold'
             className={
               'px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-5 xs:py-6 sm:py-7 md:py-8 xl:py-9 2xl:py-10 bg-primary-accent text-left self-start'
             }
@@ -58,7 +58,7 @@ const Accordion: FC<AccordionProps> = ({
               'group relative p-1 xs:p-2 md:p-3 xl:p-4 flex flex-row w-fit bg-primary-accent'
             }
           >
-            <div className="group relative justify-center items-end outline-0 h-3 xs:h-4 md:h-5 xl:h-6 w-3 xs:w-4 md:w-5 xl:w-6">
+            <div className='group relative justify-center items-end outline-0 h-3 xs:h-4 md:h-5 xl:h-6 w-3 xs:w-4 md:w-5 xl:w-6'>
               <span
                 className={`bg-primary group-hover:bg-primary-hover absolute top-1/2 -translate-y-1/2 left-0 transition-all duration-300 ease-out h-1 w-3 xs:w-4 md:w-5 xl:w-6 rounded-sm`}
               ></span>

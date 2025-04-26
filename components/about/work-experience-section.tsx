@@ -3,7 +3,6 @@
 import React, { FC, useMemo, useRef, useState } from 'react';
 import AboutCard from '@/components/cards/about-card';
 import Typography from '@/components/Typography';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import SectionTitle from './section-title';
 import { useAboutContext } from './about-content';
 import { WorkExperiences } from '@/helpers/constants';
@@ -18,14 +17,20 @@ const WorkExperienceItem: React.FC<{
   roles: string;
   tenure: string;
 }> = React.memo(({ company, roles, tenure }) => (
-  <div className="flex flex-col gap-1 md:gap-2">
-    <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+  <div className='flex flex-col gap-1 md:gap-2'>
+    <Typography type={'xl'} weight='semi-bold' leading={'light'}>
       {company}
     </Typography>
-    <Typography type={TextTypes.xl} color={ColorTypes.primaryHover} className="opacity-75">
+    <Typography
+      type={'lg'}
+      color={'primary-hover'}
+      weight='light'
+      leading={'prose'}
+      className='opacity-80'
+    >
       {roles}
     </Typography>
-    <Typography type={TextTypes.lg} weight={WeightTypes.semiBold} color={ColorTypes.secondary}>
+    <Typography type={'lg'} leading={'flat'} weight='semi-bold' color={'secondary'}>
       {tenure}
     </Typography>
   </div>
@@ -74,17 +79,17 @@ const WorkExperienceSection: FC<WorkExperienceSectionProps> = ({ className }) =>
       className={`relative h-fit order-4 sm:row-span-3 md:row-span-4 ${className}`}
     >
       <AboutCard
-        className="h-full min-h-fit max-h-fit"
+        className='h-full min-h-fit max-h-fit'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && workIsInView)}
       >
-        <div className="flex flex-col gap-4 sm:gap-5 md:gap-6">{workExperienceItems}</div>
+        <div className='flex flex-col gap-6 sm:gap-7 md:gap-8'>{workExperienceItems}</div>
       </AboutCard>
       <SectionTitle
-        text="Work Experience"
+        text='Work Experience'
         isInView={isMobile ? workIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className='translate-x-3 right-0 left-auto'
       />
     </div>
   );

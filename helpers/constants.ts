@@ -1,4 +1,4 @@
-import { ButtonTypes, ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
+import { ProjectCategories, Sections, WorkCategories } from '@/helpers/enums';
 import {
   BlenderProjectT,
   BottomNavButtonT,
@@ -129,8 +129,40 @@ import {
   maazLogoProject,
   teqnirLogoProject,
 } from './graphics-projects';
-import { carProject, chairProject, deskProject, discordProject, dumbbelsProject, earbudsProject, elevationProject, flutterProject, headphoneProject, homeProject, interiorProject, phoneProject, roomProject, youtubeProject } from './blender-projects';
-import { beaconTutorProject1, beaconTutorProject2, beaconTutorProject3, beaconTutorProject4, beaconTutorProject5, budsProject1, budsProject2, budsProject3, carsDebateProject, creativerseProject, fireStarterProject, markazProject, nfcProject, nustacProject, phoneVideoProject, plutoProject } from './video-projects';
+import {
+  carProject,
+  chairProject,
+  deskProject,
+  discordProject,
+  dumbbelsProject,
+  earbudsProject,
+  elevationProject,
+  flutterProject,
+  headphoneProject,
+  homeProject,
+  interiorProject,
+  phoneProject,
+  roomProject,
+  youtubeProject,
+} from './blender-projects';
+import {
+  beaconTutorProject1,
+  beaconTutorProject2,
+  beaconTutorProject3,
+  beaconTutorProject4,
+  beaconTutorProject5,
+  budsProject1,
+  budsProject2,
+  budsProject3,
+  carsDebateProject,
+  creativerseProject,
+  fireStarterProject,
+  markazProject,
+  nfcProject,
+  nustacProject,
+  phoneVideoProject,
+  plutoProject,
+} from './video-projects';
 import { getPageSlug } from './parsers';
 import SuperDuperStudio from '@/components/icons/super-duper-studio';
 import AylaLogo from '@/components/icons/ayla';
@@ -142,7 +174,6 @@ import TutoraniaSvg from '@/components/icons/tutorania';
 import SvgNutrigram from '@/components/icons/nutrigram';
 import SvgHumanizarTexto from '@/components/icons/humanizar-texto';
 import SvgElbrezal from '@/components/icons/elbrezal';
-
 
 export const HeroHeadings: string[] = [
   'Product Designer',
@@ -177,22 +208,22 @@ export const HeroDescriptions: string[] = [
 ];
 
 export const navButtons: NavButtonT[] = [
-  { text: 'Work', href: `/#${Sections.work}`, type: ButtonTypes.secondary },
+  { text: 'Work', href: `/#${Sections.work}`, type: 'secondary' },
   {
     text: 'Services',
     href: `/#${Sections.services}`,
-    type: ButtonTypes.secondary,
+    type: 'secondary',
   },
   {
     text: 'Testimonials',
     href: `/#${Sections.testimonials}`,
-    type: ButtonTypes.secondary,
+    type: 'secondary',
   },
-  { text: 'About', href: `/#${Sections.aboutMe}`, type: ButtonTypes.secondary },
+  { text: 'About', href: `/#${Sections.aboutMe}`, type: 'secondary' },
   {
     text: 'Get in Touch',
     href: 'mailto:awaismaaz@gmail.com',
-    type: ButtonTypes.primary,
+    type: 'primary',
   },
 ];
 
@@ -275,12 +306,7 @@ export const footerButtons: FooterButtonT[][] = [
   ],
 ];
 
-export const featuredProjects: ProjectAnalysisT[] = [
-  alfabolt,
-  humanizarTexto,
-  aylaAI,
-  elBrezal  
-];
+export const featuredProjects: ProjectAnalysisT[] = [alfabolt, humanizarTexto, aylaAI, elBrezal];
 
 export const services: ServiceT[] = [
   {
@@ -345,7 +371,7 @@ export const breakpoints = {
 export const testimonials: TestimonialT[] = [
   {
     testimonial:
-      'Alfabolt\'s interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team\'s productivity by 25%.',
+      "Alfabolt's interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team's productivity by 25%.",
     client: 'Ali Farooq',
     designation: 'CEO, Alfabolt',
   },
@@ -355,7 +381,7 @@ export const testimonials: TestimonialT[] = [
     client: 'Antonio Vega',
     designation: 'Owner, El Brezal Honey',
   },
-    {
+  {
     testimonial:
       'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
     client: 'Peter',
@@ -391,7 +417,6 @@ export const testimonials: TestimonialT[] = [
     client: 'Imran Haider',
     designation: 'Founder, Beacon Tutors Pakistan',
   },
-
 ];
 
 export const aboutSections = [
@@ -587,7 +612,7 @@ export const devIconComponents: IconComponentsT = {
   framer: { Icon: SiFramer, props: { fill: '#0055FF' } },
 };
 
-export const managementIconComponents: IconComponentsT  = {
+export const managementIconComponents: IconComponentsT = {
   slack: { Icon: SiSlack, props: { fill: '#4A154B' } },
   notion: { Icon: SiNotion, props: { fill: 'var(--primary)' } },
   trello: { Icon: SiTrello, props: { fill: '#0052CC' } },
@@ -642,7 +667,7 @@ export const clientData: ClientDataT[] = [
     clientName: 'Ali Farooq',
     companyName: 'CEO Alfabolt',
     productsInvolved: [
-            {
+      {
         logo: Alfabolt,
         primaryColor: '#EE1E3A',
         name: 'Alfabolt',
@@ -695,7 +720,7 @@ export const clientData: ClientDataT[] = [
   {
     heading: 'Kueenz Technologies',
     testimonial:
-      'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
+      "I've had the pleasure of collaborating with Maaz on various projects, and I cannot recommend him highly enough. As a product designer, he brings exceptional talent and a strategic mindset to every challenge. What sets him apart is not just his technical design skills, but his ability to understand the broader business context and provide thoughtful guidance that elevates the entire project. \n \n Maaz consistently delivers high-quality work on time and communicates clearly throughout the process. He listens carefully to requirements while confidently offering valuable insights that often lead to better outcomes than initially envisioned. His collaborative approach makes him an asset to any team, as he balances creative vision with practical execution. \n \n I look forward to working with Maaz on future projects and highly recommend him to anyone seeking a product designer who combines creative excellence with business acumen and professionalism.",
     clientName: 'Anum Mujahid',
     companyName: 'Co-Founder Kueenz Technologies',
     productsInvolved: [
@@ -705,8 +730,8 @@ export const clientData: ClientDataT[] = [
         name: 'Humanizar Texto',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },    
-        {
+      },
+      {
         logo: SvgElbrezal,
         primaryColor: '#FAD235',
         name: 'Elbrezal Honey',
@@ -714,14 +739,14 @@ export const clientData: ClientDataT[] = [
         link: `work/${getPageSlug(rivanna.title)}`,
       },
     ],
-    
+
     technologiesInvolved: [
       { Icon: designIconComponents['figma'], title: 'Figma' },
       { Icon: designIconComponents['illustrator'], title: 'Illustrator' },
       { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
     ],
   },
-    {
+  {
     heading: 'Beacon Tutors',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
@@ -734,7 +759,7 @@ export const clientData: ClientDataT[] = [
         name: 'Beacon Tutors Pakistan',
         services: ['Product Design', 'Website', 'Graphic Design', 'Animation', 'Illustration'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },    
+      },
       {
         logo: BeaconTutors,
         primaryColor: '#C6F0EB',
@@ -742,7 +767,7 @@ export const clientData: ClientDataT[] = [
         services: ['Product Design', 'Web App'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
-              {
+      {
         logo: TutoraniaSvg,
         primaryColor: '#6EC2FF',
         name: 'Tutorania',
@@ -750,7 +775,7 @@ export const clientData: ClientDataT[] = [
         link: `work/${getPageSlug(rivanna.title)}`,
       },
     ],
-    
+
     technologiesInvolved: [
       { Icon: devIconComponents['next'], title: 'Next.js' },
       { Icon: devIconComponents['react'], title: 'React' },
@@ -771,7 +796,7 @@ export const clientData: ClientDataT[] = [
     clientName: 'Peter',
     companyName: 'Founder of Rivanna',
     productsInvolved: [
-            {
+      {
         logo: Rivanna,
         primaryColor: '#59606E',
         name: 'Rivanna',
@@ -784,7 +809,7 @@ export const clientData: ClientDataT[] = [
         name: 'Ayla AI',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },    
+      },
     ],
     technologiesInvolved: [
       { Icon: designIconComponents['figma'], title: 'Figma' },
@@ -792,14 +817,14 @@ export const clientData: ClientDataT[] = [
       { Icon: designIconComponents['photoshop'], title: 'Photoshop' },
     ],
   },
-    {
+  {
     heading: 'Nustac',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
     clientName: 'Usama Ejaz',
     companyName: 'Co-Founder Nustac Technologies',
     productsInvolved: [
-            {
+      {
         logo: Rivanna,
         primaryColor: '#FFE363',
         name: 'Jawline Fitness',
@@ -812,21 +837,21 @@ export const clientData: ClientDataT[] = [
         name: 'Interview Preparation',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },    
+      },
       {
         logo: AylaLogo,
         primaryColor: 'var(--black-dynamic)',
         name: 'Markdown Editor',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },   
+      },
       {
         logo: SvgSmartCatch,
         primaryColor: '#003882',
         name: '',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },   
+      },
     ],
     technologiesInvolved: [
       { Icon: devIconComponents['flutter'], title: 'Flutter' },
@@ -838,14 +863,14 @@ export const clientData: ClientDataT[] = [
       { Icon: designIconComponents['premierePro'], title: 'Premiere Pro' },
     ],
   },
-      {
+  {
     heading: 'Inventrios',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
     clientName: 'Fatima Zehra',
     companyName: 'Co-Founder Inventrios',
     productsInvolved: [
-            {
+      {
         logo: SvgRobinBeauty,
         primaryColor: '#94DDEF',
         name: '',
@@ -858,21 +883,21 @@ export const clientData: ClientDataT[] = [
         name: '',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },    
+      },
       {
         logo: EquanimitySvg,
         primaryColor: '#005AC1',
         name: 'Equanimity',
         services: ['Product Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },   
+      },
       {
         logo: SvgInventrios,
         primaryColor: '#40AFF9',
         name: 'Inventrios',
         services: ['Product Design', 'Website', 'Animation', 'Illustration'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
-      },   
+      },
     ],
     technologiesInvolved: [
       { Icon: designIconComponents['figma'], title: 'Figma' },
@@ -882,14 +907,14 @@ export const clientData: ClientDataT[] = [
       { Icon: designIconComponents['premierePro'], title: 'Premiere Pro' },
     ],
   },
-        {
+  {
     heading: 'Nutrigram',
     testimonial:
       'Maaz is a rare talent who excels in both software development and UI/UX design. His ability to seamlessly integrate functionality with aesthetics is impressive. Our user engagement has significantly improved thanks to his contributions.',
     clientName: 'Hassan Ali',
     companyName: 'Founder Nutrigram',
     productsInvolved: [
-            {
+      {
         logo: SvgNutrigram,
         primaryColor: '#E23352',
         name: 'Nutrigram',

@@ -96,7 +96,7 @@ export interface ClientDataT {
 export interface ClientProductT {
   logo: any;
   primaryColor: string;
-  name ?: string;
+  name?: string;
   services: string[];
   link: string;
 }
@@ -118,7 +118,7 @@ export interface BlenderProjectT {
   image: StaticImageData[];
 }
 
-export interface  VideoProjectT {
+export interface VideoProjectT {
   title: string;
   description: string;
   fileName: string;

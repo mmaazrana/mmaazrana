@@ -53,13 +53,13 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
           className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${
             false && '!opacity-100 !saturate-100'
           }`}
-          placeholder="blur"
+          placeholder='blur'
         />
       </AboutCard>
       <SectionTitle
-        text="Socials"
+        text='Socials'
         isInView={isMobile ? socialsIsInView : true}
-        className="translate-x-3 right-0 left-auto"
+        className='translate-x-3 right-0 left-auto'
       />
     </div>
   );

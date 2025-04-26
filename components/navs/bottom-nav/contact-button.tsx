@@ -3,7 +3,6 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
-import { ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import { useBottomNav } from './bottom-nav-context';
 import * as m from 'motion/react-m';
 import Typography from '@/components/Typography';
@@ -28,19 +27,19 @@ const ContactButton: FC<ContactButtonProps> = ({ isMobile = false }) => {
             '!fill-none stroke-primary-accent w-[14px] sm:w-[16px] md:w-[18px] lg:w-[20px] xl:w-6 h-[14px] sm:h-[16px] md:h-[18px] lg:h-[20px] xl:h-6'
           }
         />
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode='wait'>
           {isEndOfPage && (
             <m.div
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: isEndOfPage ? 1 : 0 }}
               transition={{ duration: 0.6 }}
-              className="max-h-[14px] sm:max-h-[16px] md:max-h-[18px] lg:max-h-[20px] xl:max-h-6 flex items-center justify-center"
+              className='max-h-[14px] sm:max-h-[16px] md:max-h-[18px] lg:max-h-[20px] xl:max-h-6 flex items-center justify-center'
             >
               <Typography
-                type={TextTypes.xl}
-                color={ColorTypes.primaryAccent}
-                weight={isMobile ? WeightTypes.semiBold : WeightTypes.medium}
+                type={'xl'}
+                color={'primary-accent'}
+                weight={isMobile ? 'semi-bold' : 'medium'}
               >
                 {isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
               </Typography>

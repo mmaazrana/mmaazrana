@@ -6,6 +6,6 @@ export async function getVideoUrl(fileName: string) {
   const { blobs } = await list({
     prefix: fileName,
   });
-  const {url} = blobs[0]
+  const { url } = blobs[0];
   return url;
-} 
+}

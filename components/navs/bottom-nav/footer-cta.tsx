@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import * as m from 'motion/react-m';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
 import ContactButton from './contact-button';
 import SocialLinks from './social-links';
 
@@ -30,8 +29,9 @@ const FooterCTA: FC<FooterCTAProps> = ({ isEndOfPage }) => {
             className={'transition-none flex sm:w-full sm:min-w-full'}
           >
             <Typography
-              type={TextTypes['3xl']}
-              weight={WeightTypes.bold}
+              type={'2xl'}
+              weight='semi-bold'
+              leading={'medium'}
               className={`w-full overflow-hidden`}
             >
               Ready to create something awesome?

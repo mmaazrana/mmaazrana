@@ -13,7 +13,7 @@ interface NavLinkProps {
   color?: ColorTypes;
 }
 
-const NavLink: FC<NavLinkProps> = ({ href, text, isActive, type = TextTypes.xl, color }) => (
+const NavLink: FC<NavLinkProps> = ({ href, text, isActive, type = 'xl', color }) => (
   <div className={'transition-colors'}>
     <Link href={href} aria-label={text}>
       <Typography

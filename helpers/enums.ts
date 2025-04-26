@@ -1,10 +1,11 @@
-export const enum ButtonTypes {
+export const enum ButtonTypesE {
   primary = 'primary',
   secondary = 'secondary',
   tertiary = 'tertiary',
 }
 
-export const enum TextTypes {
+export const enum TextTypesE {
+  '10xl' = '10xl',
   '9xl' = '9xl',
   '8xl' = '8xl',
   '7xl' = '7xl',
@@ -18,9 +19,10 @@ export const enum TextTypes {
   base = 'base',
   sm = 'sm',
   xs = 'xs',
+  xxs = 'xxs',
 }
 
-export const enum WeightTypes {
+const enum WeightTypesE {
   black = 'black',
   extraBold = 'extra-bold',
   bold = 'bold',
@@ -31,7 +33,7 @@ export const enum WeightTypes {
   extraLight = 'extra-light',
 }
 
-export const enum ColorTypes {
+export const enum ColorTypesE {
   primary = 'primary',
   primaryAccent = 'primary-accent',
   primaryHover = 'primary-hover',
@@ -40,6 +42,15 @@ export const enum ColorTypes {
   error = 'error',
   golden = 'golden',
   transparent = 'transparent',
+}
+
+export const enum LeadingTypesE {
+  flat = 'flat',
+  default = 'default',
+  light = 'light',
+  medium = 'medium',
+  prose = 'prose',
+  max = 'max',
 }
 
 export enum Sections {
@@ -64,3 +75,9 @@ export enum ProjectCategories {
   techStack = 'tech-stack',
   challengesAndSolutions = 'challenges-and-solutions',
 }
+
+export type WeightTypes = `${WeightTypesE}`;
+export type ButtonTypes = `${ButtonTypesE}`;
+export type TextTypes = `${TextTypesE}`;
+export type ColorTypes = `${ColorTypesE}`;
+export type LeadingTypes = `${LeadingTypesE}`;

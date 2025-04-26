@@ -1,5 +1,5 @@
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import * as m from 'motion/react-m';
 import { BottomNavCategoryT } from '@/helpers/types';
 import { AnimatePresence } from 'motion/react';
@@ -23,7 +23,7 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
         <span
           className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 w-full bg-primary-accent -z-1`}
         />
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode='wait'>
           <m.div
             initial={{ opacity: 0, width: 0, translateX: -100 }}
             animate={{ opacity: 1, width: 'auto', translateX: 0 }}
@@ -35,7 +35,7 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
             }}
             key={currentCategory.key}
           >
-            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+            <Typography type='4xl' weight='extra-bold'>
               {currentCategory.text}
             </Typography>
           </m.div>

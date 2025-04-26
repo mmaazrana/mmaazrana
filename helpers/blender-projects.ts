@@ -93,7 +93,7 @@ export const homeProject: BlenderProjectT = {
 export const elevationProject: BlenderProjectT = {
   title: 'Home',
   description: 'A home model created in Blender.',
-  image: [home3, home2 ],
+  image: [home3, home2],
 };
 
 export const interiorProject: BlenderProjectT = {
@@ -118,4 +118,4 @@ export const youtubeProject: BlenderProjectT = {
   title: 'Youtube',
   description: 'A youtube model created in Blender.',
   image: [youtube],
-};          
+};

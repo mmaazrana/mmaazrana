@@ -1,7 +1,7 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
+import {} from '@/helpers/enums';
 import Image from 'next/image';
 import { useTheme } from 'next-themes'; // Static svg imports
 import webDesktop from '../../public/svgs/web-desktop.svg';
@@ -112,13 +112,13 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, index, className, onClick })
             className={imageClasses[index]}
             alt={title}
             quality={75}
-            loading="lazy"
+            loading='lazy'
           />
         </div>
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography type={TextTypes['4xl']} weight={WeightTypes.bold}>
+          <Typography type='4xl' weight='bold'>
             {title}
           </Typography>
         </div>

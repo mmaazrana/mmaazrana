@@ -1,13 +1,18 @@
-import { Archivo, Nunito } from 'next/font/google';
+import { Archivo, Fredoka, Nunito_Sans, Poiret_One, Rethink_Sans } from 'next/font/google';
 
-export const nunito = Nunito({
-  weight: ['200', '300', '400', '500'],
-  style: ['normal', 'italic'],
+export const nunito = Nunito_Sans({
+  weight: 'variable',
+  style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
+  axes: ['wdth', 'opsz', 'YTLC'],
 });
+
 export const archivo = Archivo({
-  weight: ['600', '700', '800', '900'],
-  style: ['normal', 'italic'],
+  weight: 'variable',
+  style: ['normal'],
   subsets: ['latin'],
+  preload: true,
+  axes: ['wdth'],
 });

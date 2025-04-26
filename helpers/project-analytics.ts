@@ -41,7 +41,7 @@ import alfaboltPricing from '../public/images/projects/individual/alfabolt/prici
 import alfaboltService from '../public/images/projects/individual/alfabolt/service.webp';
 import alfaboltTechnology from '../public/images/projects/individual/alfabolt/technology.webp';
 
-import { 
+import {
   Star,
   Gauge,
   Proportions,
@@ -54,7 +54,7 @@ import {
   FolderDot,
   SquareRoundCorner,
   CreditCard,
-  Factory
+  Factory,
 } from 'lucide-react';
 import {
   SiAdobeaftereffects,
@@ -134,18 +134,16 @@ export const techStackIcons: IconComponentsT = {
   github: { Icon: SiGithub, props: { fill: 'var(--primary)' } },
 };
 
-
-
 export interface keyFeaturesT {
   title: string;
   description: string;
   icon: IconType;
 }
- export interface techStackT{
+export interface techStackT {
   title: string;
   usage: string;
   icon: IconComponentT;
- }
+}
 
 export interface challengesAndSolutionsT {
   title: string;
@@ -199,7 +197,8 @@ export const pools515: ProjectAnalysisT = {
       },
       {
         title: 'Service tracking',
-        description: 'Detailed tracking of service activities, chemicals used, and maintenance performed.',
+        description:
+          'Detailed tracking of service activities, chemicals used, and maintenance performed.',
         icon: Star,
       },
       {
@@ -214,12 +213,14 @@ export const pools515: ProjectAnalysisT = {
       },
       {
         title: 'Mobile app integration',
-        description: 'Field-ready mobile application for technicians to log services and access information.',
+        description:
+          'Field-ready mobile application for technicians to log services and access information.',
         icon: Star,
       },
       {
         title: 'Automated notifications',
-        description: 'Client alerts for upcoming appointments, completed services, and billing information.',
+        description:
+          'Client alerts for upcoming appointments, completed services, and billing information.',
         icon: Star,
       },
       {
@@ -236,50 +237,70 @@ export const pools515: ProjectAnalysisT = {
     challenges: [
       {
         title: 'Complex scheduling system handling multiple service types',
-        description: 'Developing a flexible scheduling system that can handle various service types with different durations and frequencies.',
+        description:
+          'Developing a flexible scheduling system that can handle various service types with different durations and frequencies.',
       },
       {
         title: 'Real-time availability management for service providers',
-        description: 'Implementing a system that tracks technician availability and location in real-time for efficient scheduling.',
+        description:
+          'Implementing a system that tracks technician availability and location in real-time for efficient scheduling.',
       },
       {
-        title:  'Accurate pricing calculations based on service types and frequency',
-        description: 'Creating a pricing engine that can calculate costs based on service types, property specifications, and frequency.',
+        title: 'Accurate pricing calculations based on service types and frequency',
+        description:
+          'Creating a pricing engine that can calculate costs based on service types, property specifications, and frequency.',
       },
       {
         title: 'Managing different user roles and permissions',
-        description: 'Building comprehensive role management for office staff, technicians, and clients with appropriate permissions.',
+        description:
+          'Building comprehensive role management for office staff, technicians, and clients with appropriate permissions.',
       },
     ],
     solutions: [
       {
         title: 'Implemented an intuitive calendar-based scheduling interface',
-        description: 'Developed a flexible scheduling system that can handle various service types with different durations and frequencies.',
+        description:
+          'Developed a flexible scheduling system that can handle various service types with different durations and frequencies.',
       },
       {
         title: 'Developed a robust notification system for appointment management',
-        description: 'Implemented a system that tracks technician availability and location in real-time for efficient scheduling.',
+        description:
+          'Implemented a system that tracks technician availability and location in real-time for efficient scheduling.',
       },
       {
         title: 'Created a flexible pricing model that adapts to different service packages',
-        description: 'Developed a pricing engine that can calculate costs based on service types, property specifications, and frequency.',
+        description:
+          'Developed a pricing engine that can calculate costs based on service types, property specifications, and frequency.',
       },
       {
         title: 'Designed a user-friendly interface that simplifies complex pool maintenance tasks',
-        description: 'Developed a flexible scheduling system that can handle various service types with different durations and frequencies.',
+        description:
+          'Developed a flexible scheduling system that can handle various service types with different durations and frequencies.',
       },
     ],
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'React/Next.js', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'React/Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
   ],
   images: {
     main: pools515Main,
-    screenshots: [pools515Alt,pools515Alt,pools515Alt],
+    screenshots: [pools515Alt, pools515Alt, pools515Alt],
   },
 };
 
@@ -382,14 +403,26 @@ export const beaconTutors: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'React/Next.js', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'React/Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
   ],
   images: {
     main: beaconTutorWebsite,
-    screenshots: [beaconTutorWebsite,beaconTutorWebsite,beaconTutorWebsite],
+    screenshots: [beaconTutorWebsite, beaconTutorWebsite, beaconTutorWebsite],
   },
 };
 
@@ -401,7 +434,7 @@ export const deepReelAI: ProjectAnalysisT = {
     overview:
       'DeepReel is a cutting-edge AI video creation platform that revolutionizes the way users create professional videos. The platform features AI avatars, automated script generation, and a suite of video editing tools, making professional video creation accessible to everyone regardless of their technical expertise.',
     completeOn: 'Jul 2023',
-      requirements: [
+    requirements: [
       'Sleek dark and light theme options for comfortable editing',
       'Intuitive dashboard layout with quick-access creation options',
       'Advanced video editor with real-time preview capabilities',
@@ -510,16 +543,36 @@ export const deepReelAI: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'React/Next.js', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'React/Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'TensorFlow.js', usage: 'AI', icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'TensorFlow.js',
+      usage: 'AI',
+      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: deepreel,
-    screenshots: [deepreel,deepreel,deepreel],
+    screenshots: [deepreel, deepreel, deepreel],
   },
   liveUrl: 'https://www.deepreel.com',
 };
@@ -531,8 +584,8 @@ export const jawlineFitness: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'Jawline Fitness is a sophisticated mobile application designed to help users enhance their facial aesthetics through targeted exercises. The app provides structured workout programs, progress tracking, and customizable settings in an elegant, dark-themed interface.',
-      completeOn: 'Jul 2023',
-      requirements: [
+    completeOn: 'Jul 2023',
+    requirements: [
       'Sleek dark theme with yellow accent colors for optimal visibility',
       'Custom illustrations for exercise demonstrations',
       'Clean and minimalist calendar interface for tracking progress',
@@ -645,14 +698,30 @@ export const jawlineFitness: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'React Native', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Native Device APIs', usage: 'APIs', icon: { Icon: SiNativescript, props: { fill: '#0052CC' } } },
+    {
+      title: 'React Native',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Native Device APIs',
+      usage: 'APIs',
+      icon: { Icon: SiNativescript, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: jawlineMain,
-    screenshots: [jawlineAlt,jawlineAlt,jawlineAlt],
+    screenshots: [jawlineAlt, jawlineAlt, jawlineAlt],
   },
 };
 
@@ -783,17 +852,37 @@ export const codingInterviewPrep: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Frontend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Firebase Auth', usage: 'Authentication', icon: { Icon: SiFirebase, props: { fill: '#0052CC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Firebase Auth',
+      usage: 'Authentication',
+      icon: { Icon: SiFirebase, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: interviewMain,
-    screenshots: [interviewAlt,interviewAlt,interviewAlt],
+    screenshots: [interviewAlt, interviewAlt, interviewAlt],
   },
 };
 
@@ -914,16 +1003,32 @@ export const equanimity: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Frontend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: equanimityImage,
-    screenshots: [equanimityImage,equanimityImage,equanimityImage],
+    screenshots: [equanimityImage, equanimityImage, equanimityImage],
   },
 };
 
@@ -1057,15 +1162,27 @@ export const aylaAI: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'React Native', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'React Native',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'TensorFlow.js', usage: 'AI', icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } } },
+    {
+      title: 'TensorFlow.js',
+      usage: 'AI',
+      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+    },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: aylaMain,
-    screenshots: [aylaAlt,aylaAlt,aylaAlt],
+    screenshots: [aylaAlt, aylaAlt, aylaAlt],
   },
 };
 
@@ -1082,11 +1199,11 @@ export const deepReelCanva: ProjectAnalysisT = {
       'Grid-based presenter selection interface',
       'Clear segmentation between video and voice features',
       'Intuitive voice customization controls',
-        'Well-organized settings panels',
-        'Visual feedback for selection states',
-        'Consistent action button styling',
-        'Professional presenter preview system',
-      ],
+      'Well-organized settings panels',
+      'Visual feedback for selection states',
+      'Consistent action button styling',
+      'Professional presenter preview system',
+    ],
     keyFeatures: [
       {
         title: 'AI presenter selection and customization',
@@ -1187,14 +1304,30 @@ export const deepReelCanva: ProjectAnalysisT = {
   categories: [WorkCategories.productDevelopment],
   techStack: [
     { title: 'React.js', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Canva SDK', usage: 'Integration', icon: { Icon: SiCanva, props: { fill: '#0052CC' } } },
-    { title: 'FFmpeg', usage: 'Video Processing', icon: { Icon: SiFfmpeg, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Canva SDK',
+      usage: 'Integration',
+      icon: { Icon: SiCanva, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'FFmpeg',
+      usage: 'Video Processing',
+      icon: { Icon: SiFfmpeg, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
   ],
   images: {
     main: canvaVideo,
-    screenshots: [canvaAudio,canvaAudio,canvaAudio],
+    screenshots: [canvaAudio, canvaAudio, canvaAudio],
   },
   liveUrl: 'https://www.canva.com/apps/deepreel',
 };
@@ -1324,18 +1457,42 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'Next.js', usage: 'Frontend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Express.js', usage: 'Backend', icon: { Icon: SiExpress, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
-    { title: 'React Query', usage: 'Data Fetching', icon: { Icon: SiReactquery, props: { fill: '#0052CC' } } },
+    {
+      title: 'Express.js',
+      usage: 'Backend',
+      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
+    {
+      title: 'React Query',
+      usage: 'Data Fetching',
+      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: beaconTutorsAdminPanel,
-    screenshots: [beaconTutorsAdminPanel,beaconTutorsAdminPanel,beaconTutorsAdminPanel],
+    screenshots: [beaconTutorsAdminPanel, beaconTutorsAdminPanel, beaconTutorsAdminPanel],
   },
 };
 
@@ -1458,13 +1615,21 @@ export const markdownEditor: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'React Native', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'React Native',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: markdownMain,
-    screenshots: [markdownAlt,markdownAlt,markdownAlt],
+    screenshots: [markdownAlt, markdownAlt, markdownAlt],
   },
 };
 
@@ -1603,18 +1768,38 @@ export const menuHub: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Frontend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend',
+      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Express.js', usage: 'Backend', icon: { Icon: SiExpress, props: { fill: '#0052CC' } } },
+    {
+      title: 'Express.js',
+      usage: 'Backend',
+      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+    },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: menuMain,
-    screenshots: [menuAlt,menuAlt,menuAlt],
+    screenshots: [menuAlt, menuAlt, menuAlt],
   },
 };
 
@@ -1753,15 +1938,31 @@ export const nutrigram: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'React Native', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Firebase', usage: 'Database', icon: { Icon: SiFirebase, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
+    {
+      title: 'React Native',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Firebase',
+      usage: 'Database',
+      icon: { Icon: SiFirebase, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
     { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: nutrigramMain,
-    screenshots: [nutrigramAlt,nutrigramAlt,nutrigramAlt],
+    screenshots: [nutrigramAlt, nutrigramAlt, nutrigramAlt],
   },
 };
 
@@ -1901,18 +2102,34 @@ export const athletonPlus: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'React Native', usage: 'Frontend', icon: { Icon: SiReact, props: { fill: '#61DAFB' } } },
+    {
+      title: 'React Native',
+      usage: 'Frontend',
+      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+    },
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Firebase', usage: 'Database', icon: { Icon: SiFirebase, props: { fill: '#0052CC' } } },
+    {
+      title: 'Firebase',
+      usage: 'Database',
+      icon: { Icon: SiFirebase, props: { fill: '#0052CC' } },
+    },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
   ],
   images: {
     main: athleton,
-    screenshots: [athleton,athleton,athleton],
+    screenshots: [athleton, athleton, athleton],
   },
 };
 
@@ -2040,17 +2257,37 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Express.js', usage: 'Backend', icon: { Icon: SiExpress, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
-    { title: 'React Query', usage: 'Data Fetching', icon: { Icon: SiReactquery, props: { fill: '#0052CC' } } },
+    {
+      title: 'Express.js',
+      usage: 'Backend',
+      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
+    {
+      title: 'React Query',
+      usage: 'Data Fetching',
+      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: beaconTutorCRM,
-    screenshots: [beaconTutorCRM,beaconTutorCRM,beaconTutorCRM],
+    screenshots: [beaconTutorCRM, beaconTutorCRM, beaconTutorCRM],
   },
 };
 
@@ -2186,15 +2423,27 @@ export const inventrios: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Framer Motion', usage: 'Animation', icon: { Icon: SiFramer, props: { fill: '#0052CC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Framer Motion',
+      usage: 'Animation',
+      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
     { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
     { title: 'SendGrid', usage: 'Email', icon: { Icon: SiSendgrid, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: inventriosImage,
-    screenshots: [inventriosImage,inventriosImage,inventriosImage],
+    screenshots: [inventriosImage, inventriosImage, inventriosImage],
   },
 };
 
@@ -2326,17 +2575,37 @@ export const superDuperStudio: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
-    { title: 'Framer Motion', usage: 'Animation', icon: { Icon: SiFramer, props: { fill: '#0052CC' } } },
-    { title: 'React Hook Form', usage: 'Form', icon: { Icon: SiReacthookform, props: { fill: '#0052CC' } } },
-    { title: 'Cloudinary', usage: 'Media', icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
+    {
+      title: 'Framer Motion',
+      usage: 'Animation',
+      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'React Hook Form',
+      usage: 'Form',
+      icon: { Icon: SiReacthookform, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Cloudinary',
+      usage: 'Media',
+      icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } },
+    },
     { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
     { title: 'SendGrid', usage: 'Email', icon: { Icon: SiSendgrid, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: superDuper,
-    screenshots: [superDuper,superDuper,superDuper],
+    screenshots: [superDuper, superDuper, superDuper],
   },
 };
 
@@ -2476,16 +2745,32 @@ export const deepReelWebsite: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
-    { title: 'Framer Motion', usage: 'Animation', icon: { Icon: SiFramer, props: { fill: '#0052CC' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
+    {
+      title: 'Framer Motion',
+      usage: 'Animation',
+      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+    },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
     { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
-    { title: 'Google Analytics', usage: 'Analytics', icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } } },
+    {
+      title: 'Google Analytics',
+      usage: 'Analytics',
+      icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: deepreel,
-    screenshots: [deepreel,deepreel,deepreel],
+    screenshots: [deepreel, deepreel, deepreel],
   },
   liveUrl: 'https://www.deepreel.com',
 };
@@ -2512,73 +2797,87 @@ export const alfabolt: ProjectAnalysisT = {
     keyFeatures: [
       {
         title: 'High Performance Website Redesign',
-        description: 'Utilised Next.js built in optimizations along with effective design choices maximise efficiency.',
+        description:
+          'Utilised Next.js built in optimizations along with effective design choices maximise efficiency.',
         icon: Gauge,
       },
       {
         title: 'Responsive Design',
-        description: 'Utopia\'s Fluid typography and spacing was used from day one to cut down boilerplate and design overhead.',
+        description:
+          "Utopia's Fluid typography and spacing was used from day one to cut down boilerplate and design overhead.",
         icon: Proportions,
       },
       {
         title: 'Image Optimization',
-        description: 'Next.js static imports with dynamic placeholders to cut down on load times, along with properly sized images, in .webp and .avif formats. ',
+        description:
+          'Next.js static imports with dynamic placeholders to cut down on load times, along with properly sized images, in .webp and .avif formats. ',
         icon: Images,
       },
       {
         title: 'Accessible Design',
-        description: 'Extensive testing, contrast checking, and accessibility audits were conducted to ensure the website is fully accessible.',
+        description:
+          'Extensive testing, contrast checking, and accessibility audits were conducted to ensure the website is fully accessible.',
         icon: Glasses,
       },
       {
         title: 'SEO Optimization',
-        description: 'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
+        description:
+          'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
         icon: SearchCheck,
       },
       {
         title: 'Modern and Professional',
-        description: 'Design choices were tailored around professionalism and modernity, resulting in a clean and professional look.',
+        description:
+          'Design choices were tailored around professionalism and modernity, resulting in a clean and professional look.',
         icon: Sparkles,
       },
       {
         title: 'Sleek Icon Design',
-        description: 'Custom icons were created to go hand-in-hand with the company\'s branding, adding to the overall professional look.',
+        description:
+          "Custom icons were created to go hand-in-hand with the company's branding, adding to the overall professional look.",
         icon: SquareRoundCorner,
       },
       {
         title: 'Interactive Client testimonials',
-        description: 'Lightweight Embla Carousel was used to showcase client testimonials, with reduced overhead and high performance.',
+        description:
+          'Lightweight Embla Carousel was used to showcase client testimonials, with reduced overhead and high performance.',
         icon: UsersRound,
       },
       {
         title: 'Services and Solutions',
-        description: 'Individual services and sub-services pages were created to showcase the company\'s offerings, with a focus on clarity and ease of understanding.',
+        description:
+          "Individual services and sub-services pages were created to showcase the company's offerings, with a focus on clarity and ease of understanding.",
         icon: HeartHandshake,
       },
       {
         title: 'Case Studies',
-        description: 'Previous work of the company was showcased effectively through case study pages, with 3D mockups of the products they worked on.',
+        description:
+          'Previous work of the company was showcased effectively through case study pages, with 3D mockups of the products they worked on.',
         icon: FolderDot,
       },
       {
         title: 'Value-based pricing section',
-        description: 'Focused pricing plans for users of various needs were created, with the ability to conveniently compare between plans.',
+        description:
+          'Focused pricing plans for users of various needs were created, with the ability to conveniently compare between plans.',
         icon: CreditCard,
       },
       {
         title: 'Industry-specific solutions',
-        description: 'Individual industry pages were created to showcase the company\'s expertise in specific domains.',
+        description:
+          "Individual industry pages were created to showcase the company's expertise in specific domains.",
         icon: Factory,
       },
     ],
     challenges: [
       {
         title: 'Design System',
-        description: 'Developing a consistent and scalable design system that can be easily maintained and updated.',
+        description:
+          'Developing a consistent and scalable design system that can be easily maintained and updated.',
       },
       {
         title: 'Sales focused design',
-        description: 'Designing the website to convert users into customers, with a focus on sales and conversion.',
+        description:
+          'Designing the website to convert users into customers, with a focus on sales and conversion.',
       },
       {
         title: 'Responsive design',
@@ -2594,21 +2893,25 @@ export const alfabolt: ProjectAnalysisT = {
       },
       {
         title: 'Accessibility',
-        description: 'Ensuring the website is fully accessible to all users, with a focus on accessibility and usability.',
+        description:
+          'Ensuring the website is fully accessible to all users, with a focus on accessibility and usability.',
       },
     ],
     solutions: [
       {
         title: 'Component based design',
-        description: 'Created a modular component system that focuses on reusability and scalability.',
+        description:
+          'Created a modular component system that focuses on reusability and scalability.',
       },
-            {
+      {
         title: 'Market Research',
-        description: 'Conducted thorough market research to better tailor the website for conversions.',
+        description:
+          'Conducted thorough market research to better tailor the website for conversions.',
       },
       {
         title: 'Fluid Typography and Spacing',
-        description: 'Utopia\'s Fluid typography and spacing was used from day one to cut down boilerplate and design overhead.',
+        description:
+          "Utopia's Fluid typography and spacing was used from day one to cut down boilerplate and design overhead.",
       },
       {
         title: 'Performance optimization',
@@ -2616,7 +2919,8 @@ export const alfabolt: ProjectAnalysisT = {
       },
       {
         title: 'SEO optimization',
-        description: 'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
+        description:
+          'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
       },
       {
         title: 'Contrast and Touch Area Testing',
@@ -2669,7 +2973,13 @@ export const alfabolt: ProjectAnalysisT = {
   ],
   images: {
     main: alfaboltImage,
-    screenshots: [alfaboltCaseStudy, alfaboltPricing, alfaboltLanding, alfaboltService, alfaboltTechnology],
+    screenshots: [
+      alfaboltCaseStudy,
+      alfaboltPricing,
+      alfaboltLanding,
+      alfaboltService,
+      alfaboltTechnology,
+    ],
   },
 };
 
@@ -2809,16 +3119,32 @@ export const tutorania: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'React Query', usage: 'Data Fetching', icon: { Icon: SiReactquery, props: { fill: '#0052CC' } } },
-    { title: 'Express.js', usage: 'Backend', icon: { Icon: SiExpress, props: { fill: '#0052CC' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'React Query',
+      usage: 'Data Fetching',
+      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Express.js',
+      usage: 'Backend',
+      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: tutoraniaImage,
-    screenshots: [tutoraniaImage,tutoraniaImage,tutoraniaImage],
+    screenshots: [tutoraniaImage, tutoraniaImage, tutoraniaImage],
   },
 };
 
@@ -2958,16 +3284,32 @@ export const rivannaProduct: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'Elasticsearch', usage: 'Database', icon: { Icon: SiElasticsearch, props: { fill: '#0052CC' } } },
-    { title: 'PostgreSQL', usage: 'Database', icon: { Icon: SiPostgresql, props: { fill: '#0052CC' } } },
+    {
+      title: 'Elasticsearch',
+      usage: 'Database',
+      icon: { Icon: SiElasticsearch, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'PostgreSQL',
+      usage: 'Database',
+      icon: { Icon: SiPostgresql, props: { fill: '#0052CC' } },
+    },
     { title: 'Redis', usage: 'Database', icon: { Icon: SiRedis, props: { fill: '#0052CC' } } },
-    { title: 'React Query', usage: 'Data Fetching', icon: { Icon: SiReactquery, props: { fill: '#0052CC' } } },
+    {
+      title: 'React Query',
+      usage: 'Data Fetching',
+      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: rivannaImage,
-    screenshots: [rivannaImage,rivannaImage,rivannaImage],
+    screenshots: [rivannaImage, rivannaImage, rivannaImage],
   },
 };
 
@@ -3103,16 +3445,36 @@ export const rivanna: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
-    { title: 'Framer Motion', usage: 'Animation', icon: { Icon: SiFramer, props: { fill: '#0052CC' } } },
-    { title: 'React Query', usage: 'Data Fetching', icon: { Icon: SiReactquery, props: { fill: '#0052CC' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
+    {
+      title: 'Framer Motion',
+      usage: 'Animation',
+      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'React Query',
+      usage: 'Data Fetching',
+      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+    },
     { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
-    { title: 'Google Analytics', usage: 'Analytics', icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } } },
+    {
+      title: 'Google Analytics',
+      usage: 'Analytics',
+      icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
+    },
   ],
   images: {
     main: rivannaImage,
-    screenshots: [rivannaImage,rivannaImage,rivannaImage],
+    screenshots: [rivannaImage, rivannaImage, rivannaImage],
   },
 };
 
@@ -3243,15 +3605,23 @@ export const humanizarTexto: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'Express.js', usage: 'Backend', icon: { Icon: SiExpress, props: { fill: '#0052CC' } } },
+    {
+      title: 'Express.js',
+      usage: 'Backend',
+      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+    },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: humanizarMain,
-    screenshots: [humanizarAlt,humanizarAlt,humanizarAlt],
+    screenshots: [humanizarAlt, humanizarAlt, humanizarAlt],
   },
 };
 
@@ -3390,16 +3760,32 @@ export const smartCatch: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'TensorFlow.js', usage: 'AI', icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } } },
-    { title: 'Socket.io', usage: 'Real-time', icon: { Icon: SiSocketdotio, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
+    {
+      title: 'TensorFlow.js',
+      usage: 'AI',
+      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Socket.io',
+      usage: 'Real-time',
+      icon: { Icon: SiSocketdotio, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
   ],
   images: {
     main: smartCatchMain,
-    screenshots: [smartCatchAlt,smartCatchAlt,smartCatchAlt],
+    screenshots: [smartCatchAlt, smartCatchAlt, smartCatchAlt],
   },
 };
 
@@ -3539,17 +3925,33 @@ export const elBrezal: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    { title: 'Cloudinary', usage: 'Storage', icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'Cloudinary',
+      usage: 'Storage',
+      icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } },
+    },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: elBrezalImage,
-    screenshots: [elBrezalImage,elBrezalImage,elBrezalImage],
+    screenshots: [elBrezalImage, elBrezalImage, elBrezalImage],
   },
 };
 
@@ -3669,17 +4071,33 @@ export const robinBeauty: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
-    { title: 'TypeScript', usage: 'Programming Language', icon: { Icon: SiTypescript, props: { fill: '#3178C6' } } },
+    {
+      title: 'TypeScript',
+      usage: 'Programming Language',
+      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+    },
     { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'TensorFlow.js', usage: 'AI', icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } } },
+    {
+      title: 'TensorFlow.js',
+      usage: 'AI',
+      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+    },
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    { title: 'Redux', usage: 'State Management', icon: { Icon: SiRedux, props: { fill: '#764ABC' } } },
-    { title: 'Tailwind CSS', usage: 'Styling', icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } } },
+    {
+      title: 'Redux',
+      usage: 'State Management',
+      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+    },
+    {
+      title: 'Tailwind CSS',
+      usage: 'Styling',
+      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+    },
   ],
   images: {
     main: robinImage,
-    screenshots: [robinImage,robinImage,robinImage],
+    screenshots: [robinImage, robinImage, robinImage],
   },
 };
 

@@ -3,7 +3,6 @@ import React, { FC, useEffect, useRef } from 'react';
 import Typography from '@/components/Typography';
 import Button from '@/components/button';
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants';
-import { ButtonTypes, TextTypes, WeightTypes } from '@/helpers/enums';
 import * as m from 'motion/react-m';
 import { AnimatePresence, useInView } from 'motion/react';
 import Linkedin from '@/components/icons/linkedin';
@@ -86,7 +85,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
       }
     >
       <div className={'flex basis-full md:basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4'}>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode='wait' initial={false}>
           <m.div
             className={'!transition-none'}
             key={'heading' + index}
@@ -95,12 +94,12 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             exit={{ opacity: 0, transform: 'translateY(-20px)' }}
             transition={{ duration: 0.35 }}
           >
-            <Typography type={TextTypes['8xl']} weight={WeightTypes.bold}>
+            <Typography type={'9xl'} weight='bold'>
               {HeroHeadings[index % HeroHeadings.length]}
             </Typography>
           </m.div>
         </AnimatePresence>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode='wait' initial={false}>
           <m.div
             className={'!transition-none'}
             key={'description' + index}
@@ -110,25 +109,26 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             transition={{ duration: 0.35 }}
           >
             <Typography
-              type={TextTypes['3xl']}
-              weight={WeightTypes.light}
+              type={'3xl'}
               className={'!transition-none !opacity-75'}
+              weight='light'
+              leading={'medium'}
             >
               {HeroDescriptions[index % HeroDescriptions.length]}
             </Typography>
           </m.div>
         </AnimatePresence>
-        <div className="flex gap-2 items-center justify-start flex-wrap">
+        <div className='flex gap-2 items-center justify-start flex-wrap'>
           <div className={'pt-3 pb-3 pr-3'}>
             <Link
               href={'https://www.linkedin.com/in/mmaazrana/'}
               target={'_blank'}
-              aria-label="Linkedin"
+              aria-label='Linkedin'
             >
               <Button
                 leftIcon={<Linkedin />}
-                textWeight={WeightTypes.medium}
-                type={ButtonTypes.primary}
+                textWeight='medium'
+                type={'primary'}
                 text={'Linkedin'}
               />
             </Link>
@@ -137,13 +137,13 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             href={'mailto:awaismaaz@gmail.com'}
             className={'cursor-pointer'}
             target={'_blank'}
-            aria-label="Email"
+            aria-label='Email'
           >
-            <Button type={ButtonTypes.tertiary} text={'awaismaaz@gmail.com'} />
+            <Button type={'tertiary'} text={'awaismaaz@gmail.com'} />
           </Link>
         </div>
       </div>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode='wait' initial={false}>
         <div
           key={'lottie' + index}
           className={

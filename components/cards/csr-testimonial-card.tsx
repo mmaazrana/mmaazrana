@@ -2,7 +2,6 @@
 
 import React, { FC, useRef } from 'react';
 import Typography from '@/components/Typography';
-import { TextTypes, WeightTypes } from '@/helpers/enums';
 import { TestimonialCardProps } from '@/components/cards/testimonial-card';
 import { useInView } from 'motion/react';
 import * as m from 'motion/react-m';
@@ -24,10 +23,10 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           }
         >
           <line
-            x1="52%"
-            y1="-20%"
-            x2="52%"
-            y2="120%"
+            x1='52%'
+            y1='-20%'
+            x2='52%'
+            y2='120%'
             className={`stroke-[3.25px] md:stroke-[3.5px] lg:stroke-[3.75px] xl:stroke-[4px] 2xl:stroke-[4.25px] ${isActive ? 'stroke-primary-accent' : 'stroke-transparent'} transition-colors duration-300`}
           />
           <m.path
@@ -43,8 +42,8 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
             }}
             strokeLinecap={'round'}
             strokeLinejoin={'round'}
-            strokeDashoffset="245"
-            d="m35.33,10.33c0-5.21-3.15-8.4-8.33-8.33H10.33C5.12,2,2,5.13,2,10.22v25.12c0,5.21,3.12,8.33,8.33,8.33q4.17,0,4.17,4.17v4.17c0,4.17-4.17,8.33-8.33,8.33s-4.17.03-4.17,4.3v8.2q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z"
+            strokeDashoffset='245'
+            d='m35.33,10.33c0-5.21-3.15-8.4-8.33-8.33H10.33C5.12,2,2,5.13,2,10.22v25.12c0,5.21,3.12,8.33,8.33,8.33q4.17,0,4.17,4.17v4.17c0,4.17-4.17,8.33-8.33,8.33s-4.17.03-4.17,4.3v8.2q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z'
           />
           <m.path
             className={`scale-[57%] md:scale-[66%] lg:scale-[76%] xl:scale-[88%] 2xl:scale-100 stroke-[5px] md:stroke-[4.75px] lg:stroke-[4.5px] xl:stroke-[4.25px] 2xl:stroke-[4px] ${isActive ? 'stroke-secondary' : 'stroke-secondary-hover'} !transition-colors !duration-[2s]`}
@@ -59,24 +58,30 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
             }}
             strokeLinecap={'round'}
             strokeLinejoin={'round'}
-            strokeDashoffset="245"
+            strokeDashoffset='245'
             // strokeDasharray={`200,${isInView && isActive ? 25 : 300}`}
-            d="m85.33,10.33c0-5.21-3.15-8.4-8.33-8.33h-16.67c-5.21,0-8.33,3.12-8.33,8.22v25.12c0,5.21,3.12,8.33,8.33,8.33h3.12c0,9.38,1.04,16.67-11.46,16.67v12.5q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z"
+            d='m85.33,10.33c0-5.21-3.15-8.4-8.33-8.33h-16.67c-5.21,0-8.33,3.12-8.33,8.22v25.12c0,5.21,3.12,8.33,8.33,8.33h3.12c0,9.38,1.04,16.67-11.46,16.67v12.5q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z'
           />
         </svg>
         <div
           className={`flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
-          <Typography type={TextTypes['2xl']}>{testimonial}</Typography>
+          <Typography type='xl' leading={'prose'} weight='light'>
+            {testimonial}
+          </Typography>
         </div>
         <div
-          className={`flex flex-row w-full gap-2 !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
+          className={`inline-block w-full !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
-          <Typography type={TextTypes.xl} weight={WeightTypes.bold}>
+          <Typography type={'lg'} weight='medium' leading={'flat'} className='inline'>
             {client}
           </Typography>
-          <Typography type={TextTypes.xl}>-</Typography>
-          <Typography type={TextTypes.xl}>{designation}</Typography>
+          <Typography type={'lg'} weight='light' leading={'flat'} className='inline'>
+            &nbsp; - &nbsp;
+          </Typography>
+          <Typography type={'lg'} weight='light' leading={'flat'} className='inline'>
+            {designation}
+          </Typography>
         </div>
       </div>
     );

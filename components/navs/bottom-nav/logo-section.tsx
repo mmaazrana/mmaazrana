@@ -3,7 +3,6 @@
 import React, { FC } from 'react';
 import * as m from 'motion/react-m';
 import Typography from '@/components/Typography';
-import { TextTypes } from '@/helpers/enums';
 import Logo from './logo';
 
 interface LogoSectionProps {
@@ -31,8 +30,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
         className={'transition-none flex w-full min-w-full'}
       >
         <Typography
-          type={TextTypes.lg}
-          className={`${isEndOfPage ? 'inline-block' : 'hidden'} opacity-50 shrink`}
+          type={'lg'}
+          weight='light'
+          leading={'prose'}
+          className={`${isEndOfPage ? 'inline-block' : 'hidden'} opacity-75 shrink`}
         >
           Product Designer - Web Developer - Mobile App Developer - Animator - 3D Artist
         </Typography>

@@ -5,7 +5,7 @@ import Typography from '@/components/Typography';
 import Services from '@/components/sections/services';
 import Work from '@/components/sections/work';
 import Hero from '@/components/sections/hero/main-hero';
-import { ButtonTypes, Sections, TextTypes, WeightTypes } from '@/helpers/enums';
+import { Sections } from '@/helpers/enums';
 import Testimonials from '@/components/sections/testimonials';
 import Button from '@/components/button';
 import { ChevronRight } from 'lucide-react';
@@ -48,7 +48,7 @@ export default function Home() {
 
   return (
     <div className={'overflow-x-hidden max-w-[100vw]'}>
-      <main className="overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col">
+      <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
         <Nav />
         <BottomNav />
         <section
@@ -66,12 +66,12 @@ export default function Home() {
           }
         >
           <div className={'flex justify-between items-center w-full'}>
-            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+            <Typography type={'5xl'} weight='extra-bold'>
               Featured Work
             </Typography>
-            <Link href={'/work'} aria-label="Explore Work">
+            <Link href={'/work'} aria-label='Explore Work'>
               <Button
-                type={ButtonTypes.secondary}
+                type={'secondary'}
                 text={'Explore'}
                 className={'!gap-1'}
                 rightIcon={<ChevronRight />}
@@ -87,7 +87,7 @@ export default function Home() {
           }
         >
           <div className={'flex justify-start items-center w-full'}>
-            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+            <Typography type={'5xl'} weight='extra-bold'>
               Services
             </Typography>
           </div>
@@ -100,12 +100,12 @@ export default function Home() {
           }
         >
           <div className={'flex justify-between items-center w-full'}>
-            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+            <Typography type={'5xl'} weight='extra-bold'>
               Testimonials
             </Typography>
-            <Link href={'/clients'} aria-label="Clients">
+            <Link href={'/clients'} aria-label='Clients'>
               <Button
-                type={ButtonTypes.secondary}
+                type={'secondary'}
                 text={'Clients'}
                 className={'!gap-1'}
                 rightIcon={<ChevronRight />}
@@ -121,7 +121,7 @@ export default function Home() {
           }
         >
           <div className={'flex justify-start items-center w-full'}>
-            <Typography type={TextTypes['4xl']} weight={WeightTypes.extraBold}>
+            <Typography type={'5xl'} weight='extra-bold'>
               Profile
             </Typography>
           </div>
@@ -132,7 +132,7 @@ export default function Home() {
         {/*    "xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full"*/}
         {/*  }*/}
         {/*>*/}
-        {/*  <Typography type={TextTypes["4xl"]} weight={WeightTypes.extraBold}>*/}
+        {/*  <Typography type={["4xl"]} weight='extra-bold'>*/}
         {/*    Get in Touch*/}
         {/*  </Typography>*/}
         {/*</section>*/}
