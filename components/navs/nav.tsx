@@ -47,7 +47,11 @@ const Nav: FC<NavProps> = () => {
                   className={`${button.type === 'primary' ? 'w-40 nav:w-fit mt-3 nav:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6' : 'mt-1 nav:mt-0'}`}
                 >
                   <Link href={button.href} aria-label={button.text}>
-                    <Button type={button.type} text={button.text} />
+                    <Button
+                      type={button.type}
+                      text={button.text}
+                      textWeight={button.type === 'primary' ? 'medium' : 'light'}
+                    />
                   </Link>
                 </li>
               ))}

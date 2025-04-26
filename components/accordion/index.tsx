@@ -36,34 +36,26 @@ const Accordion: FC<AccordionProps> = ({
     >
       <div className='relative flex w-full'>
         <div
-          className={`absolute transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary ${isClicked ? 'opacity-100 scale-x-[0.985]' : 'opacity-75'}`}
+          className={`absolute transition-all duration-300 top-1/2 -translate-y-1/2 h-(--fluid-1-2) rounded-full w-full bg-secondary ${isClicked ? 'opacity-100 scale-x-[0.985]' : 'opacity-75'}`}
         />
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={
-            'outline-0 border-0 flex flex-row justify-between items-center w-full px-6 xs:px-7 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12'
-          }
+          className={'outline-0 border-0 flex flex-row justify-between items-center w-full px-l'}
         >
           <Typography
             type='4xl'
             weight='bold'
-            className={
-              'px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-5 xs:py-6 sm:py-7 md:py-8 xl:py-9 2xl:py-10 bg-primary-accent text-left self-start'
-            }
+            className={'flex-0 sm:flex-initial px-m py-l bg-primary-accent text-left self-start'}
           >
             {heading}
           </Typography>
-          <div
-            className={
-              'group relative p-1 xs:p-2 md:p-3 xl:p-4 flex flex-row w-fit bg-primary-accent'
-            }
-          >
-            <div className='group relative justify-center items-end outline-0 h-3 xs:h-4 md:h-5 xl:h-6 w-3 xs:w-4 md:w-5 xl:w-6'>
+          <div className={'group relative p-s flex flex-row w-fit bg-primary-accent'}>
+            <div className='group relative justify-center items-end outline-0 h-m w-m'>
               <span
-                className={`bg-primary group-hover:bg-primary-hover absolute top-1/2 -translate-y-1/2 left-0 transition-all duration-300 ease-out h-1 w-3 xs:w-4 md:w-5 xl:w-6 rounded-sm`}
+                className={`bg-primary group-hover:bg-primary-hover absolute top-1/2 -translate-y-1/2 left-0 transition-all duration-300 ease-out h-(--fluid-2-4) w-m rounded-sm`}
               ></span>
               <span
-                className={`bg-primary group-hover:bg-primary-hover absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out w-1 rounded-sm ${isOpen ? 'h-1' : 'h-3 xs:h-4 md:h-5 xl:h-6'}`}
+                className={`bg-primary group-hover:bg-primary-hover absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out w-(--fluid-2-4) rounded-sm ${isOpen ? 'h-(--fluid-2-4)' : 'h-m'}`}
               ></span>
             </div>
           </div>

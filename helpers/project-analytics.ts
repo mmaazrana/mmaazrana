@@ -421,7 +421,7 @@ export const deepReelAI: ProjectAnalysisT = {
     ],
     keyFeatures: [
       {
-        title: 'AI-powered avatar generation and customization',
+        title: 'Advanced realistic AI-powered avatar generation and customization',
         description: 'Detailed service pages',
         icon: Star,
       },

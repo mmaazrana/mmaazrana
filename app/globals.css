@@ -42,8 +42,9 @@
   --space-12xl: clamp(6.125rem, 5.6rem + 2.625vw, 8.75rem);
   --space-13xl: clamp(7rem, 6.4rem + 3vw, 10rem);
   --fluid-250-350: clamp(15.625rem, 14.375rem + 6.25vw, 21.875rem);
+  --fluid-1-2: clamp(0.0625rem, 0.05rem + 0.0625vw, 0.125rem);
+  --fluid-2-4: clamp(0.125rem, 0.1rem + 0.125vw, 0.25rem);
   --fluid-3-4: clamp(0.1875rem, 0.175rem + 0.0625vw, 0.25rem);
-  --fluid-4: 4px;
   /*local*/
   --primary: #22365e;
   --primary-accent: #ffffff;

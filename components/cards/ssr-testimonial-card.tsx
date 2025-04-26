@@ -23,7 +23,7 @@ const SSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = ({
             />
           ))}
       </div>
-      <div className='relative backdrop-blur-xs outline bg-secondary-hover/15 hover:bg-primary-accent/90 hover:drop-shadow-auto-testimonial hover:-translate-y-4 outline-secondary/50 hover:outline-secondary outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] h-full w-[80vw] sm:w-[500px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-3xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group'>
+      <div className='relative backdrop-blur-xs outline bg-secondary-hover/15 hover:bg-primary-accent/90 hover:drop-shadow-auto-testimonial hover:-translate-y-4 outline-secondary/50 hover:outline-secondary outline-[3px] md:outline-[3.25px] lg:outline-[3.5px] xl:outline-[3.75px] 2xl:outline-[4px] h-full w-[80vw] sm:w-[500px] md:w-[550px] lg:w-[650px] xl:w-[750px] items-start flex flex-col justify-between bg-primary-accent rounded-2xl gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 !transition-all !duration-300 group'>
         <svg
           fill='none'
           className={

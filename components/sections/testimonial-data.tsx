@@ -14,10 +14,11 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
   designation,
 }) => {
   return (
-    <div className='flex flex-col gap-5 xs:gap-6 md:gap-7 xl:gap-8 relative mr-0 sm:mr-2'>
+    <div className='flex flex-col gap-6xl relative mr-0 sm:mr-2'>
       <Typography
-        type='xl'
+        type='2xl'
         weight='light'
+        leading='prose'
         className='pr-0 leading-[1.6] sm:pr-22 md:pr-28 lg:pr-30 xl:pr-32 2xl:pr-34'
       >
         {testimonial}
@@ -25,9 +26,7 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
       <svg
         fill='none'
         viewBox='0 0 100 100'
-        className={
-          'absolute z-1 overflow-visible hidden sm:block sm:w-20 md:w-22 lg:w-24 xl:w-26 2xl:w-28 h-16 xs:h-18 sm:h-20 md:h-22 lg:h-24 xl:h-26 2xl:h-28 -right-4 top-0'
-        }
+        className={'absolute z-1 overflow-visible hidden sm:block w-10xl h-10xl -right-4 top-0'}
       >
         <path
           className={`stroke-[1px] md:stroke-[1.5px] xl:stroke-[2px] stroke-secondary/75 !transition-colors !duration-300 group-hover:stroke-secondary`}
