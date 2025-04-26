@@ -6,7 +6,6 @@ import Link from 'next/link'
 import MaazRanaLogo from '../icons/maaz-rana-logo'
 import MenuButton from '@/components/button/menu-button'
 import Button from '@/components/button'
-import { ButtonTypes } from '@/helpers/enums'
 
 interface NavProps {}
 
