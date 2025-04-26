@@ -349,6 +349,13 @@
   --shadow-work-hover: var(--work-shadow-hover);
   --shadow-frosted: var(--frosted-shadow);
   --transition-property-filter: filter;
+  --animate-rotate: rotate 5s linear infinite;
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 html {

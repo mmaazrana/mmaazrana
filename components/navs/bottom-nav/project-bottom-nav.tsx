@@ -83,7 +83,7 @@ const ProjectBottomNavContent: FC<ProjectBottomNavProps> = () => {
         <FooterCTA isEndOfPage={isEndOfPage} />
       </div>
       <span
-        className={`w-[25vw] h-[25vw] left-0 bottom-0 -translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 ${isEndOfPage ? 'opacity-50' : 'opacity-0'} transition-all duration-300`}
+        className={`pointer-events-none w-[25vw] h-[25vw] left-0 bottom-0 -translate-x-1/4 translate-y-1/4 aspect-square rounded-full bg-secondary-hover blur-[100px] absolute -z-10 ${isEndOfPage ? 'opacity-50' : 'opacity-0'} transition-all duration-300`}
       />
     </div>
   )
