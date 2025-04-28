@@ -16,6 +16,7 @@ import videoDesktopLight from '../../../public/svgs/video-desktop-light.svg'
 import logoDesktopLight from '../../../public/svgs/logo-desktop-light.svg'
 import blenderDesktopLight from '../../../public/svgs/blender-desktop-light.svg'
 import Image from 'next/image'
+import * as m from 'motion/react-m'
 
 interface WorkHeroProps {}
 
@@ -49,7 +50,7 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
 
   const [firstHalfSVGs, setFirstHalfSVGs] = useState<string[]>([])
   const [secondHalfSVGs, setSecondHalfSVGs] = useState<string[]>([])
-
+  const [firstHalfLoaded, setFirstHalfLoaded] = useState(false)
   useEffect(() => {
     const svgs = isDarkMode ? darkSVGs : lightSVGs
     setFirstHalfSVGs(svgs.slice(0, svgs.length / 2))
@@ -58,9 +59,33 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
 
   return (
     <>
-      <div className='flex flex-row justify-center items-start w-full h-[40vw] sm:h-64'>
+      <div className='relative flex flex-row justify-center items-start w-full h-[40vw] sm:h-64'>
+        {!firstHalfLoaded && (
+          <div className='absolute w-full h-full z-10 flex flex-row justify-center gap-[30%] items-center'>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className='w-2xl h-2xl bg-secondary animate-ping rounded-full' />
+            ))}
+          </div>
+        )}
         {firstHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading='eager' />
+          <m.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
+            className='h-full min-w-fit'
+          >
+            <Image
+              key={index}
+              src={svg}
+              alt={`SVG ${index}`}
+              priority
+              loading='eager'
+              onLoad={() => {
+                if (!firstHalfLoaded) setFirstHalfLoaded(true)
+              }}
+            />
+          </m.div>
         ))}
       </div>
       <div className='flex flex-col justify-center items-center w-full gap-6'>
@@ -72,9 +97,32 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
           UI/UX design, 3D design and animation, video editing, and logo creation.
         </Typography>
       </div>
-      <div className='flex flex-row justify-center items-start w-full h-[40vw] sm:h-64 ml-4'>
+      <div className='relative flex flex-row justify-center items-start w-full h-[40vw] sm:h-64 ml-4'>
+        {!firstHalfLoaded && (
+          <div className='absolute w-full h-full z-10 flex flex-row justify-center gap-[30%] items-center'>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className='w-2xl h-2xl bg-secondary animate-ping rounded-full' />
+            ))}
+          </div>
+        )}
         {secondHalfSVGs.map((svg, index) => (
-          <Image key={index} src={svg} alt={`SVG ${index}`} priority loading='eager' />
+          <m.span
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.45 + index * 0.15 }}
+            className='h-full min-w-fit'
+          >
+            <Image
+              src={svg}
+              alt={`SVG ${index}`}
+              priority
+              loading='eager'
+              onLoad={() => {
+                if (!firstHalfLoaded) setFirstHalfLoaded(true)
+              }}
+            />
+          </m.span>
         ))}
       </div>
     </>

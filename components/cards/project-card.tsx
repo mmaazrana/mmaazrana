@@ -105,7 +105,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
         </div>
         <Image
           priority
-          className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-m overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms]`}
+          className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-md overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms]`}
           src={image}
           alt='Project Banner'
         />

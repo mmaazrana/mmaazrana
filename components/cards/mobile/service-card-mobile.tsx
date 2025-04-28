@@ -101,7 +101,7 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography type='4xl' weight='bold'>
+          <Typography type='4xl' weight='semi-bold'>
             {title}
           </Typography>
         </div>

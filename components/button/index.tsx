@@ -34,24 +34,24 @@ const Button: FC<ButtonProps> = ({
   rightIcon,
   borderColor = 'transparent',
   borderWidth = 0,
-  textWeight = 'regular',
+  textWeight = 'light',
   onClick,
   className,
   textClassName,
   disabled = false,
 }) => {
   const typeClasses: { [index: string]: any } = {
-    primary: `flex py-2 xl:py-3 px-10 md:px-4 xl:px-6 gap-3 items-center rounded-full bg-primary hover:bg-primary-hover ${
+    primary: `flex py-xs px-m gap-2xs items-center rounded-full bg-primary hover:bg-primary-hover ${
       leftIcon ? 'justify-start'
       : rightIcon ? 'justify-end'
       : 'justify-center'
     } ${disabled && ''}`,
-    secondary: `flex py-2 xl:py-3 gap-2 items-center rounded-full hover:bg-secondary-hover ${
-      leftIcon ? 'justify-start pr-4 xl:pr-5 pl-3 xl:pl-4'
-      : rightIcon ? 'justify-end pl-4 xl:pl-5 pr-2 xl:pr-3'
-      : 'justify-center px-10 md:px-4 xl:px-6'
+    secondary: `flex py-xs px-m gap-2xs items-center rounded-full hover:bg-secondary-hover ${
+      leftIcon ? 'justify-start pr-m pl-xs'
+      : rightIcon ? 'justify-end pl-m pr-xs'
+      : 'justify-center'
     } ${disabled && ''}`,
-    tertiary: `flex rounded-full gap-4 !text-error hover:text-primary-hover gap-2 items-center ${
+    tertiary: `flex gap-2xs rounded-full !text-error hover:text-primary-hover items-center ${
       leftIcon ? 'justify-start'
       : rightIcon ? 'justify-end'
       : 'justify-center'
@@ -60,10 +60,10 @@ const Button: FC<ButtonProps> = ({
   }
 
   const textClasses: { [index: string]: any } = {
-    primary: ``,
-    secondary: ``,
+    primary: `mt-[0.05em]`,
+    secondary: `mt-[0.025em]`,
     tertiary: `hover:text-primary-hover transition-colors duration-250`,
-    error: ``,
+    error: `mt-[0.025em]`,
   }
 
   const borderColorClasses = {
@@ -81,7 +81,7 @@ const Button: FC<ButtonProps> = ({
     typeClasses[type],
     borderColorClasses[borderColor],
     `border-[${borderWidth}]`,
-    'transition-all duration-250',
+    'transition-all duration-250 relative',
     disabled ? 'cursor-disabled'
     : onClick ? 'cursor-pointer'
     : '',
@@ -94,7 +94,7 @@ const Button: FC<ButtonProps> = ({
       {leftIcon && (
         <div>
           {cloneElement(leftIcon, {
-            className: `${type === 'primary' ? 'fill-primary-accent w-[14px] sm:w-[16px] md:w-[18px] lg:w-[20px] xl:w-6 h-[14px] sm:h-[16px] md:h-[18px] lg:h-[20px] xl:h-6' : 'fill-primary  w-[14px] md:w-[16px] xl:w-[18px] h-[14px] md:h-[16px] xl:h-[18px]'} ${leftIcon.props.className}`,
+            className: `${type === 'primary' ? 'fill-primary-accent' : 'fill-primary'} ${leftIcon.props.className} w-s h-s mb-[0.025em]`,
           })}
         </div>
       )}

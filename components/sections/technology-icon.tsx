@@ -35,7 +35,7 @@ const TechnologyIcon: React.FC<TechnologyIconProps> = ({ technology }) => {
         }
       />
       <technology.Icon.Icon {...technology.Icon.props} className='h-m w-m' />
-      <Typography type='lg' weight='regular' leading='flat' className='mt-[0.1rem]'>
+      <Typography type='lg' weight='regular' leading='flat' className='mt-[0.05em]'>
         {technology.title}
       </Typography>
     </div>

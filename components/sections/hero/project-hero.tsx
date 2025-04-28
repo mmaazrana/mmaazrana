@@ -77,10 +77,10 @@ export default function ProjectHero() {
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-xl transform-style-3d ${rotationClasses[index]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${rotationClasses[index]} `}
                 loading='lazy'
                 placeholder='blur'
-                sizes='20vw'
+                sizes='135vw'
               />
             </div>
           )
@@ -101,10 +101,10 @@ export default function ProjectHero() {
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-xl transform-style-3d ${rotationClasses[index + 1]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${rotationClasses[index + 1]} `}
                 loading='lazy'
                 placeholder='blur'
-                sizes='33vw'
+                sizes='35vw'
               />
             </div>
           )

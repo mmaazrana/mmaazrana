@@ -55,14 +55,9 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
           />
         </svg>
       </div>
-      <div className='flex flex-col self-center items-center justify-center gap-5 xs:gap-6 md:gap-7 xl:gap-8  py-12 about:py-4 px-4'>
-        {tech.icon && (
-          <tech.icon.Icon
-            className='w-8 xs:w-10 sm:w-12 md:w-14 lg:w-16 xl:w-18 2xl:w-20 h-8 xs:h-10 sm:h-12 md:h-14 lg:h-16 xl:h-18 2xl:h-20'
-            {...tech.icon.props}
-          />
-        )}
-        <div className='flex flex-col items-center justify-center gap-1 sm:gap-1.5 lg:gap-2'>
+      <div className='flex flex-col self-center items-center justify-center gap-l  py-4xl about:p-2xl'>
+        {tech.icon && <tech.icon.Icon className='w-8xl h-8xl' {...tech.icon.props} />}
+        <div className='flex flex-col items-center justify-center gap-3xs'>
           <Typography type='2xl' weight='bold' className='text-center'>
             {tech.title}
           </Typography>

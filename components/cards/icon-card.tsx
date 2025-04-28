@@ -20,11 +20,11 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
     <div ref={cardRef} className='relative group'>
       {Icon && (
         <Icon
-          className={`self-end top-6 sm:-top-4 -left-6 sm:left-auto sm:-right-8 absolute w-20 xs:w-22 sm:w-24 md:w-26 lg:w-28 xl:w-30 2xl:w-32 h-20 xs:h-22 sm:h-24 md:h-26 lg:h-28 xl:h-30 2xl:h-32 stroke-[0.5px] text-secondary opacity-0 group-hover:opacity-75 group-hover:-translate-y-16 transition-all duration-300 ease-in-out ${cardIsInView && isMobile && 'opacity-75 -translate-y-16'}`}
+          className={`self-end top-6 sm:-top-4 -left-6 sm:left-auto sm:-right-8 absolute w-10xl h-10xl stroke-[0.5px] text-secondary opacity-0 group-hover:opacity-75 group-hover:-translate-y-16 transition-all duration-300 ease-in-out ${cardIsInView && isMobile && 'opacity-75 -translate-y-16'}`}
         />
       )}
       <div
-        className={`backdrop-blur-xs relative flex flex-col h-full items-start justify-start items-center bg-secondary-hover/10 hover:bg-primary-invert/25 sm:hover:-translate-y-4 transition-all duration-300 ease-in-out px-6 xs:px-7 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12 py-6 xs:py-7 sm:py-8 md:py-9 lg:py-10 xl:py-11 2xl:py-12 gap-3 xs:gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 rounded-3xl group ${cardIsInView && isMobile && '!bg-primary-invert/25'}`}
+        className={`backdrop-blur-xs relative flex flex-col h-full items-start justify-start items-center bg-secondary-hover/10 hover:bg-primary-invert/25 sm:hover:-translate-y-4 transition-all duration-300 ease-in-out p-3xl gap-m rounded-3xl group ${cardIsInView && isMobile && '!bg-primary-invert/25'}`}
       >
         <svg
           width='100'
@@ -59,7 +59,7 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
           />
         </svg>
         {Icon && (
-          <Icon className='self-end top-4 xs:top-5 sm:top-0 right-4 xs:right-5 sm:right-0 absolute sm:relative sm:self-start w-8 xs:w-9 sm:w-8 md:w-9 lg:w-10 xl:w-11 2xl:w-12 h-8 xs:h-9 sm:h-8 md:h-9 lg:h-10 xl:h-11 2xl:h-12 stroke-1 text-secondary' />
+          <Icon className='self-end top-4 xs:top-5 sm:top-0 right-4 xs:right-5 sm:right-0 absolute sm:relative sm:self-start w-5xl h-5xl stroke-1 text-secondary' />
         )}
         <div className='flex flex-col mr-10 xs:mr-12 sm:mr-0 gap-2 sm:gap-2.5 lg:gap-3'>
           <Typography type='3xl' weight='bold'>

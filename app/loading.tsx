@@ -1,7 +1,8 @@
+'use client'
 import React from 'react'
 import * as m from 'motion/react-m'
 
-const Loading = () => {
+function Services() {
   return (
     <div className='relative flex items-center justify-center h-[100dvh] w-[100vw] min-h-[100dvh] min-w-[100vw] overflow-hidden'>
       <svg
@@ -201,8 +202,24 @@ const Loading = () => {
           </textPath>
         </text>
       </m.svg>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ opacity: { duration: 0.5, ease: 'linear', delay: 10 } }}
+        className='absolute flex flex-col gap-[2vw] lg:gap-[1vw] justify-center items-center top-1/2 right-1/2 translate-x-1/2 translate-y-[65%]'
+      >
+        <div className='text-primary-hover text-center text-[2.3vw] lg:text-[1.15vw] opacity-75 font-[175]'>
+          Taking too long?
+        </div>
+        <a
+          href='mailto:awaismaaz@gmail.com'
+          className='cursor-pointer text-primary-accent bg-primary hover:bg-primary-hover transition-colors duration-300 px-[3.5vw] lg:px-[1.75vw] py-[0.7vw] lg:py-[0.35vw] h-fit w-fit rounded-full text-[2.5vw] lg:text-[1.25vw] leading-[2] font-[575]'
+        >
+          Report a bug
+        </a>
+      </m.div>
     </div>
   )
 }
-
-export default Loading
+export default Services

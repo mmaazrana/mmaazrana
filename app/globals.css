@@ -297,9 +297,9 @@
   --spacing-11xl: var(--space-11xl);
   --spacing-12xl: var(--space-12xl);
   --spacing-13xl: var(--space-13xl);
-  --radius-s: var(--space-2xs);
-  --radius-m: var(--space-xs);
-  --radius-l: var(--space-s);
+  --radius-sm: var(--space-2xs);
+  --radius-md: var(--space-xs);
+  --radius-lg: var(--space-s);
   --radius-xl: var(--space-m);
   --radius-2xl: var(--space-l);
   --radius-3xl: var(--space-xl);
