@@ -6,6 +6,7 @@ import { domAnimation, LazyMotion } from 'motion/react'
 import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   manifest: '/manifest.json',
@@ -45,7 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>{children}</Providers>
         </body>
       </LazyMotion>
+      {/* Vercel Speed Insights */}
       <SpeedInsights />
+      {/* Vercel Analytics */}
+      <Analytics />
+      {/* Google Analytics */}
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
     </html>
   )
