@@ -58,7 +58,7 @@ export default function TechnologyCard({ tech }: TechnologyCardProps) {
       <div className='flex flex-col self-center items-center justify-center gap-l  py-4xl about:p-2xl'>
         {tech.icon && <tech.icon.Icon className='w-8xl h-8xl' {...tech.icon.props} />}
         <div className='flex flex-col items-center justify-center gap-3xs'>
-          <Typography type='2xl' weight='bold' className='text-center'>
+          <Typography tag='h3' type='2xl' weight='bold' className='text-center'>
             {tech.title}
           </Typography>
           <Typography type='lg' weight='light' className='text-center opacity-75'>

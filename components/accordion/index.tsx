@@ -43,6 +43,7 @@ const Accordion: FC<AccordionProps> = ({
           className={'outline-0 border-0 flex flex-row justify-between items-center w-full px-l'}
         >
           <Typography
+            tag='h3'
             type='4xl'
             weight='bold'
             className={'flex-0 sm:flex-initial px-m py-l bg-primary-accent text-left self-start'}

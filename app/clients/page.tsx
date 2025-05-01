@@ -4,6 +4,23 @@ import React from 'react'
 import StackedTestimonials from '@/components/sections/stacked-testimonials'
 import EsteemedClients from '@/components/sections/esteemed-clients'
 import WorkDetails from '@/components/sections/work-details'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Client Testimonials & Collaborations',
+  description:
+    "Read testimonials from clients like Alfabolt, Kueenz Technologies, Beacon Tutors, and others about Maaz Rana's product design and development work.",
+  keywords: [
+    'Clients',
+    'Testimonials',
+    'Partnerships',
+    'Collaboration',
+    'Product Design',
+    'Web Development',
+    'Mobile Development',
+    'Maaz Rana',
+  ],
+}
 
 export default function Home() {
   return (

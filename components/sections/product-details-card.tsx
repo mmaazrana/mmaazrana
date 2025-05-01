@@ -68,7 +68,7 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
       <div className='flex justify-center items-center gap-xs max-w-fit w-fit'>
         <product.logo className='block h-2xl w-auto max-w-[10rem]' />
         {product.name && (
-          <Typography type='2xl' weight='semi-bold'>
+          <Typography tag='h5' type='2xl' weight='semi-bold'>
             {product.name}
           </Typography>
         )}

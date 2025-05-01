@@ -17,7 +17,7 @@ const ToolsAndTechnologies: React.FC<ToolsAndTechnologiesProps> = ({ technologie
       <div className='flex flex-row gap-2xs items-center'>
         <div className={`h-(--fluid-1-2) w-m bg-secondary opacity-75`} />
         <FlaskRound className={'ml-3xs h-5xl w-5xl stroke-secondary stroke-1'} />
-        <Typography type='3xl' weight='bold' className='flat'>
+        <Typography tag='h4' type='3xl' weight='bold' className='flat'>
           Tools & Technologies
         </Typography>
       </div>

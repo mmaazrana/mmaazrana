@@ -4,6 +4,24 @@ import WorkHero from '@/components/sections/hero/work-hero'
 import { WorkProvider } from '@/app/context/work-provider'
 import MyWorkSection from '@/components/sections/work/my-work-section'
 import WorkBottomNav from '@/components/navs/bottom-nav/work-bottom-nav'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Portfolio Work',
+  description:
+    'Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana.',
+  keywords: [
+    'Portfolio',
+    'Projects',
+    'Case Studies',
+    'Product Design',
+    'UI/UX',
+    'Web Development',
+    'Mobile Development',
+    'Graphic Design',
+    'Maaz Rana',
+  ],
+}
 
 export default function Work() {
   return (

@@ -20,16 +20,19 @@ interface TechStackSectionProps {
 interface IconContainerProps {
   Icon: React.ComponentType<any>
   props: any
+  title: string
 }
 
-const IconContainer: React.FC<IconContainerProps> = React.memo(({ Icon, props }) => (
+const IconContainer: React.FC<IconContainerProps> = React.memo(({ Icon, props, title }) => (
   <div>
     <Icon
       className={
         'w-[22px] sm:w-[24px] md:w-[26px] lg:w-[28px] xl:w-[30px] h-[22px] sm:h-[24px] md:h-[26px] lg:h-[28px] xl:h-[30px]'
       }
       {...props}
+      aria-hidden='true'
     />
+    <span className='sr-only'>{title}</span>
   </div>
 ))
 
@@ -62,12 +65,12 @@ const TechStackSection: FC<TechStackSectionProps> = ({ className }) => {
           | typeof managementIconComponents,
       ) => (
         <div className='flex flex-col gap-4 sm:gap-5 md:gap-6'>
-          <Typography type='xl' weight='semi-bold' leading='prose'>
+          <Typography tag='h3' type='xl' weight='semi-bold' leading='prose'>
             {title}
           </Typography>
           <div className='flex flex-row flex-wrap gap-3 md:gap-4'>
-            {Object.values(icons).map(({ Icon, props }, index) => (
-              <IconContainer key={index} Icon={Icon} props={props} />
+            {Object.entries(icons).map(([key, { Icon, props }], index) => (
+              <IconContainer key={index} Icon={Icon} props={props} title={key} />
             ))}
           </div>
         </div>

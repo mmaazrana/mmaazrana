@@ -15,11 +15,11 @@ const StackedTestimonials: FC<StackedTestimonialsProps> = () => {
     <>
       <AutoScrollTestimonials testimonials={firstHalf} offset={true} />
       <div className='flex flex-col justify-center items-center w-full gap-2'>
-        <Typography type='8xl' weight='extra-bold' className='text-center'>
+        <Typography tag='h1' type='8xl' weight='extra-bold' className='text-center'>
           Testimonials
         </Typography>
         <Typography type='2xl' weight='regular' className='text-center'>
-          Don’t just take my word for it
+          Don't just take my word for it
         </Typography>
       </div>
       <AutoScrollTestimonials testimonials={secondHalf} />

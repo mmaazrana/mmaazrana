@@ -1,7 +1,14 @@
-'use client'
 import React from 'react'
 import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Me (Under Construction)',
+  description:
+    "Learn more about Maaz Rana's background, skills, and experience in product design and development. Page currently under construction.",
+  robots: { index: false, follow: false }, // Tell search engines not to index this page yet
+}
 
 function AboutPage() {
   return (

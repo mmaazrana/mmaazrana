@@ -148,7 +148,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         }`}
       >
         <span className='absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0' />
-        <Typography type='xl' weight='bold'>
+        <Typography tag='h3' type='xl' weight='bold'>
           {project.title}
         </Typography>
       </div>

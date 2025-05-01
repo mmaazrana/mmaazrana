@@ -12,6 +12,13 @@ import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import AboutSection from '@/components/sections/about-section'
 
+// No specific metadata needed here, it will inherit from layout.tsx
+// If you wanted to override:
+// export const metadata = {
+//   title: 'Custom Home Title',
+//   description: 'Custom home description.',
+// };
+
 export default function Home() {
   // const [windowWidth, setWindowWidth] = useState(0);
   // const [currentScreen, setCurrentScreen] = useState("");
@@ -66,7 +73,7 @@ export default function Home() {
           }
         >
           <div className='flex justify-between items-center w-full'>
-            <Typography type='5xl' weight='extra-bold'>
+            <Typography tag='h2' type='5xl' weight='extra-bold'>
               Featured Work
             </Typography>
             <Link href='/work' aria-label='Explore Work'>
@@ -87,7 +94,7 @@ export default function Home() {
           }
         >
           <div className='flex justify-start items-center w-full'>
-            <Typography type='5xl' weight='extra-bold'>
+            <Typography tag='h2' type='5xl' weight='extra-bold'>
               Services
             </Typography>
           </div>
@@ -100,7 +107,7 @@ export default function Home() {
           }
         >
           <div className='flex justify-between items-center w-full'>
-            <Typography type='5xl' weight='extra-bold'>
+            <Typography tag='h2' type='5xl' weight='extra-bold'>
               Testimonials
             </Typography>
             <Link href='/clients' aria-label='Clients'>
@@ -121,7 +128,7 @@ export default function Home() {
           }
         >
           <div className='flex justify-start items-center w-full'>
-            <Typography type='5xl' weight='extra-bold'>
+            <Typography tag='h2' type='5xl' weight='extra-bold'>
               Profile
             </Typography>
           </div>

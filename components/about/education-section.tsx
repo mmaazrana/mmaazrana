@@ -44,7 +44,7 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
       >
         <div className='flex flex-col gap-6 sm:gap-7 md:gap-8'>
           <div className='flex flex-col gap-2 md:gap-3'>
-            <Typography type='xl' weight='semi-bold' leading='light'>
+            <Typography tag='h3' type='xl' weight='semi-bold' leading='light'>
               Software Engineering
             </Typography>
             <Typography
@@ -56,13 +56,13 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
             >
               Bachelors of Engineering - National University of Sciences and Technology
             </Typography>
-            <Typography type='lg' weight='bold' color='secondary' leading='flat'>
+            <Typography tag='h6' type='lg' weight='bold' color='secondary' leading='flat'>
               CGPA - 3.61
             </Typography>
           </div>
           <div className='flex flex-row gap-1 sm:gap-2 md:gap-3 items-center justify-start'>
             <Medal className='fill-golden h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7' />
-            <Typography type='lg' weight='medium' color='golden' leading='flat'>
+            <Typography tag='h5' type='lg' weight='medium' color='golden' leading='flat'>
               President&apos;s Gold Medalist
             </Typography>
           </div>

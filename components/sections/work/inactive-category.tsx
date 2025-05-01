@@ -35,7 +35,7 @@ export default function InActiveCategory({ category, position, onClick }: InActi
         }}
         key={category.key}
       >
-        <Typography type='4xl' weight='extra-bold' className='opacity-50'>
+        <Typography tag='h2' type='4xl' weight='extra-bold' className='opacity-50'>
           {category.text}
         </Typography>
       </m.div>

@@ -15,7 +15,7 @@ interface WorkExperienceSectionProps {
 const WorkExperienceItem: React.FC<{ company: string; roles: string; tenure: string }> = React.memo(
   ({ company, roles, tenure }) => (
     <div className='flex flex-col gap-1 md:gap-2'>
-      <Typography type='xl' weight='semi-bold' leading='light'>
+      <Typography tag='h3' type='xl' weight='semi-bold' leading='light'>
         {company}
       </Typography>
       <Typography
@@ -27,7 +27,7 @@ const WorkExperienceItem: React.FC<{ company: string; roles: string; tenure: str
       >
         {roles}
       </Typography>
-      <Typography type='lg' leading='flat' weight='semi-bold' color='secondary'>
+      <Typography tag='h6' type='lg' leading='flat' weight='semi-bold' color='secondary'>
         {tenure}
       </Typography>
     </div>

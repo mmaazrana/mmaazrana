@@ -3,14 +3,18 @@ import { archivo, nunito } from '@/helpers/fonts'
 
 import { ColorTypes, LeadingTypes, TextTypes, WeightTypes } from '@/helpers/enums'
 
+// Define allowed tags explicitly
+type AllowedTags = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
+
 interface TypographyProps {
-  children: string
+  children: React.ReactNode
   type: TextTypes
   color?: ColorTypes
   weight?: WeightTypes
   leading?: LeadingTypes
   className?: string
   underline?: boolean
+  tag?: AllowedTags
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -21,6 +25,7 @@ const Typography: FC<TypographyProps> = ({
   leading = 'default',
   className,
   underline = false,
+  tag: Tag = 'p',
 }) => {
   const sizeClasses = {
     '10xl': 'text-step-10',
@@ -82,16 +87,18 @@ const Typography: FC<TypographyProps> = ({
   ]
     .filter(Boolean)
     .join(' ')
-  return (
-    <span className={dynamicClasses}>
-      {children.split('\n').map((line, index) => (
+
+  const processedChildren =
+    typeof children === 'string' ?
+      children.split('\n').map((line, index, arr) => (
         <React.Fragment key={index}>
           {line}
-          {index !== children.split('\n').length - 1 && <br />}
+          {index !== arr.length - 1 && <br />}
         </React.Fragment>
-      ))}
-    </span>
-  )
+      ))
+    : children
+
+  return <Tag className={dynamicClasses}>{processedChildren}</Tag>
 }
 
 export default Typography

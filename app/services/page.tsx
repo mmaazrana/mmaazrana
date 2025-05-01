@@ -1,6 +1,13 @@
-'use client'
 import React from 'react'
 import * as m from 'motion/react-m'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Services (Coming Soon)',
+  description:
+    'Discover the range of services offered by Maaz Rana, including product design (UI/UX), web development, mobile app development, and more. Page currently under construction.',
+  robots: { index: false, follow: false }, // Tell search engines not to index this page yet
+}
 
 function Services() {
   return (

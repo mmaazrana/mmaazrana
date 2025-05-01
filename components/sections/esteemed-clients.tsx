@@ -25,7 +25,7 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
         ))}
       </div>
       <div className='flex flex-col justify-center items-center w-full gap-4'>
-        <Typography type='6xl' weight='extra-bold' className='text-center'>
+        <Typography tag='h2' type='6xl' weight='extra-bold' className='text-center'>
           Esteemed Clients
         </Typography>
         <Typography type='2xl' weight='light' className='text-center max-w-[40rem] opacity-75'>

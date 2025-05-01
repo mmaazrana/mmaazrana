@@ -51,7 +51,7 @@ export default function ProjectOverview({ projectData }: OverviewProps) {
           </div>
           <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
             <div className='flex flex-col items-start justify-start gap-6'>
-              <Typography type='5xl' weight='bold' className=''>
+              <Typography tag='h3' type='5xl' weight='bold' className=''>
                 Project Requirements
               </Typography>
               <Typography type='xl' weight='light' className='opacity-75 leading-relaxed'>

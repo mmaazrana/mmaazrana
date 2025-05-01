@@ -35,7 +35,7 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
             }}
             key={currentCategory.key}
           >
-            <Typography type='4xl' weight='extra-bold'>
+            <Typography tag='h2' type='4xl' weight='extra-bold'>
               {currentCategory.text}
             </Typography>
           </m.div>

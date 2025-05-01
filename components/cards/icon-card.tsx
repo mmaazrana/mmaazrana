@@ -62,7 +62,7 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
           <Icon className='self-end top-4 xs:top-5 sm:top-0 right-4 xs:right-5 sm:right-0 absolute sm:relative sm:self-start w-5xl h-5xl stroke-1 text-secondary' />
         )}
         <div className='flex flex-col mr-10 xs:mr-12 sm:mr-0 gap-2 sm:gap-2.5 lg:gap-3'>
-          <Typography type='3xl' weight='bold'>
+          <Typography tag='h3' type='3xl' weight='bold'>
             {title}
           </Typography>
           <Typography type='xl' className='opacity-75'>

@@ -84,6 +84,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
       <div className='flex basis-full md:basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4'>
         <AnimatePresence mode='wait' initial={false}>
           <m.div
+            layout
             className='!transition-none'
             key={'heading' + index}
             initial={{ opacity: 0, transform: 'translateY(20px)' }}
@@ -91,13 +92,14 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             exit={{ opacity: 0, transform: 'translateY(-20px)' }}
             transition={{ duration: 0.35 }}
           >
-            <Typography type='9xl' weight='bold'>
+            <Typography tag='h1' type='9xl' weight='bold'>
               {HeroHeadings[index % HeroHeadings.length]}
             </Typography>
           </m.div>
         </AnimatePresence>
         <AnimatePresence mode='wait' initial={false}>
           <m.div
+            layout
             className='!transition-none'
             key={'description' + index}
             initial={{ opacity: 0 }}

@@ -177,11 +177,11 @@ import SvgHumanizarTexto from '@/components/icons/humanizar-texto'
 import SvgElbrezal from '@/components/icons/elbrezal'
 
 export const HeroHeadings: string[] = [
-  'Product Designer',
-  'Web Developer',
-  'App Developer',
-  '3D Artist',
-  'Animator',
+  'Product & UI/UX Designer',
+  'Frontend Web Developer',
+  'Mobile App Developer',
+  '3D Artist & Visualizer',
+  'Motion Designer & Animator',
 ]
 
 export const LottiePaths: string[] = [
@@ -201,11 +201,11 @@ export const LottieLightPaths: string[] = [
 ]
 
 export const HeroDescriptions: string[] = [
-  'Crafting user-centric digital experiences that blend creativity and functionality for impactful, seamless design.',
-  'Transforming ideas into interactive web solutions, I specialize in coding elegant websites with a focus on user experience.',
-  'Building the future of mobile experiences, I bring innovative app ideas to life with user-centric design and robust functionality.',
-  'Sculpting immersive worlds and captivating visuals, I leverage three-dimensional design to bring ideas to life with depth and realism.',
-  'Breathing life into static elements, I create visually stunning and emotionally resonant digital narratives through animation.',
+  'Crafting user-centric digital experiences and intuitive interfaces. Specializing in UI/UX design that blends creativity and functionality for impactful, seamless products using tools like Figma.',
+  'Transforming ideas into interactive web solutions. As a frontend developer, I specialize in coding elegant, responsive websites using Next.js, React, and Tailwind CSS with a focus on optimal user experience.',
+  'Building the future of mobile applications. I bring innovative app ideas to life with user-centric design and robust functionality, primarily using Flutter for cross-platform development.',
+  'Sculpting immersive 3D worlds and captivating visuals. I leverage three-dimensional design tools like Blender to bring concepts to life with depth, realism, and stunning detail.',
+  'Breathing life into static elements. As a motion designer, I create visually stunning and emotionally resonant digital narratives through animation using tools like After Effects.',
 ]
 
 
@@ -214,7 +214,7 @@ export const navButtons: NavButtonT[] = [
   { text: 'Services', href: `/#${Sections.services}`, type: 'secondary' },
   { text: 'Testimonials', href: `/#${Sections.testimonials}`, type: 'secondary' },
   { text: 'About', href: `/#${Sections.aboutMe}`, type: 'secondary' },
-  { text: 'Get in Touch', href: 'mailto:awaismaaz@gmail.com', type: 'primary' },
+  { text: 'Contact Me', href: 'mailto:awaismaaz@gmail.com', type: 'primary' },
 ]
 
 export const bottomNavButtons: BottomNavButtonT[] = [
@@ -275,7 +275,7 @@ export const services: ServiceT[] = [
     placeholderSrc: '/placeholders/web',
   },
   {
-    title: 'Product \n Design',
+    title: 'Product & \n UI/UX Design',
     index: 1,
     className:
       'absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -291,7 +291,7 @@ export const services: ServiceT[] = [
     placeholderSrc: '/placeholders/app',
   },
   {
-    title: 'Video \n Editing',
+    title: 'Video Editing \n & Motion Graphics',
     index: 3,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -299,7 +299,7 @@ export const services: ServiceT[] = [
     placeholderSrc: '/placeholders/video',
   },
   {
-    title: 'Logo \n Design',
+    title: 'Logo Design \n & Branding',
     index: 4,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -307,7 +307,7 @@ export const services: ServiceT[] = [
     placeholderSrc: '/placeholders/logo',
   },
   {
-    title: '3D Design \n & Animation',
+    title: '3D Design \n & Visualization',
     index: 5,
     className:
       'absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -389,22 +389,22 @@ export const aboutSections = [
 export const WorkExperiences: WorkExperienceT[] = [
   {
     company: 'Alfabolt',
-    roles: 'Frontend Developer - Product Designer - Design Lead',
+    roles: 'Frontend Developer - Lead Product Designer (UI/UX)',
     tenure: '2022 - Present',
   },
-  { company: 'Total School Solutions', roles: 'IT Manager - Graphics Lead', tenure: '2022 - 2024' },
+  { company: 'Total School Solutions', roles: 'IT Manager - Lead Graphic Designer', tenure: '2022 - 2024' },
   {
     company: 'Nustac Technologies',
-    roles: 'Mobile App Developer - UI/UX Designer',
+    roles: 'Flutter Mobile App Developer - UI/UX Designer',
     tenure: '2021 - 2024',
   },
-  { company: '20Four7 VA', roles: 'Specialist Art Director', tenure: '2022 - 2023' },
+  { company: '20Four7 VA', roles: 'Specialist Art Director & Animator', tenure: '2022 - 2023' },
   {
     company: 'Beacon Tutors Pakistan',
-    roles: 'Web Developer - UI/UX Designer',
+    roles: 'Full Stack Web Developer - UI/UX Designer',
     tenure: '2021 - 2022',
   },
-  { company: 'Edwiz Solutions', roles: 'Illustration Designer', tenure: '2021 - 2022' },
+  { company: 'Edwiz Solutions', roles: 'Illustration & Graphics Designer', tenure: '2021 - 2022' },
 ]
 
 export const productDesignProjects: ProjectAnalysisT[] = [
@@ -610,35 +610,35 @@ export const clientData: ClientDataT[] = [
         logo: Alfabolt,
         primaryColor: '#EE1E3A',
         name: 'Alfabolt',
-        services: ['Product Design', 'Website'],
+        services: ['Product Design (UI/UX)', 'Website Development'],
         link: `work/${getPageSlug(alfabolt.title)}`,
       },
       {
         logo: Athleton,
         primaryColor: 'var(--black-dynamic)',
         name: 'Athleton+',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: SuperDuperStudio,
         primaryColor: '#FA5F33',
         name: '',
-        services: ['Product Design', 'Website'],
+        services: ['Product Design (UI/UX)', 'Website Development'],
         link: `work/${getPageSlug(superDuperStudio.title)}`,
       },
       {
         logo: FiveOneFivePools,
         primaryColor: '#5884CF',
         name: '',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(pools515.title)}`,
       },
       {
         logo: Deepreel,
         primaryColor: '#FF3C5F',
         name: 'DeepReel',
-        services: ['Product Design', 'Web App', 'Website', 'Canva Add On', 'Adobe Express Add On'],
+        services: ['Product Design (UI/UX)', 'Web App Development', 'Website Development', 'Canva Integration', 'Adobe Express Integration'],
         link: `work/${getPageSlug(deepReelAI.title)}`,
       },
     ],
@@ -666,14 +666,14 @@ export const clientData: ClientDataT[] = [
         logo: SvgHumanizarTexto,
         primaryColor: '#6209D2',
         name: 'Humanizar Texto',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: SvgElbrezal,
         primaryColor: '#FAD235',
         name: 'Elbrezal Honey',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
     ],
@@ -694,21 +694,21 @@ export const clientData: ClientDataT[] = [
         logo: BeaconTutors,
         primaryColor: '#FF6F66',
         name: 'Beacon Tutors Pakistan',
-        services: ['Product Design', 'Website', 'Graphic Design', 'Animation', 'Illustration'],
+        services: ['Product Design (UI/UX)', 'Website Development', 'Graphic Design', 'Animation', 'Illustration'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: BeaconTutors,
         primaryColor: '#C6F0EB',
         name: 'Beacon Tutors CRM',
-        services: ['Product Design', 'Web App'],
+        services: ['Product Design (UI/UX)', 'Web App Development'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
       {
         logo: TutoraniaSvg,
         primaryColor: '#6EC2FF',
         name: 'Tutorania',
-        services: ['Product Design', 'Web App'],
+        services: ['Product Design (UI/UX)', 'Web App Development'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
     ],
@@ -736,14 +736,14 @@ export const clientData: ClientDataT[] = [
         logo: Rivanna,
         primaryColor: '#59606E',
         name: 'Rivanna',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
       {
         logo: AylaLogo,
         primaryColor: '#7D8FFF',
         name: 'Ayla AI',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
     ],
@@ -763,28 +763,28 @@ export const clientData: ClientDataT[] = [
         logo: Rivanna,
         primaryColor: '#FFE363',
         name: 'Jawline Fitness',
-        services: ['Product Design', 'Mobile App', 'Animation', 'Illustration'],
+        services: ['Product Design (UI/UX)', 'Mobile App Development (Flutter)', 'Animation', 'Illustration'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
       {
         logo: AylaLogo,
         primaryColor: '#5382DB',
         name: 'Interview Preparation',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: AylaLogo,
         primaryColor: 'var(--black-dynamic)',
         name: 'Markdown Editor',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)', 'Web Development'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: SvgSmartCatch,
         primaryColor: '#003882',
         name: '',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
     ],
@@ -808,28 +808,28 @@ export const clientData: ClientDataT[] = [
         logo: SvgRobinBeauty,
         primaryColor: '#94DDEF',
         name: '',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
       {
         logo: MenuHub,
         primaryColor: '#F37832',
         name: '',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)', 'Logo Design'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: EquanimitySvg,
         primaryColor: '#005AC1',
         name: 'Equanimity',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
       {
         logo: SvgInventrios,
         primaryColor: '#40AFF9',
         name: 'Inventrios',
-        services: ['Product Design', 'Website', 'Animation', 'Illustration'],
+        services: ['Product Design (UI/UX)', 'Website Development', 'Animation', 'Illustration'],
         link: `work/${getPageSlug(athletonPlus.title)}`,
       },
     ],
@@ -851,7 +851,7 @@ export const clientData: ClientDataT[] = [
         logo: SvgNutrigram,
         primaryColor: '#E23352',
         name: 'Nutrigram',
-        services: ['Product Design'],
+        services: ['Product Design (UI/UX)', 'Mobile App Design'],
         link: `work/${getPageSlug(rivanna.title)}`,
       },
     ],

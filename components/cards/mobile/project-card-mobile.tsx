@@ -40,7 +40,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
         className={`cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar max-h-[320px] sm:max-h-[384px] h-[320px] sm:h-[384px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 p-8 sm:p-9 ${alt ? 'sm:basis-60' : 'flex-1'} ${isInView && 'overflow-y-scroll'} transition-all duration-300 select-none`}
       >
         <div className='flex flex-col gap-1 sm:gap-2 sticky top-0'>
-          <Typography type='4xl' weight='bold'>
+          <Typography tag='h3' type='4xl' weight='bold'>
             {title}
           </Typography>
           <Typography type='xl'>{description}</Typography>
@@ -49,14 +49,14 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
           priority
           className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-lg ${isInView && '!scale-[0.55]'}` : `border-[1.3px] rounded-md overflow-hidden align-top min-w-full scale-150 ${isInView && '!scale-100'} `} origin-top-left transition-transform duration-300`}
           src={image}
-          alt='Project Banner'
+          alt={`${title} Banner`}
         />
         {alt && altImage && (
           <Image
             priority
             className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[10%]'}`}
             src={altImage}
-            alt='Project Banner'
+            alt={`${title} Alternate View`}
           />
         )}
       </div>
