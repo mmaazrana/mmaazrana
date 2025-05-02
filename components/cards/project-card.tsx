@@ -106,6 +106,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
         <Image
           priority
           className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-md overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms]`}
+          sizes='75vw'
           src={image}
           alt={`${title} Banner`}
         />
@@ -113,6 +114,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
           <Image
             priority
             className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-500`}
+            sizes='40vw'
             src={altImage}
             alt={`${title} Alternate View`}
           />

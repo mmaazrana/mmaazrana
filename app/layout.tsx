@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next'
 import React from 'react'
 import Providers from '@/app/providers'
 import { domAnimation, LazyMotion } from 'motion/react'
-import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/react'
@@ -47,7 +46,7 @@ const websiteSchema = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://maazrana.com'),
+  metadataBase: new URL('https://www.maazrana.com'),
   title: {
     default: 'Maaz Rana - Product Designer & Frontend Developer',
     template: '%s | Maaz Rana',
@@ -67,7 +66,7 @@ export const metadata: Metadata = {
     'Maaz Rana',
     'Portfolio',
   ],
-  authors: [{ name: 'Maaz Rana', url: 'https://maazrana.com' }],
+  authors: [{ name: 'Maaz Rana', url: 'https://www.maazrana.com' }],
   creator: 'Maaz Rana',
   appleWebApp: { capable: true, title: 'Maaz Rana Portfolio', statusBarStyle: 'default' },
   formatDetection: { telephone: false },
@@ -75,7 +74,7 @@ export const metadata: Metadata = {
     title: 'Maaz Rana - Product Designer & Frontend Developer',
     description:
       'Explore the portfolio of Maaz Rana, showcasing expertise in Product Design (UI/UX), Web Development (React, Next.js), Mobile Development (Flutter), and 3D Art.',
-    url: 'https://maazrana.com',
+    url: 'https://www.maazrana.com',
     siteName: 'Maaz Rana Portfolio',
     locale: 'en_US',
     type: 'website',
@@ -87,10 +86,13 @@ export const metadata: Metadata = {
       'Portfolio showcasing Product Design (UI/UX), Frontend/Web Development (React, Next.js), Mobile Development (Flutter), and 3D Art.',
     creator: '@_mmaazrana_',
   },
-  icons: { icon: '/favicon.ico', shortcut: '/favicon.ico', apple: '/apple-touch-icon.png' },
+  icons: { icon: '/favicon.ico', shortcut: '/favicon.ico', apple: '/icons/apple-touch-icon.png' },
   other: {
     'structured-data-person': JSON.stringify(personSchema),
     'structured-data-website': JSON.stringify(websiteSchema),
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#2B5797',
+    'msapplication-tap-highlight': 'no',
   },
 }
 
@@ -106,29 +108,6 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <Head>
-        <meta
-          name='viewport'
-          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
-        />
-        <meta name='pwa-demo' content='pwa-demo' />
-        <meta name='apple-mobile-web-app-capable' content='yes' />
-        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-mobile-web-app-title' content='pwa-demo' />
-        <meta name='description' content='pwa-demo' />
-        <meta name='format-detection' content='telephone=no' />
-        <meta name='mobile-web-app-capable' content='yes' />
-        <meta name='msapplication-TileColor' content='#2B5797' />
-        <meta name='msapplication-tap-highlight' content='no' />
-        <meta name='theme-color' content='#22365E' />
-        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
-        <link rel='manifest' href='/manifest.json' />
-        <link rel='shortcut icon' href='/favicon.ico' />
-        <meta
-          name='viewport'
-          content='initial-scale=1, viewport-fit=cover, width=device-width'
-        ></meta>
-      </Head>
       <LazyMotion features={domAnimation}>
         <body>
           <Providers>{children}</Providers>

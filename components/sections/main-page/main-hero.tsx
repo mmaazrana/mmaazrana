@@ -122,6 +122,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             <Link
               href='https://www.linkedin.com/in/mmaazrana/'
               target='_blank'
+              rel='noopener noreferrer'
               aria-label='Linkedin'
             >
               <Button leftIcon={<Linkedin />} textWeight='medium' type='primary' text='Linkedin' />
@@ -130,6 +131,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
           <Link
             href='mailto:awaismaaz@gmail.com'
             className='cursor-pointer'
+            rel='noopener noreferrer'
             target='_blank'
             aria-label='Email'
           >

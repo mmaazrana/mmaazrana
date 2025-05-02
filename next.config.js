@@ -45,6 +45,41 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: false,
   turbopack: { resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'] },
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*', // Matches all paths
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: `
+              default-src 'self';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.googletagmanager.com https://va.vercel-scripts.com;
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' blob: data:;
+              font-src 'self';
+              connect-src 'self' https://cdn.jsdelivr.net https://lottie.host;
+              object-src 'none';
+              base-uri 'self';
+              form-action 'self';
+              frame-ancestors 'none';
+              media-src 'self' https://dfq6zt494pcpl.cloudfront.net;
+              upgrade-insecure-requests;
+            `.replace(/\s{2,}/g, ' ').trim()
+          }
+        ],
+      },
+    ]
+  },
 }
 
 module.exports = withBundleAnalyzer(withPWA(nextConfig))

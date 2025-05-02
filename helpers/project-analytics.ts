@@ -1461,7 +1461,7 @@ export const nutrigram: ProjectAnalysisT = {
 }
 
 export const athletonPlus: ProjectAnalysisT = {
-  title: 'Athleton+',
+  title: 'Athleton Plus',
   shortDescription:
     'A comprehensive fitness training management platform that connects trainers with clients, featuring workout scheduling, progress tracking, and detailed session management.',
   detailedAnalysis: {

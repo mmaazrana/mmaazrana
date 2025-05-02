@@ -1,9 +1,12 @@
 'use client'
 
 import React from 'react'
-import ReactPlayer from 'react-player/lazy'
+import dynamic from 'next/dynamic'
 import { PlayIcon } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
+
+// Dynamically import ReactPlayer with SSR disabled
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 interface VideoProjectCardProps {
   fileName: string
@@ -19,6 +22,7 @@ export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCa
           <Image
             src={thumbnail}
             placeholder='blur'
+            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw'
             alt='Thumbnail'
             loading='lazy'
             className='relative w-full h-fit -z-1 object-cover'

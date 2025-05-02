@@ -47,6 +47,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
           src={pfp}
           alt='Maaz Rana'
           fill
+          sizes='(max-width: 445px) 95vw, (max-width: 768px) 45vw, 30vw'
           className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${
             false && '!opacity-100 !saturate-100'
           }`}

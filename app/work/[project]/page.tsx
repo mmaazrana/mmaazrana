@@ -23,10 +23,18 @@ async function getProjectData(slug: string): Promise<ProjectAnalysisT | undefine
 }
 
 // Define the base URL for metadata
-const metadataBase = new URL('https://maazrana.com') // Replace with your actual domain
+const metadataBase = new URL('https://www.maazrana.com') // Replace with your actual domain
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Params // Specify 'project' in Params
+  searchParams: SearchParams
+}): Promise<Metadata> {
   const { project } = await params
+  const { tab } = await searchParams
+  const activeTab = tab ? String(tab) : ProjectCategories.overview
   const projectData = await getProjectData(project)
 
   if (!projectData) {
@@ -39,11 +47,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   }
 
   // Construct dynamic metadata from project data
-  const title = `${projectData.title} - Project Case Study`
+  const title =
+    tab ? `${projectData.title} - ${activeTab}` : `${projectData.title} - Project Case Study`
   // Use project description or generate a fallback
   const description =
-    projectData.shortDescription ||
-    `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process.`
+    tab ?
+      projectData.shortDescription + ' - ' + activeTab ||
+      `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process - ${activeTab}.`
+    : projectData.shortDescription ||
+      `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process.`
   // Generate keywords from project details
   const keywords = [
     projectData.title,
@@ -58,6 +70,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   // const ogImageUrl = project.imageUrl || '/default-og-image.png'; // Define a default image
 
   // --- Add Article Schema ---
+  // Determine the canonical URL based on the tab
+  const canonicalUrlPath = `/work/${project}`
+  const canonicalFullUrl = `${metadataBase.toString().replace(/\/$/, '')}${canonicalUrlPath}` // Construct full URL
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article', // Or TechArticle
@@ -76,23 +92,22 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       '@type': 'Person', // Or Organization if applicable
       name: 'Maaz Rana',
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${metadataBase.toString()}work/${project}` },
+    // Use the dynamically determined canonical URL here
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalFullUrl },
   }
   // --- End Article Schema ---
 
   return {
-    // Add metadataBase
     metadataBase,
     title,
     description,
     keywords,
-    // Define canonical URL for all sub-pages
-    alternates: { canonical: `/work/${project}` },
     openGraph: {
       title: `${title} | Maaz Rana`,
       description,
       // images: [ogImageUrl], // Add image URL
-      url: `/work/${project}`, // Canonical URL for this project page
+      // Use the dynamic canonical URL path for OpenGraph
+      url: canonicalUrlPath,
       type: 'article', // More specific type for case studies
     },
     twitter: {
@@ -102,6 +117,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       // images: [ogImageUrl], // Add image URL
       // creator: '@_mmaazrana_', // Already in layout, but can be specific if needed
     },
+    alternates: { canonical: './' },
     // Add the structured data script to the page metadata
     other: { 'structured-data-article': JSON.stringify(articleSchema) },
   }

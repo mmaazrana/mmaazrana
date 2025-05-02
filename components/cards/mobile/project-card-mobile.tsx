@@ -48,6 +48,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
         <Image
           priority
           className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-lg ${isInView && '!scale-[0.55]'}` : `border-[1.3px] rounded-md overflow-hidden align-top min-w-full scale-150 ${isInView && '!scale-100'} `} origin-top-left transition-transform duration-300`}
+          sizes='100vw'
           src={image}
           alt={`${title} Banner`}
         />
@@ -55,6 +56,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
           <Image
             priority
             className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[10%]'}`}
+            sizes='100vw'
             src={altImage}
             alt={`${title} Alternate View`}
           />

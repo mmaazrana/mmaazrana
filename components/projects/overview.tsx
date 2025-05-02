@@ -73,24 +73,39 @@ export default function ProjectOverview({ project }: OverviewProps) {
                   </div>
                 ))}
               </div>
-              {projectData.liveUrl && (
-                <Link href={projectData.liveUrl || ''} target='_blank' className='w-fit'>
-                  <Button
-                    type='primary'
-                    rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
-                    text={`Visit live Website`}
-                  />
-                </Link>
-              )}
-              {projectData.figmaUrl && (
-                <Link href={projectData.figmaUrl || ''} target='_blank' className='w-fit'>
-                  <Button
-                    type='primary'
-                    rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
-                    text={`Visit Figma File`}
-                  />
-                </Link>
-              )}
+              <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3'>
+                {projectData.liveUrl && (
+                  <Link
+                    href={projectData.liveUrl || ''}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-fit'
+                  >
+                    <Button
+                      className='w-fit'
+                      type='primary'
+                      text='Visit Live Site'
+                      textSize='xl'
+                      textWeight='regular'
+                    />
+                  </Link>
+                )}
+                {projectData.figmaUrl && (
+                  <Link
+                    href={projectData.figmaUrl || ''}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-fit'
+                  >
+                    <Button
+                      className='w-fit'
+                      type='secondary'
+                      rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
+                      text={`Visit Figma File`}
+                    />
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>

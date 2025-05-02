@@ -10,25 +10,33 @@ import { WorkCategories } from '@/helpers/enums'
 // Define the base URL for metadata
 const metadataBase = new URL('https://maazrana.com') // Replace with your actual domain
 
-export const metadata: Metadata = {
-  // Add metadataBase
-  metadataBase,
-  title: 'Portfolio Work',
-  description:
-    'Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana.',
-  keywords: [
-    'Portfolio',
-    'Projects',
-    'Case Studies',
-    'Product Design',
-    'UI/UX',
-    'Web Development',
-    'Mobile Development',
-    'Graphic Design',
-    'Maaz Rana',
-  ],
-  // Define canonical URL for the base work page
-  alternates: { canonical: '/work' },
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}): Promise<Metadata> {
+  const { tab } = await searchParams
+  const activeTab = tab ? String(tab) : WorkCategories.productDesign
+
+  return {
+    metadataBase,
+    title: tab ? `Portfolio Work - ${activeTab}` : 'Portfolio Work - Design & Development',
+    description:
+      tab ?
+        `Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana - ${activeTab}.`
+      : 'Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana.',
+    keywords: [
+      'Portfolio',
+      'Projects',
+      'Case Studies',
+      'Product Design',
+      'UI/UX',
+      'Web Development',
+      'Mobile Development',
+      'Graphic Design',
+      'Maaz Rana',
+    ],
+  }
 }
 
 export default async function Work({ searchParams }: { searchParams: SearchParams }) {
