@@ -27,7 +27,7 @@ const WorkExperienceItem: React.FC<{ company: string; roles: string; tenure: str
       >
         {roles}
       </Typography>
-      <Typography tag='h6' type='lg' leading='flat' weight='semi-bold' color='secondary'>
+      <Typography tag='h4' type='lg' leading='flat' weight='semi-bold' color='secondary'>
         {tenure}
       </Typography>
     </div>

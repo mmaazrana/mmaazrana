@@ -63,11 +63,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.googletagmanager.com https://va.vercel-scripts.com;
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' blob: https://www.googletagmanager.com https://va.vercel-scripts.com https://vitals.vercel-insights.com;
               style-src 'self' 'unsafe-inline';
               img-src 'self' blob: data:;
               font-src 'self';
-              connect-src 'self' https://cdn.jsdelivr.net https://lottie.host;
+              connect-src 'self' https://cdn.jsdelivr.net https://lottie.host https://vitals.vercel-insights.com;
               object-src 'none';
               base-uri 'self';
               form-action 'self';

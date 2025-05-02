@@ -56,13 +56,13 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
             >
               Bachelors of Engineering - National University of Sciences and Technology
             </Typography>
-            <Typography tag='h6' type='lg' weight='bold' color='secondary' leading='flat'>
+            <Typography type='lg' weight='bold' color='secondary' leading='flat'>
               CGPA - 3.61
             </Typography>
           </div>
           <div className='flex flex-row gap-1 sm:gap-2 md:gap-3 items-center justify-start'>
             <Medal className='fill-golden h-3 sm:h-4 md:h-5 lg:h-6 xl:h-7' />
-            <Typography tag='h5' type='lg' weight='medium' color='golden' leading='flat'>
+            <Typography tag='h4' type='lg' weight='medium' color='golden' leading='flat'>
               President&apos;s Gold Medalist
             </Typography>
           </div>
