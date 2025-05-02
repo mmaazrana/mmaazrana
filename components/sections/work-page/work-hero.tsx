@@ -89,7 +89,7 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
         ))}
       </div>
       <div className='flex flex-col justify-center items-center w-full gap-6'>
-        <Typography type='8xl' weight='extra-bold' className='text-center'>
+        <Typography tag='h1' type='8xl' weight='extra-bold' className='text-center'>
           My Work
         </Typography>
         <Typography type='2xl' weight='regular' className='text-center max-w-200 opacity-75'>
