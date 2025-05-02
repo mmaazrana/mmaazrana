@@ -9,37 +9,21 @@ import TabButton from './tab-button'
 import TabContent from './tab-content'
 
 interface MobileCategoryNavProps {
+  pathName: string
   currentIndex: number
   categories: typeof workBottomNavCategories
   activeTab: string
-  handleTabChange: (key: string) => void
   isEndOfPage: boolean
 }
 
 const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
+  pathName,
   currentIndex,
   categories,
   activeTab,
-  handleTabChange,
   isEndOfPage,
 }) => {
   const currentCategory = categories[currentIndex]
-
-  const handlePrevClick = () => {
-    handleTabChange(
-      categories[
-        (categories.findIndex(button => button.key === activeTab) - 1 + categories.length) %
-          categories.length
-      ].key,
-    )
-  }
-
-  const handleNextClick = () => {
-    handleTabChange(
-      categories[(categories.findIndex(button => button.key === activeTab) + 1) % categories.length]
-        .key,
-    )
-  }
 
   return (
     <div className='my-7 about:my-6 px-6 xs:px-8 sm:px-28 md:px-32 w-full left-1/2 -translate-x-1/2 bottom-0 absolute justify-center gap-2 flex justify-between items-center lg:hidden z-[50]'>
@@ -50,7 +34,13 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
       </span>
 
       <TabButton
-        onClick={handlePrevClick}
+        pathName={pathName}
+        tab={
+          categories[
+            (categories.findIndex(button => button.key === activeTab) - 1 + categories.length) %
+              categories.length
+          ].key
+        }
         ariaLabel='Previous Tab'
         isEndOfPage={isEndOfPage}
         delay={0.1}
@@ -118,7 +108,12 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
       </div>
 
       <TabButton
-        onClick={handleNextClick}
+        pathName={pathName}
+        tab={
+          categories[
+            (categories.findIndex(button => button.key === activeTab) + 1) % categories.length
+          ].key
+        }
         ariaLabel='Next Tab'
         isEndOfPage={isEndOfPage}
         delay={0.5}

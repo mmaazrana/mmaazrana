@@ -1,7 +1,7 @@
 'use client'
 
 import React, { cloneElement, FC, ReactElement } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 
 import { ButtonTypes, ColorTypes, TextTypes, WeightTypes } from '@/helpers/enums'
 

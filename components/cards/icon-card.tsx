@@ -1,4 +1,5 @@
-import Typography from '@/components/Typography'
+'use client'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 import { useId, useRef } from 'react'
 import * as m from 'motion/react-m'

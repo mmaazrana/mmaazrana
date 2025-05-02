@@ -1,9 +1,9 @@
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
 import React from 'react'
-import StackedTestimonials from '@/components/sections/stacked-testimonials'
-import EsteemedClients from '@/components/sections/esteemed-clients'
-import WorkDetails from '@/components/sections/work-details'
+import StackedTestimonials from '@/components/sections/clients-page/clients-hero'
+import EsteemedClients from '@/components/sections/clients-page/esteemed-clients'
+import WorkDetails from '@/components/sections/clients-page/work-details'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

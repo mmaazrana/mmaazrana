@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react'
 import { motion } from 'framer-motion'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import Link from 'next/link'
 import { FooterButtonT } from '@/helpers/types'
 

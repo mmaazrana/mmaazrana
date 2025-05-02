@@ -1,7 +1,7 @@
 'use client'
 
 import React, { FC, useEffect, useState } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
@@ -17,15 +17,15 @@ import appTabletLight from '@/public/svgs/app-tab-light.svg'
 import videoTabletLight from '@/public/svgs/video-tab-light.svg'
 import logoTabletLight from '@/public/svgs/logo-tab-light.svg'
 import blenderTabletLight from '@/public/svgs/blender-tab-light.svg'
+import { ServiceCardProps } from '@/helpers/types'
 
-interface ServiceCardTabletProps {
-  title: string
-  index: 0 | 1 | 2 | 3 | 4 | 5
-  className?: string
-  onClick?: () => void
-}
-
-const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className, onClick }) => {
+const ServiceCardTablet: FC<ServiceCardProps> = ({
+  title,
+  illustrationDescription,
+  index,
+  className,
+  onClick,
+}) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
 
@@ -93,8 +93,8 @@ const ServiceCardTablet: FC<ServiceCardTabletProps> = ({ title, index, className
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
             className={imageClasses[index]}
-            alt={title}
-            quality={75}
+            alt={`Illustration for service of ${title}`}
+            aria-label={illustrationDescription}
             loading='lazy'
           />
         </div>

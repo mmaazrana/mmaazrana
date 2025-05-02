@@ -1,10 +1,11 @@
 import React from 'react'
 import Nav from '@/components/navs/nav'
-import WorkHero from '@/components/sections/hero/work-hero'
-import { WorkProvider } from '@/app/context/work-provider'
-import MyWorkSection from '@/components/sections/work/my-work-section'
+import WorkHero from '@/components/sections/work-page/work-hero'
 import WorkBottomNav from '@/components/navs/bottom-nav/work-bottom-nav'
 import { Metadata } from 'next'
+import MyWorkSection from '@/components/sections/work-page/my-work-section'
+import { SearchParams } from '@/helpers/types'
+import { WorkCategories } from '@/helpers/enums'
 
 export const metadata: Metadata = {
   title: 'Portfolio Work',
@@ -23,23 +24,24 @@ export const metadata: Metadata = {
   ],
 }
 
-export default function Work() {
+export default async function Work({ searchParams }: { searchParams: SearchParams }) {
+  const { tab } = await searchParams
+  const activeTab = tab ? String(tab) : WorkCategories.productDesign
+
   return (
-    <WorkProvider>
-      <div className='overflow-x-hidden max-w-[100vw]'>
-        <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
-          <Nav />
-          <section
-            className={
-              'xl:p-20 lg:p-16 md:p-14 sm:p-12 p-10 xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
-            }
-          >
-            <WorkHero />
-          </section>
-          <MyWorkSection />
-          <WorkBottomNav />
-        </main>
-      </div>
-    </WorkProvider>
+    <div className='overflow-x-hidden max-w-[100vw]'>
+      <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
+        <Nav />
+        <section
+          className={
+            'xl:p-20 lg:p-16 md:p-14 sm:p-12 p-10 xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
+          }
+        >
+          <WorkHero />
+        </section>
+        <MyWorkSection activeTab={activeTab} />
+        <WorkBottomNav activeTab={activeTab} />
+      </main>
+    </div>
   )
 }

@@ -1,16 +1,16 @@
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
 import React from 'react'
-import Typography from '@/components/Typography'
-import Services from '@/components/sections/services'
-import Work from '@/components/sections/work'
-import Hero from '@/components/sections/hero/main-hero'
+import Typography from '@/components/typography'
+import Services from '@/components/sections/main-page/services'
+import Work from '@/components/sections/main-page/work'
+import Hero from '@/components/sections/main-page/main-hero'
 import { Sections } from '@/helpers/enums'
-import Testimonials from '@/components/sections/testimonials'
+import Testimonials from '@/components/sections/main-page/testimonials'
 import Button from '@/components/button'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-import AboutSection from '@/components/sections/about-section'
+import AboutSection from '@/components/sections/main-page/about-section'
 
 // No specific metadata needed here, it will inherit from layout.tsx
 // If you wanted to override:

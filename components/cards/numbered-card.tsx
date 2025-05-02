@@ -1,5 +1,7 @@
+'use client'
+
 import {} from '@/helpers/enums'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 import { useInView } from 'motion/react'
 import { useRef } from 'react'

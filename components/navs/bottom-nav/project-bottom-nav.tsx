@@ -9,15 +9,16 @@ import DesktopCategoryNav from './desktop-category-nav'
 import MobileCategoryNav from './mobile-category-nav'
 import LogoSection from './logo-section'
 import FooterCTA from './footer-cta'
-import { useProjectContext } from '@/app/context/project-provider'
 
 // Types
-interface ProjectBottomNavProps {}
+interface ProjectBottomNavProps {
+  activeTab: string
+  pathName: string
+}
 
 // Main Component
-const ProjectBottomNavContent: FC<ProjectBottomNavProps> = () => {
+const ProjectBottomNavContent: FC<ProjectBottomNavProps> = ({ activeTab, pathName }) => {
   const { isEndOfPage, isInView } = useBottomNav()
-  const { handleTabChange, activeTab } = useProjectContext()
   const [scope, animate] = useAnimate()
 
   const currentIndex = projectCategories.findIndex(category => category.key === activeTab)
@@ -68,15 +69,15 @@ const ProjectBottomNavContent: FC<ProjectBottomNavProps> = () => {
           <LogoSection isEndOfPage={isEndOfPage} />
           <FooterSection footerButtons={footerButtons} isEndOfPage={isEndOfPage} />
           <DesktopCategoryNav
+            pathName={pathName}
             categories={projectCategories}
             activeTab={SelectedComponent}
-            handleTabChange={handleTabChange}
           />
           <MobileCategoryNav
+            pathName={pathName}
             currentIndex={currentIndex}
             categories={projectCategories}
             activeTab={activeTab}
-            handleTabChange={handleTabChange}
             isEndOfPage={isEndOfPage}
           />
         </div>
@@ -89,10 +90,10 @@ const ProjectBottomNavContent: FC<ProjectBottomNavProps> = () => {
   )
 }
 
-const ProjectBottomNav: FC<ProjectBottomNavProps> = () => {
+const ProjectBottomNav: FC<ProjectBottomNavProps> = ({ activeTab, pathName }) => {
   return (
     <BottomNavProvider>
-      <ProjectBottomNavContent />
+      <ProjectBottomNavContent pathName={pathName} activeTab={activeTab} />
     </BottomNavProvider>
   )
 }

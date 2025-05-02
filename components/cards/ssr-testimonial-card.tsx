@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 import { TestimonialCardProps } from '@/components/cards/testimonial-card'
 import { Star } from 'lucide-react'

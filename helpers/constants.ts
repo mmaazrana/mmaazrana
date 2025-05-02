@@ -175,6 +175,15 @@ import TutoraniaSvg from '@/components/icons/tutorania'
 import SvgNutrigram from '@/components/icons/nutrigram'
 import SvgHumanizarTexto from '@/components/icons/humanizar-texto'
 import SvgElbrezal from '@/components/icons/elbrezal'
+import ProductDesignProjects from '@/components/work/product-design-projects'
+import ProductDevelopmentProjects from '@/components/work/product-development-projects'
+import VideoEditingProjects from '@/components/work/video-editing-projects'
+import GraphicDesignProjects from '@/components/work/graphic-design-projects'
+import BlenderProjects from '@/components/work/blender-projects'
+import ProjectOverview from '@/components/projects/overview'
+import ProjectKeyFeatures from '@/components/projects/key-features'
+import ProjectChallengesAndSolutions from '@/components/projects/challenges-and-solutions'
+import ProjectTechStack from '@/components/projects/tech-stack'
 
 export const HeroHeadings: string[] = [
   'Product & UI/UX Designer',
@@ -225,18 +234,18 @@ export const bottomNavButtons: BottomNavButtonT[] = [
 ]
 
 export const workBottomNavCategories: BottomNavCategoryT[] = [
-  { text: 'Product Design', key: WorkCategories.productDesign },
-  { text: 'Product Development', key: WorkCategories.productDevelopment },
-  { text: 'Video Editing', key: WorkCategories.videoEditing },
-  { text: 'Graphics Design', key: WorkCategories.illustration },
-  { text: '3D Artworks', key: WorkCategories.blender },
-]
+  { text: 'Product Design', key: WorkCategories.productDesign, Component: ProductDesignProjects },
+  { text: 'Product Development', key: WorkCategories.productDevelopment, Component: ProductDevelopmentProjects  },
+  { text: 'Video Editing', key: WorkCategories.videoEditing, Component: VideoEditingProjects },
+  { text: 'Graphics Design', key: WorkCategories.illustration, Component: GraphicDesignProjects },
+  { text: '3D Artworks', key: WorkCategories.blender, Component: BlenderProjects },
+] 
 
 export const projectCategories: BottomNavCategoryT[] = [
-  { text: 'Overview', key: ProjectCategories.overview },
-  { text: 'Key Features', key: ProjectCategories.keyFeatures },
-  { text: 'Tech Stack', key: ProjectCategories.techStack },
-  { text: 'Challenges & Solutions', key: ProjectCategories.challengesAndSolutions },
+  { text: 'Overview', key: ProjectCategories.overview, Component: ProjectOverview },
+  { text: 'Key Features', key: ProjectCategories.keyFeatures, Component: ProjectKeyFeatures },
+  { text: 'Tech Stack', key: ProjectCategories.techStack , Component: ProjectTechStack },
+  { text: 'Challenges & Solutions', key: ProjectCategories.challengesAndSolutions, Component: ProjectChallengesAndSolutions },
 ]
 
 export const footerButtons: FooterButtonT[][] = [
@@ -273,6 +282,7 @@ export const services: ServiceT[] = [
       'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
     baseSrc: '/svgs/web',
     placeholderSrc: '/placeholders/web',
+    illustrationDescription: 'Illustration showing a modern web application interface with responsive design elements, representing professional web development services.',
   },
   {
     title: 'Product & \n UI/UX Design',
@@ -281,6 +291,7 @@ export const services: ServiceT[] = [
       'absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
     baseSrc: '/svgs/product',
     placeholderSrc: '/placeholders/product',
+    illustrationDescription: 'Illustration depicting a product design process with UI/UX elements, wireframes, and user interface components, showcasing product design expertise.',
   },
   {
     title: 'Mobile App \n Development',
@@ -289,6 +300,7 @@ export const services: ServiceT[] = [
       'absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
     baseSrc: '/svgs/app',
     placeholderSrc: '/placeholders/app',
+    illustrationDescription: 'Illustration of a mobile application interface with modern design elements and user-friendly features, highlighting mobile app development capabilities.',
   },
   {
     title: 'Video Editing \n & Motion Graphics',
@@ -297,6 +309,7 @@ export const services: ServiceT[] = [
       'absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
     baseSrc: '/svgs/video',
     placeholderSrc: '/placeholders/video',
+    illustrationDescription: 'Illustration showing video editing tools and motion graphics elements, representing professional video production and animation services.',
   },
   {
     title: 'Logo Design \n & Branding',
@@ -305,6 +318,7 @@ export const services: ServiceT[] = [
       'absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
     baseSrc: '/svgs/logo',
     placeholderSrc: '/placeholders/logo',
+    illustrationDescription: 'Illustration of brand identity elements including logo design, typography, and brand guidelines, showcasing branding expertise.',
   },
   {
     title: '3D Design \n & Visualization',
@@ -313,6 +327,7 @@ export const services: ServiceT[] = [
       'absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
     baseSrc: '/svgs/blender',
     placeholderSrc: '/placeholders/blender',
+    illustrationDescription: 'Illustration of 3D modeling and visualization tools with rendered objects, representing 3D design and visualization services.',
   },
 ]
 
@@ -667,14 +682,14 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#6209D2',
         name: 'Humanizar Texto',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(humanizarTexto.title)}`,
       },
       {
         logo: SvgElbrezal,
         primaryColor: '#FAD235',
         name: 'Elbrezal Honey',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(elBrezal.title)}`,
       },
     ],
 
@@ -695,21 +710,21 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#FF6F66',
         name: 'Beacon Tutors Pakistan',
         services: ['Product Design (UI/UX)', 'Website Development', 'Graphic Design', 'Animation', 'Illustration'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(beaconTutors.title)}`,
       },
       {
         logo: BeaconTutors,
         primaryColor: '#C6F0EB',
         name: 'Beacon Tutors CRM',
         services: ['Product Design (UI/UX)', 'Web App Development'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(beaconTutorsCRM.title)}`,
       },
       {
         logo: TutoraniaSvg,
         primaryColor: '#6EC2FF',
         name: 'Tutorania',
         services: ['Product Design (UI/UX)', 'Web App Development'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(tutorania.title)}`,
       },
     ],
 
@@ -744,7 +759,7 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#7D8FFF',
         name: 'Ayla AI',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(aylaAI.title)}`,
       },
     ],
     technologiesInvolved: [
@@ -764,28 +779,28 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#FFE363',
         name: 'Jawline Fitness',
         services: ['Product Design (UI/UX)', 'Mobile App Development (Flutter)', 'Animation', 'Illustration'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(jawlineFitness.title)}`,
       },
       {
         logo: AylaLogo,
         primaryColor: '#5382DB',
         name: 'Interview Preparation',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(codingInterviewPrep.title)}`,
       },
       {
         logo: AylaLogo,
         primaryColor: 'var(--black-dynamic)',
         name: 'Markdown Editor',
         services: ['Product Design (UI/UX)', 'Web Development'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(markdownEditor.title)}`,
       },
       {
         logo: SvgSmartCatch,
         primaryColor: '#003882',
         name: '',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(smartCatch.title)}`,
       },
     ],
     technologiesInvolved: [
@@ -809,28 +824,28 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#94DDEF',
         name: '',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(robinBeauty.title)}`,
       },
       {
         logo: MenuHub,
         primaryColor: '#F37832',
         name: '',
         services: ['Product Design (UI/UX)', 'Logo Design'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(menuHub.title)}`,
       },
       {
         logo: EquanimitySvg,
         primaryColor: '#005AC1',
         name: 'Equanimity',
         services: ['Product Design (UI/UX)'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(equanimity.title)}`,
       },
       {
         logo: SvgInventrios,
         primaryColor: '#40AFF9',
         name: 'Inventrios',
         services: ['Product Design (UI/UX)', 'Website Development', 'Animation', 'Illustration'],
-        link: `work/${getPageSlug(athletonPlus.title)}`,
+        link: `work/${getPageSlug(inventrios.title)}`,
       },
     ],
     technologiesInvolved: [
@@ -852,7 +867,7 @@ export const clientData: ClientDataT[] = [
         primaryColor: '#E23352',
         name: 'Nutrigram',
         services: ['Product Design (UI/UX)', 'Mobile App Design'],
-        link: `work/${getPageSlug(rivanna.title)}`,
+        link: `work/${getPageSlug(nutrigram.title)}`,
       },
     ],
     technologiesInvolved: [

@@ -71,9 +71,9 @@ const Typography: FC<TypographyProps> = ({
     bold: `font-[725] tracking-[0.025rem] ${archivo.className}`,
     'semi-bold': `font-[625] tracking-[0.02rem] ${archivo.className}`,
     medium: `font-[575] tracking-[0.0175rem] ${nunito.className}`,
-    regular: `font-[275] tracking-[0.015rem] ${nunito.className}`,
-    light: `font-[175] tracking-[0.0125rem] ${nunito.className}`,
-    'extra-light': `font-[75] tracking-[0.01rem] ${nunito.className}`,
+    regular: `font-[375] sm:font-[325] lg:font-[275] tracking-[0.015rem] ${nunito.className}`,
+    light: `font-[275] sm:font-[225] lg:font-[175] tracking-[0.0125rem] ${nunito.className}`,
+    'extra-light': `font-[175] sm:font-[125] lg:font-[75] tracking-[0.01rem] ${nunito.className}`,
   }
 
   const dynamicClasses = [

@@ -1,13 +1,13 @@
 import Nav from '@/components/navs/nav'
 import ProjectBottomNav from '@/components/navs/bottom-nav/project-bottom-nav'
-import { ProjectProvider } from '@/app/context/project-provider'
-import ProjectDetailsSection from '@/components/sections/project/project-details-section'
-import ProjectHero from '@/components/sections/hero/project-hero'
+import ProjectDetailsSection from '@/components/sections/project-page/project-details-section'
+import ProjectHero from '@/components/sections/project-page/project-hero'
 import { productDesignProjects } from '@/helpers/constants'
 import { productDevelopmentProjects } from '@/helpers/constants'
 import { ProjectAnalysisT } from '@/helpers/project-analytics'
 import { getPageSlug } from '@/helpers/parsers'
-
+import { Params, SearchParams } from '@/helpers/types'
+import { ProjectCategories } from '@/helpers/enums'
 // --- Start of added code ---
 
 // Combine all project arrays that have dedicated pages
@@ -20,8 +20,6 @@ async function getProjectData(slug: string): Promise<ProjectAnalysisT | undefine
   // This assumes getPageSlug(project.title) generates the slug used in the URL
   return allProjects.find(project => getPageSlug(project.title) === slug)
 }
-
-type Params = Promise<{ project: string }>
 
 export async function generateMetadata({ params }: { params: Params }) {
   const { project } = await params
@@ -105,17 +103,24 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 // --- End of added code ---
 
-export default function ProjectPage() {
+export default async function ProjectPage({
+  params,
+  searchParams,
+}: {
+  params: Params
+  searchParams: SearchParams
+}) {
+  const { project } = await params
+  const { tab } = await searchParams
+  const activeTab = tab ? String(tab) : ProjectCategories.overview
   return (
-    <ProjectProvider>
-      <div className='overflow-x-hidden max-w-[100vw]'>
-        <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
-          <Nav />
-          <ProjectHero />
-          <ProjectBottomNav />
-          <ProjectDetailsSection />
-        </main>
-      </div>
-    </ProjectProvider>
+    <div className='overflow-x-hidden max-w-[100vw]'>
+      <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
+        <Nav />
+        <ProjectHero project={project} />
+        <ProjectDetailsSection project={project} activeTab={activeTab} />
+        <ProjectBottomNav pathName={project} activeTab={activeTab} />
+      </main>
+    </div>
   )
 }

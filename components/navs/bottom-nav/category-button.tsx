@@ -1,20 +1,20 @@
-'use client'
-
 import React, { FC } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
+import Link from 'next/link'
 
 interface CategoryButtonProps {
+  pathName: string
   category: { key: string; text: string }
   isActive: boolean
-  onClick: () => void
 }
 
-const CategoryButton: FC<CategoryButtonProps> = ({ category, isActive, onClick }) => (
+const CategoryButton: FC<CategoryButtonProps> = ({ pathName, category, isActive }) => (
   <div id='sections' className='transition-colors'>
-    <button
-      onClick={onClick}
+    <Link
+      href={`${pathName}?tab=${category.key}`}
+      scroll={false}
       aria-label={category.key}
-      className={`rounded-full px-6 py-3 whitespace-nowrap cursor-pointer transition-all duration-300 group ${isActive ? 'bg-secondary/25' : 'bg-none hover:bg-secondary/10'}`}
+      className={`rounded-full flex justify-center items-center px-6 py-3 whitespace-nowrap cursor-pointer transition-all duration-300 group ${isActive ? 'bg-secondary/25' : 'bg-none hover:bg-secondary/10'}`}
     >
       <Typography
         type='base'
@@ -23,7 +23,7 @@ const CategoryButton: FC<CategoryButtonProps> = ({ category, isActive, onClick }
       >
         {category.text}
       </Typography>
-    </button>
+    </Link>
   </div>
 )
 

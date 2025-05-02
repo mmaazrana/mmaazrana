@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import { useBottomNav } from './bottom-nav-context'
 import * as m from 'motion/react-m'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import { AnimatePresence } from 'motion/react'
 
 interface ContactButtonProps {

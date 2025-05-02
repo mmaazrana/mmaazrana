@@ -1,6 +1,6 @@
 'use client'
 import React, { FC, useEffect, useState } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 
 import webMobile from '@/public/svgs/web-mobile.svg'
@@ -17,15 +17,15 @@ import logoMobileLight from '@/public/svgs/logo-mobile-light.svg'
 import blenderMobileLight from '@/public/svgs/blender-mobile-light.svg'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
+import { ServiceCardProps } from '@/helpers/types'
 
-interface ServiceCardMobileProps {
-  title: string
-  index: 0 | 1 | 2 | 3 | 4 | 5
-  className?: string
-  onClick?: () => void
-}
-
-const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className, onClick }) => {
+const ServiceCardMobile: FC<ServiceCardProps> = ({
+  title,
+  illustrationDescription,
+  index,
+  className,
+  onClick,
+}) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
 
@@ -93,8 +93,8 @@ const ServiceCardMobile: FC<ServiceCardMobileProps> = ({ title, index, className
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
             className={imageClasses[index]}
-            alt={title}
-            quality={75}
+            alt={`Illustration for service of ${title}`}
+            aria-label={illustrationDescription}
             loading='lazy'
           />
         </div>

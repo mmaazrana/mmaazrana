@@ -3,6 +3,9 @@ import React from 'react'
 import { IconType } from 'react-icons'
 import { StaticImageData } from 'next/image'
 
+export type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+export type Params = Promise<{ project: string }>
+
 export interface NavButtonT {
   text: string
   href: string
@@ -25,11 +28,13 @@ export interface BottomNavButtonT {
 export interface BottomNavCategoryT {
   text: string
   key: WorkCategories | ProjectCategories
+  Component: React.ComponentType<any>
 }
 
 export interface BottomNavProjectCategoryT {
   text: string
   key: ProjectCategories
+  Component: React.ComponentType<any>
 }
 
 export interface FooterButtonT {
@@ -50,15 +55,25 @@ export interface ProjectT {
   altImage?: StaticImageData[]
 }
 
+export type IndexT = 0 | 1 | 2 | 3 | 4 | 5
+
 export interface ServiceT {
   title: string
   index: IndexT
   className: string
   baseSrc: string
   placeholderSrc: string
+  illustrationDescription: string
 }
 
-export type IndexT = 0 | 1 | 2 | 3 | 4 | 5
+
+export interface ServiceCardProps {
+  title: string
+  illustrationDescription: string
+  index: IndexT
+  className?: string
+  onClick?: () => void
+}
 
 export interface TestimonialsT {
   [key: string]: TestimonialT

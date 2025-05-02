@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react'
 import * as m from 'motion/react-m'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 
 interface TabContentProps {
   initialTranslateX: number

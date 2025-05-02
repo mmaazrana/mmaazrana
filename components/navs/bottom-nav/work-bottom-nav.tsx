@@ -4,7 +4,6 @@ import React, { FC, useCallback, useEffect } from 'react'
 import { stagger, useAnimate } from 'motion/react'
 import { workBottomNavCategories, footerButtons } from '@/helpers/constants'
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context'
-import { useWorkContext } from '@/app/context/work-provider'
 import FooterCTA from './footer-cta'
 import LogoSection from './logo-section'
 import FooterSection from './footer-section'
@@ -12,12 +11,13 @@ import DesktopCategoryNav from './desktop-category-nav'
 import MobileCategoryNav from './mobile-category-nav'
 
 // Types
-interface WorkBottomNavProps {}
+interface WorkBottomNavProps {
+  activeTab: string
+}
 
 // Main Component
-const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
+const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ activeTab }) => {
   const { isEndOfPage, isInView } = useBottomNav()
-  const { handleTabChange, activeTab } = useWorkContext()
   const [scope, animate] = useAnimate()
 
   const currentIndex = workBottomNavCategories.findIndex(category => category.key === activeTab)
@@ -68,15 +68,15 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
           <LogoSection isEndOfPage={isEndOfPage} />
           <FooterSection footerButtons={footerButtons} isEndOfPage={isEndOfPage} />
           <DesktopCategoryNav
+            pathName='work'
             categories={workBottomNavCategories}
             activeTab={SelectedComponent}
-            handleTabChange={handleTabChange}
           />
           <MobileCategoryNav
+            pathName='work'
             currentIndex={currentIndex}
             categories={workBottomNavCategories}
             activeTab={activeTab}
-            handleTabChange={handleTabChange}
             isEndOfPage={isEndOfPage}
           />
         </div>
@@ -89,10 +89,10 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = () => {
   )
 }
 
-const WorkBottomNav: FC<WorkBottomNavProps> = () => {
+const WorkBottomNav: FC<WorkBottomNavProps> = ({ activeTab }) => {
   return (
     <BottomNavProvider>
-      <WorkBottomNavContent />
+      <WorkBottomNavContent activeTab={activeTab} />
     </BottomNavProvider>
   )
 }

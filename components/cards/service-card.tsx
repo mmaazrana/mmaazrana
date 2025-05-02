@@ -1,6 +1,6 @@
 'use client'
 import React, { FC, useEffect, useState } from 'react'
-import Typography from '@/components/Typography'
+import Typography from '@/components/typography'
 import {} from '@/helpers/enums'
 import Image from 'next/image'
 import { useTheme } from 'next-themes' // Static svg imports
@@ -16,15 +16,15 @@ import productDesktopLight from '../../public/svgs/product-desktop-light.svg'
 import videoDesktopLight from '../../public/svgs/video-desktop-light.svg'
 import logoDesktopLight from '../../public/svgs/logo-desktop-light.svg'
 import blenderDesktopLight from '../../public/svgs/blender-desktop-light.svg'
+import { ServiceCardProps } from '@/helpers/types'
 
-interface ServiceCardProps {
-  title: string
-  index: 0 | 1 | 2 | 3 | 4 | 5
-  className?: string
-  onClick?: () => void
-}
-
-const ServiceCard: FC<ServiceCardProps> = ({ title, index, className, onClick }) => {
+const ServiceCard: FC<ServiceCardProps> = ({
+  title,
+  illustrationDescription,
+  index,
+  className,
+  onClick,
+}) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
 
@@ -110,8 +110,8 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, index, className, onClick })
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
             className={imageClasses[index]}
-            alt={title}
-            quality={75}
+            alt={`Illustration for service of ${title}`}
+            aria-label={illustrationDescription}
             loading='lazy'
           />
         </div>
