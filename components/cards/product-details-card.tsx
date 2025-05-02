@@ -1,5 +1,5 @@
 import React, { useId } from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'

@@ -1,4 +1,4 @@
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import * as m from 'motion/react-m'
 import { BottomNavCategoryT } from '@/helpers/types'

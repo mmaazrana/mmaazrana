@@ -1,5 +1,5 @@
 import {} from '@/helpers/enums'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import NumberedCard from '../cards/numbered-card'
 import { getProjectData } from '@/helpers/parsers'

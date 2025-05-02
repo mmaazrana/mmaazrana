@@ -1,6 +1,6 @@
 'use client'
 import React, { FC, useEffect, useState } from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import { useTheme } from 'next-themes'
 import webDesktop from '../../../public/svgs/web-desktop.svg'

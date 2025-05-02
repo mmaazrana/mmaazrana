@@ -1,7 +1,7 @@
 'use client'
 
 import React, { FC, useRef } from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { TestimonialCardProps } from '@/components/cards/testimonial-card'
 import { useInView } from 'motion/react'
 import * as m from 'motion/react-m'

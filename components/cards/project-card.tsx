@@ -3,7 +3,7 @@
 import React, { FC, useRef, useEffect } from 'react'
 
 import Image, { StaticImageData } from 'next/image'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 
 import Link from 'next/link'
 import { getPageSlug } from '@/helpers/parsers'

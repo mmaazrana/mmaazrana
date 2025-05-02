@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import * as m from 'motion/react-m'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import ContactButton from './contact-button'
 import SocialLinks from './social-links'
 

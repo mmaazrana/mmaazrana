@@ -1,5 +1,5 @@
 import React from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import { FlaskRound } from 'lucide-react'
 import TechnologyIcon from './technology-icon'

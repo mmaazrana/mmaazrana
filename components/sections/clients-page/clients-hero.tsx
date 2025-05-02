@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { testimonials } from '@/helpers/constants'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import AutoScrollTestimonials from '@/components/clients/auto-scroll-testimonials'
 

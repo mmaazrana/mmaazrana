@@ -1,5 +1,5 @@
 'use client'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import React, { FC, useEffect, useState } from 'react'
 import * as m from 'motion/react-m'
 import {} from '@/helpers/enums'

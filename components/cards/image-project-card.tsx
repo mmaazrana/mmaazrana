@@ -3,7 +3,7 @@
 // app/components/projects/BlenderProjects.tsx
 import React, { useState, useRef } from 'react'
 import Image, { StaticImageData } from 'next/image'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useMediaQuery } from 'react-responsive'

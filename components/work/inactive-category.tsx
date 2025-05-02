@@ -1,7 +1,7 @@
 import { BottomNavCategoryT } from '@/helpers/types'
 import * as m from 'motion/react-m'
 import {} from '@/helpers/enums'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import Link from 'next/link'
 
 interface InActiveCategoryProps {

@@ -2,7 +2,7 @@
 
 import React, { FC, useRef, useState } from 'react'
 import AboutCard from '@/components/cards/about-card'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import SectionTitle from './section-title'
 import { useAboutContext } from './about-content'
 import Medal from '@/components/icons/medal'

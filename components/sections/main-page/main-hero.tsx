@@ -1,6 +1,6 @@
 'use client'
 import React, { FC, useEffect, useRef } from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import Button from '@/components/button'
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants'
 import * as m from 'motion/react-m'

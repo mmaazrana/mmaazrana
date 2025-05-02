@@ -7,7 +7,7 @@ import {} from '@/helpers/enums'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail } from 'lucide-react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { getProjectData } from '@/helpers/parsers'
 
 export default function ProjectHero({ project }: { project: string }) {

@@ -3,7 +3,7 @@
 import React, { FC, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { stagger, useAnimate } from 'motion/react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { bottomNavButtons, footerButtons } from '@/helpers/constants'
 import FooterSection from './footer-section'
 import { BottomNavProvider, useBottomNav } from './bottom-nav-context'

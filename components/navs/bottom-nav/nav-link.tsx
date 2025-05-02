@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react'
 import Link from 'next/link'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { ColorTypes, TextTypes } from '@/helpers/enums'
 
 interface NavLinkProps {

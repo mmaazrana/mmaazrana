@@ -1,6 +1,6 @@
 'use client'
 
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { useInView } from 'motion/react'
 import { useRef } from 'react'
 import { useMediaQuery } from 'react-responsive'

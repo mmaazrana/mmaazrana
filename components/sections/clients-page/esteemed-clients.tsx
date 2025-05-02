@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { clientColorIconComponents } from '@/helpers/constants'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 
 interface EsteemedClientsProps {}

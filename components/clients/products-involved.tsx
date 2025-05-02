@@ -1,5 +1,5 @@
 import React from 'react'
-import Typography from '@/components/typography'
+import Typography from '@/components/Typography'
 import { Target } from 'lucide-react'
 import { ClientProductT } from '@/helpers/types'
 import ProductDetailsCard from '../cards/product-details-card'
