@@ -8,6 +8,7 @@ import { ProjectAnalysisT } from '@/helpers/project-analytics'
 import { getPageSlug } from '@/helpers/parsers'
 import { Params, SearchParams } from '@/helpers/types'
 import { ProjectCategories } from '@/helpers/enums'
+import type { Metadata } from 'next' // Import Metadata type
 // --- Start of added code ---
 
 // Combine all project arrays that have dedicated pages
@@ -21,7 +22,10 @@ async function getProjectData(slug: string): Promise<ProjectAnalysisT | undefine
   return allProjects.find(project => getPageSlug(project.title) === slug)
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+// Define the base URL for metadata
+const metadataBase = new URL('https://maazrana.com') // Replace with your actual domain
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { project } = await params
   const projectData = await getProjectData(project)
 
@@ -53,8 +57,6 @@ export async function generateMetadata({ params }: { params: Params }) {
   // Prepare Open Graph and Twitter image data if available
   // const ogImageUrl = project.imageUrl || '/default-og-image.png'; // Define a default image
 
-  const URL = 'https://maazrana.com' // Replace with your actual domain
-
   // --- Add Article Schema ---
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -74,14 +76,18 @@ export async function generateMetadata({ params }: { params: Params }) {
       '@type': 'Person', // Or Organization if applicable
       name: 'Maaz Rana',
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `${URL}/work/${project}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${metadataBase.toString()}work/${project}` },
   }
   // --- End Article Schema ---
 
   return {
+    // Add metadataBase
+    metadataBase,
     title,
     description,
     keywords,
+    // Define canonical URL for all sub-pages
+    alternates: { canonical: `/work/${project}` },
     openGraph: {
       title: `${title} | Maaz Rana`,
       description,

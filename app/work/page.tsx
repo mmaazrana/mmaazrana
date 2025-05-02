@@ -7,7 +7,12 @@ import MyWorkSection from '@/components/sections/work-page/my-work-section'
 import { SearchParams } from '@/helpers/types'
 import { WorkCategories } from '@/helpers/enums'
 
+// Define the base URL for metadata
+const metadataBase = new URL('https://maazrana.com') // Replace with your actual domain
+
 export const metadata: Metadata = {
+  // Add metadataBase
+  metadataBase,
   title: 'Portfolio Work',
   description:
     'Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana.',
@@ -22,6 +27,8 @@ export const metadata: Metadata = {
     'Graphic Design',
     'Maaz Rana',
   ],
+  // Define canonical URL for the base work page
+  alternates: { canonical: '/work' },
 }
 
 export default async function Work({ searchParams }: { searchParams: SearchParams }) {

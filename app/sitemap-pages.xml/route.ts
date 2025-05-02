@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server'
 import { MetadataRoute } from 'next'
 import {
   productDesignProjects,
@@ -8,7 +9,7 @@ import { getPageSlug } from '@/helpers/parsers'
 
 const URL = 'https://maazrana.com' // Replace with your actual domain
 
-export default function sitemap(): MetadataRoute.Sitemap {
+function generatePageSitemap(): MetadataRoute.Sitemap {
   // Combine projects that have detail pages
   const allProjects = [
     ...productDesignProjects,
@@ -23,8 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [
-    {
+  // Static pages
+  const staticPages: MetadataRoute.Sitemap = [
+     {
       url: URL,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -43,12 +45,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     // Add other static pages like /about if they exist and are indexable
-    // {
-    //   url: `${URL}/about`,
-    //   lastModified: new Date(),
-    //   changeFrequency: 'yearly',
-    //   priority: 0.5,
-    // },
-    ...projectEntries,
   ]
+
+  return [...staticPages, ...projectEntries]
+}
+
+export async function GET() {
+  const sitemapData = generatePageSitemap()
+
+  const sitemapEntries = sitemapData.map(entry => `
+    <url>
+      <loc>${entry.url}</loc>
+      <lastmod>${entry.lastModified instanceof Date ? entry.lastModified.toISOString() : new Date().toISOString()}</lastmod>
+      ${entry.changeFrequency ? `<changefreq>${entry.changeFrequency}</changefreq>` : ''}
+      ${entry.priority ? `<priority>${entry.priority}</priority>` : ''}
+    </url>
+  `).join('')
+
+  const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${sitemapEntries}
+</urlset>`
+
+  return new NextResponse(xmlContent, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  })
 } 

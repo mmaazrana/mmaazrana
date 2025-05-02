@@ -1,7 +1,11 @@
 import React from 'react'
 import { projectCategories } from '@/helpers/constants'
 import TitleBar from '@/components/work/title-bar'
-import { BottomNavCategoryT } from '@/helpers/types'
+import ProjectOverview from '@/components/projects/overview'
+import ProjectKeyFeatures from '@/components/projects/key-features'
+import ProjectChallengesAndSolutions from '@/components/projects/challenges-and-solutions'
+import ProjectTechStack from '@/components/projects/tech-stack'
+import { ProjectCategories } from '@/helpers/enums'
 
 export default async function ProjectDetailsSection({
   project,
@@ -10,10 +14,6 @@ export default async function ProjectDetailsSection({
   project: string
   activeTab: string
 }) {
-  console.log(activeTab)
-  const ActiveComponent = projectCategories.find(
-    (project: BottomNavCategoryT) => project.key === activeTab,
-  )?.Component
   return (
     <>
       <section
@@ -22,7 +22,20 @@ export default async function ProjectDetailsSection({
         }
       >
         <TitleBar pathName={project} activeTab={String(activeTab)} categories={projectCategories} />
-        {ActiveComponent && <ActiveComponent project={project} />}
+        <div className={activeTab !== ProjectCategories.overview ? 'sr-only' : ' w-full'}>
+          <ProjectOverview project={project} />
+        </div>
+        <div className={activeTab !== ProjectCategories.keyFeatures ? 'sr-only' : ' w-full'}>
+          <ProjectKeyFeatures project={project} />
+        </div>
+        <div className={activeTab !== ProjectCategories.techStack ? 'sr-only' : ' w-full'}>
+          <ProjectTechStack project={project} />
+        </div>
+        <div
+          className={activeTab !== ProjectCategories.challengesAndSolutions ? 'sr-only' : ' w-full'}
+        >
+          <ProjectChallengesAndSolutions project={project} />
+        </div>
       </section>
     </>
   )
