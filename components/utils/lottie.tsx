@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useCallback } from 'react'
 import { DotLottieWorker } from '@lottiefiles/dotlottie-web'
 
 interface LottieWorkerAnimationProps {
@@ -18,49 +18,79 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const workerRef = useRef<DotLottieWorker | null>(null)
+  const isPlayingRef = useRef<boolean>(isPlaying)
 
   useEffect(() => {
+    isPlayingRef.current = isPlaying
+  }, [isPlaying])
+
+  useEffect(() => {
+    let workerInstance: DotLottieWorker | null = null
     if (canvasRef.current) {
-      // Create worker only once or if src/workerId changes
-      if (!workerRef.current) {
-        workerRef.current = new DotLottieWorker({
-          canvas: canvasRef.current,
-          src,
-          autoplay: true, // Use state for initial autoplay
-          loop: false,
-          // @ts-ignore
-          segment: [2, workerRef.current ? workerRef.current?.totalFrames - 1 : 300],
-          workerId,
-        })
-      } else {
-        // Potentially update src if needed, but handle worker recreation carefully
-        // workerRef.current.load(src); // Example, depends on library API
-      }
-
-      return () => {
-        // Clean up only when component unmounts
-        workerRef.current?.destroy()
-        workerRef.current = null // Reset ref on cleanup
-      }
+      console.log(`Effect: Creating worker for ${src}`)
+      workerInstance = new DotLottieWorker({
+        canvas: canvasRef.current,
+        src,
+        autoplay: isPlayingRef.current,
+        loop: false,
+        workerId,
+      })
+      workerRef.current = workerInstance
+    } else {
+      console.warn('Lottie Worker: Canvas ref not available on mount?')
     }
-  }, [src, workerId]) // Keep dependencies minimal for worker creation
 
-  // Effect for controlling play/pause based on isPlaying state
+    return () => {
+      console.log(`Effect Cleanup: Destroying worker for ${src}`)
+      workerRef.current?.destroy()
+      workerRef.current = null
+    }
+  }, [src, workerId])
+
   useEffect(() => {
     if (workerRef.current) {
       if (isPlaying) {
+        console.log(`Effect: Playing worker ${src}`)
         workerRef.current.play()
       } else {
+        console.log(`Effect: Pausing worker ${src}`)
         workerRef.current.pause()
       }
     }
   }, [isPlaying])
 
+  useEffect(() => {
+    const handlePageHide = () => {
+      if (workerRef.current) {
+        workerRef.current.pause()
+      }
+    }
+
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted && workerRef.current) {
+        if (isPlayingRef.current) {
+          workerRef.current.play()
+        }
+      } else if (!event.persisted) {
+        console.log(`BFCache: Page show (normal load): ${src}`)
+      }
+    }
+
+    window.addEventListener('pagehide', handlePageHide)
+    window.addEventListener('pageshow', handlePageShow)
+
+    return () => {
+      console.log(`BFCache Cleanup: Removing listeners for ${src}`)
+      window.removeEventListener('pagehide', handlePageHide)
+      window.removeEventListener('pageshow', handlePageShow)
+    }
+  }, [src])
+
   return (
     <div>
       <canvas
         ref={canvasRef}
-        className='flex w-full h-full md:max-w-full fade-in' // Adjusted width class
+        className='flex w-full h-full md:max-w-full fade-in'
         width={width}
         height={height}
       ></canvas>
