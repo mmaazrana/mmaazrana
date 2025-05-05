@@ -33,7 +33,7 @@ function generatePageSitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${URL}/work`,
+      url: `${URL}/portfolio`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

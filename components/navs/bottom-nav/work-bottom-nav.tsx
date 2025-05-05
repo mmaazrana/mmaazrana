@@ -68,12 +68,12 @@ const WorkBottomNavContent: FC<WorkBottomNavProps> = ({ activeTab }) => {
           <LogoSection isEndOfPage={isEndOfPage} />
           <FooterSection footerButtons={footerButtons} isEndOfPage={isEndOfPage} />
           <DesktopCategoryNav
-            pathName='work'
+            pathName='portfolio'
             categories={workBottomNavCategories}
             activeTab={SelectedComponent}
           />
           <MobileCategoryNav
-            pathName='work'
+            pathName='portfolio'
             currentIndex={currentIndex}
             categories={workBottomNavCategories}
             activeTab={activeTab}

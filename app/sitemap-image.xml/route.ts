@@ -91,7 +91,7 @@ export async function GET() {
       // This is a simplification; ideally, map images to their specific project pages
       let pageLoc = URL;
       if (imageUrl.includes('/images/projects/') || imageUrl.includes('/images/thumbnails/')) {
-        pageLoc = `${URL}/work` // Assume project images are on work page(s)
+        pageLoc = `${URL}/portfolio` // Assume project images are on work page(s)
       } else if (imageUrl.includes('/svgs/services/')) {
         pageLoc = `${URL}/#services` // Assume service images are on home page services section
       } else if (imageUrl.includes('/logo.svg')) {

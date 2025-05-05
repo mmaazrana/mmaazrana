@@ -43,7 +43,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
         <div className='flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
           <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-m'>
             {projectData.categories.map(category => (
-              <Link key={category} href={`/work?tab=${category}`}>
+              <Link key={category} href={`/portfolio?tab=${category}`}>
                 <Typography
                   type='lg'
                   className='px-s py-2xs whitespace-nowrap text-center bg-secondary-hover/15 outline outline-1 outline-secondary hover:bg-primary-invert/70 transition-all duration-300 rounded-full cursor-pointer'

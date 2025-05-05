@@ -17,7 +17,7 @@ export default function MyWorkSection({ activeTab }: { activeTab: string }) {
         }
       >
         <TitleBar
-          pathName={'work'}
+          pathName={'portfolio'}
           activeTab={String(activeTab)}
           categories={workBottomNavCategories}
         />

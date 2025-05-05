@@ -23,7 +23,7 @@ export async function GET() {
         return null // Skip if thumbnail URL can't be determined
       }
       const videoUrl = `${CDN_URL}/${project.fileName}`
-      const pageUrl = `${URL}/work` // Assuming videos are displayed on the main work page or a generic gallery
+      const pageUrl = `${URL}/portfolio` // Assuming videos are displayed on the main work page or a generic gallery
 
       return `
         <url>

@@ -21,6 +21,16 @@ export default function ProjectHero({ project }: { project: string }) {
     '-rotate-y-20 lg:-rotate-y-22 xl:-rotate-y-24',
   ]
 
+  const extendedRotationClasses = [
+    'rotate-y-17 lg:rotate-y-18 xl:rotate-y-20',
+    'rotate-y-8 sm:rotate-y-11 lg:rotate-y-12 xl:rotate-y-14',
+    'rotate-y-4 lg:rotate-y-5 xl:rotate-y-6',
+    'rotate-y-0',
+    '-rotate-y-4 lg:-rotate-y-5 xl:-rotate-y-6',
+    '-rotate-y-8 sm:-rotate-y-11 lg:-rotate-y-12 xl:-rotate-y-14',
+    '-rotate-y-17 lg:-rotate-y-18 xl:-rotate-y-20',
+  ]
+
   const scaleClasses = [
     'mr-[1.8%] lg:mr-[2.6%] xl:mr-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
     'scale-108 lg:scale-109 xl:scale-110 hover:-translate-y-10',
@@ -29,11 +39,21 @@ export default function ProjectHero({ project }: { project: string }) {
     'ml-[1.8%] lg:ml-[2.6%] xl:ml-[3.4%] scale-130 lg:scale-140 xl:scale-150 hover:-translate-y-12',
   ]
 
+  const extendedScaleClasses = [
+    'mr-[2%] lg:mr-[3.15%] xl:mr-[4.1%] scale-127 lg:scale-141 xl:scale-156 hover:-translate-y-12',
+    'mr-[2.7%] sm:mr-[1%] lg:mr-[1.7%] xl:mr-[2.25%] scale-125 sm:scale-114 lg:scale-122 xl:scale-130 hover:-translate-y-12',
+    'mr-[0.4%] sm:mr-[0.6%] lg:mr-[1.2%] xl:mr-[1.6%] scale-105 sm:scale-107 lg:scale-112 xl:scale-117 hover:-translate-y-10',
+    'scale-100 sm:scale-105 lg:scale-110 xl:scale-114 hover:-translate-y-8',
+    'ml-[0.4%] sm:ml-[0.6%] lg:ml-[1.2%] xl:ml-[1.6%] scale-105 sm:scale-107 lg:scale-112 xl:scale-117 hover:-translate-y-10',
+    'ml-[2.7%] sm:ml-[1%] lg:ml-[1.7%] xl:ml-[2.25%] scale-125 sm:scale-114 lg:scale-122 xl:scale-130 hover:-translate-y-12',
+    'ml-[2%] lg:ml-[3.15%] xl:ml-[4.1%] scale-127 lg:scale-141 xl:scale-156 hover:-translate-y-12',
+  ]
+
   return (
     <div className='flex flex-col justify-start items-center w-full'>
       {/* Back Navigation
           <div className="flex flex-row justify-center items-center w-full">
-            <Link href="/work" target="_blank" rel="noopener noreferrer" className="w-fit">
+            <Link href="/portfolio" target="_blank" rel="noopener noreferrer" className="w-fit">
               <Button
                 className="w-fit"
                 type='secondary'
@@ -47,7 +67,7 @@ export default function ProjectHero({ project }: { project: string }) {
               {projectData.categories.map((category, index) => (
                 <Link
                   key={index}
-                  href="/work"
+                  href="/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-fit"
@@ -65,23 +85,25 @@ export default function ProjectHero({ project }: { project: string }) {
           </div> */}
 
       {/* Hero Images - Desktop Layout */}
-      <div className='relative w-full h-28 xs:h-32 sm:h-fit hidden sm:flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28'>
-        {Array.from({ length: 5 }).map((_, index) => {
+      <div
+        className={`relative w-full h-fit hidden sm:flex flex-row justify-center items-center gap-1 mb-11 xs:mb-12.5 sm:mb-14 md:mb-15.5 lg:mb-17 xl:mb-18.5 2xl:mb-20 xs:mt-10 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24 2xl:mt-28`}
+      >
+        {Array.from({ length: projectData.isMobile ? 7 : 5 }).map((_, index) => {
           const screenshotIndex = index % Math.max(1, projectData.images.screenshots.length)
           const screenshot = projectData.images.screenshots[screenshotIndex]
 
           return (
             <div
               key={index}
-              className={`w-full h-full flex aspect-[3/4] perspective-[100px] sm:perspective-[200px] md:perspective-[300px] ${scaleClasses[index]} transition-all duration-300`}
+              className={`w-full h-full flex perspective-[100px] sm:perspective-[200px] md:perspective-[300px] ${projectData.isMobile ? extendedScaleClasses[index] : scaleClasses[index]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
             >
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${rotationClasses[index]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${projectData.isMobile ? extendedRotationClasses[index] : rotationClasses[index]} `}
                 loading='lazy'
                 placeholder='blur'
-                sizes='25vw'
+                sizes={projectData.isMobile ? '17vw' : '25vw'}
               />
             </div>
           )
@@ -90,22 +112,22 @@ export default function ProjectHero({ project }: { project: string }) {
 
       {/* Hero Images - Mobile Layout */}
       <div className='relative w-full h-48 xs:h-64 flex sm:hidden flex-row justify-center items-center gap-0 mb-11 xs:mb-12.5 sm:mb-14 xs:mt-10 sm:mt-14'>
-        {Array.from({ length: 3 }).map((_, index) => {
+        {Array.from({ length: projectData.isMobile ? 5 : 3 }).map((_, index) => {
           const screenshotIndex = index % Math.max(2, projectData.images.screenshots.length)
           const screenshot = projectData.images.screenshots[screenshotIndex]
 
           return (
             <div
               key={index}
-              className={`w-full h-full flex aspect-[3/4] perspective-[70px] ${scaleClasses[index + 1]} transition-all duration-300`}
+              className={`w-full h-full flex perspective-[70px] ${projectData.isMobile ? extendedScaleClasses[index + 1] : scaleClasses[index + 1]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
             >
               <Image
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
-                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${rotationClasses[index + 1]} `}
+                className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${projectData.isMobile ? extendedRotationClasses[index + 1] : rotationClasses[index + 1]} `}
                 loading='lazy'
                 placeholder='blur'
-                sizes='35vw'
+                sizes={projectData.isMobile ? '25vw' : '35vw'}
               />
             </div>
           )

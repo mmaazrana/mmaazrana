@@ -76,7 +76,7 @@ export default function Home() {
             <Typography tag='h2' type='5xl' weight='extra-bold'>
               Featured Work
             </Typography>
-            <Link href='/work' aria-label='Explore Work'>
+            <Link href='/portfolio' aria-label='Explore Work'>
               <Button
                 type='secondary'
                 text='Explore'

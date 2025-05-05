@@ -39,7 +39,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function Work({ searchParams }: { searchParams: SearchParams }) {
+export default async function Portfolio({ searchParams }: { searchParams: SearchParams }) {
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : WorkCategories.productDesign
 
