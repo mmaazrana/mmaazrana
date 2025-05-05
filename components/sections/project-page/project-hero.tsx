@@ -95,7 +95,7 @@ export default function ProjectHero({ project }: { project: string }) {
           return (
             <div
               key={index}
-              className={`w-full h-full flex perspective-[100px] sm:perspective-[200px] md:perspective-[300px] ${projectData.isMobile ? extendedScaleClasses[index] : scaleClasses[index]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
+              className={`relative w-full h-full flex perspective-[100px] sm:perspective-[200px] md:perspective-[300px] ${projectData.isMobile ? extendedScaleClasses[index] : scaleClasses[index]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
             >
               <Image
                 src={screenshot}
@@ -119,7 +119,7 @@ export default function ProjectHero({ project }: { project: string }) {
           return (
             <div
               key={index}
-              className={`w-full h-full flex perspective-[70px] ${projectData.isMobile ? extendedScaleClasses[index + 1] : scaleClasses[index + 1]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
+              className={`relative w-full h-full flex perspective-[70px] ${projectData.isMobile ? extendedScaleClasses[index + 1] : scaleClasses[index + 1]} transition-all duration-300 ${projectData.isMobile ? 'aspect-[9/21]' : 'aspect-[3/4]'}`}
             >
               <Image
                 src={screenshot}

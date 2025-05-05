@@ -78,13 +78,13 @@ const MainHero: FC<MainHeroProps> = ({}) => {
     <div
       ref={sectionRef}
       className={
-        'w-full flex flex-col-reverse md:flex-row justify-center md:items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
+        'relative w-full flex flex-col-reverse md:flex-row justify-center items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
       }
     >
-      <div className='flex basis-full md:basis-[55%] flex-col gap-2 sm:gap-3 md:gap-4'>
+      <div className='flex basis-full h-10xl min-h-10xl md:basis-[55%] flex-col justify-center gap-2 sm:gap-3 md:gap-4'>
         <AnimatePresence mode='wait' initial={false}>
           <m.div
-            layout
+            layout='position'
             className='!transition-none'
             key={'heading' + index}
             initial={{ opacity: 0, transform: 'translateY(20px)' }}
@@ -99,7 +99,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
         </AnimatePresence>
         <AnimatePresence mode='wait' initial={false}>
           <m.div
-            layout
+            layout='position'
             className='!transition-none'
             key={'description' + index}
             initial={{ opacity: 0 }}
@@ -117,7 +117,10 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             </Typography>
           </m.div>
         </AnimatePresence>
-        <div className='flex gap-2 items-center justify-start flex-wrap'>
+        <m.div
+          layout='position'
+          className='flex transition-all duration-300 gap-2 items-center justify-start flex-wrap'
+        >
           <div className='pt-3 pb-3 pr-3'>
             <Link
               href='https://www.linkedin.com/in/mmaazrana/'
@@ -137,7 +140,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
           >
             <Button type='tertiary' text='awaismaaz@gmail.com' />
           </Link>
-        </div>
+        </m.div>
       </div>
       <AnimatePresence mode='wait' initial={false}>
         <div
