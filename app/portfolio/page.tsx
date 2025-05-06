@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : WorkCategories.productDesign
 
-  return {
+  const metadata: Metadata = {
     metadataBase,
     title: tab ? `Portfolio Work - ${activeTab}` : 'Portfolio Work - Design & Development',
     description:
@@ -36,8 +36,14 @@ export async function generateMetadata({
       'Graphic Design',
       'Maaz Rana',
     ],
-    alternates: { canonical: './' },
   }
+
+  // Only set canonical URL if a tab parameter is present
+  if (tab) {
+    metadata.alternates = { canonical: `./` }
+  }
+
+  return metadata
 }
 
 export default async function Portfolio({ searchParams }: { searchParams: SearchParams }) {

@@ -57,7 +57,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
         {alt && altImage && (
           <Image
             priority
-            className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[10%]'}`}
+            className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-lg scale-[0.55] translate-y-[100%] translate-x-[45%] origin-top-left transition-transform duration-300 ${isInView && '!-translate-y-[15%]'}`}
             sizes='90vw'
             src={altImage}
             alt={`${title} Alternate View`}

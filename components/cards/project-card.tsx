@@ -117,7 +117,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
         {alt && altImage && (
           <Image
             priority
-            className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[10%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-500`}
+            className={`pointer-events-none border-none overflow-hidden shadow-2xl border-2 w-full rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[15%] sm:group-hover:-translate-y-[18%] origin-top-left transition-transform duration-500`}
             sizes='(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'
             src={altImage}
             alt={`${title} Alternate View`}
