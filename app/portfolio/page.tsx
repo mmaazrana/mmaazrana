@@ -36,6 +36,7 @@ export async function generateMetadata({
       'Graphic Design',
       'Maaz Rana',
     ],
+    alternates: { canonical: './' },
   }
 }
 
