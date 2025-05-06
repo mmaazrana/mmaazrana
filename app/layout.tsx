@@ -21,6 +21,9 @@ const personSchema = {
   sameAs: [
     'https://www.linkedin.com/in/mmaazrana/',
     'https://github.com/mmaazrana', // Add GitHub if applicable
+    'https://dribbble.com/mmaazrana',
+    'https://www.behance.net/maazrana3',
+    'https://www.twitter.com/mmaazrana/',
     // Add other relevant profiles
   ],
   // Briefly describe the person's main roles/professions
@@ -56,13 +59,21 @@ export const metadata: Metadata = {
   keywords: [
     'Product Designer',
     'UI/UX Designer',
+    'UI Designer',
+    'UX Developer',
+    'Web Designer',
     'Web Developer',
     'Frontend Developer',
     'React Developer',
     'Next.js Developer',
+    'Node.js Developer',
     'Mobile App Developer',
     'Flutter Developer',
+    'Dart Developer',
     '3D Artist',
+    'Video Editor',
+    'Graphics Designer',
+    'Logo Designer',
     'Maaz Rana',
     'Portfolio',
   ],

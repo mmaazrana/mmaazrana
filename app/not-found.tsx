@@ -1,6 +1,13 @@
-'use client'
 import React from 'react'
 import * as m from 'motion/react-m'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Page Not Found - 404 Error',
+  description:
+    'The page you are looking for could not be found. Return to the homepage or contact Maaz Rana for assistance.',
+  robots: { index: false, follow: true }, // Don't index the 404 page but allow following links
+}
 
 function Services() {
   return (
