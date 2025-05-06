@@ -7,14 +7,11 @@ interface WorkProps {}
 
 const Work: FC<WorkProps> = () => {
   return (
-    <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+    <div className='w-full flex flex-col gap-2xl'>
       {/* Desktop Layout */}
       {[featuredProjects.slice(0, 2), featuredProjects.slice(2, 4)].map(
         (projectGroup, groupIndex) => (
-          <div
-            key={groupIndex}
-            className='hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'
-          >
+          <div key={groupIndex} className='hidden sm:flex flex-row gap-2xl'>
             {projectGroup.map((project, i) => (
               <ProjectCard
                 key={i}
@@ -29,7 +26,7 @@ const Work: FC<WorkProps> = () => {
         ),
       )}
       {/* Mobile Layout */}
-      <div className='flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+      <div className='flex sm:hidden flex-col gap-2xl'>
         {featuredProjects.map((project, i) => (
           <ProjectCardMobile
             key={i}

@@ -19,11 +19,8 @@ const FooterSection: FC<FooterSectionProps> = ({ isEndOfPage, footerButtons }) =
       {footerButtons.map((section, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, transform: 'translateY(150px)' }}
-          animate={{
-            opacity: isEndOfPage ? 1 : 0,
-            transform: `translateY(${isEndOfPage ? 0 : 150}px)`,
-          }}
+          initial={{ opacity: 0, y: 150 }}
+          animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 150 }}
           transition={{ duration: isEndOfPage ? 0.25 : 0, delay: isEndOfPage ? 0.1 : 0 }}
           className={
             'transition-colors grow flex flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-s'

@@ -56,6 +56,7 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
               className='absolute left-0 about:block hidden -translate-x-1/3 px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap'
             >
               <TabContent
+                type='base'
                 initialTranslateX={-200}
                 exitTranslateX={-200}
                 delay={0.2}
@@ -76,6 +77,7 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
                 className='self-center align-center origin-center transform-origin-center px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap z-100 overflow-hidden'
               >
                 <TabContent
+                  type='xl'
                   initialTranslateX={-40}
                   exitTranslateX={-40}
                   delay={0.1}
@@ -95,6 +97,7 @@ const MobileCategoryNav: FC<MobileCategoryNavProps> = ({
               className='absolute about:block hidden right-0 translate-x-1/3 px-6 xs:px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-18 py-1 xs:py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3.5 2xl:py-4 whitespace-nowrap'
             >
               <TabContent
+                type='base'
                 initialTranslateX={250}
                 exitTranslateX={250}
                 delay={0.2}

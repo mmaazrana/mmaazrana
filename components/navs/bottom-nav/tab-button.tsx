@@ -19,11 +19,8 @@ const TabButton: FC<TabButtonProps> = ({ pathName, tab, ariaLabel, isEndOfPage, 
     scroll={false}
   >
     <m.div
-      initial={{ opacity: 0, transform: 'translateY(100px)' }}
-      animate={{
-        opacity: isEndOfPage ? 0 : 1,
-        transform: `translateY(${isEndOfPage ? 100 : 0}px)`,
-      }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: isEndOfPage ? 0 : 1, y: isEndOfPage ? 100 : 0 }}
       transition={{ duration: 0.25, delay }}
       className='h-10 sm:h-12 w-10 sm:w-12 aspect-square flex justify-center items-center rounded-full bg-secondary/30 backdrop-blur-sm shadow-xl'
     >

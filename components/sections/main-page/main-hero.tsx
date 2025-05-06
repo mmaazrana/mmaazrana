@@ -87,9 +87,9 @@ const MainHero: FC<MainHeroProps> = ({}) => {
             layout='position'
             className='!transition-none'
             key={'heading' + index}
-            initial={{ opacity: 0, transform: 'translateY(20px)' }}
-            animate={{ opacity: 1, transform: 'translateY(0px)' }}
-            exit={{ opacity: 0, transform: 'translateY(-20px)' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35 }}
           >
             <Typography tag='h1' type='9xl' weight='bold'>

@@ -18,10 +18,7 @@ const SocialLink: FC<SocialLinkProps> = ({ icon, text, href, index }) => {
 
   return (
     <motion.div
-      animate={{
-        opacity: isEndOfPage ? 1 : 0,
-        transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-      }}
+      animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
       transition={{
         duration: isEndOfPage ? 0.25 : 0.15,
         delay: isEndOfPage ? 0.25 + index * 0.05 : 0,

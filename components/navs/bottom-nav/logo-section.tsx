@@ -18,11 +18,8 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
     >
       <Logo />
       <m.div
-        initial={{ opacity: 0, transform: 'translateY(100px)' }}
-        animate={{
-          opacity: isEndOfPage ? 1 : 0,
-          transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-        }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
         transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
         className='transition-none flex w-full min-w-full'
       >

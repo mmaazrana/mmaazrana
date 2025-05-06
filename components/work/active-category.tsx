@@ -12,7 +12,7 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
   return (
     <div
       className={
-        'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-0 about:px-6 sm:px-7 md:px-8 lg:px-9 xl:px-10'
+        'outline-0 border-0 flex flex-row justify-center items-center w-full min-w-full px-0 about:px-xl'
       }
     >
       <div
@@ -35,7 +35,7 @@ export default function ActiveCategory({ currentCategory }: ActiveCategoryProps)
             }}
             key={currentCategory.key}
           >
-            <Typography tag='h2' type='4xl' weight='extra-bold'>
+            <Typography tag='h2' type='5xl' weight='extra-bold'>
               {currentCategory.text}
             </Typography>
           </m.div>

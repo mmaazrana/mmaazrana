@@ -93,19 +93,19 @@ const ProjectCard: FC<ProjectCardProps> = ({ title, description, image, alt, alt
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
-        className={`drop-shadow-product cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 p-8 sm:p-9 md:p-10 lg:p-11 xl:p-12 ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-1/3' : 'flex-1 md:basis-3/5 lg:basis-2/3 '} transition-all duration-300 scroll-smooth hover:scroll-auto hover:overflow-y-scroll select-none`}
+        className={`drop-shadow-product cursor-pointer group work overflow-hidden scroll-smooth no-scrollbar h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-xl p-3xl ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-1/3' : 'flex-1 md:basis-3/5 lg:basis-2/3 '} transition-all duration-300 scroll-smooth hover:scroll-auto hover:overflow-y-scroll select-none`}
       >
-        <div className='flex flex-col gap-1 sm:gap-2 md:gap-2 lg:gap-3 xl:gap-3 sticky top-0'>
+        <div className='flex flex-col gap-2xs sticky top-0'>
           <Typography tag='h3' type='4xl' weight='bold'>
             {title}
           </Typography>
-          <Typography type='xl' weight='light' leading='prose'>
+          <Typography type='lg' weight='light' leading='prose' className='opacity-75'>
             {description}
           </Typography>
         </div>
         <Image
           priority
-          className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-2xl group-hover:scale-[0.55]` : `border-[1.3px] rounded-md overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms]`}
+          className={`pointer-events-none border-none overflow-hidden shadow-2xl ${alt ? `border-2 w-full rounded-md group-hover:scale-[0.55]` : `border-[1.3px] rounded-sm overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms]`}
           sizes={
             alt ?
               '(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'

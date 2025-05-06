@@ -253,10 +253,10 @@
   --work-gradient: linear-gradient(90deg, #000714 0%, transparent 10%, transparent 90%, #000714);
   --work-nav-gradient: linear-gradient(
     90deg,
-    #000714 10%,
-    transparent 30%,
-    transparent 70%,
-    #000714 90%
+    #000714 5%,
+    transparent 25%,
+    transparent 75%,
+    #000714 95%
   );
 }
 

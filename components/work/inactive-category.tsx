@@ -21,11 +21,9 @@ export default function InActiveCategory({ pathName, category, position }: InAct
     >
       <m.button
         className={`
-        hidden about:block absolute cursor-pointer 
+        hidden about:block absolute cursor-pointer top-1/2 -translate-y-1/2
         ${isLeft ? 'left-0 -translate-x-3/5' : 'right-0 translate-x-3/5'} 
-        px-4 xs:px-5 sm:px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 
-        py-2 xs:py-3 sm:py-4 md:py-5 lg:py-6 xl:py-7 2xl:py-8 
-        bg-primary-accent whitespace-nowrap z-[4]
+        bg-primary-accent whitespace-nowrap z-[4] px-xl 
       `}
       >
         <m.div

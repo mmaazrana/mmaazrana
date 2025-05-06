@@ -3,9 +3,11 @@
 import React, { FC } from 'react'
 import * as m from 'motion/react-m'
 import Typography from '@/components/Typography'
+import { TextTypes } from '@/helpers/enums'
 
 interface TabContentProps {
   initialTranslateX: number
+  type: TextTypes
   exitTranslateX: number
   delay: number
   text: string
@@ -16,6 +18,7 @@ interface TabContentProps {
 const TabContent: FC<TabContentProps> = ({
   initialTranslateX,
   exitTranslateX,
+  type,
   delay,
   text,
   textOpacity = '',
@@ -32,7 +35,7 @@ const TabContent: FC<TabContentProps> = ({
     }}
     key={categoryKey}
   >
-    <Typography type='base' color='primary' className={textOpacity}>
+    <Typography type={type} color='primary' className={textOpacity}>
       {text}
     </Typography>
   </m.div>

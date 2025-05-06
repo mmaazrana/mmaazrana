@@ -17,11 +17,8 @@ const FooterCTA: FC<FooterCTAProps> = ({ isEndOfPage }) => {
         {isEndOfPage && (
           <m.div
             layout
-            initial={{ opacity: 0, transform: 'translateY(100px)' }}
-            animate={{
-              opacity: isEndOfPage ? 1 : 0,
-              transform: `translateY(${isEndOfPage ? 0 : 100}px)`,
-            }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
             transition={{ duration: 0.3, delay: isEndOfPage ? 0.4 : 0.25 }}
             className='transition-none flex sm:w-full sm:min-w-full'
           >
@@ -36,11 +33,8 @@ const FooterCTA: FC<FooterCTAProps> = ({ isEndOfPage }) => {
           </m.div>
         )}
         <m.div
-          initial={{ opacity: 0, transform: 'translateX(50px)' }}
-          animate={{
-            opacity: isEndOfPage ? 1 : 0,
-            transform: `translateX(${isEndOfPage ? 0 : 50}px)`,
-          }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 50 }}
           transition={{ duration: 0.25, delay: isEndOfPage ? 0.35 : 0.25 }}
           className='transition-none'
         >

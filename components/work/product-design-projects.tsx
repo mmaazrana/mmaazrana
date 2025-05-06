@@ -8,15 +8,12 @@ interface ProductDesignProjectsProps {}
 
 export default function ProductDesignProjects({}: ProductDesignProjectsProps) {
   return (
-    <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
-      <div className='w-full flex flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+    <div className='w-full flex flex-col gap-2xl'>
+      <div className='w-full flex flex-col gap-2xl '>
         {/* Desktop Layout */}
         {Array.from({ length: Math.ceil(productDesignProjects.length / 2) }).map(
           (_, groupIndex) => (
-            <div
-              key={groupIndex}
-              className='hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 '
-            >
+            <div key={groupIndex} className='hidden sm:flex flex-row gap-2xl '>
               {productDesignProjects.slice(groupIndex * 2, groupIndex * 2 + 2).map((project, i) => (
                 <ProjectCard
                   key={project.title}
@@ -32,7 +29,7 @@ export default function ProductDesignProjects({}: ProductDesignProjectsProps) {
         )}
 
         {/* Mobile Layout */}
-        <div className='flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+        <div className='flex sm:hidden flex-col gap-2xl'>
           {productDesignProjects.map((project, i) => (
             <ProjectCardMobile
               key={i}
