@@ -38,11 +38,6 @@ export async function generateMetadata({
     ],
   }
 
-  // Only set canonical URL if a tab parameter is present
-  if (tab) {
-    metadata.alternates = { canonical: `./` }
-  }
-
   return metadata
 }
 
