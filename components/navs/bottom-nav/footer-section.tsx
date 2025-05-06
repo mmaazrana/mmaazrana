@@ -26,10 +26,10 @@ const FooterSection: FC<FooterSectionProps> = ({ isEndOfPage, footerButtons }) =
           }}
           transition={{ duration: isEndOfPage ? 0.25 : 0, delay: isEndOfPage ? 0.1 : 0 }}
           className={
-            'transition-colors grow flex flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-1 md:gap-2 xl:gap-3'
+            'transition-colors grow flex flex-auto items-stretch w-full flex-col mt-6 lg:my-8 gap-s'
           }
         >
-          <Typography type='2xl' weight='semi-bold' className='mb-4 whitespace-nowrap'>
+          <Typography type='2xl' weight='semi-bold' className='mb-3xs whitespace-nowrap'>
             {section[0].text}
           </Typography>
           {section.slice(1).map((button, index) => (
