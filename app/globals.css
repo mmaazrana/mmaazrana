@@ -110,6 +110,7 @@
   --cube-left: #d3ddf0;
   --cube-right: #c7d4ec;
   --white-dynamic: #fff;
+  --gray-dynamic: #4b4b4b;
   --black-dynamic: #000;
   --top-right-desktop:
     linear-gradient(-45deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
@@ -213,6 +214,7 @@
   --cube-left: #30497b;
   --cube-right: #233559;
   --white-dynamic: #000;
+  --gray-dynamic: #d6d6d6;
   --black-dynamic: #fff;
   --top-right-desktop:
     linear-gradient(-45deg, #0c1427, #070d1d, 60%, #000714) padding-box,
@@ -329,6 +331,7 @@
   --color-frosted-gradient-hover: var(--frosted-gradient-hover);
   --color-work-gradient: var(--work-gradient);
   --color-work-nav-gradient: var(--work-nav-gradient);
+  --color-project-card-gradient: var(--project-card-gradient);
   --opacity-texture-opacity: var(--texture-opacity);
   --max-width-8xl: 100rem;
   --width-8xl: 10rem;
@@ -368,7 +371,6 @@ body {
   color: var(--primary);
   background: var(--primary-accent);
   max-width: 100vw !important;
-  overflow-x: hidden !important;
 }
 
 @layer utilities {

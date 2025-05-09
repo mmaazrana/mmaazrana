@@ -1,18 +1,29 @@
 import React from 'react'
 import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
+import { clientData } from '@/helpers/constants'
+import { ExternalLink } from 'lucide-react'
+import Button from '../button'
+import { testimonialsData } from '@/helpers/project-analytics'
+import Link from 'next/link'
 
 interface TestimonialDataProps {
   testimonial: string
   clientName: string
   designation: string
+  companyLink?: string
+  testimonialKey: string
 }
 
 const TestimonialData: React.FC<TestimonialDataProps> = ({
   testimonial,
   clientName,
   designation,
+  companyLink,
+  testimonialKey,
 }) => {
+  const companyName = testimonialsData[testimonialKey].companyName
+  const ClientLogo = clientData.find(client => client.key === testimonialKey)?.companyLogo
   return (
     <div className='flex flex-col gap-6xl relative mr-0 sm:mr-2'>
       <Typography
@@ -47,14 +58,35 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
           d='m85.33,10.33c0-5.21-3.15-8.4-8.33-8.33h-16.67c-5.21,0-8.33,3.12-8.33,8.22v25.12c0,5.21,3.12,8.33,8.33,8.33h3.12c0,9.38,1.04,16.67-11.46,16.67v12.5q0,4.17,4.17,4.17c12.5,0,29.17-4.17,29.17-33.33V10.33Z'
         />
       </svg>
-      <div className='flex justify-start items-center gap-1.5 md:gap-2'>
-        <Typography type='xl' weight='medium'>
-          {clientName}
-        </Typography>
-        <Typography type='xl'>-</Typography>
-        <Typography type='xl' className='opacity-75'>
-          {designation}
-        </Typography>
+      <div className='flex justify-between items-center gap-m flex-wrap'>
+        <div className='flex justify-start items-center gap-2xs'>
+          <Typography type='xl' weight='medium'>
+            {clientName}
+          </Typography>
+          <Typography type='xl'>-</Typography>
+          <Typography type='xl' className='opacity-75'>
+            {designation}
+          </Typography>
+        </div>
+        {companyLink && (
+          <Link
+            href={companyLink}
+            target='_blank'
+            className='px-s py-xs group bg-secondary-hover/50 hover:bg-secondary/25 transition-all duration-300 rounded-full'
+          >
+            <Button
+              type='tertiary'
+              textSize='base'
+              textWeight='regular'
+              textColor='primary-hover'
+              text={`Visit ${companyName}'s Website`}
+              leftIcon={ClientLogo && <ClientLogo className='w-fit h-l' />}
+              rightIcon={
+                <ExternalLink className='mr-4xs w-s h-s stroke-2 stroke-secondary group-hover:stroke-primary-hover transition-colors duration-300' />
+              }
+            />
+          </Link>
+        )}
       </div>
     </div>
   )

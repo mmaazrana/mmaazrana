@@ -261,9 +261,84 @@ import {
   SiSocketdotio,
   SiNativescript,
 } from 'react-icons/si'
-import { WorkCategories } from './enums'
+import { TestimonialClients, WorkCategories } from './enums'
 import { IconType } from 'react-icons/lib'
-import { IconComponentsT, IconComponentT } from './types'
+import { IconComponentsT, IconComponentT, TestimonialsT, TestimonialT } from './types'
+
+export const testimonialsData: TestimonialsT = {
+  [TestimonialClients.alfabolt] : {
+    key: TestimonialClients.alfabolt,
+    testimonial:
+      "Alfabolt's interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team's productivity by 25%.",
+    client: 'Ali Farooq',
+    designation: 'CEO, Alfabolt',
+    companyName: 'Alfabolt',
+  }, 
+  [TestimonialClients.kueenz] : {
+    key: TestimonialClients.kueenz,
+    testimonial:
+      'I\'ve had the pleasure of collaborating with Maaz on various projects, and I cannot recommend him highly enough. As a product designer, he brings exceptional talent and a strategic mindset to every challenge. What sets him apart is not just his technical design skills, but his ability to understand the broader business context and provide thoughtful guidance that elevates the entire project. \n \n Maaz consistently delivers high-quality work on time and communicates clearly throughout the process. He listens carefully to requirements while confidently offering valuable insights that often lead to better outcomes than initially envisioned. His collaborative approach makes him an asset to any team, as he balances creative vision with practical execution. \n \n I look forward to working with Maaz on future projects and highly recommend him to anyone seeking a product designer who combines creative excellence with business acumen and professionalism.',
+    client: 'Anum Mujahid',
+    designation: 'Co-Founder, Kueenz',
+    companyName: 'Kueenz Technologies',
+  },
+  [TestimonialClients.rivanna] : {
+    key: TestimonialClients.rivanna,
+    testimonial:
+      'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
+    client: 'Peter',
+    designation: 'Founder, Rivanna',
+    companyName: 'Rivanna',
+  },
+  [TestimonialClients.tss] : {
+    key: TestimonialClients.tss,
+    testimonial:
+      'Working with Maaz on our TSS graphics package was incredibly smooth. He took our educational content and transformed it with visuals that are engaging, clear, and perfectly aligned with our brand identity.',
+    client: 'Rameen',
+    designation: 'Country Manager, Total School Solutions',
+    companyName: 'Total School Solutions',
+  },
+  [TestimonialClients.inventrios] : {
+    key: TestimonialClients.inventrios,
+    testimonial:
+      'The logos and branding materials Maaz designed for MenuHub perfectly communicate our value proposition. His ability to translate our vision into visual elements that resonate with our target audience is remarkable.',
+    client: 'David Chen',
+    designation: 'Founder, MenuHub',
+    companyName: 'Inventrios',
+  },
+  [TestimonialClients.nutrigram] : {
+    key: TestimonialClients.nutrigram,
+    testimonial:
+      'The Nutrigram app Maaz designed has revolutionized how our clients track their nutrition. The interface is clean, engaging, and incredibly user-friendly. Our user retention has increased by 40% since launch!',
+    client: 'Hassaan Ali',
+    designation: 'Founder, Nutrigram',
+    companyName: 'Nutrigram',
+  },
+  [TestimonialClients.markdown] : {
+    key: TestimonialClients.markdown,
+    testimonial:
+      'Working with Maaz on the Markdown Editor was exceptional. His attention to detail and understanding of developer workflows resulted in a tool our entire engineering team now uses daily. The keyboard shortcuts and real-time preview are game-changers.',
+    client: 'Usama Ejaz',
+    designation: 'Co-Founder, Nustac Technologies',
+    companyName: 'Nustac Technologies',
+  },
+  [TestimonialClients.beaconTutors] : {
+    key: TestimonialClients.beaconTutors,
+    testimonial:
+      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
+    client: 'Imran Haider',
+    designation: 'Founder, Beacon Tutors Pakistan',
+    companyName: 'Beacon Tutors Pakistan',
+  },
+  [TestimonialClients.nustac] : {
+    key: TestimonialClients.nustac,
+    testimonial:
+      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
+    client: 'Imran Haider',
+    designation: 'Founder, Beacon Tutors Pakistan',
+    companyName: 'Nustac Technologies',
+  },
+}
 
 export const techStackIcons: IconComponentsT = {
   next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
@@ -312,6 +387,7 @@ export interface challengesAndSolutionsT {
 
 export interface ProjectAnalysisT {
   title: string
+  affiliateWith ?: TestimonialClients
   shortDescription: string
   detailedAnalysis: {
     overview: string
@@ -326,11 +402,13 @@ export interface ProjectAnalysisT {
   liveUrl?: string
   figmaUrl?: string
   isMobile?: boolean
+  testimonial?: TestimonialT
   images: { main: StaticImageData; screenshots: StaticImageData[] }
 }
 
 export const pools515: ProjectAnalysisT = {
   title: '515 Pools',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A comprehensive pool management system that streamlines pool maintenance scheduling, testing, and service tracking for both pool owners and service providers.',
   detailedAnalysis: {
@@ -565,6 +643,7 @@ export const beaconTutors: ProjectAnalysisT = {
 
 export const deepReelAI: ProjectAnalysisT = {
   title: 'DeepReel AI Videos',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'An innovative AI-powered video creation platform that enables users to generate professional avatar-based videos with automated script generation, visuals, and captions.',
   detailedAnalysis: {
@@ -1164,6 +1243,7 @@ export const aylaAI: ProjectAnalysisT = {
 
 export const deepReelCanva: ProjectAnalysisT = {
   title: 'DeepReel Canva App',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     "A powerful Canva integration that brings DeepReel's AI video generation capabilities directly into the Canva platform, enabling users to create professional AI-powered videos within their design workflow.",
   detailedAnalysis: {
@@ -1634,6 +1714,7 @@ export const nutrigram: ProjectAnalysisT = {
 
 export const athletonPlus: ProjectAnalysisT = {
   title: 'Athleton Plus',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A comprehensive fitness training management platform that connects trainers with clients, featuring workout scheduling, progress tracking, and detailed session management.',
   detailedAnalysis: {
@@ -1896,6 +1977,7 @@ export const inventrios: ProjectAnalysisT = {
 
 export const superDuperStudio: ProjectAnalysisT = {
   title: 'Super Duper Studio',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     "A vibrant and engaging website for a children's creative studio that offers art, design, and exploration activities, featuring playful design elements and comprehensive program information.",
   detailedAnalysis: {
@@ -1980,6 +2062,7 @@ export const superDuperStudio: ProjectAnalysisT = {
 
 export const deepReelWebsite: ProjectAnalysisT = {
   title: 'DeepReel Website',
+  affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A modern landing page for an AI-powered video creation platform, featuring sleek design, comprehensive feature presentation, and clear value propositions for personalized video content creation.',
   detailedAnalysis: {
@@ -2062,6 +2145,7 @@ export const deepReelWebsite: ProjectAnalysisT = {
 
 export const alfabolt: ProjectAnalysisT = {
   title: 'Alfabolt Website',
+  affiliateWith: TestimonialClients.alfabolt,
   liveUrl: 'https://www.alfabolt.com',
   shortDescription:
     'A modern software development company website showcasing custom software solutions, mobile app development, and industry expertise through detailed case studies and service pages.',
@@ -2576,6 +2660,7 @@ export const humanizarTexto: ProjectAnalysisT = {
     { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
   ],
   isMobile: true,
+  testimonial: testimonialsData['kueenz'],
   images: { main: humanizarMain, screenshots: [humanizarHumanizar, humanizarSubscription, humanizarActivePlan, humanizarLanding, humanizarPlans, humanizarPremium, humanizarPayment] },
 }
 

@@ -9,6 +9,7 @@ import Linkedin from '@/components/icons/linkedin'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import LottieWorkerAnimation from '@/components/utils/lottie'
+import { Sections } from '@/helpers/enums'
 
 interface MainHeroProps {}
 
@@ -75,89 +76,101 @@ const MainHero: FC<MainHeroProps> = ({}) => {
   const currentAnimation = resolvedTheme === 'dark' ? LottiePaths[index] : LottieLightPaths[index]
 
   return (
-    <div
-      ref={sectionRef}
+    <section
+      id={Sections.hero}
       className={
-        'relative w-full flex flex-col-reverse md:flex-row justify-center items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
+        'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
       }
     >
-      <div className='flex basis-full h-10xl min-h-10xl md:basis-[55%] flex-col justify-center gap-2 sm:gap-3 md:gap-4'>
-        <AnimatePresence mode='wait' initial={false}>
-          <m.div
-            layout='position'
-            className='!transition-none'
-            key={'heading' + index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35 }}
-          >
-            <Typography tag='h1' type='9xl' weight='bold'>
-              {HeroHeadings[index % HeroHeadings.length]}
-            </Typography>
-          </m.div>
-        </AnimatePresence>
-        <AnimatePresence mode='wait' initial={false}>
-          <m.div
-            layout='position'
-            className='!transition-none'
-            key={'description' + index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
-          >
-            <Typography
-              type='3xl'
-              className='!transition-none !opacity-75'
-              weight='light'
-              leading='medium'
-            >
-              {HeroDescriptions[index % HeroDescriptions.length]}
-            </Typography>
-          </m.div>
-        </AnimatePresence>
-        <m.div
-          layout='position'
-          className='flex transition-all duration-300 gap-2 items-center justify-start flex-wrap'
-        >
-          <div className='pt-3 pb-3 pr-3'>
-            <Link
-              href='https://www.linkedin.com/in/mmaazrana/'
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label='Linkedin'
-            >
-              <Button leftIcon={<Linkedin />} textWeight='medium' type='primary' text='Linkedin' />
-            </Link>
-          </div>
-          <Link
-            href='mailto:awaismaaz@gmail.com'
-            className='cursor-pointer'
-            rel='noopener noreferrer'
-            target='_blank'
-            aria-label='Email'
-          >
-            <Button type='tertiary' text='awaismaaz@gmail.com' />
-          </Link>
-        </m.div>
-      </div>
-      <AnimatePresence mode='wait' initial={false}>
-        <div
-          key={'lottie' + index}
-          className={
-            'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
-          }
-        >
-          <LottieWorkerAnimation src={currentAnimation} isPlaying={isInView} />
-        </div>
-      </AnimatePresence>
-      <span
+      <div
+        ref={sectionRef}
         className={
-          'w-[60vw] h-[60vw] left-0 bottom-0 -translate-x-1/2 translate-y-1/2 aspect-square rounded-full bg-secondary-hover blur-[300px] absolute -z-10 opacity-50'
+          'relative w-full flex flex-col-reverse md:flex-row justify-center items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
         }
-      ></span>
-    </div>
+      >
+        <div className='flex basis-full h-10xl min-h-10xl md:basis-[55%] flex-col justify-center gap-2 sm:gap-3 md:gap-4'>
+          <AnimatePresence mode='wait' initial={false}>
+            <m.div
+              layout='position'
+              className='!transition-none'
+              key={'heading' + index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.35 }}
+            >
+              <Typography tag='h1' type='9xl' weight='bold'>
+                {HeroHeadings[index % HeroHeadings.length]}
+              </Typography>
+            </m.div>
+          </AnimatePresence>
+          <AnimatePresence mode='wait' initial={false}>
+            <m.div
+              layout='position'
+              className='!transition-none'
+              key={'description' + index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.35 }}
+            >
+              <Typography
+                type='3xl'
+                className='!transition-none !opacity-75'
+                weight='light'
+                leading='medium'
+              >
+                {HeroDescriptions[index % HeroDescriptions.length]}
+              </Typography>
+            </m.div>
+          </AnimatePresence>
+          <m.div
+            layout='position'
+            className='flex transition-all duration-300 gap-2 items-center justify-start flex-wrap'
+          >
+            <div className='pt-3 pb-3 pr-3'>
+              <Link
+                href='https://www.linkedin.com/in/mmaazrana/'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Linkedin'
+              >
+                <Button
+                  leftIcon={<Linkedin />}
+                  textWeight='medium'
+                  type='primary'
+                  text='Linkedin'
+                />
+              </Link>
+            </div>
+            <Link
+              href='mailto:awaismaaz@gmail.com'
+              className='cursor-pointer'
+              rel='noopener noreferrer'
+              target='_blank'
+              aria-label='Email'
+            >
+              <Button type='tertiary' text='awaismaaz@gmail.com' />
+            </Link>
+          </m.div>
+        </div>
+        <AnimatePresence mode='wait' initial={false}>
+          <div
+            key={'lottie' + index}
+            className={
+              'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
+            }
+          >
+            <LottieWorkerAnimation src={currentAnimation} isPlaying={isInView} />
+          </div>
+        </AnimatePresence>
+        <span
+          className={
+            'w-[60vw] h-[60vw] left-0 bottom-0 -translate-x-1/2 translate-y-1/2 aspect-square rounded-full bg-secondary-hover blur-[300px] absolute -z-10 opacity-50'
+          }
+        ></span>
+      </div>
+    </section>
   )
 }
 

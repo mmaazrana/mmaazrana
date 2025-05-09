@@ -77,6 +77,18 @@ export enum ProjectCategories {
   challengesAndSolutions = 'challenges-and-solutions',
 }
 
+export enum TestimonialClients {
+  alfabolt = 'alfabolt',
+  kueenz = 'kueenz',
+  rivanna = 'rivanna',
+  tss = 'tss',
+  inventrios = 'inventrios',
+  nutrigram = 'nutrigram',
+  nustac = 'nustac',
+  beaconTutors = 'beacon-tutors',
+  markdown = 'markdown-editor',
+}
+
 export type WeightTypes = `${WeightTypesE}`;
 export type ButtonTypes = `${ButtonTypesE}`;
 export type TextTypes = `${TextTypesE}`;

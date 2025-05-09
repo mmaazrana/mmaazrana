@@ -1,4 +1,4 @@
-import { ProjectCategories, Sections, WorkCategories } from '@/helpers/enums'
+import { ProjectCategories, Sections, TestimonialClients, WorkCategories } from '@/helpers/enums'
 import {
   BlenderProjectT,
   BottomNavButtonT,
@@ -9,7 +9,6 @@ import {
   IconComponentsT,
   NavButtonT,
   ServiceT,
-  TestimonialsT,
   TestimonialT,
   VideoProjectT,
   WorkExperienceT,
@@ -76,6 +75,7 @@ import {
   robinBeauty,
   smartCatch,
   superDuperStudio,
+  testimonialsData,
   tutorania,
 } from './project-analytics'
 import {
@@ -184,6 +184,8 @@ import ProjectOverview from '@/components/projects/overview'
 import ProjectKeyFeatures from '@/components/projects/key-features'
 import ProjectChallengesAndSolutions from '@/components/projects/challenges-and-solutions'
 import ProjectTechStack from '@/components/projects/tech-stack'
+import SvgKueenzTechnologies from '@/components/icons/kueenz-technologies'
+import Inventrios from '@/components/icons/Inventrios'
 
 export const HeroHeadings: string[] = [
   'Product & UI/UX Designer',
@@ -332,63 +334,6 @@ export const services: ServiceT[] = [
 ]
 
 export const breakpoints = { '2xl': 1536, lg: 1024, md: 768, sm: 640, xl: 1280, xs: 365 }
-
-export const testimonialsData: TestimonialsT = {
-  "alfabolt" : {
-    testimonial:
-      "Alfabolt's interface redesign by Maaz was transformative for our workflow. His understanding of both design principles and developer needs created a seamless experience that increased our team's productivity by 25%.",
-    client: 'Ali Farooq',
-    designation: 'CEO, Alfabolt',
-  },
-  "kueenz" : {
-    testimonial:
-      'I\'ve had the pleasure of collaborating with Maaz on various projects, and I cannot recommend him highly enough. As a product designer, he brings exceptional talent and a strategic mindset to every challenge. What sets him apart is not just his technical design skills, but his ability to understand the broader business context and provide thoughtful guidance that elevates the entire project. \n \n Maaz consistently delivers high-quality work on time and communicates clearly throughout the process. He listens carefully to requirements while confidently offering valuable insights that often lead to better outcomes than initially envisioned. His collaborative approach makes him an asset to any team, as he balances creative vision with practical execution. \n \n I look forward to working with Maaz on future projects and highly recommend him to anyone seeking a product designer who combines creative excellence with business acumen and professionalism.',
-    client: 'Anum Mujahid',
-    designation: 'Co-Founder, Kueenz',
-  },
-  "rivanna" : {
-    testimonial:
-      'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
-    client: 'Peter',
-    designation: 'Founder, Rivanna',
-  },
-  "tss" : {
-    testimonial:
-      'Working with Maaz on our TSS graphics package was incredibly smooth. He took our educational content and transformed it with visuals that are engaging, clear, and perfectly aligned with our brand identity.',
-    client: 'Rameen',
-    designation: 'Country Manager, Total School Solutions',
-  },
-  "inventrios" : {
-    testimonial:
-      'The logos and branding materials Maaz designed for MenuHub perfectly communicate our value proposition. His ability to translate our vision into visual elements that resonate with our target audience is remarkable.',
-    client: 'David Chen',
-    designation: 'Founder, MenuHub',
-  },
-  "nutrigram" :   {
-    testimonial:
-      'The Nutrigram app Maaz designed has revolutionized how our clients track their nutrition. The interface is clean, engaging, and incredibly user-friendly. Our user retention has increased by 40% since launch!',
-    client: 'Hassaan Ali',
-    designation: 'Founder, Nutrigram',
-  },
-  "markdownEditor" : {
-    testimonial:
-      'Working with Maaz on the Markdown Editor was exceptional. His attention to detail and understanding of developer workflows resulted in a tool our entire engineering team now uses daily. The keyboard shortcuts and real-time preview are game-changers.',
-    client: 'Usama Ejaz',
-    designation: 'Co-Founder, Nustac Technologies',
-  },
-  "beaconTutors" : {
-    testimonial:
-      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
-    client: 'Imran Haider',
-    designation: 'Founder, Beacon Tutors Pakistan',
-  },
-  "nustac" : {
-    testimonial:
-      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
-    client: 'Imran Haider',
-    designation: 'Founder, Beacon Tutors Pakistan',
-  },
-}
 
 export const testimonials: TestimonialT[] = Object.values(testimonialsData)
 
@@ -609,6 +554,7 @@ export const clientColorIconComponents = [
   { Icon: Rivanna, props: {} },
   { Icon: Edwiz, props: {} },
   { Icon: BeaconTutors, props: {} },
+  { Icon: SvgKueenzTechnologies, props: {} },
   { Icon: MenuHub, props: {} },
   { Icon: Lyfiti, props: {} },
   { Icon: FiveOneFivePools, props: {} },
@@ -616,10 +562,13 @@ export const clientColorIconComponents = [
 
 export const clientData: ClientDataT[] = [
   {
+    key: TestimonialClients.alfabolt,
+    companyLogo: Alfabolt,
+    companyLink: 'https://alfabolt.com',
     heading: 'Alfabolt',
-    testimonial:testimonialsData['alfabolt'].testimonial,
-    clientName: testimonialsData['alfabolt'].client,
-    designation: testimonialsData['alfabolt'].designation,
+    testimonial:testimonialsData[TestimonialClients.alfabolt].testimonial,
+    clientName: testimonialsData[TestimonialClients.alfabolt].client,
+    designation: testimonialsData[TestimonialClients.alfabolt].designation,
     productsInvolved: [
       {
         logo: Alfabolt,
@@ -672,10 +621,13 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.kueenz,
+    companyLogo: SvgKueenzTechnologies,
+    companyLink: 'https://kueenztechnologies.com',
     heading: 'Kueenz Technologies',
-    testimonial: testimonialsData['kueenz'].testimonial,
-    clientName: testimonialsData['kueenz'].client,
-    designation: testimonialsData['kueenz'].designation,
+    testimonial: testimonialsData[TestimonialClients.kueenz].testimonial,
+    clientName: testimonialsData[TestimonialClients.kueenz].client,
+    designation: testimonialsData[TestimonialClients.kueenz].designation,
     productsInvolved: [
       {
         logo: SvgHumanizarTexto,
@@ -700,10 +652,12 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.beaconTutors,
+    companyLogo: BeaconTutors,
     heading: 'Beacon Tutors',
-    testimonial: testimonialsData['beaconTutors'].testimonial,
-    clientName: testimonialsData['beaconTutors'].client,
-    designation: testimonialsData['beaconTutors'].designation,
+    testimonial: testimonialsData[TestimonialClients.beaconTutors].testimonial,
+    clientName: testimonialsData[TestimonialClients.beaconTutors].client,
+    designation: testimonialsData[TestimonialClients.beaconTutors].designation,
     productsInvolved: [
       {
         logo: BeaconTutors,
@@ -742,10 +696,12 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.rivanna,
+    companyLogo: Rivanna,
     heading: 'Rivanna',
-    testimonial: testimonialsData['rivanna'].testimonial,
-    clientName: testimonialsData['rivanna'].client,
-    designation: testimonialsData['rivanna'].designation,
+    testimonial: testimonialsData[TestimonialClients.rivanna].testimonial,
+    clientName: testimonialsData[TestimonialClients.rivanna].client,
+    designation: testimonialsData[TestimonialClients.rivanna].designation,
     productsInvolved: [
       {
         logo: Rivanna,
@@ -769,10 +725,11 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.nustac,
     heading: 'Nustac',
-    testimonial: testimonialsData['nustac'].testimonial,
-    clientName: testimonialsData['nustac'].client,
-    designation: testimonialsData['nustac'].designation,
+    testimonial: testimonialsData[TestimonialClients.nustac].testimonial,
+    clientName: testimonialsData[TestimonialClients.nustac].client,
+    designation: testimonialsData[TestimonialClients.nustac].designation,
     productsInvolved: [
       {
         logo: Rivanna,
@@ -814,10 +771,12 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.inventrios,
+    companyLogo: Inventrios,
     heading: 'Inventrios',
-    testimonial: testimonialsData['inventrios'].testimonial,
-    clientName: testimonialsData['inventrios'].client,
-    designation: testimonialsData['inventrios'].designation,
+    testimonial: testimonialsData[TestimonialClients.inventrios].testimonial,
+    clientName: testimonialsData[TestimonialClients.inventrios].client,
+    designation: testimonialsData[TestimonialClients.inventrios].designation,
     productsInvolved: [
       {
         logo: SvgRobinBeauty,
@@ -857,10 +816,12 @@ export const clientData: ClientDataT[] = [
     ],
   },
   {
+    key: TestimonialClients.nutrigram,
+    companyLogo: SvgNutrigram,
     heading: 'Nutrigram',
-    testimonial: testimonialsData['nutrigram'].testimonial,
-    clientName: testimonialsData['nutrigram'].client,
-    designation: testimonialsData['nutrigram'].designation,
+    testimonial: testimonialsData[TestimonialClients.nutrigram].testimonial,
+    clientName: testimonialsData[TestimonialClients.nutrigram].client,
+    designation: testimonialsData[TestimonialClients.nutrigram].designation,
     productsInvolved: [
       {
         logo: SvgNutrigram,

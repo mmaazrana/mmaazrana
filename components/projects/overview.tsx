@@ -9,6 +9,7 @@ import { workBottomNavCategories } from '@/helpers/constants'
 import Button from '@/components/button'
 import { ExternalLink } from 'lucide-react'
 import { getProjectData } from '@/helpers/parsers'
+import { SiFigma } from 'react-icons/si'
 
 interface OverviewProps {
   project: string
@@ -38,7 +39,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
   }, [emblaApi, onSelect])
 
   return (
-    <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8 mb-8 sm:mb-4'>
+    <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8'>
       <div className='flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full'>
         <div className='flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
           <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-m'>
@@ -73,7 +74,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
                   </div>
                 ))}
               </div>
-              <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3'>
+              <div className='flex flex-col sm:flex-row justify-start items-center gap-4 sm:gap-3'>
                 {projectData.liveUrl && (
                   <Link
                     href={projectData.liveUrl || ''}
@@ -83,10 +84,13 @@ export default function ProjectOverview({ project }: OverviewProps) {
                   >
                     <Button
                       className='w-fit'
+                      textWeight='medium'
                       type='primary'
                       text='Visit Live Site'
+                      rightIcon={
+                        <ExternalLink className='h-m w-m fill-none stroke-primary-accent' />
+                      }
                       textSize='xl'
-                      textWeight='regular'
                     />
                   </Link>
                 )}
@@ -98,9 +102,10 @@ export default function ProjectOverview({ project }: OverviewProps) {
                     className='w-fit'
                   >
                     <Button
-                      className='w-fit'
+                      className='w-fit !pl-m outline outline-1 outline-secondary/50'
+                      textWeight='regular'
                       type='secondary'
-                      rightIcon={<ExternalLink className='fill-none stroke-primary-accent' />}
+                      leftIcon={<SiFigma className='h-m w-m' />}
                       text={`Visit Figma File`}
                     />
                   </Link>
@@ -119,9 +124,10 @@ export default function ProjectOverview({ project }: OverviewProps) {
                 {projectData.images.screenshots.map((screenshot, index) => (
                   <div
                     key={index}
-                    className={`relative flex-[0_0_50%] min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
+                    className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
                       index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
-                    } ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
+                    } ${projectData.isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
+                    ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
                   >
                     <Image
                       src={screenshot}
@@ -129,7 +135,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
                       loading='lazy'
                       placeholder='blur'
                       sizes='(max-width: 444px) 100vw, (max-width: 768px) 50vw, 20vw'
-                      className='w-full h-fit'
+                      className='w-full h-full'
                     />
                   </div>
                 ))}
@@ -138,6 +144,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
             <Typography
               type='8xl'
               weight='black'
+              leading='flat'
               color='primary-accent'
               className='absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
             >

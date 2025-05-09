@@ -35,10 +35,10 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
   return (
     <div
       ref={socialsRef}
-      className={`relative h-fit order-3 sm:row-span-2 md:row-span-3 ${className}`}
+      className={`relative !aspect-square h-fit order-3 sm:row-span-2 md:row-span-3 ${className}`}
     >
       <AboutCard
-        className='h-fit aspect-square max-h-fit min-h-fit !gap-0 !p-0 !overflow-clip group'
+        className='h-fit !aspect-square !gap-0 !p-0 !overflow-clip group'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && socialsIsInView)}
@@ -48,7 +48,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
           alt='Maaz Rana'
           fill
           sizes='(max-width: 445px) 95vw, (max-width: 768px) 45vw, 30vw'
-          className={`!aspect-square object-cover !max-h-fit !h-fit !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${
+          className={`!aspect-square object-cover  !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${
             false && '!opacity-100 !saturate-100'
           }`}
           placeholder='blur'

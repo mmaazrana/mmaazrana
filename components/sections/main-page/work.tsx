@@ -2,43 +2,60 @@ import React, { FC } from 'react'
 import ProjectCard from '@/components/cards/project-card'
 import { featuredProjects } from '@/helpers/constants'
 import ProjectCardMobile from '@/components/cards/mobile/project-card-mobile'
+import { Sections } from '@/helpers/enums'
+import MainSectionTitle from '@/components/main-section-title'
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
 
-interface WorkProps {}
+interface WorkProps {
+  title?: string
+  projects?: ProjectAnalysisT[]
+}
 
-const Work: FC<WorkProps> = () => {
+const Work: FC<WorkProps> = ({
+  title = 'Featured Work',
+  projects = featuredProjects.slice(0, 4),
+}) => {
   return (
-    <div className='w-full flex flex-col gap-2xl'>
-      {/* Desktop Layout */}
-      {[featuredProjects.slice(0, 2), featuredProjects.slice(2, 4)].map(
-        (projectGroup, groupIndex) => (
-          <div key={groupIndex} className='hidden sm:flex flex-row gap-2xl'>
-            {projectGroup.map((project, i) => (
+    <section
+      id={Sections.work}
+      className={
+        'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
+      }
+    >
+      <MainSectionTitle title={title} buttonText='View Portfolio' href='/portfolio' />
+      <div className='w-full flex flex-col gap-2xl'>
+        {/* Desktop Layout */}
+        {Array.from({ length: Math.ceil(projects.length / 2) }).map((_, groupIndex) => (
+          <div key={groupIndex} className='hidden sm:flex flex-row gap-2xl '>
+            {projects.slice(groupIndex * 2, groupIndex * 2 + 2).map((project, i) => (
               <ProjectCard
-                key={i}
+                key={project.title}
                 title={project.title}
                 description={project.shortDescription}
                 image={project.images.main}
                 altImage={project.images.screenshots[0]}
-                alt={groupIndex === 0 ? i % 2 === 1 : i % 2 !== 1}
+                alt={groupIndex % 2 === 0 ? i % 2 === 1 : i % 2 !== 1}
+                testimonialKey={project.affiliateWith}
               />
             ))}
           </div>
-        ),
-      )}
-      {/* Mobile Layout */}
-      <div className='flex sm:hidden flex-col gap-2xl'>
-        {featuredProjects.map((project, i) => (
-          <ProjectCardMobile
-            key={i}
-            title={project.title}
-            description={project.shortDescription}
-            image={project.images.main}
-            altImage={project.images.screenshots[0]}
-            alt={i > 0 && Math.floor((i - 1) / 2) % 2 === 0}
-          />
         ))}
+        {/* Mobile Layout */}
+        <div className='flex sm:hidden flex-col gap-2xl'>
+          {projects.map((project, i) => (
+            <ProjectCardMobile
+              key={i}
+              title={project.title}
+              description={project.shortDescription}
+              image={project.images.main}
+              altImage={project.images.screenshots[0]}
+              alt={i > 0 && Math.floor((i - 1) / 2) % 2 === 0}
+              testimonialKey={project.affiliateWith}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 

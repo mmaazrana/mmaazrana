@@ -27,6 +27,7 @@ export default function ProductDevelopmentProjects({}: ProductDevelopmentProject
                     image={project.images.main}
                     altImage={project.images.screenshots[0]}
                     alt={groupIndex % 2 === 0 ? i % 2 === 1 : i % 2 !== 1}
+                    testimonialKey={project.affiliateWith}
                   />
                 ))}
             </div>
@@ -43,6 +44,7 @@ export default function ProductDevelopmentProjects({}: ProductDevelopmentProject
               image={project.images.main}
               altImage={project.images.screenshots[0]}
               alt={i > 0 && Math.floor((i - 1) / 2) % 2 === 0}
+              testimonialKey={project.affiliateWith}
             />
           ))}
         </div>

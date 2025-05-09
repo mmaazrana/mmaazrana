@@ -5,10 +5,12 @@ import ProjectHero from '@/components/sections/project-page/project-hero'
 import { productDesignProjects } from '@/helpers/constants'
 import { productDevelopmentProjects } from '@/helpers/constants'
 import { ProjectAnalysisT } from '@/helpers/project-analytics'
-import { getPageSlug } from '@/helpers/parsers'
+import { getPageSlug, getRelevantProjects } from '@/helpers/parsers'
 import { Params, SearchParams } from '@/helpers/types'
 import { ProjectCategories } from '@/helpers/enums'
 import type { Metadata } from 'next' // Import Metadata type
+import Work from '@/components/sections/main-page/work'
+import SingleClientTestimonial from '@/components/sections/project-page/single-testimonial'
 // --- Start of added code ---
 
 // Combine all project arrays that have dedicated pages
@@ -136,13 +138,17 @@ export default async function ProjectPage({
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : ProjectCategories.overview
   return (
-    <div className='overflow-x-hidden max-w-[100vw]'>
-      <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 xl:py-12 lg:py-11 md:py-10 sm:py-9 py-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
-        <Nav />
-        <ProjectHero project={project} />
-        <ProjectDetailsSection project={project} activeTab={activeTab} />
-        <ProjectBottomNav pathName={project} activeTab={activeTab} />
-      </main>
+    <div className='max-w-[100vw]'>
+      <Nav />
+      <div className='overflow-hidden'>
+        <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 pb-2xl xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
+          <ProjectHero project={project} />
+          <ProjectDetailsSection project={project} activeTab={activeTab} />
+          <ProjectBottomNav pathName={project} activeTab={activeTab} />
+          <SingleClientTestimonial project={project} />
+          <Work title={'Related Projects'} projects={getRelevantProjects(project)} />
+        </main>
+      </div>
     </div>
   )
 }

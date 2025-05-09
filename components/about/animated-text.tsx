@@ -17,7 +17,7 @@ const AnimatedText = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           style={{ willChange: 'opacity, transform' }}
-          className={`transition-all duration-200 text-primary-accent uppercase font-[1000] text-[10.5vw] tracking-[0.5rem] 2xl:text-[180px] leading-[1] ${
+          className={`transition-filter duration-200 text-primary-accent uppercase font-[1000] text-[10.5vw] tracking-[0.5rem] 2xl:text-[180px] leading-[1] ${
             isActive ? 'custom-text-stroke-active' : 'custom-text-stroke'
           } ${archivo.className}`}
         >

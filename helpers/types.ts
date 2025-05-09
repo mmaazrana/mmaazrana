@@ -1,4 +1,4 @@
-import { ButtonTypes, ProjectCategories, Sections, WorkCategories } from '@/helpers/enums'
+import { ButtonTypes, ProjectCategories, Sections, TestimonialClients, WorkCategories } from '@/helpers/enums'
 import React from 'react'
 import { IconType } from 'react-icons'
 import { StaticImageData } from 'next/image'
@@ -14,7 +14,7 @@ export interface NavButtonT {
 
 export interface IconComponentT {
   Icon: IconType
-  props: { fill: string; [key: string]: string }
+  props: { fill: string; [key: string]: string}
 }
 
 export type IconComponentsT = Record<string, IconComponentT>
@@ -80,9 +80,11 @@ export interface TestimonialsT {
 }
 
 export interface TestimonialT {
+  key: TestimonialClients
   testimonial: string
   client: string
   designation: string
+  companyName: string
 }
 
 export interface WorkExperienceT {
@@ -101,6 +103,9 @@ export interface BreakpointT {
 }
 
 export interface ClientDataT {
+  key: TestimonialClients
+  companyLogo ?: any
+  companyLink?: string
   heading: string
   testimonial: string
   clientName: string

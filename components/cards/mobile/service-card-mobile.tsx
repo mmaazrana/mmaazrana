@@ -75,7 +75,7 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
 
   const dynamicClasses = [
     indexClasses[index],
-    'flex flex-col p-8 md:p-6 lg:p-10 xl:p-11 2xl:p-12 transition-none shadow-services rounded-xl sm:aspect-video md:aspect-square w-full h-fit',
+    'flex flex-col p-2xl transition-none shadow-services rounded-xl sm:aspect-video md:aspect-square w-full h-fit',
     onClick ? 'cursor-pointer' : '',
     className,
   ]
@@ -85,7 +85,7 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        'cursor-pointer  service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent group'
+        'cursor-pointer service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent group'
       }
     >
       <div className='relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group'>

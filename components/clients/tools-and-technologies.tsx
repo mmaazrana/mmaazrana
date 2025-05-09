@@ -21,7 +21,7 @@ const ToolsAndTechnologies: React.FC<ToolsAndTechnologiesProps> = ({ technologie
           Tools & Technologies
         </Typography>
       </div>
-      <div className={'flex flex-wrap gap-x-xs gap-y-s ml-0 md:ml-3xl mb-xl'}>
+      <div className={'flex flex-wrap gap-x-2xs gap-y-s ml-0 md:ml-3xl mb-xl'}>
         {technologies.map((technology, index) => (
           <TechnologyIcon key={index} technology={technology} />
         ))}

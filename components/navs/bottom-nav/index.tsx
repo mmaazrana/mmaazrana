@@ -47,7 +47,7 @@ const BottomNavContent: FC = () => {
     <div
       ref={scope}
       id='bottom-navbar'
-      className={`${isInView ? 'translate-y-0' : 'translate-y-32'} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300`}
+      className={`${isInView ? 'translate-y-0' : 'translate-y-32'} z-10 fixed nav-bg right-0 bottom-0 max-w-screen w-full transition-all duration-300 z-1000`}
     >
       <div
         className={`${isEndOfPage ? 'h-[541px] about:h-[426px] sm:h-[366px] lg:h-[324px]' : 'h-[68px]'} absolute bg-primary-accent bottom-0 right-0 w-full blur-2xl -z-10 transition-all duration-300`}
