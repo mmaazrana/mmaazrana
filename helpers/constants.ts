@@ -16,6 +16,7 @@ import {
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
+  SiAdobelightroom,
   SiAdobephotoshop,
   SiAdobepremierepro,
   SiAdobexd,
@@ -30,6 +31,7 @@ import {
   SiJavascript,
   SiJira,
   SiJirasoftware,
+  SiLinear,
   SiNextdotjs,
   SiNodedotjs,
   SiNotion,
@@ -252,25 +254,25 @@ export const projectCategories: BottomNavCategoryT[] = [
 
 export const footerButtons: FooterButtonT[][] = [
   [
-    { text: 'Overview', href: '' },
-    { text: 'Work', href: `/#${Sections.work}` },
+    { text: 'Overview', href: '/' },
     { text: 'Services', href: `/#${Sections.services}` },
     { text: 'Testimonials', href: `/#${Sections.testimonials}` },
+    { text: 'Clients', href: `/Clients` },
     { text: 'About Me', href: `/#${Sections.aboutMe}` },
   ],
   [
-    { text: 'More Work', href: '' },
-    { text: 'Case Studies', href: '' },
-    { text: 'Web Apps', href: '' },
-    { text: 'Mobile Apps', href: '' },
-    { text: 'Art Works', href: '' },
+    { text: 'More Work', href: '/portfolio' },
+    { text: 'Case Studies', href: `/portfolio?tab=${WorkCategories.productDesign}` },
+    { text: 'Web Apps', href: `/portfolio?tab=${WorkCategories.productDevelopment}` },
+    { text: 'Mobile Apps', href: `/portfolio?tab=${WorkCategories.productDevelopment}` },
+    { text: 'Art Works', href: `/portfolio?tab=${WorkCategories.blender}` },
   ],
   [
-    { text: 'Top Projects', href: '' },
-    { text: 'DeepReel AI Videos', href: '' },
-    { text: 'Athelton+', href: '' },
-    { text: 'Markdown Editor', href: '' },
-    { text: 'Jawline Fitness', href: '' },
+    { text: 'Featured Projects', href: `/#${Sections.work}` },
+    { text: 'Alfabolt', href: `/work/${getPageSlug(alfabolt.title)}` },
+    { text: 'Humanizar Texto', href: `/work/${getPageSlug(humanizarTexto.title)}` },
+    { text: 'Ayla AI', href: `/work/${getPageSlug(aylaAI.title)}` },
+    { text: 'El Brezal', href: `/work/${getPageSlug(elBrezal.title)}` },
   ],
 ]
 
@@ -497,6 +499,7 @@ export const designIconComponents: IconComponentsT = {
   figma: { Icon: SiFigma, props: { fill: '#F24E1E' } },
   illustrator: { Icon: SiAdobeillustrator, props: { fill: '#FF9A00' } },
   photoshop: { Icon: SiAdobephotoshop, props: { fill: '#31A8FF' } },
+  lightroom: { Icon: SiAdobelightroom, props: { fill: '#31A8FF' } },
   afterEffects: { Icon: SiAdobeaftereffects, props: { fill: '#9999FF' } },
   premierePro: { Icon: SiAdobepremierepro, props: { fill: '#9999FF' } },
   adobeXd: { Icon: SiAdobexd, props: { fill: '#FF61F6' } },
@@ -505,7 +508,7 @@ export const designIconComponents: IconComponentsT = {
 }
 
 export const devIconComponents: IconComponentsT = {
-  next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
+  next: { Icon: SiNextdotjs, props: { fill: 'var(--black-dynamic)' } },
   react: { Icon: SiReact, props: { fill: '#61DAFB' } },
   flutter: { Icon: SiFlutter, props: { fill: '#02569B' } },
   dart: { Icon: SiDart, props: { fill: '#0175C2' } },
@@ -520,11 +523,12 @@ export const devIconComponents: IconComponentsT = {
 
 export const managementIconComponents: IconComponentsT = {
   slack: { Icon: SiSlack, props: { fill: '#4A154B' } },
-  notion: { Icon: SiNotion, props: { fill: 'var(--primary)' } },
+  notion: { Icon: SiNotion, props: { fill: 'var(--black-dynamic)' } },
   trello: { Icon: SiTrello, props: { fill: '#0052CC' } },
+  linear: { Icon: SiLinear, props: { fill: 'var(--black-dynamic)' } },
   jira: { Icon: SiJira, props: { fill: '#0052CC' } },
   jiraSoftware: { Icon: SiJirasoftware, props: { fill: '#0052CC' } },
-  github: { Icon: SiGithub, props: { fill: 'var(--primary)' } },
+  github: { Icon: SiGithub, props: { fill: 'var(--black-dynamic)' } },
 }
 
 export const iconComponents: IconComponentsT = {
@@ -534,16 +538,25 @@ export const iconComponents: IconComponentsT = {
 }
 
 export const clientIconComponents = [
-  { Icon: Alfabolt, props: { fill: 'var(--primary-hover)' } },
-  { Icon: TSS, props: { fill: 'var(--primary-hover)' } },
-  { Icon: Deepreel, props: { fill: 'var(--primary-hover)' } },
-  { Icon: Athleton, props: { fill: 'var(--primary-hover)' } },
-  { Icon: Rivanna, props: { fill: 'var(--primary-hover)' } },
-  { Icon: Edwiz, props: { fill: 'var(--primary-hover)' } },
-  { Icon: BeaconTutors, props: { fill: 'var(--primary-hover)' } },
-  { Icon: MenuHub, props: { fill: 'var(--primary-hover)' } },
-  { Icon: Lyfiti, props: { fill: 'var(--primary-hover)' } },
-  { Icon: FiveOneFivePools },
+  { Icon: Alfabolt},
+  { Icon: TSS},
+  { Icon: SvgKueenzTechnologies},
+  { Icon: SvgHumanizarTexto},
+  { Icon: AylaLogo },
+  { Icon: SvgNutrigram},
+  { Icon: BeaconTutors},
+  { Icon: EquanimitySvg },
+  { Icon: SvgElbrezal},
+  { Icon: SvgRobinBeauty },
+  { Icon: Athleton},
+  { Icon: Deepreel},
+  { Icon: Rivanna},
+  { Icon: Edwiz},
+  { Icon: SvgInventrios},
+  { Icon: SvgSmartCatch },
+  { Icon: Lyfiti},
+  { Icon: MenuHub},
+  { Icon: FiveOneFivePools},
 ]
 
 export const clientColorIconComponents = [

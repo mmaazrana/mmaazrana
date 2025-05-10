@@ -23,6 +23,7 @@ interface ButtonProps {
   className?: string
   textClassName?: string
   disabled?: boolean
+  defaultIconColor?: boolean
 }
 
 const Button: FC<ButtonProps> = ({
@@ -39,6 +40,7 @@ const Button: FC<ButtonProps> = ({
   className,
   textClassName,
   disabled = false,
+  defaultIconColor = false,
 }) => {
   const typeClasses: { [index: string]: any } = {
     primary: `flex py-xs px-m gap-2xs items-center rounded-full bg-primary hover:bg-primary-hover ${
@@ -94,7 +96,13 @@ const Button: FC<ButtonProps> = ({
       {leftIcon && (
         <div>
           {cloneElement(leftIcon, {
-            className: `${type === 'primary' ? 'fill-primary-accent' : 'fill-primary'} ${leftIcon.props.className} w-s h-s mb-[0.025em]`,
+            className: `${
+              !defaultIconColor ?
+                type === 'primary' ?
+                  'fill-primary-accent'
+                : 'fill-primary'
+              : ''
+            } ${leftIcon.props.className} w-s h-s mb-[0.025em]`,
           })}
         </div>
       )}

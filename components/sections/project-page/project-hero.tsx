@@ -131,11 +131,7 @@ export default function ProjectHero({ project }: { project: string }) {
             <Typography tag='h1' type='6xl' weight='bold'>
               {projectData.title}
             </Typography>
-            <Typography
-              type='2xl'
-              weight='light'
-              className='opacity-75 px-8 xs:px-10 sm:px-12 md:px-14 lg:px-16 xl:px-18 2xl:px-20'
-            >
+            <Typography type='2xl' weight='light' leading='medium' className='opacity-75 px-10xl'>
               {projectData.shortDescription}
             </Typography>
           </div>

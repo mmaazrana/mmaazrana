@@ -19,32 +19,28 @@ const ContactButton: FC<ContactButtonProps> = ({ isMobile = false }) => {
     <m.span layout animate={{ width: isEndOfPage ? '100%' : 'fit' }} transition={{ duration: 0.4 }}>
       <Link
         href='mailto:awaismaaz@gmail.com'
-        className={`${isMobile ? 'flex sm:hidden !justify-center !items-center !px-4 !py-2.5 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3' : 'hidden sm:flex !justify-center !items-center !px-[8px] md:!px-[11px] lg:!px-[14px] xl:!px-[15px] !p-2 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3'} flex-row gap-2 bg-primary hover:bg-primary-hover rounded-full !overflow-hidden !whitespace-nowrap`}
+        className={`${isMobile ? 'flex sm:hidden !justify-center !items-center px-4 py-2.5 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3' : 'hidden sm:flex !justify-center !items-center py-xs px-m'} ${!isEndOfPage && '!p-xs'} flex-row bg-primary hover:bg-primary-hover rounded-full !overflow-hidden !whitespace-nowrap`}
         aria-label={isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
       >
-        <Mail
-          className={
-            '!fill-none stroke-primary-accent w-[14px] sm:w-[16px] md:w-[18px] lg:w-[20px] xl:w-6 h-[14px] sm:h-[16px] md:h-[18px] lg:h-[20px] xl:h-6'
-          }
-        />
+        <Mail className={'fill-none stroke-primary-accent h-m w-m'} />
         <AnimatePresence mode='wait'>
-          {isEndOfPage && (
-            <m.div
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isEndOfPage ? 1 : 0 }}
-              transition={{ duration: 0.6 }}
-              className='max-h-[14px] sm:max-h-[16px] md:max-h-[18px] lg:max-h-[20px] xl:max-h-6 flex items-center justify-center'
+          <m.div
+            layout
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: isEndOfPage ? '100%' : 0, opacity: isEndOfPage ? 1 : 0 }}
+            transition={{ duration: 0.4 }}
+            className='flex items-center justify-center'
+          >
+            <Typography
+              type='xl'
+              color='primary-accent'
+              leading='flat'
+              className='whitespace-nowrap'
+              weight={isMobile ? 'semi-bold' : 'medium'}
             >
-              <Typography
-                type='xl'
-                color='primary-accent'
-                weight={isMobile ? 'semi-bold' : 'medium'}
-              >
-                {isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
-              </Typography>
-            </m.div>
-          )}
+              {isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
+            </Typography>
+          </m.div>
         </AnimatePresence>
       </Link>
     </m.span>

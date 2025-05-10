@@ -1,4 +1,4 @@
-import { projectsAnalysis } from './project-analytics'
+import { projectNotFound, projectsAnalysis } from './project-analytics'
 import { ProjectAnalysisT } from './project-analytics'
 
 /**
@@ -122,7 +122,7 @@ export function getRelevantProjects(project: string): ProjectAnalysisT[] {
  */
 export function getProjectData(project: string) {
   return (
-    projectsAnalysis.find(p => getPageSlug(p.title) === project) || projectsAnalysis[0]
+    projectsAnalysis.find(p => getPageSlug(p.title) === project) || projectNotFound
   )
 }
 

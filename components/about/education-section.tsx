@@ -45,7 +45,7 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
         <div className='flex flex-col gap-6 sm:gap-7 md:gap-8'>
           <div className='flex flex-col gap-2 md:gap-3'>
             <Typography tag='h3' type='xl' weight='semi-bold' leading='light'>
-              Software Engineering
+              Software Engineer
             </Typography>
             <Typography
               type='lg'

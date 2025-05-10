@@ -26,7 +26,7 @@ const SocialLink: FC<SocialLinkProps> = ({ icon, text, href, index }) => {
       className='transition-none'
     >
       <Link href={href} target='_blank' rel='noopener noreferrer' aria-label={text}>
-        <Button leftIcon={icon} text={text} type='secondary' />
+        <Button leftIcon={icon} text={text} type='secondary' textWeight='medium' />
       </Link>
     </motion.div>
   )

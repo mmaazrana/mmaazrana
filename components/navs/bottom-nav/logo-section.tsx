@@ -1,9 +1,9 @@
-'use client'
-
 import React, { FC } from 'react'
 import * as m from 'motion/react-m'
 import Typography from '@/components/Typography'
 import Logo from './logo'
+import Link from 'next/link'
+import { WorkCategories } from '@/helpers/enums'
 
 interface LogoSectionProps {
   isEndOfPage: boolean
@@ -13,7 +13,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
   return (
     <div
       className={
-        'flex flex-col items-start justify-start w-full lg:w-fit lg:max-w-fit overflow-hidden min-h-fit h-fit gap-1'
+        'flex flex-col items-start justify-start w-full lg:w-fit lg:max-w-fit overflow-hidden min-h-fit h-fit gap-xs'
       }
     >
       <Logo />
@@ -21,16 +21,96 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
         transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
-        className='transition-none flex w-full min-w-full'
+        className={`transition-none w-full min-w-full max-w-[32.5rem] inline-block ${isEndOfPage ? 'inline-block' : 'hidden'}`}
       >
-        <Typography
-          type='lg'
-          weight='light'
-          leading='prose'
-          className={`${isEndOfPage ? 'inline-block' : 'hidden'} opacity-75 shrink`}
-        >
-          Product Designer - Web Developer - Mobile App Developer - Animator - 3D Artist
+        <Link href={`/portfolio?tab=${WorkCategories.productDesign}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Product Designer
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
         </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.productDevelopment}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Web Developer
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
+        </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.productDevelopment}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Mobile App Developer
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
+        </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.videoEditing}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Animator
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
+        </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.videoEditing}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Video Editor
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
+        </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.illustration}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            Graphics Designer
+          </Typography>
+        </Link>
+        <Typography type='lg' weight='light' leading='prose' className={`inline opacity-75 shrink`}>
+          &nbsp; - &nbsp;
+        </Typography>
+        <Link href={`/portfolio?tab=${WorkCategories.blender}`}>
+          <Typography
+            type='lg'
+            weight='light'
+            leading='prose'
+            className={`inline opacity-75 shrink hover:opacity-100 transition-opacity duration-200`}
+          >
+            3D Artist
+          </Typography>
+        </Link>
       </m.div>
     </div>
   )

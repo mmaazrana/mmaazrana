@@ -11,10 +11,26 @@ export default function SocialLinks({ isEndOfPage }: { isEndOfPage: boolean }) {
       className={`${isEndOfPage ? 'w-full sm:w-fit' : 'w-0'} overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
     >
       {[
-        { icon: <Linkedin />, text: 'Linkedin', href: 'https://www.linkedin.com/in/mmaazrana/' },
-        { icon: <Behance />, text: 'Behance', href: 'https://www.behance.net/maazrana3' },
-        { icon: <Github />, text: 'Github', href: 'https://github.com/mmaazrana' },
-        { icon: <Dribbble />, text: 'Dribbble', href: 'https://dribbble.com/mmaazrana' },
+        {
+          icon: <Linkedin className='!fill-[#0a66c2]' />,
+          text: 'Linkedin',
+          href: 'https://www.linkedin.com/in/mmaazrana/',
+        },
+        {
+          icon: <Behance className='!fill-[#1769FF]' />,
+          text: 'Behance',
+          href: 'https://www.behance.net/maazrana3',
+        },
+        {
+          icon: <Github className='!fill-black-dynamic' />,
+          text: 'Github',
+          href: 'https://github.com/mmaazrana',
+        },
+        {
+          icon: <Dribbble className='!fill-[#EA4C89]' />,
+          text: 'Dribbble',
+          href: 'https://dribbble.com/mmaazrana',
+        },
       ].map((link, index) => (
         <SocialLink key={index} icon={link.icon} text={link.text} href={link.href} index={index} />
       ))}

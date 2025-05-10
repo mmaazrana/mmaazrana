@@ -37,19 +37,18 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
       className={`relative h-fit order-3 sm:row-span-2 md:row-span-3 ${className}`}
     >
       <AboutCard
-        className='h-full min-h-fit max-h-fit'
+        className='h-full min-h-fit max-h-fit group'
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         isActive={isHovered || (isMobile && clientsIsInView)}
       >
-        <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 h-fit'>
-          <div className='flex flex-row flex-wrap gap-3 md:gap-4'>
-            {clientIconComponents.map(({ Icon, props }, index) => (
-              <div key={index}>
-                <Icon
-                  {...props}
-                  className='h-[24px] sm:h-[26px] md:h-[28px] lg:h-[30px] xl:h-[32px]'
-                />
+        <div className='flex flex-col gap-2 sm:gap-3 md:gap-4 h-fit group'>
+          <div className='flex flex-row flex-wrap gap-y-m gap-x-s relative group'>
+            {clientIconComponents.map(({ Icon }, index) => (
+              <div key={index} className='relative'>
+                <div className='absolute inset-0 bg-white-dynamic mix-blend-darken dark:mix-blend-lighten z-1' />
+                <div className='absolute inset-0 bg-secondary mix-blend-color z-1 group-hover:opacity-0 transition-opacity duration-300' />
+                <Icon className='h-[24px] sm:h-[26px] md:h-[28px] lg:h-[30px] xl:h-[32px]' />
               </div>
             ))}
           </div>
