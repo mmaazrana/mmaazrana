@@ -78,6 +78,7 @@ export enum ProjectCategories {
 }
 
 export enum TestimonialClients {
+  notFound = 'not-found',
   alfabolt = 'alfabolt',
   kueenz = 'kueenz',
   rivanna = 'rivanna',

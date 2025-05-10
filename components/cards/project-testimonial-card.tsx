@@ -18,6 +18,9 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
   const isInView = useInView(ref, { margin: `-15% 0px -15% 0px`, amount: 0.25 })
   const delayClasses = ['!delay-0', '!delay-50', '!delay-100', '!delay-150', '!delay-200']
   const CompanyLogo = clientData.find(client => client.key === testimonialData.key)?.companyLogo
+  const productsInvolved = clientData.find(
+    client => client.key === testimonialData.key,
+  )?.productsInvolved
   return (
     <div ref={ref} className='relative z-1 w-full py-3xl sm:py-0 sm:px-2xl mb-xl group'>
       <div className='absolute -top-1 sm:-top-4 md:-top-6 md:-top-7 xl:-top-8 -left-3xs z-[-15] flex flex-row gap-3xs'>
@@ -91,20 +94,19 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
             href={`/clients`}
             className='max-w-full flex flex-col sm:flex-row justify-center items-start sm:items-center gap-xs sm:gap-m pr-s pl-m py-m sm:py-xs bg-secondary-hover/75 hover:bg-secondary/25 transition-all duration-300 rounded-xl sm:rounded-full'
           >
-            <div className='flex flex-row gap-2xs'>
-              {clientData
-                .find(client => client.key === testimonialData.key)
-                ?.productsInvolved.slice(0, 3)
-                .map((product, index) => (
+            {productsInvolved && (
+              <div className='flex flex-row gap-2xs'>
+                {productsInvolved.slice(0, 3).map((product, index) => (
                   <product.logo key={index} className='w-fit max-w-[2rem] h-m' />
                 ))}
-            </div>
+              </div>
+            )}
             <Button
               type='tertiary'
               textSize='lg'
               textWeight='medium'
               textColor='primary-hover'
-              text={`View All Projects with ${testimonialData.companyName}`}
+              text={`View All Projects ${testimonialData.companyName === '' ? '' : 'with'} ${testimonialData.companyName}`}
               rightIcon={<ArrowRight className='self-center w-m h-m stroke-2 stroke-secondary' />}
               className='items-end sm:items-center'
             />

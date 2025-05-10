@@ -340,6 +340,15 @@ export const testimonialsData: TestimonialsT = {
   },
 }
 
+const notFoundTestimonial: TestimonialT = {
+  key: TestimonialClients.notFound,
+  testimonial:
+    "This project\'s commitment to non-existence is truly next-level and, frankly, inspiring! It boasts zero bugs, infinite uptime (because it\'s never down, nor up for that matter), and a feature set so theoretical, it\'s practically philosophical. Integration was an absolute dream. \n\n it interfaced with precisely none of our existing systems, flawlessly! Our support team has never been more relaxed; not a single user query, not one panicked email. We give it 5 out of 5 stars for its impeccable invisibility and the sheer peace of mind it brings. \n\n A true game-changer in the field of doing absolutely nothing, very well.",
+  client: "Schrödinger\'s Client",
+  designation: "Chief Officer of Vanishing Acts",
+  companyName: '',
+}
+
 export const techStackIcons: IconComponentsT = {
   next: { Icon: SiNextdotjs, props: { fill: 'var(--primary)' } },
   react: { Icon: SiReact, props: { fill: '#61DAFB' } },
@@ -490,6 +499,7 @@ export const projectNotFound: ProjectAnalysisT = {
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment, WorkCategories.illustration, WorkCategories.blender],
+  testimonial: notFoundTestimonial,
   techStack: [
     {
       title: 'Quantum Entanglement Framework',
