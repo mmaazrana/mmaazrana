@@ -257,7 +257,7 @@ export const footerButtons: FooterButtonT[][] = [
     { text: 'Overview', href: '/' },
     { text: 'Services', href: `/#${Sections.services}` },
     { text: 'Testimonials', href: `/#${Sections.testimonials}` },
-    { text: 'Clients', href: `/Clients` },
+    { text: 'Clients', href: `/clients` },
     { text: 'About Me', href: `/#${Sections.aboutMe}` },
   ],
   [
