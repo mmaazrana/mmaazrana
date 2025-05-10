@@ -19,23 +19,27 @@ const ContactButton: FC<ContactButtonProps> = ({ isMobile = false }) => {
     <m.span layout animate={{ width: isEndOfPage ? '100%' : 'fit' }} transition={{ duration: 0.4 }}>
       <Link
         href='mailto:awaismaaz@gmail.com'
-        className={`${isMobile ? 'flex sm:hidden !justify-center !items-center px-4 py-2.5 sm:!p-[9px] md:!p-[10px] lg:!p-[11px] xl:!p-3' : 'hidden sm:flex !justify-center !items-center py-xs px-m'} ${!isEndOfPage && '!p-xs'} flex-row bg-primary hover:bg-primary-hover rounded-full !overflow-hidden !whitespace-nowrap`}
+        className={`${isMobile ? 'flex sm:hidden !justify-center !items-center p-xs' : 'hidden sm:flex !justify-center !items-center py-xs px-m'} ${!isEndOfPage && '!p-xs min-w-fit'} flex-row bg-primary hover:bg-primary-hover rounded-full !overflow-hidden !whitespace-nowrap`}
         aria-label={isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}
       >
-        <Mail className={'fill-none stroke-primary-accent h-m w-m'} />
+        <Mail className={'fill-none stroke-primary-accent min-h-m min-w-m h-m w-m'} />
         <AnimatePresence mode='wait'>
           <m.div
             layout
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: isEndOfPage ? '100%' : 0, opacity: isEndOfPage ? 1 : 0 }}
+            initial={{ width: 0, maxWidth: 0, opacity: 0 }}
+            animate={{
+              width: isEndOfPage ? '100%' : 0,
+              maxWidth: isEndOfPage ? '100%' : 0,
+              opacity: isEndOfPage ? 1 : 0,
+            }}
             transition={{ duration: 0.4 }}
-            className='flex items-center justify-center'
+            className='flex items-center justify-center '
           >
             <Typography
               type='xl'
               color='primary-accent'
               leading='flat'
-              className='whitespace-nowrap'
+              className={`${isEndOfPage ? 'ml-2xs whitespace-nowrap max-w-full' : 'max-w-0'}`}
               weight={isMobile ? 'semi-bold' : 'medium'}
             >
               {isMobile ? 'Get in Touch' : 'awaismaaz@gmail.com'}

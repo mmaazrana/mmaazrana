@@ -7,6 +7,7 @@ import SectionTitle from './section-title'
 import { useAboutContext } from './about-content'
 import { useInView } from 'motion/react'
 import { useMediaQuery } from 'react-responsive'
+import { useTheme } from 'next-themes'
 
 interface ClientsSectionProps {
   className?: string
@@ -16,7 +17,7 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
   const { setActiveCard, setIsActive } = useAboutContext()
   const [isHovered, setIsHovered] = useState(false)
   const isMobile = useMediaQuery({ maxWidth: 445 })
-
+  const { theme } = useTheme()
   const clientsRef = useRef(null)
   const clientsIsInView = useInView(clientsRef, { margin: `-45% 0px -45% 0px`, amount: 0.2 })
 
@@ -46,7 +47,9 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
           <div className='flex flex-row flex-wrap gap-y-m gap-x-s relative group'>
             {clientIconComponents.map(({ Icon }, index) => (
               <div key={index} className='relative'>
-                <div className='absolute inset-0 bg-white-dynamic mix-blend-darken dark:mix-blend-lighten z-1' />
+                <div
+                  className={`absolute inset-0 bg-white-dynamic mix-blend-darken dark:mix-blend-lighten z-1 ${theme === 'light' && '!mix-blend-darken'} ${theme === 'dark' && '!mix-blend-lighten'}`}
+                />
                 <div className='absolute inset-0 bg-secondary mix-blend-color z-1 group-hover:opacity-0 transition-opacity duration-300' />
                 <Icon className='h-[24px] sm:h-[26px] md:h-[28px] lg:h-[30px] xl:h-[32px]' />
               </div>

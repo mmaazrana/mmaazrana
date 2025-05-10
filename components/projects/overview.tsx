@@ -42,7 +42,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
     <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8'>
       <div className='flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full'>
         <div className='flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
-          <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-m'>
+          <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-s'>
             {projectData.categories.map(category => (
               <Link key={category} href={`/portfolio?tab=${category}`}>
                 <Typography
@@ -67,7 +67,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
               <div className='grid grid-cols-1 gap-4 xs:gap-5 md:gap-6'>
                 {projectData.detailedAnalysis.requirements.map((item, index) => (
                   <div key={index} className='flex items-start gap-5'>
-                    <span className='text-xs -ml-2xs w-s h-0.5 bg bg-secondary rounded-full font-bold self-center' />
+                    <span className='text-xs -ml-2xs min-w-xs w-xs h-0.5 bg bg-secondary rounded-full font-bold self-center' />
                     <Typography type='xl' weight='light' className='opacity-75'>
                       {item}
                     </Typography>

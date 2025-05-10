@@ -268,7 +268,7 @@ export const footerButtons: FooterButtonT[][] = [
     { text: 'Art Works', href: `/portfolio?tab=${WorkCategories.blender}` },
   ],
   [
-    { text: 'Featured Projects', href: `/#${Sections.work}` },
+    { text: 'Top Projects', href: `/#${Sections.work}` },
     { text: 'Alfabolt', href: `/work/${getPageSlug(alfabolt.title)}` },
     { text: 'Humanizar Texto', href: `/work/${getPageSlug(humanizarTexto.title)}` },
     { text: 'Ayla AI', href: `/work/${getPageSlug(aylaAI.title)}` },

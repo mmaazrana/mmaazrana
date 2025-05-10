@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import { DotLottieWorker } from '@lottiefiles/dotlottie-web'
 
 interface LottieWorkerAnimationProps {
@@ -19,13 +19,20 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const workerRef = useRef<DotLottieWorker | null>(null)
 
-  useEffect(() => {
+  const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect
+
+  useIsomorphicLayoutEffect(() => {
+    if (canvasRef.current?.hasAttribute('animation')) {
+      return
+    }
+    canvasRef.current?.setAttribute('animation', 'true')
     if (canvasRef.current) {
       // Create worker only once or if src/workerId changes
       if (!workerRef.current) {
         workerRef.current = new DotLottieWorker({
           canvas: canvasRef.current,
           src,
+          renderConfig: { freezeOnOffscreen: isPlaying },
           autoplay: true, // Use state for initial autoplay
           loop: false,
           // @ts-ignore
@@ -43,10 +50,10 @@ const LottieWorkerAnimation: React.FC<LottieWorkerAnimationProps> = ({
         workerRef.current = null // Reset ref on cleanup
       }
     }
-  }, [src, workerId]) // Keep dependencies minimal for worker creation
+  }, [canvasRef.current, src, workerId]) // Keep dependencies minimal for worker creation
 
   // Effect for controlling play/pause based on isPlaying state
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (workerRef.current) {
       if (isPlaying) {
         workerRef.current.play()

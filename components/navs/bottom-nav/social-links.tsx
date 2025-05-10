@@ -8,7 +8,7 @@ import Dribbble from '@/components/icons/dribbble'
 export default function SocialLinks({ isEndOfPage }: { isEndOfPage: boolean }) {
   return (
     <div
-      className={`${isEndOfPage ? 'w-full sm:w-fit' : 'w-0'} overflow-hidden duration-1000 flex flex-row flex-wrap justify-between sm:grid-cols-2 sm:grid gap-3`}
+      className={`${isEndOfPage ? 'w-full sm:w-fit' : 'w-0'} overflow-hidden duration-1000 flex flex-row flex-wrap justify-start items-start sm:grid-cols-2 sm:grid gap-3`}
     >
       {[
         {

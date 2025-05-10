@@ -19,7 +19,7 @@ const AboutSection: FC = () => (
   >
     <MainSectionTitle title='Profile' />
     <AboutProvider>
-      <div className='relative flex flex-col about:grid h-auto content-start grid-flow-row-dense grid-rows-none grid-cols-2 md:grid-cols-3 grid-flow-col-dense gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+      <div className='relative flex flex-col about:grid h-auto content-start grid-flow-row-dense grid-rows-none min-[600px]:grid-cols-2 min-[1080px]:grid-cols-3 grid-flow-col-dense gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
         <div className='flex flex-col h-full min-h-full gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 order-1 row-span-4'>
           <IntroSection />
           <EducationSection />

@@ -3,7 +3,7 @@ import React from 'react'
 export default function MaazRanaLogo() {
   return (
     <svg
-      className='h-6 sm:h-7 md:h-8 lg:h-10 group'
+      className='h-2xl group'
       height='40'
       viewBox='0 0 275 41'
       fill='none'

@@ -16,6 +16,7 @@ interface MainHeroProps {}
 const MainHero: FC<MainHeroProps> = ({}) => {
   const [index, setIndex] = React.useState(0)
   const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme === 'dark'
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { margin: '-5% 0px -5% 0px', amount: 0.2 })
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null)
@@ -72,8 +73,6 @@ const MainHero: FC<MainHeroProps> = ({}) => {
       clearTimers()
     }
   }, [isInView]) // Rerun effect when isInView changes
-
-  const currentAnimation = resolvedTheme === 'dark' ? LottiePaths[index] : LottieLightPaths[index]
 
   return (
     <section
@@ -161,7 +160,9 @@ const MainHero: FC<MainHeroProps> = ({}) => {
               'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
             }
           >
-            <LottieWorkerAnimation src={currentAnimation} isPlaying={isInView} />
+            {isDark ?
+              <LottieWorkerAnimation src={LottiePaths[index]} isPlaying={isInView} />
+            : <LottieWorkerAnimation src={LottieLightPaths[index]} isPlaying={isInView} />}
           </div>
         </AnimatePresence>
         <span

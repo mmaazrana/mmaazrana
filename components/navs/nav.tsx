@@ -6,6 +6,7 @@ import Link from 'next/link'
 import MaazRanaLogo from '../icons/maaz-rana-logo'
 import MenuButton from '@/components/button/menu-button'
 import Button from '@/components/button'
+import ThemeToggleButton from '../button/theme-toggle-button'
 
 interface NavProps {
   isSticky?: boolean
@@ -25,9 +26,12 @@ const Nav: FC<NavProps> = ({ isSticky = true }) => {
       >
         <div>
           <div className=' flex items-center justify-between nav:block  '>
-            <Link href='/' aria-label='Home'>
-              <MaazRanaLogo />
-            </Link>
+            <div className='flex items-center space-x-s'>
+              <Link href='/' aria-label='Home'>
+                <MaazRanaLogo />
+              </Link>
+              <ThemeToggleButton />
+            </div>
 
             <div className='nav:hidden z-100 pointer-events-auto'>
               <MenuButton onClick={() => setShowNavbar(!showNavbar)} showNavbar={showNavbar} />
