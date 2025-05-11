@@ -149,12 +149,17 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           </Link>
         </m.div>
       </div>
-      <div className='flex flex-row items-center w-full justify-start gap-m'>
+      <m.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
+        transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
+        className='flex flex-row items-center w-full justify-start gap-m'
+      >
         <ThemeToggleButton showActiveState={true} tooltipPosition='top' />
         <Typography type='lg' leading='flat' className='whitespace-nowrap text-primary-hover/50'>
           Current Theme
         </Typography>
-      </div>
+      </m.div>
     </div>
   )
 }

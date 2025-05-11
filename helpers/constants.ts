@@ -351,22 +351,34 @@ export const aboutSections = [
 export const WorkExperiences: WorkExperienceT[] = [
   {
     company: 'Alfabolt',
-    roles: 'Frontend Developer - Lead Product Designer (UI/UX)',
+    roles: 'Lead Product Designer (UI/UX) & Frontend Developer, creating user-centric interfaces and responsive web apps.',
     tenure: '2022 - Present',
   },
-  { company: 'Total School Solutions', roles: 'IT Manager - Lead Graphic Designer', tenure: '2022 - 2024' },
+  {
+    company: 'Total School Solutions',
+    roles: 'IT Manager & Lead Graphic Designer, overseeing IT and leading design of visual assets.',
+    tenure: '2022 - 2024',
+  },
   {
     company: 'Nustac Technologies',
-    roles: 'Flutter Mobile App Developer - UI/UX Designer',
+    roles: 'Flutter Mobile App Developer & UI/UX Designer, building cross-platform mobile apps and intuitive user experiences.',
     tenure: '2021 - 2024',
   },
-  { company: '20Four7 VA', roles: 'Specialist Art Director & Animator', tenure: '2022 - 2023' },
+  {
+    company: '20Four7 VA',
+    roles: 'Specialist Art Director & Animator, managing cross functional teams and executing creative visual strategies.',
+    tenure: '2022 - 2023',
+  },
   {
     company: 'Beacon Tutors Pakistan',
-    roles: 'Full Stack Web Developer - UI/UX Designer',
+    roles: 'Full Stack Web Developer & UI/UX Designer, developing web solutions and user-friendly interfaces for ed-tech.',
     tenure: '2021 - 2022',
   },
-  { company: 'Edwiz Solutions', roles: 'Illustration & Graphics Designer', tenure: '2021 - 2022' },
+  {
+    company: 'Edwiz Solutions',
+    roles: 'Illustration & Graphics Designer, creating custom illustrations and graphic designs for clients.',
+    tenure: '2021 - 2022',
+  },
 ]
 
 export const productDesignProjects: ProjectAnalysisT[] = [
