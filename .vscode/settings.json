@@ -1,0 +1,11 @@
+{
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.codeActions.triggerOnFocusChange": true,
+    "files.autoSaveWhenNoErrors": false,
+    "window.autoDetectColorScheme": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.excludeDirty": true,
+    "workbench.editor.limit.value": 30,
+    "explorer.openEditors.visible": 20,
+    "workbench.editor.closeOnFileDelete": true
+}

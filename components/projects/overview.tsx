@@ -40,20 +40,20 @@ export default function ProjectOverview({ project }: OverviewProps) {
 
   return (
     <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8'>
+      <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-s -translate-y-2xs w-full'>
+        {projectData.categories.map(category => (
+          <Link key={category} href={`/portfolio?tab=${category}`}>
+            <Typography
+              type='lg'
+              className='px-s py-2xs whitespace-nowrap text-center bg-secondary-hover/15 outline outline-1 outline-secondary hover:bg-primary-invert/70 transition-all duration-300 rounded-full cursor-pointer'
+            >
+              {`${workBottomNavCategories.find(c => c.key === category)?.text}`}
+            </Typography>
+          </Link>
+        ))}
+      </div>
       <div className='flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full'>
         <div className='flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
-          <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-s'>
-            {projectData.categories.map(category => (
-              <Link key={category} href={`/portfolio?tab=${category}`}>
-                <Typography
-                  type='lg'
-                  className='px-s py-2xs whitespace-nowrap text-center bg-secondary-hover/15 outline outline-1 outline-secondary hover:bg-primary-invert/70 transition-all duration-300 rounded-full cursor-pointer'
-                >
-                  {`${workBottomNavCategories.find(c => c.key === category)?.text}`}
-                </Typography>
-              </Link>
-            ))}
-          </div>
           <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
             <div className='flex flex-col items-start justify-start gap-6'>
               <Typography tag='h3' type='5xl' weight='bold' className=''>
@@ -66,9 +66,11 @@ export default function ProjectOverview({ project }: OverviewProps) {
             <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
               <div className='grid grid-cols-1 gap-4 xs:gap-5 md:gap-6'>
                 {projectData.detailedAnalysis.requirements.map((item, index) => (
-                  <div key={index} className='flex items-start gap-5'>
-                    <span className='text-xs -ml-2xs min-w-xs w-xs h-0.5 bg bg-secondary rounded-full font-bold self-center' />
-                    <Typography type='xl' weight='light' className='opacity-75'>
+                  <div key={index} className='flex items-start justify-start gap-5'>
+                    <div className='-ml-2xs min-w-xs w-xs min-h-[1.25lh] self-start flex flex-col justify-center items-center'>
+                      <span className='text-xs min-w-xs w-xs min-h-4xs h-4xs bg-secondary rounded-full' />
+                    </div>
+                    <Typography type='xl' weight='light' leading='prose' className='opacity-75'>
                       {item}
                     </Typography>
                   </div>

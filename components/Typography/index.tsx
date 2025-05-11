@@ -90,12 +90,16 @@ const Typography: FC<TypographyProps> = ({
 
   const processedChildren =
     typeof children === 'string' ?
-      children.split('\n').map((line, index, arr) => (
-        <React.Fragment key={index}>
-          {line}
-          {index !== arr.length - 1 && <br />}
-        </React.Fragment>
-      ))
+      children.split('\n').map((line, index, arr) =>
+        line.split('"').map((word, wordIndex) => (
+          <React.Fragment key={wordIndex}>
+            {wordIndex % 2 !== 0 && word ?
+              <b className='text-bold font-[650]'>{word}</b>
+            : word}
+            {index !== arr.length - 1 && <br />}
+          </React.Fragment>
+        )),
+      )
     : children
 
   return <Tag className={dynamicClasses}>{processedChildren}</Tag>

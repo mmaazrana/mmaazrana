@@ -215,6 +215,23 @@ import {
   SquareRoundCorner,
   CreditCard,
   Factory,
+  LayoutDashboard,
+  BellRing,
+  ShieldAlert,
+  WavesLadder,
+  CalendarClock,
+  TestTubeDiagonal,
+  Headset,
+  CalendarSync,
+  Calculator,
+  History,
+  Send,
+  GraduationCap,
+  MessageCircleQuestion,
+  MailQuestion,
+  ScanFace,
+  MapPinPlus,
+  LibraryBig,
 } from 'lucide-react'
 import {
   SiAdobeaftereffects,
@@ -556,55 +573,99 @@ export const pools515: ProjectAnalysisT = {
       'Pools515 streamlines operations for pool service businesses by providing a comprehensive platform for scheduling, service management, client communication, and billing. The system features an intuitive interface designed for both office staff and field technicians.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Appointment scheduling system',
-      'Service tracking capability',
-      'Client management tools',
-      'Billing and invoicing features',
-      'Mobile app for field technicians',
-      'Notification system for clients',
-      'Service history tracking',
-      'Reporting and analytics',
+      'User-friendly dashboard displaying "pool information", "upcoming appointments", and "test results".',
+      'Clear visual hierarchy and intuitive navigation flows.',
+      'Notification system for "water sample status", "results", and "appointment confirmations".',
+      'Appointment scheduling system for various service types - "voice call", "video call", "on-site inspection" with date and time selection.',
+      'Ability to "reschedule" or "cancel" appointments with reason logging.',
+      'Pool registration module to capture "pool details", winterization status, ozone, UV, salt system, available equipment, filter types, pool usage, equipment manufacturer, and attached spa details.',
+      '"Gallon calculator" utility integrated into pool registration.',
+      'My Appointments section to view "upcoming" and "past appointments", detailing service type, date, and time.',
+      'Water test results display, including "pH", "chlorine", and "estimated chemical dosages" (e.g., tablets in floater).',
+      'Checklist for essential "pool maintenance tasks". for example, empty baskets, brush tile, remove air from system, check filter pressure.',
+      'Mobile-first, responsive design for accessibility across devices.',
+      'Secure user "authentication" and profile management.',
+      'Payment integration for "booking appointments/services".',
+      'Service history tracking for "appointments" and "tests".',
     ],
     keyFeatures: [
       {
-        title: 'Appointment scheduling',
-        description: 'Intuitive calendar interface for organizing service visits and assignments.',
-        icon: Star,
-      },
-      {
-        title: 'Service tracking',
+        title: 'Dashboard Overview',
         description:
-          'Detailed tracking of service activities, chemicals used, and maintenance performed.',
-        icon: Star,
+          'Centralized view of "pool status", Test Results notifications, upcoming appointments, and upcoming tests with quick view options.',
+        icon: LayoutDashboard,
       },
       {
-        title: 'Client management',
-        description: 'Comprehensive client profiles with property details and service preferences.',
-        icon: Star,
-      },
-      {
-        title: 'Technician routing',
-        description: 'Optimized routing for field technicians to maximize efficiency.',
-        icon: Star,
-      },
-      {
-        title: 'Mobile app integration',
+        title: 'Notification Center',
         description:
-          'Field-ready mobile application for technicians to log services and access information.',
-        icon: Star,
+          'Chronological notifications for "Water Samples", "Results", "Appointments", and other important updates, categorized by date.',
+        icon: BellRing,
       },
       {
-        title: 'Automated notifications',
+        title: 'On-Site Inspection Management',
         description:
-          'Client alerts for upcoming appointments, completed services, and billing information.',
-        icon: Star,
+          'View details of "on-site inspections", including status, date, time, cost tracking. Provides ability to Join Meeting, "Reschedule Or Cancel", and log rescheduling reasons.',
+        icon: ShieldAlert,
       },
       {
-        title: 'Billing management',
-        description: 'Comprehensive system for managing invoices, payments, and recurring billing.',
-        icon: Star,
+        title: 'Comprehensive Pool Registration',
+        description:
+          'Ability to register pool details including total gallons, with a "Gallon Calculator", address, "winterization status", presence of ozone, UV, or salt systems, available equipment, types of filters, pool usage, equipment manufacturer, and details of any attached spa.',
+        icon: WavesLadder,
       },
-      { title: 'On-site inspection management', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Flexible Appointment Booking System',
+        description:
+          'Allows selection of "Voice Call", "Video Call", "On-Site Inspection", with details on duration and cost. Features calendar-based date selection and specific time slot selection. Includes an option to Buy Credits for seamless payment.',
+        icon: HeartHandshake,
+      },
+      {
+        title: 'My Appointments Section',
+        description:
+          'Tabbed interface for "Upcoming" and "Past" appointments, displaying service type icon, date, and time for each entry, with an option to add new appointments.',
+        icon: CalendarClock,
+      },
+      {
+        title: 'Detailed Water Test Results',
+        description:
+          'Displays key water parameters like pH and Chlorine levels, and provides "Estimated Tablets In Floater". Includes a "checklist" before submitting such as Empty Baskets, Remove Air From System, Check Filter Pressure',
+        icon: TestTubeDiagonal,
+      },
+      {
+        title: 'Upcoming Appointments & Tests View',
+        description:
+          'Dedicated sections on the dashboard for quick access to "future appointments" and "tests", with detailed lists and due dates for tests.',
+        icon: Headset,
+      },
+      {
+        title: 'Rescheduling & Cancellation Functionality',
+        description:
+          'Users can reschedule or cancel appointments, providing a reason for the change. Agent email is displayed for customer queries.',
+        icon: CalendarSync,
+      },
+      {
+        title: 'Gallon Calculator',
+        description:
+          'Utility integrated within the pool registration process to help users determine their "pool volume".',
+        icon: Calculator,
+      },
+      {
+        title: 'Service History & Tracking',
+        description:
+          'Provides a history of "Past Appointments" in My Appointments, and by storing water test results and notification history.',
+        icon: History,
+      },
+      {
+        title: 'Client Communication Tools',
+        description:
+          'Facilitated through automated notifications for "appointments", "test results", and display of "agent contact information" for rescheduling queries.',
+        icon: Send,
+      },
+      {
+        title: 'Billing Management',
+        description: 'Ability to "Buy Credits" and manage credits for seamless payment of services, tests and appointments.',
+        icon: CreditCard,
+      },
     ],
     challenges: [
       {
@@ -651,24 +712,24 @@ export const pools515: ProjectAnalysisT = {
       },
     ],
   },
-  categories: [WorkCategories.productDesign],
+  categories: [WorkCategories.productDesign, WorkCategories.illustration],
+  figmaUrl: 'https://www.figma.com/file/1WbCP0KIBvGlePrfCA8d51/5.15---Mobile-Application?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
   techStack: [
     {
-      title: 'React/Next.js',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding & Illustration',
+      icon: techStackIcons.illustrator,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Photoshop',
+      usage: 'Image Editing',
+      icon: techStackIcons.photoshop,
     },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
   ],
   isMobile: true,
   images: { main: pools515Main, screenshots: [pools515BookAppointment, pools515Inspection, pools515MyAppointment, pools515Notification, pools515RegisterPool, pools515Result, pools515Landing] },
@@ -680,46 +741,57 @@ export const beaconTutors: ProjectAnalysisT = {
     "Pakistan's largest tutoring network platform connecting qualified tutors with students for personalized learning experiences.",
   detailedAnalysis: {
     overview:
-      'Beacon Tutors Pakistan is a comprehensive tutoring platform designed to bridge the gap between students and qualified tutors. The platform features an intuitive interface for connecting tutors with students, managing educational services, and streamlining the tutoring process.',
+      'Beacon Tutors Pakistan is a comprehensive tutoring platform designed to bridge the gap between students and qualified tutors. The platform features an intuitive interface for connecting tutors with students, managing educational services, and streamlining the tutoring process. It includes a multi-step inquiry system to gather necessary information from both service seekers and potential tutors/writers.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Educational and engaging hero section with playful illustrations',
-      'Clear service categorization with visual icons and descriptive cards',
-      'Step-by-step process visualization with custom illustrations',
-      'Consistent color scheme with educational theme',
-      'Well-structured information hierarchy with clear sections',
-      'Mobile-responsive design with adaptive layouts',
-      'Multi-step form with progress indicators for easy navigation',
+      'Educational and engaging hero section with playful "illustrations" and "lottie animations" for services like "Home Tutoring Service".',
+      'Clear service categorization for "Writing Service", "Online Tutoring", "Home Tutoring" with descriptive cards, illustrations, and links to their individual pages.',
+      'Step-by-step process visualization for user journey: Submit Inquiry via WhatsApp/call, Teacher Locating, Profile Sharing.',
+      'Consistent color scheme and branding, suited for parents, teachers and students.',
+      'Well-structured information hierarchy with clear sections.',
+      'Mobile-responsive design with adaptive layouts for web.',
+      'Multi-step "Submit Inquiry" form with clear progress indicators and distinct stages for service seekers and service providers.',
+      '"Stage 1 -" Identification of user\'s intent, seeking to work as "Online Tutor", "Home Tutor", "Content Writer".',
+      '"Stage 2 -" Identification of user type, "Student/Parent", "Teacher".',
+      '"Stage 3 -" Detailed data collection: Name, Email, Contact, WhatsApp Number, Location, User Role confirmation, Service Required, Comments.',
+      'Clear navigation menu for services and inquiry process.',
     ],
     keyFeatures: [
-      { title: 'City-based tutor matching', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Chemical tracking',
-        description: 'Inventory and usage tracking for pool chemicals and supplies.',
-        icon: Star,
+        title: 'Service Showcase',
+        description: 'Presentation of core services like "Home Tutoring", "Online Tutoring", "Writing Service", with brief descriptions and illustrative icons/images.',
+        icon: GraduationCap
       },
       {
-        title: 'Reporting tools',
-        description: 'Analytical reports for business performance and service metrics.',
-        icon: Star,
+        title: 'Guided Inquiry Process',
+        description: 'Simple three-step explanation - "Submit Inquiry", "Teacher Locating", and "Profile Sharing", guiding users on service acquisition, with options for inquiry via WhatsApp or call.',
+        icon: MessageCircleQuestion
       },
       {
-        title: 'Weather integration',
-        description: 'Weather forecast integration for planning maintenance schedules.',
-        icon: Star,
+        title: 'Multi-Stage Inquiry Form',
+        description: 'A structured form with progress indicators - "Stage 1" for applicants to select their desired role, "Stage 2" for users to identify as "Student/Parent" or "Teacher", "Stage 3" for detailed contact information, location, service needs, and comments.',
+        icon: MailQuestion
       },
       {
-        title: 'Client portal',
-        description: 'Self-service portal for clients to view service history and make requests.',
-        icon: Star,
+        title: 'Role-Based User Onboarding',
+        description: 'Distinct questions and paths for those looking to "work as" a tutor/writer versus those looking to hire a service.',
+        icon: ScanFace
       },
-      { title: 'User role management', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Detailed inquiry form with subject selection',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Location-Specific Service Matching',
+        description: '"Location" dropdown in the inquiry form to facilitate finding local tutors or services, supporting the "Teacher Locating" step.',
+        icon: MapPinPlus
       },
-      { title: 'Educational resource sharing', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Service Selection for Hiring',
+        description: 'Dropdown for users to specify the exact service they are interested in hiring, from "Home Tutor", "Online Tutoring", and "Content Writer".',
+        icon: LibraryBig
+      },
+      {
+        title: 'User Role Management',
+        description: 'The platform differentiates user roles - "Student/Parent", "Teacher", "Applicant for tutor/writer roles" - through its inquiry and onboarding process.',
+        icon: UsersRound
+      },
     ],
 
     challenges: [
@@ -756,24 +828,46 @@ export const beaconTutors: ProjectAnalysisT = {
       },
     ],
   },
-  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
+  liveUrl: 'https://beacon-tutors-website.vercel.app',
+  figmaUrl: 'https://www.figma.com/file/qV3dnZyCI4FG5cxobVLueC/Beacon-Tutors-UI?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
+  categories: [WorkCategories.productDesign, WorkCategories.productDevelopment, WorkCategories.illustration, WorkCategories.videoEditing],
   techStack: [
     {
-      title: 'React/Next.js',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Next.js',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
     },
     {
-      title: 'TypeScript',
+      title: 'React',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.react,
+    },
+    {
+      title: 'Javascript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.javascript,
+    },
+    { title: 'Firebase', usage: 'Realtime Database and Authentication', icon: techStackIcons.firebase },
+    {
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
+    {
+      title: 'Adobe Photoshop',
+      usage: 'Image Editing',
+      icon: techStackIcons.photoshop,
+    },
+    {
+      title: 'Adobe After Effects',
+      usage: 'Lottie Animations',
+      icon: techStackIcons.afterEffects,
+    },
   ],
   images: {
     main: beaconTutorsWebsite,

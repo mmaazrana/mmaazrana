@@ -66,7 +66,7 @@ export default function IconCard({ icon: Icon, title, description }: IconCardPro
           <Typography tag='h3' type='3xl' weight='bold'>
             {title}
           </Typography>
-          <Typography type='xl' className='opacity-75'>
+          <Typography type='xl' weight='light' leading='prose' className='opacity-75'>
             {description}
           </Typography>
         </div>
