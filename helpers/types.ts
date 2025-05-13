@@ -12,6 +12,12 @@ export interface NavButtonT {
   type: ButtonTypes
 }
 
+export interface DropdownItemT {
+  text: string
+  href: string
+  rightIcon?: React.ReactElement
+}
+
 export interface IconComponentT {
   Icon: IconType
   props: { fill: string; [key: string]: string}
@@ -118,6 +124,7 @@ export interface ClientProductT {
   logo: any
   primaryColor: string
   name?: string
+  title?: string
   services: string[]
   link: string
 }

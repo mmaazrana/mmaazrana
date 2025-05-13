@@ -1,45 +1,47 @@
 'use client'
 import Typography from '@/components/Typography'
+// @ts-ignore
 import React, { FC, useEffect, useState } from 'react'
 import * as m from 'motion/react-m'
 import {} from '@/helpers/enums'
+import Link from 'next/link'
 
 interface AccordionProps {
   heading: string
-  isExpanded: boolean
   content?: React.ReactElement
-  onClick?: () => void
   className?: string
+  isOpen: boolean
+  queryString: string
+  id?: string
 }
 
 const Accordion: FC<AccordionProps> = ({
   heading,
-  isExpanded = false,
   content,
-  onClick,
   className,
+  isOpen, // Added back
+  queryString, // Added
+  id, // Added
 }) => {
-  const [isOpen, setIsOpen] = useState(isExpanded)
   const [isClicked, setIsClicked] = useState(false)
+
   useEffect(() => {
     setIsClicked(true)
     const timer = setTimeout(() => {
       setIsClicked(false)
     }, 300)
-    return () => clearTimeout(timer) // Cleanup the timeout
+    return () => clearTimeout(timer)
   }, [isOpen])
 
   return (
-    <div
-      className={`flex flex-col w-full max-w-full ${className}`}
-      onClick={() => onClick && onClick()}
-    >
+    <div id={id} className={`flex flex-col w-full max-w-full ${className}`}>
       <div className='relative flex w-full'>
         <div
           className={`absolute transition-all duration-300 top-1/2 -translate-y-1/2 h-(--fluid-1-2) rounded-full w-full bg-secondary ${isClicked ? 'opacity-100 scale-x-[0.985]' : 'opacity-75'}`}
         />
-        <button
-          onClick={() => setIsOpen(!isOpen)}
+        <Link
+          href={`/clients${queryString}`}
+          scroll={false}
           className={'outline-0 border-0 flex flex-row justify-between items-center w-full px-l'}
         >
           <Typography
@@ -60,7 +62,7 @@ const Accordion: FC<AccordionProps> = ({
               ></span>
             </div>
           </div>
-        </button>
+        </Link>
       </div>
       {content && (
         <m.div

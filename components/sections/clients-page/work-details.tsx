@@ -4,16 +4,27 @@ import Accordion from '@/components/accordion'
 import TestimonialData from '@/components/clients/testimonial-data'
 import ProductsInvolved from '@/components/clients/products-involved'
 import ToolsAndTechnologies from '@/components/clients/tools-and-technologies'
+import { getClientId, getClientQueryString } from '@/helpers/parsers'
 
-const WorkDetails = () => {
+interface WorkDetailsProps {
+  openKeys: string[]
+}
+
+const WorkDetails = ({ openKeys }: WorkDetailsProps) => {
+  const openProjectsParam = openKeys.join(',')
+
   return (
     <>
-      {clientData.map((data, index) => {
+      {clientData.map(data => {
+        const isOpen = openKeys.includes(data.key)
+        const accordionId = getClientId(data.key)
         return (
           <Accordion
-            key={index}
+            key={data.key}
+            id={accordionId}
             heading={data.heading}
-            isExpanded={index === 0}
+            isOpen={isOpen}
+            queryString={getClientQueryString({ openProjectsParam, itemKey: data.key, isOpen })}
             content={
               <div className='flex flex-col gap-10 py-4'>
                 <TestimonialData

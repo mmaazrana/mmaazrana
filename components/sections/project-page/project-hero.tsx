@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Mail } from 'lucide-react'
 import Typography from '@/components/Typography'
-import { capitalizeWords, getProjectData } from '@/helpers/parsers'
+import { capitalizeWords, getClientId, getProjectData } from '@/helpers/parsers'
 import { clientData } from '@/helpers/constants'
 
 export default function ProjectHero({ project }: { project: string }) {
@@ -16,6 +16,7 @@ export default function ProjectHero({ project }: { project: string }) {
   const ClientLogo = clientData.find(
     client => client.key === projectData.affiliateWith,
   )?.companyLogo
+  const testimonialKey = clientData.find(client => client.key === projectData.affiliateWith)?.key
 
   const rotationClasses = [
     'rotate-y-20 lg:rotate-y-22 xl:rotate-y-24',
@@ -132,9 +133,9 @@ export default function ProjectHero({ project }: { project: string }) {
       <div className='mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-12 flex flex-col max-w-[60rem] gap-6 items-center justify-center text-center'>
         <div className='flex flex-col gap-7 xs:gap-8 md:gap-9 xl:gap-10'>
           <div className='flex flex-col justify-center items-center gap-2.5 xs:gap-3 md:gap-3.5 xl:gap-4'>
-            {projectData.affiliateWith && (
+            {projectData.affiliateWith && testimonialKey && (
               <Link
-                href='/clients'
+                href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
                 className='w-fit max-w-fit opacity-100 group/affiliate flex flex-row justify-center items-center gap-2xs hover:!bg-secondary-hover transition-all duration-300 pl-xs pr-3xs hover:pr-2xs py-2xs bg-secondary-hover/50 outline outline-1 outline-secondary/25 rounded-full z-2'
               >
                 {ClientLogo && <ClientLogo className='max-w-[1rem] w-fit h-4' />}

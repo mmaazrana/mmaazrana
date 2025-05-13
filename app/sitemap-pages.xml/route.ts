@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { MetadataRoute } from 'next'
 import {
+  clientData,
   productDesignProjects,
   productDevelopmentProjects,
   // Import other project arrays if they have detail pages
@@ -22,6 +23,14 @@ function generatePageSitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(), // Or use a specific date if available
     changeFrequency: 'monthly',
     priority: 0.8,
+  }))
+
+  // Client page entries
+  const clientPageEntries: MetadataRoute.Sitemap = clientData.map((client) => ({
+    url: `${URL}/clients?openProjects=${client.key}`,
+    lastModified: new Date(), // Or use a specific date if available
+    changeFrequency: 'monthly',
+    priority: 0.7, // Same as the main /clients page or slightly lower
   }))
 
   // Static pages
@@ -47,7 +56,7 @@ function generatePageSitemap(): MetadataRoute.Sitemap {
     // Add other static pages like /about if they exist and are indexable
   ]
 
-  return [...staticPages, ...projectEntries]
+  return [...staticPages, ...projectEntries, ...clientPageEntries]
 }
 
 export async function GET() {

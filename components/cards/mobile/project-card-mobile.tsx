@@ -6,7 +6,7 @@ import Typography from '@/components/Typography'
 import { TestimonialClients } from '@/helpers/enums'
 import { useInView } from 'motion/react'
 import Link from 'next/link'
-import { capitalizeWords, getPageSlug } from '@/helpers/parsers'
+import { capitalizeWords, getClientId, getPageSlug } from '@/helpers/parsers'
 import { clientData } from '@/helpers/constants'
 import { ChevronRight } from 'lucide-react'
 
@@ -42,7 +42,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
     <div className='relative group'>
       {testimonialKey && (
         <Link
-          href='/clients'
+          href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
           className='absolute w-fit max-w-fit opacity-100 group/affiliate flex flex-row justify-center items-center gap-2xs bottom-s hover:!bg-white-dynamic transition-all duration-300 right-s pl-xs pr-3xs hover:pr-2xs py-2xs bg-white-dynamic/50 group-hover:bg-white-dynamic/75 shadow-xl backdrop-blur-sm outline outline-1 outline-secondary/0 rounded-full z-2'
         >
           {ClientLogo && <ClientLogo className='max-w-[1rem] w-fit h-4' />}

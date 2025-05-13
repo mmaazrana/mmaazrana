@@ -7,6 +7,20 @@ import MaazRanaLogo from '../icons/maaz-rana-logo'
 import MenuButton from '@/components/button/menu-button'
 import Button from '@/components/button'
 import ThemeToggleButton from '../button/theme-toggle-button'
+import {
+  alfabolt,
+  humanizarTexto,
+  aylaAI,
+  elBrezal,
+  pools515,
+  superDuperStudio,
+  testimonialsData,
+} from '@/helpers/project-analytics'
+import { getClientId, getClientQueryString, getPageSlug } from '@/helpers/parsers'
+import Dropdown from '@/components/dropdown'
+import { DropdownItemT } from '@/helpers/types'
+import { ArrowRightIcon } from 'lucide-react'
+import { TestimonialClients } from '@/helpers/enums'
 
 interface NavProps {
   isSticky?: boolean
@@ -14,6 +28,45 @@ interface NavProps {
 
 const Nav: FC<NavProps> = ({ isSticky = true }) => {
   const [showNavbar, setShowNavbar] = useState(false)
+
+  const topProjectsData = [alfabolt, humanizarTexto, aylaAI, elBrezal, pools515, superDuperStudio]
+
+  const topClientsData = [
+    testimonialsData[TestimonialClients.alfabolt],
+    testimonialsData[TestimonialClients.kueenz],
+    testimonialsData[TestimonialClients.beaconTutors],
+    testimonialsData[TestimonialClients.rivanna],
+  ]
+
+  const topProjects: DropdownItemT[] = topProjectsData.map(project => ({
+    text: project.title,
+    href: `/work/${getPageSlug(project.title)}`,
+  }))
+
+  const topClients: DropdownItemT[] = topClientsData.map(client => ({
+    text: client.companyName,
+    href: `/clients${getClientQueryString({ openProjectsParam: '', itemKey: client.key, isOpen: false })}#${getClientId(client.key)}`,
+  }))
+
+  const workDropdownItems = [
+    ...topProjects,
+    {
+      text: 'All Projects',
+      href: `/portfolio`,
+      rightIcon: <ArrowRightIcon className='stroke-primary-hover stroke-1 w-s h-s' />,
+    },
+  ]
+
+  const clientsDropdownItems = [
+    ...topClients,
+    {
+      text: 'All Clients',
+      href: `/clients`,
+      rightIcon: <ArrowRightIcon className='stroke-primary-hover stroke-1 w-s h-s' />,
+    },
+  ]
+
+  const otherNavButtons = navButtons.filter(button => button.text !== 'Work')
 
   return (
     <nav
@@ -53,15 +106,20 @@ const Nav: FC<NavProps> = ({ isSticky = true }) => {
               }  rounded-2xl flex-1 justify-self-center max-w-fit shadow-lg p-4 mt-4 nav:block nav:p-0 nav:mt-0 nav:w-auto nav:shadow-none transition-opacity duration-300`}
           >
             <ul className='items-end justify-end nav:gap-2 lg:gap-3 xl:gap-3 nav:flex '>
-              {navButtons.map((button, index) => (
+              <Dropdown title='Work' items={workDropdownItems} />
+              <Dropdown title='Clients' items={clientsDropdownItems} />
+              {otherNavButtons.map((button, index) => (
                 <li
                   key={index}
-                  className={`${button.type === 'primary' ? 'w-40 nav:w-fit mt-3 nav:mt-0 nav:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6' : 'mt-1 nav:mt-0'} self-center`}
+                  className={`${button.type === 'primary' ? 'w-40 nav:w-fit mt-s nav:mt-0 nav:ml-3 lg:ml-4 xl:ml-5 2xl:ml-6' : 'mt-3xs nav:mt-0'} self-center`}
                 >
                   <Link href={button.href} aria-label={button.text} className='self-center'>
                     <Button
                       type={button.type}
                       text={button.text}
+                      className={
+                        button.type === 'primary' ? '' : 'justify-start nav:justify-center'
+                      }
                       textWeight={button.type === 'primary' ? 'medium' : 'light'}
                     />
                   </Link>

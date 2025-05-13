@@ -8,6 +8,7 @@ import Button from '../button'
 import { TestimonialT } from '@/helpers/types'
 import { clientData } from '@/helpers/constants'
 import Link from 'next/link'
+import { getClientId } from '@/helpers/parsers'
 
 interface ProjectTestimonialCardProps {
   testimonialData: TestimonialT
@@ -91,7 +92,7 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
             </div>
           </div>
           <Link
-            href={`/clients`}
+            href={`/clients?openProjects=${testimonialData.key}#${getClientId(testimonialData.key)}`}
             className='max-w-full flex flex-col sm:flex-row justify-center items-start sm:items-center gap-xs sm:gap-m pr-s pl-m py-m sm:py-xs bg-secondary-hover/75 hover:bg-secondary/25 transition-all duration-300 rounded-xl sm:rounded-full'
           >
             {productsInvolved && (

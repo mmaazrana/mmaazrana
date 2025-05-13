@@ -136,6 +136,53 @@ export const getPageSlug = (pathname: string) => {
 }
 
 /**
+ * Generates a project ID from the project heading
+ * @param heading The heading of the project
+ * @returns The client ID
+ */
+export const getClientId = (heading: string): string => {
+  return `client-${heading
+    .toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, '')}` // Remove invalid characters
+}
+
+/**
+ * Generates a query string for the client page
+ * @param openProjectsParam The open projects parameter
+ * @param itemKey The key of the item
+ * @param isOpen Whether the item is open
+ * @returns The query string
+ */
+export const getClientQueryString = ({ openProjectsParam, itemKey, isOpen }: { openProjectsParam: string; itemKey: string; isOpen: boolean }) => {
+    const currentKeys = openProjectsParam ? openProjectsParam.split(',') : []
+    let newKeys: string[]
+
+    if (!isOpen) {
+      if (!currentKeys.includes(itemKey)) {
+        newKeys = [...currentKeys, itemKey]
+      } else {
+        newKeys = currentKeys // No change needed
+      }
+    } else {
+      newKeys = currentKeys.filter(key => key !== itemKey)
+    }
+
+    const newKeysString = newKeys.join(',')
+    const newSearchParam = new URLSearchParams([['openProjects', newKeysString]])
+
+    if (newKeys.length > 0) {
+      newSearchParam.set('openProjects', newKeys.join(','))
+    } else {
+      newSearchParam.delete('openProjects')
+    }
+
+    const search = newSearchParam.toString()
+    const query = search ? `?${search}` : ''
+    return query
+  }
+
+/**
  * Capitalizes the first letter of each word in a string
  * @param str The string to capitalize
  * @returns The capitalized string

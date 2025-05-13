@@ -5,24 +5,55 @@ import StackedTestimonials from '@/components/sections/clients-page/clients-hero
 import EsteemedClients from '@/components/sections/clients-page/esteemed-clients'
 import WorkDetails from '@/components/sections/clients-page/work-details'
 import { Metadata } from 'next'
+import { clientData } from '@/helpers/constants'
+import { SearchParams } from '@/helpers/types'
 
-export const metadata: Metadata = {
+// Define default metadata
+const defaultMetadata: Metadata = {
   title: 'Client Testimonials & Collaborations',
   description:
     "Read testimonials from clients like Alfabolt, Kueenz Technologies, Beacon Tutors, and others about Maaz Rana's product design and development work.",
-  keywords: [
-    'Clients',
-    'Testimonials',
-    'Partnerships',
-    'Collaboration',
-    'Product Design',
-    'Web Development',
-    'Mobile Development',
-    'Maaz Rana',
-  ],
 }
 
-export default function Home() {
+// Generate dynamic metadata based on search params
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}): Promise<Metadata> {
+  const { openProjects } = await searchParams
+  let projectKey: string | undefined = undefined
+
+  if (typeof openProjects === 'string') {
+    const keys = openProjects.split(',').filter(Boolean)
+    if (keys.length === 1) {
+      projectKey = keys[0]
+    }
+  }
+
+  if (projectKey) {
+    const client = clientData.find(c => c.key === projectKey)
+    const technologiesUsed = client?.technologiesInvolved.map(t => t.title).join(', ')
+    const productsUsed = client?.productsInvolved.map(p => p.title).join(', ')
+    if (client) {
+      return {
+        title: `Client Details | ${client.heading}`,
+        description: `Details about the work done for ${client.heading}, including testimonials from ${client.clientName} - ${client.designation}, products involved - ${productsUsed}, and technologies used - ${technologiesUsed}.`,
+      }
+    }
+  }
+
+  return defaultMetadata
+}
+
+export default async function Home({ searchParams }: { searchParams: SearchParams }) {
+  const { openProjects } = await searchParams
+  const openKeys =
+    openProjects ?
+      Array.isArray(openProjects) ?
+        openProjects
+      : openProjects.split(',')
+    : []
   return (
     <div className='max-w-[100vw]'>
       <Nav />
@@ -44,7 +75,7 @@ export default function Home() {
             <EsteemedClients />
           </section>
           <section className='2xl:p-20 xl:p-18 lg:p-16 md:p-14 sm:p-12 xs:p-10 p-8  center flex-col w-full'>
-            <WorkDetails />
+            <WorkDetails openKeys={openKeys} />
           </section>
         </main>
       </div>
