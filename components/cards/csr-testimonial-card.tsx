@@ -5,10 +5,13 @@ import Typography from '@/components/Typography'
 import { TestimonialCardProps } from '@/components/cards/testimonial-card'
 import { useInView } from 'motion/react'
 import * as m from 'motion/react-m'
-import { Star } from 'lucide-react'
+import { ChevronRight, Star } from 'lucide-react'
+import Button from '../button'
+import { getClientId } from '@/helpers/parsers'
+import Link from 'next/link'
 
 const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo(
-  ({ testimonial, client, designation, isActive }) => {
+  ({ testimonial, client, designation, isActive, testimonialKey }) => {
     const ref = useRef<HTMLDivElement>(null)
     const isInView = useInView(ref)
     const delayClasses = [
@@ -102,17 +105,34 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           </Typography>
         </div>
         <div
-          className={`inline-block w-full !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
+          className={`flex flex-row flex-wrap items-center justify-between gap-s w-full !transition-all !duration-500 ${isActive ? 'opacity-100' : 'opacity-25 transition-opacity duration-200'}`}
         >
-          <Typography type='lg' weight='medium' leading='flat' className='inline'>
-            {client}
-          </Typography>
-          <Typography type='lg' weight='light' leading='flat' className='inline'>
-            &nbsp; - &nbsp;
-          </Typography>
-          <Typography type='lg' weight='light' leading='flat' className='inline'>
-            {designation}
-          </Typography>
+          <div className={`inline-block w-fit`}>
+            <Typography type='lg' weight='medium' leading='flat' className='inline'>
+              {client}
+            </Typography>
+            <Typography type='lg' weight='light' leading='flat' className='inline'>
+              &nbsp; - &nbsp;
+            </Typography>
+            <Typography type='lg' weight='light' leading='flat' className='inline'>
+              {designation}
+            </Typography>
+          </div>
+          {testimonialKey && (
+            <Link
+              href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
+              className='w-fit ml-auto'
+            >
+              <Button
+                type='secondary'
+                className='self-end bg-secondary-hover/50 !transition-colors !duration-300 text-primary-accent !pl-s !pr-2xs !py-2xs !gap-3xs mr-s rounded-full'
+                textSize='base'
+                textColor='primary-hover'
+                text='Read More'
+                rightIcon={<ChevronRight className='w-s h-s stroke-secondary' />}
+              />
+            </Link>
+          )}
         </div>
       </div>
     )

@@ -60,6 +60,7 @@ const Testimonials: FC<TestimonialsProps> = () => {
               >
                 <TestimonialCard
                   variant='animated'
+                  testimonialKey={testimonial.key}
                   testimonial={testimonial.testimonial}
                   client={testimonial.client}
                   designation={testimonial.designation}
