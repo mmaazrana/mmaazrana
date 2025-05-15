@@ -206,13 +206,11 @@ import {
   Gauge,
   Proportions,
   Images,
-  Glasses,
   SearchCheck,
   Sparkles,
   UsersRound,
   HeartHandshake,
   FolderDot,
-  SquareRoundCorner,
   CreditCard,
   Factory,
   LayoutDashboard,
@@ -248,6 +246,37 @@ import {
   Cog,
   Wrench,
   AlarmClockCheck,
+  ShieldUser,
+  BookOpenCheck,
+  BookCopy,
+  ListVideo,
+  CircleDotDashed,
+  CodeXml,
+  SquareCode,
+  ChartBarStacked,
+  ChartCandlestick,
+  MessageCircleHeart,
+  Coins,
+  Landmark,
+  TextSearch,
+  FileStack,
+  BotMessageSquare,
+  Columns3Cog,
+  Fingerprint,
+  Target,
+  ScanSearch,
+  FileSliders,
+  Rss,
+  TableOfContents,
+  ShieldCheck,
+  Zap,
+  Tv,
+  HelpCircle,
+  Camera,
+  CloudSun,
+  MessageSquareText,
+  MapPin,
+  ArrowDownUp,
 } from 'lucide-react'
 import {
   SiAdobeaftereffects,
@@ -260,7 +289,6 @@ import {
   SiCloudinary,
   SiDart,
   SiElasticsearch,
-  SiExpress,
   SiFfmpeg,
   SiFigma,
   SiFirebase,
@@ -277,11 +305,9 @@ import {
   SiNotion,
   SiPython,
   SiReact,
-  SiReacthookform,
   SiRedis,
   SiReactquery,
   SiRedux,
-  SiSendgrid,
   SiSlack,
   SiSqlite,
   SiStripe,
@@ -290,12 +316,16 @@ import {
   SiTypescript,
   SiVercel,
   SiPostgresql,
-  SiTensorflow,
-  SiSocketdotio,
+  SiDigitalocean,
+  SiGraphql,
+  SiApollographql,
+  SiPrisma,
+  SiPorkbun,
 } from 'react-icons/si'
 import { TestimonialClients, WorkCategories } from './enums'
 import { IconType } from 'react-icons/lib'
 import { IconComponentsT, IconComponentT, TestimonialsT, TestimonialT } from './types'
+import AylaLogo from '@/components/icons/ayla'
 
 export const testimonialsData: TestimonialsT = {
   [TestimonialClients.alfabolt] : {
@@ -387,13 +417,21 @@ export const techStackIcons: IconComponentsT = {
   flutter: { Icon: SiFlutter, props: { fill: '#02569B' } },
   dart: { Icon: SiDart, props: { fill: '#0175C2' } },
   firebase: { Icon: SiFirebase, props: { fill: '#FFCA28' } },
+  stripe: { Icon: SiStripe, props: { fill: '#635BFF' } },
   node: { Icon: SiNodedotjs, props: { fill: '#339933' } },
   python: { Icon: SiPython, props: { fill: '#3776AB' } },
   javascript: { Icon: SiJavascript, props: { fill: '#F7DF1E' } },
   typescript: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+  redux: { Icon: SiRedux, props: { fill: '#764ABC' } },
+  graphql: { Icon: SiGraphql, props: { fill: '#E10098' } },
+  apollo: { Icon: SiApollographql, props: { fill: '#311C87' } },
+  prisma: { Icon: SiPrisma, props: { fill: '#2D3748' } },
+  mongodb: { Icon: SiMongodb, props: { fill: '#47A248' } },
   tailwind: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
   framer: { Icon: SiFramer, props: { fill: '#0055FF' } },
   vercel: { Icon: SiVercel, props: { fill: 'var(--primary)' } },
+  porkbun: { Icon: SiPorkbun, props: { fill: '#EF7878' } },
+  digitalocean: { Icon: SiDigitalocean, props: { fill: '#0080FF' } },
   googleAnalytics: { Icon: SiGoogleanalytics, props: { fill: '#E37400' } },
   figma: { Icon: SiFigma, props: { fill: '#F24E1E' } },
   illustrator: { Icon: SiAdobeillustrator, props: { fill: '#FF9A00' } },
@@ -586,7 +624,7 @@ export const pools515: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'Pools515 streamlines operations for pool service businesses by providing a comprehensive platform for scheduling, service management, client communication, and billing. The system features an intuitive interface designed for both office staff and field technicians.',
-    completeOn: 'Jul 2023',
+    completeOn: 'August 2023',
     requirements: [
       'User-friendly dashboard displaying "pool information", "upcoming appointments", and "test results".',
       'Clear visual hierarchy and intuitive navigation flows.',
@@ -757,7 +795,7 @@ export const beaconTutors: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'Beacon Tutors Pakistan is a comprehensive tutoring platform designed to bridge the gap between students and qualified tutors. The platform features an intuitive interface for connecting tutors with students, managing educational services, and streamlining the tutoring process. It includes a multi-step inquiry system to gather necessary information from both service seekers and potential tutors/writers.',
-    completeOn: 'Jul 2023',
+    completeOn: 'December 2022',
     requirements: [
       'Educational and engaging hero section with playful "illustrations" and "lottie animations" for services like "Home Tutoring Service".',
       'Clear service categorization for "Writing Service", "Online Tutoring", "Home Tutoring" with descriptive cards, illustrations, and links to their individual pages.',
@@ -898,7 +936,7 @@ export const deepReelAI: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'DeepReel is a cutting-edge AI video creation platform that revolutionizes the way users create professional videos. The platform features AI avatars, automated script generation, and a suite of video editing tools, making professional video creation accessible to everyone regardless of their technical expertise.',
-    completeOn: 'Dec 2024',
+    completeOn: 'December 2024',
     requirements: [
       'Modern dashboard with "light" and "dark" theme support, with easy access to all features.',
       'CUstomised, feature accurate, illustrations for creating videos, custom avatars, video campaigns, and automated videos.',
@@ -1053,7 +1091,7 @@ export const jawlineFitness: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'Jawline Fitness is a sophisticated mobile application designed to help users enhance their facial aesthetics through targeted exercises. The app provides structured workout programs based on levels and days, progress tracking via a history calendar, customizable settings, and reminders, all within an elegant, dark-themed interface.',
-    completeOn: 'Jul 2023',
+    completeOn: 'July 2024',
     requirements: [
       'Sleek dark theme with yellow accent colors for optimal visibility and modern feel.',
       'Multi-step onboarding process to personalize exercise plans based on user\'s weight and age.',
@@ -1191,68 +1229,68 @@ export const codingInterviewPrep: ProjectAnalysisT = {
     'A comprehensive coding interview preparation platform featuring progress tracking, programming language references, algorithm studies, and daily coding challenges.',
   detailedAnalysis: {
     overview:
-      'An advanced interview preparation application designed to help developers master coding interviews. The platform combines structured learning paths (e.g., a 30-day plan), progress tracking (individual, vs. friends), extensive reference materials for multiple languages, video tutorials with integrated note-taking, and links to coding practice platforms, all within a focused dark-theme UI.',
-    completeOn: 'Jul 2023',
+      'An advanced interview preparation application designed to help developers master coding interviews. The platform combines structured learning paths, progress tracking, extensive reference materials for multiple languages, video tutorials with integrated note-taking, and links to coding practice platforms, all within a focused dark-theme UI.',
+    completeOn: 'January 2023',
     requirements: [
       'Sophisticated dark theme interface optimized for focused study and code readability across all sections.',
-      'Personalized dashboard with multiple views: "Daily" (progress charts for Python, C++, Java), "Leader Board" (comparison with friends), and "Overall" (aggregated progress). Login/Sign-up required for progress saving.',
-      'User authentication (Sign Up with Email, Name, Password; Login) and a comprehensive Profile Page displaying Skills, Achievements, Milestones, personal Notes, and Sign Out option.',
-      'Structured curriculum, e.g., "Ace your Coding Interview in 30 days", detailing an introduction, prerequisites (Basic Coding Knowledge, Patience), and modules for topics like "Algorithmic complexity / Big-O", "Data Structures", "Arrays", "Linked Lists" with progress indicators.',
-      'Content delivery via dedicated sections for "Language Reference" (C, Python, C++, Java, STL), learning modules with video tutorials (showing duration, e.g., "Harvard CS50 - Asymptotic Notation"), and integrated note-taking capabilities.',
+      'Personalized dashboard with multiple views containing "progress charts" for active languages, "comparison with friends", and "aggregated progress".',
+      'User authentication and a comprehensive Profile Page displaying "Skills", "Achievements", "Milestones", "personal Notes", and "Sign Out" option.',
+      'Structured curriculum, detailing an introduction, prerequisites, and modules for topics like "Algorithmic complexity / Big-O", "Data Structures", "Arrays", "Linked Lists" with progress indicators.',
+      'Content delivery via dedicated sections for various "Programming Languages", "Learning Modules" with video tutorials, and integrated note-taking capabilities.',
       'Embedded video player with "Mark as Done" and "Add Note" functionalities.',
-      'Extensive note-taking system: "Notes for the day" within modules, an "All Notes" page (add/view/delete), and ability to add notes directly while viewing content.',
-      '"Daily Activity" tracking via a calendar view (e.g., December 2022) showing daily tasks, mistakes, and completions.',
-      'Ability to "Choose a Programming Language" (Python, Java, C++) to filter content and track progress accordingly.',
-      '"Coding Problems" section with problem-solving guides and direct links to external platforms (LeetCode, HackerRank, TopCoder, Codility).',
+      'Extensive note-taking system - "Notes for the day" within modules, an "All Notes" page, and ability to add notes directly while viewing content.',
+      '"Daily Activity" tracking via a calendar view showing daily tasks, mistakes, and completions.',
+      'Ability to filter by "Programming Language" to receive content and track progress accordingly.',
+      '"Coding Problems" section with problem-solving guides and direct links to external platforms like "LeetCode", "HackerRank", "TopCoder", "Codility".',
       'Curated lists of "Books for Data Structures and Algorithms" and "Books for Interview Preparation", potentially filterable by language.',
-      'Social features like a "Leader Board" (filterable by language) and gamification through Achievements and Milestones.',
-      'Consistent bottom navigation for Dashboard, Curriculum/Learning, Notes/Reference, and Profile.',
+      'Social features like a "Leader Board" and gamification through Achievements and Milestones.',
+      'Consistent bottom navigation for Dashboard, Curriculum / Learning, Notes / Reference, and Profile.',
     ],
     keyFeatures: [
       {
         title: 'Multi-View Personalized Dashboard',
         description: 'Dashboard with "Daily", "Leader Board", and "Overall" tabs, showcasing visual progress in selected languages (Python, C++, Java) and social comparison features.',
-        icon: Star,
+        icon: LayoutDashboard,
       },
       {
         title: 'User Profile & Progress Management',
-        description: 'Secure accounts with editable profiles, tracking skills (Python, Java, C++), achievements, milestones, and personal notes. Requires sign-up/login.',
-        icon: Star,
+        description: 'Secure accounts with editable profiles, tracking skills across different programming languages, achievements, milestones, and personal notes. Requires sign-up/login.',
+        icon: ShieldUser,
       },
       {
         title: 'Structured 30-Day Prep Plan & Curriculum',
         description: 'Guided "Ace your Coding Interview in 30 days" plan covering foundational to advanced topics like Big-O, Data Structures, with progress tracking for each module.',
-        icon: Star,
+        icon: BookOpenCheck,
       },
       {
         title: 'Rich Learning Resources & Tools',
-        description: 'Includes topic-specific modules with video tutorials, language reference guides (C, C++, Java, Python, STL), and curated book recommendations for DSA and interviews.',
-        icon: Star,
+        description: 'Includes topic-specific modules with video tutorials, "programming language" reference guides, and curated book recommendations for "DSA" and "interviews".',
+        icon: BookCopy,
       },
       {
         title: 'Integrated Video Learning & Note-Taking',
         description: 'Embedded video player for tutorials with "Mark as Done" and "Add Note" options. Comprehensive note-taking available within modules and a dedicated "All Notes" section.',
-        icon: Star,
+        icon: ListVideo,
       },
       {
         title: 'Daily Activity & Progress Visualization',
-        description: 'Calendar-based tracking of daily study activities, mistakes, and completions. Visual progress bars for topics and overall curriculum.',
-        icon: Star,
+        description: 'Calendar-based tracking of daily study activities, mistakes, and completions. "Visual progress bars" for topics and overall curriculum.',
+        icon: CircleDotDashed,
       },
       {
         title: 'Language-Specific Learning Paths',
-        description: 'Users can select a primary programming language (Python, Java, C++) to tailor content, examples, and progress metrics.',
-        icon: Star,
+        description: 'Users can select a primary programming language like "Python", "Java", "C++" to tailor content, examples, and progress metrics.',
+        icon: CodeXml,
       },
       {
         title: 'Coding Problem Practice Hub',
-        description: 'Direct links to LeetCode, HackerRank, TopCoder, Codility, alongside guides on problem-solving strategies.',
-        icon: Star,
+        description: 'Direct links to "LeetCode", "HackerRank", "TopCoder", "Codility", alongside guides on problem-solving strategies.',
+        icon: SquareCode,
       },
       {
         title: 'Social Leaderboard & Gamification',
-        description: 'Compare coding progress with friends on a language-specific leaderboard; earn achievements and milestones displayed on the user profile.',
-        icon: Star,
+        description: 'Compare coding progress with friends on a "language-specific leaderboard"; earn achievements and milestones displayed on the user profile.',
+        icon: ChartBarStacked,
       },
     ],
     challenges: [
@@ -1293,17 +1331,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-        {
-      title: 'Flutter',
-      usage: 'Mobile App Development Framework',
-      icon: techStackIcons.flutter,
-    },
     {
-      title: 'Dart',
-      usage: 'Programming Language',
-      icon: techStackIcons.dart,
-    },
-        {
       title: 'Figma',
       usage: 'Product Design (UI/UX)',
       icon: techStackIcons.figma,
@@ -1313,17 +1341,8 @@ export const codingInterviewPrep: ProjectAnalysisT = {
       usage: 'Branding, Artworks & Illustration',
       icon: techStackIcons.illustrator,
     },
-    {
-      title: 'Adobe After Effects',
-      usage: 'Lottie Animations',
-      icon: techStackIcons.afterEffects,
-    },
-    {
-      title: 'Adobe Premiere Pro',
-      usage: 'Promotional Video',
-      icon: techStackIcons.premierePro,
-    },
   ],
+  figmaUrl: 'https://www.figma.com/file/0GudqTFxV15azS8ScJmGjS/Interview-Preparation-App?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
   isMobile: true,
   images: { main: interviewMain, screenshots: [interviewCalendar, interviewNote, interviewProfile, interviewTask, interviewVideo, interviewFriends, interviewProblems] },
 }
@@ -1335,7 +1354,7 @@ export const equanimity: ProjectAnalysisT = {
   detailedAnalysis: {
     overview:
       'Equanimity is a sophisticated investment platform that bridges the gap between investors and sustainable energy projects. The platform provides a clean, professional interface for fund discovery (Your Funds, Funds of Interest, Trending Funds), investment management, direct chat communication, and a comprehensive workflow for users to start and manage new funds.',
-    completeOn: 'Jul 2023',
+    completeOn: 'August 2023',
     requirements: [
       'Clean, minimalist design with a light blue and white color palette, focusing on content hierarchy and ease of navigation.',
       'Secure user authentication: Log In (Email, Password, Remember Me, Forgot Password) and a "Welcome to Equanimity" onboarding.',
@@ -1350,43 +1369,43 @@ export const equanimity: ProjectAnalysisT = {
     keyFeatures: [
       {
         title: 'Secure User Authentication & Onboarding',
-        description: 'Login system with password recovery. A dedicated form to capture new user contact details to "Begin Your Investment Journey".',
-        icon: Star,
+        description: 'Login system with password recovery. A dedicated form to capture new user contact details to begin their "Investment Journey".',
+        icon: ShieldUser,
       },
       {
         title: 'Personalized Fund Dashboard & Discovery',
-        description: 'Displays "Your Funds" and "Funds of Interest" in a searchable, sortable (grid/list) card layout with key metrics and favorites. Highlights "Trending Funds".',
-        icon: Star,
+        description: 'Displays "Your Funds" and "Funds of Interest" in a searchable, sortable grid or list view with key metrics and favorites. Highlights "Trending Funds".',
+        icon: LayoutDashboard,
       },
       {
         title: 'In-Depth Fund Exploration & Investment',
         description: '"View Fund" modal offers comprehensive details: description, financials, attachments, Q&A, and a direct "Fund" (invest) option.',
-        icon: Star,
+        icon: ChartCandlestick,
       },
       {
         title: 'Integrated Chat System',
         description: '"Your Chats" feature enables direct communication with contacts, including message search capabilities.',
-        icon: Star,
+        icon: MessageCircleHeart,
       },
       {
         title: 'Comprehensive Fund Creation Workflow',
         description: 'Users can "Start a new Fund" via a detailed form, including image upload, defining all fund parameters (title, financials, industry, etc.), and attaching documents.',
-        icon: Star,
+        icon: Coins,
       },
       {
-        title: 'Portfolio Management (Your Funds)',
+        title: 'Portfolio Management - "Your Funds"',
         description: 'Users can track and manage their existing investments under "Your Funds".',
-        icon: Star,
+        icon: Landmark,
       },
       {
         title: 'Document Management for Funds',
         description: 'Ability to upload and access attachments (e.g., investor memos, agreements) related to specific funds during creation or viewing.',
-        icon: Star,
+        icon: FileStack,
       },
       {
         title: 'Search & Filtering Capabilities',
         description: 'Global fund search, chat message search, and primary filters for "Your Funds" and "Funds of Interest".',
-        icon: Star,
+        icon: TextSearch,
       },
     ],
     challenges: [
@@ -1416,28 +1435,17 @@ export const equanimity: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'Next.js',
-      usage: 'Frontend',
-      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
-    },
-    {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
+  figmaUrl: 'https://www.figma.com/file/2Lw4usQkp70Q7F248eOlW4/Equinimity?type=design&t=6DHVcRDaxx0cR1y8-6',
   images: {
     main: equanimityImage,
     screenshots: [equanimityForm, equanimitySignin, equanimityChat, equanimityFunds, equanimityInfo],
@@ -1447,66 +1455,66 @@ export const equanimity: ProjectAnalysisT = {
 export const aylaAI: ProjectAnalysisT = {
   title: 'Ayla AI Assistant',
   shortDescription:
-    'An intelligent AI companion app designed to help users manage their daily routines, medications, and appointments through natural conversations, smart reminders, and personalized settings.',
+    'An intelligent AI companion app designed to help elderly people manage their daily routines, medications, and appointments through natural conversations, smart reminders, and personalized settings.',
   detailedAnalysis: {
     overview:
-      'Ayla is a sophisticated AI assistant application that combines conversational AI with practical daily life management. The app features a clean, accessible interface for user authentication (including biometrics), profile management, engaging in natural conversations with Ayla, comprehensive reminder management, and highly personalized settings for AI behavior and notifications.',
-    completeOn: 'Jul 2023',
+      'Ayla is a sophisticated "AI assistant" application aimed towards "elderly people", that combines conversational AI with practical daily life management. The app features a clean, accessible interface for "user authentication", "profile management", engaging in natural conversations with Ayla, comprehensive reminder management, and highly personalized settings for AI behavior and notifications.',
+    completeOn: 'June 2024',
     requirements: [
-      'Soft, calming color palette (light blues, purples) with clear typography and intuitive navigation, including a bottom navigation bar (Ayla chat, Search, Activity, Profile, Settings).',
-      'Secure authentication: "Welcome Back" (Email/Phone login with verification code or Biometrics) and "Sign Up" (Email, Biometric Auth option, Register/Continue without signup), with Terms & Conditions link and support access.',
-      'User Profile: Displays avatar, email, Full Name, Gender, Age, Location (Country, City, Street), with an "Edit Information" option and notes on data updates.',
-      'Conversational AI ("Talk with Ayla"): Main chat interface with Ayla for assistance (e.g., grocery shopping), supporting text and voice input, with visual cues (animated wave icon).',
-      'Personalization & Settings: General (Biometric Auth, Reminder Interruptions, Check In Interval with duration); Personalised (Manage Quiet Hours, Manage Reminders).',
-      '"Get to know Ayla" / "Personalise Ayla" Onboarding: Interactive chat flow to customize Ayla\'s proactivity, interruption preferences (e.g., during TV, for appointments), follow-up check-ins, and contextual understanding (e.g., home tour setup).',
-      'Reminder Management: "Manage Reminders" screen listing active reminders (Doctor\'s Appointment, Medication, Daily Jog) with time/date/frequency and on/off toggles. "Add Reminder" and "Edit Reminder" (Name, Time, Save/Cancel/Delete) functionalities.',
-      'In-app guidance: Information icons (i) for contextual help.',
+      'Soft, calming color palette with clear typography and intuitive navigation, including a bottom navigation bar for easy access to "Ayla chat", "Search", "Activity", "Profile", and "Settings".',
+      'Secure authentication with Email/Phone or Biometrics, ability to "Sign Up" with Email, Biometric Auth option, or Continuing without signup, with Terms & Conditions link and convenient support access.',
+      'User Profile - Displays avatar, email, Full Name, Gender, Age, and Location, with an "Edit Information" option and notes on data updates.',
+      'Conversational AI - "Talk with Ayla" features the main chat interface with Ayla for assistance, supporting text and voice input, with visual cues for elderly people.',
+      'Personalization & Settings - Ability to "configure" Biometric Auth, Reminder Interruptions, Check In Interval with duration, Manage Quiet Hours, and Reminders.',
+      'Personalise Ayla - Interactive chat flow to customize Ayla\'s proactivity, interruption preferences, follow-up check-ins, and contextual understanding like home tour setup.',
+      'Reminder Management - "Manage Reminders" featuring active reminders with time/date/frequency and on/off toggles. along with "Add Reminder" and "Edit Reminder" functionalities.',
+      'In-app "guidance": Quick access to support and information tooltips for contextual help.',
     ],
     keyFeatures: [
       {
-        title: 'AI-Powered Conversational Interface ("Talk with Ayla")',
+        title: 'AI-Powered Conversational Interface',
         description: 'Core chat feature for interaction with Ayla for daily tasks, information, and companionship, supporting text and voice input.',
-        icon: Star,
+        icon: AylaLogo,
       },
       {
         title: 'Secure Authentication & Profile Management',
         description: 'Robust sign-up/login with biometric option. Editable profiles for personal and location information.',
-        icon: Star,
+        icon: ShieldUser,
       },
       {
-        title: 'Interactive AI Personalization ("Get to know Ayla")',
+        title: 'Interactive AI Personalization',
         description: 'Chat-based onboarding to customize Ayla\'s proactivity, interruption behavior for reminders, and follow-up check-in preferences.',
-        icon: Star,
+        icon: Columns3Cog,
       },
       {
         title: 'Comprehensive Reminder System',
         description: 'Create, view, edit, and delete reminders for various activities with specific times, dates, or recurring frequencies, and individual toggles.',
-        icon: Star,
+        icon: BellRing,
       },
       {
         title: 'Customizable User Settings',
-        description: 'General settings for biometric login, reminder interruptions, check-in intervals. Personalized settings for Quiet Hours and reminder management.',
-        icon: Star,
+        description: 'General settings for "biometric login", reminder interruptions, check-in intervals. Personalized settings for "Quiet Hours" and reminder management.',
+        icon: Cog,
       },
       {
         title: 'Context-Aware & Adaptive AI',
-        description: 'Ayla demonstrates contextual understanding during personalization (e.g., home tour) and adapts behavior based on user preferences.',
-        icon: Star,
+        description: 'Ayla demonstrates contextual understanding during personalization (e.g., home tour) and adapts behavior based on "user preferences."',
+        icon: BotMessageSquare,
       },
       {
         title: 'Biometric Authentication Support',
-        description: 'Option to use device\'s biometric features for secure and convenient login.',
-        icon: Star,
+        description: 'Option to use device\'s "biometric features" for secure and convenient login.',
+        icon: Fingerprint,
       },
       {
         title: 'Activity Tracking',
-        description: '"Activity" tab suggests features for tracking tasks, completed reminders, or other interactions with Ayla.',
-        icon: Star,
+        description: '"Activity" tab provides features for tracking tasks, completed reminders, or other interactions with Ayla.',
+        icon: Target,
       },
       {
         title: 'Search Functionality',
-        description: '"Search" tab implies the ability to search within conversations, reminders, or other application content.',
-        icon: Star,
+        description: '"Search" tab features the ability to search within conversations, reminders, or other application content.',
+        icon: ScanSearch,
       },
     ],
     challenges: [
@@ -1538,31 +1546,27 @@ export const aylaAI: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'React Native',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    {
-      title: 'TensorFlow.js',
-      usage: 'AI',
-      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+      title: 'Adobe Photoshop',
+      usage: 'Image Manipulation',
+      icon: techStackIcons.photoshop,
     },
     {
-      title: 'SQLite',
-      usage: 'Database',
-      icon: { Icon: SiSqlite, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   isMobile: true,
+  figmaUrl: 'https://www.figma.com/file/FOUXpNSWGUyNNWYlrT6hJa/AYLA-Mobile-App?type=design&node-id=11%3A1833&mode=design&t=6JTlSa1hexbRNbSz-1',
   images: { main: aylaMain, screenshots: [aylaScan, aylaSignup, aylaChat, aylaProfile, aylaReminders, aylaSettings, aylaTalk] },
 }
 
+// @TODO: Update Content
 export const deepReelCanva: ProjectAnalysisT = {
   title: 'DeepReel Canva App',
   affiliateWith: TestimonialClients.alfabolt,
@@ -1664,37 +1668,49 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
     "A comprehensive administrative platform for Pakistan's largest tutoring network, enabling efficient management of tutoring requests, reviews, announcements, and approvals.",
   detailedAnalysis: {
     overview:
-      "The Beacon Tutors Admin Dashboard is a sophisticated management system designed to streamline the operations of Pakistan's premier tutoring service. It provides administrators with powerful tools for managing tutor inquiries, student reviews, announcements, and approval processes.",
-    completeOn: 'Jul 2023',
+      "The Beacon Tutors Admin Dashboard is a sophisticated management system designed to streamline the operations of Pakistan's premier tutoring service. It provides administrators with powerful tools for managing tutor inquiries, student reviews, announcements, and approval processes via a clean, tab-based interface accessible after a secure sign-in.",
+    completeOn: 'February 2023',
     requirements: [
-      'Clean, professional interface with intuitive tab navigation',
-      'Organized content sections for different administrative functions',
-      'User-friendly forms with clear input fields',
-      'Avatar-based review system for personal touch',
-      'Well-structured announcement management interface',
-      'Consistent design language across all sections',
-      'Clear visual hierarchy in data presentation',
-      'Responsive layout for various screen sizes',
+      'Clean, professional admin interface with top navigation tabs for "Announcements", "Reviews", "Inquiries", and "Approvals".',
+      'Secure "Sign In" page with Email and Password fields for administrator access.',
+      '"Inquiries" tab - List view of submitted inquiries showing name and submission time, with a "View" option.',
+      '"Reviews" tab - List of existing reviews with approve/reject options. "Add a new Review" form with option to select avatar, Name, Description, Rating dropdown and "All Reviews" display.',
+      '"Announcements" tab - "Create a new Announcement" form with Title, Days/Week dropdown, Budget/Month dropdown, Time/Day dropdown and "All Announcements" list displaying details like title, budget, and time commitment.',
+      '"Approvals" tab - Dedicated section for approving submitted reviews to be shown on the website.',
+      'Consistent UI elements: Standardized button styles, form layouts, and list views across management sections.',
+      'Role-based access control for administrators with restricted access to "Inquiries", "Reviews", and "Approvals" sections.',
     ],
     keyFeatures: [
       {
-        title: 'Comprehensive inquiry management',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Centralized Admin Operations Dashboard',
+        description: 'Tab-based navigation for efficient management of "Announcements", "Reviews", "Inquiries", and "Approvals".',
+        icon: FileSliders,
       },
-      { title: 'Review system with moderation', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Announcement creation and management',
-        description: 'Detailed service pages',
+        title: 'Secure Administrator Sign-In',
+        description: 'Dedicated login page ensuring only authorized personnel can access the admin panel.',
+        icon: ShieldUser,
+      },
+      {
+        title: 'Inquiry Management System',
+        description: 'Administrators can view and manage all incoming inquiries from students and potential tutors, with quick access to submission details.',
+        icon: MailQuestion,
+      },
+      {
+        title: 'Review Moderation & Management',
+        description: 'View submitted reviews with user details and ratings, with tools to approve or reject the review. Ability to manually add new reviews.',
         icon: Star,
       },
-      { title: 'Tutor approval system', description: 'Detailed service pages', icon: Star },
-      { title: 'Student feedback management', description: 'Detailed service pages', icon: Star },
-      { title: 'User profile management', description: 'Detailed service pages', icon: Star },
-      { title: 'Administrative controls', description: 'Detailed service pages', icon: Star },
-      { title: 'Data filtering and sorting', description: 'Detailed service pages', icon: Star },
-      { title: 'User role management', description: 'Detailed service pages', icon: Star },
-      { title: 'Activity tracking system', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Announcement Creation & Broadcasting',
+        description: 'Create and post new announcements with specific parameters such as "Title", "Days/Week", "Budget", "Time/Day". View all active announcements.',
+        icon: Rss,
+      },
+      {
+        title: 'Content Management Capabilities',
+        description: 'Full control over user-generated content like reviews and platform-wide communications like announcements.',
+        icon: TableOfContents,
+      },
     ],
     challenges: [
       { title: 'Managing complex user relationships', description: 'Detailed service pages' },
@@ -1729,37 +1745,32 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
   techStack: [
     {
       title: 'Next.js',
-      usage: 'Frontend',
-      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
     },
     {
-      title: 'TypeScript',
+      title: 'React',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.react,
+    },
+    {
+      title: 'Javascript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.javascript,
     },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
+    { title: 'Firebase', usage: 'Realtime Database and Authentication', icon: techStackIcons.firebase },
     {
-      title: 'Express.js',
-      usage: 'Backend',
-      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
-    },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
-    },
-    {
-      title: 'React Query',
-      usage: 'Data Fetching',
-      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
+  figmaUrl: 'https://www.figma.com/file/qV3dnZyCI4FG5cxobVLueC/Beacon-Tutors-UI?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
   images: {
     main: beaconTutorsAdminPanel,
     screenshots: [beaconTutorAdminPanelAnnouncements, beaconTutorAdminPanelApprovals, beaconTutorAdminPanelInquiries, beaconTutorAdminPanelReviews, beaconTutorAdminPanelSignin],
@@ -1769,38 +1780,63 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
 export const markdownEditor: ProjectAnalysisT = {
   title: 'Markdown Editor',
   shortDescription:
-    'A modern, feature-rich markdown editor for mobile devices with support for attachments, tables, and advanced formatting, designed with a focus on productivity and ease of use.',
+    'A modern, feature-rich markdown editor for mobile devices with support for attachments, tables, and advanced formatting, designed with a focus on productivity and ease of use, offering both light and dark themes.',
   detailedAnalysis: {
     overview:
-      'The Markdown Editor is a sophisticated mobile application that transforms the markdown editing experience on smartphones. It combines powerful editing capabilities with an intuitive interface, making it easy to create and manage markdown documents with rich features like tables, attachments, and advanced formatting options.',
+      'The Markdown Editor is a sophisticated mobile application that transforms the markdown editing experience on smartphones. It combines powerful editing capabilities (including rich formatting, table creation, and attachment management) with an intuitive interface featuring dual themes (light/dark), chronological document organization, and advanced search with filters.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Clean, dark-themed interface optimized for mobile',
-      'Organized document management with chronological sorting',
-      'Intuitive search functionality with visual results',
-      'Grid-based attachment gallery view',
-      'Smart table creation interface',
-      'Clear document organization by time periods',
-      'Accessible formatting toolbar',
-      'Seamless preview mode integration',
+      'Dual theme support (clean dark and light interfaces) optimized for mobile readability.',
+      'Main screen with chronological document display ("Last 30 Days", yearly grouping), search bar, and "New Markdown" button.',
+      'Grid view for "Attachments".',
+      'Rich text editor with a formatting toolbar for Headers (H1-H6), Bold, Italic, Strikethrough, Underline, Lists, Blockquotes, Code blocks, Links.',
+      '"Switch to Preview" mode for viewing rendered markdown.',
+      'Editor options including Share and a three-dot menu for more actions.',
+      'Table creation: "Select Table Size" via grid (max 7x7 shown) or row/column input; "Insert Table" interface for row/column manipulation and cell content formatting (alignment, bold, italic).',
+      'Advanced search with "Suggested" filters: "Notes with Tags", "Notes with Checklists", "Notes with Attachments", "Notes with Tables".',
+      'Potential for in-app advertising (e.g., Google Ads banner).',
     ],
     keyFeatures: [
-      { title: 'Advanced markdown editing', description: 'Detailed service pages', icon: Star },
-      { title: 'Table creation and management', description: 'Detailed service pages', icon: Star },
-      { title: 'Image and file attachments', description: 'Detailed service pages', icon: Star },
-      { title: 'Document organization by date', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Full-text search functionality',
-        description: 'Detailed service pages',
+        title: 'Dual-Theme Mobile Markdown Editor',
+        description: 'Offers both light and dark themes for a comfortable and productive markdown editing experience on mobile devices.',
         icon: Star,
       },
-      { title: 'Tags and checklist support', description: 'Detailed service pages', icon: Star },
-      { title: 'Rich text formatting options', description: 'Detailed service pages', icon: Star },
-      { title: 'Document preview mode', description: 'Detailed service pages', icon: Star },
-      { title: 'Auto-save functionality', description: 'Detailed service pages', icon: Star },
-      { title: 'Custom formatting toolbar', description: 'Detailed service pages', icon: Star },
-      { title: 'Multiple document support', description: 'Detailed service pages', icon: Star },
-      { title: 'Export capabilities', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Chronological Document Management',
+        description: 'Documents are organized by time periods (Last 30 Days, Year) on the main screen, with easy creation of new files and a prominent search bar.',
+        icon: Star,
+      },
+      {
+        title: 'Advanced Search with Smart Filters',
+        description: 'Powerful document search with suggested filters for notes containing specific elements like Tags, Checklists, Attachments, or Tables.',
+        icon: Star,
+      },
+      {
+        title: 'Comprehensive Formatting Toolbar',
+        description: 'Includes H1-H6 headers, bold, italics, strikethrough, underline, ordered/unordered lists, blockquotes, code block styling, and link insertion.',
+        icon: Star,
+      },
+      {
+        title: 'Intuitive Table Creation & Editing',
+        description: 'Visual grid for selecting table size, and detailed interface for inserting/modifying tables, including row/column operations and cell content formatting.',
+        icon: Star,
+      },
+      {
+        title: 'Attachment Grid View',
+        description: 'Dedicated section to easily view all images and files attached to documents in an organized grid.',
+        icon: Star,
+      },
+      {
+        title: 'Seamless Editor & Preview Mode',
+        description: 'Allows users to effortlessly switch between the markdown input view and a live preview of the rendered output.',
+        icon: Star,
+      },
+      {
+        title: 'In-App Advertising (Potential)',
+        description: 'Includes ad banners, suggesting a freemium model or ad-supported version to support the application.',
+        icon: Star,
+      },
     ],
     challenges: [
       {
@@ -1822,18 +1858,17 @@ export const markdownEditor: ProjectAnalysisT = {
     ],
   },
   categories: [WorkCategories.productDesign],
-  techStack: [
+    techStack: [
     {
-      title: 'React Native',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
   isMobile: true,
   images: { main: markdownMain, screenshots: [markdownNote, markdownTableSize, markdownTable, markdownAttachments, markdownLandingGrid, markdownSearch, markdownLanding] },
@@ -1842,42 +1877,58 @@ export const markdownEditor: ProjectAnalysisT = {
 export const menuHub: ProjectAnalysisT = {
   title: 'MenuHub',
   shortDescription:
-    'A comprehensive restaurant digitization platform that helps business owners modernize their operations with digital menus, streamlined ordering, and enhanced customer experience.',
+    'A comprehensive restaurant digitization platform that helps business owners modernize their operations with digital menus, streamlined ordering (including space/table selection), payment processing, and enhanced customer experience through integrated content like blogs, events, and news.',
   detailedAnalysis: {
     overview:
-      'MenuHub is an innovative platform designed to transform traditional restaurants into digital-first businesses. It provides a complete solution for menu digitization, order management, and customer engagement, helping restaurants adapt to modern dining expectations.',
+      'MenuHub is an innovative platform designed to transform traditional restaurants into digital-first businesses. It provides a complete solution for restaurant discovery, menu digitization, in-app ordering (for take-away or in-place dining with table selection), payment, and customer engagement via blogs, events, and news updates, all optimized for a mobile-first experience.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Vibrant orange and white color scheme reflecting food industry',
-      'Clean, card-based design for restaurant listings',
-      'High-quality food photography integration',
-      'Clear pricing structure presentation',
-      'Intuitive navigation system',
-      'Responsive design across devices',
-      'Professional landing page layout',
-      'User-friendly registration interface',
+      'Restaurant discovery screen with location search, type filter, and list view of restaurants (image, name, status, hours, address).',
+      'Individual restaurant profiles with cover image, details, "Take Away"/"In Place" options, and tabs for "Blogs", "Events", "News".',
+      'Blog/News section with articles, author details, and similar content suggestions.',
+      'Events section listing events with dates and times.',
+      'Digital menu with dish search, category filters, item details (image, name, price, prep time), and add-to-cart.',
+      'In-app cart summary and "Call Waiter" button.',
+      'Order finalization workflow: "Order Details" (add/review items), "Select Space" (e.g., Garden Terrace), "Select Table" (by seat capacity).',
+      'Checkout screen: Order summary (total, discount, service charges), "Payment Method" (Credit/Debit, PayPal), and "Proceed to Payment".',
+      'Mobile-first UI with vibrant orange accents, card-based design, and clear navigation (back buttons, hamburger menu).',
     ],
     keyFeatures: [
       {
-        title: 'Digital menu creation and management',
-        description: 'Detailed service pages',
+        title: 'Restaurant Discovery & Filtering',
+        description: 'Search restaurants by location, filter by type. View list with status, hours, and address.',
         icon: Star,
       },
       {
-        title: 'Restaurant profile customization',
-        description: 'Detailed service pages',
+        title: 'Rich Restaurant Profiles with Dynamic Content',
+        description: 'Pages with images, hours, dining options (Take Away/In Place), and tabs for Blogs, Events, and News articles.',
         icon: Star,
       },
-      { title: 'Order management system', description: 'Detailed service pages', icon: Star },
-      { title: 'Customer engagement tools', description: 'Detailed service pages', icon: Star },
-      { title: 'Business analytics dashboard', description: 'Detailed service pages', icon: Star },
-      { title: 'Multi-location support', description: 'Detailed service pages', icon: Star },
-      { title: 'Menu item categorization', description: 'Detailed service pages', icon: Star },
-      { title: 'Photo gallery management', description: 'Detailed service pages', icon: Star },
-      { title: 'Pricing tier options', description: 'Detailed service pages', icon: Star },
-      { title: 'Restaurant discovery platform', description: 'Detailed service pages', icon: Star },
-      { title: 'Business owner dashboard', description: 'Detailed service pages', icon: Star },
-      { title: 'Customer feedback system', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Interactive Digital Menus & Ordering',
+        description: 'Searchable, filterable menus with dish images, details, pricing, and one-tap add-to-cart. Includes cart summary.',
+        icon: Star,
+      },
+      {
+        title: 'In-Place Dining: Space & Table Selection',
+        description: 'For dine-in, users can select available restaurant spaces (e.g., The Garden Terrace) and then choose specific tables based on seat capacity.',
+        icon: Star,
+      },
+      {
+        title: 'Streamlined Checkout & Payment',
+        description: 'Summarizes order details and offers multiple payment methods like Credit/Debit Card and PayPal.',
+        icon: Star,
+      },
+      {
+        title: 'Direct "Call Waiter" Feature',
+        description: 'Allows users to request assistance from a waiter directly through the app during browsing or ordering.',
+        icon: Star,
+      },
+      {
+        title: 'Content Hub (Blogs, Events, News)',
+        description: 'Enables restaurants to publish articles, promote events, and share news, enhancing engagement.',
+        icon: Star,
+      },
     ],
     challenges: [
       {
@@ -1908,32 +1959,14 @@ export const menuHub: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'Next.js',
-      usage: 'Frontend',
-      icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'Express.js',
-      usage: 'Backend',
-      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
-    },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
-    },
-    {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   isMobile: true,
@@ -1943,40 +1976,51 @@ export const menuHub: ProjectAnalysisT = {
 export const nutrigram: ProjectAnalysisT = {
   title: 'Nutrigram',
   shortDescription:
-    'A modern nutrition tracking and meal analysis app that helps users monitor their caloric intake, compete with friends, and maintain healthy eating habits through an engaging interface.',
+    'A modern nutrition tracking and meal analysis app that helps users monitor their caloric intake via scanning or manual logging, compete with friends on a leaderboard, and maintain healthy eating habits through an engaging, personalized interface.',
   detailedAnalysis: {
     overview:
-      'Nutrigram is a sophisticated nutrition tracking application that combines precise food logging with social features. The app offers an intuitive interface for tracking meals, analyzing nutritional content, and engaging with friends through competitive features, all while maintaining a focus on health and wellness.',
+      'Nutrigram is a sophisticated nutrition tracking application that combines precise food logging (scan or manual entry with detailed nutrient breakdown) with social competition. The app offers an intuitive interface for tracking meals, analyzing nutritional content, categorizing meals (Breakfast, Lunch, Dinner), and engaging with friends through a leaderboard, all within a vibrant, user-friendly design that starts with a personalized onboarding process.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Bold pink color scheme creating engaging visual identity',
-      'Clean, minimalist interface with clear hierarchy',
-      'Intuitive circular progress indicators',
-      'Modern onboarding with illustrated characters',
-      'Easy-to-use height input interface',
-      'Detailed food logging screens',
-      'Social leaderboard with friend rankings',
-      'Comprehensive nutritional breakdown displays',
+      'Engaging onboarding flow: Welcome screen ("Scan and Eat"), Height input (cm/ft & in) for BMI calculation and customized plan.',
+      'Main dashboard: Circular progress for daily calories, macronutrient breakdown (Protein, Carbs, Sugars), and recent food "History" with "View All" option.',
+      '"Scan New Item" button for quick food logging.',
+      '"Item Details" screen: Multiple food images, Item Name input, Quantity adjustment (+/-) with unit selection (g, ml, pcs), detailed nutritional fields (Power, Sugars, Carbohydrates, Fats, Sodium, Protein, Calcium).',
+      'Alternative "Item Details" flow: Shows "Label" on images, quantity, and options to "Calculate Nutrients" or "Re Scan Item".',
+      '"Log Item" pop-up for meal categorization (Breakfast, Lunch, Dinner).',
+      '"Compete with Friends" screen: Searchable leaderboard displaying friends (avatar, name, rank) and calorie counts.',
+      'Modern UI with pink/red accents and clear iconography.',
+      'Consistent bottom navigation (Home, History/Items, Friends, Profile).',
     ],
     keyFeatures: [
       {
-        title: 'Calorie tracking and monitoring',
-        description: 'Detailed service pages',
+        title: 'Personalized Onboarding & Planning',
+        description: 'Collects user height to calculate BMI and create a customized nutrition plan. Starts with a welcoming "Scan and Eat" theme.',
         icon: Star,
       },
-      { title: 'Detailed nutritional analysis', description: 'Detailed service pages', icon: Star },
-      { title: 'Social competition system', description: 'Detailed service pages', icon: Star },
-      { title: 'Food photo logging', description: 'Detailed service pages', icon: Star },
-      { title: 'Progress history tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Friend leaderboard', description: 'Detailed service pages', icon: Star },
-      { title: 'Customizable serving sizes', description: 'Detailed service pages', icon: Star },
-      { title: 'Comprehensive food database', description: 'Detailed service pages', icon: Star },
-      { title: 'Visual progress indicators', description: 'Detailed service pages', icon: Star },
-      { title: 'Meal history logging', description: 'Detailed service pages', icon: Star },
-      { title: 'Nutritional goals tracking', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Multi-metric health monitoring',
-        description: 'Detailed service pages',
+        title: 'Daily Nutrition Dashboard & Tracking',
+        description: 'Visual circular progress for calories; tracks protein, carbs, sugars. Shows recent food history.',
+        icon: Star,
+      },
+      {
+        title: 'Versatile Food Logging (Scan & Manual)',
+        description: '"Scan New Item" for speed; detailed manual entry for Item Name, Quantity (with units), and extensive nutritional data (calories, macros, minerals).',
+        icon: Star,
+      },
+      {
+        title: 'Meal Categorization (Breakfast, Lunch, Dinner)',
+        description: 'Allows users to categorize logged food items into specific meals for better tracking and analysis.',
+        icon: Star,
+      },
+      {
+        title: 'Comprehensive Food History',
+        description: 'Maintains a log of all consumed items, accessible via the dashboard, with options to view all details.',
+        icon: Star,
+      },
+      {
+        title: '"Compete with Friends" Leaderboard',
+        description: 'Social feature with a searchable leaderboard to compare nutritional progress (e.g., calorie intake) with friends.',
         icon: Star,
       },
     ],
@@ -2009,26 +2053,15 @@ export const nutrigram: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'React Native',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    {
-      title: 'Firebase',
-      usage: 'Database',
-      icon: { Icon: SiFirebase, props: { fill: '#0052CC' } },
-    },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
-    },
-    { title: 'SQLite', usage: 'Database', icon: { Icon: SiSqlite, props: { fill: '#0052CC' } } },
   ],
   isMobile: true,
   images: { main: nutrigramMain, screenshots: [nutrigramAddItem, nutrigramFriends, nutrigramHeight, nutrigramItemDetails, nutrigramLandingDetails, nutrigramLanding, nutrigramWelcome] },
@@ -2038,42 +2071,71 @@ export const athletonPlus: ProjectAnalysisT = {
   title: 'Athleton Plus',
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
-    'A comprehensive fitness training management platform that connects trainers with clients, featuring workout scheduling, progress tracking, and detailed session management.',
+    'A comprehensive fitness training management platform connecting trainers with clients, featuring role-based dashboards, program creation, workout scheduling, progress tracking, integrated payments, and detailed session management for both desktop and mobile.',
   detailedAnalysis: {
     overview:
-      'Athleton+ is a sophisticated fitness platform designed to streamline the relationship between personal trainers and their clients. The platform offers comprehensive tools for session scheduling, workout management, and progress tracking, all within a clean and intuitive interface.',
+      'Athleton+ is a sophisticated fitness platform designed to streamline the relationship between personal trainers and their clients. It provides distinct interfaces and tools for trainers (program creation, client management, scheduling, financials on desktop) and clients (booking, workout tracking, profile management on mobile and desktop), fostering a connected fitness experience.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Modern interface with blue accent colors',
-      'Clean calendar view for session management',
-      'Intuitive appointment scheduling interface',
-      'Profile cards with trainer/client information',
-      'Well-organized settings and configuration panels',
-      'Clear workout progress visualization',
-      'Mobile-responsive design for all screens',
-      'Consistent navigation and action buttons',
+      'Role-based dashboards: Trainer (Desktop - appointments, programs, requests, clients, financials) and Client (Mobile/Desktop - bookings, program, requests, profile).',
+      'Authentication: Sign Up (Email, Password), Reset Password (OTP).',
+      'Profile Management: Trainer (Desktop - status, programs, client timelines, payment setup, questionnaire, documents, notes); Client (Desktop - editable info, program history/schedule/progress, payments, deactivation).',
+      'Program Creation (Trainer - Mobile): Add Program (client, name, price, duration, session type, focus areas), Add Exercise (library/custom), Create Session.',
+      'Workout Viewing (Client): Access assigned workouts with exercise details (image, name, sets, reps, rest, description).',
+      'Scheduling: Trainer Calendar (Desktop - monthly view, add/mark done sessions); Client Booking (Mobile - select date, time, location, payment card).',
+      'Client Management (Trainer): View client lists, manage requests (Accept/Reject).',
+      'Payments: Trainer (Mobile/Desktop - revenue tracking, payment setup); Client (Mobile - payment card for booking, view payment structure).',
+      'Settings: Trainer (Desktop - account, mailing, gym info, theme, subscription, invoice, business profile, operating hours).',
+      'Implied Exercise Library/Creation tool for trainers.',
+      'Reporting capabilities (indicated by "Reports" tabs).',
+      'Responsive design for desktop (trainer-centric) and mobile (client-centric) views.',
     ],
     keyFeatures: [
       {
-        title: 'Advanced appointment scheduling',
-        description: 'Detailed service pages',
+        title: 'Dual-Role Fitness Platform (Trainer & Client)',
+        description: 'Tailored dashboards and functionalities for trainers (desktop-focused) and clients (mobile/desktop-focused).',
         icon: Star,
       },
       {
-        title: 'Trainer-client matching system',
-        description: 'Detailed service pages',
+        title: 'Comprehensive Program Builder (Trainer)',
+        description: 'Trainers can create detailed workout programs, add diverse exercises with specific parameters (sets, reps, rest), and assign to clients.',
         icon: Star,
       },
-      { title: 'Workout progress tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Session calendar management', description: 'Detailed service pages', icon: Star },
-      { title: 'Profile customization', description: 'Detailed service pages', icon: Star },
-      { title: 'Settings management', description: 'Detailed service pages', icon: Star },
-      { title: 'Progress reporting', description: 'Detailed service pages', icon: Star },
-      { title: 'Mobile app integration', description: 'Detailed service pages', icon: Star },
-      { title: 'Client management tools', description: 'Detailed service pages', icon: Star },
-      { title: 'Workout history tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Payment processing', description: 'Detailed service pages', icon: Star },
-      { title: 'Notification system', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Client Workout Access & Progress Tracking',
+        description: 'Clients can view assigned programs, exercise instructions (with visuals), and likely track their workout completion and progress.',
+        icon: Star,
+      },
+      {
+        title: 'Advanced Scheduling & Appointment Booking',
+        description: 'Trainers manage schedules via desktop calendar; Clients book sessions selecting date, time, location, and processing payment.',
+        icon: Star,
+      },
+      {
+        title: 'Robust Client Relationship Management (Trainer)',
+        description: 'Manage client lists, active programs, new requests (accept/reject), and monitor client progress through visual timelines.',
+        icon: Star,
+      },
+      {
+        title: 'Integrated Payment & Financial Tracking',
+        description: 'Trainers set up payment methods, track revenue. Clients add payment details for seamless booking and view payment structures.',
+        icon: Star,
+      },
+      {
+        title: 'Detailed User Profile & Settings Customization',
+        description: 'Editable profiles for both roles. Trainers have extensive settings for business operations, branding, and scheduling.',
+        icon: Star,
+      },
+      {
+        title: 'Exercise Library & Program Customization',
+        description: 'Implied ability for trainers to use a predefined exercise library or create custom exercises for tailored client programs.',
+        icon: Star,
+      },
+      {
+        title: 'Cross-Platform Accessibility & Responsive Design',
+        description: 'Optimized user experience for trainers on desktop and clients on mobile devices and desktop.',
+        icon: Star,
+      },
     ],
 
     challenges: [
@@ -2102,28 +2164,14 @@ export const athletonPlus: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'React Native',
-      usage: 'Frontend',
-      icon: { Icon: SiReact, props: { fill: '#61DAFB' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'Firebase',
-      usage: 'Database',
-      icon: { Icon: SiFirebase, props: { fill: '#0052CC' } },
-    },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   isMobile: true,
@@ -2133,46 +2181,53 @@ export const athletonPlus: ProjectAnalysisT = {
 export const beaconTutorsCRM: ProjectAnalysisT = {
   title: 'Beacon Tutors CRM',
   shortDescription:
-    'A specialized CRM system for managing tutoring inquiries, lead processing, and client relationships, featuring automated workflows and comprehensive inquiry tracking.',
+    'A specialized CRM system for managing tutoring inquiries through a multi-stage processing pipeline, from initial contact and requirements gathering to demo sessions and fee processing, with detailed tracking and internal alerts.',
   detailedAnalysis: {
     overview:
-      'The Beacon Tutors CRM is a sophisticated customer relationship management system specifically designed for tutoring services. It streamlines the process of handling student inquiries, managing leads, and processing applications through an intuitive interface with automated workflows.',
+      'The Beacon Tutors CRM is a sophisticated customer relationship management system specifically designed for tutoring services. It streamlines the process of handling student and teacher inquiries, managing leads, and processing applications through an intuitive, multi-stage pipeline interface with features for detailed tracking, internal alerts, and comprehensive data management.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Clean, professional dark-themed interface',
-      'Organized sidebar navigation with clear categories',
-      'Intuitive inquiry form with smart field validation',
-      'Grid-based inquiry management view',
-      'Detailed inquiry inspection modal',
-      'Status-based inquiry organization',
-      'Clear processing pipeline visualization',
-      'Consistent action button placement',
+      'Collapsible sidebar navigation for CRM categories: Inquiries (Add/View), Raw Inquiry, Requirements Gathering, Locating, Demo Processing, Fee Processing, Rejected, Settings, Sign Out.',
+      '"New Inquiry" form: Inquiry Type (Student/Teacher), Name, City, Email, Contact, WhatsApp, Service to Hire (Online Tutor, Home Tutor, Content Writer).',
+      '"View Inquiries" screen: Filterable (All/Student/Teacher) and paginated grid of inquiries with name, submission time, and action icons (View, Track, Reminder, Delete).',
+      '"View Inquiry" modal: Displays full inquiry details with "Mark as Viewed" and delete options.',
+      'Right-hand updates panel: Student Progress, Upcoming Class Reminder, New Assignment Alert with "Mark as Done" option.',
+      'Inquiry processing workflow: "Move Inquiry" functionality through stages (Raw Inquiry, Requirements Gathering, Locating, etc.).',
+      '"Demo Processing" screen: Sub-stages (Demo Reminders/Calling, Client/T-Formalities, Day-1/Day-2 Processing, Extended Demo, Client Reviewing) with inquiries as cards.',
+      'Clean, professional light-themed UI with blue/dark blue accents.',
+      'Ability to handle and paginate large datasets of inquiries.',
     ],
-    keyFeatures: [
+        keyFeatures: [
       {
-        title: 'Comprehensive inquiry management',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      { title: 'Lead processing pipeline', description: 'Detailed service pages', icon: Star },
-      { title: 'Demo session tracking', description: 'Detailed service pages', icon: Star },
-      {
-        title: 'Student information management',
-        description: 'Detailed service pages',
+        title: 'Comprehensive CRM Dashboard & Navigation',
+        description: 'Collapsible sidebar for navigating inquiry stages: Raw Inquiry, Requirements Gathering, Locating, Demo Processing, Fee Processing, and Rejected.',
         icon: Star,
       },
       {
-        title: 'Location-based inquiry sorting',
-        description: 'Detailed service pages',
+        title: 'Structured Inquiry Input & Management',
+        description: '"New Inquiry" form for Student/Teacher details, contact info, city, and service type. Filterable and paginated "View Inquiries" list.',
         icon: Star,
       },
-      { title: 'Contact information tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Automated workflow management', description: 'Detailed service pages', icon: Star },
-      { title: 'Status tracking system', description: 'Detailed service pages', icon: Star },
-      { title: 'Multi-step processing', description: 'Detailed service pages', icon: Star },
-      { title: 'Inquiry categorization', description: 'Detailed service pages', icon: Star },
-      { title: 'Detailed reporting', description: 'Detailed service pages', icon: Star },
-      { title: 'User role management', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Detailed Inquiry Viewing & Action Panel',
+        description: 'Modal to view full inquiry details and mark as viewed. Dynamic right-hand panel for progress updates, reminders, and alerts.',
+        icon: Star,
+      },
+      {
+        title: 'Multi-Stage Inquiry Processing Pipeline',
+        description: 'Functionality to move inquiries through a defined workflow, including a detailed "Demo Processing" stage with its own sub-pipeline (Reminders, Formalities, Processing, Reviewing).',
+        icon: Star,
+      },
+      {
+        title: 'Actionable Inquiry & Task Management',
+        description: 'Direct options to Move Inquiry, View Track, Set Reminder, Delete Inquiry, and Mark alerts/tasks as Done.',
+        icon: Star,
+      },
+      {
+        title: 'Internal Notification & Alert System',
+        description: 'Sidebar panel displays actionable alerts for Student Progress, Class Reminders, and New Assignments to keep staff updated.',
+        icon: Star,
+      },
     ],
     challenges: [
       { title: 'Managing complex inquiry workflows', description: 'Detailed service pages' },
@@ -2190,38 +2245,21 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'Express.js',
-      usage: 'Backend',
-      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
-    },
-    {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
-    },
-    {
-      title: 'React Query',
-      usage: 'Data Fetching',
-      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   images: { main: beaconTutorsCRMImage, screenshots: [beaconTutorCrmDemoStudent, beaconTutorCrmMoveInquiry, beaconTutorCrmDemoTeacher, beaconTutorCrmInquiries, beaconTutorCrmSignin] },
 }
 
+// @TODO: Update Content
 export const inventrios: ProjectAnalysisT = {
   title: 'Inventrios',
   shortDescription:
@@ -2272,24 +2310,26 @@ export const inventrios: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
+      title: 'Next.js',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
+    },
+    {
+      title: 'Typescript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.typescript,
     },
     {
-      title: 'Framer Motion',
-      usage: 'Animation',
-      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
-    { title: 'SendGrid', usage: 'Email', icon: { Icon: SiSendgrid, props: { fill: '#0052CC' } } },
   ],
   images: {
     main: inventriosImage,
@@ -2301,34 +2341,64 @@ export const superDuperStudio: ProjectAnalysisT = {
   title: 'Super Duper Studio',
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
-    "A vibrant and engaging website for a children's creative studio that offers art, design, and exploration activities, featuring playful design elements and comprehensive program information.",
+    "A vibrant and engaging website for a children's creative studio, showcasing diverse activities like art, dress-up (with itemized pricing), workshops, and parties. Features a playful design, detailed service pages, contact forms, location map, and an activity blog.",
   detailedAnalysis: {
     overview:
-      "Super Duper Studio's website perfectly captures the spirit of childhood creativity and exploration. The platform combines playful design with functional content organization to showcase their creative programs for children, featuring a warm and inviting aesthetic that appeals to both parents and kids.",
-    completeOn: 'Jul 2023',
+      "Super Duper Studio's website perfectly captures the spirit of childhood creativity and exploration. The platform combines a playful, vibrant design (coral, mint, pink accents, whimsical illustrations, bubble-shaped blocks) with functional content organization. It showcases creative programs, detailed service pages (e.g., 'Dress-Up Corner' with specific pricing for 'Hair Styling' and 'Nails & Bling'), event information, a contact section with a map and inquiry form, and an engaging blog, appealing to both parents and children.",
+    completeOn: 'ongoing',
     requirements: [
-      'Cheerful color palette with coral, mint green, and pink accents',
-      'Playful typography and engaging headings',
-      "High-quality photography of children's activities",
-      'Whimsical decorative elements and illustrations',
-      'Clean content layout with bubble-shaped sections',
-      'Engaging testimonial presentations',
-      'Dynamic image galleries',
-      'Mobile-responsive design with consistent styling',
+      'Playful and engaging website design: Vibrant color palette (coral, mint, pink), whimsical illustrations, bubble-shaped content blocks, high-quality photos of children/activities.',
+      'Clear navigation: Header with links to "Birthdays", "Private Play", "Dress-Up Corner", "Workshops", "Programs", "What\'s On", "Pricing", "Super Duper Store", "Blog", "Contact", "Sign In."',
+      'Homepage content: Inspiring hero section, "Welcome" intro, testimonials ("What our GUESTS have to say"), "Our Super Duper Space" description, "Services We Offer" (Art & Craft, Creative Movement, Dress-Up, Storytelling), "Message from the Founding Team".',
+      'Detailed Service Pages: Specific pages for "Dress-Up Corner" (with sub-services like "Hair Styling & Braids", "Nails & Bling" with prices), "Playdates", "Birthday Parties", "Drop-In Play".',
+      'Studio Philosophy Page ("What We Do"): Outlines approach (Investigate, Create, Play, Imagine, Discover), emphasizing child-led exploration.',
+      'Transparent Pricing Information: Accessible pricing for services, activities, and party packages.',
+      'Comprehensive Contact Page: Inquiry form (Name, Email, Phone, Message), opening hours, embedded interactive location map, direct contact info (phone, email).',
+      'Blog Section: Main blog page listing articles (title, preview, image); individual post pages with full content.',
+      'Mobile-Responsive Design for accessibility on all devices.',
+      'User Interaction: "Sign In" functionality, contact/inquiry forms.',
     ],
     keyFeatures: [
-      { title: 'Program showcase sections', description: 'Detailed service pages', icon: Star },
-      { title: 'Interactive service cards', description: 'Detailed service pages', icon: Star },
-      { title: 'Testimonial integration', description: 'Detailed service pages', icon: Star },
-      { title: 'Newsletter subscription', description: 'Detailed service pages', icon: Star },
-      { title: 'Social media integration', description: 'Detailed service pages', icon: Star },
-      { title: 'Program pricing tables', description: 'Detailed service pages', icon: Star },
-      { title: 'Photo galleries', description: 'Detailed service pages', icon: Star },
-      { title: 'Contact form system', description: 'Detailed service pages', icon: Star },
-      { title: 'Event calendar', description: 'Detailed service pages', icon: Star },
-      { title: 'Location information', description: 'Detailed service pages', icon: Star },
-      { title: 'Team member profiles', description: 'Detailed service pages', icon: Star },
-      { title: 'Service package details', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Vibrant Service Showcase & Detailed Pricing',
+        description: "Presents diverse creative activities (Art & Craft, Creative Movement, Storytelling) and specialized services like 'Dress-Up Corner' with itemized pricing for 'Hair Styling', 'Nails & Bling'.",
+        icon: Star
+      },
+      {
+        title: 'Engaging Brand Story & Child-Centric Philosophy',
+        description: "Communicates the studio's mission via 'Welcome', 'Our Super Duper Space', 'Founding Team Message', and 'What We Do' sections, emphasizing play and exploration.",
+        icon: Star
+      },
+      {
+        title: 'Social Proof through Guest Testimonials',
+        description: "Features a dedicated 'What our GUESTS have to say' section to build credibility and trust.",
+        icon: Star
+      },
+      {
+        title: 'Information on Various Events & Play Options',
+        description: "Details offerings like 'Playdates', 'Birthday Parties', 'Drop-In Play', and 'Workshops', catering to different family needs.",
+        icon: Star
+      },
+      {
+        title: 'Comprehensive Contact, Hours & Location Mapping',
+        description: 'Provides an inquiry form, direct contact details, clear opening hours, and an embedded interactive map for easy location finding.',
+        icon: Star
+      },
+      {
+        title: 'Informative & Engaging Activity Blog',
+        description: 'Features a blog with articles on children\'s activities, party ideas, and creative development, enhancing user engagement.',
+        icon: Star
+      },
+      {
+        title: 'Playful, Child-Friendly Visual Design',
+        description: 'Utilizes a bright color scheme, whimsical graphics, playful typography, and high-quality, engaging photography of children and studio activities.',
+        icon: Star
+      },
+      {
+        title: 'Interactive Elements & Clear Calls to Action',
+        description: 'Includes user sign-in, inquiry forms, and clear navigation to sections like "Pricing", "Super Duper Store", and service bookings.',
+        icon: Star
+      }
     ],
     challenges: [
       {
@@ -2350,34 +2420,26 @@ export const superDuperStudio: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
+    },
     {
       title: 'TypeScript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.typescript,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Framer Motion',
-      usage: 'Animation',
-      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    {
-      title: 'React Hook Form',
-      usage: 'Form',
-      icon: { Icon: SiReacthookform, props: { fill: '#0052CC' } },
-    },
-    {
-      title: 'Cloudinary',
-      usage: 'Media',
-      icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } },
-    },
-    { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
-    { title: 'SendGrid', usage: 'Email', icon: { Icon: SiSendgrid, props: { fill: '#0052CC' } } },
   ],
   images: { main: superDuper, screenshots: [superDuperContact, superDuperEvent, superDuperService, superDuperAbout, superDuperLanding] },
 }
@@ -2386,34 +2448,69 @@ export const deepReelWebsite: ProjectAnalysisT = {
   title: 'DeepReel Website',
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
-    'A modern landing page for an AI-powered video creation platform, featuring sleek design, comprehensive feature presentation, and clear value propositions for personalized video content creation.',
+    'A modern landing page for an AI-powered video creation platform, featuring sleek design, compelling value propositions (e.g., "0 to Video in 60 seconds", custom avatars, 30+ languages), client testimonials, pricing, FAQs, and ethical AI commitments.',
   detailedAnalysis: {
     overview:
-      "The DeepReel website effectively showcases the platform's AI video creation capabilities through a sophisticated dark-themed design. It presents complex technical features in an accessible way, highlighting the platform's ability to create personalized videos at scale with AI avatars.",
+      "The DeepReel website effectively showcases the platform's AI video creation capabilities through a sophisticated dark-themed design. It presents complex technical features in an accessible, benefit-driven way, highlighting custom avatars, multi-language support, speed, and integration with platforms like Canva. Social proof, clear pricing, and AI ethics are also prominent.",
     completeOn: 'Jul 2023',
     requirements: [
-      'Elegant dark theme with vibrant pink accents',
-      'Clean feature presentation cards',
-      'High-quality AI avatar demonstrations',
-      'Clear pricing tier structure',
-      'Consistent iconography throughout',
-      'Professional typography hierarchy',
-      'Strategic whitespace utilization',
-      'Engaging call-to-action placement',
+      'Modern dark theme with vibrant pink/purple accents and high-quality visuals.',
+      'Hero section: "Create AI Avatar videos from Blog Posts INSTANTLY", avatar showcase, "Try DeepReel for free" CTA, links to use cases.',
+      'Value proposition sections: "0 to Video in 60s", "Gain video creation superpowers" (no filming, 100s videos, 1000x faster/cheaper), custom avatar cloning, "Perfect video in one Take", "Speak 30+ languages".',
+      '"How DeepReel works" visual 3-step explanation.',
+      'Social proof: "Listen to what our clients say" (video testimonials), "About Us" (team), partner/client logos.',
+      '"AI Ethics and Safety" section (data security, content ownership, diverse avatars, enterprise security).',
+      'Use case demos: Product Demos, Financial Explainers, Blog-to-Video, Canva App integration.',
+      'Pricing section: Plans (Free, Creator, Business, Enterprise) with features/pricing, and "Add Ons".',
+      'FAQ section addressing common user queries.',
+      'Consistent CTAs ("Try DeepReel for free") and responsive footer with navigation/social links.',
     ],
     keyFeatures: [
-      { title: 'AI avatar showcase', description: 'Detailed service pages', icon: Star },
-      { title: 'Language support display', description: 'Detailed service pages', icon: Star },
-      { title: 'Pricing tier comparison', description: 'Detailed service pages', icon: Star },
-      { title: 'Feature benefit cards', description: 'Detailed service pages', icon: Star },
-      { title: 'Ethics and safety section', description: 'Detailed service pages', icon: Star },
-      { title: 'Integration highlights', description: 'Detailed service pages', icon: Star },
-      { title: 'Video campaign builder', description: 'Detailed service pages', icon: Star },
-      { title: 'Testimonials section', description: 'Detailed service pages', icon: Star },
-      { title: 'Technology partnerships', description: 'Detailed service pages', icon: Star },
-      { title: 'Platform capabilities', description: 'Detailed service pages', icon: Star },
-      { title: 'Custom solutions', description: 'Detailed service pages', icon: Star },
-      { title: 'Enterprise features', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Instant AI Avatar Video Creation',
+        description: 'Showcases creating AI avatar videos from blog posts and text inputs rapidly, emphasizing speed and ease of use.',
+        icon: Star,
+      },
+      {
+        title: 'Custom Avatars with Face & Voice Cloning',
+        description: 'Highlights the ability to create personalized, realistic custom avatars using face and voice cloning technology.',
+        icon: Star,
+      },
+      {
+        title: 'Multi-Language Video Generation (30+ Languages)',
+        description: 'Avatars can speak fluently in over 30 languages, catering to a global audience.',
+        icon: Star,
+      },
+      {
+        title: 'Simplified 3-Step Workflow',
+        description: 'Clearly explains the video creation process: 1. Select/Create Avatar, 2. Input Script, 3. Generate Video.',
+        icon: Star,
+      },
+      {
+        title: 'Benefit-Driven Value Proposition',
+        description: 'Focuses on user advantages: no filming, scalability, 1000x faster/cheaper, audience growth, perfect single-take videos.',
+        icon: Star,
+      },
+      {
+        title: 'Social Proof & Trust Signals',
+        description: 'Features video client testimonials, team introduction in "About Us", and logos of recognized partners.',
+        icon: Star,
+      },
+      {
+        title: 'Commitment to AI Ethics & Safety',
+        description: 'Details commitments to data security, user content ownership, diverse/bias-free avatars, and enterprise-level security.',
+        icon: Star,
+      },
+      {
+        title: 'Showcased Use Cases & Canva Integration',
+        description: 'Demonstrates applications like product demos, educational content, and highlights the DeepReel Canva app for social media.',
+        icon: Star,
+      },
+      {
+        title: 'Transparent Pricing & FAQ',
+        description: 'Provides clear subscription plans (Free, Creator, Business, Enterprise), add-on options, and a comprehensive FAQ section.',
+        icon: Star,
+      },
     ],
     challenges: [
       { title: 'Communicating complex AI features', description: 'Detailed service pages' },
@@ -2437,126 +2534,151 @@ export const deepReelWebsite: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
+    },
     {
       title: 'TypeScript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.typescript,
     },
     {
       title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      usage: 'CSS Framework',
+      icon: techStackIcons.tailwind,
     },
     {
-      title: 'Framer Motion',
-      usage: 'Animation',
-      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
     {
-      title: 'Google Analytics',
-      usage: 'Analytics',
-      icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Artworks & Illustration',
+      icon: techStackIcons.illustrator,
+    },
+    {
+      title: 'Adobe Photoshop',
+      usage: 'Image Editing & Optimization',
+      icon: techStackIcons.photoshop,
+    },
+    {
+      title: 'Adobe After Effects',
+      usage: 'Lottie Animations & Video Compression',
+      icon: techStackIcons.afterEffects,
     },
   ],
   images: { main: deepreel, screenshots: [deepreel, deepreel, deepreel] },
   liveUrl: 'https://www.deepreel.com',
 }
 
+// @TODO: Improve content for this project
 export const alfabolt: ProjectAnalysisT = {
   title: 'Alfabolt Website',
   affiliateWith: TestimonialClients.alfabolt,
   liveUrl: 'https://www.alfabolt.com',
   shortDescription:
-    'A modern software development company website showcasing custom software solutions, mobile app development, and industry expertise through detailed case studies and service pages.',
+    'A modern, professional website for Alfabolt, a custom software development company. showcasing their wide range of services and highlighting their expertise across various industries, featuring detailed case studies, their processes, client testimonials, and a transparent developer tier pricing.',
   detailedAnalysis: {
     overview:
-      'The Alfabolt website presents a sophisticated digital presence that effectively communicates complex technical services through a modern, user-centric design. The platform features comprehensive case studies, detailed service pages, and industry-specific solutions, all wrapped in a professional dark theme.',
+      "Alfabolt website focuses on projecting the company's expertise in delivering custom software solutions, by effectively communicating complex technical services and industry-specific capabilities.\n\nThe site meticulously details its core services, showcases successful projects via in-depth case studies, and transparently outlines its development process and value-based pricing tiers. \n\n It's designed to be sales-focused, emphasizing performance, responsiveness, and accessibility, while building trust through client testimonials and a clear articulation of their work in sectors like Fintech, Healthcare, Logistics, Insurance, and Social platforms.",
     completeOn: 'Feb 2025',
     requirements: [
-      'Complete redesign of the website',
-      'Sales focused layout and UX',
-      'High performance without compromising on visuals',
-      'Fully responsive and adaptive design',
-      'Modern and professional design',
-      'SEO friendly layout and design',
-      'Accessibility focused design',
-      'Adherence to brand guidelines',
+      'Complete "redesign" with a modern, professional color theme and alfabolt brand accents.',
+      '"Sales-focused" layout and user experience, with clear calls-to-action.',
+      '"High performance" and fast load times, utilizing optimized images and Server Sider Rendering.',
+      'Fully "responsive" and adaptive design for seamless viewing on all devices.',
+      '"SEO-friendly" structure and content to enhance organic visibility.',
+      "Strict adherence to Alfabolt's branding guidelines while maintaining accessibility.",
+      'Performant and predictable "navigation system" for an optimal user experience.',
+      '"Landing page" featuring a professional hero section, Core Services, Industries they serve, Interactive client testimonials, and an intuitive contact form.',
+      'Dedicated "Service Pages" with service-specific overview and benefits, step by step explanation of their process, showcase of relevant technologies, and value-driven pricing information.',
+      'In-depth "Case Study Pages" for previous projects, featuring project overview, client background, Key requirements and challenges, Detailed solutions provided by Alfabolt, including specific features, technologies used and project outcomes.',
+      'Transparent "Pricing" page displaying "Developer Tiers & Pricing" with monthly rates, hours/week, and clear skill descriptions.',
+      'Hiring specific contact form on the pricing page, for streamlining the hiring process.',
+      '"FAQ\'s" on on service-specific pages for addressing common questions and queries.',
+      'Comprehensive "footer" with quick links, contact information, and social media icons.',
     ],
     keyFeatures: [
       {
-        title: 'High Performance Website Redesign',
+        title: 'High-Performance Website Redesign',
         description:
-          'Utilised Next.js built in optimizations along with effective design choices maximise efficiency.',
+          'Optimized for speed and user experience, ensuring low LCP and CLS, built with Next.js optimizations.',
         icon: Gauge,
       },
       {
-        title: 'Responsive Design',
+        title: 'Fluid Responsive & Accessible Design',
         description:
-          "Utopia's Fluid typography and spacing was used from day one to cut down boilerplate and design overhead.",
+          "Utilizes fluid typography and spacing, with extensive testing for contrast, touch areas, and overall accessibility across devices.",
         icon: Proportions,
       },
       {
-        title: 'Image Optimization',
+        title: 'Optimized Imagery & Visuals',
         description:
-          'Next.js static imports with dynamic placeholders to cut down on load times, along with properly sized images, in .webp and .avif formats. ',
+          'Employs Next.js static imports, dynamic placeholders, and properly sized images in modern formats, ".webp" and ".avif" for fast loading and visual appeal.',
         icon: Images,
       },
       {
-        title: 'Accessible Design',
+        title: 'SEO-Driven Architecture',
         description:
-          'Extensive testing, contrast checking, and accessibility audits were conducted to ensure the website is fully accessible.',
-        icon: Glasses,
-      },
-      {
-        title: 'SEO Optimization',
-        description:
-          'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
+          'Leverages Next.js server-side rendering and intelligent design for strong search engine performance and organic lead generation.',
         icon: SearchCheck,
       },
       {
-        title: 'Modern and Professional',
+        title: 'Modern Aesthetics with Custom Icons',
         description:
-          'Design choices were tailored around professionalism and modernity, resulting in a clean and professional look.',
+          "Clean, professional look with a consistent color palette, Alfabolt Accents, and custom-designed icons that align with Alfabolt's branding.",
         icon: Sparkles,
       },
       {
-        title: 'Sleek Icon Design',
+        title: 'Interactive Client Testimonials & Social Proof',
         description:
-          "Custom icons were created to go hand-in-hand with the company's branding, adding to the overall professional look.",
-        icon: SquareRoundCorner,
-      },
-      {
-        title: 'Interactive Client testimonials',
-        description:
-          'Lightweight Embla Carousel was used to showcase client testimonials, with reduced overhead and high performance.',
+          'Prominently features client logos and a dynamic carousel for testimonials, including ratings and detailed quotes to build trust.',
         icon: UsersRound,
       },
       {
-        title: 'Services and Solutions',
+        title: 'Comprehensive Service Showcase',
         description:
-          "Individual services and sub-services pages were created to showcase the company's offerings, with a focus on clarity and ease of understanding.",
+          'Detailed pages for "Core Services" and specialized offerings like "Fintech Software Solutions" and "Laravel Development Services", outlining processes and technologies.',
         icon: HeartHandshake,
       },
       {
-        title: 'Case Studies',
+        title: 'In-Depth Case Study Presentations',
         description:
-          'Previous work of the company was showcased effectively through case study pages, with 3D mockups of the products they worked on.',
+          'Showcases previous work with detailed narratives on "requirements", "solutions" provided by Alfabolt, and "outcomes", along with the technologies used and client feedback.',
         icon: FolderDot,
       },
       {
-        title: 'Value-based pricing section',
+        title: 'Transparent Developer Tier Pricing',
         description:
-          'Focused pricing plans for users of various needs were created, with the ability to conveniently compare between plans.',
+          'Clearly outlines different developer skill levels, with associated monthly costs and capabilities, facilitating an informed hiring decisions.',
         icon: CreditCard,
       },
       {
-        title: 'Industry-specific solutions',
+        title: 'Targeted Industry-Specific Solutions',
         description:
-          "Individual industry pages were created to showcase the company's expertise in specific domains.",
+          'Dedicated sections and pages for major industries served over the years, demonstrating domain expertise.',
         icon: Factory,
+      },
+      {
+        title: 'Structured "Our Process" Explanation',
+        description:
+          "Clearly defines Alfabolt's systematic approach to projects: Scoping & Research, Project Initiation, Design, and Development.",
+        icon: ArrowDownUp,
+      },
+      {
+        title: 'Integrated Contact & Hiring Forms',
+        description:
+          'Multiple strategically placed forms to capture leads and streamline client\'s experience while hiring or sending queries.',
+        icon: MailQuestion,
+      },
+      {
+        title: 'FAQ Sections for Clarity',
+        description:
+          'Provides answers to common questions on specific service pages, enhancing user understanding and reducing friction.',
+        icon: HelpCircle,
       },
     ],
     challenges: [
@@ -2650,45 +2772,79 @@ export const alfabolt: ProjectAnalysisT = {
 export const tutorania: ProjectAnalysisT = {
   title: 'Tutorania',
   shortDescription:
-    'A comprehensive tutoring management platform featuring team organization, analytics tracking, and detailed reporting tools for educational institutions and tutoring businesses.',
+    'A comprehensive tutoring marketplace and management platform connecting students/clients with tutors, featuring job posting, proposal management, contract handling with milestones, a wallet/coin system, detailed user profiles, and extensive search/filter capabilities.',
   detailedAnalysis: {
     overview:
-      'Tutorania is a sophisticated platform designed to streamline tutoring operations through advanced team management, performance tracking, and analytical tools. The system provides detailed insights into tutoring activities while maintaining an organized and efficient workflow.',
-    completeOn: 'Jul 2023',
+      'Tutorania is a sophisticated platform designed to streamline the entire tutoring lifecycle, from discovery to payment. It provides a public marketplace for finding tutors, tools for clients to post jobs and manage hires, and features for tutors to showcase their expertise and find work. Key aspects include multi-step user registration, detailed profile management, secure contract handling with milestone tracking, an integrated wallet system for coin-based transactions, and robust search and filtering across the platform.',
+    completeOn: 'August 2023',
     requirements: [
-      'Clean, minimalist interface with navy blue accents',
-      'Organized team member listings with profile images',
-      'Comprehensive analytics dashboards with data visualization',
-      'Detailed activity logs and reports',
-      'Clear navigation structure with intuitive sections',
-      'Well-structured form layouts for data entry',
-      'Interactive data tables with sorting capabilities',
-      'Responsive design adapting to different screen sizes',
+      'Public marketplace: Search/filter tutors (subject, skill, location, type - Online/Home), view detailed tutor profiles (experience, education, rates), "Request Contact Details".',
+      'User registration: Multi-step sign-up (DOB, country, gender, profile picture), Terms & Conditions agreement.',
+      'Client features: "Post a New Job" (title, description, skills, tutor preferences - gender/number, time, service type - tutoring/assignment, location), view/manage job postings and proposals, hire tutors.',
+      'Tutor features: Create and manage detailed public profiles, search and apply for jobs, manage active/past jobs and contracts.',
+      'Contract management: View contracts (earnings, progress), track milestones (active, upcoming, completed, due dates), option to end contracts.',
+      'Financial system: "Your Wallet" (balance, transaction history), "Buy Coins" (monthly/annual packages, credit card payment), checkout for services.',
+      'User accounts & settings: Profile editing, General settings (Tutor Name, contact, accounts), Privacy, Billing, Miscellaneous, Security (password management, 2FA - email/text/security question).',
+      'Job/Tutor listings: Pagination, search bars, advanced filters (e.g., category for tutors, status for jobs/contracts), sorting options.',
+      'Communication: Implied messaging between clients and tutors (e.g., "Message" button on proposals).',
+      'Admin oversight (high-level): Management of users (students, tutors, admins), contracts, job postings, earnings, user statistics (registrations, logins, messages, posts).',
+      'Clean, professional UI with clear navigation (public header, user dashboard sidebar), consistent footer.',
     ],
     keyFeatures: [
-      { title: 'Team member management', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Performance analytics tracking',
-        description: 'Detailed service pages',
-        icon: Star,
-      },
-      { title: 'Detailed activity reporting', description: 'Detailed service pages', icon: Star },
-      { title: 'Member profile management', description: 'Detailed service pages', icon: Star },
-      { title: 'Data visualization tools', description: 'Detailed service pages', icon: Star },
-      { title: 'Custom report generation', description: 'Detailed service pages', icon: Star },
-      { title: 'Team organization tools', description: 'Detailed service pages', icon: Star },
-      { title: 'Progress tracking metrics', description: 'Detailed service pages', icon: Star },
-      { title: 'Historical data analysis', description: 'Detailed service pages', icon: Star },
-      { title: 'User role management', description: 'Detailed service pages', icon: Star },
-      {
-        title: 'Interactive analytics dashboard',
-        description: 'Detailed service pages',
+        title: 'Public Tutor Marketplace & Discovery',
+        description: 'Enables students/clients to search, filter by various criteria (subject, location, type), and view comprehensive tutor profiles with "Request Contact Details" option.',
         icon: Star,
       },
       {
-        title: 'Comprehensive search functionality',
-        description: 'Detailed service pages',
+        title: 'Client Job Posting & Hiring Workflow',
+        description: 'Clients can post detailed job requirements, manage incoming proposals, shortlist, message, and hire suitable tutors.',
         icon: Star,
+      },
+      {
+        title: 'Tutor Profile & Job Application System',
+        description: 'Tutors can create rich profiles, browse job listings tailored to their skills, and apply with proposals.',
+        icon: Star,
+      },
+      {
+        title: 'Integrated Contract & Milestone Management',
+        description: 'Facilitates creation and tracking of contracts with detailed milestones (status, due dates), earnings, and progress for both parties.',
+        icon: Star,
+      },
+      {
+        title: 'Wallet & Coin-Based Payment System',
+        description: 'Secure in-platform wallet for users to buy coins and make payments for tutoring services, with transaction history.',
+        icon: Star,
+      },
+      {
+        title: 'Multi-Step User Registration & Onboarding',
+        description: 'Structured sign-up process collecting necessary user information (personal details, preferences) for both clients and tutors.',
+        icon: Star,
+      },
+      {
+        title: 'Comprehensive Account Settings & Security',
+        description: 'Users can manage profile details, contact information, billing, and enhance security with password changes and Two-Factor Authentication.',
+        icon: Star,
+      },
+      {
+        title: 'Advanced Search, Filtering & Sorting',
+        description: 'Robust search, filtering (e.g., by category, status, location), and sorting capabilities across tutor directory, job board, and contract lists.',
+        icon: Star,
+      },
+      {
+        title: 'Platform-Wide User Management & Statistics (Admin)',
+        description: 'Backend capabilities for administrators to manage users (tutors, students, admins), oversee contracts, and view platform statistics (user growth, activity).',
+        icon: UsersRound, // Changed from Star to something more admin/user related
+      },
+      {
+        title: 'Role-Specific Dashboards',
+        description: 'Tailored dashboard views and tools for students/clients (e.g., post job, view proposals) and tutors (e.g., find jobs, manage profile).',
+        icon: LayoutDashboard, // Changed from Star
+      },
+      {
+        title: 'Communication Facilitation',
+        description: 'Provides tools for clients and tutors to communicate regarding job proposals and ongoing projects.',
+        icon: MessageCircleQuestion, // Changed from Star
       },
     ],
     challenges: [
@@ -2713,28 +2869,95 @@ export const tutorania: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
+    {
+      title: 'Next.js',
+      usage: 'Frontend Development Framework',
+      icon: techStackIcons.next,
+    },
+    {
+      title: 'Node.js',
+      usage: 'Backend Development Framework',
+      icon: techStackIcons.node,
+    },
     {
       title: 'TypeScript',
       usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      icon: techStackIcons.typescript,
     },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
+    {
+      title: 'Python',
+      usage: 'Recommendation Model Development',
+      icon: techStackIcons.python,
+    },
+    {
+      title: 'GraphQL',
+      usage: 'API Development',
+      icon: techStackIcons.graphql,
+    },
+    {
+      title: 'Apollo Client',
+      usage: 'API Management',
+      icon: techStackIcons.apollo,
+    },
+    {
+      title: 'Prisma ORM',
+      usage: 'Object Relational Mapping',
+      icon: techStackIcons.prisma,
+    },
+    {
+      title: 'MongoDB',
+      usage: 'Database',
+      icon: techStackIcons.mongodb,
+    },
     {
       title: 'Redux',
       usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      icon: techStackIcons.redux,
     },
     {
-      title: 'React Query',
-      usage: 'Data Fetching',
-      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
+      title: 'Tailwind CSS',
+      usage: 'CSS Framework',
+      icon: techStackIcons.tailwind,
     },
     {
-      title: 'Express.js',
-      usage: 'Backend',
-      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+      title: 'Stripe',
+      usage: 'Payment',
+      icon: techStackIcons.stripe,
+    },
+    {
+      title: 'Vercel',
+      usage: 'Hosting & Deployment',
+      icon: techStackIcons.vercel,
+    },
+    {
+      title: 'Google Analytics',
+      usage: 'Analytics',
+      icon: techStackIcons.googleAnalytics,
+    },
+    {
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
+    },
+    {
+      title: 'Adobe Illustrator',
+      usage: 'Branding & Illustration',
+      icon: techStackIcons.illustrator,
+    },
+    {
+      title: 'Adobe Photoshop',
+      usage: 'Image Editing & Optimization',
+      icon: techStackIcons.photoshop,
+    },
+    {
+      title: 'Adobe After Effects',
+      usage: 'Lottie Animations & Video Compression',
+      icon: techStackIcons.afterEffects,
+    },
+    {
+      title: 'Adobe Premiere Pro',
+      usage: 'Promotional Videos',
+      icon: techStackIcons.premierePro,
     },
   ],
   images: { main: tutoraniaImage, screenshots: [tutoraniaAdmin, tutoraniaSignup2, tutoraniaTutor, tutoraniaTutors, tutoraniaSignup] },
@@ -2825,38 +3048,65 @@ export const rivannaProduct: ProjectAnalysisT = {
 export const rivanna: ProjectAnalysisT = {
   title: 'Rivanna Website',
   shortDescription:
-    'A professional legal technology company website showcasing advanced document analysis and market intelligence tools through a clean, modern interface focused on legal professionals.',
+    'A professional legal technology company website showcasing advanced document analysis tools (like precedent search, deal merge, provision profiling) and market intelligence. Features a clean, dark-themed design, transparent pricing with a free trial, and clear value propositions for transactional attorneys.',
   detailedAnalysis: {
     overview:
-      "The Rivanna website effectively communicates the platform's sophisticated legal technology solutions through a clean, professional design. It presents complex legal document analysis tools and market intelligence features in an accessible way while maintaining a strong focus on legal industry expertise.",
+      "The Rivanna website effectively communicates the platform's sophisticated legal technology solutions through a clean, professional dark theme with subtle graphical elements. It presents complex legal document analysis tools (e.g., Whole-Document Precedent Search, Deal Merge, Clause Context, Provision Profiler, DocDuo+, Crosscheck) and market intelligence features in an accessible way. The site emphasizes value for busy transactional groups, offers transparent pricing with a 30-day no-risk free trial, and includes a clear 'About Us' section.",
     completeOn: 'Jul 2023',
     requirements: [
-      'Professional dark theme with monochromatic color scheme',
-      'Clean typography emphasizing readability',
-      'Interactive feature demonstrations',
-      'Clear pricing structure presentation',
-      'Organized product capabilities section',
-      'Consistent navigation elements',
-      'Well-structured content hierarchy',
-      'Strategic whitespace utilization',
+      'Professional dark theme with light text, subtle wave/network graphics, and a clean layout.',
+      'Clear header navigation: "About Rivanna", "Pricing", "Support", "Sign Up", "Sign In".',
+      'Footer navigation: "Contact Us", "Privacy Policy", "Terms of Service".',
+      'Compelling hero section ("Do More.") focused on improving precedent finding, provision comparison, and redlining.',
+      'Detailed "Features & Benefits" section: Showcasing tools like "More Like This: Whole-Document Precedent Search", "Single Search: Comprehensive, Unified Access to Precedents", "Deal Merge", "Clause Context", "Deal Filters", "Provision Profiler", "DocDuo+", "Crosscheck", "Section Sync", "Essentials View", each with icons and brief descriptions.',
+      'Value proposition section: Highlighting benefits such as "Better drafts from the start", "Always on top of the market", "Consistent excellence", with a visual graph element.',
+      '"Built for Busy Transactional Groups" section: Emphasizing "Private-by-Design", "Ready-to-Use Legal Technology", "Built for Busy Deal Lawyers", "Best-In-Class Support".',
+      '"About Us" page: Describing Rivanna as a knowledge technology company for transactional attorneys (knowledge management, matter research, assistive drafting).',
+      '"Pricing" page: "Transparent pricing. Zero surprises." Offering Monthly ($100/month) and Annual ($999/month) subscriptions, 30-day no-risk trial, options to cancel anytime, allocate usage to client billing, and inquire about volume discounts.',
+      'Primary CTA: "Ready to Transform Your Deal Work? Start Free Trial" (no credit card needed).',
+      'Consistent branding with the "R" logo and professional typography.',
     ],
     keyFeatures: [
-      { title: 'Product feature showcase', description: 'Detailed service pages', icon: Star },
-      { title: 'Interactive demonstrations', description: 'Detailed service pages', icon: Star },
-      { title: 'Pricing plan comparison', description: 'Detailed service pages', icon: Star },
-      { title: 'Documentation access', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Market intelligence presentation',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Advanced Precedent & Document Search',
+        description: 'Features "More Like This: Whole-Document Precedent Search" and "Single Search" for unified access to precedents, plus "Deal Merge" for complex deals.',
+        icon: Star
       },
-      { title: 'Use case scenarios', description: 'Detailed service pages', icon: Star },
-      { title: 'Legal technology overview', description: 'Detailed service pages', icon: Star },
-      { title: 'Industry expertise highlights', description: 'Detailed service pages', icon: Star },
-      { title: 'Platform capabilities', description: 'Detailed service pages', icon: Star },
-      { title: 'Search functionality showcase', description: 'Detailed service pages', icon: Star },
-      { title: 'Document analysis examples', description: 'Detailed service pages', icon: Star },
-      { title: 'Client testimonials', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Granular Clause & Provision Analysis Tools',
+        description: 'Includes "Clause Context" (search by provision text, key concepts), "Deal Filters" (by doc type, industry, time), and "Provision Profiler" to find and compare clauses.',
+        icon: Star
+      },
+      {
+        title: 'Efficient Drafting & Redlining Aids',
+        description: 'Offers "DocDuo+" (multi-document comparison), "Crosscheck" (blacklining), "Section Sync" (auto-aligned comparisons), and "Essentials View" (streamlined review).',
+        icon: Star
+      },
+      {
+        title: 'Clear Value Propositions for Legal Teams',
+        description: 'Emphasizes benefits like "Better drafts from the start", staying "Always on top of the market", and achieving "Consistent excellence".',
+        icon: Star
+      },
+      {
+        title: 'Tailored for Busy Transactional Attorneys',
+        description: 'Highlights suitability with "Private-by-Design" security, "Ready-to-Use Legal Technology", tools "Built for Busy Deal Lawyers", and "Best-In-Class Support".',
+        icon: Star
+      },
+      {
+        title: 'Transparent Pricing with Free Trial',
+        description: 'Clearly presents Monthly and Annual subscription plans, a 30-day no-risk free trial (no credit card), and options for cancellation and volume discounts.',
+        icon: CreditCard
+      },
+      {
+        title: 'Informative "About Us" Section',
+        description: 'Defines Rivanna as a knowledge technology company focused on knowledge management, matter research, and assistive drafting for transactional attorneys.',
+        icon: UsersRound
+      },
+      {
+        title: 'Prominent Call to Action for Free Trial',
+        description: 'Encourages user adoption with a highly visible "Start Free Trial" button, emphasizing no credit card requirement.',
+        icon: ShieldCheck
+      },
     ],
     challenges: [
       { title: 'Communicating complex legal technology', description: 'Detailed service pages' },
@@ -2876,32 +3126,15 @@ export const rivanna: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
-    },
-    {
-      title: 'Framer Motion',
-      usage: 'Animation',
-      icon: { Icon: SiFramer, props: { fill: '#0052CC' } },
-    },
-    {
-      title: 'React Query',
-      usage: 'Data Fetching',
-      icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
-    },
-    { title: 'Vercel', usage: 'Deployment', icon: { Icon: SiVercel, props: { fill: '#0052CC' } } },
-    {
-      title: 'Google Analytics',
-      usage: 'Analytics',
-      icon: { Icon: SiGoogleanalytics, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   images: { main: rivannaImage, screenshots: [rivannaLanding3, rivannaAbout, rivannaLanding1, rivannaLanding2, rivannaPrice] },
@@ -2910,42 +3143,64 @@ export const rivanna: ProjectAnalysisT = {
 export const humanizarTexto: ProjectAnalysisT = {
   title: 'Humanizar Texto',
   shortDescription:
-    'A sophisticated text humanization and paraphrasing mobile application with advanced AI capabilities, subscription management, and user-friendly text editing features.',
+    'A sophisticated AI-powered mobile app for text humanization and paraphrasing, featuring multiple writing modes, subscription plans (free/premium), detailed account management, payment integration, and user feedback mechanisms.',
   detailedAnalysis: {
     overview:
-      'Humanizar Texto is an innovative mobile application that leverages AI to help users transform and humanize their text content. The app combines powerful text processing capabilities with an intuitive interface, making it easy for users to create more natural and engaging content.',
+      'Humanizar Texto is an innovative mobile application that leverages AI to help users transform and humanize their text content. The app combines powerful text processing (humanizing and paraphrasing with modes like Rapid, Creative, Aggressive) with an intuitive purple-themed interface. It offers tiered subscription plans (Free, Weekly, Monthly, Annual) with varying word limits and features like ad-free experience and more languages. Users can manage their accounts, subscriptions, payment methods, and provide feedback, all within a secure environment that includes email verification and account deletion options.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Modern purple-themed interface with consistent branding',
-      'Clean, minimalist text editing screens',
-      'Well-organized settings panel with clear options',
-      'Intuitive subscription plan presentation',
-      'User-friendly account management interface',
-      'Clear feedback system for text processing',
-      'Elegant authentication screens',
-      'Professional illustration integration',
+      'Modern purple-themed UI with clear iconography and bottom navigation (Home, Humanizer, Paraphraser, Settings).',
+      'User Authentication: Registration (Full Name, Email, Password, Google Sign-In), OTP email verification.',
+      'Account Management: Edit profile (Name, Email), view active plan (Free/Pro), track word usage (limit, allowed, utilized), option to upgrade or restore purchases, secure account deletion with feedback.',
+      'Subscription Management: View/change plans (Free, Weekly, Monthly, Annual) with detailed features (word limits, writing modes, languages, ad-free, no captcha, chat support), manage payment methods (add/edit credit card).',
+      'Core Functionality: Separate screens for "Text Humanizer" & "Text Paraphraser", text input (paste, sample, upload), word count, writing mode selection (Rapid, Creative, Aggressive), process buttons ("Humanize AI", "Tr. Paraphrase Text"), output display, copy/share options.',
+      'Usage Limits & Upgrades: "Word Limit Reached" notification for free users, clear prompts to "Upgrade to Pro".',
+      'Settings: Language selection, toggles for Auto Capitalization/Correction, Sound/Haptic Feedback.',
+      'Support & Feedback: In-app feedback (rating, comments), Help Centre, Rate Us, Share with Friends links, Terms & Privacy policy access, Logout.',
+      'Onboarding: Informational screens for new users (e.g., "Information about paraphraser").',
+      'Ad Integration: Banner ads for the free tier (e.g., Google Ads).',
     ],
     keyFeatures: [
-      { title: 'AI-powered text humanization', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Text paraphrasing capabilities',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'AI Text Humanizer & Paraphraser with Writing Modes',
+        description: 'Core tools to transform text into natural, human-like content, offering distinct Humanizer and Paraphraser functions with modes like Rapid, Creative, and Aggressive.',
+        icon: Star
       },
-      { title: 'Subscription plan management', description: 'Detailed service pages', icon: Star },
-      { title: 'User account system', description: 'Detailed service pages', icon: Star },
-      { title: 'Premium feature access', description: 'Detailed service pages', icon: Star },
-      { title: 'Payment processing', description: 'Detailed service pages', icon: Star },
-      { title: 'Text history tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Settings customization', description: 'Detailed service pages', icon: Star },
-      { title: 'Email verification', description: 'Detailed service pages', icon: Star },
-      { title: 'Feedback collection', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Multiple text processing modes',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Tiered Subscription & Payment System',
+        description: 'Offers Free, Weekly, Monthly, and Annual plans with varying features (word limits, ad-free). Supports plan changes, upgrades, and secure credit card payment management.',
+        icon: CreditCard // Changed from Star
       },
-      { title: 'Word count tracking', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Comprehensive User Account Management',
+        description: 'Secure registration (email/Google), OTP verification, profile editing, usage tracking (word counts), and a secure account deletion process with feedback collection.',
+        icon: ShieldUser // Changed from Star
+      },
+      {
+        title: 'Flexible Text Input & Processing',
+        description: 'Supports pasting text, using sample content, or uploading documents, with word count display and clear actions to humanize or paraphrase.',
+        icon: FileSliders // Changed from Star
+      },
+      {
+        title: 'Personalized App Settings & Feedback',
+        description: 'Allows users to select app language, control auto-correction/capitalization, sound/haptic feedback, and submit ratings or detailed suggestions.',
+        icon: Cog // Changed from Star
+      },
+      {
+        title: 'Clear Usage Tiers & Upgrade Paths',
+        description: 'Informs free users of word limits and provides straightforward options to upgrade to premium plans for enhanced features and unlimited access.',
+        icon: Zap // Changed from Star, represents upgrade/power-up
+      },
+      {
+        title: 'Ad-Supported Free Version & Ad-Free Premium',
+        description: 'Integrates advertisements in the free tier, offering an ad-free experience as a key benefit for subscribed users.',
+        icon: Tv // Changed from Star, represents ads
+      },
+      {
+        title: 'Intuitive Onboarding & User Support',
+        description: 'Provides introductory screens for new users and includes access to a Help Centre and Terms/Privacy policies.',
+        icon: HelpCircle // Changed from Star
+      }
     ],
     challenges: [
       { title: 'Implementing complex text processing', description: 'Detailed service pages' },
@@ -2968,18 +3223,15 @@ export const humanizarTexto: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
     {
-      title: 'Express.js',
-      usage: 'Backend',
-      icon: { Icon: SiExpress, props: { fill: '#0052CC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
   ],
   isMobile: true,
   testimonial: testimonialsData['kueenz'],
@@ -2989,50 +3241,80 @@ export const humanizarTexto: ProjectAnalysisT = {
 export const smartCatch: ProjectAnalysisT = {
   title: 'Smart Catch',
   shortDescription:
-    'A comprehensive fishing community platform featuring fish identification, weather tracking, and social forums for anglers to share experiences and tips.',
+    'A comprehensive fishing community platform featuring AI fish identification, detailed weather forecasts, interactive forums, activity logging, hotspot search, educational resources, and safety alerts, all within a clean, modern mobile interface.',
   detailedAnalysis: {
     overview:
-      'Smart Catch is an innovative mobile application designed for fishing enthusiasts, combining practical tools like weather tracking and fish identification with social features that enable community engagement and knowledge sharing.',
+      'Smart Catch is an innovative mobile application designed for fishing enthusiasts. It combines practical tools like an AI-powered fish identifier, real-time weather tracking (current, hourly, weekly), and fishing hotspot search with robust social features. These include categorized community forums for discussions, activity logging for personal fishing trips, and access to a wide range of educational resources. The app also incorporates a safety alert system and secure user authentication with profile management.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Professional dark blue branding with clean typography',
-      'Intuitive weather dashboard with temperature tracking',
-      'Well-organized forum topics with clear categorization',
-      'Interactive fish identification interface',
-      'User-friendly authentication screens',
-      'Clear navigation with bottom tab bar',
-      'Engaging community discussion layout',
-      'Visual fish species comparison tools',
+      'Clean, modern UI with a dark blue/white theme, clear typography, and bottom navigation (Home, Search, Forums, Activity, Profile).',
+      'User Authentication: Login (Email, Password, Forgot Password), Registration (Name, Email, Password, Terms), OTP email verification for password recovery.',
+      'Profile Management: Edit First/Last Name, Password, City, Gender.',
+      'Home Dashboard: Current weather (temperature, location), today\'s hourly forecast, weekly summary, prominent "Scan" button.',
+      'AI Fish Identification: Upload/capture image, displays identified species (image, name, description), "Read More" option, "Scan Fish" action.',
+      'Community Forums: List of topics (e.g., Fish Enthusiasts, Aquarium Adventures, Catch of the Day), forum search, thread view (author, time, content, replies), comment/reply functionality.',
+      'Fishing Activity Log: Chronological list of fishing trips with location and date, grouped by month/older.',
+      'Hotspot Search: Text search for fishing hotspots, displays "Top Hotspots" with location and report counts.',
+      'Educational Resources: Access to Educational Resource descriptions, Online Courses, E-book Library, Webinar Series, Podcast Network, Study Group Platforms.',
+      'Safety Alerts System: Displays categorized alerts (Warning, Error, Info, Success, Critical) with explanations.',
+      'General Features: In-app notifications (bell icon), hamburger menu for extended navigation.',
     ],
     keyFeatures: [
-      { title: 'Fish species identification', description: 'Detailed service pages', icon: Star },
-      { title: 'Real-time weather tracking', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Community forums and discussions',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'AI-Powered Fish Identification',
+        description: 'Users can identify fish species by uploading or scanning images, receiving species name, image, and detailed information.',
+        icon: ScanSearch
       },
-      { title: 'User profile management', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Location-based weather updates',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Detailed Weather Dashboard & Forecasts',
+        description: 'Home screen displays current weather, hourly forecast for the day, and a weekly weather summary, aiding in trip planning.',
+        icon: CloudSun
       },
-      { title: 'Fishing tips and guides', description: 'Detailed service pages', icon: Star },
-      { title: 'Species information database', description: 'Detailed service pages', icon: Star },
-      { title: 'Community photo sharing', description: 'Detailed service pages', icon: Star },
-      { title: 'Expert advice section', description: 'Detailed service pages', icon: Star },
-      { title: 'Catch logging system', description: 'Detailed service pages', icon: Star },
-      { title: 'Weather forecast integration', description: 'Detailed service pages', icon: Star },
-      { title: 'Social interaction features', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Interactive Community Forums & Discussions',
+        description: 'Categorized forums for users to discuss topics, share experiences, view threads, and post replies. Includes forum search.',
+        icon: MessageSquareText
+      },
+      {
+        title: 'Fishing Activity Logging & History',
+        description: 'Allows users to log their fishing trips, including location and date, creating a personal fishing history.',
+        icon: History
+      },
+      {
+        title: 'Fishing Hotspot Discovery & Reports',
+        description: 'Search for popular fishing hotspots based on text input, displaying locations and user-generated report counts.',
+        icon: MapPin
+      },
+      {
+        title: 'Secure User Authentication & Profile Management',
+        description: 'Standard email/password login and registration, OTP-based password recovery, and editable user profiles for personalization.',
+        icon: ShieldUser
+      },
+      {
+        title: 'Rich Educational Resource Center',
+        description: 'Provides access to diverse learning materials including online courses, e-books, webinars, podcasts, and study group platforms.',
+        icon: BookOpenCheck
+      },
+      {
+        title: 'Comprehensive Safety Alert System',
+        description: 'Notifies users with categorized alerts (Warning, Error, Info, Success, Critical) to keep them informed and safe.',
+        icon: ShieldAlert
+      },
+      {
+        title: 'Integrated "Scan" Functionality',
+        description: 'A prominent "Scan" button on the home screen offers quick access to fish identification or other contextual scanning features.',
+        icon: Camera
+      }
     ],
     challenges: [
       { title: 'Implementing accurate fish identification', description: 'Detailed service pages' },
       { title: 'Managing real-time weather updates', description: 'Detailed service pages' },
       { title: 'Creating engaging community features', description: 'Detailed service pages' },
-      { title: 'Handling offline functionality', description: 'Detailed service pages' },
+      { title: 'Managing real-time weather updates', description: 'Detailed service pages' },
       { title: 'Ensuring data accuracy', description: 'Detailed service pages' },
       { title: 'Optimizing image processing', description: 'Detailed service pages' },
+      { title: 'Building scalable community platform', description: 'Detailed service pages' },
+      { title: 'Creating intuitive user interface', description: 'Detailed service pages' },
     ],
     solutions: [
       { title: 'Developed robust image recognition system', description: 'Detailed service pages' },
@@ -3046,26 +3328,14 @@ export const smartCatch: ProjectAnalysisT = {
   categories: [WorkCategories.productDesign],
   techStack: [
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'TensorFlow.js',
-      usage: 'AI',
-      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Socket.io',
-      usage: 'Real-time',
-      icon: { Icon: SiSocketdotio, props: { fill: '#0052CC' } },
-    },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   isMobile: true,
@@ -3075,46 +3345,75 @@ export const smartCatch: ProjectAnalysisT = {
 export const elBrezal: ProjectAnalysisT = {
   title: 'El Brezal Honey',
   shortDescription:
-    'An elegant e-commerce platform for premium honey products, featuring detailed product information, recipes, and an educational component about honey varieties and beekeeping.',
+    'An elegant e-commerce and informational website for "El Brezal" premium honey products. It showcases a diverse range of honey (Rosemary, Eucalyptus, Orange Blossom, Forest, Thousand Flowers), pollen, and royal jelly, complemented by a recipe section ("Cookbook"), a blog, and detailed contact information. The site emphasizes natural quality and product variety with a warm, inviting design.',
   detailedAnalysis: {
     overview:
-      'El Brezal is a sophisticated honey product website that combines e-commerce functionality with educational content. The platform showcases various honey products through beautiful photography and detailed information, while educating visitors about honey varieties and their uses.',
+      'The El Brezal Honey website offers a rich digital experience for honey enthusiasts. It combines a comprehensive e-commerce platform for purchasing various high-quality honey types, pollen, and royal jelly with engaging content like a "Cookbook" featuring honey-based recipes and an informative "Blog." The site is designed with a warm, earthy aesthetic, using high-quality product imagery and clear navigation to guide users through its offerings, from product discovery to learning about the brand and contacting them.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Warm color palette with honey-inspired tones',
-      'High-quality product photography',
-      'Clean product information layout',
-      'Detailed recipe presentation cards',
-      'Well-organized product categorization',
-      'Elegant typography with clear hierarchy',
-      'Consistent honey jar illustrations',
-      'Professional product comparison tables',
+      'Warm, inviting design with an earthy color palette (browns, yellows, greens) and high-quality, appealing product photography.',
+      'Clear header navigation: "Home", "Products", "Cookbook", "Blog", "Contact", alongside language selection (ES/EN/FR) and a shopping cart icon.',
+      'Prominent hero section showcasing El Brezal honey with a tagline like "The taste of nature in every drop."',
+      '"Products" section/page:',
+      '  Categorization (e.g., "Honeys", "Pollen", "Royal Jelly").',
+      '  Detailed product listings with images, names (e.g., "Rosemary Honey", "Eucalyptus Honey 1Kg"), descriptions, and likely pricing/add-to-cart options.',
+      '  Visual consistency in product presentation (e.g., jar mockups).',
+      '"Cookbook" (Recipe) section:',
+      '  Grid or list view of recipes with images, titles (e.g., "Honey and Soy Chicken Wings", "French Toast with Honey and Fruit").',
+      '  Individual recipe pages with ingredients, preparation steps, and attractive food photography.',
+      '"Blog" section:',
+      '  Articles on topics related to honey, beekeeping, or health benefits, presented with titles, preview text, and images.',
+      '"Contact" page:',
+      '  Contact form (Name, Email, Phone, Message).',
+      '  Direct contact information (Phone number, Email address).',
+      '  Physical address and potentially an embedded map.',
+      '  Links to social media platforms (Facebook, Instagram, Twitter, YouTube).',
+      'Footer: Links to legal information (Legal Notice, Privacy Policy, Cookies Policy), contact details, and social media icons.',
+      'E-commerce functionality: Shopping cart, checkout process, product detail views.',
+      'Responsive design for accessibility across various devices.',
+      'Multi-language support (Spanish, English, French indicated).',
     ],
     keyFeatures: [
       {
-        title: 'Product catalog with detailed descriptions',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Extensive Product Catalogue & E-commerce',
+        description: 'Showcases a wide variety of honey (Rosemary, Eucalyptus, Orange Blossom, Forest, Thousand Flowers), pollen, and royal jelly with detailed descriptions and online purchasing capabilities.',
+        icon: CreditCard, // Placeholder, ideal: ShoppingCart
       },
-      { title: 'Recipe collection and sharing', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Honey variety education section',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Inspirational "Cookbook" Section',
+        description: 'Features a collection of recipes using El Brezal honey, presented with appealing visuals and easy-to-follow instructions, encouraging product use.',
+        icon: BookOpenCheck, // Placeholder, ideal: Utensils or BookHeart
       },
-      { title: 'Product comparison tools', description: 'Detailed service pages', icon: Star },
-      { title: 'Beekeeping information', description: 'Detailed service pages', icon: Star },
-      { title: 'Shopping cart functionality', description: 'Detailed service pages', icon: Star },
-      { title: 'Order management system', description: 'Detailed service pages', icon: Star },
-      { title: 'Customer reviews integration', description: 'Detailed service pages', icon: Star },
-      { title: 'Honey sourcing information', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Nutritional information display',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'Informative Blog Content',
+        description: 'Provides articles on honey-related topics, offering value beyond products and engaging the community.',
+        icon: Rss, // Placeholder, ideal: Feather or Edit3
       },
-      { title: 'Recipe search functionality', description: 'Detailed service pages', icon: Star },
-      { title: 'Product filtering system', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Multi-Language Support',
+        description: 'Offers content in Spanish, English, and French, catering to a broader international audience.',
+        icon: MessageCircleHeart, // Placeholder, ideal: Languages or Globe
+      },
+      {
+        title: 'Comprehensive Contact Options & Social Media Integration',
+        description: 'Easy ways for customers to get in touch via form, direct details, and links to active social media profiles.',
+        icon: MailQuestion, // Placeholder, ideal: Mail or Share2
+      },
+      {
+        title: 'Visually Appealing & User-Friendly Design',
+        description: 'Utilizes high-quality imagery, a warm color scheme, and clear navigation to create an engaging and easy-to-use online experience.',
+        icon: Star, // Placeholder, ideal: Palette or LayoutGrid
+      },
+      {
+        title: 'Detailed Product Information Pages',
+        description: 'Each product is likely to have its own page with images, detailed descriptions, nutritional information, and usage suggestions.',
+        icon: FileStack, // Placeholder, ideal: Package or Info
+      },
+      {
+        title: 'Brand Storytelling & Quality Emphasis',
+        description: 'The overall design and content aim to convey the natural quality and tradition behind El Brezal honey.',
+        icon: Sparkles, // Placeholder, ideal: Award or Leaf
+      },
     ],
     challenges: [
       {
@@ -3141,29 +3440,20 @@ export const elBrezal: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    {
-      title: 'Cloudinary',
-      usage: 'Storage',
-      icon: { Icon: SiCloudinary, props: { fill: '#0052CC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      title: 'Adobe Photoshop',
+      usage: 'Image Manipulation',
+      icon: techStackIcons.photoshop,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   images: { main: elBrezalImage, screenshots: [elBrezalBlog, elBrezalCatalogue, elBrezalContact, elBrezalCookbook, elBrezalLanding] },
@@ -3172,38 +3462,77 @@ export const elBrezal: ProjectAnalysisT = {
 export const robinBeauty: ProjectAnalysisT = {
   title: 'Robin Beauty Bazar',
   shortDescription:
-    'An AI-powered beauty recommendation platform that provides personalized skincare routines and product suggestions based on individual skin characteristics and preferences.',
+    'An AI-powered beauty recommendation platform, Robin Beauty Bazar, provides personalized skincare and makeup routines by analyzing user\'s skin characteristics, preferences, and product base. It offers tiered subscription plans, community features, and creator-curated product suggestions.',
   detailedAnalysis: {
     overview:
-      'Robin Beauty Bazar is a sophisticated beauty tech platform that leverages AI to provide personalized skincare recommendations. The application combines intelligent skin analysis with product matching algorithms to create tailored beauty routines for each user.',
+      'Robin Beauty Bazar is a sophisticated beauty tech platform that leverages AI to provide personalized skincare and makeup recommendations. Users undergo a detailed "Get to Know Your Skin" quiz covering age, skin type, tone, sensitivities, and makeup habits. Based on this, the AI offers tailored routines and product suggestions. The platform features multiple subscription tiers (Free, Basic, Premium, Pro) with varying levels of access to consultations, product recommendations, and advanced features. It also aims to foster a community and allow exploration of creator favorites.',
     completeOn: 'Jul 2023',
     requirements: [
-      'Clean, modern interface with light blue accents',
-      'Professional beauty photography integration',
-      'Intuitive skincare quiz interface',
-      'Clear pricing tier presentation',
-      'Well-organized product recommendations',
-      'Elegant onboarding flow',
-      'Consistent brand elements throughout',
-      'User-friendly account management screens',
+      'Clean, modern interface with light blue and white/grey color palette, professional beauty photography.',
+      'Clear top navigation: "Home", "About", "Testimonials", "Pricing", "Contact", "Log In".',
+      'Hero section: "Discover Your Perfect Beauty Routine with AI-Powered Guidance", "Learn More", "Sign Up" CTAs.',
+      '"What We Offer" section detailing key benefits: "Check Your Product\'s Base" (ingredient compatibility), "Know What Suits Your Skin", "Discover Dupes You\'ll Love", "Join the Beauty Community", "Explore Creator Favorites", "Find Your Perfect Match".',
+      'Multi-step "Get to Know Your Skin" onboarding quiz:',
+      '  Age selection.',
+      '  Skin type description.',
+      '  Skin tone selection.',
+      '  Perfume sensitivity (Yes/No/Not Sure).',
+      '  Regular makeup usage.',
+      '  Daily SPF usage.',
+      '  Makeup usage during workouts.',
+      '  Favorite makeup brands input.',
+      'User Authentication:',
+      '  "Create Account": Full Name, Email, Password, Repeat Password.',
+      '  "Sign In": Email, Password.',
+      'Pricing Page:',
+      '  Monthly/Yearly toggle.',
+      '  Tiered plans: "Free" ($0), "Basic Plan" ($9.99/month), "Premium Plan" ($19.99/month - Recommended), "Pro Plan" ($29.99/month).',
+      '  Features breakdown per plan (e.g., Basic: product recommendations, consultations; Premium: adds full access, personalized box, beauty expert support; Pro: adds exclusive access, advanced skin/hair analysis, early access to product launches).',
+      'Newsletter signup section: "Stay up to date", Email input, "Sign in" button.',
+      'Comprehensive footer: Quick Links (Home, Team, Contact, Testimonials, Pricing), Information (About Us, Privacy Policy, Terms of Service), Get in Touch (Email, Phone).',
+      'Social media links in the footer.',
     ],
     keyFeatures: [
-      { title: 'AI-powered skin analysis', description: 'Detailed service pages', icon: Star },
-      { title: 'Personalized beauty routines', description: 'Detailed service pages', icon: Star },
-      { title: 'Product recommendations', description: 'Detailed service pages', icon: Star },
-      { title: 'Subscription management', description: 'Detailed service pages', icon: Star },
-      { title: 'Beauty profile creation', description: 'Detailed service pages', icon: Star },
-      { title: 'Skincare quiz system', description: 'Detailed service pages', icon: Star },
-      { title: 'Product matching algorithm', description: 'Detailed service pages', icon: Star },
-      { title: 'User preference tracking', description: 'Detailed service pages', icon: Star },
-      { title: 'Routine customization', description: 'Detailed service pages', icon: Star },
-      { title: 'Progress monitoring', description: 'Detailed service pages', icon: Star },
       {
-        title: 'Product effectiveness tracking',
-        description: 'Detailed service pages',
-        icon: Star,
+        title: 'AI-Powered Personalized Beauty Guidance',
+        description: 'Core offering to discover beauty routines tailored to individual needs using AI.',
+        icon: Sparkles, // Suggestion: BrainCircuit
       },
-      { title: 'Beauty community features', description: 'Detailed service pages', icon: Star },
+      {
+        title: 'Comprehensive "Get to Know Your Skin" Quiz',
+        description: 'Multi-step onboarding process to gather detailed user information on age, skin type, tone, sensitivities, and makeup habits.',
+        icon: HelpCircle, // Suggestion: ClipboardList or Users
+      },
+      {
+        title: "Product Base Compatibility Check",
+        description: "Helps users understand if their current makeup/skincare products are silicone-based, water-based, etc., and how they interact.",
+        icon: TestTubeDiagonal, // Suggestion: FlaskConical
+      },
+      {
+        title: 'Ingredient-Based Product Matching & Dupe Discovery',
+        description: 'AI analyzes skin profiles to recommend suitable products and helps discover high-quality, affordable dupes.',
+        icon: ScanSearch, // Suggestion: ZoomIn
+      },
+      {
+        title: 'Tiered Subscription Plans (Free, Basic, Premium, Pro)',
+        description: 'Offers varying levels of access to features like basic/unlimited recommendations, consultations, personalized beauty boxes, expert support, and exclusive launches.',
+        icon: CreditCard, // Suggestion: Award
+      },
+      {
+        title: 'Community & Creator Insights',
+        description: 'Features to "Join the Beauty Community" for honest reviews and "Explore Creator Favorites" for curated makeup product suggestions.',
+        icon: UsersRound, // Suggestion: Star if focusing on "creator favorites"
+      },
+      {
+        title: 'Secure User Authentication & Account Creation',
+        description: 'Standard sign-up (Full Name, Email, Password) and login processes.',
+        icon: ShieldUser, // Suggestion: KeyRound
+      },
+      {
+        title: 'Newsletter Subscription',
+        description: 'Allows users to stay updated with news and offers.',
+        icon: MailQuestion, // Suggestion: Mail or Send
+      },
     ],
     challenges: [
       { title: 'Implementing accurate skin analysis', description: 'Detailed service pages' },
@@ -3228,29 +3557,15 @@ export const robinBeauty: ProjectAnalysisT = {
   },
   categories: [WorkCategories.productDesign],
   techStack: [
-    { title: 'Next.js', usage: 'Backend', icon: { Icon: SiNextdotjs, props: { fill: '#0052CC' } } },
     {
-      title: 'TypeScript',
-      usage: 'Programming Language',
-      icon: { Icon: SiTypescript, props: { fill: '#3178C6' } },
-    },
-    { title: 'Node.js', usage: 'Backend', icon: { Icon: SiNodedotjs, props: { fill: '#339933' } } },
-    { title: 'MongoDB', usage: 'Database', icon: { Icon: SiMongodb, props: { fill: '#0052CC' } } },
-    {
-      title: 'TensorFlow.js',
-      usage: 'AI',
-      icon: { Icon: SiTensorflow, props: { fill: '#0052CC' } },
-    },
-    { title: 'Stripe', usage: 'Payment', icon: { Icon: SiStripe, props: { fill: '#0052CC' } } },
-    {
-      title: 'Redux',
-      usage: 'State Management',
-      icon: { Icon: SiRedux, props: { fill: '#764ABC' } },
+      title: 'Figma',
+      usage: 'Product Design (UI/UX)',
+      icon: techStackIcons.figma,
     },
     {
-      title: 'Tailwind CSS',
-      usage: 'Styling',
-      icon: { Icon: SiTailwindcss, props: { fill: '#06B6D4' } },
+      title: 'Adobe Illustrator',
+      usage: 'Branding, Artworks & Illustration',
+      icon: techStackIcons.illustrator,
     },
   ],
   images: { main: robinImage, screenshots: [robinForm, robinLanding1, robinLanding2, robinSignup, robinSkin] },
