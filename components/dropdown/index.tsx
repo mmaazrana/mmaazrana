@@ -64,6 +64,7 @@ const Dropdown: FC<DropdownProps> = ({ title, items }) => {
         onClick={toggleOpen} // Click toggles state, relevant for mobile accordion
         aria-haspopup='true'
         aria-expanded={isOpen}
+        aria-label={`${title} Dropdown`}
         className='flex items-center py-xs px-m gap-2xs rounded-full hover:bg-secondary-hover justify-start nav:justify-center items-center w-full nav:w-auto  transition-colors duration-200 font-light group'
       >
         <Typography type='xl' weight='light'>

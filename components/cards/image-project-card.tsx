@@ -118,6 +118,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
           <div className='flex gap-1 w-full'>
             {project.image.map((img: StaticImageData, imgIndex: number) => (
               <button
+                aria-label={`View ${project.title} - Image ${imgIndex + 1}`}
                 key={imgIndex}
                 onClick={() => {
                   direction.current = imgIndex > currentImageIndex ? 'left' : 'right'

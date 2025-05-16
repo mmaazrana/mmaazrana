@@ -8,6 +8,7 @@ interface MenuButtonProps {
 export default function MenuButton(props: MenuButtonProps) {
   return (
     <button
+      aria-label='Navigation Menu Button'
       onClick={props.onClick}
       className={`grid justify-center items-end outline-0 p-2 cursor-pointer ${props.showNavbar ? 'items-start' : 'items-end'}`}
     >
