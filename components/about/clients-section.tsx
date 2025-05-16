@@ -48,7 +48,7 @@ const ClientsSection: FC<ClientsSectionProps> = ({ className }) => {
             {clientIconComponents.map(({ Icon }, index) => (
               <div key={index} className='relative'>
                 <div
-                  className={`absolute inset-0 bg-primary-accent mix-blend-darken dark:mix-blend-color-dodge transition-opacity duration-300 z-1 ${theme === 'light' && '!mix-blend-darken'} ${theme === 'dark' && '!mix-blend-color-dodge'} ${isActive ? 'opacity-0' : 'opacity-100'} group-hover:opacity-0`}
+                  className={`absolute inset-0 bg-primary-accent mix-blend-darken dark:mix-blend-color-dodge z-1 ${theme === 'light' && '!mix-blend-darken'} ${theme === 'dark' && '!mix-blend-color-dodge'}`}
                 />
                 <div
                   className={`absolute inset-0 bg-secondary mix-blend-color z-1 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'} group-hover:opacity-0`}
