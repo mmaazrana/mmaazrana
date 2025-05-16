@@ -1,4 +1,4 @@
-import { ProjectCategories, Sections, TestimonialClients, WorkCategories } from '@/helpers/enums'
+import { ProjectCategories, ProjectLogos, Sections, TestimonialClients, WorkCategories } from '@/helpers/enums'
 import {
   BlenderProjectT,
   BottomNavButtonT,
@@ -568,6 +568,30 @@ export const clientIconComponents = [
   { Icon: MenuHub},
   { Icon: FiveOneFivePools},
 ]
+
+export const clientLogoData = {
+  [ProjectLogos.alfabolt] : Alfabolt,
+  [ProjectLogos.tss] : TSS,
+  [ProjectLogos.kueenz] : SvgKueenzTechnologies,
+  [ProjectLogos.humanizarTexto] : SvgHumanizarTexto,
+  [ProjectLogos.ayla] : AylaLogo,
+  [ProjectLogos.nutrigram] : SvgNutrigram,
+  [ProjectLogos.beaconTutors] : BeaconTutors,
+  [ProjectLogos.equanimity] : EquanimitySvg,
+  [ProjectLogos.elbrezal] : SvgElbrezal,
+  [ProjectLogos.robinBeauty] : SvgRobinBeauty,
+  [ProjectLogos.athleton] : Athleton,
+  [ProjectLogos.deepreel] : Deepreel,
+  [ProjectLogos.rivanna] : Rivanna,
+  [ProjectLogos.edwiz] : Edwiz,
+  [ProjectLogos.inventrios] : SvgInventrios,
+  [ProjectLogos.smartCatch] : SvgSmartCatch,
+  [ProjectLogos.lyfiti] : Lyfiti,
+  [ProjectLogos.menuHub] : MenuHub,
+  [ProjectLogos.fiveOneFivePools] : FiveOneFivePools,
+  [ProjectLogos.superDuper] : SuperDuperStudio,
+  [ProjectLogos.tutorania] : TutoraniaSvg,
+}
 
 export const clientColorIconComponents = [
   { Icon: Alfabolt, props: {} },

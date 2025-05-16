@@ -90,6 +90,32 @@ export enum TestimonialClients {
   markdown = 'markdown-editor',
 }
 
+export enum ProjectLogos {
+  alfabolt = 'alfabolt',
+  kueenz = 'kueenz',
+  rivanna = 'rivanna',
+  tss = 'tss',
+  inventrios = 'inventrios',
+  nutrigram = 'nutrigram',
+  nustac = 'nustac',
+  beaconTutors = 'beacon-tutors',
+  markdown = 'markdown-editor',
+  humanizarTexto = 'humanizar-texto',
+  ayla = 'ayla',
+  elbrezal = 'elbrezal',
+  robinBeauty = 'robin-beauty',
+  athleton = 'athleton',
+  deepreel = 'deepreel',
+  smartCatch = 'smart-catch',
+  lyfiti = 'lyfiti',
+  menuHub = 'menu-hub',
+  fiveOneFivePools = 'five-one-five-pools',
+  edwiz = 'edwiz',
+  equanimity = 'equanimity',
+  superDuper = 'super-duper-studio',
+  tutorania = 'tutorania',
+}
+
 export type WeightTypes = `${WeightTypesE}`;
 export type ButtonTypes = `${ButtonTypesE}`;
 export type TextTypes = `${TextTypesE}`;

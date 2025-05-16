@@ -277,6 +277,12 @@ import {
   MessageSquareText,
   MapPin,
   ArrowDownUp,
+  Infinity,
+  Bomb,
+  Bug,
+  PawPrint,
+  Orbit,
+  Leaf,
 } from 'lucide-react'
 import {
   SiAdobeaftereffects,
@@ -322,7 +328,7 @@ import {
   SiPrisma,
   SiPorkbun,
 } from 'react-icons/si'
-import { TestimonialClients, WorkCategories } from './enums'
+import { ProjectLogos, TestimonialClients, WorkCategories } from './enums'
 import { IconType } from 'react-icons/lib'
 import { IconComponentsT, IconComponentT, TestimonialsT, TestimonialT } from './types'
 import AylaLogo from '@/components/icons/ayla'
@@ -466,6 +472,7 @@ export interface challengesAndSolutionsT {
 
 export interface ProjectAnalysisT {
   title: string
+  logo ?: ProjectLogos
   affiliateWith ?: TestimonialClients
   shortDescription: string
   detailedAnalysis: {
@@ -503,32 +510,32 @@ export const projectNotFound: ProjectAnalysisT = {
       {
         title: 'Infinite Loop Detection',
         description: "Our project is so good at not existing, it can spot an infinite loop from a mile away... or maybe it's just not running anything. Who can tell?",
-        icon: Star,
+        icon: Infinity,
       },
       {
         title: 'Advanced Error Message Generation',
         description: "We've mastered the art of the 404. This project can generate bespoke, artisanal error messages for every occasion.",
-        icon: Star,
+        icon: Bomb,
       },
       {
         title: 'Quantum Entanglement Debugging',
         description: 'Fix bugs in a parallel universe where this project actually exists! Results may vary (or not appear at all).',
-        icon: Star,
+        icon: Bug,
       },
       {
         title: "Schrödinger's Feature Set",
         description: "Does it have the feature you need? Maybe! It simultaneously has and doesn't have all features until you try to use one.",
-        icon: Star,
+        icon: PawPrint,
       },
       {
         title: 'Zero-Resource Footprint',
         description: "Eco-friendly to the extreme! This project uses absolutely no server resources, bandwidth, or electricity. It's practically carbon negative!",
-        icon: Star,
+        icon: Leaf,
       },
       {
         title: 'Universal Compatibility (Theoretically)',
         description: "Since it doesn't run anywhere, it's compatible with everything! Windows, Mac, Linux, your smart toaster... you name it, it (doesn't) run on it.",
-        icon: Star,
+        icon: Orbit,
       },
     ],
     challenges: [
@@ -618,6 +625,7 @@ export const projectNotFound: ProjectAnalysisT = {
 
 export const pools515: ProjectAnalysisT = {
   title: '515 Pools',
+  logo: ProjectLogos.fiveOneFivePools,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A comprehensive pool management system that streamlines pool maintenance scheduling, testing, and service tracking for both pool owners and service providers.',
@@ -790,6 +798,7 @@ export const pools515: ProjectAnalysisT = {
 
 export const beaconTutors: ProjectAnalysisT = {
   title: 'Beacon Tutors Pakistan',
+  logo: ProjectLogos.beaconTutors,
   shortDescription:
     "Pakistan's largest tutoring network platform connecting qualified tutors with students for personalized learning experiences.",
   detailedAnalysis: {
@@ -930,6 +939,7 @@ export const beaconTutors: ProjectAnalysisT = {
 
 export const deepReelAI: ProjectAnalysisT = {
   title: 'DeepReel AI Videos',
+  logo: ProjectLogos.deepreel,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'An innovative AI-powered video creation platform that enables users to generate professional custom/stock avatar-based videos with automated script generation, visuals, and captions.',
@@ -1349,6 +1359,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
 
 export const equanimity: ProjectAnalysisT = {
   title: 'Equanimity',
+  logo: ProjectLogos.equanimity,
   shortDescription:
     'A modern investment platform focused on sustainable and renewable energy projects, offering users the ability to invest in and manage environmentally conscious funds, create new funds, and communicate via chat.',
   detailedAnalysis: {
@@ -1454,6 +1465,7 @@ export const equanimity: ProjectAnalysisT = {
 
 export const aylaAI: ProjectAnalysisT = {
   title: 'Ayla AI Assistant',
+  logo: ProjectLogos.ayla,
   shortDescription:
     'An intelligent AI companion app designed to help elderly people manage their daily routines, medications, and appointments through natural conversations, smart reminders, and personalized settings.',
   detailedAnalysis: {
@@ -1569,6 +1581,7 @@ export const aylaAI: ProjectAnalysisT = {
 // @TODO: Update Content
 export const deepReelCanva: ProjectAnalysisT = {
   title: 'DeepReel Canva App',
+  logo: ProjectLogos.deepreel,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     "A powerful Canva integration that brings DeepReel's AI video generation capabilities directly into the Canva platform, enabling users to create professional AI-powered videos within their design workflow.",
@@ -1664,6 +1677,7 @@ export const deepReelCanva: ProjectAnalysisT = {
 
 export const beaconTutorsAdmin: ProjectAnalysisT = {
   title: 'Beacon Tutors Admin Dashboard',
+  logo: ProjectLogos.beaconTutors,
   shortDescription:
     "A comprehensive administrative platform for Pakistan's largest tutoring network, enabling efficient management of tutoring requests, reviews, announcements, and approvals.",
   detailedAnalysis: {
@@ -1876,6 +1890,7 @@ export const markdownEditor: ProjectAnalysisT = {
 
 export const menuHub: ProjectAnalysisT = {
   title: 'MenuHub',
+  logo: ProjectLogos.menuHub,
   shortDescription:
     'A comprehensive restaurant digitization platform that helps business owners modernize their operations with digital menus, streamlined ordering (including space/table selection), payment processing, and enhanced customer experience through integrated content like blogs, events, and news.',
   detailedAnalysis: {
@@ -1975,6 +1990,7 @@ export const menuHub: ProjectAnalysisT = {
 
 export const nutrigram: ProjectAnalysisT = {
   title: 'Nutrigram',
+  logo: ProjectLogos.nutrigram,
   shortDescription:
     'A modern nutrition tracking and meal analysis app that helps users monitor their caloric intake via scanning or manual logging, compete with friends on a leaderboard, and maintain healthy eating habits through an engaging, personalized interface.',
   detailedAnalysis: {
@@ -2069,6 +2085,7 @@ export const nutrigram: ProjectAnalysisT = {
 
 export const athletonPlus: ProjectAnalysisT = {
   title: 'Athleton Plus',
+  logo: ProjectLogos.athleton,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A comprehensive fitness training management platform connecting trainers with clients, featuring role-based dashboards, program creation, workout scheduling, progress tracking, integrated payments, and detailed session management for both desktop and mobile.',
@@ -2180,6 +2197,7 @@ export const athletonPlus: ProjectAnalysisT = {
 
 export const beaconTutorsCRM: ProjectAnalysisT = {
   title: 'Beacon Tutors CRM',
+  logo: ProjectLogos.beaconTutors,
   shortDescription:
     'A specialized CRM system for managing tutoring inquiries through a multi-stage processing pipeline, from initial contact and requirements gathering to demo sessions and fee processing, with detailed tracking and internal alerts.',
   detailedAnalysis: {
@@ -2262,6 +2280,7 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
 // @TODO: Update Content
 export const inventrios: ProjectAnalysisT = {
   title: 'Inventrios',
+  logo: ProjectLogos.inventrios,
   shortDescription:
     'A modern technology company website showcasing various digital services including web development, mobile apps, machine learning, and design, featuring an elegant dark theme with interactive elements.',
   detailedAnalysis: {
@@ -2339,6 +2358,7 @@ export const inventrios: ProjectAnalysisT = {
 
 export const superDuperStudio: ProjectAnalysisT = {
   title: 'Super Duper Studio',
+  logo: ProjectLogos.superDuper,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     "A vibrant and engaging website for a children's creative studio, showcasing diverse activities like art, dress-up (with itemized pricing), workshops, and parties. Features a playful design, detailed service pages, contact forms, location map, and an activity blog.",
@@ -2446,6 +2466,7 @@ export const superDuperStudio: ProjectAnalysisT = {
 
 export const deepReelWebsite: ProjectAnalysisT = {
   title: 'DeepReel Website',
+  logo: ProjectLogos.deepreel,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
     'A modern landing page for an AI-powered video creation platform, featuring sleek design, compelling value propositions (e.g., "0 to Video in 60 seconds", custom avatars, 30+ languages), client testimonials, pricing, FAQs, and ethical AI commitments.',
@@ -2577,6 +2598,7 @@ export const deepReelWebsite: ProjectAnalysisT = {
 // @TODO: Improve content for this project
 export const alfabolt: ProjectAnalysisT = {
   title: 'Alfabolt Website',
+  logo: ProjectLogos.alfabolt,
   affiliateWith: TestimonialClients.alfabolt,
   liveUrl: 'https://www.alfabolt.com',
   shortDescription:
@@ -2771,6 +2793,7 @@ export const alfabolt: ProjectAnalysisT = {
 
 export const tutorania: ProjectAnalysisT = {
   title: 'Tutorania',
+  logo: ProjectLogos.tutorania,
   shortDescription:
     'A comprehensive tutoring marketplace and management platform connecting students/clients with tutors, featuring job posting, proposal management, contract handling with milestones, a wallet/coin system, detailed user profiles, and extensive search/filter capabilities.',
   detailedAnalysis: {
@@ -2965,6 +2988,7 @@ export const tutorania: ProjectAnalysisT = {
 
 export const rivannaProduct: ProjectAnalysisT = {
   title: 'Rivanna',
+  logo: ProjectLogos.rivanna,
   shortDescription:
     'A sophisticated legal document analysis platform featuring semantic search, document comparison, and market norm analysis tools for legal professionals.',
   detailedAnalysis: {
@@ -3047,6 +3071,7 @@ export const rivannaProduct: ProjectAnalysisT = {
 
 export const rivanna: ProjectAnalysisT = {
   title: 'Rivanna Website',
+  logo: ProjectLogos.rivanna,
   shortDescription:
     'A professional legal technology company website showcasing advanced document analysis tools (like precedent search, deal merge, provision profiling) and market intelligence. Features a clean, dark-themed design, transparent pricing with a free trial, and clear value propositions for transactional attorneys.',
   detailedAnalysis: {
@@ -3142,6 +3167,7 @@ export const rivanna: ProjectAnalysisT = {
 
 export const humanizarTexto: ProjectAnalysisT = {
   title: 'Humanizar Texto',
+  logo: ProjectLogos.humanizarTexto,
   shortDescription:
     'A sophisticated AI-powered mobile app for text humanization and paraphrasing, featuring multiple writing modes, subscription plans (free/premium), detailed account management, payment integration, and user feedback mechanisms.',
   detailedAnalysis: {
@@ -3240,6 +3266,7 @@ export const humanizarTexto: ProjectAnalysisT = {
 
 export const smartCatch: ProjectAnalysisT = {
   title: 'Smart Catch',
+  logo: ProjectLogos.smartCatch,
   shortDescription:
     'A comprehensive fishing community platform featuring AI fish identification, detailed weather forecasts, interactive forums, activity logging, hotspot search, educational resources, and safety alerts, all within a clean, modern mobile interface.',
   detailedAnalysis: {
@@ -3344,6 +3371,7 @@ export const smartCatch: ProjectAnalysisT = {
 
 export const elBrezal: ProjectAnalysisT = {
   title: 'El Brezal Honey',
+  logo: ProjectLogos.elbrezal,
   shortDescription:
     'An elegant e-commerce and informational website for "El Brezal" premium honey products. It showcases a diverse range of honey (Rosemary, Eucalyptus, Orange Blossom, Forest, Thousand Flowers), pollen, and royal jelly, complemented by a recipe section ("Cookbook"), a blog, and detailed contact information. The site emphasizes natural quality and product variety with a warm, inviting design.',
   detailedAnalysis: {
@@ -3461,6 +3489,7 @@ export const elBrezal: ProjectAnalysisT = {
 
 export const robinBeauty: ProjectAnalysisT = {
   title: 'Robin Beauty Bazar',
+  logo: ProjectLogos.robinBeauty,
   shortDescription:
     'An AI-powered beauty recommendation platform, Robin Beauty Bazar, provides personalized skincare and makeup routines by analyzing user\'s skin characteristics, preferences, and product base. It offers tiered subscription plans, community features, and creator-curated product suggestions.',
   detailedAnalysis: {

@@ -52,8 +52,8 @@ export default function ProjectOverview({ project }: OverviewProps) {
           </Link>
         ))}
       </div>
-      <div className='flex flex-col lg:flex-row gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full'>
-        <div className='flex flex-col w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
+      <div className='flex flex-col lg:flex-ro relative gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14 max-w-full'>
+        <div className='w-full gap-8 xs:gap-9 sm:gap-10 md:gap-11 lg:gap-12 xl:gap-13 2xl:gap-14'>
           <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
             <div className='flex flex-col items-start justify-start gap-6'>
               <Typography tag='h3' type='5xl' weight='bold' className=''>
@@ -64,7 +64,45 @@ export default function ProjectOverview({ project }: OverviewProps) {
               </Typography>
             </div>
             <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
-              <div className='grid grid-cols-1 gap-4 xs:gap-5 md:gap-6'>
+              <div className='flex flex-col-reverse lg:inline-block space-y-l'>
+                {projectData.images.screenshots.length > 0 && (
+                  <div className='float-none lg:float-end lg:float-right mt-l lg:mt-0 ml-0 lg:ml-l h-fit max-w-full relative'>
+                    <div
+                      className='relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit p-l bg-primary-accent outline outline-1 outline-secondary/50 rounded-5xl'
+                      ref={emblaRef}
+                    >
+                      <div className='flex'>
+                        {projectData.images.screenshots.map((screenshot, index) => (
+                          <div
+                            key={index}
+                            className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
+                              index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
+                            } ${projectData.isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
+                    ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
+                          >
+                            <Image
+                              src={screenshot}
+                              alt={`${projectData.title} screenshot ${index + 1}`}
+                              loading='lazy'
+                              placeholder='blur'
+                              sizes='(max-width: 444px) 100vw, (max-width: 768px) 50vw, 20vw'
+                              className='w-full h-full'
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <Typography
+                      type='8xl'
+                      weight='black'
+                      leading='flat'
+                      color='primary-accent'
+                      className='absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
+                    >
+                      PROJECT SCREENSHOTS
+                    </Typography>
+                  </div>
+                )}
                 {projectData.detailedAnalysis.requirements.map((item, index) => (
                   <div key={index} className='flex items-start justify-start gap-5'>
                     <div className='-ml-2xs min-w-xs w-xs min-h-[1.25lh] self-start flex flex-col justify-center items-center'>
@@ -116,44 +154,6 @@ export default function ProjectOverview({ project }: OverviewProps) {
             </div>
           </div>
         </div>
-        {projectData.images.screenshots.length > 0 && (
-          <div className='relative flex w-[110%] about:w-full self-center lg:w-fit h-fit'>
-            <div
-              className='relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit p-l bg-primary-accent outline outline-1 outline-secondary/50 rounded-5xl'
-              ref={emblaRef}
-            >
-              <div className='flex'>
-                {projectData.images.screenshots.map((screenshot, index) => (
-                  <div
-                    key={index}
-                    className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
-                      index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
-                    } ${projectData.isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
-                    ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
-                  >
-                    <Image
-                      src={screenshot}
-                      alt={`${projectData.title} screenshot ${index + 1}`}
-                      loading='lazy'
-                      placeholder='blur'
-                      sizes='(max-width: 444px) 100vw, (max-width: 768px) 50vw, 20vw'
-                      className='w-full h-full'
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <Typography
-              type='8xl'
-              weight='black'
-              leading='flat'
-              color='primary-accent'
-              className='absolute bottom-0 secondary-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
-            >
-              PROJECT SCREENSHOTS
-            </Typography>
-          </div>
-        )}
       </div>
       <div className='flex flex-row w-full gap-8 py-20'>
         <span className='text-xs w-full h-0.5 bg bg-secondary/25 rounded-full font-bold self-center' />
