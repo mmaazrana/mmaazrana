@@ -3373,7 +3373,7 @@ export const elBrezal: ProjectAnalysisT = {
   title: 'El Brezal Honey',
   logo: ProjectLogos.elbrezal,
   shortDescription:
-    'An elegant e-commerce and informational website for "El Brezal" premium honey products. It showcases a diverse range of honey (Rosemary, Eucalyptus, Orange Blossom, Forest, Thousand Flowers), pollen, and royal jelly, complemented by a recipe section ("Cookbook"), a blog, and detailed contact information. The site emphasizes natural quality and product variety with a warm, inviting design.',
+    'An elegant e-commerce and informational website for "El Brezal\'s" premium honey products. It showcases a diverse range of honey, pollen, and royal jelly, complemented by a recipe section and blogs. The site emphasizes natural quality and product variety with a warm, inviting design.',
   detailedAnalysis: {
     overview:
       'The El Brezal Honey website offers a rich digital experience for honey enthusiasts. It combines a comprehensive e-commerce platform for purchasing various high-quality honey types, pollen, and royal jelly with engaging content like a "Cookbook" featuring honey-based recipes and an informative "Blog." The site is designed with a warm, earthy aesthetic, using high-quality product imagery and clear navigation to guide users through its offerings, from product discovery to learning about the brand and contacting them.',
