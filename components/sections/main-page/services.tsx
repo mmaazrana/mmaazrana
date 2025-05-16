@@ -22,9 +22,7 @@ const Services: FC<ServicesProps> = () => {
   return (
     <section
       id={Sections.services}
-      className={
-        'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
-      }
+      className={'px-4xl gap-4xl flex items-start justify-center flex-col w-full'}
     >
       <MainSectionTitle title='Services' />
       <div className='relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-xl sm:gap-2xl items-center justify-between !bg-transparent w-full'>

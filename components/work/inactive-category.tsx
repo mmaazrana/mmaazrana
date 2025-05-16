@@ -18,12 +18,13 @@ export default function InActiveCategory({ pathName, category, position }: InAct
       href={`${pathName}?tab=${category.key}`}
       scroll={false}
       aria-label={isLeft ? 'Previous Tab' : 'Next Tab'}
+      className='z-4'
     >
       <m.button
         className={`
         hidden about:block absolute cursor-pointer top-1/2 -translate-y-1/2
         ${isLeft ? 'left-0 -translate-x-3/5' : 'right-0 translate-x-3/5'} 
-        bg-primary-accent whitespace-nowrap z-[4] px-xl 
+        bg-primary-accent whitespace-nowrap px-xl 
       `}
       >
         <m.div

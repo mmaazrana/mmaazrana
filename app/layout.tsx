@@ -9,7 +9,7 @@ import { Analytics } from '@vercel/analytics/react'
 
 // Define common description
 const siteDescription =
-  'Portfolio of Maaz Rana, a Product Designer (UI/UX), Frontend Web Developer (React, Next.js), and Mobile App Developer (Flutter) crafting human-centered digital solutions.'
+  'Maaz Rana: Product Designer (UI/UX), Frontend Web & Mobile (React, Next.js, Flutter) Developer, transforming visions into impactful, human-centered digital experiences.'
 
 // Define Structured Data
 const personSchema = {
@@ -27,7 +27,7 @@ const personSchema = {
     // Add other relevant profiles
   ],
   // Briefly describe the person's main roles/professions
-  jobTitle: 'Product Designer, Frontend Developer',
+  jobTitle: 'Product Designer, Frontend Developer, Mobile App Developer',
   // You could add worksFor, alumniOf, etc. if desired
   author: { '@type': 'Person', name: 'Maaz Rana' },
   description: siteDescription, // Use the variable here
@@ -37,7 +37,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Maaz Rana Portfolio',
-  url: 'https://maazrana.com', // Replace with your actual domain
+  url: 'https://www.maazrana.com', // Replace with your actual domain
   author: { '@type': 'Person', name: 'Maaz Rana' },
   description: siteDescription, // Use the variable here
   // Potential action for search results
@@ -83,8 +83,7 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   openGraph: {
     title: 'Maaz Rana - Product Designer & Frontend Developer',
-    description:
-      'Explore the portfolio of Maaz Rana, showcasing expertise in Product Design (UI/UX), Web Development (React, Next.js), Mobile Development (Flutter), and 3D Art.',
+    description: siteDescription, // Use the updated siteDescription
     url: 'https://www.maazrana.com',
     siteName: 'Maaz Rana Portfolio',
     locale: 'en_US',
@@ -93,8 +92,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Maaz Rana - Product Designer & Frontend Developer',
-    description:
-      'Portfolio showcasing Product Design (UI/UX), Frontend/Web Development (React, Next.js), Mobile Development (Flutter), and 3D Art.',
+    description: siteDescription, // Use the updated siteDescription
     creator: '@_mmaazrana_',
   },
   icons: { icon: '/favicon.ico', shortcut: '/favicon.ico', apple: '/icons/apple-touch-icon.png' },

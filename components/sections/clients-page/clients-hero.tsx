@@ -12,11 +12,7 @@ const StackedTestimonials: FC<StackedTestimonialsProps> = () => {
   const secondHalf = testimonials.slice(half)
 
   return (
-    <section
-      className={
-        '2xl:py-20 xl:py-18 lg:py-16 md:py-14 sm:py-12 xs:py-10 py-8 xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
-      }
-    >
+    <section className={'py-7xl gap-7xl flex justify-center items-center flex-col w-full'}>
       <AutoScrollTestimonials testimonials={firstHalf} offset={true} />
       <div className='flex flex-col justify-center items-center w-full gap-2'>
         <Typography tag='h1' type='8xl' weight='extra-bold' className='text-center'>

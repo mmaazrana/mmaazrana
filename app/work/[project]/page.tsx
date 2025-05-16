@@ -57,12 +57,13 @@ export async function generateMetadata({
   const title =
     tab ? `${projectData.title} - ${activeTab}` : `${projectData.title} - Project Case Study`
   // Use project description or generate a fallback
+  const baseDescription =
+    projectData.shortDescription ||
+    `Explore the innovative solutions and strategic approach behind Maaz Rana's ${projectData.title} project. Discover the detailed design and development journey.`
   const description =
     tab ?
-      projectData.shortDescription + ' - ' + activeTab ||
-      `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process - ${activeTab}.`
-    : projectData.shortDescription ||
-      `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process.`
+      `${baseDescription} - Learn more about the ${activeTab} of this project.`
+    : baseDescription
 
   // Prepare Open Graph and Twitter image data if available
   // const ogImageUrl = project.imageUrl || '/default-og-image.png'; // Define a default image
@@ -114,7 +115,7 @@ export async function generateMetadata({
       // images: [ogImageUrl], // Add image URL
       // creator: '@_mmaazrana_', // Already in layout, but can be specific if needed
     },
-    alternates: { canonical: './' },
+    alternates: { canonical: canonicalUrlPath },
     // Add the structured data script to the page metadata
     other: { 'structured-data-article': JSON.stringify(articleSchema) },
   }

@@ -217,7 +217,7 @@ export const LottieLightPaths: string[] = [
 export const HeroDescriptions: string[] = [
   'Crafting user-centric digital experiences and intuitive interfaces. Specializing in UI/UX design that blends creativity and functionality for impactful, seamless products using tools like Figma.',
   'Transforming ideas into interactive web solutions. As a frontend developer, I specialize in coding elegant, responsive websites using Next.js, React, and Tailwind CSS with a focus on optimal user experience.',
-  'Building the future of mobile applications. I bring innovative app ideas to life with user-centric design and robust functionality, primarily using Flutter for cross-platform development.',
+  'Developing cutting-edge mobile applications. I bring innovative app ideas to life with user-centric design and robust functionality, primarily using Flutter for cross-platform development.',
   'Sculpting immersive 3D worlds and captivating visuals. I leverage three-dimensional design tools like Blender to bring concepts to life with depth, realism, and stunning detail.',
   'Breathing life into static elements. As a motion designer, I create visually stunning and emotionally resonant digital narratives through animation using tools like After Effects.',
 ]
@@ -370,32 +370,32 @@ export const aboutSections = [
 export const WorkExperiences: WorkExperienceT[] = [
   {
     company: 'Alfabolt',
-    roles: 'Lead Product Designer (UI/UX) & Frontend Developer, creating user-centric interfaces and responsive web apps.',
+    roles: 'Spearheaded product design (UI/UX) and frontend development, delivering highly user-centric interfaces and responsive web applications that enhanced user engagement.',
     tenure: '2022 - Present',
   },
   {
     company: 'Total School Solutions',
-    roles: 'IT Manager & Lead Graphic Designer, overseeing IT and leading design of visual assets.',
+    roles: 'Directed IT operations and spearheaded graphic design initiatives, producing impactful visual assets and ensuring technological efficiency.',
     tenure: '2022 - 2024',
   },
   {
     company: 'Nustac Technologies',
-    roles: 'Flutter Mobile App Developer & UI/UX Designer, building cross-platform mobile apps and intuitive user experiences.',
+    roles: 'Engineered cross-platform mobile applications with Flutter and designed intuitive user experiences, focusing on seamless functionality and user adoption.',
     tenure: '2021 - 2024',
   },
   {
     company: '20Four7 VA',
-    roles: 'Specialist Art Director & Animator, managing cross functional teams and executing creative visual strategies.',
+    roles: 'Led as Specialist Art Director & Animator, managing cross-functional teams to execute innovative visual strategies and compelling animations.',
     tenure: '2022 - 2023',
   },
   {
     company: 'Beacon Tutors Pakistan',
-    roles: 'Full Stack Web Developer & UI/UX Designer, developing web solutions and user-friendly interfaces for ed-tech.',
+    roles: 'Developed comprehensive web solutions (full-stack) and designed user-friendly interfaces for the ed-tech sector, improving learning accessibility.',
     tenure: '2021 - 2022',
   },
   {
     company: 'Edwiz Solutions',
-    roles: 'Illustration & Graphics Designer, creating custom illustrations and graphic designs for clients.',
+    roles: 'Produced custom illustrations and impactful graphic designs for a diverse range of clients, enhancing their brand communication.',
     tenure: '2021 - 2022',
   },
 ]

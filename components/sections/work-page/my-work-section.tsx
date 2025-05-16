@@ -28,7 +28,7 @@ export default function MyWorkSection({ activeTab }: { activeTab: string }) {
   const memoizedActiveTab = useMemo(() => activeTab, [activeTab])
 
   return (
-    <section className='xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-20 lg:gap-18 md:gap:16 sm:gap-14 gap-12 flex items-start justify-center flex-col w-full'>
+    <section className='px-4xl gap-8xl flex items-start justify-center flex-col w-full'>
       <TitleBar
         pathName='portfolio'
         activeTab={String(memoizedActiveTab)}

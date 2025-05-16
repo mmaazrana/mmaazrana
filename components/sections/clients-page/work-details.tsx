@@ -14,7 +14,7 @@ const WorkDetails = ({ openKeys }: WorkDetailsProps) => {
   const openProjectsParam = openKeys.join(',')
 
   return (
-    <section className='2xl:p-20 xl:p-18 lg:p-16 md:p-14 sm:p-12 xs:p-10 p-8  center flex-col w-full'>
+    <section className='p-7xl center flex-col w-full'>
       {clientData.map(data => {
         const isOpen = openKeys.includes(data.key)
         const accordionId = getClientId(data.key)

@@ -13,7 +13,7 @@ const CategoryButton: FC<CategoryButtonProps> = ({ pathName, category, isActive 
     <Link
       href={`${pathName}?tab=${category.key}`}
       scroll={false}
-      aria-label={category.key}
+      aria-label={category.text}
       className={`rounded-full flex justify-center items-center px-6 py-3 whitespace-nowrap cursor-pointer transition-all duration-300 group ${isActive ? 'bg-secondary/25' : 'bg-none hover:bg-secondary/10'}`}
     >
       <Typography

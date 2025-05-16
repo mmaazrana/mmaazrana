@@ -22,7 +22,7 @@ const Testimonials: FC<TestimonialsProps> = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     OPTIONS,
-    isInView ? [Autoplay({ delay: 10000, stopOnMouseEnter: true })] : [],
+    isInView ? [Autoplay({ delay: 7500, stopOnMouseEnter: true })] : [],
   )
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
@@ -41,14 +41,12 @@ const Testimonials: FC<TestimonialsProps> = () => {
     <section
       ref={sectionRef}
       id={Sections.testimonials}
-      className={
-        'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
-      }
+      className={'px-4xl gap-4xl flex items-start justify-center flex-col w-full'}
     >
       <MainSectionTitle title='Testimonials' buttonText='Clients' href='/clients' />
       <motion.div className='embla w-full'>
         <div className='embla__viewport' ref={emblaRef}>
-          <div className='embla__container py-4'>
+          <div className='embla__container py-xl'>
             {testimonials.map((testimonial, index) => (
               <div
                 className='embla__slide'

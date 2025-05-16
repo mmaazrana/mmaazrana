@@ -75,17 +75,15 @@ const MainHero: FC<MainHeroProps> = () => {
   return (
     <section
       id={Sections.hero}
-      className={
-        'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
-      }
+      className={'px-4xl gap-4xl flex items-start justify-center flex-col w-full'}
     >
       <div
         ref={sectionRef}
         className={
-          'relative w-full flex flex-col-reverse md:flex-row justify-center items-center mb-4 sm:mb-0 gap-2 sm:gap-8 md:gap-4 xl:gap-5 min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
+          'relative w-full flex flex-col-reverse md:flex-row justify-center items-center mb-4 sm:mb-0 gap-l min-h-[500px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] xl:min-h-[550px] 2xl:min-h-[750px]'
         }
       >
-        <div className='flex basis-full h-10xl min-h-10xl md:basis-[55%] flex-col justify-center gap-2 sm:gap-3 md:gap-4'>
+        <div className='flex basis-full h-10xl min-h-10xl md:basis-[55%] flex-col justify-center gap-s'>
           <AnimatePresence mode='wait' initial={false}>
             <m.div
               layout='position'
@@ -136,7 +134,7 @@ const MainHero: FC<MainHeroProps> = () => {
                   leftIcon={<Linkedin />}
                   textWeight='medium'
                   type='primary'
-                  text='Linkedin'
+                  text="Let's Connect"
                 />
               </Link>
             </div>

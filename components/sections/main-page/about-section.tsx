@@ -13,20 +13,18 @@ import { Sections } from '@/helpers/enums'
 const AboutSection: FC = () => (
   <section
     id={Sections.aboutMe}
-    className={
-      'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
-    }
+    className={'px-4xl gap-4xl flex items-start justify-center flex-col w-full'}
   >
     <MainSectionTitle title='Profile' />
     <AboutProvider>
-      <div className='relative flex flex-col about:grid h-auto content-start grid-flow-row-dense grid-rows-none min-[600px]:grid-cols-2 min-[1080px]:grid-cols-3 grid-flow-col-dense gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
-        <div className='flex flex-col h-full min-h-full gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 order-1 row-span-4'>
+      <div className='relative flex flex-col about:grid h-auto content-start grid-flow-row-dense grid-rows-none min-[600px]:grid-cols-2 min-[1080px]:grid-cols-3 grid-flow-col-dense gap-2xl'>
+        <div className='flex flex-col h-full min-h-full gap-2xl order-1 row-span-4'>
           <IntroSection />
           <EducationSection />
           <TechStackSection className='block md:hidden' />
           <ClientsSection />
         </div>
-        <div className='flex flex-col gap-9 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 order-2 row-span-4'>
+        <div className='flex flex-col gap-2xl order-2 row-span-4'>
           <SocialsSection />
           <TechStackSection className='hidden md:block' />
           <WorkExperienceSection className='block md:hidden' />

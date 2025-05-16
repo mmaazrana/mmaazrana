@@ -54,7 +54,7 @@ const EducationSection: FC<EducationSectionProps> = ({ className }) => {
               color='primary-hover'
               className='opacity-80'
             >
-              Bachelors of Engineering - National University of Sciences and Technology
+              Bachelor of Engineering - National University of Sciences and Technology
             </Typography>
             <Typography type='lg' weight='bold' color='secondary' leading='flat'>
               CGPA - 3.61

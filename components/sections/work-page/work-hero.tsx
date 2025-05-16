@@ -30,40 +30,43 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
     }
   }, [resolvedTheme])
 
-  const darkSVGs = [
-    webDesktop,
-    productDesktop,
-    appDesktop,
-    videoDesktop,
-    logoDesktop,
-    blenderDesktop,
+  const svgData = [
+    { dark: webDesktop, light: webDesktopLight, alt: 'Web Application Development Illustration' },
+    { dark: productDesktop, light: productDesktopLight, alt: 'Product Design UI/UX Illustration' },
+    {
+      dark: appDesktop,
+      light: appDesktopLight,
+      alt: 'Mobile Application Development Illustration',
+    },
+    {
+      dark: videoDesktop,
+      light: videoDesktopLight,
+      alt: 'Video Editing and Motion Graphics Illustration',
+    },
+    { dark: logoDesktop, light: logoDesktopLight, alt: 'Logo Design and Branding Illustration' },
+    {
+      dark: blenderDesktop,
+      light: blenderDesktopLight,
+      alt: '3D Design and Visualization Illustration',
+    },
   ]
 
-  const lightSVGs = [
-    webDesktopLight,
-    productDesktopLight,
-    appDesktopLight,
-    videoDesktopLight,
-    logoDesktopLight,
-    blenderDesktopLight,
-  ]
-
-  const [firstHalfSVGs, setFirstHalfSVGs] = useState<string[]>([])
-  const [secondHalfSVGs, setSecondHalfSVGs] = useState<string[]>([])
+  const [firstHalfSVGs, setFirstHalfSVGs] = useState<Array<{ src: string; alt: string }>>([])
+  const [secondHalfSVGs, setSecondHalfSVGs] = useState<Array<{ src: string; alt: string }>>([])
   const [firstHalfLoaded, setFirstHalfLoaded] = useState(false)
+
   useEffect(() => {
-    const svgs = isDarkMode ? darkSVGs : lightSVGs
-    setFirstHalfSVGs(svgs.slice(0, svgs.length / 2))
-    setSecondHalfSVGs(svgs.slice(svgs.length / 2))
+    const currentSVGs = svgData.map(item => ({
+      src: isDarkMode ? item.dark : item.light,
+      alt: item.alt,
+    }))
+    setFirstHalfSVGs(currentSVGs.slice(0, currentSVGs.length / 2))
+    setSecondHalfSVGs(currentSVGs.slice(currentSVGs.length / 2))
   }, [isDarkMode])
 
   return (
     <>
-      <section
-        className={
-          'xl:p-20 lg:p-16 md:p-14 sm:p-12 p-10 xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
-        }
-      >
+      <section className={'p-7xl gap-7xl flex justify-center items-center flex-col w-full'}>
         <div className='relative flex flex-row justify-center items-start w-full h-[40vw] sm:h-64'>
           {!firstHalfLoaded && (
             <div className='absolute w-full h-full z-10 flex flex-row justify-center gap-[30%] items-center'>
@@ -82,8 +85,8 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
             >
               <Image
                 key={index}
-                src={svg}
-                alt={`SVG ${index}`}
+                src={svg.src}
+                alt={svg.alt}
                 priority
                 loading='eager'
                 onLoad={() => {
@@ -93,13 +96,18 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
             </m.div>
           ))}
         </div>
-        <div className='flex flex-col justify-center items-center w-full gap-6'>
+        <div className='flex flex-col justify-center items-center w-full gap-s'>
           <Typography tag='h1' type='8xl' weight='extra-bold' className='text-center'>
             My Work
           </Typography>
-          <Typography type='2xl' weight='regular' className='text-center max-w-200 opacity-75'>
-            Demonstrating expertise in diverse fields such as mobile and web application
-            development, UI/UX design, 3D design and animation, video editing, and logo creation.
+          <Typography
+            type='2xl'
+            weight='regular'
+            leading='prose'
+            className='text-center max-w-200 opacity-75'
+          >
+            Explore my diverse portfolio showcasing expertise in mobile and web app development,
+            UI/UX design, 3D design & animation, video editing, and logo creation.
           </Typography>
         </div>
         <div className='relative flex flex-row justify-center items-start w-full h-[40vw] sm:h-64 ml-4'>
@@ -119,8 +127,8 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
               className='h-full min-w-fit'
             >
               <Image
-                src={svg}
-                alt={`SVG ${index}`}
+                src={svg.src}
+                alt={svg.alt}
                 priority
                 loading='eager'
                 onLoad={() => {

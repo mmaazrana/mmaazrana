@@ -7,14 +7,10 @@ interface EsteemedClientsProps {}
 
 const EsteemedClients: FC<EsteemedClientsProps> = () => {
   return (
-    <section
-      className={
-        'xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
-      }
-    >
+    <section className={'gap-8xl flex justify-center items-center flex-col w-full'}>
       <div
         className={
-          'flex flex-row gap-3 md:gap-4 justify-between h-14 xs:h-16 sm:h-18 md:h-20 lg:h-22 xl:h-24 2xl:h-26 px-8 xs:px-9 sm:px-10 md:px-11 lg:px-12 xl:px-13 2xl:px-14 -mx-20 w-[100vw] max-w-8xl mx-auto'
+          'flex flex-row gap-xl justify-between h-14 xs:h-16 sm:h-18 md:h-20 lg:h-22 xl:h-24 2xl:h-26 px-4xl -mx-20 w-[100vw] max-w-8xl mx-auto'
         }
       >
         {clientColorIconComponents.slice(0, 7).map(({ Icon, props }, index) => (
@@ -39,7 +35,7 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
       </div>
       <div
         className={
-          'flex flex-row gap-3 md:gap-4 xl:gap-5 2xl:gap-6 justify-between h-14 xs:h-15 sm:h-16 md:h-17 lg:h-18 xl:h-19 2xl:h-20 px-8 xs:px-9 sm:px-10 md:px-11 lg:px-12 xl:px-13 2xl:px-14 -mx-20 w-[100vw]  max-w-8xl mx-auto'
+          'flex flex-row gap-xl justify-between h-14 xs:h-15 sm:h-16 md:h-17 lg:h-18 xl:h-19 2xl:h-20 px-4xl -mx-20 w-[100vw]  max-w-8xl mx-auto'
         }
       >
         {clientColorIconComponents.slice(7).map(({ Icon, props }, index) => (

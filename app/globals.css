@@ -373,6 +373,22 @@ body {
   max-width: 100vw !important;
 }
 
+a:active {
+  transform: scale(0.98);
+  opacity: 0.85;
+  transition:
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+a {
+  transition:
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

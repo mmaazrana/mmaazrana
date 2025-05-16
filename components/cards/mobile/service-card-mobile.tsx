@@ -56,12 +56,12 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
   }
 
   const serviceClasses = [
-    'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pr-8 -mt-0',
+    'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pr-3xl -mt-0',
     'absolute right-0 pointer-events-none z-10 flex justify-start items-center min-w-[20vw] w-fit h-full -mt-0',
-    'absolute right-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pl-8 -mt-0',
-    'absolute left-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pr-8 mt-0',
+    'absolute right-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pl-3xl -mt-0',
+    'absolute left-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pr-3xl mt-0',
     'absolute left-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full mt-0',
-    'absolute left-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pl-8 mt-0',
+    'absolute left-0 pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pl-3xl mt-0',
   ]
 
   const imageClasses = [
@@ -101,7 +101,7 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography tag='h3' type='4xl' weight='semi-bold'>
+          <Typography tag='h3' type='3xl' weight='semi-bold'>
             {title}
           </Typography>
         </div>

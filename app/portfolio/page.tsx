@@ -23,19 +23,8 @@ export async function generateMetadata({
     title: tab ? `Portfolio Work - ${activeTab}` : 'Portfolio Work - Design & Development',
     description:
       tab ?
-        `Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana - ${activeTab}.`
-      : 'Explore a collection of product design (UI/UX), web development, mobile app development, and graphic design projects by Maaz Rana.',
-    keywords: [
-      'Portfolio',
-      'Projects',
-      'Case Studies',
-      'Product Design',
-      'UI/UX',
-      'Web Development',
-      'Mobile Development',
-      'Graphic Design',
-      'Maaz Rana',
-    ],
+        `Discover Maaz Rana's diverse portfolio of product design (UI/UX), web development, mobile app development, and graphic design projects - ${activeTab}.`
+      : "Discover Maaz Rana's diverse portfolio of product design (UI/UX), web development, mobile app development, and graphic design projects.",
   }
 
   return metadata

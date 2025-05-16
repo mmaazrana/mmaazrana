@@ -49,8 +49,8 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
           color='primary-hover'
           className='opacity-75 group-hover:opacity-100 transition-100 duration-300'
         >
-          User-centric Product Designer & Developer with 5+ Years of experience, focused on
-          developing visually stunning and intuitive products
+          With "5+ years of experience", I am a User-centric Product Designer & Developer dedicated
+          to crafting visually stunning and intuitive digital products.
         </Typography>
       </AboutCard>
       <SectionTitle

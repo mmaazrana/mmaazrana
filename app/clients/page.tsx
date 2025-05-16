@@ -21,7 +21,7 @@ const WorkDetails = dynamic(() => import('@/components/sections/clients-page/wor
 const defaultMetadata: Metadata = {
   title: 'Client Testimonials & Collaborations',
   description:
-    "Read testimonials from clients like Alfabolt, Kueenz Technologies, Beacon Tutors, and others about Maaz Rana's product design and development work.",
+    "Discover how Maaz Rana's expertise in product design and development has driven success for clients like Alfabolt, Kueenz Technologies, and Beacon Tutors. Explore their testimonials and project collaborations.",
 }
 
 // Generate dynamic metadata based on search params
