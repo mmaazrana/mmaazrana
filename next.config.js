@@ -67,7 +67,7 @@ const nextConfig = {
               style-src 'self' 'unsafe-inline';
               img-src 'self' blob: data:;
               font-src 'self';
-              connect-src 'self' https://cdn.jsdelivr.net https://lottie.host https://vitals.vercel-insights.com;
+              connect-src 'self' https://cdn.jsdelivr.net https://lottie.host https://vitals.vercel-insights.com https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com;
               object-src 'none';
               base-uri 'self';
               form-action 'self';
