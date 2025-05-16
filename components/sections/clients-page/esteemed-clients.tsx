@@ -7,7 +7,11 @@ interface EsteemedClientsProps {}
 
 const EsteemedClients: FC<EsteemedClientsProps> = () => {
   return (
-    <>
+    <section
+      className={
+        'xl:gap-20 lg:gap-16 md:gap-14 sm:gap-12 gap-10 flex justify-center items-center flex-col w-full'
+      }
+    >
       <div
         className={
           'flex flex-row gap-3 md:gap-4 justify-between h-14 xs:h-16 sm:h-18 md:h-20 lg:h-22 xl:h-24 2xl:h-26 px-8 xs:px-9 sm:px-10 md:px-11 lg:px-12 xl:px-13 2xl:px-14 -mx-20 w-[100vw] max-w-8xl mx-auto'
@@ -49,7 +53,7 @@ const EsteemedClients: FC<EsteemedClientsProps> = () => {
           </div>
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

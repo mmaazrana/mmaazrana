@@ -129,7 +129,7 @@ export default function ProjectOverview({
                   </div>
                 ))}
               </div>
-              <div className='flex flex-col sm:flex-row justify-start items-center gap-4 sm:gap-3'>
+              <div className='flex flex-col sm:flex-row justify-start items-center gap-4 sm:gap-3 z-5'>
                 {liveUrl && (
                   <Link
                     href={liveUrl || ''}
