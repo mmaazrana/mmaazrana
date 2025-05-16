@@ -70,6 +70,7 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
         </div>
         {companyLink && (
           <Link
+            aria-label={`Visit ${companyName}'s Website`}
             href={companyLink}
             target='_blank'
             className='px-s py-xs group bg-secondary-hover/50 hover:bg-secondary/25 transition-all duration-300 rounded-full'

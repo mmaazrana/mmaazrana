@@ -47,7 +47,7 @@ const Nav: FC<NavProps> = ({ isSticky = true }) => {
         <div>
           <div className=' flex items-center justify-between nav:block  '>
             <div className='flex items-center space-x-s'>
-              <Link href='/' aria-label='Home'>
+              <Link href='/' aria-label='Home Page'>
                 <MaazRanaLogo />
               </Link>
               <ThemeToggleButton />

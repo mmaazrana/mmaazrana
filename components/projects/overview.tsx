@@ -57,7 +57,11 @@ export default function ProjectOverview({
     <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8'>
       <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-s -translate-y-2xs w-full'>
         {categories.map(category => (
-          <Link key={category} href={`/portfolio?tab=${category}`}>
+          <Link
+            key={category}
+            href={`/portfolio?tab=${category}`}
+            aria-label={`View ${workBottomNavCategories.find(c => c.key === category)?.text} Portfolio`}
+          >
             <Typography
               type='lg'
               className='px-s py-2xs whitespace-nowrap text-center bg-secondary-hover/15 outline outline-1 outline-secondary hover:bg-primary-invert/70 transition-all duration-300 rounded-full cursor-pointer'
@@ -135,6 +139,7 @@ export default function ProjectOverview({
                     href={liveUrl || ''}
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label={`Visit Live Site - ${title}`}
                     className='w-fit'
                   >
                     <Button
@@ -154,6 +159,7 @@ export default function ProjectOverview({
                     href={figmaUrl || ''}
                     target='_blank'
                     rel='noopener noreferrer'
+                    aria-label={`Visit Figma File - ${title}`}
                     className='w-fit'
                   >
                     <Button

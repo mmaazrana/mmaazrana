@@ -29,7 +29,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
           className={`transition-none w-full min-w-full max-w-[32.5rem] inline-block ${isEndOfPage ? 'inline-block' : 'hidden'}`}
         >
-          <Link href={`/portfolio?tab=${WorkCategories.productDesign}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.productDesign}`}
+            aria-label='Product Designer Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -47,7 +50,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.productDevelopment}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.productDevelopment}`}
+            aria-label='Web Developer Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -65,7 +71,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.productDevelopment}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.productDevelopment}`}
+            aria-label='Mobile App Developer Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -83,7 +92,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.videoEditing}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.videoEditing}`}
+            aria-label='Animator Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -101,7 +113,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.videoEditing}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.videoEditing}`}
+            aria-label='Video Editor Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -119,7 +134,10 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.illustration}`}>
+          <Link
+            href={`/portfolio?tab=${WorkCategories.illustration}`}
+            aria-label='Graphics Designer Portfolio'
+          >
             <Typography
               type='lg'
               weight='light'
@@ -137,7 +155,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.blender}`}>
+          <Link href={`/portfolio?tab=${WorkCategories.blender}`} aria-label='3D Artist Portfolio'>
             <Typography
               type='lg'
               weight='light'

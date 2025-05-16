@@ -42,6 +42,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
     <div className='relative group'>
       {testimonialKey && (
         <Link
+          aria-label={`View ${title} - Affiliated with ${capitalizeWords(testimonialKey)}`}
           href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
           className='absolute w-fit max-w-fit opacity-100 group/affiliate flex flex-row justify-center items-center gap-2xs bottom-s hover:!bg-white-dynamic transition-all duration-300 right-s pl-xs pr-3xs hover:pr-2xs py-2xs bg-white-dynamic/50 group-hover:bg-white-dynamic/75 shadow-xl backdrop-blur-sm outline outline-1 outline-secondary/0 rounded-full z-2'
         >
@@ -57,7 +58,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
           <ChevronRight className='w-0 h-0 group-hover/affiliate:h-s group-hover/affiliate:w-s transition-width duration-300 stroke-black-dynamic/75' />
         </Link>
       )}
-      <Link href={`/work/${getPageSlug(title)}`}>
+      <Link aria-label={`View ${title} - ${description}`} href={`/work/${getPageSlug(title)}`}>
         <div
           ref={cardRef}
           id='project'

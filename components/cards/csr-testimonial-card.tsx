@@ -121,6 +121,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           {testimonialKey && (
             <Link
               href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
+              aria-label={`Read More about ${client} - ${designation}`}
               className='w-fit ml-auto'
             >
               <Button

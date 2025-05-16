@@ -60,7 +60,11 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
         <span
           className={`absolute left-0 transition-all duration-300 top-1/2 -translate-y-1/2 h-0.5 rounded-full w-full bg-secondary opacity-75 z-[3] pointer-events-none`}
         />
-        <Link href='/portfolio' className='w-fit bg-primary-accent z-10 relative px-m py-s group'>
+        <Link
+          href='/portfolio'
+          aria-label='Back to Portfolio'
+          className='w-fit bg-primary-accent z-10 relative px-m py-s group'
+        >
           <Button
             className='w-fit pr-3xs gap-2xs group'
             textClassName='hover:!text-primary group-hover:text-primary transition-colors duration-300'
@@ -78,6 +82,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
       {projectData.affiliateWith && testimonialKey && (
         <Link
           href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
+          aria-label={`View ${capitalizeWords(projectData.affiliateWith)}'s Portfolio`}
           className={`${projectData.isMobile ? '-mb-[3%]' : '-mb-[5%]'}  mt-m self-center w-fit max-w-fit opacity-100 group/affiliate flex flex-row justify-center items-center gap-2xs hover:!bg-secondary-hover transition-all duration-300 pl-xs pr-3xs hover:pr-2xs py-2xs bg-secondary-hover/50 outline outline-1 outline-secondary/25 rounded-full z-2`}
         >
           {ClientLogo && <ClientLogo className='max-w-[1rem] w-fit h-4' />}
@@ -164,6 +169,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
               href='mailto:awaismaaz@gmail.com'
               target='_blank'
               rel='noopener noreferrer'
+              aria-label='Get in Touch'
               className='w-fit'
             >
               <Button
@@ -180,6 +186,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
                 href={projectData.liveUrl}
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label='Visit Live Site'
                 className='w-fit'
               >
                 <Button

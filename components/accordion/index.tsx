@@ -41,6 +41,7 @@ const Accordion: FC<AccordionProps> = ({
         />
         <Link
           href={`/clients${queryString}`}
+          aria-label={`View ${heading} - ${queryString}`}
           scroll={false}
           className={'outline-0 border-0 flex flex-row justify-between items-center w-full px-l'}
         >

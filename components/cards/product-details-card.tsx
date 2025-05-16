@@ -15,6 +15,7 @@ const ProductDetailsCard: React.FC<ProductDetailsCardProps> = ({ product }) => {
   return (
     <Link
       href={product.link}
+      aria-label={`View ${product.name} - ${product.services.join(', ')}`}
       className={
         'relative flex grow flex-col sm:flex-row justify-center items-center p-5xl gap-l md:gap-s rounded-rect overflow-hidden group cursor-default hover:-translate-y-2 transition-transform duration-300'
       }
