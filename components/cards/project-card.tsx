@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { capitalizeWords, getClientId, getPageSlug } from '@/helpers/parsers'
 import { ChevronRight } from 'lucide-react'
 import { TestimonialClients } from '@/helpers/enums'
-import { clientData } from '@/helpers/constants'
+import { getClientLogo } from '@/helpers/constants'
 
 interface ProjectCardProps {
   title: string
@@ -36,7 +36,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
     }
   }
 
-  const ClientLogo = clientData.find(client => client.key === testimonialKey)?.companyLogo
+  const ClientLogo = testimonialKey ? getClientLogo(testimonialKey) : null
 
   return (
     <div className='relative group overscroll-y-contain'>

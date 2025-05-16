@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MotionValue, useTransform } from 'motion/react'
 import { breakpoints } from '@/helpers/constants'
-
+import React from 'react'
 export const usePreferredColorScheme = () => {
   const [preferredScheme, setPreferredScheme] = useState<'dark' | 'light'>('light')
 
@@ -88,3 +88,21 @@ export const useSideInvertMovement = (rotateX: MotionValue<number>, rotateY: Mot
   useTransform<number, number>([rotateX, rotateY], ([newRotateY]) => {
     return 1 - newRotateY
   })
+
+export const renderChildrenWithClassName = (
+  childrenToRender: React.ReactNode,
+  childrenClassName: string,
+) => {
+  return React.Children.map(childrenToRender, child => {
+    if (React.isValidElement(child)) {
+      const childElement = child as React.ReactElement<
+        { className?: string } & React.PropsWithChildren
+      >
+      const existingClassName = childElement.props.className || ''
+      const newClassName =
+        childrenClassName ? `${existingClassName} ${childrenClassName}`.trim() : existingClassName
+      return React.cloneElement(childElement, { className: newClassName })
+    }
+    return child
+  })
+}

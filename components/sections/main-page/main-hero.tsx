@@ -1,5 +1,5 @@
 'use client'
-import React, { FC, useEffect, useRef } from 'react'
+import React, { FC, useEffect, useRef, useCallback, useMemo } from 'react'
 import Typography from '@/components/Typography'
 import Button from '@/components/button'
 import { HeroDescriptions, HeroHeadings, LottieLightPaths, LottiePaths } from '@/helpers/constants'
@@ -13,7 +13,7 @@ import { Sections } from '@/helpers/enums'
 
 interface MainHeroProps {}
 
-const MainHero: FC<MainHeroProps> = ({}) => {
+const MainHero: FC<MainHeroProps> = () => {
   const [index, setIndex] = React.useState(0)
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
@@ -22,57 +22,55 @@ const MainHero: FC<MainHeroProps> = ({}) => {
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null)
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null)
   const startTimeRef = useRef<number>(Date.now())
-  const remainingTimeRef = useRef<number>(6000) // Initial interval duration
+  const remainingTimeRef = useRef<number>(6000)
+
+  const currentLottiePath = useMemo(
+    () => (isDark ? LottiePaths[index] : LottieLightPaths[index]),
+    [isDark, index],
+  )
+
+  const handleIndexChange = useCallback(() => {
+    setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length)
+    startTimeRef.current = Date.now()
+    remainingTimeRef.current = 6000
+  }, [])
 
   useEffect(() => {
+    if (!isInView) {
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current)
+        intervalIdRef.current = null
+      }
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current)
+        timeoutIdRef.current = null
+      }
+      return
+    }
+
     const intervalDuration = 6000
 
     const startTimer = () => {
       startTimeRef.current = Date.now()
-      // Use timeout for the first run after resuming with remaining time
       timeoutIdRef.current = setTimeout(() => {
-        setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length)
-        remainingTimeRef.current = intervalDuration // Reset remaining time
-        startTimeRef.current = Date.now() // Reset start time for interval
-        timeoutIdRef.current = null // Clear timeout ref
+        handleIndexChange()
+        timeoutIdRef.current = null
 
-        // Start the regular interval after the first timeout
-        intervalIdRef.current = setInterval(() => {
-          setIndex(prevIndex => (prevIndex + 1) % HeroDescriptions.length)
-          startTimeRef.current = Date.now() // Update start time for next interval
-          // No need to update remainingTimeRef here as interval clears/restarts
-        }, intervalDuration)
+        intervalIdRef.current = setInterval(handleIndexChange, intervalDuration)
       }, remainingTimeRef.current)
     }
 
-    const clearTimers = () => {
-      if (timeoutIdRef.current) {
-        clearTimeout(timeoutIdRef.current)
-        timeoutIdRef.current = null
-        // Calculate remaining time if a timeout was active
-        const elapsed = Date.now() - startTimeRef.current
-        remainingTimeRef.current = Math.max(0, remainingTimeRef.current - elapsed)
-      }
+    startTimer()
+
+    return () => {
       if (intervalIdRef.current) {
         clearInterval(intervalIdRef.current)
-        intervalIdRef.current = null
-        // Calculate remaining time if an interval was active
-        const elapsed = Date.now() - startTimeRef.current
-        remainingTimeRef.current = Math.max(0, intervalDuration - elapsed)
+      }
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current)
       }
     }
-
-    if (isInView) {
-      startTimer()
-    } else {
-      clearTimers()
-    }
-
-    // Cleanup function: Clear timers and update remaining time when leaving view or unmounting
-    return () => {
-      clearTimers()
-    }
-  }, [isInView]) // Rerun effect when isInView changes
+  }, [isInView, handleIndexChange])
 
   return (
     <section
@@ -160,9 +158,7 @@ const MainHero: FC<MainHeroProps> = ({}) => {
               'flex -mr-6 md:mr-6 max-w-[100%] h-[90vw] md:max-w-full md:h-auto md:basis-[65%] lg:basis-[55%] xl:basis-[45%] transition-none self-end md:self-center items-center justify-center origin-left md:scale-[110%] lg:scale-[105%] 2xl:scale-[120%]'
             }
           >
-            {isDark ?
-              <LottieWorkerAnimation src={LottiePaths[index]} isPlaying={isInView} />
-            : <LottieWorkerAnimation src={LottieLightPaths[index]} isPlaying={isInView} />}
+            <LottieWorkerAnimation src={currentLottiePath} isPlaying={isInView} />
           </div>
         </AnimatePresence>
         <span

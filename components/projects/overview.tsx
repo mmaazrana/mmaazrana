@@ -1,26 +1,41 @@
 'use client'
 
 import Typography from '@/components/Typography'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import { workBottomNavCategories } from '@/helpers/constants'
 import Button from '@/components/button'
 import { ExternalLink } from 'lucide-react'
-import { getProjectData } from '@/helpers/parsers'
 import { SiFigma } from 'react-icons/si'
+import { WorkCategories } from '@/helpers/enums'
 
 interface OverviewProps {
-  project: string
+  categories: WorkCategories[]
+  overview: string
+  title: string
+  requirements: string[]
+  completeOn: string
+  screenshots: StaticImageData[]
+  isMobile: boolean
+  liveUrl: string
+  figmaUrl: string
 }
 
-export default function ProjectOverview({ project }: OverviewProps) {
-  const projectData = getProjectData(project)
-
+export default function ProjectOverview({
+  categories,
+  overview,
+  title,
+  requirements,
+  completeOn,
+  screenshots,
+  isMobile,
+  liveUrl,
+  figmaUrl,
+}: OverviewProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center' })
   const [activeIndex, setActiveIndex] = useState(0)
-
   const onSelect = useCallback(() => {
     if (!emblaApi) return
     setActiveIndex(emblaApi.selectedScrollSnap())
@@ -41,7 +56,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
   return (
     <div className='flex flex-col items-center justify-center w-full gap-x-4 gap-y-6 xs:gap-y-7 md:gap-y-8'>
       <div className='flex flex-row flex-wrap items-start justify-start gap-x-xs gap-y-s -translate-y-2xs w-full'>
-        {projectData.categories.map(category => (
+        {categories.map(category => (
           <Link key={category} href={`/portfolio?tab=${category}`}>
             <Typography
               type='lg'
@@ -60,29 +75,29 @@ export default function ProjectOverview({ project }: OverviewProps) {
                 Project Requirements
               </Typography>
               <Typography type='xl' weight='light' className='opacity-75 leading-relaxed'>
-                {projectData.detailedAnalysis.overview}
+                {overview}
               </Typography>
             </div>
             <div className='flex flex-col gap-6 xs:gap-7 sm:gap-8 md:gap-9 lg:gap-10 xl:gap-11 2xl:gap-12'>
               <div className='flex flex-col-reverse lg:inline-block space-y-l'>
-                {projectData.images.screenshots.length > 0 && (
+                {screenshots.length > 0 && (
                   <div className='float-none lg:float-end lg:float-right mt-l lg:mt-0 ml-0 lg:ml-l h-fit max-w-full relative'>
                     <div
                       className='relative drop-shadow-image-carousel z-2 w-full max-w-full lg:max-w-lg overflow-hidden h-fit p-l bg-primary-accent outline outline-1 outline-secondary/50 rounded-5xl'
                       ref={emblaRef}
                     >
                       <div className='flex'>
-                        {projectData.images.screenshots.map((screenshot, index) => (
+                        {screenshots.map((screenshot, index) => (
                           <div
                             key={index}
                             className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
                               index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
-                            } ${projectData.isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
-                    ${index === 0 && 'ml-0'} ${index === projectData.images.screenshots.length - 1 && 'mr-0'}`}
+                            } ${isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
+                    ${index === 0 && 'ml-0'} ${index === screenshots.length - 1 && 'mr-0'}`}
                           >
                             <Image
                               src={screenshot}
-                              alt={`${projectData.title} screenshot ${index + 1}`}
+                              alt={`${title} screenshot ${index + 1}`}
                               loading='lazy'
                               placeholder='blur'
                               sizes='(max-width: 444px) 100vw, (max-width: 768px) 50vw, 20vw'
@@ -103,7 +118,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
                     </Typography>
                   </div>
                 )}
-                {projectData.detailedAnalysis.requirements.map((item, index) => (
+                {requirements.map((item, index) => (
                   <div key={index} className='flex items-start justify-start gap-5'>
                     <div className='-ml-2xs min-w-xs w-xs min-h-[1.25lh] self-start flex flex-col justify-center items-center'>
                       <span className='text-xs min-w-xs w-xs min-h-4xs h-4xs bg-secondary rounded-full' />
@@ -115,9 +130,9 @@ export default function ProjectOverview({ project }: OverviewProps) {
                 ))}
               </div>
               <div className='flex flex-col sm:flex-row justify-start items-center gap-4 sm:gap-3'>
-                {projectData.liveUrl && (
+                {liveUrl && (
                   <Link
-                    href={projectData.liveUrl || ''}
+                    href={liveUrl || ''}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='w-fit'
@@ -134,9 +149,9 @@ export default function ProjectOverview({ project }: OverviewProps) {
                     />
                   </Link>
                 )}
-                {projectData.figmaUrl && (
+                {figmaUrl && (
                   <Link
-                    href={projectData.figmaUrl || ''}
+                    href={figmaUrl || ''}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='w-fit'
@@ -164,7 +179,7 @@ export default function ProjectOverview({ project }: OverviewProps) {
           color='primary-hover'
           className='opacity-50 whitespace-nowrap'
         >
-          {`Completed - ${projectData.detailedAnalysis.completeOn}`}
+          {`Completed - ${completeOn}`}
         </Typography>
         <span className='text-xs w-full h-0.5 bg bg-secondary/25 rounded-full font-bold self-center' />
       </div>

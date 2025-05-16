@@ -1,10 +1,20 @@
 import React, { FC } from 'react'
 import { services } from '@/helpers/constants'
-import ServiceCard from '@/components/cards/service-card'
-import ServiceCardTablet from '@/components/cards/tablet/service-card-tablet'
-import ServiceCardMobile from '@/components/cards/mobile/service-card-mobile'
+import dynamic from 'next/dynamic'
 import { Sections } from '@/helpers/enums'
 import MainSectionTitle from '@/components/main-section-title'
+import Loader from '@/components/loader'
+
+// Dynamically import viewport-specific components
+const ServiceCard = dynamic(() => import('@/components/cards/service-card'), {
+  loading: () => <Loader />,
+})
+const ServiceCardTablet = dynamic(() => import('@/components/cards/tablet/service-card-tablet'), {
+  loading: () => <Loader />,
+})
+const ServiceCardMobile = dynamic(() => import('@/components/cards/mobile/service-card-mobile'), {
+  loading: () => <Loader />,
+})
 
 interface ServicesProps {}
 
@@ -17,7 +27,6 @@ const Services: FC<ServicesProps> = () => {
       }
     >
       <MainSectionTitle title='Services' />
-
       <div className='relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-xl sm:gap-2xl items-center justify-between !bg-transparent w-full'>
         {services.map(service => (
           <div key={service.index}>

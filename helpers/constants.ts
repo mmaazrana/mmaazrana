@@ -4,6 +4,7 @@ import {
   BottomNavButtonT,
   BottomNavCategoryT,
   ClientDataT,
+  DropdownItemT,
   FooterButtonT,
   GraphicDesignProjectT,
   IconComponentsT,
@@ -166,7 +167,7 @@ import {
   phoneVideoProject,
   plutoProject,
 } from './video-projects'
-import { getPageSlug } from './parsers'
+import { getClientId, getClientQueryString, getPageSlug } from './parsers'
 import SuperDuperStudio from '@/components/icons/super-duper-studio'
 import AylaLogo from '@/components/icons/ayla'
 import SvgInventrios from '@/components/icons/Inventrios'
@@ -227,6 +228,26 @@ export const navButtons: NavButtonT[] = [
   { text: 'About', href: `/#${Sections.aboutMe}`, type: 'secondary' },
   { text: 'Contact Me', href: 'mailto:awaismaaz@gmail.com', type: 'primary' },
 ]
+
+export const topProjectsData = [alfabolt, humanizarTexto, aylaAI, elBrezal, pools515, superDuperStudio]
+
+export const topClientsData = [
+  testimonialsData[TestimonialClients.alfabolt],
+  testimonialsData[TestimonialClients.kueenz],
+  testimonialsData[TestimonialClients.beaconTutors],
+  testimonialsData[TestimonialClients.rivanna],
+]
+
+export const topProjects: DropdownItemT[] = topProjectsData.map(project => ({
+  text: project.title,
+  href: `/work/${getPageSlug(project.title)}`,
+}))
+
+export const topClients: DropdownItemT[] = topClientsData.map(client => ({
+  text: client.companyName,
+  href: `/clients${getClientQueryString({ openProjectsParam: '', itemKey: client.key, isOpen: false })}#${getClientId(client.key)}`,
+}))
+
 
 export const bottomNavButtons: BottomNavButtonT[] = [
   { text: 'Work', href: `/#${Sections.work}`, section: Sections.work },
@@ -593,6 +614,7 @@ export const clientLogoData = {
   [ProjectLogos.tutorania] : TutoraniaSvg,
 }
 
+
 export const clientColorIconComponents = [
   { Icon: Alfabolt, props: {} },
   { Icon: TSS, props: {} },
@@ -905,3 +927,12 @@ export const clientData: ClientDataT[] = [
     ],
   },
 ]
+
+export const getClientLogo = (testimonialKey: TestimonialClients) => {
+  return clientData.find(client => client.key === testimonialKey)?.companyLogo
+}
+
+export const getProductsInvolved = (testimonialKey: TestimonialClients) => {
+  return clientData.find(client => client.key === testimonialKey)?.productsInvolved
+}
+

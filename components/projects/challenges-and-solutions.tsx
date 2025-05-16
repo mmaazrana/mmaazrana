@@ -2,15 +2,17 @@ import {} from '@/helpers/enums'
 import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import NumberedCard from '../cards/numbered-card'
-import { getProjectData } from '@/helpers/parsers'
+import { challengesAndSolutionsT } from '@/helpers/project-analytics'
 
 interface ChallengesAndSolutionsProps {
-  project: string
+  challenges: challengesAndSolutionsT[]
+  solutions: challengesAndSolutionsT[]
 }
 
-export default function ProjectChallengesAndSolutions({ project }: ChallengesAndSolutionsProps) {
-  const projectData = getProjectData(project)
-
+export default function ProjectChallengesAndSolutions({
+  challenges,
+  solutions,
+}: ChallengesAndSolutionsProps) {
   return (
     <div className='relative grid grid-cols-1 lg:grid-cols-2 px-2 xs:px-4 sm:px-8 md:px-9 lg:px-10 xl:px-11 2xl:px-12 mb-10 sm:mb-4 w-full'>
       <div className='w-full gap-3 xs:gap-4 md:gap-5 xl:gap-6 flex flex-col'>
@@ -20,7 +22,7 @@ export default function ProjectChallengesAndSolutions({ project }: ChallengesAnd
           </Typography>
         </div>
         <div className='flex flex-col gap-5 sm:gap-6 lg:gap-7 2xl:gap-8 perspective-[300]'>
-          {projectData.detailedAnalysis.challenges.map((challenge, index) => (
+          {challenges.map((challenge, index) => (
             <NumberedCard
               key={index}
               index={index}
@@ -38,7 +40,7 @@ export default function ProjectChallengesAndSolutions({ project }: ChallengesAnd
           </Typography>
         </div>
         <div className='flex flex-col gap-5 sm:gap-6 lg:gap-7 2xl:gap-8 perspective-[300]'>
-          {projectData.detailedAnalysis.solutions.map((solution, index) => (
+          {solutions.map((solution, index) => (
             <NumberedCard
               key={index}
               index={index}

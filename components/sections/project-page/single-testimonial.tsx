@@ -1,20 +1,13 @@
-'use client'
 import React, { FC } from 'react'
 import ProjectTestimonialCard from '@/components/cards/project-testimonial-card'
-import { getProjectData } from '@/helpers/parsers'
 import SectionTitle from '@/components/main-section-title'
+import { TestimonialT } from '@/helpers/types'
 
 interface SingleClientTestimonialProps {
-  project: string
+  testimonial: TestimonialT
 }
 
-const SingleClientTestimonial: FC<SingleClientTestimonialProps> = ({ project }) => {
-  const projectData = getProjectData(project)
-
-  if (!projectData.testimonial) {
-    return null
-  }
-
+const SingleClientTestimonial: FC<SingleClientTestimonialProps> = ({ testimonial }) => {
   return (
     <section
       className={
@@ -22,7 +15,7 @@ const SingleClientTestimonial: FC<SingleClientTestimonialProps> = ({ project }) 
       }
     >
       <SectionTitle title='Client Feedback' buttonText='All Testimonials' href='/clients' />
-      <ProjectTestimonialCard testimonialData={projectData.testimonial} />
+      <ProjectTestimonialCard testimonialData={testimonial} />
     </section>
   )
 }

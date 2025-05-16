@@ -1,24 +1,17 @@
-'use client'
 import Button from '@/components/button'
-
-import {} from '@/helpers/enums'
-
-import {} from '@/helpers/enums'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Mail } from 'lucide-react'
 import Typography from '@/components/Typography'
-import { capitalizeWords, getClientId, getProjectData } from '@/helpers/parsers'
-import { clientData, clientLogoData } from '@/helpers/constants'
+import { capitalizeWords, getClientId } from '@/helpers/parsers'
+import { clientLogoData, getClientLogo } from '@/helpers/constants'
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
 
-export default function ProjectHero({ project }: { project: string }) {
-  const projectData = getProjectData(project)
+export default function ProjectHero({ projectData }: { projectData: ProjectAnalysisT }) {
   const ProjectLogo =
     projectData.logo ? clientLogoData[projectData.logo as keyof typeof clientLogoData] : null
-  const ClientLogo = clientData.find(
-    client => client.key === projectData.affiliateWith,
-  )?.companyLogo
-  const testimonialKey = clientData.find(client => client.key === projectData.affiliateWith)?.key
+  const ClientLogo = projectData.affiliateWith ? getClientLogo(projectData.affiliateWith) : null
+  const testimonialKey = projectData.affiliateWith
 
   const rotationClasses = [
     'rotate-y-20 lg:rotate-y-22 xl:rotate-y-24',
@@ -116,7 +109,6 @@ export default function ProjectHero({ project }: { project: string }) {
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
                 className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${projectData.isMobile ? extendedRotationClasses[index] : rotationClasses[index]} `}
-                loading='lazy'
                 placeholder='blur'
                 sizes={projectData.isMobile ? '17vw' : '25vw'}
               />
@@ -139,7 +131,6 @@ export default function ProjectHero({ project }: { project: string }) {
                 src={screenshot}
                 alt={`${projectData.title} screenshot ${index + 1}`}
                 className={`shadow-testimonial object-cover w-full sm:h-full rounded-md transform-style-3d ${projectData.isMobile ? extendedRotationClasses[index + 1] : rotationClasses[index + 1]} `}
-                loading='lazy'
                 placeholder='blur'
                 sizes={projectData.isMobile ? '25vw' : '35vw'}
               />

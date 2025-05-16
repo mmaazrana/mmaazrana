@@ -6,11 +6,14 @@ import ProjectKeyFeatures from '@/components/projects/key-features'
 import ProjectChallengesAndSolutions from '@/components/projects/challenges-and-solutions'
 import ProjectTechStack from '@/components/projects/tech-stack'
 import { ProjectCategories } from '@/helpers/enums'
+import { ProjectAnalysisT } from '@/helpers/project-analytics'
 
 export default async function ProjectDetailsSection({
+  projectData,
   project,
   activeTab,
 }: {
+  projectData: ProjectAnalysisT
   project: string
   activeTab: string
 }) {
@@ -22,20 +25,31 @@ export default async function ProjectDetailsSection({
         }
       >
         <TitleBar pathName={project} activeTab={String(activeTab)} categories={projectCategories} />
-        <div className={activeTab !== ProjectCategories.overview ? 'sr-only' : ' w-full'}>
-          <ProjectOverview project={project} />
-        </div>
-        <div className={activeTab !== ProjectCategories.keyFeatures ? 'sr-only' : ' w-full'}>
-          <ProjectKeyFeatures project={project} />
-        </div>
-        <div className={activeTab !== ProjectCategories.techStack ? 'sr-only' : ' w-full'}>
-          <ProjectTechStack project={project} />
-        </div>
-        <div
-          className={activeTab !== ProjectCategories.challengesAndSolutions ? 'sr-only' : ' w-full'}
-        >
-          <ProjectChallengesAndSolutions project={project} />
-        </div>
+        {activeTab === ProjectCategories.overview && (
+          <ProjectOverview
+            categories={projectData.categories}
+            title={projectData.title}
+            overview={projectData.detailedAnalysis.overview}
+            completeOn={projectData.detailedAnalysis.completeOn}
+            screenshots={projectData.images.screenshots}
+            isMobile={projectData.isMobile || false}
+            liveUrl={projectData.liveUrl || ''}
+            figmaUrl={projectData.figmaUrl || ''}
+            requirements={projectData.detailedAnalysis.requirements}
+          />
+        )}
+        {activeTab === ProjectCategories.keyFeatures && (
+          <ProjectKeyFeatures projectData={projectData} />
+        )}
+        {activeTab === ProjectCategories.techStack && (
+          <ProjectTechStack projectData={projectData} />
+        )}
+        {activeTab === ProjectCategories.challengesAndSolutions && (
+          <ProjectChallengesAndSolutions
+            challenges={projectData.detailedAnalysis.challenges}
+            solutions={projectData.detailedAnalysis.solutions}
+          />
+        )}
       </section>
     </>
   )

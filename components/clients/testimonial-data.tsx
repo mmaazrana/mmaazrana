@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography from '@/components/Typography'
-import {} from '@/helpers/enums'
-import { clientData } from '@/helpers/constants'
+import { TestimonialClients } from '@/helpers/enums'
+import { getClientLogo } from '@/helpers/constants'
 import { ExternalLink } from 'lucide-react'
 import Button from '../button'
 import { testimonialsData } from '@/helpers/project-analytics'
@@ -12,7 +12,7 @@ interface TestimonialDataProps {
   clientName: string
   designation: string
   companyLink?: string
-  testimonialKey: string
+  testimonialKey: TestimonialClients
 }
 
 const TestimonialData: React.FC<TestimonialDataProps> = ({
@@ -23,7 +23,7 @@ const TestimonialData: React.FC<TestimonialDataProps> = ({
   testimonialKey,
 }) => {
   const companyName = testimonialsData[testimonialKey].companyName
-  const ClientLogo = clientData.find(client => client.key === testimonialKey)?.companyLogo
+  const ClientLogo = getClientLogo(testimonialKey)
   return (
     <div className='flex flex-col gap-6xl relative mr-0 sm:mr-2'>
       <Typography

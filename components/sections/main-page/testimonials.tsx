@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC, useCallback, useEffect, useState } from 'react'
+import React, { FC, useCallback, useEffect, useState, useRef } from 'react'
 import { testimonials } from '@/helpers/constants'
 import TestimonialCard from '@/components/cards/testimonial-card'
 import { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel'
@@ -9,30 +9,37 @@ import { motion } from 'framer-motion'
 import Autoplay from 'embla-carousel-autoplay'
 import { Sections } from '@/helpers/enums'
 import MainSectionTitle from '@/components/main-section-title'
+import { useInView } from 'motion/react'
 
 interface TestimonialsProps {}
 
 const Testimonials: FC<TestimonialsProps> = () => {
   const OPTIONS: EmblaOptionsType = { loop: true }
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [isCarouselInitialized, setIsCarouselInitialized] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(sectionRef, { margin: '-5% 0px -5% 0px', amount: 0.2 })
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS, [
-    Autoplay({ delay: 10000, stopOnMouseEnter: true }),
-  ])
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    OPTIONS,
+    isInView ? [Autoplay({ delay: 10000, stopOnMouseEnter: true })] : [],
+  )
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap())
   }, [])
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi || !isInView) return
     onSelect(emblaApi)
     emblaApi.on('reInit', onSelect)
     emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect])
+    setIsCarouselInitialized(true)
+  }, [emblaApi, onSelect, isInView])
 
   return (
     <section
+      ref={sectionRef}
       id={Sections.testimonials}
       className={
         'xl:px-12 lg:px-11 md:px-10 sm:px-9 px-8 xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex items-start justify-center flex-col w-full'
@@ -47,6 +54,7 @@ const Testimonials: FC<TestimonialsProps> = () => {
                 className='embla__slide'
                 key={index}
                 onClick={() => {
+                  if (!isCarouselInitialized) return
                   if (index > selectedIndex) {
                     index === testimonials.length - 1 && selectedIndex === 0 ?
                       emblaApi?.scrollPrev()

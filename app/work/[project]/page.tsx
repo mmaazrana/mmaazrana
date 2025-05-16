@@ -9,29 +9,34 @@ import { getPageSlug, getRelevantProjects } from '@/helpers/parsers'
 import { Params, SearchParams } from '@/helpers/types'
 import { ProjectCategories } from '@/helpers/enums'
 import type { Metadata } from 'next' // Import Metadata type
-import Work from '@/components/sections/main-page/work'
-import SingleClientTestimonial from '@/components/sections/project-page/single-testimonial'
-// --- Start of added code ---
+import { Suspense } from 'react'
+import Loader from '@/components/loader'
+
+import dynamic from 'next/dynamic'
+const SingleClientTestimonial = dynamic(
+  () => import('@/components/sections/project-page/single-testimonial'),
+  { loading: () => <Loader /> },
+)
+const WorkSection = dynamic(() => import('@/components/sections/main-page/work'), {
+  loading: () => <Loader />,
+}) // Renamed to avoid conflict if Work type exists
 
 // Combine all project arrays that have dedicated pages
-// Adjust this list based on which categories actually have dynamic pages
 const allProjects = [...productDesignProjects, ...productDevelopmentProjects]
 
 // Helper function to find project data by slug
 // Ensure this logic correctly matches slugs to projects in your application
 async function getProjectData(slug: string): Promise<ProjectAnalysisT | undefined> {
-  // This assumes getPageSlug(project.title) generates the slug used in the URL
   return allProjects.find(project => getPageSlug(project.title) === slug)
 }
 
-// Define the base URL for metadata
-const metadataBase = new URL('https://www.maazrana.com') // Replace with your actual domain
+const metadataBase = new URL('https://www.maazrana.com')
 
 export async function generateMetadata({
   params,
   searchParams,
 }: {
-  params: Params // Specify 'project' in Params
+  params: Params
   searchParams: SearchParams
 }): Promise<Metadata> {
   const { project } = await params
@@ -58,15 +63,6 @@ export async function generateMetadata({
       `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process - ${activeTab}.`
     : projectData.shortDescription ||
       `Explore the case study for the ${projectData.title} project by Maaz Rana, detailing the design and development process.`
-  // Generate keywords from project details
-  const keywords = [
-    projectData.title,
-    'Case Study',
-    'Portfolio',
-    'Maaz Rana',
-    ...(projectData.categories || []), // Add categories if they exist
-    ...(projectData.techStack?.map(tech => tech.title) || []), // Add tech stack titles
-  ].filter(Boolean) // Remove any potentially undefined values
 
   // Prepare Open Graph and Twitter image data if available
   // const ogImageUrl = project.imageUrl || '/default-og-image.png'; // Define a default image
@@ -103,7 +99,6 @@ export async function generateMetadata({
     metadataBase,
     title,
     description,
-    keywords,
     openGraph: {
       title: `${title} | Maaz Rana`,
       description,
@@ -125,8 +120,6 @@ export async function generateMetadata({
   }
 }
 
-// --- End of added code ---
-
 export default async function ProjectPage({
   params,
   searchParams,
@@ -137,16 +130,28 @@ export default async function ProjectPage({
   const { project } = await params
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : ProjectCategories.overview
+  const projectData = await getProjectData(project)
+  const relatedProjects = getRelevantProjects(project)
   return (
     <div className='max-w-[100vw]'>
       <Nav />
       <div className='overflow-hidden'>
         <main className='overflow-x-visible xl:max-w-8xl xl:mx-auto mb-[525px] about:mb-80 md:mb-96 pb-2xl xl:gap-12 lg:gap-11 md:gap:10 sm:gap-9 gap-8 flex justify-center items-center flex-col'>
-          <ProjectHero project={project} />
-          <ProjectDetailsSection project={project} activeTab={activeTab} />
+          <Suspense fallback={<Loader />}>
+            {projectData && <ProjectHero projectData={projectData} />}
+            {projectData && (
+              <ProjectDetailsSection
+                project={project}
+                projectData={projectData}
+                activeTab={activeTab}
+              />
+            )}
+          </Suspense>
+          {projectData?.testimonial && (
+            <SingleClientTestimonial testimonial={projectData.testimonial} />
+          )}
           <ProjectBottomNav pathName={project} activeTab={activeTab} />
-          <SingleClientTestimonial project={project} />
-          <Work title={'Related Projects'} projects={getRelevantProjects(project)} />
+          <WorkSection title={'Related Projects'} projects={relatedProjects} />
         </main>
       </div>
     </div>

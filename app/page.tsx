@@ -1,11 +1,23 @@
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
 import React from 'react'
-import Services from '@/components/sections/main-page/services'
-import Work from '@/components/sections/main-page/work'
 import Hero from '@/components/sections/main-page/main-hero'
-import Testimonials from '@/components/sections/main-page/testimonials'
-import AboutSection from '@/components/sections/main-page/about-section'
+import dynamic from 'next/dynamic'
+import Loader from '@/components/loader'
+
+// Dynamically import below-the-fold components
+const Work = dynamic(() => import('@/components/sections/main-page/work'), {
+  loading: () => <Loader />,
+})
+const Services = dynamic(() => import('@/components/sections/main-page/services'), {
+  loading: () => <Loader />,
+})
+const Testimonials = dynamic(() => import('@/components/sections/main-page/testimonials'), {
+  loading: () => <Loader />,
+})
+const AboutSection = dynamic(() => import('@/components/sections/main-page/about-section'), {
+  loading: () => <Loader />,
+})
 
 // No specific metadata needed here, it will inherit from layout.tsx
 // If you wanted to override:

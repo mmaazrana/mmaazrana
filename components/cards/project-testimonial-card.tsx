@@ -6,7 +6,7 @@ import Typography from '../Typography'
 import { useInView } from 'motion/react'
 import Button from '../button'
 import { TestimonialT } from '@/helpers/types'
-import { clientData } from '@/helpers/constants'
+import { getClientLogo, getProductsInvolved } from '@/helpers/constants'
 import Link from 'next/link'
 import { getClientId } from '@/helpers/parsers'
 
@@ -18,10 +18,9 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { margin: `-15% 0px -15% 0px`, amount: 0.25 })
   const delayClasses = ['!delay-0', '!delay-50', '!delay-100', '!delay-150', '!delay-200']
-  const CompanyLogo = clientData.find(client => client.key === testimonialData.key)?.companyLogo
-  const productsInvolved = clientData.find(
-    client => client.key === testimonialData.key,
-  )?.productsInvolved
+  const CompanyLogo = getClientLogo(testimonialData.key)
+  const productsInvolved = getProductsInvolved(testimonialData.key)
+
   return (
     <div ref={ref} className='relative z-1 w-full py-3xl sm:py-0 sm:px-2xl mb-xl group'>
       <div className='absolute -top-1 sm:-top-4 md:-top-6 md:-top-7 xl:-top-8 -left-3xs z-[-15] flex flex-row gap-3xs'>

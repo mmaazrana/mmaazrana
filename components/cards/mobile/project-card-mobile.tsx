@@ -7,7 +7,7 @@ import { TestimonialClients } from '@/helpers/enums'
 import { useInView } from 'motion/react'
 import Link from 'next/link'
 import { capitalizeWords, getClientId, getPageSlug } from '@/helpers/parsers'
-import { clientData } from '@/helpers/constants'
+import { getClientLogo } from '@/helpers/constants'
 import { ChevronRight } from 'lucide-react'
 
 interface ProjectCardMobileProps {
@@ -36,7 +36,7 @@ const ProjectCardMobile: FC<ProjectCardMobileProps> = ({
     }
   }, [isInView])
 
-  const ClientLogo = clientData.find(client => client.key === testimonialKey)?.companyLogo
+  const ClientLogo = testimonialKey ? getClientLogo(testimonialKey) : null
 
   return (
     <div className='relative group'>
