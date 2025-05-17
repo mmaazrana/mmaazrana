@@ -121,7 +121,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
           {testimonialKey && (
             <Link
               href={`/clients?openProjects=${testimonialKey}#${getClientId(testimonialKey)}`}
-              aria-label={`Read More about ${client} - ${designation}`}
+              aria-label={`Read More about my work with ${client} - ${designation}`}
               className='w-fit ml-auto'
             >
               <Button
@@ -129,6 +129,7 @@ const CSRTestimonialCard: FC<Omit<TestimonialCardProps, 'variant'>> = React.memo
                 className='self-end bg-secondary-hover/50 !transition-colors !duration-300 text-primary-accent !pl-s !pr-2xs !py-2xs !gap-3xs mr-s rounded-full'
                 textSize='base'
                 textColor='primary-hover'
+                aria-label={`Read More about my work with ${client} - ${designation}`}
                 text='Read More'
                 rightIcon={<ChevronRight className='w-s h-s stroke-secondary' />}
               />

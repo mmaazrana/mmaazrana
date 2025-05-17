@@ -29,10 +29,13 @@ const ServiceCard: FC<ServiceCardProps> = ({
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
   const isDesktop = useMediaQuery({ minWidth: 1280 })
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
     if (resolvedTheme) {
       setIsDarkMode(resolvedTheme === 'dark')
     }
+    setMounted(true)
   }, [resolvedTheme])
 
   const darkSVGs = [
@@ -119,7 +122,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography tag='h3' type={isDesktop ? '4xl' : '3xl'} weight='semi-bold'>
+          <Typography tag='h3' type={mounted && isDesktop ? '4xl' : '3xl'} weight='semi-bold'>
             {title}
           </Typography>
         </div>

@@ -4,6 +4,8 @@ import React, { FC, useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Tooltip from '../tooltip'
 import Typography from '../Typography'
+import * as m from 'motion/react-m'
+import { AnimatePresence } from 'motion/react'
 
 // Define a type for the component props if any are needed in the future
 interface ThemeToggleButtonProps {
@@ -22,10 +24,15 @@ const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({
 }) => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [showHintText, setShowHintText] = useState(false)
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true)
+    setShowHintText(true)
+    setTimeout(() => {
+      setShowHintText(false)
+    }, 3500)
   }, [])
 
   if (!mounted) {
@@ -125,7 +132,7 @@ const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({
       <button
         aria-label={buttonAriaLabel} // Keep aria-label for accessibility
         onClick={toggleTheme}
-        className={`flex flex-row items-center justify-center hover:bg-golden/25 dark:hover:bg-secondary/40 transition-colors duration-200 ${theme === 'light' && 'hover:!bg-golden/25'} ${theme === 'dark' && 'hover:!bg-secondary/40'} ${
+        className={`relative flex flex-row items-center justify-center hover:bg-golden/25 dark:hover:bg-secondary/40 transition-colors duration-200 ${theme === 'light' && 'hover:!bg-golden/25'} ${theme === 'dark' && 'hover:!bg-secondary/40'} ${
           showActiveState ?
             theme === 'light' ?
               'outline outline-golden/50 py-2xs px-s gap-xs rounded-full'
@@ -135,6 +142,29 @@ const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({
         // Removed title attribute as Tooltip component handles this
       >
         {icon}
+        <AnimatePresence mode='wait'>
+          {showHintText && (
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.85 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className='pointer-events-none absolute bottom-0 translate-y-[100%] left-2xs px-4xs'
+            >
+              <Typography
+                type='sm'
+                leading='prose'
+                className='whitespace-nowrap text-primary text-start'
+              >
+                {theme === 'light' && 'Using Light Mode'}
+                {theme === 'dark' && 'Using Dark Mode'}
+                {theme === 'system' && 'System Default Theme'}
+                <br />
+                Click to switch
+              </Typography>
+            </m.div>
+          )}
+        </AnimatePresence>
         {showActiveState && (
           <Typography type='lg' leading='flat' className='whitespace-nowrap'>
             {theme === 'light' && 'Light Mode'}
