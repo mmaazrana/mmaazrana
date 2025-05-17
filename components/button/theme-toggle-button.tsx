@@ -29,10 +29,30 @@ const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true)
-    setShowHintText(true)
-    setTimeout(() => {
-      setShowHintText(false)
-    }, 3500)
+    const hintViewedKey = 'themeToggleHintViewed'
+
+    // Check if the hint has been viewed before
+    try {
+      const hintHasBeenViewed = localStorage.getItem(hintViewedKey)
+
+      if (hintHasBeenViewed !== 'true') {
+        setShowHintText(true)
+        localStorage.setItem(hintViewedKey, 'true') // Mark as viewed
+
+        setTimeout(() => {
+          setShowHintText(false)
+        }, 3500)
+      }
+    } catch (error) {
+      // Handle potential errors with localStorage (e.g., disabled by user, private browsing)
+      // In case of error, we might decide to show the hint or log the error.
+      // For now, let's default to showing the hint if localStorage is inaccessible.
+      console.error('Error accessing localStorage for hint visibility:', error)
+      setShowHintText(true)
+      setTimeout(() => {
+        setShowHintText(false)
+      }, 3500)
+    }
   }, [])
 
   if (!mounted) {
@@ -148,7 +168,7 @@ const ThemeToggleButton: FC<ThemeToggleButtonProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.85 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              transition={{ duration: 0.5, delay: 1, ease: 'easeInOut' }}
               className='pointer-events-none absolute bottom-0 translate-y-[100%] left-2xs px-4xs'
             >
               <Typography
