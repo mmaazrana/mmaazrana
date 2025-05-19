@@ -1892,7 +1892,7 @@ export const menuHub: ProjectAnalysisT = {
   title: 'MenuHub',
   logo: ProjectLogos.menuHub,
   shortDescription:
-    'A comprehensive restaurant digitization platform that helps business owners modernize their operations with digital menus, streamlined ordering (including space/table selection), payment processing, and enhanced customer experience through integrated content like blogs, events, and news.',
+    'A restaurant digitization platform offering digital menus, streamlined ordering with space/table selection, payment processing, and integrated content like blogs and events.',
   detailedAnalysis: {
     overview:
       'MenuHub is an innovative platform designed to transform traditional restaurants into digital-first businesses. It provides a complete solution for restaurant discovery, menu digitization, in-app ordering (for take-away or in-place dining with table selection), payment, and customer engagement via blogs, events, and news updates, all optimized for a mobile-first experience.',
@@ -2088,7 +2088,7 @@ export const athletonPlus: ProjectAnalysisT = {
   logo: ProjectLogos.athleton,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
-    'A comprehensive fitness training management platform connecting trainers with clients, featuring role-based dashboards, program creation, workout scheduling, progress tracking, integrated payments, and detailed session management for both desktop and mobile.',
+    'A fitness platform connecting trainers with clients, featuring role-based dashboards, program creation, workout scheduling, and progress tracking for both desktop and mobile.',
   detailedAnalysis: {
     overview:
       'Athleton+ is a sophisticated fitness platform designed to streamline the relationship between personal trainers and their clients. It provides distinct interfaces and tools for trainers (program creation, client management, scheduling, financials on desktop) and clients (booking, workout tracking, profile management on mobile and desktop), fostering a connected fitness experience.',
@@ -2361,7 +2361,7 @@ export const superDuperStudio: ProjectAnalysisT = {
   logo: ProjectLogos.superDuper,
   affiliateWith: TestimonialClients.alfabolt,
   shortDescription:
-    "A vibrant and engaging website for a children's creative studio, showcasing diverse activities like art, dress-up (with itemized pricing), workshops, and parties. Features a playful design, detailed service pages, contact forms, location map, and an activity blog.",
+    'A vibrant and engaging website for a children\'s creative studio, featuring art activities, dress-up services, workshops, and parties with a playful design and detailed service pages.',
   detailedAnalysis: {
     overview:
       "Super Duper Studio's website perfectly captures the spirit of childhood creativity and exploration. The platform combines a playful, vibrant design (coral, mint, pink accents, whimsical illustrations, bubble-shaped blocks) with functional content organization. It showcases creative programs, detailed service pages (e.g., 'Dress-Up Corner' with specific pricing for 'Hair Styling' and 'Nails & Bling'), event information, a contact section with a map and inquiry form, and an engaging blog, appealing to both parents and children.",
@@ -2602,7 +2602,7 @@ export const alfabolt: ProjectAnalysisT = {
   affiliateWith: TestimonialClients.alfabolt,
   liveUrl: 'https://www.alfabolt.com',
   shortDescription:
-    'A modern, professional website for Alfabolt, a custom software development company. showcasing their wide range of services and highlighting their expertise across various industries, featuring detailed case studies, their processes, client testimonials, and a transparent developer tier pricing.',
+    'A modern website for Alfabolt, showcasing their custom software development services, case studies, and transparent pricing structure across various industries.',
   detailedAnalysis: {
     overview:
       "Alfabolt website focuses on projecting the company's expertise in delivering custom software solutions, by effectively communicating complex technical services and industry-specific capabilities.\n\nThe site meticulously details its core services, showcases successful projects via in-depth case studies, and transparently outlines its development process and value-based pricing tiers. \n\n It's designed to be sales-focused, emphasizing performance, responsiveness, and accessibility, while building trust through client testimonials and a clear articulation of their work in sectors like Fintech, Healthcare, Logistics, Insurance, and Social platforms.",
@@ -2795,7 +2795,7 @@ export const tutorania: ProjectAnalysisT = {
   title: 'Tutorania',
   logo: ProjectLogos.tutorania,
   shortDescription:
-    'A comprehensive tutoring marketplace and management platform connecting students/clients with tutors, featuring job posting, proposal management, contract handling with milestones, a wallet/coin system, detailed user profiles, and extensive search/filter capabilities.',
+    'A tutoring marketplace connecting students with tutors, featuring job posting, proposal management, contract handling with milestones, and a wallet/coin system.',
   detailedAnalysis: {
     overview:
       'Tutorania is a sophisticated platform designed to streamline the entire tutoring lifecycle, from discovery to payment. It provides a public marketplace for finding tutors, tools for clients to post jobs and manage hires, and features for tutors to showcase their expertise and find work. Key aspects include multi-step user registration, detailed profile management, secure contract handling with milestone tracking, an integrated wallet system for coin-based transactions, and robust search and filtering across the platform.',
@@ -3073,7 +3073,7 @@ export const rivanna: ProjectAnalysisT = {
   title: 'Rivanna Website',
   logo: ProjectLogos.rivanna,
   shortDescription:
-    'A professional legal technology company website showcasing advanced document analysis tools (like precedent search, deal merge, provision profiling) and market intelligence. Features a clean, dark-themed design, transparent pricing with a free trial, and clear value propositions for transactional attorneys.',
+    'A professional legal technology website showcasing document analysis tools, market intelligence, and transparent pricing with a free trial for transactional attorneys.',
   detailedAnalysis: {
     overview:
       "The Rivanna website effectively communicates the platform's sophisticated legal technology solutions through a clean, professional dark theme with subtle graphical elements. It presents complex legal document analysis tools (e.g., Whole-Document Precedent Search, Deal Merge, Clause Context, Provision Profiler, DocDuo+, Crosscheck) and market intelligence features in an accessible way. The site emphasizes value for busy transactional groups, offers transparent pricing with a 30-day no-risk free trial, and includes a clear 'About Us' section.",
@@ -3169,7 +3169,7 @@ export const humanizarTexto: ProjectAnalysisT = {
   title: 'Humanizar Texto',
   logo: ProjectLogos.humanizarTexto,
   shortDescription:
-    'A sophisticated AI-powered mobile app for text humanization and paraphrasing, featuring multiple writing modes, subscription plans (free/premium), detailed account management, payment integration, and user feedback mechanisms.',
+    'An AI-powered mobile app for text humanization and paraphrasing, featuring multiple writing modes, subscription plans, account management, and payment integration.',
   detailedAnalysis: {
     overview:
       'Humanizar Texto is an innovative mobile application that leverages AI to help users transform and humanize their text content. The app combines powerful text processing (humanizing and paraphrasing with modes like Rapid, Creative, Aggressive) with an intuitive purple-themed interface. It offers tiered subscription plans (Free, Weekly, Monthly, Annual) with varying word limits and features like ad-free experience and more languages. Users can manage their accounts, subscriptions, payment methods, and provide feedback, all within a secure environment that includes email verification and account deletion options.',
@@ -3268,7 +3268,7 @@ export const smartCatch: ProjectAnalysisT = {
   title: 'Smart Catch',
   logo: ProjectLogos.smartCatch,
   shortDescription:
-    'A comprehensive fishing community platform featuring AI fish identification, detailed weather forecasts, interactive forums, activity logging, hotspot search, educational resources, and safety alerts, all within a clean, modern mobile interface.',
+    'A fishing community platform featuring AI fish identification, weather forecasts, interactive forums, activity logging, and educational resources.',
   detailedAnalysis: {
     overview:
       'Smart Catch is an innovative mobile application designed for fishing enthusiasts. It combines practical tools like an AI-powered fish identifier, real-time weather tracking (current, hourly, weekly), and fishing hotspot search with robust social features. These include categorized community forums for discussions, activity logging for personal fishing trips, and access to a wide range of educational resources. The app also incorporates a safety alert system and secure user authentication with profile management.',
@@ -3373,7 +3373,7 @@ export const elBrezal: ProjectAnalysisT = {
   title: 'El Brezal Honey',
   logo: ProjectLogos.elbrezal,
   shortDescription:
-    'An elegant e-commerce and informational website for "El Brezal\'s" premium honey products. It showcases a diverse range of honey, pollen, and royal jelly, complemented by a recipe section and blogs. The site emphasizes natural quality and product variety with a warm, inviting design.',
+    'An elegant e-commerce website for premium honey products, featuring diverse honey varieties, pollen, royal jelly, recipes, and blogs with a warm, inviting design.',
   detailedAnalysis: {
     overview:
       'The El Brezal Honey website offers a rich digital experience for honey enthusiasts. It combines a comprehensive e-commerce platform for purchasing various high-quality honey types, pollen, and royal jelly with engaging content like a "Cookbook" featuring honey-based recipes and an informative "Blog." The site is designed with a warm, earthy aesthetic, using high-quality product imagery and clear navigation to guide users through its offerings, from product discovery to learning about the brand and contacting them.',
@@ -3491,7 +3491,7 @@ export const robinBeauty: ProjectAnalysisT = {
   title: 'Robin Beauty Bazar',
   logo: ProjectLogos.robinBeauty,
   shortDescription:
-    'An AI-powered beauty recommendation platform, Robin Beauty Bazar, provides personalized skincare and makeup routines by analyzing user\'s skin characteristics, preferences, and product base. It offers tiered subscription plans, community features, and creator-curated product suggestions.',
+    'An AI-powered beauty platform providing personalized skincare and makeup recommendations based on skin analysis, with subscription plans and community features.',
   detailedAnalysis: {
     overview:
       'Robin Beauty Bazar is a sophisticated beauty tech platform that leverages AI to provide personalized skincare and makeup recommendations. Users undergo a detailed "Get to Know Your Skin" quiz covering age, skin type, tone, sensitivities, and makeup habits. Based on this, the AI offers tailored routines and product suggestions. The platform features multiple subscription tiers (Free, Basic, Premium, Pro) with varying levels of access to consultations, product recommendations, and advanced features. It also aims to foster a community and allow exploration of creator favorites.',

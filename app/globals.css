@@ -149,6 +149,28 @@
     linear-gradient(135deg, #f4f6fe, #f9faff, 60%, #ffffff) padding-box,
     linear-gradient(135deg, #b4c4e4, rgba(180, 196, 228, 0.3) 60%) border-box;
   --work-gradient: linear-gradient(90deg, #ffffff 5%, transparent 10%, transparent 90%, #ffffff);
+  --product-gradient: linear-gradient(
+    0deg,
+    #b4c4e4f4 1%,
+    #b4c4e4d0 5%,
+    #b4c4e4aa 10%,
+    #b4c4e440 25%,
+    transparent 45%
+  );
+  --product-gradient-hover: linear-gradient(
+    0deg,
+    #b4c4e4f4 5%,
+    #b4c4e4d0 10%,
+    #b4c4e4aa 25%,
+    transparent 75%
+  );
+  --mask-to-b-white: linear-gradient(
+    0deg,
+    #b4c4e4cc 0%,
+    #b4c4e499 25%,
+    #b4c4e470 50%,
+    transparent 75%
+  );
 }
 
 [data-theme='dark'] {
@@ -260,6 +282,28 @@
     transparent 75%,
     #000714 95%
   );
+  --product-gradient: linear-gradient(
+    0deg,
+    #4264a8f4 1%,
+    #4264a8d0 5%,
+    #4264a8aa 10%,
+    #4264a840 25%,
+    transparent 45%
+  );
+  --product-gradient-hover: linear-gradient(
+    0deg,
+    #4264a8f4 5%,
+    #4264a8d0 10%,
+    #4264a8aa 25%,
+    transparent 75%
+  );
+  --mask-to-b-white: linear-gradient(
+    0deg,
+    #b4c4e470 0%,
+    #b4c4e430 5%,
+    #b4c4e405 40%,
+    transparent 70%
+  );
 }
 
 @theme {
@@ -331,7 +375,8 @@
   --color-frosted-gradient-hover: var(--frosted-gradient-hover);
   --color-work-gradient: var(--work-gradient);
   --color-work-nav-gradient: var(--work-nav-gradient);
-  --color-project-card-gradient: var(--project-card-gradient);
+  --color-product-gradient: var(--product-gradient);
+  --color-product-gradient-hover: var(--product-gradient-hover);
   --opacity-texture-opacity: var(--texture-opacity);
   --max-width-8xl: 100rem;
   --width-8xl: 10rem;
@@ -558,6 +603,14 @@ a {
   background: var(--work-gradient);
 }
 
+.product-gradient {
+  background: var(--product-gradient);
+}
+
+.product-gradient-hover {
+  background: var(--product-gradient-hover);
+}
+
 .work-nav-gradient {
   background: var(--work-nav-gradient);
   border-radius: 9999px;
@@ -707,4 +760,19 @@ a {
   :root {
     --slide-spacing: 5rem;
   }
+}
+
+.mask-to-b {
+  mask-image: linear-gradient(
+    0deg,
+    #b4c4e4 4%,
+    #b4c4e4d0 9%,
+    #b4c4e4aa 14%,
+    #b4c4e440 24%,
+    transparent 50%
+  );
+}
+
+.mask-to-b-white {
+  mask-image: var(--mask-to-b-white);
 }
