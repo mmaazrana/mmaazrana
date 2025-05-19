@@ -1,5 +1,5 @@
 'use client'
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 
@@ -18,6 +18,7 @@ import blenderMobileLight from '@/public/svgs/blender-mobile-light.svg'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { ServiceCardProps } from '@/helpers/types'
+import { useInView } from 'motion/react'
 
 const ServiceCardMobile: FC<ServiceCardProps> = ({
   title,
@@ -28,6 +29,8 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
+  const cardRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(cardRef, { margin: '-35% 0px -35% 0px', amount: 0.2 })
 
   useEffect(() => {
     if (resolvedTheme) {
@@ -45,6 +48,15 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
     logoMobileLight,
     blenderMobileLight,
   ]
+
+  const hoverRotationClasses = {
+    0: 'rotate-y-[-20deg]',
+    1: 'rotate-y-[-20deg]',
+    2: 'rotate-y-[-20deg]',
+    3: 'rotate-y-[20deg]',
+    4: 'rotate-y-[20deg]',
+    5: 'rotate-y-[20deg]',
+  }
 
   const indexClasses = {
     0: 'justify-center items-start text-left center-right-tablet-gradient',
@@ -84,11 +96,14 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
 
   return (
     <div
+      ref={cardRef}
       className={
-        'cursor-pointer service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent group'
+        'cursor-pointer service sm:aspect-video md:aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-[1000px] group'
       }
     >
-      <div className='relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group'>
+      <div
+        className={`relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden transform-style-3d transition-transform duration-500 rotate-x-0 rotate-y-0 group ${isInView ? hoverRotationClasses[index] : ''}`}
+      >
         <div className={serviceClasses[index]}>
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
