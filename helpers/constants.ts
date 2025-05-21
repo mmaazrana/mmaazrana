@@ -300,6 +300,7 @@ export const featuredProjects: ProjectAnalysisT[] = [alfabolt, humanizarTexto, a
 export const services: ServiceT[] = [
   {
     title: 'Web App \n Development',
+    href: `/portfolio?tab=${WorkCategories.productDevelopment}`,
     index: 0,
     className:
       'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -309,6 +310,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Product & \n UI/UX Design',
+    href: `/portfolio?tab=${WorkCategories.productDesign}`,
     index: 1,
     className:
       'absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -318,6 +320,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Mobile App \n Development',
+    href: `/portfolio?tab=${WorkCategories.productDevelopment}`,
     index: 2,
     className:
       'absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -327,6 +330,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Video Editing \n & Motion Graphics',
+    href: `/portfolio?tab=${WorkCategories.videoEditing}`,
     index: 3,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -336,6 +340,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Logo Design \n & Branding',
+    href: `/portfolio?tab=${WorkCategories.illustration}`,
     index: 4,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -345,6 +350,7 @@ export const services: ServiceT[] = [
   },
   {
     title: '3D Design \n & Visualization',
+    href: `/portfolio?tab=${WorkCategories.blender}`,
     index: 5,
     className:
       'absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',

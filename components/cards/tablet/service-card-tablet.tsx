@@ -49,23 +49,32 @@ const ServiceCardTablet: FC<ServiceCardProps> = ({
     blenderTabletLight,
   ]
 
-  const indexClasses = {
-    0: 'justify-end items-end text-right top-left-tablet-gradient',
-    1: 'justify-end items-start text-left top-right-tablet-gradient',
-    2: 'justify-center items-end text-right center-left-tablet-gradient',
-    3: 'justify-center items-start md:items-end text-left center-right-tablet-gradient',
-    4: 'justify-start items-end text-right bottom-left-tablet-gradient',
-    5: 'justify-start items-start text-left bottom-right-tablet-gradient',
-  }
+  const indexClasses = [
+    'justify-end items-end text-right top-left-tablet-gradient',
+    'justify-end items-start text-left top-right-tablet-gradient',
+    'justify-center items-end text-right center-left-tablet-gradient',
+    'justify-center items-start md:items-end text-left center-right-tablet-gradient',
+    'justify-start items-end text-right bottom-left-tablet-gradient',
+    'justify-start items-start text-left bottom-right-tablet-gradient',
+  ]
 
-  const hoverRotationClasses = {
-    0: 'rotate-y-[6deg] rotate-x-[-6deg]',
-    1: 'rotate-y-[-6deg] rotate-x-[-6deg]',
-    2: 'rotate-y-[12deg]',
-    3: 'rotate-y-[-12deg]',
-    4: 'rotate-y-[6deg] rotate-x-[6deg]',
-    5: 'rotate-y-[-6deg] rotate-x-[6deg]',
-  }
+  const hoverRotationClasses = [
+    'rotate-y-[6deg] rotate-x-[-6deg]',
+    'rotate-y-[-6deg] rotate-x-[-6deg]',
+    'rotate-y-[12deg]',
+    'rotate-y-[-12deg]',
+    'rotate-y-[6deg] rotate-x-[6deg]',
+    'rotate-y-[-6deg] rotate-x-[6deg]',
+  ]
+
+  const hoverGradientClasses = [
+    'bg-linear-to-br',
+    'bg-linear-to-bl',
+    'bg-linear-to-r',
+    'bg-linear-to-l',
+    'bg-linear-to-tr',
+    'bg-linear-to-tl',
+  ]
 
   const serviceClasses = [
     'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center md:items-start min-w-[20vw] w-fit sm:w-full h-full pr-3xl -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-8',
@@ -104,6 +113,12 @@ const ServiceCardTablet: FC<ServiceCardProps> = ({
       <div
         className={`relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent group backface-hidden transform-style-3d transition-transform duration-300 rotate-x-0 rotate-y-0 ${isInView ? hoverRotationClasses[index] : ''}`}
       >
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary/25 z-1 rounded-3xl mix-blend-soft-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]} ${isInView ? 'opacity-100' : 'opacity-0'}`}
+        />
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary via-primary/75 z-1 rounded-3xl mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]} ${isInView ? 'opacity-100' : 'opacity-0'}`}
+        />
         <div className={serviceClasses[index]}>
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}

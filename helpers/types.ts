@@ -65,6 +65,7 @@ export type IndexT = 0 | 1 | 2 | 3 | 4 | 5
 
 export interface ServiceT {
   title: string
+  href: string
   index: IndexT
   className: string
   baseSrc: string

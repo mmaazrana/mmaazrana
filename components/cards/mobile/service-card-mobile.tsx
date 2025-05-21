@@ -49,23 +49,32 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
     blenderMobileLight,
   ]
 
-  const hoverRotationClasses = {
-    0: 'rotate-y-[-20deg]',
-    1: 'rotate-y-[-20deg]',
-    2: 'rotate-y-[-20deg]',
-    3: 'rotate-y-[20deg]',
-    4: 'rotate-y-[20deg]',
-    5: 'rotate-y-[20deg]',
-  }
+  const hoverRotationClasses = [
+    'rotate-y-[-15deg]',
+    'rotate-y-[-15deg]',
+    'rotate-y-[-15deg]',
+    'rotate-y-[15deg]',
+    'rotate-y-[15deg]',
+    'rotate-y-[15deg]',
+  ]
 
-  const indexClasses = {
-    0: 'justify-center items-start text-left center-right-tablet-gradient',
-    1: 'justify-center items-start text-left center-right-tablet-gradient',
-    2: 'justify-center items-start text-left center-right-tablet-gradient',
-    3: 'justify-center items-end text-right center-left-tablet-gradient',
-    4: 'justify-center items-end text-right center-left-tablet-gradient',
-    5: 'justify-center items-end text-right center-left-tablet-gradient',
-  }
+  const indexClasses = [
+    'justify-center items-start text-left center-right-tablet-gradient',
+    'justify-center items-start text-left center-right-tablet-gradient',
+    'justify-center items-start text-left center-right-tablet-gradient',
+    'justify-center items-end text-right center-left-tablet-gradient',
+    'justify-center items-end text-right center-left-tablet-gradient',
+    'justify-center items-end text-right center-left-tablet-gradient',
+  ]
+
+  const hoverGradientClasses = [
+    'bg-linear-to-l',
+    'bg-linear-to-l',
+    'bg-linear-to-l',
+    'bg-linear-to-r',
+    'bg-linear-to-r',
+    'bg-linear-to-r',
+  ]
 
   const serviceClasses = [
     'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center min-w-[20vw] w-fit h-full pr-3xl -mt-0',
@@ -104,6 +113,12 @@ const ServiceCardMobile: FC<ServiceCardProps> = ({
       <div
         className={`relative sm:aspect-video md:aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden transform-style-3d transition-transform duration-500 rotate-x-0 rotate-y-0 group ${isInView ? hoverRotationClasses[index] : ''}`}
       >
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary/25 z-1 rounded-xl mix-blend-soft-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]} ${isInView ? 'opacity-100' : 'opacity-0'}`}
+        />
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary via-primary/75 z-1 rounded-xl mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]} ${isInView ? 'opacity-100' : 'opacity-0'}`}
+        />
         <div className={serviceClasses[index]}>
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}

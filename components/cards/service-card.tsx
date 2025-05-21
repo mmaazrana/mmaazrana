@@ -56,32 +56,32 @@ const ServiceCard: FC<ServiceCardProps> = ({
     blenderDesktopLight,
   ]
 
-  const indexClasses = {
-    0: 'justify-end items-end text-right top-right-desktop-gradient',
-    1: 'justify-end items-center text-center top-center-desktop-gradient',
-    2: 'justify-end items-start text-left top-left-desktop-gradient',
-    3: 'justify-start items-end text-right bottom-right-desktop-gradient',
-    4: 'justify-start items-center text-center bottom-center-desktop-gradient',
-    5: 'justify-start items-start text-left bottom-left-desktop-gradient',
-  }
+  const indexClasses = [
+    'justify-end items-end text-right top-right-desktop-gradient',
+    'justify-end items-center text-center top-center-desktop-gradient',
+    'justify-end items-start text-left top-left-desktop-gradient',
+    'justify-start items-end text-right bottom-right-desktop-gradient',
+    'justify-start items-center text-center bottom-center-desktop-gradient',
+    'justify-start items-start text-left bottom-left-desktop-gradient',
+  ]
 
-  const hoverRotationClasses = {
-    0: 'hover:rotate-y-6 hover:-rotate-x-6',
-    1: 'hover:-rotate-x-12',
-    2: 'hover:-rotate-y-6 hover:-rotate-x-6',
-    3: 'hover:rotate-y-6 hover:rotate-x-6',
-    4: 'hover:rotate-x-12',
-    5: 'hover:-rotate-y-6 hover:rotate-x-6',
-  }
+  const hoverRotationClasses = [
+    'hover:rotate-y-6 hover:-rotate-x-6',
+    'hover:-rotate-x-12',
+    'hover:-rotate-y-6 hover:-rotate-x-6',
+    'hover:rotate-y-6 hover:rotate-x-6',
+    'hover:rotate-x-12',
+    'hover:-rotate-y-6 hover:rotate-x-6',
+  ]
 
-  const hoverGradientClasses = {
-    0: 'bg-linear-to-br',
-    1: 'bg-linear-to-b',
-    2: 'bg-linear-to-bl',
-    3: 'bg-linear-to-tr',
-    4: 'bg-linear-to-t',
-    5: 'bg-linear-to-tl',
-  }
+  const hoverGradientClasses = [
+    'bg-linear-to-br',
+    'bg-linear-to-b',
+    'bg-linear-to-bl',
+    'bg-linear-to-tr',
+    'bg-linear-to-t',
+    'bg-linear-to-tl',
+  ]
 
   const serviceClasses = [
     'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-start min-w-[20vw] w-full h-full pr-3xl -mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-8',
@@ -137,12 +137,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography
-            tag='h3'
-            type={mounted && isDesktop ? '4xl' : '3xl'}
-            weight='semi-bold'
-            className='z-5'
-          >
+          <Typography tag='h3' type={mounted && isDesktop ? '4xl' : '3xl'} weight='semi-bold'>
             {title}
           </Typography>
         </div>

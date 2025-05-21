@@ -51,7 +51,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
             alt='Maaz Rana'
             fill
             sizes='(max-width: 445px) 95vw, (max-width: 768px) 45vw, 30vw'
-            className={`!aspect-square object-cover  !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 transition-all duration-300 ${
+            className={`!aspect-square object-cover  !relative opacity-50 saturate-0 group-hover:opacity-100 group-hover:saturate-100 !transition-all duration-300 ${
               false && '!opacity-100 !saturate-100'
             }`}
             placeholder='blur'
@@ -62,7 +62,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
               target='_blank'
               aria-label='Upwork Profile'
               rel='noopener noreferrer'
-              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs transition-all duration-300'
+              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs !transition-all duration-300'
             >
               <SiUpwork className='w-s h-s aspect-square' />
             </Link>
@@ -71,7 +71,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
               target='_blank'
               aria-label='LinkedIn Profile'
               rel='noopener noreferrer'
-              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs transition-all duration-300'
+              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs !transition-all duration-300'
             >
               <SiLinkedin className='w-s h-s aspect-square' />
             </Link>
@@ -80,7 +80,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
               target='_blank'
               aria-label='GitHub Profile'
               rel='noopener noreferrer'
-              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs transition-all duration-300'
+              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs !transition-all duration-300'
             >
               <SiGithub className='w-s h-s aspect-square' />
             </Link>
@@ -89,7 +89,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
               target='_blank'
               aria-label='Behance Profile'
               rel='noopener noreferrer'
-              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs transition-all duration-300'
+              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs !transition-all duration-300'
             >
               <SiBehance className='w-s h-s aspect-square' />
             </Link>
@@ -99,7 +99,7 @@ const SocialsSection: FC<SocialsSectionProps> = ({ className }) => {
               target='_blank'
               aria-label='Dribbble Profile'
               rel='noopener noreferrer'
-              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs transition-all duration-300'
+              className='p-s bg-secondary/7 backdrop-blur-sm rounded-full group-hover:bg-secondary/15 hover:-translate-y-2xs !transition-all duration-300'
             >
               <SiDribbble className='w-s h-s aspect-square' />
             </Link>

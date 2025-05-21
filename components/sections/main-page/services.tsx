@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { Sections } from '@/helpers/enums'
 import MainSectionTitle from '@/components/main-section-title'
 import Loader from '@/components/loader'
+import Link from 'next/link'
 
 // Dynamically import viewport-specific components
 const ServiceCard = dynamic(() => import('@/components/cards/service-card'), {
@@ -27,7 +28,11 @@ const Services: FC<ServicesProps> = () => {
       <MainSectionTitle title='Services' />
       <div className='relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-xl sm:gap-2xl items-center justify-between !bg-transparent w-full'>
         {services.map(service => (
-          <div key={service.index}>
+          <Link
+            href={service.href}
+            aria-label={`Visit ${service.title} work page`}
+            key={service.index}
+          >
             <div className='hidden md:block'>
               <ServiceCard
                 title={service.title}
@@ -49,7 +54,7 @@ const Services: FC<ServicesProps> = () => {
                 index={service.index}
               />
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
