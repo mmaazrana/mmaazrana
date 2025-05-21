@@ -74,6 +74,15 @@ const ServiceCard: FC<ServiceCardProps> = ({
     5: 'hover:-rotate-y-6 hover:rotate-x-6',
   }
 
+  const hoverGradientClasses = {
+    0: 'bg-linear-to-br',
+    1: 'bg-linear-to-b',
+    2: 'bg-linear-to-bl',
+    3: 'bg-linear-to-tr',
+    4: 'bg-linear-to-t',
+    5: 'bg-linear-to-tl',
+  }
+
   const serviceClasses = [
     'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-start min-w-[20vw] w-full h-full pr-3xl -mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-8',
     'absolute right-0 2xl:right-1/2 2xl:translate-x-1/2 pointer-events-none z-10 flex justify-center items-start min-w-[20vw] w-full h-full -mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-8',
@@ -104,12 +113,18 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <div
       className={
-        'cursor-pointer service aspect-square w-full !transition-none flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-[1000px] group'
+        'cursor-pointer group service aspect-square w-full !transition-none rounded-3xl flex justify-center lg:align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden perspective-[1000px] group'
       }
     >
       <div
-        className={`relative aspect-square w-full origin-center flex justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden transform-style-3d transition-transform rotate-x-0 rotate-y-0  group ${hoverRotationClasses[index]}`}
+        className={`relative group aspect-square w-full origin-center flex rounded-3xl justify-center align-middle bg-clip-content outline outline-1 outline-transparent backface-hidden transform-style-3d transition-transform rotate-x-0 rotate-y-0  group ${hoverRotationClasses[index]}`}
       >
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary/25 z-1 rounded-3xl mix-blend-soft-light opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]}`}
+        />
+        <div
+          className={`absolute w-full h-full from-primary-accent to-primary via-primary/75 z-1 rounded-3xl mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hoverGradientClasses[index]}`}
+        />
         <div className={serviceClasses[index]}>
           <Image
             src={isDarkMode ? darkSVGs[index] : lightSVGs[index]}
@@ -122,7 +137,12 @@ const ServiceCard: FC<ServiceCardProps> = ({
         <div
           className={`relative border border-transparent bg-clip-content outline outline-1 outline-transparent ${dynamicClasses}`}
         >
-          <Typography tag='h3' type={mounted && isDesktop ? '4xl' : '3xl'} weight='semi-bold'>
+          <Typography
+            tag='h3'
+            type={mounted && isDesktop ? '4xl' : '3xl'}
+            weight='semi-bold'
+            className='z-5'
+          >
             {title}
           </Typography>
         </div>
