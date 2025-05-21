@@ -23,8 +23,8 @@ export default function InActiveCategory({ pathName, category, position }: InAct
       <m.button
         className={`
         hidden about:block absolute cursor-pointer top-1/2 -translate-y-1/2
-        ${isLeft ? 'left-0 -translate-x-3/5' : 'right-0 translate-x-3/5'} 
-        bg-primary-accent whitespace-nowrap px-xl 
+        ${isLeft ? 'left-0 -translate-x-3/5 hover:-translate-x-1/5' : 'right-0 translate-x-3/5 hover:translate-x-1/5'} 
+        bg-primary-accent transition-transform duration-300 whitespace-nowrap px-xl 
       `}
       >
         <m.div

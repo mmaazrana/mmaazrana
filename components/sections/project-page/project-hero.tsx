@@ -63,7 +63,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
         <Link
           href='/portfolio'
           aria-label='Back to Portfolio'
-          className='w-fit bg-primary-accent z-10 relative px-m py-s group'
+          className='w-fit bg-primary-accent z-10 relative px-m py-s group hover:px-4xl !transition-all !duration-300'
         >
           <Button
             className='w-fit pr-3xs gap-2xs group'

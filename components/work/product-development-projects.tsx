@@ -13,10 +13,7 @@ export default function ProductDevelopmentProjects({}: ProductDevelopmentProject
         {/* Desktop Layout */}
         {Array.from({ length: Math.ceil(productDevelopmentProjects.length / 2) }).map(
           (_, groupIndex) => (
-            <div
-              key={groupIndex}
-              className='hidden sm:flex flex-row gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12 '
-            >
+            <div key={groupIndex} className='hidden sm:flex flex-row gap-2xl'>
               {productDevelopmentProjects
                 .slice(groupIndex * 2, groupIndex * 2 + 2)
                 .map((project, i) => (
@@ -35,7 +32,7 @@ export default function ProductDevelopmentProjects({}: ProductDevelopmentProject
         )}
 
         {/* Mobile Layout */}
-        <div className='flex sm:hidden flex-col gap-8 sm:gap-9 md:gap-10 lg:gap-11 xl:gap-12'>
+        <div className='flex sm:hidden flex-col gap-2xl'>
           {productDevelopmentProjects.map((project, i) => (
             <ProjectCardMobile
               key={i}
