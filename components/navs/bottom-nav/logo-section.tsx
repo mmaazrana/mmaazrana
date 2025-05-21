@@ -27,7 +27,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: isEndOfPage ? 1 : 0, y: isEndOfPage ? 0 : 100 }}
           transition={{ duration: 0.25, delay: isEndOfPage ? 0.25 : 0 }}
-          className={`transition-none w-full min-w-full max-w-[32.5rem] inline-block ${isEndOfPage ? 'inline-block' : 'hidden'}`}
+          className={`transition-none w-full min-w-full max-w-[32.5rem] inline-block inline-block`}
         >
           <Link
             href={`/portfolio?tab=${WorkCategories.productDesign}`}

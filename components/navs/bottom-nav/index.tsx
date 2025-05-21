@@ -19,23 +19,18 @@ const BottomNavContent: FC = () => {
   const [scope, animate] = useAnimate()
 
   // Reusable animation configurations
-  const animationConfig = { duration: 0.25, delay: stagger(0.1, { startDelay: 0 }) }
+  const animationConfig = { duration: 0.15, delay: stagger(0.1, { startDelay: 0 }) }
 
   // Memoized animation handlers
   const handleAnimations = useCallback(() => {
-    animate(
-      '#sections',
-      isEndOfPage ? { opacity: 0, scale: 0.3, y: 50 } : { opacity: 1, scale: 1, y: 0 },
-      { duration: isEndOfPage ? 0.25 : 0.15, delay: animationConfig.delay },
-    )
-    animate(
-      '#pages',
-      isEndOfPage ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.3, x: -50 },
-      {
-        duration: isEndOfPage ? 0.25 : 0,
-        delay: isEndOfPage ? stagger(0.05, { startDelay: 0.25 }) : 0,
-      },
-    )
+    animate('#sections', isEndOfPage ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }, {
+      duration: isEndOfPage ? 0.2 : 0.1,
+      delay: animationConfig.delay,
+    })
+    animate('#pages', isEndOfPage ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }, {
+      duration: isEndOfPage ? 0.2 : 0,
+      delay: isEndOfPage ? stagger(0.05, { startDelay: 0.25 }) : 0,
+    })
   }, [isEndOfPage, animate])
 
   // Call handleAnimations when isEndOfPage changes
