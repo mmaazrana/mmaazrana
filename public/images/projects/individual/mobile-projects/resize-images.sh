@@ -1,6 +1,6 @@
 #!/bin/bash
 
-resize_width="480"
+resize_width="550"
 
 find . -type f -name "*.webp" | while read -r file; do
   echo "Resizing: $file"
