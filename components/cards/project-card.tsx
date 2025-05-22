@@ -84,11 +84,12 @@ const ProjectCard: FC<ProjectCardProps> = ({
           </div>
           <Image
             priority
-            className={`relative border-none overflow-hidden ${alt ? `border-2 w-full rounded-md group-hover:scale-[0.55]` : `border-[1.3px] rounded-sm overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-150 group-hover:scale-100 transition-all duration-[400ms]`} origin-top-left transition-transform duration-[400ms] hover:!translate-y-[-6lh] z-3`}
+            className={`relative border-none overflow-hidden ${alt ? `border-2 w-full rounded-md group-hover:scale-[0.55] hover:!translate-y-[-8.5lh]` : `border-[1.3px] rounded-sm overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-140 group-hover:scale-100 transition-all duration-[400ms] hover:!translate-y-[-6lh]`} origin-top-left transition-transform duration-[400ms] z-3`}
+            quality={alt ? 75 : 100}
             sizes={
               alt ?
                 '(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'
-              : '(max-width: 640px) 100vw, (max-width: 1600px) 60vw, 1100px'
+              : '(max-width: 640px) 100vw, (max-width: 1600px) 80vw, 1600px'
             }
             src={image}
             alt={`${title} Banner`}
@@ -96,7 +97,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           {alt && altImage && (
             <Image
               priority
-              className={`relative border-none overflow-hidden border-2 w-full rounded-2xl scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[15%] sm:group-hover:-translate-y-[18%] hover:!translate-y-[-14lh] origin-top-left transition-transform duration-500 z-2`}
+              className={`relative border-none overflow-hidden border-2 w-full rounded-md scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[16%] sm:group-hover:-translate-y-[19%] hover:!translate-y-[-15lh] origin-top-left transition-transform duration-500 z-2`}
               sizes='(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'
               src={altImage}
               alt={`${title} Alternate View`}

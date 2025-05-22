@@ -3,6 +3,7 @@ import inventriosImage from '../public/images/projects/inventrios.webp'
 
 // Individual Project Analysis
 // Alfabolt
+import alfaboltCover from '../public/images/projects/individual/alfabolt/cover.webp'
 import alfaboltCaseStudy from '../public/images/projects/individual/alfabolt/case-study.webp'
 import alfaboltLanding from '../public/images/projects/individual/alfabolt/landing.webp'
 import alfaboltPricing from '../public/images/projects/individual/alfabolt/pricing.webp'
@@ -10,6 +11,7 @@ import alfaboltService from '../public/images/projects/individual/alfabolt/servi
 import alfaboltTechnology from '../public/images/projects/individual/alfabolt/technology.webp'
 
 // Ayla
+import aylaCover from "../public/images/projects/individual/ayla/cover.webp"
 import aylaScan from "../public/images/projects/individual/ayla/scan.webp"
 import aylaSignup from "../public/images/projects/individual/ayla/signup.webp"
 import aylaChat from "../public/images/projects/individual/ayla/chat.webp"
@@ -19,6 +21,7 @@ import aylaSettings from "../public/images/projects/individual/ayla/settings.web
 import aylaTalk from "../public/images/projects/individual/ayla/talk.webp"
 
 // Athleton
+import athletonCover from "../public/images/projects/individual/athleton/cover.webp"
 import athletonBookAppointment from "../public/images/projects/individual/athleton/book-appointment.webp"
 import athletonExercise from "../public/images/projects/individual/athleton/exercise.webp"
 import athletonProfile from "../public/images/projects/individual/athleton/profile.webp"
@@ -28,6 +31,7 @@ import athletonPayments from "../public/images/projects/individual/athleton/paym
 import athletonWorkouts from "../public/images/projects/individual/athleton/workouts.webp"
 
 // Tutorania
+import tutoraniaCover from "../public/images/projects/individual/tutorania/cover.webp"
 import tutoraniaAdmin from "../public/images/projects/individual/tutorania/admin.webp"
 import tutoraniaSignup2 from "../public/images/projects/individual/tutorania/signup-2.webp"
 import tutoraniaTutor from "../public/images/projects/individual/tutorania/tutor.webp"
@@ -35,6 +39,7 @@ import tutoraniaTutors from "../public/images/projects/individual/tutorania/tuto
 import tutoraniaSignup from "../public/images/projects/individual/tutorania/signup.webp"
 
 // Super Duper
+import superDuperCover from "../public/images/projects/individual/super-duper/cover.webp"
 import superDuperContact from "../public/images/projects/individual/super-duper/contact.webp"
 import superDuperEvent from "../public/images/projects/individual/super-duper/event.webp"
 import superDuperService from "../public/images/projects/individual/super-duper/service.webp"
@@ -42,6 +47,7 @@ import superDuperAbout from "../public/images/projects/individual/super-duper/ab
 import superDuperLanding from "../public/images/projects/individual/super-duper/landing.webp"
 
 // Smart Catch
+import smartCatchCover from "../public/images/projects/individual/smart-catch/cover.webp"
 import smartCatchFish from "../public/images/projects/individual/smart-catch/fish.webp"
 import smartCatchForum from "../public/images/projects/individual/smart-catch/forum.webp"
 import smartCatchLanding from "../public/images/projects/individual/smart-catch/landing.webp"
@@ -51,6 +57,7 @@ import smartCatchHotspot from "../public/images/projects/individual/smart-catch/
 import smartCatchProfile from "../public/images/projects/individual/smart-catch/profile.webp"
 
 // Robin
+import robinCover from "../public/images/projects/individual/robin/cover.webp"
 import robinForm from "../public/images/projects/individual/robin/form.webp"
 import robinLanding1 from "../public/images/projects/individual/robin/landing-1.webp"
 import robinLanding2 from "../public/images/projects/individual/robin/landing-2.webp"
@@ -58,6 +65,7 @@ import robinSignup from "../public/images/projects/individual/robin/signup.webp"
 import robinSkin from "../public/images/projects/individual/robin/skin.webp"
 
 // Rivanna
+import rivannaCover from "../public/images/projects/individual/rivanna/cover.webp"
 import rivannaLanding3 from "../public/images/projects/individual/rivanna/landing-3.webp"
 import rivannaAbout from "../public/images/projects/individual/rivanna/about.webp"
 import rivannaLanding1 from "../public/images/projects/individual/rivanna/landing-1.webp"
@@ -65,6 +73,7 @@ import rivannaLanding2 from "../public/images/projects/individual/rivanna/landin
 import rivannaPrice from "../public/images/projects/individual/rivanna/price.webp"
 
 // Pools 515
+import pools515Cover from "../public/images/projects/individual/pools-515/cover.webp"
 import pools515BookAppointment from "../public/images/projects/individual/pools-515/book-appointment.webp"
 import pools515Inspection from "../public/images/projects/individual/pools-515/inspection.webp"
 import pools515MyAppointment from "../public/images/projects/individual/pools-515/my-appointment.webp"
@@ -74,6 +83,7 @@ import pools515Result from "../public/images/projects/individual/pools-515/resul
 import pools515Landing from "../public/images/projects/individual/pools-515/landing.webp"
 
 // Nutrigram
+import nutrigramCover from "../public/images/projects/individual/nutrigram/cover.webp"
 import nutrigramAddItem from "../public/images/projects/individual/nutrigram/add-item.webp"
 import nutrigramFriends from "../public/images/projects/individual/nutrigram/friends.webp"
 import nutrigramHeight from "../public/images/projects/individual/nutrigram/height.webp"
@@ -83,6 +93,7 @@ import nutrigramLanding from "../public/images/projects/individual/nutrigram/lan
 import nutrigramWelcome from "../public/images/projects/individual/nutrigram/welcome.webp"
 
 // Menu
+import menuCover from "../public/images/projects/individual/menu/cover.webp"
 import menuEvent from "../public/images/projects/individual/menu/event.webp"
 import menuOrder from "../public/images/projects/individual/menu/order.webp"
 import menuSearch from "../public/images/projects/individual/menu/search.webp"
@@ -92,6 +103,7 @@ import menuMenu from "../public/images/projects/individual/menu/menu.webp"
 import menuRestaurant from "../public/images/projects/individual/menu/restaurant.webp"
 
 // Markdown
+import markdownCover from "../public/images/projects/individual/markdown/cover.webp"
 import markdownNote from "../public/images/projects/individual/markdown/note.webp"
 import markdownTableSize from "../public/images/projects/individual/markdown/table-size.webp"
 import markdownTable from "../public/images/projects/individual/markdown/table.webp"
@@ -101,6 +113,7 @@ import markdownSearch from "../public/images/projects/individual/markdown/search
 import markdownLanding from "../public/images/projects/individual/markdown/landing.webp"
 
 // Jawline
+import jawlineCover from "../public/images/projects/individual/jawline/cover.webp"
 import jawlineWelcome from "../public/images/projects/individual/jawline/welcome.webp"
 import jawlineAge from "../public/images/projects/individual/jawline/age.webp"
 import jawlineCalendar from "../public/images/projects/individual/jawline/calendar.webp"
@@ -110,6 +123,7 @@ import jawlineRest from "../public/images/projects/individual/jawline/rest.webp"
 import jawlineSettings from "../public/images/projects/individual/jawline/settings.webp"
 
 // Interview
+import interviewCover from "../public/images/projects/individual/interview/cover.webp"
 import interviewCalendar from "../public/images/projects/individual/interview/calendar.webp"
 import interviewNote from "../public/images/projects/individual/interview/note.webp"
 import interviewProfile from "../public/images/projects/individual/interview/profile.webp"
@@ -119,6 +133,7 @@ import interviewFriends from "../public/images/projects/individual/interview/fri
 import interviewProblems from "../public/images/projects/individual/interview/problems.webp"
 
 // Humanizar
+import humanizarCover from "../public/images/projects/individual/humanizar/cover.webp"
 import humanizarHumanizar from "../public/images/projects/individual/humanizar/humanizar.webp"
 import humanizarSubscription from "../public/images/projects/individual/humanizar/subscription.webp"
 import humanizarActivePlan from "../public/images/projects/individual/humanizar/active-plan.webp"
@@ -128,6 +143,7 @@ import humanizarPremium from "../public/images/projects/individual/humanizar/pre
 import humanizarPayment from "../public/images/projects/individual/humanizar/payment.webp"
 
 // Equanimity
+import equanimityCover from "../public/images/projects/individual/equanimity/cover.webp"
 import equanimityForm from "../public/images/projects/individual/equanimity/form.webp"
 import equanimitySignin from "../public/images/projects/individual/equanimity/signin.webp"
 import equanimityChat from "../public/images/projects/individual/equanimity/chat.webp"
@@ -135,6 +151,7 @@ import equanimityFunds from "../public/images/projects/individual/equanimity/fun
 import equanimityInfo from "../public/images/projects/individual/equanimity/info.webp"
 
 // El Brezal
+import elBrezalCover from "../public/images/projects/individual/el-brezal/cover.webp"
 import elBrezalBlog from "../public/images/projects/individual/el-brezal/blog.webp"
 import elBrezalCatalogue from "../public/images/projects/individual/el-brezal/catalogue.webp"
 import elBrezalContact from "../public/images/projects/individual/el-brezal/contact.webp"
@@ -142,6 +159,7 @@ import elBrezalCookbook from "../public/images/projects/individual/el-brezal/coo
 import elBrezalLanding from "../public/images/projects/individual/el-brezal/landing.webp"
 
 // DeepReel
+import deepreelCover from "../public/images/projects/individual/deepreel/cover.webp"
 import deepreelAvatars from "../public/images/projects/individual/deepreel/avatars.webp"
 import deepreelHome from "../public/images/projects/individual/deepreel/home.webp"
 import deepreelMain from "../public/images/projects/individual/deepreel/main.webp"
@@ -149,6 +167,7 @@ import deepreelSignin from "../public/images/projects/individual/deepreel/signin
 import deepreelVideos from "../public/images/projects/individual/deepreel/videos.webp"
 
 // DeepReel Website
+import deepreelWebsiteCover from "../public/images/projects/individual/deepreel-website/cover.webp"
 import deepreelWebsiteLanding from "../public/images/projects/individual/deepreel-website/landing.webp"
 import deepreelWebsiteLanding2 from "../public/images/projects/individual/deepreel-website/landing-2.webp"
 import deepreelWebsiteLanding3 from "../public/images/projects/individual/deepreel-website/landing-3.webp"
@@ -156,6 +175,7 @@ import deepreelWebsiteLanding4 from "../public/images/projects/individual/deepre
 import deepreelWebsiteLanding5 from "../public/images/projects/individual/deepreel-website/landing-5.webp"
 
 // DeepReel Canva
+import deepreelCanvaCover from "../public/images/projects/individual/deepreel-canva/cover.webp"
 import deepreelCanvaAssets from "../public/images/projects/individual/deepreel-canva/assets.webp"
 import deepreelCanvaAvatars from "../public/images/projects/individual/deepreel-canva/avatar.webp"
 import deepreelCanvaCreateVoice from "../public/images/projects/individual/deepreel-canva/create-voice.webp"
@@ -166,6 +186,7 @@ import deepreelCanvaVoice from "../public/images/projects/individual/deepreel-ca
 
 
 // Beacon Tutor Website
+import beaconTutorWebsiteCover from "../public/images/projects/individual/beacon-tutor-website/cover.webp"
 import beaconTutorWebsiteHomeTutor from "../public/images/projects/individual/beacon-tutor-website/home-tutor.webp"
 import beaconTutorWebsiteInquiry from "../public/images/projects/individual/beacon-tutor-website/inquiry.webp"
 import beaconTutorWebsiteProfile from "../public/images/projects/individual/beacon-tutor-website/profile.webp"
@@ -173,6 +194,7 @@ import beaconTutorWebsiteWork from "../public/images/projects/individual/beacon-
 import beaconTutorWebsiteLanding from "../public/images/projects/individual/beacon-tutor-website/landing.webp"
 
 // Beacon Tutor CRM
+import beaconTutorCrmCover from "../public/images/projects/individual/beacon-tutor-crm/cover.webp"
 import beaconTutorCrmDemoStudent from "../public/images/projects/individual/beacon-tutor-crm/demo-student.webp"
 import beaconTutorCrmMoveInquiry from "../public/images/projects/individual/beacon-tutor-crm/move-inquiry.webp"
 import beaconTutorCrmDemoTeacher from "../public/images/projects/individual/beacon-tutor-crm/demo-teacher.webp"
@@ -180,6 +202,7 @@ import beaconTutorCrmInquiries from "../public/images/projects/individual/beacon
 import beaconTutorCrmSignin from "../public/images/projects/individual/beacon-tutor-crm/signin.webp"
 
 // Beacon Tutor Admin Panel
+import beaconTutorAdminPanelCover from "../public/images/projects/individual/beacon-tutor-admin-panel/cover.webp"
 import beaconTutorAdminPanelAnnouncements from "../public/images/projects/individual/beacon-tutor-admin-panel/announcements.webp"
 import beaconTutorAdminPanelApprovals from "../public/images/projects/individual/beacon-tutor-admin-panel/approvals.webp"
 import beaconTutorAdminPanelInquiries from "../public/images/projects/individual/beacon-tutor-admin-panel/inquiries.webp"
@@ -605,7 +628,7 @@ export const projectNotFound: ProjectAnalysisT = {
     },
   ],
   isMobile: false,
-  images: { main: alfaboltLanding, screenshots: [elBrezalLanding, alfaboltLanding, superDuperLanding, robinLanding1, beaconTutorWebsiteLanding, ] },
+  images: { main: alfaboltCover, screenshots: [elBrezalLanding, alfaboltLanding, superDuperLanding, robinLanding1, beaconTutorWebsiteLanding, ] },
 }
 
 export const pools515: ProjectAnalysisT = {
@@ -778,7 +801,7 @@ export const pools515: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: pools515Landing, screenshots: [pools515BookAppointment, pools515Inspection, pools515MyAppointment, pools515Notification, pools515RegisterPool, pools515Result, pools515Landing] },
+  images: { main: pools515Cover, screenshots: [pools515BookAppointment, pools515Inspection, pools515MyAppointment, pools515Notification, pools515RegisterPool, pools515Result, pools515Landing] },
 }
 
 export const beaconTutors: ProjectAnalysisT = {
@@ -917,7 +940,7 @@ export const beaconTutors: ProjectAnalysisT = {
     },
   ],
   images: {
-    main: beaconTutorWebsiteLanding,
+    main: beaconTutorWebsiteCover,
     screenshots: [beaconTutorWebsiteHomeTutor, beaconTutorWebsiteInquiry, beaconTutorWebsiteProfile, beaconTutorWebsiteWork, beaconTutorWebsiteLanding],
   },
 }
@@ -1074,7 +1097,7 @@ export const deepReelAI: ProjectAnalysisT = {
       icon: techStackIcons.afterEffects,
     },
   ],
-  images: { main: deepreelMain, screenshots: [deepreelAvatars, deepreelHome, deepreelMain, deepreelSignin, deepreelVideos] },
+  images: { main: deepreelCover, screenshots: [deepreelAvatars, deepreelHome, deepreelMain, deepreelSignin, deepreelVideos] },
   liveUrl: 'https://www.deepreel.com',
   figmaUrl: 'https://www.figma.com/file/bL6OgmMDRezGXZaeupEpRK/DeepReel-App?type=design&t=6DHVcRDaxx0cR1y8-6',
 }
@@ -1215,7 +1238,7 @@ export const jawlineFitness: ProjectAnalysisT = {
   ],
   isMobile: true,
   figmaUrl: 'https://www.figma.com/file/RYgvlNAvgk7smmW3vfroZb/Jawline-App?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
-  images: { main: jawlineWelcome, screenshots: [jawlineLanding, jawlineWelcome, jawlineAge, jawlineCalendar, jawlineExercise, jawlineRest, jawlineSettings] },
+  images: { main: jawlineCover, screenshots: [jawlineLanding, jawlineWelcome, jawlineAge, jawlineCalendar, jawlineExercise, jawlineRest, jawlineSettings] },
 }
 
 export const codingInterviewPrep: ProjectAnalysisT = {
@@ -1339,7 +1362,7 @@ export const codingInterviewPrep: ProjectAnalysisT = {
   ],
   figmaUrl: 'https://www.figma.com/file/0GudqTFxV15azS8ScJmGjS/Interview-Preparation-App?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
   isMobile: true,
-  images: { main: interviewTask, screenshots: [interviewCalendar, interviewNote, interviewProfile, interviewTask, interviewVideo, interviewFriends, interviewProblems] },
+  images: { main: interviewCover, screenshots: [interviewCalendar, interviewNote, interviewProfile, interviewTask, interviewVideo, interviewFriends, interviewProblems] },
 }
 
 export const equanimity: ProjectAnalysisT = {
@@ -1443,7 +1466,7 @@ export const equanimity: ProjectAnalysisT = {
   ],
   figmaUrl: 'https://www.figma.com/file/2Lw4usQkp70Q7F248eOlW4/Equinimity?type=design&t=6DHVcRDaxx0cR1y8-6',
   images: {
-    main: equanimityFunds,
+    main: equanimityCover,
     screenshots: [equanimityForm, equanimitySignin, equanimityChat, equanimityFunds, equanimityInfo],
   },
 }
@@ -1560,7 +1583,7 @@ export const aylaAI: ProjectAnalysisT = {
   ],
   isMobile: true,
   figmaUrl: 'https://www.figma.com/file/FOUXpNSWGUyNNWYlrT6hJa/AYLA-Mobile-App?type=design&node-id=11%3A1833&mode=design&t=6JTlSa1hexbRNbSz-1',
-  images: { main: aylaSignup, screenshots: [aylaScan, aylaSignup, aylaChat, aylaProfile, aylaReminders, aylaSettings, aylaTalk] },
+  images: { main: aylaCover, screenshots: [aylaScan, aylaSignup, aylaChat, aylaProfile, aylaReminders, aylaSettings, aylaTalk] },
 }
 
 // @TODO: Update Content
@@ -1657,7 +1680,7 @@ export const deepReelCanva: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: deepreelCanvaVideo, screenshots: [deepreelCanvaVoice, deepreelCanvaAssets, deepreelCanvaCreateVoice, deepreelCanvaGetCredits, deepreelCanvaSettings, deepreelCanvaAvatars, deepreelCanvaVideo] },
+  images: { main: deepreelCanvaCover, screenshots: [deepreelCanvaVoice, deepreelCanvaAssets, deepreelCanvaCreateVoice, deepreelCanvaGetCredits, deepreelCanvaSettings, deepreelCanvaAvatars, deepreelCanvaVideo] },
   liveUrl: 'https://www.canva.com/apps/deepreel',
 }
 
@@ -1772,7 +1795,7 @@ export const beaconTutorsAdmin: ProjectAnalysisT = {
   ],
   figmaUrl: 'https://www.figma.com/file/qV3dnZyCI4FG5cxobVLueC/Beacon-Tutors-UI?type=design&mode=design&t=6DHVcRDaxx0cR1y8-0',
   images: {
-    main: beaconTutorAdminPanelReviews,
+    main: beaconTutorAdminPanelCover,
     screenshots: [beaconTutorAdminPanelAnnouncements, beaconTutorAdminPanelApprovals, beaconTutorAdminPanelInquiries, beaconTutorAdminPanelReviews, beaconTutorAdminPanelSignin],
   },
 }
@@ -1871,7 +1894,7 @@ export const markdownEditor: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: markdownTableSize, screenshots: [markdownNote, markdownTableSize, markdownTable, markdownAttachments, markdownLandingGrid, markdownSearch, markdownLanding] },
+  images: { main: markdownCover, screenshots: [markdownNote, markdownTableSize, markdownTable, markdownAttachments, markdownLandingGrid, markdownSearch, markdownLanding] },
 }
 
 export const menuHub: ProjectAnalysisT = {
@@ -1971,7 +1994,7 @@ export const menuHub: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: menuRestaurant, screenshots: [menuEvent, menuOrder, menuSearch, menuSpaces, menuTables, menuMenu, menuRestaurant] },
+  images: { main: menuCover, screenshots: [menuEvent, menuOrder, menuSearch, menuSpaces, menuTables, menuMenu, menuRestaurant] },
 }
 
 export const nutrigram: ProjectAnalysisT = {
@@ -2066,7 +2089,7 @@ export const nutrigram: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: nutrigramLandingDetails, screenshots: [nutrigramHeight, nutrigramAddItem, nutrigramFriends, nutrigramItemDetails, nutrigramLandingDetails, nutrigramLanding, nutrigramWelcome] },
+  images: { main: nutrigramCover, screenshots: [nutrigramHeight, nutrigramAddItem, nutrigramFriends, nutrigramItemDetails, nutrigramLandingDetails, nutrigramLanding, nutrigramWelcome] },
 }
 
 export const athletonPlus: ProjectAnalysisT = {
@@ -2178,7 +2201,7 @@ export const athletonPlus: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: athletonExercise, screenshots: [athletonBookAppointment, athletonExercise, athletonProfile, athletonSignup, athletonAddProgram, athletonPayments, athletonWorkouts] },
+  images: { main: athletonCover, screenshots: [athletonBookAppointment, athletonExercise, athletonProfile, athletonSignup, athletonAddProgram, athletonPayments, athletonWorkouts] },
 }
 
 export const beaconTutorsCRM: ProjectAnalysisT = {
@@ -2260,7 +2283,7 @@ export const beaconTutorsCRM: ProjectAnalysisT = {
       icon: techStackIcons.illustrator,
     },
   ],
-  images: { main: beaconTutorCrmInquiries, screenshots: [beaconTutorCrmDemoStudent, beaconTutorCrmMoveInquiry, beaconTutorCrmDemoTeacher, beaconTutorCrmInquiries, beaconTutorCrmSignin] },
+  images: { main: beaconTutorCrmCover, screenshots: [beaconTutorCrmDemoStudent, beaconTutorCrmMoveInquiry, beaconTutorCrmDemoTeacher, beaconTutorCrmInquiries, beaconTutorCrmSignin] },
 }
 
 // @TODO: Update Content
@@ -2447,7 +2470,7 @@ export const superDuperStudio: ProjectAnalysisT = {
       icon: techStackIcons.illustrator,
     },
   ],
-  images: { main: superDuperLanding, screenshots: [superDuperContact, superDuperEvent, superDuperService, superDuperAbout, superDuperLanding] },
+  images: { main: superDuperCover, screenshots: [superDuperContact, superDuperEvent, superDuperService, superDuperAbout, superDuperLanding] },
 }
 
 export const deepReelWebsite: ProjectAnalysisT = {
@@ -2577,7 +2600,7 @@ export const deepReelWebsite: ProjectAnalysisT = {
       icon: techStackIcons.afterEffects,
     },
   ],
-  images: { main: deepreelWebsiteLanding, screenshots: [deepreelWebsiteLanding, deepreelWebsiteLanding2, deepreelWebsiteLanding3, deepreelWebsiteLanding4, deepreelWebsiteLanding5] },
+  images: { main: deepreelWebsiteCover , screenshots: [deepreelWebsiteLanding, deepreelWebsiteLanding2, deepreelWebsiteLanding3, deepreelWebsiteLanding4, deepreelWebsiteLanding5] },
   liveUrl: 'https://www.deepreel.com',
 }
 
@@ -2766,7 +2789,7 @@ export const alfabolt: ProjectAnalysisT = {
     { title: 'Blender', usage: '3D Mockups & Rendering', icon: techStackIcons.blender },
   ],
   images: {
-    main: alfaboltLanding,
+    main: alfaboltCover,
     screenshots: [
       alfaboltCaseStudy,
       alfaboltPricing,
@@ -2969,7 +2992,7 @@ export const tutorania: ProjectAnalysisT = {
       icon: techStackIcons.premierePro,
     },
   ],
-  images: { main: tutoraniaSignup2, screenshots: [tutoraniaAdmin, tutoraniaSignup2, tutoraniaTutor, tutoraniaTutors, tutoraniaSignup] },
+  images: { main: tutoraniaCover, screenshots: [tutoraniaAdmin, tutoraniaSignup2, tutoraniaTutor, tutoraniaTutors, tutoraniaSignup] },
 }
 
 export const rivannaProduct: ProjectAnalysisT = {
@@ -3052,7 +3075,7 @@ export const rivannaProduct: ProjectAnalysisT = {
       icon: { Icon: SiReactquery, props: { fill: '#0052CC' } },
     },
   ],
-  images: { main: rivannaLanding1, screenshots: [rivannaLanding3, rivannaAbout, rivannaLanding1, rivannaLanding2, rivannaPrice] },
+  images: { main: rivannaCover, screenshots: [rivannaLanding3, rivannaAbout, rivannaLanding1, rivannaLanding2, rivannaPrice] },
 }
 
 export const rivanna: ProjectAnalysisT = {
@@ -3148,7 +3171,7 @@ export const rivanna: ProjectAnalysisT = {
       icon: techStackIcons.illustrator,
     },
   ],
-  images: { main: rivannaLanding1, screenshots: [rivannaLanding3, rivannaAbout, rivannaLanding1, rivannaLanding2, rivannaPrice] },
+  images: { main: rivannaCover, screenshots: [rivannaLanding3, rivannaAbout, rivannaLanding1, rivannaLanding2, rivannaPrice] },
 }
 
 export const humanizarTexto: ProjectAnalysisT = {
@@ -3247,7 +3270,7 @@ export const humanizarTexto: ProjectAnalysisT = {
   ],
   isMobile: true,
   testimonial: testimonialsData['kueenz'],
-  images: { main: humanizarLanding, screenshots: [humanizarHumanizar, humanizarSubscription, humanizarActivePlan, humanizarLanding, humanizarPlans, humanizarPremium, humanizarPayment] },
+  images: { main: humanizarCover, screenshots: [humanizarHumanizar, humanizarSubscription, humanizarActivePlan, humanizarLanding, humanizarPlans, humanizarPremium, humanizarPayment] },
 }
 
 export const smartCatch: ProjectAnalysisT = {
@@ -3352,7 +3375,7 @@ export const smartCatch: ProjectAnalysisT = {
     },
   ],
   isMobile: true,
-  images: { main: smartCatchLanding, screenshots: [smartCatchFish, smartCatchForum, smartCatchLanding, smartCatchSignin, smartCatchThread, smartCatchHotspot, smartCatchProfile] },
+  images: { main: smartCatchCover, screenshots: [smartCatchFish, smartCatchForum, smartCatchLanding, smartCatchSignin, smartCatchThread, smartCatchHotspot, smartCatchProfile] },
 }
 
 export const elBrezal: ProjectAnalysisT = {
@@ -3470,7 +3493,7 @@ export const elBrezal: ProjectAnalysisT = {
       icon: techStackIcons.illustrator,
     },
   ],
-  images: { main: elBrezalLanding, screenshots: [elBrezalBlog, elBrezalCatalogue, elBrezalContact, elBrezalCookbook, elBrezalLanding] },
+  images: { main: elBrezalCover, screenshots: [elBrezalBlog, elBrezalCatalogue, elBrezalContact, elBrezalCookbook, elBrezalLanding] },
 }
 
 export const robinBeauty: ProjectAnalysisT = {
@@ -3583,7 +3606,7 @@ export const robinBeauty: ProjectAnalysisT = {
       icon: techStackIcons.illustrator,
     },
   ],
-  images: { main: robinLanding1, screenshots: [robinForm, robinLanding1, robinLanding2, robinSignup, robinSkin] },
+  images: { main: robinCover, screenshots: [robinForm, robinLanding1, robinLanding2, robinSignup, robinSkin] },
 }
 
 export const projectsAnalysis: ProjectAnalysisT[] = [
