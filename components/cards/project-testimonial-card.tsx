@@ -93,7 +93,7 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
           <Link
             aria-label={`View All Projects with ${testimonialData.companyName}`}
             href={`/clients?openProjects=${testimonialData.key}#${getClientId(testimonialData.key)}`}
-            className='max-w-full flex flex-col sm:flex-row justify-center items-start sm:items-center gap-xs sm:gap-m pr-s pl-m py-m sm:py-xs bg-secondary-hover/75 hover:bg-secondary/25 transition-all duration-300 rounded-xl sm:rounded-full'
+            className='max-w-full flex flex-col sm:flex-row justify-center items-start sm:items-center gap-xs sm:gap-m pr-s pl-m py-m sm:py-xs bg-secondary-hover/75 hover:bg-secondary/25 !transition-all duration-300 rounded-xl sm:rounded-full'
           >
             {productsInvolved && (
               <div className='flex flex-row gap-2xs'>
@@ -109,7 +109,7 @@ const ProjectTestimonialCard: FC<ProjectTestimonialCardProps> = ({ testimonialDa
               textColor='primary-hover'
               text={`View All Projects ${testimonialData.companyName === '' ? '' : 'with'} ${testimonialData.companyName}`}
               rightIcon={<ArrowRight className='self-center w-m h-m stroke-2 stroke-secondary' />}
-              className='items-end sm:items-center'
+              className='items-end sm:items-center '
             />
           </Link>
         </div>

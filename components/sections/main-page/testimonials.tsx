@@ -41,7 +41,7 @@ const Testimonials: FC<TestimonialsProps> = () => {
     <section
       ref={sectionRef}
       id={Sections.testimonials}
-      className={'px-4xl gap-4xl flex items-start justify-center flex-col w-full'}
+      className={'px-4xl py-l gap-2xl flex items-start justify-center flex-col w-full'}
     >
       <MainSectionTitle title='Testimonials' buttonText='Clients' href='/clients' />
       <motion.div className='embla w-full'>

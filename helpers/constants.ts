@@ -421,15 +421,14 @@ export const productDesignProjects: ProjectAnalysisT[] = [
   deepReelAI,
   deepReelWebsite,
   menuHub,
+  nutrigram,
   beaconTutors,
   beaconTutorsAdmin,
-  equanimity,
-  nutrigram,
   jawlineFitness,
-  rivanna,
-  beaconTutorsCRM,
   codingInterviewPrep,
-  inventrios,
+  equanimity,
+  rivanna,
+  deepReelCanva,
 ]
 
 export const productDevelopmentProjects: ProjectAnalysisT[] = [
@@ -440,7 +439,7 @@ export const productDevelopmentProjects: ProjectAnalysisT[] = [
   tutorania,
   beaconTutors,
   beaconTutorsAdmin,
-  inventrios,
+  deepReelAI,
 ]
 
 export const videoProjects: VideoProjectT[] = [
