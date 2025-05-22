@@ -29,7 +29,9 @@ const ProjectCard: FC<ProjectCardProps> = ({
   const ClientLogo = testimonialKey ? getClientLogo(testimonialKey) : null
 
   return (
-    <div className='relative group overflow-hidden rounded-3xl'>
+    <div
+      className={`relative group overflow-hidden rounded-3xl ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-[35%]' : 'flex-1 md:basis-3/5 lg:basis-[65%]'}`}
+    >
       <div className='absolute flex flex-row justify-center items-center p-xs right-s top-s bg-primary-invert/40 rounded-full z-2 translate-y-[-200%] group-hover:translate-y-0 duration-300'>
         <ChevronRight className='w-s h-s stroke-primary/75' />
       </div>
@@ -66,7 +68,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <Link aria-label={`View ${title} - ${description}`} href={`/work/${getPageSlug(title)}`}>
         <div
           id='project'
-          className={`drop-shadow-product cursor-pointer group work overflow-hidden h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-xl p-3xl ${alt ? 'sm:basis-60 md:basis-2/5 lg:basis-1/3' : 'flex-1 md:basis-3/5 lg:basis-2/3 '} transition-all duration-300 scroll-smooth`}
+          className={`drop-shadow-product cursor-pointer group work overflow-hidden h-[320px] sm:h-[384px] md:h-[448px] lg:h-[512px] xl:h-[576px] items-start bg-secondary-hover rounded-3xl grid gap-xl p-3xl transition-all duration-300 scroll-smooth`}
         >
           <div className='absolute flex w-full -bottom-1 h-[60%] mix-blend-overlay backdrop-blur-3xl mask-to-b pointer-events-none z-5 opacity-0 group-hover:opacity-100 transition-opacity duration-600' />
           <div className='absolute flex w-full -bottom-1 h-[60%] mix-blend-overlay bg-white mask-to-b-white pointer-events-none z-5 opacity-0 group-hover:opacity-100 transition-opacity duration-600' />
