@@ -96,15 +96,16 @@ export default function ProjectOverview({
                             key={index}
                             className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
                               index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
-                            } ${isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[20rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
+                            } ${isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[17.5rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
                     ${index === 0 && 'ml-0'} ${index === screenshots.length - 1 && 'mr-0'}`}
                           >
                             <Image
                               src={screenshot}
                               alt={`${title} screenshot ${index + 1}`}
                               loading='lazy'
+                              quality={99}
                               placeholder='blur'
-                              sizes='(max-width: 444px) 100vw, (max-width: 768px) 50vw, 20vw'
+                              sizes='(max-width: 444px) 100vw, (max-width: 768px) 60vw, 30vw'
                               className='w-full h-full'
                             />
                           </div>
