@@ -361,7 +361,7 @@ export const testimonialsData: TestimonialsT = {
   [TestimonialClients.rivanna] : {
     key: TestimonialClients.rivanna,
     testimonial:
-      'Working with Maaz on our Ayla and Rivanna was incredibly smooth. He helped develop the app and the website from scratch, and tailored the design to the needs of the users.',
+      'Working with Maaz on Ayla and Rivanna was incredibly smooth. He helped design the app and the website from scratch, and tailored the design to the needs of our users.',
     client: 'Peter',
     designation: 'Founder, Rivanna',
     companyName: 'Rivanna',
@@ -378,7 +378,7 @@ export const testimonialsData: TestimonialsT = {
     key: TestimonialClients.inventrios,
     testimonial:
       'The logos and branding materials Maaz designed for MenuHub perfectly communicate our value proposition. His ability to translate our vision into visual elements that resonate with our target audience is remarkable.',
-    client: 'David Chen',
+    client: 'Dave',
     designation: 'Founder, MenuHub',
     companyName: 'Inventrios',
   },
@@ -409,9 +409,9 @@ export const testimonialsData: TestimonialsT = {
   [TestimonialClients.nustac] : {
     key: TestimonialClients.nustac,
     testimonial:
-      'The Beacon Tutors platform Maaz developed streamlined our entire tutoring operation. From the admin dashboard to the student interface, every element was thoughtfully designed and flawlessly executed.',
-    client: 'Imran Haider',
-    designation: 'Founder, Beacon Tutors Pakistan',
+      "I've had the pleasure of working with Maaz since his very first year, and it's been incredible to witness his growth firsthand. From starting out in graphic design to mastering a wide range of design and development skills, Maaz has consistently impressed me with his curiosity, dedication, and willingness to take on new challenges. One of the things that stands out about Maaz is his commitment to excellence—whether he's designing or developing, he never compromises on quality. It's rare to find someone with such a diverse skill set who can truly deliver across disciplines. His eye for design, even as a developer, is exceptional. We've collaborated on multiple community initiatives and projects, and Maaz has always been a dependable teammate. He’s someone you can count on to deliver results and also bring positive energy to the team. Beyond his technical abilities, he’s approachable, humble, and always ready to guide others. If you're looking for someone who not only delivers high-quality work but also uplifts the entire team through collaboration, creativity, and initiative—Maaz is that person. His ability to balance technical precision with design excellence, all while being an approachable and supportive teammate, makes him a rare talent and an asset to any team or project.",      
+    client: 'Alina Shoaib',
+    designation: 'Co-Founder, Nustac Technologies',
     companyName: 'Nustac Technologies',
   },
 }

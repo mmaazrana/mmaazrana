@@ -22,7 +22,7 @@ export default function InActiveCategory({ pathName, category, position }: InAct
     >
       <m.button
         className={`
-        hidden about:block absolute cursor-pointer top-1/2 -translate-y-1/2
+        hidden about:block absolute cursor-pointer top-1/2 -translate-y-1/2 group
         ${isLeft ? 'left-0 -translate-x-3/5 hover:-translate-x-1/5' : 'right-0 translate-x-3/5 hover:translate-x-1/5'} 
         bg-primary-accent transition-transform duration-300 whitespace-nowrap px-xl 
       `}
@@ -38,7 +38,12 @@ export default function InActiveCategory({ pathName, category, position }: InAct
           }}
           key={category.key}
         >
-          <Typography tag='h2' type='4xl' weight='extra-bold' className='opacity-50'>
+          <Typography
+            tag='h2'
+            type='4xl'
+            weight='extra-bold'
+            className='opacity-50 group-hover:opacity-100 !transition-opacity duration-300'
+          >
             {category.text}
           </Typography>
         </m.div>

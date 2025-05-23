@@ -55,7 +55,7 @@ const Dropdown: FC<DropdownProps> = ({ title, items }) => {
   return (
     <li
       ref={dropdownRef}
-      className='relative self-center'
+      className='relative self-center mt-3xs mb-2xs nav:mb-0 nav:mt-0 border-b border-secondary/50 nav:border-none'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -65,7 +65,7 @@ const Dropdown: FC<DropdownProps> = ({ title, items }) => {
         aria-haspopup='true'
         aria-expanded={isOpen}
         aria-label={`${title} Dropdown`}
-        className='flex items-center py-xs px-m gap-2xs rounded-full hover:bg-secondary-hover justify-start nav:justify-center items-center w-full nav:w-auto  transition-colors duration-200 font-light group'
+        className='flex items-center pt-xs pb-s nav:pb-xs px-m gap-2xs rounded-full hover:bg-secondary-hover justify-between nav:justify-center items-center w-full nav:w-auto !transition-colors duration-200 font-light group'
       >
         <Typography type='xl' weight='light'>
           {title}
@@ -78,7 +78,7 @@ const Dropdown: FC<DropdownProps> = ({ title, items }) => {
       <div
         className={`
             nav:hidden
-            overflow-hidden transition-all duration-300 ease-in-out
+            overflow-hidden !transition-all duration-300 ease-in-out
             ${isOpen ? 'max-h-96 opacity-100 mb-xs mt-2xs' : 'max-h-0 opacity-0'}
         `}
       >
@@ -117,7 +117,7 @@ const Dropdown: FC<DropdownProps> = ({ title, items }) => {
               <Link
                 href={item.href}
                 aria-label={item.text}
-                className='flex flex-row justify-start items-center gap-2xs px-s py-xs rounded-full hover:bg-secondary/30 transition-colors duration-200'
+                className='flex flex-row justify-start items-center gap-2xs px-s py-xs rounded-full hover:bg-secondary/30 !transition-colors duration-200'
                 role='menuitem'
                 onClick={() => setIsOpen(false)}
               >
