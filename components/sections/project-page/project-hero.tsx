@@ -1,7 +1,7 @@
 import Button from '@/components/button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Mail } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ExternalLink, Mail } from 'lucide-react'
 import Typography from '@/components/Typography'
 import { capitalizeWords, getClientId } from '@/helpers/parsers'
 import { clientLogoData, getClientLogo } from '@/helpers/constants'
@@ -164,7 +164,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
               {projectData.shortDescription}
             </Typography>
           </div>
-          <div className='flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-3'>
+          <div className='flex flex-col sm:flex-row justify-center items-center gap-2xs'>
             <Link
               href='mailto:awaismaaz@gmail.com'
               target='_blank'
@@ -178,7 +178,7 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
                 text='Get in Touch'
                 textSize='xl'
                 textWeight='medium'
-                leftIcon={<Mail className='!fill-none stroke-primary-accent' />}
+                leftIcon={<Mail className='!fill-none w-s h-s stroke-primary-accent' />}
               />
             </Link>
             {projectData.liveUrl && (
@@ -195,6 +195,9 @@ export default function ProjectHero({ projectData }: { projectData: ProjectAnaly
                   text='Visit Live Site'
                   textSize='xl'
                   textWeight='regular'
+                  rightIcon={
+                    <ExternalLink className='!fill-none w-s h-s mb-[0.025em] stroke-1 stroke-primary' />
+                  }
                 />
               </Link>
             )}

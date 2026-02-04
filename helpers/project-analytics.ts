@@ -2721,36 +2721,36 @@ export const alfabolt: ProjectAnalysisT = {
       {
         title: 'Sales focused design',
         description:
-          'Designing the website to convert users into customers, with a focus on sales and conversion.',
+          'Designing the website to convert users into customers, with a focus on sales and conversion, while maintaining a professional and modern look.',
       },
       {
         title: 'Responsive design',
-        description: 'Ensuring the website is responsive and fully functional on all devices.',
+        description: 'Ensuring the website is responsive and fully functional on all devices, with proper typography and adherence to Alfabolt\'s brand guidelines.',
       },
       {
         title: 'Performance optimization',
-        description: 'Enforcing a performance-first approach, with a low LCP and CLS.',
+        description: 'Enforcing a performance-first approach, with a low Largest Contentful Paint ("LCP") and Cumulative Layout Shift ("CLS").',
       },
       {
         title: 'SEO Optimization',
-        description: 'Website should rank well on search engines, for organic lead generation.',
+        description: 'Website should rank well on search engines, should be optimised for specific keywords, for organic lead generation.',
       },
       {
         title: 'Accessibility',
         description:
-          'Ensuring the website is fully accessible to all users, with a focus on accessibility and usability.',
+          'Ensuring the website is fully accessible to all users, on various devices, with a focus on accessibility and usability.',
       },
     ],
     solutions: [
       {
         title: 'Component based design',
         description:
-          'Created a modular component system that focuses on reusability and scalability.',
+          'Created a modular component system that focuses on reusability and scalability, to ensure the website is easy to maintain and update.',
       },
       {
         title: 'Market Research',
         description:
-          'Conducted thorough market research to better tailor the website for conversions.',
+          'Conducted thorough market research, and competitor analysis to better tailor the website for international clients and conversions.',
       },
       {
         title: 'Fluid Typography and Spacing',
@@ -2759,14 +2759,14 @@ export const alfabolt: ProjectAnalysisT = {
       },
       {
         title: 'Performance optimization',
-        description: 'Enforcing a performance-first approach, with a low LCP and CLS.',
+        description: 'Utilised Next.js built-in optimizations, to reduce Largest Contentful Paint ("LCP") with minimal Cumulative Layout Shift ("CLS").',
       },
       {
         title: 'SEO optimization',
         description:
           'Next.js server side rendering, with intelligent design choices, to ensure the website is fully optimised for search engines.',
       },
-      { title: 'Contrast and Touch Area Testing', description: 'Designed scalable page templates' },
+      { title: 'Contrast and Touch Area Testing', description: 'Use google lighthouse analytics and contrast checkers to ensure the website is fully accessible, ensured sufficient touch areas for all elements.' },
     ],
   },
   categories: [WorkCategories.productDesign, WorkCategories.productDevelopment],

@@ -117,7 +117,7 @@ export default function ProjectOverview({
                       weight='black'
                       leading='flat'
                       color='primary-accent'
-                      className='absolute bottom-0 secondary-50-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
+                      className='absolute bottom-0 secondary-dim-text-stroke text-primary-accent/95 translate-y-[90%] about:translate-y-[75%] about:-right-4 text-center about:text-right -z-10'
                     >
                       PROJECT SCREENSHOTS
                     </Typography>

@@ -65,10 +65,10 @@ export default function NumberedCard({ index, title, description, rotation }: Nu
           }
           `}
       >
-        <Typography tag='h4' type='2xl' weight='bold' className='text-center'>
+        <Typography tag='h4' type='2xl' weight='bold' leading='flat' className='text-center'>
           {title}
         </Typography>
-        <Typography type='lg' weight='light' className='opacity-80 text-center'>
+        <Typography type='lg' weight='light' leading='prose' className='opacity-80 text-center'>
           {description}
         </Typography>
       </div>
