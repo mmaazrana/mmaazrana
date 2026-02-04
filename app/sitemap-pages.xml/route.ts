@@ -1,5 +1,3 @@
-export const runtime = 'edge'
-
 import { NextResponse } from 'next/server'
 import { MetadataRoute } from 'next'
 import {
@@ -37,7 +35,7 @@ function generatePageSitemap(): MetadataRoute.Sitemap {
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
-     {
+    {
       url: URL,
       lastModified: new Date(),
       changeFrequency: 'weekly',

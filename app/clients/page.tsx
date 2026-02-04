@@ -1,7 +1,5 @@
-export const runtime = 'edge'
-
-// ISR: Revalidate every 1 hour for client information updates
-export const revalidate = 3600
+// ISR: Revalidate every 1 week for static period (no content changes expected)
+export const revalidate = 604800
 
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
@@ -66,8 +64,8 @@ export default async function Home({ searchParams }: { searchParams: SearchParam
     openProjects ?
       Array.isArray(openProjects) ?
         openProjects
-      : openProjects.split(',')
-    : []
+        : openProjects.split(',')
+      : []
   return (
     <div className='max-w-[100vw]'>
       <Nav />

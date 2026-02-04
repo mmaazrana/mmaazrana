@@ -1,7 +1,5 @@
-export const runtime = 'edge'
-
-// ISR: Revalidate every 1 hour for portfolio changes
-export const revalidate = 3600
+// ISR: Revalidate every 1 week for static period (no content changes expected)
+export const revalidate = 604800
 
 import React from 'react'
 import Nav from '@/components/navs/nav'
@@ -29,7 +27,7 @@ export async function generateMetadata({
     description:
       tab ?
         `Discover Maaz Rana's diverse portfolio of product design (UI/UX), web development, mobile app development, and graphic design projects - ${activeTab}.`
-      : "Discover Maaz Rana's diverse portfolio of product design (UI/UX), web development, mobile app development, and graphic design projects.",
+        : "Discover Maaz Rana's diverse portfolio of product design (UI/UX), web development, mobile app development, and graphic design projects.",
   }
 
   return metadata

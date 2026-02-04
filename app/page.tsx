@@ -5,8 +5,8 @@ import Hero from '@/components/sections/main-page/main-hero'
 import dynamic from 'next/dynamic'
 import Loader from '@/components/loader'
 
-// ISR: Revalidate every 1 hour for better cache hit rate
-export const revalidate = 3600
+// ISR: Revalidate every 1 week for static period (no content changes expected)
+export const revalidate = 604800
 
 // Dynamically import below-the-fold components
 const Work = dynamic(() => import('@/components/sections/main-page/work'), {

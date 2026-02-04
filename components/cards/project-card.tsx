@@ -89,7 +89,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             sizes={
               alt ?
                 '(max-width: 640px) 90vw, (max-width: 1024px) 50vw, (max-width: 1600px) 35vw, 420px'
-              : '(max-width: 640px) 100vw, (max-width: 1024px) 85vw, (max-width: 1600px) 70vw, 1200px'
+                : '(max-width: 640px) 100vw, (max-width: 1024px) 85vw, (max-width: 1600px) 70vw, 1200px'
             }
             src={image}
             alt={`${title} Banner`}

@@ -1,5 +1,3 @@
-export const runtime = 'edge'
-
 import { NextResponse } from 'next/server'
 import { videoProjects } from '@/helpers/constants'
 import type { StaticImageData } from 'next/image'

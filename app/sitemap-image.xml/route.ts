@@ -1,5 +1,3 @@
-export const runtime = 'edge'
-
 import { NextResponse } from 'next/server'
 import {
   blenderProjects,
@@ -31,9 +29,9 @@ function extractImageUrls(): Set<string> {
   const addUrl = (imageSource: StaticImageData | string | undefined) => {
     const path = getPublicPath(imageSource) // Call getPublicPath here
     if (path) {
-        // Ensure path starts with a slash if it doesnt already
-        const fullPath = path.startsWith('/') ? path : `/${path}`;
-        imageUrls.add(`${URL}${fullPath}`)
+      // Ensure path starts with a slash if it doesnt already
+      const fullPath = path.startsWith('/') ? path : `/${path}`;
+      imageUrls.add(`${URL}${fullPath}`)
     }
   }
 
@@ -99,7 +97,7 @@ export async function GET() {
       } else if (imageUrl.includes('/logo.svg')) {
         pageLoc = URL // Logo likely on home page
       } // Add more specific mappings if possible
-      
+
       // Get the image URL part only for the image:loc tag
       const imageLoc = imageUrl
 

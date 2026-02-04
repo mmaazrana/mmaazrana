@@ -1,7 +1,5 @@
-export const runtime = 'edge'
-
-// ISR: Revalidate every 24 hours for project case studies
-export const revalidate = 86400
+// ISR: Revalidate every 1 month for project case studies (no content changes expected)
+export const revalidate = 2592000
 
 import Nav from '@/components/navs/nav'
 import ProjectBottomNav from '@/components/navs/bottom-nav/project-bottom-nav'
@@ -68,7 +66,7 @@ export async function generateMetadata({
   const description =
     tab ?
       `${baseDescription} - Learn more about the ${activeTab} of this project.`
-    : baseDescription
+      : baseDescription
 
   // Prepare Open Graph and Twitter image data if available
   // const ogImageUrl = project.imageUrl || '/default-og-image.png'; // Define a default image

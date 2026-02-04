@@ -4,7 +4,7 @@
 import React, { useState, useRef } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import Typography from '@/components/Typography'
-import {} from '@/helpers/enums'
+import { } from '@/helpers/enums'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useMediaQuery } from 'react-responsive'
 import { GraphicDesignProjectT } from '@/helpers/types'
@@ -125,9 +125,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
                   direction.current = imgIndex > currentImageIndex ? 'left' : 'right'
                   setCurrentImageIndex(imgIndex)
                 }}
-                className={`relative w-full h-16 flex-grow rounded-md overflow-hidden transition-opacity ${
-                  currentImageIndex === imgIndex ? '' : 'opacity-50 hover:opacity-100'
-                }`}
+                className={`relative w-full h-16 flex-grow rounded-md overflow-hidden transition-opacity ${currentImageIndex === imgIndex ? '' : 'opacity-50 hover:opacity-100'
+                  }`}
               >
                 <Image
                   src={img}
@@ -145,12 +144,11 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         </div>
       )}
       <div
-        className={`py-3 sm:py-4 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
-          isMobile ?
+        className={`py-3 sm:py-4 z-2 pointer-events-none absolute flex flex-col justify-center items-center top-0 -translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${isMobile ?
             isInView ? 'opacity-100'
-            : 'opacity-0'
-          : 'opacity-0 group-hover:opacity-100'
-        }`}
+              : 'opacity-0'
+            : 'opacity-0 group-hover:opacity-100'
+          }`}
       >
         <span className='absolute bottom-0 w-full h-[500%] bg-linear-to-t from-primary-accent to-primary-accent/0' />
         <Typography tag='h3' type='xl' weight='bold'>
@@ -158,12 +156,11 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
         </Typography>
       </div>
       <div
-        className={`py-4 sm:py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${
-          isMobile ?
+        className={`py-4 sm:py-6 z-2 pointer-events-none absolute flex flex-col justify-center items-center bottom-0 translate-y-[100%] w-full h-fit !transition-opacity !duration-300 ${isMobile ?
             isInView ? 'opacity-100'
-            : 'opacity-0'
-          : 'opacity-0 group-hover:opacity-100'
-        }`}
+              : 'opacity-0'
+            : 'opacity-0 group-hover:opacity-100'
+          }`}
       >
         <span className='absolute top-0 w-full h-[500%] bg-linear-to-b from-primary-accent to-primary-accent/0' />
         <Typography type='base' className='mx-6 text-center'>
