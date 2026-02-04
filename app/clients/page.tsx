@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
 import React from 'react'

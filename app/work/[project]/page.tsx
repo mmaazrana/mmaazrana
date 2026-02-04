@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import Nav from '@/components/navs/nav'
 import ProjectBottomNav from '@/components/navs/bottom-nav/project-bottom-nav'
 import ProjectDetailsSection from '@/components/sections/project-page/project-details-section'
