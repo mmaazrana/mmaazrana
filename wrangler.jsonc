@@ -1,8 +1,6 @@
 {
     "name": "mmaazrana",
     "compatibility_date": "2026-02-04",
-    "main": ".vercel/output/static/_worker.js/index.js",
-    "assets": {
-        "directory": ".vercel/output/static"
-    }
+    "compatibility_flags": ["nodejs_compat"],
+    "main": ".vercel/output/static/_worker.js/index.js"
 }
