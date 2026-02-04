@@ -1,14 +1,31 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-// @ts-ignore
-import createPersistedState from 'use-persisted-state'
 
-const useColorSchemeState = createPersistedState('colorScheme')
+const COLOR_SCHEME_KEY = 'colorScheme'
+
+function usePersistedBoolean(key: string) {
+  const [state, setState] = useState<boolean | undefined>(undefined)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const stored = window.localStorage.getItem(key)
+    if (stored === null) return
+    setState(stored === 'true')
+  }, [key])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (state === undefined) return
+    window.localStorage.setItem(key, String(state))
+  }, [key, state])
+
+  return [state, setState] as const
+}
 
 export function useColorScheme() {
   const systemPrefersDark = useMediaQuery({ query: '(prefers-color-scheme: dark)' }, undefined)
 
-  const [isDark, setIsDark] = useColorSchemeState()
+  const [isDark, setIsDark] = usePersistedBoolean(COLOR_SCHEME_KEY)
   const value = useMemo(
     () => (isDark === undefined ? systemPrefersDark : isDark),
     [isDark, systemPrefersDark],
