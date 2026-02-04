@@ -85,20 +85,22 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <Image
             priority
             className={`relative border-none overflow-hidden ${alt ? `border-2 w-full rounded-md group-hover:scale-[0.55] hover:!translate-y-[-8.5lh]` : `border-[1.3px] rounded-sm overflow-hidden pb-10 md:pb-0 align-top min-w-full scale-140 group-hover:scale-100 transition-all duration-[400ms] hover:!translate-y-[-6lh]`} origin-top-left transition-transform duration-[400ms] z-3`}
-            quality={alt ? 75 : 100}
+            quality={alt ? 70 : 75}
             sizes={
               alt ?
-                '(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'
-              : '(max-width: 640px) 100vw, (max-width: 1600px) 80vw, 1600px'
+                '(max-width: 640px) 90vw, (max-width: 1024px) 50vw, (max-width: 1600px) 35vw, 420px'
+              : '(max-width: 640px) 100vw, (max-width: 1024px) 85vw, (max-width: 1600px) 70vw, 1200px'
             }
             src={image}
             alt={`${title} Banner`}
           />
           {alt && altImage && (
             <Image
-              priority
+              priority={false}
+              loading='lazy'
               className={`relative border-none overflow-hidden border-2 w-full rounded-md scale-[0.55] translate-y-[100%] translate-x-[45%] group-hover:-translate-y-[16%] sm:group-hover:-translate-y-[19%] hover:!translate-y-[-15lh] origin-top-left transition-transform duration-500 z-2`}
-              sizes='(max-width: 640px) 90vw, (max-width: 1600px) 40vw, 528px'
+              quality={70}
+              sizes='(max-width: 640px) 90vw, (max-width: 1024px) 50vw, (max-width: 1600px) 35vw, 420px'
               src={altImage}
               alt={`${title} Alternate View`}
             />

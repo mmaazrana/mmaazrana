@@ -1,5 +1,8 @@
 export const runtime = 'edge'
 
+// ISR: Revalidate every 24 hours for project case studies
+export const revalidate = 86400
+
 import Nav from '@/components/navs/nav'
 import ProjectBottomNav from '@/components/navs/bottom-nav/project-bottom-nav'
 import ProjectDetailsSection from '@/components/sections/project-page/project-details-section'

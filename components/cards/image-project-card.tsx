@@ -97,7 +97,8 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
               className={`w-full h-auto transition-transform duration-300  select-none 
                         ${isMobile && isInView ? 'scale-105' : 'pointer-events-none touch-none group-hover:scale-105'}
                         `}
-              sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1535px) 33vw, 400px'
+              quality={75}
+              sizes='(max-width: 640px) 100vw, (max-width: 1024px) 60vw, (max-width: 1535px) 40vw, 500px'
               loading='lazy'
               placeholder='blur'
             />
@@ -133,6 +134,7 @@ const ImageProjectCard: React.FC<ImageProjectCardProps> = ({ project }) => {
                   alt={`${project.title} - Image ${imgIndex + 1}`}
                   className='object-cover'
                   fill
+                  quality={70}
                   sizes='200px'
                   loading='lazy'
                   placeholder='blur'

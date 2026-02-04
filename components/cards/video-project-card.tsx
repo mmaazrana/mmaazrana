@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { PlayIcon } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
@@ -14,42 +14,81 @@ interface VideoProjectCardProps {
 }
 
 export default function VideoProjectCard({ fileName, thumbnail }: VideoProjectCardProps) {
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          // Stop observing after the component is visible
+          observer.unobserve(entry.target)
+        }
+      },
+      { rootMargin: '50px' } // Start loading 50px before visible
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
-    <div className='relative w-full h-fit mb-1 lg:mb-1.5 rounded-lg hover:-translate-y-2 transition-transform duration-300 overflow-hidden'>
-      <ReactPlayer
-        url={`${process.env.NEXT_PUBLIC_CDN_BASE_URL}/${fileName}`}
-        light={
-          <Image
-            src={thumbnail}
-            placeholder='blur'
-            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw'
-            alt='Thumbnail'
-            loading='lazy'
-            className='relative w-full h-fit -z-1 object-cover'
-          />
-        }
-        controls
-        volume={0.25}
-        playsinline
-        playing
-        fallback={
-          <div className='w-full aspect-video bg-secondary/5 rounded-lg overflow-hidden flex items-center justify-center animate-pulse'>
-            <div
-              className='flex flex-col items-center justify-center gap-2'
-              style={{ animation: 'fadeIn 1s ease-in-out infinite alternate' }}
-            >
-              <div className='w-12 h-12 border-4 border-secondary-hover border-t-secondary rounded-full animate-spin' />
+    <div
+      ref={containerRef}
+      className='relative w-full h-fit mb-1 lg:mb-1.5 rounded-lg hover:-translate-y-2 transition-transform duration-300 overflow-hidden'
+    >
+      {isVisible ? (
+        <ReactPlayer
+          url={`${process.env.NEXT_PUBLIC_CDN_BASE_URL}/${fileName}`}
+          light={
+            <Image
+              src={thumbnail}
+              placeholder='blur'
+              quality={75}
+              sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw'
+              alt='Thumbnail'
+              loading='lazy'
+              className='relative w-full h-fit -z-1 object-cover'
+            />
+          }
+          controls
+          volume={0.25}
+          playsinline
+          playing={false}
+          fallback={
+            <div className='w-full aspect-video bg-secondary/5 rounded-lg overflow-hidden flex items-center justify-center animate-pulse'>
+              <div
+                className='flex flex-col items-center justify-center gap-2'
+                style={{ animation: 'fadeIn 1s ease-in-out infinite alternate' }}
+              >
+                <div className='w-12 h-12 border-4 border-secondary-hover border-t-secondary rounded-full animate-spin' />
+              </div>
             </div>
-          </div>
-        }
-        playIcon={
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 about:p-3 md:p-4 flex items-center justify-center rounded-full bg-white/25 backdrop-blur-sm shadow-xl z-1'>
-            <PlayIcon className='w-8 about:w-10 md:w-12 h-8 about:h-10 md:h-12 fill-white/50 stroke-white/50 stroke-[0.5px]' />
-          </div>
-        }
-        width='100%'
-        height='100%'
-      />
+          }
+          playIcon={
+            <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 about:p-3 md:p-4 flex items-center justify-center rounded-full bg-white/25 backdrop-blur-sm shadow-xl z-1'>
+              <PlayIcon className='w-8 about:w-10 md:w-12 h-8 about:h-10 md:h-12 fill-white/50 stroke-white/50 stroke-[0.5px]' />
+            </div>
+          }
+          width='100%'
+          height='100%'
+        />
+      ) : (
+        <Image
+          src={thumbnail}
+          placeholder='blur'
+          quality={75}
+          sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw'
+          alt='Thumbnail'
+          className='relative w-full h-fit object-cover'
+        />
+      )}
     </div>
   )
 }

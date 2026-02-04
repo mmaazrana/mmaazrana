@@ -1,5 +1,8 @@
 export const runtime = 'edge'
 
+// ISR: Revalidate every 1 hour for portfolio changes
+export const revalidate = 3600
+
 import React from 'react'
 import Nav from '@/components/navs/nav'
 import WorkHero from '@/components/sections/work-page/work-hero'

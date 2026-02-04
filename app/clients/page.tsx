@@ -1,5 +1,8 @@
 export const runtime = 'edge'
 
+// ISR: Revalidate every 1 hour for client information updates
+export const revalidate = 3600
+
 import Nav from '@/components/navs/nav'
 import BottomNav from '@/components/navs/bottom-nav'
 import React from 'react'
