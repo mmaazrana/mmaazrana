@@ -1,6 +1,7 @@
 import React from 'react'
 import * as m from 'motion/react-m'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Page Not Found - 404 Error',
@@ -121,12 +122,12 @@ function Services() {
             >
               Get Directions
             </a>
-            <a
+            <Link
               href='/'
               className='cursor-pointer px-[1.5vw] text-primary-hover opacity-75 hover:opacity-100 transition-opacity duration-300 h-fit w-fit rounded-full text-[2.3vw] lg:text-[1.15vw] leading-[2] font-[175]'
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </m.div>
       </div>

@@ -1,6 +1,3 @@
-// ISR: Revalidate every 1 month for project case studies (no content changes expected)
-export const revalidate = 2592000
-
 import Nav from '@/components/navs/nav'
 import ProjectBottomNav from '@/components/navs/bottom-nav/project-bottom-nav'
 import ProjectDetailsSection from '@/components/sections/project-page/project-details-section'
@@ -15,17 +12,29 @@ import type { Metadata } from 'next' // Import Metadata type
 import { Suspense } from 'react'
 import Loader from '@/components/loader'
 
-import dynamic from 'next/dynamic'
-const SingleClientTestimonial = dynamic(
+import loadDynamic from 'next/dynamic'
+
+// ISR: Revalidate every 1 month for project case studies (no content changes expected)
+export const revalidate = 2592000
+export const dynamic = 'force-static'
+export const dynamicParams = true
+const SingleClientTestimonial = loadDynamic(
   () => import('@/components/sections/project-page/single-testimonial'),
   { loading: () => <Loader /> },
 )
-const WorkSection = dynamic(() => import('@/components/sections/main-page/work'), {
+const WorkSection = loadDynamic(() => import('@/components/sections/main-page/work'), {
   loading: () => <Loader />,
 }) // Renamed to avoid conflict if Work type exists
 
 // Combine all project arrays that have dedicated pages
 const allProjects = [...productDesignProjects, ...productDevelopmentProjects]
+
+// Generate static params for all projects at build time
+export async function generateStaticParams() {
+  return allProjects.map((project) => ({
+    project: getPageSlug(project.title),
+  }))
+}
 
 // Helper function to find project data by slug
 // Ensure this logic correctly matches slugs to projects in your application
@@ -45,7 +54,7 @@ export async function generateMetadata({
   const { project } = await params
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : ProjectCategories.overview
-  const projectData = await getProjectData(project)
+  const projectData = await getProjectData(project!)
 
   if (!projectData) {
     // Fallback metadata if project not found
@@ -134,8 +143,8 @@ export default async function ProjectPage({
   const { project } = await params
   const { tab } = await searchParams
   const activeTab = tab ? String(tab) : ProjectCategories.overview
-  const projectData = await getProjectData(project)
-  const relatedProjects = getRelevantProjects(project)
+  const projectData = await getProjectData(project!)
+  const relatedProjects = getRelevantProjects(project!)
   return (
     <div className='max-w-[100vw]'>
       <Nav />
@@ -145,7 +154,7 @@ export default async function ProjectPage({
             {projectData && <ProjectHero projectData={projectData} />}
             {projectData && (
               <ProjectDetailsSection
-                project={project}
+                project={project!}
                 projectData={projectData}
                 activeTab={activeTab}
               />
@@ -154,7 +163,7 @@ export default async function ProjectPage({
           {projectData?.testimonial && (
             <SingleClientTestimonial testimonial={projectData.testimonial} />
           )}
-          <ProjectBottomNav pathName={project} activeTab={activeTab} />
+          <ProjectBottomNav pathName={project!} activeTab={activeTab} />
           <WorkSection title={'Related Projects'} projects={relatedProjects} />
         </main>
       </div>

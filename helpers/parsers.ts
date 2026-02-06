@@ -10,7 +10,7 @@ import { ProjectAnalysisT } from './project-analytics'
 function calculateStringSimilarity(str1: string, str2: string): number {
   const track = Array(str2.length + 1).fill(null).map(() =>
     Array(str1.length + 1).fill(null))
-  
+
   for (let i = 0; i <= str1.length; i += 1) {
     track[0][i] = i
   }
@@ -42,10 +42,10 @@ function calculateStringSimilarity(str1: string, str2: string): number {
 function calculateTechStackSimilarity(techStack1: ProjectAnalysisT["techStack"], techStack2: ProjectAnalysisT["techStack"]): number {
   const titles1 = techStack1.map(tech => tech.title.toLowerCase())
   const titles2 = techStack2.map(tech => tech.title.toLowerCase())
-  
+
   const intersection = titles1.filter(title => titles2.includes(title))
   const union = titles1.concat(titles2).filter((title, index, self) => self.indexOf(title) === index)
-  
+
   return intersection.length / union.length
 }
 
@@ -58,7 +58,7 @@ export function getRelevantProjects(project: string): ProjectAnalysisT[] {
   const currentProject = getProjectData(project)
   // Remove current project from consideration
   const otherProjects = projectsAnalysis.filter(p => p.title !== currentProject.title)
-  
+
   // Calculate similarity scores for each project
   const projectsWithScores = otherProjects.map(project => {
     // Calculate title similarity
@@ -66,44 +66,44 @@ export function getRelevantProjects(project: string): ProjectAnalysisT[] {
       currentProject.title.toLowerCase(),
       project.title.toLowerCase()
     )
-    
+
     // Calculate category similarity (1 if any category matches, 0 if none)
-    const categorySimilarity = currentProject.categories.some(cat => 
+    const categorySimilarity = currentProject.categories.some(cat =>
       project.categories.includes(cat)
     ) ? 1 : 0
-    
+
     // Calculate tech stack similarity
     const techStackSimilarity = calculateTechStackSimilarity(
       currentProject.techStack,
       project.techStack
     )
-    
+
     // Weighted average of similarities
     const totalSimilarity = (
       titleSimilarity * 0.5 + // Title similarity is most important
       categorySimilarity * 0.3 + // Categories are second most important
       techStackSimilarity * 0.2 // Tech stack is least important
     )
-    
+
     return {
       project,
       similarity: totalSimilarity
     }
   })
-  
+
   // Separate projects by isMobile status
   const desktopProjects = projectsWithScores
     .filter(item => !item.project.isMobile)
     .sort((a, b) => b.similarity - a.similarity)
-  
+
   const mobileProjects = projectsWithScores
     .filter(item => item.project.isMobile)
     .sort((a, b) => b.similarity - a.similarity)
-  
+
   // Get top 2 desktop and mobile projects
   const topDesktop = desktopProjects.slice(0, 3).map(item => item.project)
   const topMobile = mobileProjects.slice(0, 3).map(item => item.project)
-  
+
   // Return projects in the required order: desktop, mobile, mobile, desktop
   return [
     topDesktop[0],
@@ -155,32 +155,33 @@ export const getClientId = (heading: string): string => {
  * @returns The query string
  */
 export const getClientQueryString = ({ openProjectsParam, itemKey, isOpen }: { openProjectsParam: string; itemKey: string; isOpen: boolean }) => {
-    const currentKeys = openProjectsParam ? openProjectsParam.split(',') : []
-    let newKeys: string[]
+  const currentKeys = openProjectsParam ? openProjectsParam.split(',') : []
+  let newKeys: string[]
 
-    if (!isOpen) {
-      if (!currentKeys.includes(itemKey)) {
-        newKeys = [...currentKeys, itemKey]
-      } else {
-        newKeys = currentKeys // No change needed
-      }
+  if (!isOpen) {
+    if (!currentKeys.includes(itemKey)) {
+      newKeys = [...currentKeys, itemKey]
     } else {
-      newKeys = currentKeys.filter(key => key !== itemKey)
+      newKeys = currentKeys // No change needed
     }
-
-    const newKeysString = newKeys.join(',')
-    const newSearchParam = new URLSearchParams([['openProjects', newKeysString]])
-
-    if (newKeys.length > 0) {
-      newSearchParam.set('openProjects', newKeys.join(','))
-    } else {
-      newSearchParam.delete('openProjects')
-    }
-
-    const search = newSearchParam.toString()
-    const query = search ? `?${search}` : ''
-    return query
+  } else {
+    newKeys = currentKeys.filter(key => key !== itemKey)
   }
+
+  const newKeysString = newKeys.join(',')
+  const newSearchParam = new URLSearchParams([['openProjects', newKeysString]])
+
+  if (newKeys.length > 0) {
+    newSearchParam.set('openProjects', newKeys.join(','))
+  } else {
+    newSearchParam.delete('openProjects')
+  }
+
+  const search = newSearchParam.toString()
+  const query = search ? `?${search}` : ''
+  return query
+}
+
 
 /**
  * Capitalizes the first letter of each word in a string

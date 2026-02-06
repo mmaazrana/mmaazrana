@@ -11,7 +11,7 @@ interface CategoryButtonProps {
 const CategoryButton: FC<CategoryButtonProps> = ({ pathName, category, isActive }) => (
   <div id='sections' className='transition-colors'>
     <Link
-      href={`${pathName}?tab=${category.key}`}
+      href={`/${pathName}/${category.key}`}
       scroll={false}
       aria-label={category.text}
       className={`rounded-full flex justify-center items-center px-6 py-3 whitespace-nowrap cursor-pointer transition-all duration-300 group ${isActive ? 'bg-secondary/25' : 'bg-none hover:bg-secondary/10'}`}

@@ -45,11 +45,44 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: false,
   turbopack: { resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'] },
+  images: {
+    qualities: [70, 75],
+  },
   async headers() {
     return [
       {
         // Cache static assets aggressively
         source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Aggressive cache for SSG portfolio pages
+        source: '/portfolio/:category',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Aggressive cache for SSG clients pages
+        source: '/clients/:client',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Aggressive cache for SSG work detail pages
+        source: '/work/:project',
         headers: [
           {
             key: 'Cache-Control',

@@ -8,7 +8,12 @@ import {
 } from '@/helpers/constants'
 import { getPageSlug } from '@/helpers/parsers'
 
+// ISR: Revalidate every 1 week
+export const revalidate = 604800
+export const dynamic = 'force-static'
+
 const URL = 'https://maazrana.com' // Replace with your actual domain
+const LAST_MODIFIED = '2026-02-05' // Update this when you make content changes
 
 function generatePageSitemap(): MetadataRoute.Sitemap {
   // Combine projects that have detail pages
@@ -20,43 +25,77 @@ function generatePageSitemap(): MetadataRoute.Sitemap {
 
   const projectEntries: MetadataRoute.Sitemap = allProjects.map((project) => ({
     url: `${URL}/work/${getPageSlug(project.title)}`,
-    lastModified: new Date(), // Or use a specific date if available
+    lastModified: LAST_MODIFIED,
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
 
-  // Client page entries
+  // Client page entries - updated to use dynamic routes
   const clientPageEntries: MetadataRoute.Sitemap = clientData.map((client) => ({
-    url: `${URL}/clients?openProjects=${client.key}`,
-    lastModified: new Date(), // Or use a specific date if available
+    url: `${URL}/clients/${client.key}`,
+    lastModified: LAST_MODIFIED,
     changeFrequency: 'monthly',
-    priority: 0.7, // Same as the main /clients page or slightly lower
+    priority: 0.7,
   }))
+
+  // Portfolio category entries
+  const portfolioEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${URL}/portfolio/product-design`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${URL}/portfolio/product-development`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${URL}/portfolio/video-editing`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${URL}/portfolio/illustration`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${URL}/portfolio/blender`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+  ]
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: URL,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${URL}/portfolio`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${URL}/clients`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     // Add other static pages like /about if they exist and are indexable
   ]
 
-  return [...staticPages, ...projectEntries, ...clientPageEntries]
+  return [...staticPages, ...projectEntries, ...clientPageEntries, ...portfolioEntries]
 }
 
 export async function GET() {
@@ -65,7 +104,7 @@ export async function GET() {
   const sitemapEntries = sitemapData.map(entry => `
     <url>
       <loc>${entry.url}</loc>
-      <lastmod>${entry.lastModified instanceof Date ? entry.lastModified.toISOString() : new Date().toISOString()}</lastmod>
+      <lastmod>${typeof entry.lastModified === 'string' ? entry.lastModified : entry.lastModified instanceof Date ? entry.lastModified.toISOString().split('T')[0] : LAST_MODIFIED}</lastmod>
       ${entry.changeFrequency ? `<changefreq>${entry.changeFrequency}</changefreq>` : ''}
       ${entry.priority ? `<priority>${entry.priority}</priority>` : ''}
     </url>

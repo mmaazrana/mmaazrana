@@ -1,5 +1,6 @@
 'use client'
 import React, { FC, useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import { useTheme } from 'next-themes'
@@ -21,8 +22,19 @@ import * as m from 'motion/react-m'
 interface WorkHeroProps {}
 
 const WorkHero: FC<WorkHeroProps> = ({}) => {
+  const pathname = usePathname()
   const [isDarkMode, setIsDarkMode] = useState(true)
   const { resolvedTheme } = useTheme()
+  
+  // Check if navigating within portfolio (skip animations)
+  const [skipAnimations, setSkipAnimations] = useState(false)
+  
+  useEffect(() => {
+    const lastPath = sessionStorage.getItem('lastPortfolioPath')
+    const isPortfolioNav = lastPath?.startsWith('/portfolio') && pathname.startsWith('/portfolio')
+    setSkipAnimations(!!isPortfolioNav)
+    sessionStorage.setItem('lastPortfolioPath', pathname)
+  }, [pathname])
 
   useEffect(() => {
     if (resolvedTheme) {
@@ -78,9 +90,9 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
           {firstHalfSVGs.map((svg, index) => (
             <m.div
               key={index}
-              initial={{ opacity: 0 }}
+              initial={skipAnimations ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={skipAnimations ? { duration: 0 } : { duration: 0.5, delay: index * 0.15 }}
               className='h-full min-w-fit'
             >
               <Image
@@ -121,9 +133,9 @@ const WorkHero: FC<WorkHeroProps> = ({}) => {
           {secondHalfSVGs.map((svg, index) => (
             <m.span
               key={index}
-              initial={{ opacity: 0 }}
+              initial={skipAnimations ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.45 + index * 0.15 }}
+              transition={skipAnimations ? { duration: 0 } : { duration: 0.5, delay: 0.45 + index * 0.15 }}
               className='h-full min-w-fit'
             >
               <Image

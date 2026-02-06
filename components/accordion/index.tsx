@@ -13,15 +13,17 @@ interface AccordionProps {
   isOpen: boolean
   queryString: string
   id?: string
+  skipAnimations?: boolean
 }
 
 const Accordion: FC<AccordionProps> = ({
   heading,
   content,
   className,
-  isOpen, // Added back
-  queryString, // Added
-  id, // Added
+  isOpen,
+  queryString,
+  id,
+  skipAnimations = false,
 }) => {
   const [isClicked, setIsClicked] = useState(false)
 
@@ -68,10 +70,10 @@ const Accordion: FC<AccordionProps> = ({
       {content && (
         <m.div
           layout
-          initial={{ maxHeight: '0px', opacity: 0 }}
+          initial={skipAnimations ? { maxHeight: isOpen ? '250rem' : '0px', opacity: isOpen ? 1 : 0 } : { maxHeight: '0px', opacity: 0 }}
           animate={{ maxHeight: isOpen ? '250rem' : '0px', opacity: isOpen ? 1 : 0 }}
           exit={{ maxHeight: '0px', opacity: 0 }}
-          transition={{
+          transition={skipAnimations ? { duration: 0 } : {
             opacity: { duration: 0.25, ease: 'linear' },
             maxHeight: { duration: 0.5, ease: 'linear' },
           }}

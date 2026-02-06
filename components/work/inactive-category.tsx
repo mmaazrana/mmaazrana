@@ -1,6 +1,6 @@
 import { BottomNavCategoryT } from '@/helpers/types'
 import * as m from 'motion/react-m'
-import {} from '@/helpers/enums'
+import { } from '@/helpers/enums'
 import Typography from '@/components/Typography'
 import Link from 'next/link'
 
@@ -15,7 +15,7 @@ export default function InActiveCategory({ pathName, category, position }: InAct
 
   return (
     <Link
-      href={`${pathName}?tab=${category.key}`}
+      href={`/${pathName}/${category.key}`}
       scroll={false}
       aria-label={isLeft ? 'Previous Tab' : 'Next Tab'}
       className='z-4'

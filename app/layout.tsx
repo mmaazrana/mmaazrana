@@ -117,6 +117,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
+      <head>
+        <style>{`
+          @view-transition {
+            navigation: auto;
+          }
+        `}</style>
+      </head>
       <LazyMotion features={domAnimation}>
         <body>
           <Providers>{children}</Providers>

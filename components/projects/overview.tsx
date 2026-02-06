@@ -59,7 +59,7 @@ export default function ProjectOverview({
         {categories.map(category => (
           <Link
             key={category}
-            href={`/portfolio?tab=${category}`}
+            href={`/portfolio/${category}`}
             aria-label={`View ${workBottomNavCategories.find(c => c.key === category)?.text} Portfolio`}
           >
             <Typography
@@ -94,9 +94,8 @@ export default function ProjectOverview({
                         {screenshots.map((screenshot, index) => (
                           <div
                             key={index}
-                            className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${
-                              index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
-                            } ${isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[17.5rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
+                            className={`relative flex-[0_0_50%] md:flex-[0_0_33.33%] -mx-xl h-fit rounded-lg overflow-hidden transition-all duration-300 ${index === activeIndex ? 'z-1 scale-100' : '-z-1 scale-90'
+                              } ${isMobile ? 'min-w-[50vw] about:min-w-[10rem] md:min-w-[15rem] lg:min-w-[17.5rem]' : 'min-w-[77.5vw] about:min-w-xs md:min-w-sm lg:min-w-md'}
                     ${index === 0 && 'ml-0'} ${index === screenshots.length - 1 && 'mr-0'}`}
                           >
                             <Image

@@ -2,6 +2,9 @@ import React from 'react'
 import * as m from 'motion/react-m'
 import { Metadata } from 'next'
 
+// ISR: Revalidate every 1 week
+export const revalidate = 604800
+
 export const metadata: Metadata = {
   title: 'Services (Coming Soon)',
   description:

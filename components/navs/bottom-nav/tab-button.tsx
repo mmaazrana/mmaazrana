@@ -14,7 +14,7 @@ interface TabButtonProps {
 const TabButton: FC<TabButtonProps> = ({ pathName, tab, ariaLabel, isEndOfPage, delay, icon }) => (
   <Link
     className='relative z-1000'
-    href={`${pathName}?tab=${tab}`}
+    href={`/${pathName}/${tab}`}
     aria-label={ariaLabel}
     scroll={false}
   >

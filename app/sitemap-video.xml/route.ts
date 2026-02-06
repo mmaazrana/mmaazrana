@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server'
 import { videoProjects } from '@/helpers/constants'
 import type { StaticImageData } from 'next/image'
 
+// ISR: Revalidate every 1 week
+export const revalidate = 604800
+export const dynamic = 'force-static'
+
 const URL = 'https://maazrana.com'
 const CDN_URL = 'https://dfq6zt494pcpl.cloudfront.net'
 

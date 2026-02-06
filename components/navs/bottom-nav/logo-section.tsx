@@ -30,7 +30,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           className={`transition-none w-full min-w-full max-w-[32.5rem] inline-block inline-block`}
         >
           <Link
-            href={`/portfolio?tab=${WorkCategories.productDesign}`}
+            href={`/portfolio/${WorkCategories.productDesign}`}
             aria-label='Product Designer Portfolio'
           >
             <Typography
@@ -51,7 +51,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
             &nbsp; - &nbsp;
           </Typography>
           <Link
-            href={`/portfolio?tab=${WorkCategories.productDevelopment}`}
+            href={`/portfolio/${WorkCategories.productDevelopment}`}
             aria-label='Web Developer Portfolio'
           >
             <Typography
@@ -72,7 +72,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
             &nbsp; - &nbsp;
           </Typography>
           <Link
-            href={`/portfolio?tab=${WorkCategories.productDevelopment}`}
+            href={`/portfolio/${WorkCategories.productDevelopment}`}
             aria-label='Mobile App Developer Portfolio'
           >
             <Typography
@@ -93,7 +93,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
             &nbsp; - &nbsp;
           </Typography>
           <Link
-            href={`/portfolio?tab=${WorkCategories.videoEditing}`}
+            href={`/portfolio/${WorkCategories.videoEditing}`}
             aria-label='Animator Portfolio'
           >
             <Typography
@@ -114,7 +114,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
             &nbsp; - &nbsp;
           </Typography>
           <Link
-            href={`/portfolio?tab=${WorkCategories.videoEditing}`}
+            href={`/portfolio/${WorkCategories.videoEditing}`}
             aria-label='Video Editor Portfolio'
           >
             <Typography
@@ -135,7 +135,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
             &nbsp; - &nbsp;
           </Typography>
           <Link
-            href={`/portfolio?tab=${WorkCategories.illustration}`}
+            href={`/portfolio/${WorkCategories.illustration}`}
             aria-label='Graphics Designer Portfolio'
           >
             <Typography
@@ -155,7 +155,7 @@ const LogoSection: FC<LogoSectionProps> = ({ isEndOfPage }) => {
           >
             &nbsp; - &nbsp;
           </Typography>
-          <Link href={`/portfolio?tab=${WorkCategories.blender}`} aria-label='3D Artist Portfolio'>
+          <Link href={`/portfolio/${WorkCategories.blender}`} aria-label='3D Artist Portfolio'>
             <Typography
               type='lg'
               weight='light'

@@ -6,7 +6,7 @@ import Typography from '@/components/Typography'
 import { TestimonialClients } from '@/helpers/enums'
 import { useInView } from 'motion/react'
 import Link from 'next/link'
-import { capitalizeWords, getClientId, getPageSlug } from '@/helpers/parsers'
+import { capitalizeWords, getPageSlug, getClientId } from '@/helpers/parsers'
 import { getClientLogo } from '@/helpers/constants'
 import { ChevronRight } from 'lucide-react'
 

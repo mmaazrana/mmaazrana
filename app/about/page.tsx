@@ -3,6 +3,9 @@ import Typography from '@/components/Typography'
 import {} from '@/helpers/enums'
 import { Metadata } from 'next'
 
+// ISR: Revalidate every 1 week
+export const revalidate = 604800
+
 export const metadata: Metadata = {
   title: 'About Me (Under Construction)',
   description:

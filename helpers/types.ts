@@ -4,7 +4,7 @@ import { IconType } from 'react-icons'
 import { StaticImageData } from 'next/image'
 
 export type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
-export type Params = Promise<{ project: string }>
+export type Params = Promise<{ [key: string]: string | undefined }>
 
 export interface NavButtonT {
   text: string
@@ -20,7 +20,7 @@ export interface DropdownItemT {
 
 export interface IconComponentT {
   Icon: IconType
-  props: { fill: string; [key: string]: string}
+  props: { fill: string;[key: string]: string }
 }
 
 export type IconComponentsT = Record<string, IconComponentT>
@@ -111,7 +111,7 @@ export interface BreakpointT {
 
 export interface ClientDataT {
   key: TestimonialClients
-  companyLogo ?: any
+  companyLogo?: any
   companyLink?: string
   heading: string
   testimonial: string

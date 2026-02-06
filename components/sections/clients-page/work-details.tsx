@@ -1,22 +1,25 @@
+'use client'
+
 import React from 'react'
 import { clientData } from '@/helpers/constants'
 import Accordion from '@/components/accordion'
 import TestimonialData from '@/components/clients/testimonial-data'
 import ProductsInvolved from '@/components/clients/products-involved'
 import ToolsAndTechnologies from '@/components/clients/tools-and-technologies'
-import { getClientId, getClientQueryString } from '@/helpers/parsers'
+import { getClientId } from '@/helpers/parsers'
+import { useSkipAnimationsOnClientNav } from '@/hooks/useSkipAnimationsOnClientNav'
 
 interface WorkDetailsProps {
-  openKeys: string[]
+  openedClient?: string // Single opened accordion
 }
 
-const WorkDetails = ({ openKeys }: WorkDetailsProps) => {
-  const openProjectsParam = openKeys.join(',')
+const WorkDetails = ({ openedClient }: WorkDetailsProps) => {
+  const skipAnimations = useSkipAnimationsOnClientNav()
 
   return (
     <section className='p-7xl center flex-col w-full'>
       {clientData.map(data => {
-        const isOpen = openKeys.includes(data.key)
+        const isOpen = openedClient === data.key
         const accordionId = getClientId(data.key)
         return (
           <Accordion
@@ -24,7 +27,8 @@ const WorkDetails = ({ openKeys }: WorkDetailsProps) => {
             id={accordionId}
             heading={data.heading}
             isOpen={isOpen}
-            queryString={getClientQueryString({ openProjectsParam, itemKey: data.key, isOpen })}
+            queryString={`/${isOpen ? '' : data.key}`}
+            skipAnimations={skipAnimations}
             content={
               <div className='flex flex-col gap-10 py-4'>
                 <TestimonialData

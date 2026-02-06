@@ -258,16 +258,16 @@ export const bottomNavButtons: BottomNavButtonT[] = [
 
 export const workBottomNavCategories: BottomNavCategoryT[] = [
   { text: 'Product Design', key: WorkCategories.productDesign, Component: ProductDesignProjects },
-  { text: 'Product Development', key: WorkCategories.productDevelopment, Component: ProductDevelopmentProjects  },
+  { text: 'Product Development', key: WorkCategories.productDevelopment, Component: ProductDevelopmentProjects },
   { text: 'Video Editing', key: WorkCategories.videoEditing, Component: VideoEditingProjects },
   { text: 'Graphics Design', key: WorkCategories.illustration, Component: GraphicDesignProjects },
   { text: '3D Artworks', key: WorkCategories.blender, Component: BlenderProjects },
-] 
+]
 
 export const projectCategories: BottomNavCategoryT[] = [
   { text: 'Overview', key: ProjectCategories.overview, Component: ProjectOverview },
   { text: 'Key Features', key: ProjectCategories.keyFeatures, Component: ProjectKeyFeatures },
-  { text: 'Tech Stack', key: ProjectCategories.techStack , Component: ProjectTechStack },
+  { text: 'Tech Stack', key: ProjectCategories.techStack, Component: ProjectTechStack },
   { text: 'Challenges & Solutions', key: ProjectCategories.challengesAndSolutions, Component: ProjectChallengesAndSolutions },
 ]
 
@@ -281,10 +281,10 @@ export const footerButtons: FooterButtonT[][] = [
   ],
   [
     { text: 'More Work', href: '/portfolio' },
-    { text: 'Case Studies', href: `/portfolio?tab=${WorkCategories.productDesign}` },
-    { text: 'Web Apps', href: `/portfolio?tab=${WorkCategories.productDevelopment}` },
-    { text: 'Mobile Apps', href: `/portfolio?tab=${WorkCategories.productDevelopment}` },
-    { text: 'Art Works', href: `/portfolio?tab=${WorkCategories.blender}` },
+    { text: 'Case Studies', href: `/portfolio/${WorkCategories.productDesign}` },
+    { text: 'Web Apps', href: `/portfolio/${WorkCategories.productDevelopment}` },
+    { text: 'Mobile Apps', href: `/portfolio/${WorkCategories.productDevelopment}` },
+    { text: 'Art Works', href: `/portfolio/${WorkCategories.blender}` },
   ],
   [
     { text: 'Top Projects', href: `/#${Sections.work}` },
@@ -300,7 +300,7 @@ export const featuredProjects: ProjectAnalysisT[] = [alfabolt, humanizarTexto, a
 export const services: ServiceT[] = [
   {
     title: 'Web App \n Development',
-    href: `/portfolio?tab=${WorkCategories.productDevelopment}`,
+    href: `/portfolio/${WorkCategories.productDevelopment}`,
     index: 0,
     className:
       'absolute right-0 origin-right pointer-events-none z-10 flex justify-end items-center md:items-start w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -310,7 +310,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Product & \n UI/UX Design',
-    href: `/portfolio?tab=${WorkCategories.productDesign}`,
+    href: `/portfolio/${WorkCategories.productDesign}`,
     index: 1,
     className:
       'absolute right-0 pointer-events-none z-10 flex justify-start md:justify-center items-center md:items-start w-fit sm:w-full h-full -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -320,7 +320,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Mobile App \n Development',
-    href: `/portfolio?tab=${WorkCategories.productDevelopment}`,
+    href: `/portfolio/${WorkCategories.productDevelopment}`,
     index: 2,
     className:
       'absolute right-0 pointer-events-none z-10 flex justify-end md:justify-start items-center md:items-start w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 2xl:pr-12 -mt-0 md:-mt-6 lg:-mt-4 xl:-mt-3 2xl:-mt-4',
@@ -330,7 +330,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Video Editing \n & Motion Graphics',
-    href: `/portfolio?tab=${WorkCategories.videoEditing}`,
+    href: `/portfolio/${WorkCategories.videoEditing}`,
     index: 3,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end sm:justify-start md:justify-end items-center md:items-end w-fit sm:w-full h-full pr-8 md:pr-6 lg:pr-10 xl:pr-11 2xl:pr-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -340,7 +340,7 @@ export const services: ServiceT[] = [
   },
   {
     title: 'Logo Design \n & Branding',
-    href: `/portfolio?tab=${WorkCategories.illustration}`,
+    href: `/portfolio/${WorkCategories.illustration}`,
     index: 4,
     className:
       'absolute left-0 pointer-events-none z-10 flex justify-end md:justify-center items-center md:items-end w-fit sm:w-full h-full mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -350,7 +350,7 @@ export const services: ServiceT[] = [
   },
   {
     title: '3D Design \n & Visualization',
-    href: `/portfolio?tab=${WorkCategories.blender}`,
+    href: `/portfolio/${WorkCategories.blender}`,
     index: 5,
     className:
       'absolute left-0 pointer-events-none z-10 flex  justify-end sm:justify-start items-center md:items-end w-fit sm:w-full h-full pl-8 md:pl-6 lg:pl-10 xl:pl-11 2xl:pl-12 mt-0 md:mt-6 lg:mt-4 xl:mt-3 2xl:mt-4',
@@ -574,49 +574,49 @@ export const iconComponents: IconComponentsT = {
 }
 
 export const clientIconComponents = [
-  { Icon: Alfabolt},
-  { Icon: TSS},
-  { Icon: SvgKueenzTechnologies},
-  { Icon: SvgHumanizarTexto},
+  { Icon: Alfabolt },
+  { Icon: TSS },
+  { Icon: SvgKueenzTechnologies },
+  { Icon: SvgHumanizarTexto },
   { Icon: AylaLogo },
-  { Icon: SvgNutrigram},
-  { Icon: BeaconTutors},
+  { Icon: SvgNutrigram },
+  { Icon: BeaconTutors },
   { Icon: EquanimitySvg },
-  { Icon: SvgElbrezal},
+  { Icon: SvgElbrezal },
   { Icon: SvgRobinBeauty },
-  { Icon: Athleton},
-  { Icon: Deepreel},
-  { Icon: Rivanna},
-  { Icon: Edwiz},
-  { Icon: SvgInventrios},
+  { Icon: Athleton },
+  { Icon: Deepreel },
+  { Icon: Rivanna },
+  { Icon: Edwiz },
+  { Icon: SvgInventrios },
   { Icon: SvgSmartCatch },
-  { Icon: Lyfiti},
-  { Icon: MenuHub},
-  { Icon: FiveOneFivePools},
+  { Icon: Lyfiti },
+  { Icon: MenuHub },
+  { Icon: FiveOneFivePools },
 ]
 
 export const clientLogoData = {
-  [ProjectLogos.alfabolt] : Alfabolt,
-  [ProjectLogos.tss] : TSS,
-  [ProjectLogos.kueenz] : SvgKueenzTechnologies,
-  [ProjectLogos.humanizarTexto] : SvgHumanizarTexto,
-  [ProjectLogos.ayla] : AylaLogo,
-  [ProjectLogos.nutrigram] : SvgNutrigram,
-  [ProjectLogos.beaconTutors] : BeaconTutors,
-  [ProjectLogos.equanimity] : EquanimitySvg,
-  [ProjectLogos.elbrezal] : SvgElbrezal,
-  [ProjectLogos.robinBeauty] : SvgRobinBeauty,
-  [ProjectLogos.athleton] : Athleton,
-  [ProjectLogos.deepreel] : Deepreel,
-  [ProjectLogos.rivanna] : Rivanna,
-  [ProjectLogos.edwiz] : Edwiz,
-  [ProjectLogos.inventrios] : SvgInventrios,
-  [ProjectLogos.smartCatch] : SvgSmartCatch,
-  [ProjectLogos.lyfiti] : Lyfiti,
-  [ProjectLogos.menuHub] : MenuHub,
-  [ProjectLogos.fiveOneFivePools] : FiveOneFivePools,
-  [ProjectLogos.superDuper] : SuperDuperStudio,
-  [ProjectLogos.tutorania] : TutoraniaSvg,
+  [ProjectLogos.alfabolt]: Alfabolt,
+  [ProjectLogos.tss]: TSS,
+  [ProjectLogos.kueenz]: SvgKueenzTechnologies,
+  [ProjectLogos.humanizarTexto]: SvgHumanizarTexto,
+  [ProjectLogos.ayla]: AylaLogo,
+  [ProjectLogos.nutrigram]: SvgNutrigram,
+  [ProjectLogos.beaconTutors]: BeaconTutors,
+  [ProjectLogos.equanimity]: EquanimitySvg,
+  [ProjectLogos.elbrezal]: SvgElbrezal,
+  [ProjectLogos.robinBeauty]: SvgRobinBeauty,
+  [ProjectLogos.athleton]: Athleton,
+  [ProjectLogos.deepreel]: Deepreel,
+  [ProjectLogos.rivanna]: Rivanna,
+  [ProjectLogos.edwiz]: Edwiz,
+  [ProjectLogos.inventrios]: SvgInventrios,
+  [ProjectLogos.smartCatch]: SvgSmartCatch,
+  [ProjectLogos.lyfiti]: Lyfiti,
+  [ProjectLogos.menuHub]: MenuHub,
+  [ProjectLogos.fiveOneFivePools]: FiveOneFivePools,
+  [ProjectLogos.superDuper]: SuperDuperStudio,
+  [ProjectLogos.tutorania]: TutoraniaSvg,
 }
 
 
@@ -640,7 +640,7 @@ export const clientData: ClientDataT[] = [
     companyLogo: Alfabolt,
     companyLink: 'https://alfabolt.com',
     heading: 'Alfabolt',
-    testimonial:testimonialsData[TestimonialClients.alfabolt].testimonial,
+    testimonial: testimonialsData[TestimonialClients.alfabolt].testimonial,
     clientName: testimonialsData[TestimonialClients.alfabolt].client,
     designation: testimonialsData[TestimonialClients.alfabolt].designation,
     productsInvolved: [

@@ -9,6 +9,10 @@ import {
 } from '@/helpers/constants'
 import type { StaticImageData } from 'next/image'
 
+// ISR: Revalidate every 1 week
+export const revalidate = 604800
+export const dynamic = 'force-static'
+
 const URL = 'https://maazrana.com'
 
 // Helper function to safely get the public path from StaticImageData or string
